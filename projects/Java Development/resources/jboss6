@@ -1,27 +1,76 @@
 #!/bin/bash
+# JBoss6 invoke script
+# Copyright (c) 2012 - Reinaldo de Carvalho <reinaldoc@gmail.com>
 
-start() {
-	if [ "$(pgrep -c java)" -ne "1" ] ; then
-		echo -n "Starting JBoss AS 6"
-		su -l jboss6 -s /bin/bash -c '/opt/jboss-6.0.0.Final/bin/run.sh -b 0.0.0.0 -c local >/dev/null 2>&1 &'
-		echo .
-	else
-		echo "JBoss AS 6 already running."
+### BEGIN INIT INFO
+# Provides:          jboss6
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: JBoss6 invoke script
+### END INIT INFO
+
+# @param $1 string to be checked
+# @return int command execution status
+function isEmpty {
+	[[ $1 =~ ^[[:space:]]*$ ]]
+	return $?
+}
+
+# @param $1 jboss home directory
+# @return void set $JBPID with jboss pid
+function setJbPid() {
+	JBPID=$(ps -ef | grep -E "java.*$1.*org.jboss.Main" | grep -v ' grep ' | tr -s ' ' | cut -f2 -d ' ')
+}
+
+# @param $1 optional kill signal
+# @return void kill jboss pid
+function killJb() {
+	if ! isEmpty "$JBPID" ; then
+		kill "$1" "$JBPID" > /dev/null 2>&1
 	fi
 }
 
-# warning: stop all java applications
-stop() {
-	echo -n "Stopping JBoss AS 6"
-	su -l jboss6 -s /bin/bash -c '/opt/jboss-6.0.0.Final/bin/shutdown.sh -S >/dev/null 2>&1'
+# @param $1 jboss home directory
+function startjb() {
+	if isEmpty "$1"; then
+		echo "Err: jboss home directory required as argument"
+		return
+	fi
+	echo -n "Starting Java Application Server: jboss6"
+	setJbPid "$1"
+	if isEmpty "$JBPID"; then
+		su -l jboss6 -s /bin/bash -c "$1/bin/run.sh -b 0.0.0.0 -c local >/dev/null 2>&1 &"
+		echo " ($1)."
+	else
+		echo " ($1 already started)."
+	fi
+}
+
+# @param $1 jboss home directory
+function stopjb() {
+	if isEmpty "$1"; then
+		echo "Err: jboss home directory required as argument"
+		return
+	fi
+	echo -n "Stopping Java Application Server: jboss6"
+	setJbPid "$1"
+	if isEmpty "$JBPID"; then
+		echo " ($1 already stopped)."
+		return
+	fi
+	# FIXME: detect correct instance to shutdown
+	su -l jboss6 -s /bin/bash -c "$1/bin/shutdown.sh -S >/dev/null 2>&1"
 	i=0
 	while true; do
-		if [ $i -gt 15 ] ; then
-			su -l jboss6 -s /bin/bash -c "kill -9 $(pgrep java)" > /dev/null 2>&1
-		elif [ $i -gt 10 ] ; then
-			su -l jboss6 -s /bin/bash -c "kill $(pgrep java)" > /dev/null 2>&1
-		fi
-		if (ps -ef | grep -v grep | grep -q java) ; then
+		setJbPid "$1"
+		if ! isEmpty "$JBPID" ; then
+			if [ $i -gt 15 ] ; then
+				killJb -9
+			elif [ $i -gt 10 ] ; then
+				killJb
+			fi
 			echo -n .
 			sleep 2
 		else
@@ -29,29 +78,26 @@ stop() {
 		fi
 		let i++
 	done
-	rm /opt/jboss-6.0.0.Final/server/local/tmp/* >/dev/null 2>&1
-	rm /opt/jboss-6.0.0.Final/server/local/work/* >/dev/null 2>&1
+	rm "$1/server/local/tmp/*" >/dev/null 2>&1
+	rm "$1/server/local/work/*" >/dev/null 2>&1
 	echo .
 }
 
-restart() {
-	stop
-	start
-}
-
 case "$1" in
-   start)
-         start
-         ;;
-   stop)
-         stop
-         ;;
-   restart)
-         restart
-         ;;
-   *)
-         echo "Usage: $0 {start | stop | restart}"
-         exit 1
+	start)
+		startjb /opt/jboss-6.1.0.Final
+	;;
+	stop)
+		stopjb /opt/jboss-6.1.0.Final
+	;;
+	restart)
+		stopjb /opt/jboss-6.1.0.Final
+		startjb /opt/jboss-6.1.0.Final
+	;;
+	*)
+		echo "Usage: $0 {start | stop | restart}"
+		exit 1
+	;;
 esac
 
 exit 0
