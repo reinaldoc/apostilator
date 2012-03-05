@@ -4,11 +4,11 @@
 
 <subsubsecao>Download</subsubsecao>
 
-	O instalador do JBoss AS 6 (6.0.0.Final) pode ser obtido no seguinte endereço:
+	O instalador do JBoss AS 6 (6.1.0.Final) pode ser obtido no seguinte endereço:
 
 <lista>
 <item/> http://www.jboss.org/jbossas/downloads
-<item/> http://ufpr.dl.sourceforge.net/project/jboss/JBoss/JBoss-6.0.0.Final/jboss-as-distribution-6.0.0.
+<item/> http://ufpr.dl.sourceforge.net/project/jboss/JBoss/JBoss-6.1.0.Final/jboss-as-distribution-6.1.0.
 Final.zip
 </lista>
 
@@ -25,9 +25,9 @@ Final.zip
 
 <comando>
 # cd /opt
-# wget http://ufpr.dl.sourceforge.net/.../jboss-as-distribution-6.0.0.Final.zip
-# unzip jboss-as-distribution-6.0.0.Final.zip
-# chown -R root: /opt/jboss-6.0.0.Final
+# wget http://ufpr.dl.sourceforge.net/.../jboss-as-distribution-6.1.0.Final.zip
+# unzip jboss-as-distribution-6.1.0.Final.zip
+# chown -R root: /opt/jboss-6.1.0.Final
 </comando>
 
 <subsubsecao>Pós-instalação</subsubsecao>
@@ -37,8 +37,8 @@ Final.zip
 </lista>
 
 <comando>
-# adduser --home /opt/jboss-6.0.0.Final --no-create-home --system jboss6
-# cd /opt/jboss-6.0.0.Final/server/
+# adduser --home /opt/jboss-6.1.0.Final --no-create-home --system jboss6
+# cd /opt/jboss-6.1.0.Final/server/
 # cp -a default local
 # cd local
 # mkdir deploy.disabled tmp data log work
@@ -46,8 +46,8 @@ Final.zip
 </comando>
 
 <lista>
-<item/>	Parâmetros de inicialização: ajustar parâmetros -Xms/-Xmx (l. 43):
-/opt/jboss-6.0.0.Final/bin/run.conf
+<item/> <b>/opt/jboss-6.1.0.Final/bin/run.conf</b>:	ajustar parâmetros -Xms/-Xmx (l. 43):
+
 </lista>
 
 <comando>
@@ -73,12 +73,12 @@ fi
 
 <comando>
 # adduser --shell /noshell \
-          --home /opt/jboss-6.0.0.Final/server/local/deploy.ftp deployer 
-# mkdir /opt/jboss-6.0.0.Final/server/local/deploy.ftp/deploy
-# chown deployer: /opt/jboss-6.0.0.Final/server/local/deploy.ftp/deploy
+          --home /opt/jboss-6.1.0.Final/server/local/deploy.ftp deployer 
+# mkdir /opt/jboss-6.1.0.Final/server/local/deploy.ftp/deploy
+# chown deployer: /opt/jboss-6.1.0.Final/server/local/deploy.ftp/deploy
 </comando>
 
-<b>/opt/jboss-6.0.0.Final/server/local/conf/bootstrap/profile.xml</b>:
+<b>/opt/jboss-6.1.0.Final/server/local/conf/bootstrap/profile.xml</b>:
 adicionar novo diretório de deploy (deploy.ftp/deploy) na configuração do bean
 <i>UserProfileFactory</i> (l.30).
 
@@ -91,14 +91,15 @@ adicionar novo diretório de deploy (deploy.ftp/deploy) na configuração do bea
 
 <comando>
 # aptitude install vsftpd
-# echo /noshell >> /login-noshell
+# echo /noshell >> /etc/shells
 </comando>
 
 <comando>
 anonymous_enable=NO
 local_enable=YES
 write_enable=YES
-ftpd_banner=FTP server ready.
+local_umask=022
+ftpd_banner=FTP server ready
 chroot_local_user=YES
 </comando>
 
@@ -108,7 +109,7 @@ chroot_local_user=YES
 </lista>
 
 <comando>
-cp /path/to/ojdbc14_g.jar /opt/jboss-6.0.0.Final/server/local/lib
+cp /path/to/ojdbc14_g.jar /opt/jboss-6.1.0.Final/server/local/lib
 </comando>
 
 
@@ -125,7 +126,7 @@ start() {
   if [ "$(pgrep -c java)" -ne "1" ] ; then
     echo -n "Starting JBoss AS 6"
     su -l jboss6 -s /bin/bash \
-       -c '/opt/jboss-6.0.0.Final/bin/run.sh -b 0.0.0.0 -c local >/dev/null 2>&1 &'
+       -c '/opt/jboss-6.1.0.Final/bin/run.sh -b 0.0.0.0 -c local >/dev/null 2>&1 &'
     echo .
   else
     echo "JBoss AS 6 already running."
@@ -136,7 +137,7 @@ start() {
 stop() {
   echo -n "Stopping JBoss AS 6"
   su -l jboss6 -s /bin/bash \
-     -c '/opt/jboss-6.0.0.Final/bin/shutdown.sh -S >/dev/null 2>&1'
+     -c '/opt/jboss-6.1.0.Final/bin/shutdown.sh -S >/dev/null 2>&1'
   i=0
   while true; do
     if [ $i -gt 15 ] ; then
@@ -152,8 +153,8 @@ stop() {
     fi
     let i++
   done
-  rm /opt/jboss-6.0.0.Final/server/local/tmp/* >/dev/null 2>&1
-  rm /opt/jboss-6.0.0.Final/server/local/work/* >/dev/null 2>&1
+  rm /opt/jboss-6.1.0.Final/server/local/tmp/* >/dev/null 2>&1
+  rm /opt/jboss-6.1.0.Final/server/local/work/* >/dev/null 2>&1
   echo .
 }
 
