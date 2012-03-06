@@ -1,0 +1,314 @@
+<capitulo>Virtualização - Xen</capitulo>
+
+    A virtualização com Xen baseia-se na utilização do Xen Hypervisor, que
+um programa semelhante a um kernel que é inicializado pelo carregador de
+boot. Sendo responsável pelo controle e isolamentos das máquinas virtuais.
+
+    Além do Hypervisor, o kernel do sistema operacional deve possuir
+suporte, visto que agora este não estará em comunicação direta com o
+hardware mas suas solicitações serão controladas pelo Xen Hypervisor.
+
+<subsecao>Instalação</subsecao>
+
+    Instalação do Xen Hypervisor e do Kernel Linux com suporte ao
+Hypervisor pode ser realizada como indicado:
+    
+<comandoNumerado>
+aptitude install xen-linux-system-2.6.26-2-xen-686 xen-utils-3.2-1 bridge-utils
+</comandoNumerado>
+
+    Após a instalação, estará disponível no carregador de boot, o Xen
+Hypervisor, o Kernel Linux com suporte ao Xen, e o Kernel Linux anterior que
+não possui suporte ao Xen. Deve realizar boot selecionando o Xen Hypervisor.
+
+    O Kernel Linux com suporte ao Xen não pode ser executado diretamente
+pelo carregador de boot, sendo desnecessária esta entrada no carregador de
+boot.
+
+    O Kernel Linux sem suporte ao Xen pode ser utilizado, caso não seja mais
+necessário o uso do Xen neste equipamento.
+
+<subsecao>Interface de rede em bridge</subsecao>
+
+	Configurar a interface de rede para bridge:
+
+<lista>
+<item/> <b>/etc/xen/xend-config.sxp</b>:
+</lista>
+
+<comando>
+# l.124 (descomentar)
+(network-script network-bridge)
+
+# l.139 (comentar)
+# (network-script network-dummy)
+</comando>
+
+	Reiniciar o serviço xend:
+
+<comandoNumerado>
+/etc/init.d/xend restart
+</comandoNumerado>
+
+<subsecao>Guest PVM</subsecao>
+
+    Utilitário para criação e configuração automatizada de VM.
+
+<comandoNumerado>
+aptitude install xen-tools
+</comandoNumerado>
+
+<lista>
+<item/> <b>/etc/xen-tools/xen-tools.conf</b>: configurando opções comuns.
+</lista>
+
+<comando>
+# ...
+mirror = http://mirror.ufpa.br/debian
+# ...
+serial_device = hvc0
+# ...
+</comando>
+
+    O xen-tools forcene o utilitário <b>xen-create-image</b> que automatiza
+a instalação de máquinas virtuais.
+    Para isto deve-se inicialmente criar um arquivo, como
+<b>/etc/xen-tools/partitions.d/template-default</b>, que descreva o particionamento
+a ser realizado durante a instalação da máquina virtual. A seguir segue um
+exemplo para a criação de três partições:
+
+<lista>
+<item/>/etc/xen-tools/partitions.d/template-default
+</lista>
+
+<comando>
+[root]
+size=5G
+type=ext3
+mountpoint=/
+options=errors=remount-ro
+
+[swap]
+size=256M
+type=swap
+
+[var]
+size=30G
+type=ext3
+mountpoint=/var
+options=defaults
+</comando>
+
+<comandoNumerado>
+xen-create-image --hostname=servidor.ufpa.br --lvm vgLocal               \
+  --partitions template-default --memory=1024Mb --passwd --role udev     \
+  --ip=10.15.1.206 --netmask=255.255.255.0 --gateway=10.15.1.2           \
+  --arch=i386 --dist=lenny
+</comandoNumerado>
+
+<lista>
+<item/> <b>--arch, --dist</b>: utilizado para definir o sistema
+operacional a ser instalado na VM.
+
+<item/> <b>--hostname</b>: utilizado para configurar /etc/hosts e
+/etc/hostname da VM, e para dar nome ao arquivo de configuração desta VM no
+Dom-0.
+
+<item/> <b>--memory</b>: define no arquivo de configuração da VM a
+quantidade de memória a ser cedida a VM.
+
+<item/> <b>--passwd</b>: solicita senha de root a ser definida na VM.
+
+<item/> <b>--role udev</b>: ativa udev na VM.
+
+<item/> <b>--lvm</b>: especifica o grupo de volume a ser utilizado para
+criação dos volumes lógicos, segue o esquema de particionamento indicado.
+
+<item/> <b>--partitions</b>: indica o arquivo que descreve o esquema de
+particionamento, no caso, define os volumes lógicos a serem criados.
+
+<item/> <b>--ip, --netmask, --gateway</b>: especifica configurações de rede
+a ser realizadas na VM.
+
+</lista>
+
+<subsecao>Guest HVM</subsecao>
+
+    Deve-se criar as áreas de disco a serem utilizadas:
+
+<comandoNumerado>
+lvcreate -L10G -n /dev/vgLocal/servidor.c
+</comandoNumerado>
+
+<lista>
+<item/> <b>/etc/xen/servidor.ufpa.br.cfg</b>: criar o arquivo de
+configuração:
+</lista>
+
+<comando>
+builder = 'hvm'
+device_model = '/usr/lib/xen-3.2-1/bin/qemu-dm'
+memory = 1024
+shadow_memory = 8
+name = "servidor.ufpa.br"
+disk = [ 'phy:/dev/mapper/vgLocal-servidor.c,hda,w',
+         'file:/root/win2003cd01.iso,hdc:cdrom,r' ]
+vif = [ 'type=ioemu, bridge=eth0' ]
+boot = "dc"
+sdl = 0
+vnc = 1
+vncdisplay = 0
+stdvga = 0
+serial = 'pty'
+</comando>
+
+<subsecao>Controlando o Hypervisor</subsecao>
+
+    Iniciando máquina virtual:
+
+<comandoNumerado>
+xm create servidor.ufpa.br.cfg
+</comandoNumerado>
+
+    Listando máquinas virtuais ativas:
+
+<comandoNumerado>
+xm list
+</comandoNumerado>
+
+    Parando a máquina virtual. Deve-se obter o código identificador de
+instância (ex: 91) de máquina virtual através do comando <b>xm list</b>
+e executar:
+
+<comandoNumerado>
+xm shutdown 91
+</comandoNumerado>
+
+    Destruindo (derrubar) a máquina virtual. Deve-se obter o código
+identificador de instância (ex: 95) de máquina virtual através do
+comando <b>xm list</b> e executar:
+
+<comandoNumerado>
+xm destroy 95
+</comandoNumerado>
+
+<subsecao>Virt-manager</subsecao>
+
+<subsubsecao>Domain-0</subsubsecao>
+
+<lista>
+<item/> <b>/etc/xen/xend-config.sxp</b>: configurar unix server l.59.
+configuração:
+</lista>
+
+<comando>
+(xend-unix-server yes)
+</comando>
+
+<lista>
+<item/> Reiniciar xend:
+</lista>
+
+<comandoNumerado>
+/etc/init.d/xend restart
+</comandoNumerado>
+
+<lista>
+<item/> Instalar libvirt:
+</lista>
+
+<comandoNumerado>
+aptitude install libvirt-bin netcat-openbsd
+</comandoNumerado>
+
+<lista>
+<item/> Adicionar o parâmetro vfb aos arquivos das PVMs.
+<item/> Incrementar o vncdisplay a partir de 0, sem repetí-lo.
+</lista>
+
+<comando>
+# ex: /etc/xen/server1.cfg
+vfb = [ 'type=vnc,vncunused=0,vncdisplay=0' ]
+
+# ex: /etc/xen/server2.cfg
+vfb = [ 'type=vnc,vncunused=0,vncdisplay=1' ]
+</comando>
+
+<lista>
+<item/> Adicionar o parâmetro vnc e vncdisplay aos arquivos das HVMs.
+<item/> Não repetir o vncdisplay.
+</lista>
+
+<comando>
+# ex: /etc/xen/server3.cfg
+vnc=1
+vncunused=0
+vncdisplay=2
+
+# ex: /etc/xen/server4.cfg
+vnc=1
+vncunused=0
+vncdisplay=3
+</comando>
+
+<lista>
+<item/> Reiniciar VMs.
+</lista>
+
+<comandoNumerado>
+xm reboot server1
+xm reboot server2
+xm reboot server3
+#...
+</comandoNumerado>
+
+<subsubsecao>Domain-U (guests)</subsubsecao>
+
+<lista>
+<item/> <b>/etc/inittab</b>: ativar consoles.
+</lista>
+
+<comando>
+# hvc0 é para o xm console, tty* é para o vnc:
+1:2345:respawn:/sbin/getty 38400 tty1
+2:23:respawn:/sbin/getty 38400 tty2
+3:23:respawn:/sbin/getty 38400 tty3
+4:23:respawn:/sbin/getty 38400 tty4
+5:23:respawn:/sbin/getty 38400 tty5
+6:23:respawn:/sbin/getty 38400 tty6
+8:2345:respawn:/sbin/getty 38400 hvc0
+</comando>
+
+
+<lista>
+<item/> Recarregar init.
+</lista>
+
+<comandoNumerado>
+init q
+</comandoNumerado>
+
+<subsubsecao>Workstation</subsubsecao>
+
+<lista>
+<item/> <b>/etc/apt/sources.list</b>: configurar backports.
+</lista>
+
+<comando>
+deb http://ftp.de.debian.org/backports.org/ lenny-backports main contrib non-free
+</comando>
+
+<lista>
+<item/> Instalar pacotes abaixo. Optando-se entre os pacotes: ssh-askpass, ksshaskpass
+ou ssh-askpass-gnome.
+</lista>
+
+<comandoNumerado>
+aptitude update
+aptitude install ssh-askpass
+aptitude install -t lenny-backports virt-manager
+</comandoNumerado>
+
+<lista>
+<item/> Iniciar virt-manager e configurar conexão xen+ssh com destino o dom0.
+</lista>

@@ -1,0 +1,203 @@
+<capitulo>Sistema operacional Debian GNU/Linux</capitulo>
+
+    O Debian é uma organização dedicada a desenvolver software livre e
+promover os ideais da comunidade de Software Livre. A combinação da filosofia
+e metodologia do Debian, as ferramentas GNU, o kernel Linux e outros
+softwares livres importantes, formam a distribução Debian GNU/Linux
+<citar>DebianGuide</citar>. <br/>0.3cm
+
+    O Debian GNU/Linux<citar>Debian</citar> é um sistema operacional
+livre formado em linhas gerais por:
+
+<lista>
+<item/><i>debian installer</i>: o instalador do sistema operacional;
+<item/><i>Linux</i>: o kernel do sistema operacional;
+<item/><i>GNU</i>: software básico para sistema operacional;
+<item/><i>aptitude</i>: sistema de <i>download</i> de <i>software</i> e interface para o
+<i>dpkg</i>;
+<item/><i>dpkg</i>: sistema de instalação, remoção e atualização de
+<i>software</i>;
+<item/>Disponibilização de <i>software</i> prontos para utilização, com rotinas pré e pós
+instalação;
+<item/>Disponibilização de atualizações para correções de falhas.
+</lista>
+
+<subsecao>Mídia de instalação</subsecao>
+
+    O Debian GNU/Linux esta disponível em versões para Desktop que
+inclui <i>software</i> de interface gráfica como KDE e GNOME, e versões
+reduzidas como a <i>netinst</i> que realiza a instalação de um sistema mínimo,
+recomendado para servidores.
+
+<subsubsecao>Imagem de CD</subsubsecao>
+
+    A imagem de CD <i>netinst</i>, atualmente pode ser obtida no endereço abaixo:
+
+<lista>
+<item/>http://cdimage.debian.org/debian-cd/5.0.5/i386/iso-cd/debian-505-i386-netinst.iso
+</lista>
+
+    Deve-se gravar a imagem obtida, <i>debian-505-i386-netinst.iso</i>, e realizar
+o boot da máquina por esta mídia.
+
+<subsubsecao>USB-HDD</subsubsecao>
+
+    Neste procedimento os utilitários syslinux e install-mbr serão
+utilizados, além do kernel e initrd para iniciar o debian-installer.
+
+<comandoNumerado>
+aptitude install syslinux mbr
+</comandoNumerado>
+
+<lista>
+<item/>ftp://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/hd-media/vmlinuz
+<item/>ftp://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/hd-media/initrd.gz
+</lista>
+
+    Pode-se realizar a instalaçao do Debian GNU/Linux a partir de uma mídia
+removível (pen-drive, hd externo, etc), para isto crie a primeira partição nesta
+unidade e formate-a:
+
+<comandoNumerado>
+mkfs.vfat /dev/sdX1
+</comandoNumerado>
+
+    É necessário tornar a unidade <i>bootável</i> e utilizar um gerenciador de boot
+para realizar a inicialização do kernel, como indicado a seguir:
+
+<comandoNumerado>
+syslinux /dev/sdX1
+install-mbr /dev/sdX
+</comandoNumerado>
+
+    Copie o kernel e a initrd utilizados pelo debian-installer para a unidade,
+identificando a versão apropriadamente:
+    
+<comandoNumerado>
+mount /dev/sdX1 /mnt
+mkdir /mnt/boot
+cp vmlinuz /mnt/boot/vmlinuz-debian505
+cp initrd.gz /mnt/boot/initrd-debian505.gz
+</comandoNumerado>
+
+<lista>
+<item/><b>/mnt/syslinux.cfg</b>: crie o .cfg do gerencidor de boot syslinux
+com o conteúdo abaixo:
+</lista>
+
+<comando>
+default boot/vmlinuz-debian505
+append initrd=boot/initrd-debian505.gz
+</comando>
+
+    Copie a imagem de CD para a raiz da unidade, e desmonte-a:
+
+<comandoNumerado>
+cp debian-505-i386-netinst.iso /mnt/
+umount /mnt
+</comandoNumerado>
+
+    Para utilizar uma nova release do instalador, deve-se atualizar o kernel
+e initrd, podendo ser obtidos na mesma URL indicada no início desta seção.
+Deve-se agora realizar o boot da máquina por esta mídia USB-HDD.
+
+<subsecao>Instalação</subsecao>
+
+    As seções a seguir contém informações sobre os questionamentos
+solicitados durante a instalação do sistema operacional.
+
+<subsubsecao>Língua</subsubsecao>
+
+<lista>
+<item/> <b>Língua</b>: Portuguese (Brazil) - Português do Brasil
+<item/> <b>País</b>: Brasil
+<item/> <b>Mapa de teclado (com cedilha)</b>: Português Brasileiro (layout ABNT2).
+<item/> <b>Mapa de teclado (sem cedilha)</b>: Português Brasileiro (layout EUA).
+</lista>
+
+<subsubsecao>Firmware</subsubsecao>
+
+    Certos dispositivos de <i>hardware</i> necessitam que um <i>firmware</i>
+seja carregado para seu adequado funcionamento. <i>Firmware</i> é um
+software enviado ao <i>hardware</i> para posterior comunicação com o driver
+a nível de sistema operacional.
+
+    Os <i>firmware</i> são armazenados no diretório <b>/lib/firmware/</b>,
+podendo ser copiados diretamente ou instalados através de pacotes. Durante a
+instalação do Debian, o <i>debian-installer</i> pode identificar a necessidade de um
+<i>firmware</i> e requisitar os arquivos. Em geral, pode-se realizar a
+instalação destes posteriormente, já com o sistema operacional instalado.
+
+	Assim, ignore o questionamento, como indicado a seguir:
+
+<lista>
+<item/> <b>Carregar firmware que esta faltando a partir de uma mídia
+removível?</b>: não
+</lista>
+
+<subsubsecao>Rede</subsubsecao>
+
+    A configuração de rede não será realizada neste momento, agilizando a
+instalação básica, reduzindo os questionamentos do <b>debian-installer</b>,
+postergando a atualização dos pacotes, e evitando a instalação de pacotes de
+dicionários. Assim, pode-se desconectar o cabo de rede até o final da
+instalação.
+
+<lista>
+<item/> <b>Configurando a rede com DHCP</b>: Cancelar.
+<item/> <b>Método de configuração de rede</b>: Não configurar a rede agora.
+<item/> <b>Nome de máquina</b>: servidor (solicite um nome de máquina).
+<item/> <b>Cidade de fuso horário</b>: Belém
+</lista>
+
+<subsubsecao>Particionamento</subsubsecao>
+
+    Abaixo é indicado o esquema de particionamento para servidores hospedeiros
+(<i>hosts</i>) de máquinas virtuais (atuando como Dom-0):
+
+<lista>
+<item/> <b>Método de particionamento</b>: Manual.
+<item/> Selecionar o disco local e criar nova tabela de partições.
+<item/> <b>Criar Partição</b> #1 (primária, início, ext3, /boot, Rótulo: Boot): 100 Mb
+<item/> <b>Criar Partição</b> #2 (primária, início, LVM): todo espaço disponível.
+<item/> <b>Configurar o gerenciador de volumes lógicos</b>.
+<item/> <b>Criar grupo de volume</b>: vgLocal.
+<item/> Selecionar partição LVM recém criada do disco local.
+<item/> <b>Criar volume lógico servidor.swap</b>: 256 Mb
+<item/> <b>Criar volume lógico servidor.raiz (ext3)</b>: 5 Gb
+<item/> <b>Criar volume lógico servidor.var (ext3)</b>: 30 Gb
+</lista>
+
+	<b>Atenção:</b> caso um <i>storage</i> esteja conectado ao servidor, e
+um eventual <i>firmware</i> tenha sido carregado, o <i>debian-installer</i>
+selecionará automaticamente para uso uma partição swap pré-existente. Este
+procedimento deve ser desfeito para que uma possível partição swap em
+uso não seja formatada. Para isto, selecione a partição swap detectada pelo
+<i>debian-installer</i> e use a opção <b>não usar partição</b>.
+	Após este procedimento, utilize como swap o volume lógico servidor.swap
+recém criado. <br/>0.3cm
+    Abaixo é indicado o esquema de particionamento para servidores sem
+virtualização:
+
+<lista>
+<item/> <b>Método de particionamento</b>: Manual.
+<item/> Selecionar o disco local e criar nova tabela de partições.
+<item/> <b>Criar Partição</b> #1 (primária, início, área de troca - swap): 256 Mb
+<item/> <b>Criar Partição</b> #2 (primária, início, ext3, /, Rótulo: Raiz): 5 Gb
+<item/> <b>Criar Partição</b> #3 (primária, início, ext3, /var, Rótulo: Var): todo espaço disponível.
+<item/> <b>Finalizar o particionamento e escrever as mudanças no disco</b>.
+<item/> <b>Escrever as mudanças nos discos</b>: Sim.
+</lista>
+
+<subsubsecao>Opções finais</subsubsecao>
+
+<lista>
+<item/> <b>Senha do root</b>: senha complexa.
+<item/> <b>Novo usuário</b>: suporte
+<item/> <b>Senha do novo usuário</b>: outra senha complexa.
+<item/> <b>Escolha o software a ser instalado</b>: nenhum (desmarque todos).
+<item/> <b>Instalar o carregador de inicialização GRUB na MBR</b>: sim.
+<item/> <b>Instalação finalizada</b>: continuar.
+</lista>
+
+

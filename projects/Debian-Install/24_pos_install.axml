@@ -1,0 +1,406 @@
+<capitulo>Procedimentos pós-instalação</capitulo>
+
+    Este capítulo descreve os procedimentos a serem realizados após a
+instalação do sistema operacional. Os procedimentos a seguir devem ser
+realizados em sistemas virtualizados ou não-virtualizados, exceto quando
+indicado pelos termos:
+
+<lista>
+<item/>dom0: procedimento válido somente para sistemas dom0 (hosts).
+<item/>domU: procedimento válido somente para sistemas domU (guests).
+</lista>
+
+<subsecao>Firmware (dom0)</subsecao>
+
+    Para o adequado funcionamento de certos <i>hardware</i>, um
+<i>firmware</i> pode ser requerido. A lista abaixo enumera os principais
+<i>firmware</i> utilizados:
+   
+<tabela>{|l|l|l|}
+    <lh><th>Firmware</th> <col/> <th>Pacote</th>  <col/> <th>Dispositivo</th></lh>
+    <tr>bnx2-06-4.0.5.fw  <col/> firmware-bnx2    <col/>  Broadcom Corporation NetXtreme II BCM5708</tr>
+    <tr>ql2400_fw.bin     <col/> firmware-qlogic  <col/>  QLogic Corp. ISP2432-based 4Gb Fibre Channel</tr>
+    <legenda>Firmware</legenda>
+    <nome>tab:firmware</nome>
+</tabela>
+
+    Tratando-se de <i>firmware</i> de interfaces de rede, e não havendo
+outra funcional, deve-se obter o pacote e realizar a instalação como
+exemplificado:
+
+<comandoNumerado>
+dpkg -i firmware-bnx2_0.14+lenny2_all.deb
+</comandoNumerado>
+
+    Após a instalação é necessário descarregar o módulo (driver) da placa de
+rede em questão (modprobe -r bnx2), e carregá-lo novamente (modprobe bnx2).
+Em caso de não identificar o nome do módulo, apenas reinicie a máquina.
+
+<subsecao>Configuração de rede</subsecao>
+
+    A seguir segue um exemplo de configuração de rede:
+
+<lista>
+<item/> /etc/network/interfaces
+</lista>
+
+<comando>
+# allow-hotplug eth0
+auto eth0
+iface eth0 inet static
+    address 10.15.1.X
+    network 10.15.1.0
+    broadcast 10.15.1.255
+    netmask 255.255.255.0
+    gateway 10.15.1.2
+</comando>
+
+    Caso a interface tenha sido configurada durante a instalação do sistema
+operacional, deve-se apenas alterar opção <b>allow-hotplug</b> para
+<b>auto</b> como indicado no quadro acima.
+
+<lista>
+<item/> /etc/resolv.conf
+</lista>
+
+<comando>
+nameserver 10.15.1.14
+search ufpa.br
+</comando>
+
+<lista>
+<item/> /etc/hosts
+</lista>
+
+    Caso o sistema de autenticação seja integrado ao LDAP, e para evitar um
+atraso no login caso o sistema de DNS esteja indisponível, deve-se adicionar
+a entreda referente ao nome do servidor LDAP (muana, no caso) no /etc/hosts.
+
+<comando>
+127.0.0.1       localhost
+10.15.1.X       servidor.ufpa.br          servidor
+10.15.1.67      muana.ufpa.br             muana
+</comando>
+
+<subsecao>aptitude</subsecao>
+
+    O Debian fornece os utilitários <b>apt-get</b> e <b>aptitude</b> que
+realizam <i>download</i> de <i>software</i> e realizam a interface com o
+sistema de instalação, atualização e remoção: <i>dpkg</i>. Atualmente o
+uso do <i>software</i> <b>aptitude</b> é indicado.
+
+    Os pacotes de <i>software</i> disponibilizados são classificados em
+dependentes, recomendados e sugeridos. A instalação automática de
+<i>software</i> recomendado pode ser desabilitada através da adição da
+configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>:
+
+<comando>
+Apt::Install-Recommends "false";
+</comando>
+
+   Caso a conectividade da rede seja fornecida por um proxy http, a seguinte
+configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
+devida adequação ao endereço IP do proxy:
+
+<comando>
+Acquire::http::Proxy "http://172.16.0.1:3128/";
+</comando>
+
+    O utilitário <i>aptitude</i> também requer a configuração da origem dos
+<i>software</i> a serem instalados (repositórios), e isto é realizado
+no arquivo <b>/etc/apt/sources.list</b>, conforme indicado no quadro abaixo.
+
+<comando>
+deb http://mirror.ufpa.br/debian lenny main contrib non-free
+deb http://mirror.ufpa.br/debian-security lenny/updates main contrib non-free
+deb http://ftp.br.debian.org/debian lenny main contrib non-free
+deb http://security.debian.org/ lenny/updates main
+deb http://volatile.debian.org/debian-volatile lenny/volatile main
+</comando>
+
+<subsecao>Atualização do sistema</subsecao>
+
+    Após a instalação do sistema operacional e configuração dos repositórios
+de <i>software</i>, deve-se realizar a atualização do sistema conforme
+indicado:
+
+<comandoNumerado>
+aptitude update
+aptitude safe-upgrade
+</comandoNumerado>
+
+<subsecao><i>software</i> a remover</subsecao>
+
+    Os seguintes pacotes não são necessários, e podem ser removidos como
+indicado:
+
+<comandoNumerado>
+aptitude purge laptop-detect tasksel tasksel-data vim-tiny
+</comandoNumerado>
+
+<subsecao><i>software</i> adicionais</subsecao>
+
+    Deve-se realizar a instalação de <i>software</i> comumente utilizados:
+
+<comandoNumerado>
+# aptitude install less joe vim ssh tcpdump
+</comandoNumerado>
+
+<subsecao>Desativar suporte a IPv6</subsecao>
+
+<lista>
+<item/> <b>/etc/modprobe.d/aliases</b>: realizar alteração (l. 17) a seguir.
+</lista>
+
+<comando>
+alias net-pf-10 off # ipv6
+</comando>
+
+<subsecao>NTP e Timezone</subsecao>
+
+	Deve-se ajustar o <i>timezone</i> adequadamente através do comando:
+
+<comandoNumerado>
+dpkg-reconfigure tzdata
+</comandoNumerado>
+
+	Deve-se instalar o cliente NTP:
+
+<comandoNumerado>
+aptitude install ntpdate
+</comandoNumerado>
+
+<lista>
+<item/> <b>/etc/default/ntpdate</b>: realizar alteração (l. 10) a seguir.
+</lista>
+
+<comando>
+NTPSERVERS="ntp.ufpa.br"
+</comando>
+
+<lista>
+<item/> <b>/etc/crontab</b>: configurar o <b>cron</b> para sincronização de horário.
+</lista>
+
+<comando>
+0  */1  * * *   root    /usr/sbin/ntpdate-debian -s >/dev/null 2>&1
+</comando>
+
+<subsecao>Desativar logs no console</subsecao>
+
+<lista>
+<item/> <b>/etc/sysctl.conf</b>: descomentar configuração a seguir (l. 10).
+</lista>
+
+<comando>
+kernel.printk = 4 4 1 7
+</comando>
+
+	Aplicar configuração:
+
+<comandoNumerado>
+sysctl -p
+</comandoNumerado>
+
+<subsecao>Ativar Firewall</subsecao>
+
+<lista>
+<item/> <b>/etc/init.d/firewall.sh</b>: criar arquivo com conteúdo abaixo
+e realizar adequações necessárias.
+</lista>
+
+<comando>
+#!/bin/bash                                          
+
+case "$1" in
+    start)
+        iptables -F
+        iptables -P INPUT DROP
+        iptables -A INPUT -i lo -j ACCEPT
+        iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A INPUT -p tcp --syn --dport   22 -j ACCEPT -s 10.15.10.0/24
+        iptables -A INPUT -p tcp --syn --dport 5666 -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -m limit --limit 20/s -j LOG --log-prefix 'Firewall: '
+    ;;
+    stop)
+        iptables -P INPUT ACCEPT
+        iptables -F
+    ;;
+    status|list)
+        iptables -nvL
+    ;;
+    *)
+        echo "Sintaxe: $0 [ start | stop | list ]"
+    ;;
+esac
+</comando>
+
+    Definir permissão de execução e inicialização automática:
+
+<comandoNumerado>
+chmod 755 /etc/init.d/firewall.sh
+update-rc.d firewall.sh defaults
+/etc/init.d/firewall.sh start
+</comandoNumerado>
+
+<subsecao>Integrar PAM e NSS ao LDAP</subsecao>
+
+    Instalação bibliotecas de acesso ao LDAP. Os questionamentos realizados
+na instalação podem ser ignorados, pois a configuração será realizada a seguir.
+
+<comandoNumerado>
+aptitude install libpam-ldap libnss-ldap nscd
+</comandoNumerado>
+
+
+    Os arquivos de configuração a seguir podem conter somente o
+conteúdo indicado (exceto o /etc/nsswitch.conf), podendo ser descartado o
+conteúdo anterior.
+
+<lista>
+<item/> <b>/etc/pam_ldap.conf</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+base ou=Gerência de Suporte e Infra-estrutura,ou=Users,ou=CTIC,o=UFPA
+uri ldap://muana.ufpa.br
+ldap_version 3
+</comando>
+
+<lista>
+<item/> <b>/etc/libnss-ldap.conf</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+base ou=Gerência de Suporte e Infra-estrutura,ou=Users,ou=CTIC,o=UFPA
+uri ldap://muana.ufpa.br
+ldap_version 3
+</comando>
+
+
+<lista>
+<item/> <b>/etc/pam.d/common-account</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+account sufficient      pam_unix.so
+account required        pam_ldap.so use_first_pass
+</comando>
+
+<lista>
+<item/> <b>/etc/pam.d/common-auth</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+auth    sufficient      pam_unix.so nullok_secure
+auth    required        pam_ldap.so use_first_pass
+</comando>
+
+<lista>
+<item/> <b>/etc/pam.d/common-password</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+password   sufficient   pam_unix.so nullok obscure min=4 max=8 md5
+password   required     pam_ldap.so try_first_pass
+</comando>
+
+<lista>
+<item/> <b>/etc/pam.d/common-session </b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+session required        pam_mkhomedir.so skel=/etc/skel umask=0022
+session sufficient      pam_unix.so
+session required        pam_ldap.so
+</comando>
+
+<lista>
+<item/> <b>/etc/nsswitch.conf </b>: adequar as configurações para as
+indicadas a seguir:
+</lista>
+
+<comando>
+passwd:         files ldap
+group:          files ldap
+shadow:         files ldap
+</comando>
+
+<subsecao>Instalar e configurar o <b>sudo</b></subsecao>
+
+<comandoNumerado>
+aptitude install sudo
+</comandoNumerado>
+
+<lista>
+<item/> <b>/etc/sudoers</b>: realizar as seguintes configurações:
+</lista>
+
+<comando>
+rei         ALL=(ALL) ALL
+hugo        ALL=(ALL) ALL
+cedon       ALL=(ALL) ALL
+clodoaldo   ALL=(ALL) ALL
+</comando>
+
+<subsecao>Instalar agente de inventário de Hardware e Software
+<b>ocsinventory</b></subsecao>
+
+<comandoNumerado>
+aptitude install ocsinventory-agent
+</comandoNumerado>
+
+<lista>
+<item/> <b>Método utilizado para gerar inventário</b>: http
+<item/> <b>Definir servidor de inventário</b>: sucupira.ufpa.br
+</lista>
+
+<subsecao>Montagem de partição via UUID (dom0)</subsecao>
+
+    Este procedimento a montagem de partições do sistema independente do nome
+do dispositivo associado aos discos. Útil quando se tem storages conectados ao
+equipamento. Desta forma, deve-se identificar a partição /boot em uso no
+/etc/fstab:
+
+<comando>
+/dev/sdX1       /boot      ext3     defaults             0   2
+</comando>
+
+    Obter o UUID:
+
+<comandoNumerado>
+vol_id -u /dev/sdX1
+</comandoNumerado>
+
+    Redifinir <b>/etc/fstab</b>:
+
+<comando>
+UUID=dc8d8bb4-e5a3-4f30-aa87-1b0631e691a4  /boot  ext3  defaults  0   2
+</comando>
+
+    <b>Atenção</b>: o sistema udev não cria links em /dev/disk/by-uuid/ para
+volumes lógicos, visto que estes não estão vinculados a um nome de
+dispositivo, sendo identificados corretamente mesmo se o nome do dispositivo
+sofrer alteração.
+
+<subsecao>Procedimentos externos</subsecao>
+
+<lista>
+<item/> cadastrar nome do servidor no DNS.
+<item/> cadastrar serviços de rede no servidor de monitoramento.
+<item/> cadastrar arquivos variáveis (configurações, base de dados, etc) no servidor de BACKUP.
+</lista>
+
+<subsecao>Ativando console hvc0 (domU)</subsecao>
+
+    Este procedimento deve ser realizado somente em máquinas virtuais
+hóspedes.
+
+<lista>
+<item/> <b>/etc/inittab</b>: adicionar o conteúdo a seguir:
+</lista>
+
+<comando>
+8:2345:respawn:/sbin/getty 38400 hvc0
+</comando>
