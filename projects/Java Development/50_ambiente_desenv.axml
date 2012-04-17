@@ -42,9 +42,9 @@ podendo-se copiar este diretório para outra estação de trabalho.
 	Os procedimentos para instalação são indicados a seguir:
 
 <comando>
-$ cd /opt
-$ tar xzf /path/to/eclipse-java-indigo-SR1-linux-gtk.tar.gz
-$ chown -R johndoe: eclipse
+# cd /opt
+# tar xzf /path/to/eclipse-java-indigo-SR1-linux-gtk.tar.gz
+# chown -R johndoe: eclipse
 </comando>
 
 	Substitua o termo <i>johndoe</i> pelo usuário que executará o eclipse.
