@@ -65,7 +65,7 @@ operacional, deve-se apenas alterar opção <b>allow-hotplug</b> para
 
 <comando>
 nameserver 10.15.1.14
-search ufpa.br
+search example.com
 </comando>
 
 <lista>
@@ -78,8 +78,8 @@ a entreda referente ao nome do servidor LDAP (muana, no caso) no /etc/hosts.
 
 <comando>
 127.0.0.1       localhost
-10.15.1.X       servidor.ufpa.br          servidor
-10.15.1.67      muana.ufpa.br             muana
+10.15.1.X       server.example.com        server
+10.15.1.67      ldap.example.com          ldap
 </comando>
 
 <subsecao>aptitude</subsecao>
@@ -111,11 +111,9 @@ Acquire::http::Proxy "http://172.16.0.1:3128/";
 no arquivo <b>/etc/apt/sources.list</b>, conforme indicado no quadro abaixo.
 
 <comando>
-deb http://mirror.ufpa.br/debian lenny main contrib non-free
-deb http://mirror.ufpa.br/debian-security lenny/updates main contrib non-free
-deb http://ftp.br.debian.org/debian lenny main contrib non-free
-deb http://security.debian.org/ lenny/updates main
-deb http://volatile.debian.org/debian-volatile lenny/volatile main
+deb http://security.debian.org/ squeeze/updates main contrib non-free
+deb http://ftp.br.debian.org/debian/ squeeze main contrib non-free
+deb http://ftp.br.debian.org/debian/ squeeze-updates main contrib non-free
 </comando>
 
 <subsecao>Atualização do sistema</subsecao>
@@ -175,7 +173,7 @@ aptitude install ntpdate
 </lista>
 
 <comando>
-NTPSERVERS="ntp.ufpa.br"
+NTPSERVERS="ntp.example.com"
 </comando>
 
 <lista>
@@ -263,8 +261,8 @@ conteúdo anterior.
 </lista>
 
 <comando>
-base ou=Gerência de Suporte e Infra-estrutura,ou=Users,ou=CTIC,o=UFPA
-uri ldap://muana.ufpa.br
+base ou=NetworkUnit,o=Example
+uri ldap://ldap.example.com
 ldap_version 3
 </comando>
 
@@ -273,8 +271,8 @@ ldap_version 3
 </lista>
 
 <comando>
-base ou=Gerência de Suporte e Infra-estrutura,ou=Users,ou=CTIC,o=UFPA
-uri ldap://muana.ufpa.br
+base ou=NetworkUnit,o=Example
+uri ldap://ldap.example.com
 ldap_version 3
 </comando>
 
@@ -353,7 +351,7 @@ aptitude install ocsinventory-agent
 
 <lista>
 <item/> <b>Método utilizado para gerar inventário</b>: http
-<item/> <b>Definir servidor de inventário</b>: sucupira.ufpa.br
+<item/> <b>Definir servidor de inventário</b>: sucupira.example.com
 </lista>
 
 <subsecao>Montagem de partição via UUID (dom0)</subsecao>

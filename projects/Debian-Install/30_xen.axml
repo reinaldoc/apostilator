@@ -64,7 +64,7 @@ aptitude install xen-tools
 
 <comando>
 # ...
-mirror = http://mirror.ufpa.br/debian
+mirror = http://ftp.br.debian.org/debian/
 # ...
 serial_device = hvc0
 # ...
@@ -100,7 +100,7 @@ options=defaults
 </comando>
 
 <comandoNumerado>
-xen-create-image --hostname=servidor.ufpa.br --lvm vgLocal               \
+xen-create-image --hostname=servidor.example.com --lvm vgLocal           \
   --partitions template-default --memory=1024Mb --passwd --role udev     \
   --ip=10.15.1.206 --netmask=255.255.255.0 --gateway=10.15.1.2           \
   --arch=i386 --dist=lenny
@@ -141,7 +141,7 @@ lvcreate -L10G -n /dev/vgLocal/servidor.c
 </comandoNumerado>
 
 <lista>
-<item/> <b>/etc/xen/servidor.ufpa.br.cfg</b>: criar o arquivo de
+<item/> <b>/etc/xen/server.example.com.cfg</b>: criar o arquivo de
 configuração:
 </lista>
 
@@ -150,7 +150,7 @@ builder = 'hvm'
 device_model = '/usr/lib/xen-3.2-1/bin/qemu-dm'
 memory = 1024
 shadow_memory = 8
-name = "servidor.ufpa.br"
+name = "server.example.com"
 disk = [ 'phy:/dev/mapper/vgLocal-servidor.c,hda,w',
          'file:/root/win2003cd01.iso,hdc:cdrom,r' ]
 vif = [ 'type=ioemu, bridge=eth0' ]
@@ -167,7 +167,7 @@ serial = 'pty'
     Iniciando máquina virtual:
 
 <comandoNumerado>
-xm create servidor.ufpa.br.cfg
+xm create server.example.com
 </comandoNumerado>
 
     Listando máquinas virtuais ativas:
