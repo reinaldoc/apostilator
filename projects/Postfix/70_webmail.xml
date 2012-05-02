@@ -1,0 +1,199 @@
+<capitulo>Webmail</capitulo>
+
+	Webmail é uma aplicação web que implementa um cliente para os protocolos de acesso a mensagens POP3 e/ou IMAP4. Em sua maioria desenvolvidos em PHP, os mais utilizados são SquirrelMail, OpenWebmail, Horde-IMP, RoundCube e o projeto brasileiro Uebimiau.
+
+	Os Webmails são baseados no sistema de internacionalização para permitir o uso de diversas linguagens, verifique se o locales está configurado corretamente:
+
+<comando>
+$ cat /etc/locale.gen
+pt_BR.UTF-8 UTF-8
+pt_BR ISO-8859-1
+# locale-gen
+</comando>
+
+	O próximo passo é a instalação do servidor web Apache2 com suporte a PHP:
+
+<comando>
+	# aptitude install apache2 php5 libapache2-mod-php5	
+</comando>
+
+<subsecao>SquirrelMail</subsecao>
+
+	SquirrelMail é o webmail com muitos módulos (plugins) adicionais, entretando possui uma interface simples. Sua instalação é realizada através do comando:
+	
+<comando>
+	# aptitude install squirrelmail squirrelmail-locales
+</comando>
+
+	Sua configuração é realizada através de menus. Como indicado:
+
+<comando>
+	# squirrelmail-configure
+</comando>
+
+	A configuração inicial deve ser realizada no menu "Server Setting", acessível a partir da opção "2".
+
+<comando>
+SquirrelMail Configuration : Read: config.php (1.4.0)
+---------------------------------------------------------
+Main Menu --
+1.  Organization Preferences
+2.  Server Settings
+3.  Folder Defaults
+4.  General Options
+5.  Themes
+6.  Address Books
+7.  Message of the Day (MOTD)
+8.  Plugins
+9.  Database
+10. Languages
+
+D.  Set pre-defined settings for specific IMAP servers
+
+C   Turn color on
+S   Save data
+Q   Quit
+
+Command >>
+</comando>
+
+	O servidor de IMAP deve ser indicado através da sub-opção "A", como indicado:
+
+<comando>
+IMAP Settings
+--------------
+4.  IMAP Server            : localhost
+5.  IMAP Port              : 993
+6.  Authentication type    : login
+7.  Secure IMAP (TLS)      : true
+8.  Server software        : cyrus
+9.  Delimiter              : /
+</comando>
+	
+	Configurações relativas ao servidor SMTP devem ser especificadas na sub-opção "B":
+
+<comando>
+SMTP Settings
+-------------
+4.   SMTP Server           : localhost
+5.   SMTP Port             : 465
+6.   POP before SMTP       : false
+7.   SMTP Authentication   : login
+8.   Secure SMTP (TLS)     : true
+9.   Header encryption key :
+</comando>
+
+	O próximo passo é configurar as pastas padrões, e pode ser realizado retornando para o menu principal através da opção <b>r</b>, através do menu "Folder Defaults", acessível a partir da opção "3":
+
+<comando>
+SquirrelMail Configuration : Read: config.php (1.4.0)
+---------------------------------------------------------
+Folder Defaults
+#...
+3.  Trash Folder                  : INBOX/Trash
+4.  Sent Folder                   : INBOX/Sent
+5.  Drafts Folder                 : INBOX/Drafts
+#...
+</comando>
+
+	Assim, o último procedimento é a definição da linguagem utilizada, que deve ser realizada através do menu principal "Languages", acessível a partir da opção "10":
+
+<comando>
+SquirrelMail Configuration : Read: config.php (1.4.0)
+---------------------------------------------------------
+Language preferences
+1.  Default Language       : pt_BR
+2.  Default Charset        : iso-8859-1
+#...
+</comando>
+
+	A opção "s" pode ser utilizada para salvar as configurações realizadas:
+
+<comando>
+Command >> s
+
+Data saved in config.php
+Press enter to continue...
+</comando>
+
+	Um link no diretório principal do servidor web deve criado para o diretório de instalação do SquirrelMail:
+
+<comando>
+	# ln -s /usr/share/squirrelmail /var/www/webmail
+</comando>
+
+	O SquirrelMail pode ser acessado pela endereço:
+
+<comando>
+http://localhost/webmail
+</comando>
+
+
+<subsecao>RoundCube</subsecao>
+
+	RoundCube é um projeto inicial de webmail implementado em PHP e utiliza modernos padrões web XHTML e CSS2. Sua instalação de comentada a seguir:
+
+<comando>
+	# cd /root
+	# wget http://ufpr.dl.sourceforge.net/sourceforge/\
+	       roundcubemail/roundcubemail-0.1-rc1.1.tar.gz
+	# tar xzf roundcubemail-0.1-rc1.1.tar.gz
+	# mv roundcubemail-0.1-rc1 /usr/share/roundcube
+	# chown www-data /usr/share/roundcube/temp /usr/share/roundcube/logs
+</comando>
+
+	O RoundCube necessita de um banco de dados para guardar informações como a lista de contato dos usuários, tendo suporte aos bancos PostgreSQL, MySQL e SQLite. Utilizaremos o PoostgreSQL conforme indicado:
+
+<comando>
+	# aptitude install postgresql-8.1 php5-pgsql
+	# /etc/init.d/apache2 restart
+	# su - postgres
+	$ createuser roundcube
+	$ createdb -O roundcube roundcube
+	$ psql roundcube
+	> ALTER USER roundcube WITH PASSWORD 'senha';
+	> \q
+	$ exit
+	# psql -h 127.0.0.1 -U roundcube -d roundcube \
+	       -f /usr/share/roundcube/SQL/postgres.initial.sql
+</comando>
+
+	As configurações do RoundCube são realizadas nos arquivos db.inc.php e main.inc.php contidos no diretório /usr/share/roundcube/config, renomeie os modelos de configuração conforme indicado:
+
+<comando>
+	# cd /usr/share/roundcube/config
+	# mv db.inc.php.dist db.inc.php
+	# mv main.inc.php.dist main.inc.php
+</comando>
+
+	Realize a configuração no arquivo db.inc.php:
+
+<comando>
+	$rcmail_config['db_dsnw'] = 'pgsql://roundcube:senha@127.0.0.1/roundcube';
+</comando>
+
+	Realize a configuração no arquivo main.inc.php:
+
+<comando>
+	$rcmail_config['default_host'] = 'ssl://127.0.0.1:993';
+	$rcmail_config['smtp_server'] = 'ssl://127.0.0.1:465';
+	$rcmail_config['smtp_user'] = '%u';
+	$rcmail_config['smtp_pass'] = '%p';
+	$rcmail_config['smtp_auth_type'] = 'PLAIN';
+	$rcmail_config['des_key'] = '123abc123abc123abc123abc';
+	$rcmail_config['junk_mbox'] = 'Spam';
+	$rcmail_config['default_imap_folders'] =
+	                        array('INBOX', 'Drafts', 'Sent', 'Spam', 'Trash');
+</comando>
+
+	Um link no diretório principal do servidor web deve criado para o diretório de instalação do RoundCube:
+
+<comando>
+	# ln -s /usr/share/roundcube /var/www/webmail2
+</comando>
+
+	O RoundCube pode ser acessado através do endereço:
+
+<comando>
+http://localhost/webmail2
+</comando>

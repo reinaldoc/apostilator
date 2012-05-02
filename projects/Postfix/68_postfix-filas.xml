@@ -1,0 +1,126 @@
+<capitulo>Postfix: filas de entrega</capitulo>
+
+	Umas das funções mais importantes de um MTA é o seu correto gerenciamento de filas. Existem diferentes filas para cada etapa do sistema e como já vimos antes, o Postfix possui uma variedade de filas para atender todas as demandas de um completo sistema de correio. 
+
+	Quem controla as filas é o qmgr (Queue Manager), uma rotina que roda em segundo plano gerenciando as 5 diferentes filas do Postfix (a saber: active, bounce, corrupt, deferred e hold). 
+
+	As filas estão localizadas no diretório /var/spool/postfix/, existindo um doretório com nome de cada fila existente:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-intro-1</arquivo>
+    <legenda>Descrição das filas de mensagens</legenda>
+    <nome>fig:postfix-intro-1</nome>
+</figura>
+
+<subsecao>Fila deferred</subsecao>
+
+	As mensagens permanecem nessa fila até que sejam entregues com sucesso ou expiram, então elas são devolvidas para o remetente (bounce). Uma vez que a mensagem não pôde ser entregue, o Postfix marca essa mensagem com um timestamp indicando o momento de uma nova tentativa. 
+
+	Periodicamente o Postfix verifica as mensagens que estão paradas na fila deferred e tenta fazer o envio. Se não conseguir enviar em até 5 dias, a mensagem é enviada como bounce para o remetente indicando que não foi possível ser entregue e informa o erro. O valor de 5 dias pode ser alterado no main.cf pela diretiva maximal_queue_lifetime
+
+<subsecao>Fila corrupt</subsecao>
+
+	Esse tipo de mensagem é bastante raro. Se isso está acontecendo com certa frequencia em seu sistema, indica que pode haver algum problema de memória ou de hardware. O Postfix costuma recusar mensagens com problemas no momento que estabelece o diálogo, isso é um papel dos daemons cleanup e trivial-rewrite, que já vimos antes. Portanto, esses dois daemons já devem descartar a mensagem, não deixando ela chegar até a fila. 
+
+	Se seu servidor apresenta algum problema de hardware (memória, processamento ou disco), a mensagem pode se corromper na fila, o que é muito raro. O Postfix mantém as mensagens que se corromperam na fila no diretório /var/spool/postfix/corrupt .
+
+<subsecao>Ferramentas da fila</subsecao>
+
+	O Postfix possui uma ferramenta que ajuda a desempenhar algumas tarefas na fila, como por exemplo:
+
+<lista>
+<item/> Listas mensagens;
+<item/> Remover mensagens;
+<item/> Segurar mensagens (hold);
+<item/> Enfileirar mensagens;
+<item/> Exibir conteúdo de uma mensagem;
+<item/> Reprocessar mensagens;
+</lista>
+
+<subsecao>Listando a fila</subsecao>
+
+	Ao listar o conteúdo da fila, você terá acesso às seguintes informações:
+
+<lista>
+<item/> ID da mensagem (identificador único);
+<item/> Tamanho;
+<item/> Hora do recebimento da mensagem;
+<item/> Remetente;
+<item/> Destinatários da mensagem;
+</lista>
+
+Se a mensagem está em deferred, o motivo da não entrega da mensagem também é exibido.
+
+	As mensagens que estão sendo processadas no momento são marcadas com um asterisco (*) antes do identificador da mensagem.
+
+	Você pode listar toda a fila do Postfix com o seguinte comando:
+
+<comando>
+	# postqueue -p
+</comando>
+	A saída do comando seria parecida com o seguinte:
+
+<comando>
+-Queue ID- --Size-- ----Arrival Time---- -Sender/Recipient-------
+4754B2B068A0*    3906 Sun Jun19 11:22:41  rei@4linux.com.br
+                                          reinaldoc@gmail.com
+</comando>
+
+	Perceba que logo após o ID da mensagem, existe um asterisco. Isso significa que a mensagem está sendo processada naquele momento.
+
+<subsecao>Removendo mensagens</subsecao>
+
+	O comando postsuper permite remover mensagens da fila, para isso, utilize a opção -d como mostra abaixo:
+
+<comando>
+	# postsuper -d 4754B2B068A0
+	postsuper: 4754B2B068A0: removed
+	postsuper: Deleted: 1 message
+</comando>
+
+Se você deseja remover todas as mensagens da fila, basta um:
+
+<comando>
+	# postsuper -d ALL
+	postsuper: Deleted: 23 messages
+</comando>
+
+	Repare que o parâmetro ALL deve ser informado tudo em maiúsculo.
+
+
+<subsecao>Segurando mensagens</subsecao>
+
+	Pode existir situações onde você tenha necessidade de segurar mensagens na fila. Para isso, você pode usar o comando postsuper, com a opção -h. As mensagens em espera ficam marcadas com uma exclamação após seu ID e ficam nessa fila por tempo indeterminado, até que o administrador rode outro comando para soltar as mensagens, o postsuper -H (maíusculo). Veja o exemplo:
+<comando>
+	# postsuper -h 849D9a89
+</comando>
+
+	Para liberar:
+<comando>
+	# postsuper -H 849D9a89
+</comando>
+
+<subsecao>Reprocessando mensagens</subsecao>
+
+	Se você teve mensagens em deferred devido a alguma falha temporária ou algum erro na configuração, você pode pedir ao Postfix que reprocesse essas mensagens imediatamente, sem precisar esperar o período padrão que o Postfix faria esse trabalho automaticamente. 
+
+	Para reprocessar as mensagens, basta um:
+
+<comando>
+	# postsuper -r ALL
+</comando>
+
+	As mensagens ganharão um novo ID e uma nova entrada no cabeçalho (Received:).
+
+<subsecao>Exibindo o conteúdo de uma mensagem</subsecao>
+
+	Você pode precisar ler o conteúdo de uma mensagem na fila, para isso, o comando Postcat atende essa demanda, como por exemplo:
+
+<comando>
+	# postcat -q DF5616A
+</comando>
+
+	A saída seria da mensagem em formato texto puro, na seção do usuário.
+
+

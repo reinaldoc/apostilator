@@ -1,0 +1,103 @@
+<capitulo>Utilitários e ferramentas administrativas</capitulo>
+
+	Abaixo uma tabela com algumas ferramentas e utilitários que podem facilitar a vida do administrador de sistemas em um servidor de correio.
+
+<figura>
+    <tamanho>0.8</tamanho>
+    <arquivo>imgs/postfix-util-1</arquivo>
+    <legenda>Utilitários e ferramentas.</legenda>
+    <nome>fig:postfix-util-1</nome>
+</figura>
+
+
+<subsecao>Como detectar e evitar gargalos</subsecao>
+
+	Uma das tarefas mais complicadas para o administrador de sistemas é saber dimensionar sua rede e saber investir em hardware/software para evitar lentidão no sistema ou dificuldade de seus usuários ao acessar os serviços de sua rede. 
+
+<subsecao>Dimensionando o hardware</subsecao>
+
+	O erro mais comum do administrador de sistemas é dimensionar o hardware errado para o ambiente errado. Muitas vezes esse administrador acredita que se obter um Xeon com quatro processadores, 2Gb de memória RAM, placa de rede giga, muito espaço em disco vai estar solucionando a necessidade de uma rede de mil caixas-postais onde cada usuário recebe uma média de 100 e-mails por dia e fica mais de 8 horas pendurados no IMAP (webmail ou client de e-mail). Pode chegar um ponto dessa estrutura apresentar lentidão ao rotear mensagens, mas os recursos de
+memória e processador estão bastante baixos. Por que isso? A resposta é simples: o administrador esqueceu de calcular o IO (Input/Output) e carga do disco. 
+
+
+Um sistema de e-mails como o Postfix consome muito disco, necessita de um HD muito rápido para trabalhar com IO em disco. Como já foi apresentado no início dessa apostila, para cada etapa da fila do Postfix a mensagem fica localizada em um espaço em disco. Quando passa para próxima fila, essa mensagem é movida de um lado ao outro. Pensando assim é simples, mas imagine isso acontecendo em um servidor que está recendo milhares de mensagens em um curto período de tempo. O uso de memória e processador pode estar baixo, mas o IO em disco poderá estar extremamente alto. 
+
+	O que é melhor nesses casos: ao invés de investir alto em uma máquina boa, invista o mesmo valor comprando diversas máquinas pequenas, com um processador, quantidade menor de memória e discos bons e confiáveis. Dessa forma você pode dividir sua rede em algumas máquinas e assim diluir toda carga de IO entre essas máquinas. 
+
+	Para a realidade do Postfix, o que você pode fazer é separar os serviços. Uma máquina seria o MTA, receberia e-mails da internet e faria o processamento de anti-vírus e anti-spam. Outra máquina seria o Cyrus e teria todas as caixas-postais dos seus usuários. Por último, uma outra máquina poderia ser o Webmail onde os seus usuários fariam a conexão direta para ler e enviar mensagens. Você quebrando o sistema em três partes, reduzirá muito o “overhead” do seu sistema e o custo seria quase o mesmo de comprar apenas um servidor bom e colocar todos os serviços nessa única máquina. 
+
+
+<subsecao>Como identificar o uso do disco</subsecao>
+
+	Existem ferramentas na maioria dos sistemas Unix que permitem uma visão geral do uso de todas as partes do sistema, incluindo IO de disco. A ferramenta vmstat pode ajudar muito nesse caso. Os exemplos abaixo demonstram duas situações bem diferentes, a primeira é de uma máquina que está bastante “estressada” e a segunda, de uma máquina bastante tranqüila, que não está desempenhando nenhum papel naquele momento:
+
+<comando>
+root@akhenaton:~# vmstat 3 10
+procs -----------memory---------- ---swap-- -----io---- --system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in    cs us sy id wa
+ 2  2  18920   3480     16 193836    0    1    71    28 1133   951 10  2 87  1
+ 0  1  18924   4976     16 205468    0 4397  4267  7758 1206  2402 86  6  0  8
+ 1  0  18924   3800     16 207656    0    0  4053  2037 1160  2378 93  6  0  2
+ 1  0  18924   4292     16 207984    0  212  3925  2452 1157  2331 94  5  0  1
+ 1  0  18924   3956     16 208456    0   35  4480  3749 1173  2322 93  6  0  1
+ 2  0  18924   5000     16 207592    0    1  4864  1777 1158  2504 94  5  0  1
+ 1  0  18924   3564     16 209008    0    0  4608  3446 1173  2381 93  6  0  1
+ 1  0  18936   5024     16 207488    0    0  5335  2914 1173  2607 92  6  0  2
+ 1  0  18936   4632     16 207956    0    0  5036  2941 1170  2461 91  5  0  4
+1  0  18936   4224     16 208408    0    0  4825  1886 1172  2474 93  6  0  1
+
+root@akhenaton:~# vmstat 3 10
+procs -----------memory---------- ---swap-- -----io---- --system-- ----cpu----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in    cs us sy id wa
+ 0  0  18936  45644     16 168032    0    4    97    49 1133   958 11  2 86  1
+ 0  0  18936  45700     16 168036    0    0     1     3 1103   348  1  0 98  1
+ 0  0  18936  45708     16 168036    0    0     0    13 1115   429  0  0 100  0
+ 0  0  18936  45716     16 168036    0    0     0     0 1101   344  0  0 100  0
+ 0  0  18936  45716     16 168036    0    0     0     3 1113   369  1  0 98  0
+ 0  0  18936  45724     16 168060    0    0     8    21 1105   420  2  0 97  0
+ 0  0  18936  45724     16 168068    0    0     3     0 1113   355  0  0 100  0
+ 0  0  18936  45732     16 168068    0    0     0     0 1100   397  0  0 99  0
+ 0  0  18936  45732     16 168076    0    0     3    11 1114   354  0  0 100  0
+ 0  0  18936  45716     16 168100    0    0     8    72 1111   425  0  1 99  0
+</comando>
+	
+Vamos agora só apresentar os detalhes importantes para você interpretar a saída acima. Repare na coluna “io”, do primeiro bloco o “bi” (Blocks Input) e “bo” (Blocks Output) estão com valor bem elevado, ou seja, existe bastante gravação e leitura em disco. Observe também o campo cpu, a coluna “id” idle. Se o valor está zerado, significa que a CPU está bastante ocupada. Se estiver com valor alto (até 100), significa que a CPU está tranqüila, com toda sua capacidade de processamento liberada. Esses são os pontos que você deve verificar no vmstat para ajudar a encontrar gargalos. Lembrando: esse é apenas um indicador, analisando o vmstat sozinho ou não interpretando bem seus valores, pode não ajudar em nada. É bastante recomendado que você leia o man do vmstat para compreender melhor todo seu significado. 
+
+
+	Para instalar o vmstat no Debian, basta instalar o pacote sysstat
+
+<comando>
+aptitude install sysstat
+</comando>
+
+<subsecao>Verificando o Postfix com qshape</subsecao>
+
+
+	Existe uma ferramenta do Postfix chamada qshape, que indica o status atual do sistema e assim ajudar no diagnóstico de algum problema com as filas do Postfix. Veja o exemplo abaixo do qhape em produção:
+
+<comando>
+$ qshape -s hold | head
+                         T  5 10 20 40 80 160 320 640 1280 1280+
+                 TOTAL 486  0  0  1  0  0   2   4  20   40   419
+             yahoo.com  14  0  0  1  0  0   0   0   1    0    12
+  extremepricecuts.net  13  0  0  0  0  0   0   0   2    0    11
+        ms35.hinet.net  12  0  0  0  0  0   0   0   0    1    11
+      winnersdaily.net  12  0  0  0  0  0   0   0   2    0    10
+           hotmail.com  11  0  0  0  0  0   0   0   0    1    10
+           worldnet.fr   6  0  0  0  0  0   0   0   0    0     6
+        ms41.hinet.net   6  0  0  0  0  0   0   0   0    0     6
+                osn.de   5  0  0  0  0  0   1   0   0    0     4
+</comando>
+	
+Interpretando a saída acima, a primeira coluna mostra o domínio que possui mensagens acumuladas. A coluna da letra “T” significa total e os valores ao lado (5, 10, 20....) seria a quanto tempo (em minutos) a mensagem está parada na fila. Traduzindo a saída acima para o domínio yahoo.com, saberíamos que existem 486 mensagens paradas, sendo que uma delas está na fila entre 10 e 20 minutos e a maior quantidade de mensagens está parada na fila a mais de 1280 minutos. Ou seja, existe algum problema com  esse servidor de e-mails. Cabe ao administrador identificar o motivo do problema, seja DNS, rede ou até mesmo algum problema físico. 
+
+
+	Você pode também ver as mensagens de outras filas, como por exemplo:
+
+<comando>
+$ qshape deferred | less
+$ qshape incoming active deferred | less
+</comando>
+
+	Sempre que os valores estiverem altos, é importante analisar pelo mail.log ou através de outras ferramentas o motivo do servidor não estar conseguindo deixar as mensagens fluirem. Pode ser vários problemas, como resolução de nomes, rede até mesmo hardware. O local onde você poderá coletar informações importantes é o mail.log. Pode por exemplo dar um grep no mail.log procurando por ocorrências do domínio yahoo.com e tentar reproduzir alguns testes na mão, como telnet no servidor remoto ou rever as configurações do seu sistema por completo. 
+

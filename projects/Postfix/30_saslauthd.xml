@@ -1,0 +1,123 @@
+<capitulo>Saslauthd</capitulo>
+
+    O saslauthd é um serviço que fornece uma interface de autenticação,
+entre os aplicativos e as bases de usuários. Torna os aplicativos
+independentes dos drivers de acesso as bases, e implementa o protocolo SASL
+para a comunicação com estes.
+
+    Comumente utilizado em conjunto com serviços de correio, porém está
+disponível a qualquer software que requeira a validação de usuários. O
+saslauthd possui drivers de conexão a diversas bases e meios de autenticação
+(<i>authentication mechanisms</i>), dentre os mais utilizados estão LDAP,
+MySQL, PostgreSQL, Kerberos e PAM.
+
+    O diagrama a seguir contém os componentes relacionados com o saslauthd,
+os módulos, arquivos de configuração, socket de conexão e acesso a
+diferentes bases de dados.
+
+<figura>
+    <tamanho>0.9</tamanho>
+    <arquivo>imgs/saslauthd-1</arquivo>
+    <legenda>Topologia do saslauthd<citar>saslauthd</citar></legenda>
+    <nome>fig:saslauthd-1</nome>
+</figura>
+
+    O diagrama<ref>fig:saslauthd-1</ref> representa uma instância do
+saslauthd, sendo que cada instância pode estar vinculada apenas a um
+método de autenticação (<i>authentication mechanisms</i>) e estará acessível
+por um socket. O script de inicialização (/etc/init.d/saslauthd) tem suporte
+a diversas instâncias, identificando-as pela existência da configuração
+/etc/default/saslauthd-name1, onde <i>name1</i> é o nome dado a esta
+instância.
+
+<subsecao>Instalação</subsecao>
+
+	A instalação é realizada a seguir:
+
+<comando>
+    # aptitude install sasl2-bin libsasl2-modules
+</comando>
+
+<subsecao>Parâmetros de execução</subsecao>
+
+    Após a instalação do saslauthd, o serviço de autenticação não será
+ativado por padrão, sendo necessário a configuração dos parâmetros de
+execução. No arquivo <b>/etc/default/saslauthd</b> (configuração da
+instância padrão), defina a variável START=yes (l.1), o método de autenticação
+(l.4), e o caminho para socket de conexão (l.7), conforme indicado abaixo:
+
+<comandoNumerado>
+START=yes
+DESC="SASL Authentication Daemon"
+NAME="saslauthd"
+MECHANISMS="ldap"
+MECH_OPTIONS=""
+THREADS=5
+OPTIONS="-c -m /var/run/saslauthd"
+</comandoNumerado>
+
+<subsecao>Configuração</subsecao>
+
+    Alguns métodos de autenticação como "pam" e "shadow" não dependem de
+configurações adicionais, outros, como a autenticação em bases "ldap" ou
+"mysql", necessitam de configuração de conexão, que deve ser realizada no
+arquivo <b>/etc/saslauthd.conf</b>. A configuração abaixo exemplifica a
+integração a uma base LDAP:
+
+<comandoNumerado>
+ldap_servers: ldap://127.0.0.1
+ldap_port: 389
+ldap_version: 3
+ldap_search_base: o=Example
+ldap_auth_method: bind
+ldap_default_realm: imap.exemplo.com.br
+ldap_filter: (&(objectClass=inetOrgPerson)(mail=%u@%d))
+# ldap_bind_dn: uid=queryuser,ou=Accounts,o=Example
+# ldap_bind_pw: password
+</comandoNumerado>
+
+    As opções <i>ldap_bind_dn</i> e <i>ldap_bind_pw</i> podem ser utilizadas
+caso o Directory System Agent requeira autenticação (bind) para permitir a
+consulta ao registro do usuário.
+
+<subsecao>Autenticação</subsecao>
+
+    O utilitário <i>testsaslauthd</i> implementa um client-SASL, realizando
+a conexão ao socket e solicitando a autenticação através do protocolo SASL.
+Pode ser utilizado para testes de autenticação de usuários. Assim, reinicie
+o serviço saslauthd após o término de sua configuração:
+
+<comando>
+    # invoke-rc.d saslauthd restart
+</comando>
+
+    Teste a autenticação com o seguinte comando:
+
+<comando>
+    # testsaslauthd -u usuario -r exemplo.com.br -p senha
+    0: OK "Success."
+</comando>
+
+    Se o resultado for <i>0: OK 'Success.'</i>, o serviço de autenticação
+está configurado adequadamente, caso contrário reveja as configurações.
+
+    <br/>0.3cm
+
+    <b>Tarefa</b>: altere o diretório do socket de conexão de
+/var/run/saslauthd para /tmp/saslauthd e realize um teste de autenticação
+através do utilitário <i>testsaslauthd</i>. Devido o socket não estar
+localizado no caminho padrão, deve-se especificar o caminho através de uma
+opção do <i>testsaslauthd</i>.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: inicialize duas instâncias do saslauthd, a primeira
+autenticando em LDAP e com socket no diretório /var/run/saslauthd, a
+segunda autenticando na PAM e com socket no diretório /tmp/saslauthd. Ambos
+sockets só devem ser acessíveis somente pelos usuários do grupo sasl e pelo
+usuário root. Realize testes de autenticação com o utilitário testsaslauthd.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: desabilite as demais instâncias e configure o socket da
+instância padrão para o diretório /var/spool/postfix/var/run/saslauthd, e
+permita acesso somente aos membros do grupo sasl e ao usuário root.
+    <br/>0.3cm

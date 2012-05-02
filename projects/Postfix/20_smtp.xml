@@ -1,0 +1,417 @@
+<capitulo>Correio Eletrônico</capitulo>
+
+	O envio e recebimento de mensagens de correio eletrônico é
+baseado em padrões que especificam o formato da mensagem (ex: RFC5322 e RFC2045),
+a forma de transmissão entre domínios (ex: RFC5321) e localmente (ex: RFC2033 e RFC3848),
+e o armazenamento de e-mail até a aquisição da mensagem (ex: RFC1939 e RFC3501) pelo
+usuário final. Nesse capítulo conceitos sobre estes temas serão abordados.
+
+<figura>
+    <tamanho>1.0</tamanho>
+    <arquivo>imgs/smtp-basic</arquivo>
+    <legenda>Mensagens de correio eletrônico.</legenda>
+    <nome>fig:smtp-basic</nome>
+</figura>
+
+<subsecao>Request for Comments (RFC)</subsecao>
+
+    A especificação dos protocolos necessários para a transmissão de
+mensagens eletrônicas são publicadas pelo <i>Internet Engineering Task
+Force</i> (IETF) através de documentos <i>Request for Comments</i> (RFC).
+Estes contém informações detalhadas para a implementação, comunicação e
+intereoperabilidade entre <i>software</i> de transmissão de mensagens
+eletrônicas.
+
+    Os documentos de RFC são identificadas por códigos únicos, sendo que
+novas publicações podem ser realizadas atualizando (<i>updates</i>) versões
+existentes ou substituindo-as (<i>obsoletes</i>). Uma nova publicação recebe
+um novo código único.
+
+    Um exemplo desta evolução das especificações, é o protocolo de transmissão
+de mensagens (SMTP), que foi originalmente publicado na RFC 821, e
+posteriormente substituido por uma nova especificação, a RFC 2821, que
+ao mesmo tempo atualizou a RFC 1123. Atualmente a RFC 5321 é a publicação mais
+recente sobre o protocolo SMTP, e deve ser consultada para obtenção de
+informações sobre este protocolo.
+
+    Além da especificação do protocolo de transmissão de mensagens, também é
+padronizado o formato da mensagem de correio eletrônico. A adequada
+implementação dos padrões elimina as chances de problemas de comunicação ou
+má formatação da mensagem, como as falhas de acentuação.
+
+    Segue a listagem não exaustiva sobre as publicações acerca dos
+protocolos relacionados a transmissão de mensagens:
+
+<tabela>{|c|c|l|}
+<lh><th>Código</th> <col/> <th>Publicação</th> <col/> <th>Descrição</th></lh>
+<tr> RFC 821    <col/> 08/1982 <col/> Simple Mail Transfer Protocol </tr>
+<tr> RFC 822    <col/> 08/1982 <col/> ARPA Internet Text Messages </tr>
+<tr> RFC 1651   <col/> 07/1994 <col/> SMTP Service Extensions </tr>
+<tr> RFC 1652   <col/> 07/1994 <col/> SMTP Service Extension for 8bit-MIMEtransport </tr>
+<tr> RFC 1870   <col/> 11/1995 <col/> SMTP Service Extension for Message Size Declaration </tr>
+<tr> RFC 2033   <col/> 10/1996 <col/> Local Mail Transfer Protocol </tr>
+<tr> RFC 2034   <col/> 10/1996 <col/> SMTP Service Extension for Returning Enhanced Error Codes </tr>
+<tr> RFC 2045   <col/> 11/1996 <col/> Multipurpose Internet Mail Extensions: Message Bodies </tr>
+<tr> RFC 2046   <col/> 11/1996 <col/> Multipurpose Internet Mail Extensions: Media Types </tr>
+<tr> RFC 2554   <col/> 03/1999 <col/> SMTP Service Extension for Authentication</tr>
+<tr> RFC 2920   <col/> 09/2000 <col/> SMTP Service Extension for Command Pipelining </tr>
+<tr> RFC 2821   <col/> 04/2001 <col/> Simple Mail Transfer Protocol </tr>
+<tr> RFC 2822   <col/> 04/2001 <col/> Internet Message Format </tr>
+<tr> RFC 3207   <col/> 02/2002 <col/> SMTP Service Extension for Secure SMTP over TLS </tr>
+<tr> RFC 3461   <col/> 01/2003 <col/> SMTP Service Extension for Delivery Status Notifications </tr>
+<tr> RFC 3463   <col/> 01/2003 <col/> Enhanced Mail System Status Codes </tr>
+<tr> RFC 5321   <col/> 10/2008 <col/> Simple Mail Transfer Protocol </tr>
+<tr> RFC 5322   <col/> 10/2008 <col/> Internet Message Format </tr>
+<legenda>Protocolo SMTP</legenda>
+<nome>tab:smtp</nome>
+</tabela>
+
+    Os documentos pode ser acessados conforme exemplos a seguir:
+
+<lista>
+<item/>http://tools.ietf.org/html/rfc5321
+<item/>http://tools.ietf.org/html/rfc5322
+</lista>
+
+<subsecao>Agentes</subsecao>
+
+<lista>
+<item/><b>Mail User Agent (MUA)</b>: <i>software</i> que tem por
+finalidade a criação e edição de mensagens (RFC-5322), transmissão ao MTA
+(RFC-5321), aquisição de mensagens (RFC-1939 e RFC-3501), e exibição destas
+ao usuário. Exemplos: Mozilla Thunderbird, Evolution e RoundCube
+Webmail.
+
+<item/><b>Mail Transfer Agent (MTA)</b>: <i>software</i> que realiza e
+transmissão e recepção de mensagens entre MTAs, e recepção de mensagens de
+MUAs. Exemplos: Postfix, Exim, Qmail.
+
+<item/><b>Mail Delivery Agent (MDA)</b>: <i>software</i> que realiza o
+a entrega final da mensagem, armazenando-a após a recepção pelo MTA.
+Exemplos: postfix/local, postfix/virtual, procmail, Maildrop, cyr-deliver,
+dovecot-deliver.
+</lista>
+
+<subsecao>Internet Message Format (RFC5322)</subsecao>
+
+    A mensagem de correio eletrônico é formada por caracteres US-ASCII (não
+acentuados) e divida em duas seções: cabeçalhos (<i>headers section</i>) e
+corpo (<i>body section</i>). Os cabeçalhos são identificados por um campo
+(<i>field name</i>) seguido de dois-pontos e o valor do cabeçalho
+(<i>field body</i>).
+
+    O valor de um cabeçalho pode ser representado em formato multi-linhas
+caso as linhas seguintes iniciem pelo caracter em branco (espaço em branco),
+e podem conter caracteres codificados em base64 ou quoted-printable, para o
+suporte a caracteres acentuados.
+
+    Cada cabeçalho possui uma sintaxe quanto ao seu valor, a sintaxe
+estruturada é restritiva e exige que um determinado padrão seja seguido,
+já a sintaxe não-estruturada permite o uso de qualquer caracter da
+codificação US-ASCII imprimível. A maior parte da RFC-5322 trata da
+definição de cabeçalhos padrões e a respectiva sintáxe.
+
+    O corpo de mensagem pode conter qualquer sequência de caracteres,
+entretanto os caracteres 'CR' e 'LF' devem aparecer sempre juntos. Tanto o
+corpo da mensagem quanto seus cabeçalhos possuem tamanho de linha de 998
+caracteres. Estas seções da mensagem são dividas por uma linha em branco.
+
+<comandoNumerado>
+Date: Fri, 17 Dec 2010 10:31:11 -0300
+From: Reinaldo de Carvalho <reinaldoc@gmail.com>
+To: Reinaldo de Carvalho <rei@ufpa.br>
+Reply-To: <reinaldoc@gmail.com>
+Message-ID: <4a5881460708211230g6e6e22cbi673462324f80f74e@mail.gmail.com>
+Subject: Mensagem de Teste
+
+Oi,
+
+Exemplo do corpo da mensagem.
+
+--
+Reinaldo de Carvalho
+</comandoNumerado>
+
+    <b>Tarefa</b>: exemplifique o uso de caracteres acentuados em um
+cabeçalho de mensagem (ex: Subject, From).
+    <br/>0.3cm
+
+    <b>Tarefa</b>: exemplifique o uso de formatação HTML no corpo de
+mensagem. Identifique como os MUA's renderizam adequadamente o HTML ao invés
+de exibir as TAGs ao usuário.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: exemplifique o uso de arquivos anexos ao corpo da
+mensagem. Identifique como os MUA's diferenciam os anexos do texto da
+mensagem.
+    <br/>0.3cm
+
+<subsubsecao>Interação com cabeçalhos</subsubsecao>
+
+    A mensagem quando criada pelo <i>Mail User Agent</i> possui inicialmente
+cabeçalhos como: <i>Date</i>, <i>From</i>, <i>To</i>, <i>Reply-To</i>, 
+<i>Message-ID</i> e <i>Subject</i>. Entretanto durante o trajeto ao
+destinatário cabeçalhos adicionais são inseridos na mensagem, seja pelo
+<i>Mail Transfer Agent</i>, como: <i>Received</i> e <i>X-Original-To</i>,
+ou pelo <i>Mail Delivery Agent</i>, como: <i>X-Sieve</i>.
+Procedimento ilustrado na Figura<ref>fig:smtp-message-headers</ref>.
+
+<figura>
+    <tamanho>0.9</tamanho>
+    <arquivo>imgs/smtp-headers</arquivo>
+    <legenda>Cabeçalhos durante a transmissão de mensagens.</legenda>
+    <nome>fig:smtp-message-headers</nome>
+</figura>
+
+    Os cabeçalhos podem ser adicionados por qualquer aplicação que processe
+a mensagem, como MTAs, MUAs, Anti-Spams, Anti-virus, etc. Os principais
+cabeçalhos inseridos pelo <i>Mail User Agent</i> são:
+
+<lista>
+<item/><b>From</b>: o endereço do remetente da mensagem.
+
+<item/><b>Reply-To</b>: o endereço para resposta da mensagem. Ao responder
+uma mensagem, o MUA utiliza este endereço como destinatário da resposta em
+detrimento ao cabeçalho <i>From</i>. Em caso de inexistência deste
+cabeçalho, será utilizado o remetente indicado no cabeçalho <i>From</i>.
+
+<item/><b>To</b>: o endereço do destinatário da mensagem.
+
+
+<item/><b>Subject</b>: o assunto da mensagem.
+
+<item/><b>Message-ID</b>: o código de identificação da mensagem. Apesar de
+tender a ser único, depende que o MUA siga o padrão estabelecido no item
+3.6.4 da RFC 5322, ou seja, não há garantias de unicidade.
+
+<item/><b>Date</b>: a data que a mensagem esta pronta para o envio, ou seja,
+a data em que o usuário clicou em <i>'enviar'</i> no <i>Mail User Agent</i>.
+Este campo depende da configuração correta do relógio da estação de trabalho
+que originou a mensagem.
+
+</lista>
+
+    Os principais cabeçalhos inseridos pelos <i>Mail Transfer Agent</i> são:
+
+<lista>
+<item/><b>Return-Path</b>: o endereço do remetente utilizado no comando
+MAIL FROM do protocolo SMTP.
+<item/><b>Delivered-To</b>: o endereço utilizado no comando RCPT TO do
+procolo SMTP.
+<item/><b>Received</b>: referências (<i>hostname</i>, <i>IP</i>, etc) dos
+<i>Mail Transfer Agents</i> ao qual a mensagem foi transmitida.
+</lista>
+
+    <b>Tarefa</b>: identifique na RFC-5322 como se dá a ordenação dos
+cabeçalhos em uma mensagem.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: identifique na RFC-5322 quais são os cabeçalhos
+obrigatórios em uma mensagem.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: identifique na RFC-5322 quando os cabeçalhos
+<i>'In-Reply-To'</i> e <i>'References'</i> devem ser utilizados.
+
+<subsecao>Simple Mail Transfer Protocol - SMTP (RFC5321)</subsecao>
+
+	O protocolo SMTP é formado pelos comandos HELO/EHLO, MAIL FROM, RCPT
+TO, DATA e QUIT.
+
+<comando>
+	$ nc smtp.ufpa.br 25
+</comando>
+
+<comandoNumerado>
+  S: 220 muana.ufpa.br ESMTP UFPA
+  C: HELO origem.exemplo.com.br
+  S: 250 muana.ufpa.br
+  C: MAIL FROM:<remetente@exemplo.com.br>
+  S: 250 Ok
+  C: RCPT TO:<rei@ufpa.br>
+  S: 250 Ok
+  C: DATA
+  S: 354 End data with <CR><LF>.<CR><LF>
+  C: From: Nome do Remetente <remetente@exemplo.com.br>
+     To: Reinaldo de Carvalho <rei@ufpa.br>
+     Subject: Teste
+
+     Email de teste.
+
+     .
+  S: 250 Ok: queued as 1C80218000CEA
+  C: QUIT
+  S: 221 Bye
+</comandoNumerado>
+
+<enumerar>
+<item/><b>HELO/EHLO</b>: contém o nome do host que esta enviando a mensagem;
+
+<item/><b>MAIL FROM</b>: contém o endereço do remetente da mensagem;
+
+<item/><b>RCPT TO</b>: contém o endereço do destinatário da mensagem, este comando
+é utilizado para cada destinatário;
+
+<item/><b>DATA</b>: indica que transmissão do conteúdo da mensagem será realizada a
+seguir. Sendo finalizada com um ponto ".";
+
+<item/>A mensagem é transmitida, sendo esta formada por cabeçalhos (From, To, Subject)
+e corpo;
+
+<item/><b>QUIT</b>: encerra a conexão;
+
+<item/><b>RSET</b>: reinicializa a conexão, indica ao servidor para eliminar
+informações transientes;
+
+<item/><b>STARTTLS</b>: inicia comunicação criptografada;
+
+<item/><b>VRFY</b>: consulta a existência de um destinatário (obsoleto);
+
+<item/><b>DSN</b>: solicita notificação de entrega ao MTA;
+
+</enumerar>
+
+    Os comandos SMTP são utilizados para o encaminhamento da mensagem ao seu
+destino, já os cabeçalhos da mensagem são utilizados para armazenar
+informações sobre a mensagem e exibição dos dados no MUA do receptor.
+
+<subsecao>Códigos de retorno</subsecao>
+
+    Códigos numéricos estão presentes no inicío das respostas SMTP, sendo
+formados por três dígitos, o primeiro dígito tem a seguinte notação:
+
+<lista>
+<item/><b>2xx</b>: Requisição SMTP executada com sucesso.
+
+<item/><b>3xx</b>: Requisição SMTP utilizada necessita de complementos.
+
+<item/><b>4xx</b>: Requisição SMTP não pode ser atendida por indisponibilidade
+temporária. Tente novamente (ex: DNS não encontrado).
+
+<item/><b>5xx</b>: Requisição SMTP não pode ser atendida por indisponibilidade
+permanente. Não tente novamente (ex: Usuário inexistente).
+</lista>
+
+    A tentativa de entrega para um usuário inexistente é considerada
+indisponibilidade permanente, enquanto que a tentativa de envio para um
+domínio inexistente é considerada indisponibilidade temporária, visto que o
+problema pode ser causado por um erro de DNS.
+
+    Os dígitos subsequentes dos códigos de retorno detalham o motivo do erro.
+A versão inicial do protocolo SMTP utilizava apenas 3 dígitos, já com a
+implementação da RFC-1893 e RFC-2034 passou-se a utilizar 6 dígitos, conforme
+ilustrado a seguir:
+
+<comando>
+  C: MAIL FROM: <remetente@exemplo.com.br>
+  S: 250 2.1.0 Ok
+  C: RCPT TO: <rei@ufpa.br>
+  S: 250 2.1.5 Ok
+  C: RCPT TO: <nosuchuser@ufpa.br>
+  S: 550 5.1.1 User unknown
+  C: RCPT TO: <forwarduser@example.ufpa.br>
+  S: 551 5.7.1 Forwarding not permited
+</comando>
+
+    <b>Tarefa</b>: identifique na RFC-5321 qual o significado de cada um dos
+três dígitos do código de retorno (reply code). Exemplifique.
+    <br/>0.3cm
+
+    <b>Tarefa</b>: identifique na RFC-1893 os seguintes código de retorno
+(<i>enhanced status code</i>): 5.2.2, 5.3.4, 4.5.3.
+    <br/>0.3cm
+
+<subsecao>Postmaster e Abuse</subsecao>
+
+    Todo domínio deve possuir a conta denominada <i>postmaster</i>, que
+tem por finalidade receber e-mails sem qualquer restrição, sendo útil para
+receber e-mails de domínios que estão sendo rejeitados. Esta conta deve ser
+lida periodicamente.
+
+    Ademais, o MTA local enviará informações a conta <i>postmaster</i> caso
+algum problema inesperado aconteça com a entrega de mensagens, ou ao ocorrer
+uma falha no sistema. 
+
+<subsecao>Email e DNS</subsecao>
+
+    Os sistemas de e-mails são dependentes do serviço de DNS, sendo realizadas
+diversas consultas tanto ao receber quanto ao enviar mensagens, seja
+para determinar a existência do domínio do remetente, quanto para
+identificar o endereço IP do servidor de e-mail para a entrega da mensagem.
+
+    Ao enviar a mensagem, é necessário determinar o endereço IP do servidor
+de destino da mensagem, utiliza-se prioritariamente o registro MX do
+domínio, e caso de inexistência, obtêm-se o registro A. Assim, para que um
+domínio seja conhecido na Internet, deve-se adicionar o registro MX a
+configuração de DNS respectivo domínio. 
+
+    No <i>software</i> Berkeley Internet Name Domain (Bind), essa entrada é
+exemplificado abaixo:
+
+<comandoNumerado>
+$TTL 1D
+@       IN	SOA  cirio  abuse (
+			2007080201      ; serial
+			86400           ; refresh
+			7200            ; retry
+			2592000         ; expire
+			86400 )         ; minimun
+	IN	NS    cirio
+	IN	NS    nazare
+	IN	A     192.168.100.6
+	IN	MX 10 muana
+	IN	TXT   "v=spf1 ip4:192.168.100.3 -all"
+
+cirio   IN	A     192.168.100.1
+nazare  IN	A     192.168.100.2
+muana   IN	A     192.168.100.3
+</comandoNumerado>
+
+    Pode-se realizar balanceamento da recepção de mensagens através do uso de
+múltiplos registros A, como indicado a seguir:
+
+<comandoNumerado>
+	IN	MX 10 muana
+
+muana   IN	A     192.168.100.3
+	IN	A     192.168.100.4
+	IN	A     192.168.100.5
+</comandoNumerado>
+
+    O registro MX permite uso de prioridades, em que realizar-se-á a entrega
+ao <i>host</i> de maior prioridade (menor numeral) e em caso de
+indisponibilidade deste, a entrega será realizada ao host de prioridade
+subsequente. Opcionalmente pode-se utilizar conjuntamente ao balaceamento, como
+indicado a seguir:
+
+<comandoNumerado>
+	IN	MX 10 muana
+	IN	MX 20 capim
+
+muana   IN	A     192.168.100.3
+	IN	A     192.168.100.4
+	IN	A     192.168.100.5
+
+capim   IN	A     192.168.100.7
+	IN	A     192.168.100.8
+	IN	A     192.168.100.9
+</comandoNumerado>
+
+<subsubsecao>Consultas de DNS</subsubsecao>
+
+    O utilitário <i>host</i> pode ser utilizado para realizar consultas e
+verificar a configuração de DNS. A instalação é realizada conforme indicado:
+	
+<comando>
+	# aptitude install host
+</comando>
+
+Veja o exemplo abaixo:
+
+<comando>
+    $ host -t mx exemplo.com.br
+exemplo.com.br		MX	10 muana.exemplo.com.br
+    $ host -t txt exemplo.com.br
+$ host -t txt ufpa.br
+exemplo.com.br		TXT	"v=spf1 ip4:172.16.17.20 -all"
+</comando>

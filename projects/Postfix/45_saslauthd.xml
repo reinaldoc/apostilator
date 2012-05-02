@@ -1,0 +1,77 @@
+<capitulo>Saslauthd</capitulo>
+
+	O saslauthd é um serviço que prover uma interface de autenticação,
+tornando os aplicativos independentes do acesso a base de validação de
+usuários e senhas.
+
+    Comumente utilizado em conjunto com serviços de correio, estando
+disponível a qualquer software que necessite validar usuários. O saslauthd
+tem suporte a validar usuários através de vários métodos, <i>authentication
+mechanisms</i>, dentre os mais utilizados estão LDAP, MySQL, PostgreSQL,
+Kerberos e PAM.
+
+    O diagrama a seguir contém os componentes relacionados, como o serviço
+em si, os módulos, arquivos de configuração, socket de conexão e acesso a
+diferentes bases de dados.
+
+<figura>
+    <tamanho>0.9</tamanho>
+    <arquivo>imgs/saslauthd-1</arquivo>
+    <legenda>Topologia do saslauthd<citar>saslauthd</citar></legenda>
+    <nome>fig:saslauthd-1</nome>
+</figura>
+
+<subsecao>Instalação</subsecao>
+
+	A instalação é realizada a seguir:
+
+<comando>
+	# aptitude install sasl2-bin libsasl2-modules
+</comando>
+
+<subsecao>Parâmetros de inicialização</subsecao>
+
+	Após a instalação do saslauthd, o serviço de autenticação não será ativado.
+É necessário definir o método de autenticação no arquivo /etc/default/saslauthd,
+e a variável START=yes, conforme indicado abaixo:
+
+<comandoNumerado>
+START=yes
+DESC="SASL Authentication Daemon"
+NAME="saslauthd"
+MECHANISMS="ldap"
+MECH_OPTIONS=""
+THREADS=5
+OPTIONS="-c -m /var/run/saslauthd"
+</comandoNumerado>
+
+<subsecao>Configuração</subsecao>
+
+	Alguns métodos de autenticação como "pam" e "shadow" não dependem de
+configurações adicionais, outros como a autenticação em "ldap" e "mysql",
+necessitam de parâmetros de configuração que devem ser especificados no
+rquivo /etc/saslauthd.conf.
+
+<comandoNumerado>
+ldap_servers: ldap://127.0.0.1
+ldap_port: 389
+ldap_version: 3
+ldap_search_base: o=4Linux
+ldap_auth_method: bind
+ldap_filter: (&(objectClass=inetOrgPerson)(mail=%u@%d))
+</comandoNumerado>
+
+<subsecao>Autenticação</subsecao>
+
+	O comando testsaslauthd deve ser utilizado para testar autenticação dos usuários da base ldap.
+	Inicialize o saslauthd com o seguinte comando:
+<comando>	
+	# /etc/init.d/saslauthd start
+</comando>
+
+	Teste a autenticação com o seguinte comando:
+<comando>
+	# testsaslauthd -u usuario -r 4linux.com.br -p senha
+</comando>
+
+	Se o resultado for 0: OK "Success.", o saslauthd esta configurado corretamente, caso contrário reveja as configurações.

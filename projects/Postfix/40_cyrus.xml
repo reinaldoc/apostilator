@@ -1,0 +1,692 @@
+<capitulo>Cyrus</capitulo>
+
+    O Cyrus é um software de armazenamento de mensagens que implementa os
+protocolos IMAP4rev1, POP3, LMTP, SIEVE e NNTP. É mantido pela Carnigie Mellow
+University e tem recebido melhorias do ISP FastMail.fm. É distribuído
+através de licença livre e seu site oficial é www.cyrusimap.org.
+
+    O projeto Cyrus é um esforço continuo para oferecer um sistema de
+e-mails com design escalável para ambientes pequenos e enormes, sendo
+altamente flexível.
+
+<figura>
+    <tamanho>1.0</tamanho>
+    <arquivo>imgs/cyrus</arquivo>
+    <legenda>Topologia do Cyrus.</legenda>
+    <nome>fig:cyrus-1</nome>
+</figura>
+
+    O processo <i>cyrmaster</i> realiza o controle de conexões, distribuindo
+estas entre os <i>daemons</i> de serviços, inicializando e reutilizando
+processos.
+
+<subsecao>Instalação</subsecao>
+
+	A instalação é realizada a seguir:
+
+<comando>
+	# aptitude install cyrus-imapd-2.2 cyrus-pop3d-2.2
+</comando>
+
+<subsecao>Configuração</subsecao>
+
+	A configuração do Cyrus é realizada em dois arquivos:
+
+<lista>
+<item/> <b>/etc/cyrus.conf</b>: contém a configuração do <i>cyrmaster</i> e
+controla:
+
+(i) quais processos serão executados na inicialização (seção START), como a
+verificação da integridade das bases;
+
+(ii) quais serviços estarão ativos: pop3, pop3s, imap, imaps, lmtp, sieve,
+nntp e mupdate (seção SERVICES), e a definição da quantidade de processos
+que devem ser inicialmente executados, quantidade máxima de processos em
+execução, número de vezes que um processo pode ser reutilizado, tempo de
+espera máximo para reutilização, e porta de conexão.
+
+(iii) e, quais processos serão executados periodicamente (seção EVENTS),
+como procedimentos de checkpoint, remoção de mensagens (vacum) e indexação
+para FTS (fulltext searches).
+
+<item/> <b>/etc/imapd.conf</b>: contém a configuração dos demais
+<i>daemons</i>, em sua maioria do serviço IMAP. Entre as configurações
+possíveis estão: a definição do usuário administrativo, a integração com
+mecanismo de autenticação e o suporte a caixas postais com domínio completo.
+
+</lista>
+
+<subsubsecao>/etc/cyrus.conf</subsubsecao>
+
+	As seguintes configurações devem ser realizadas no arquivo
+<b>/etc/cyrus.conf</b>:
+
+<lista>
+<item/>Desativação da expiração de mensagens (<i>cyr_expire</i>) na inicialização;
+</lista>
+
+<comandoNumerado>
+START {
+   # delprune        cmd="/usr/sbin/cyr_expire -E 3"
+}
+</comandoNumerado>
+
+    O processo <i>cyr_expire</i> realiza a remoção de mensagens expiradas,
+onde é realizada uma busca em cada caixa postal, verificando se existem
+mensagens mais antigas que o permitido, removendo-as. Processo que
+tende a levar mais tempo conforme maior o número de mensagens armazenadas.
+Fazendo com que exista um atraso na inicialização dos SERVICES, visto que
+estes somente serão ativados após o término dos processos da seção START.
+
+<lista>
+<item/>Desativação da autenticação de conexões LMTP;
+<item/>Aceitar conexões no serviço LMTP em qualquer interface;
+<item/>Aceitar conexões no serviço SIEVE em qualquer interface;
+</lista>
+
+<comandoNumerado>
+SERVICES {
+   #
+   lmtp   cmd="lmtpd -a" listen="lmtp" prefork=5 maxchild=50
+   #
+   sieve  cmd="timsieved" listen="sieve" prefork=1 maxchild=50
+   #
+}
+</comandoNumerado>
+
+    Deve-se utilizar o parâmetro <i>-a</i> no serviço de LMTP, para que
+as mensagens possam ser recebidas do MTA sem necessidade de autenticação,
+que é um requisito padrão. Assim como, para tornar os serviços LMTP e
+SIEVE acessíveis a partir de outros <i>hosts</i> deve-se omitir o termo
+"localhost:" da opção <i>listen</i>.
+
+<lista>
+<item/>Ativação da indexação (<i>squatter</i>);
+</lista>
+
+<comandoNumerado>
+EVENTS {
+   #
+   squatter_1 cmd="/usr/bin/nice -n 19 /usr/sbin/squatter -s" at=0100
+   #
+}
+</comandoNumerado>
+
+<subsubsecao>/etc/imapd.conf</subsubsecao>
+
+    As seguintes configurações devem ser realizadas no arquivo
+<b>/etc/imapd.conf</b>, seja alterando seu valor padrão ou adicionando-as:
+
+<comandoNumerado>
+unixhierarchysep: yes
+admins: imap-admin
+allowplaintext: yes
+sasl_mech_list: PLAIN
+virtdomains: yes
+sasl_pwcheck_method: saslauthd
+sasl_saslauthd_path: /var/spool/postfix/var/run/saslauthd/mux
+allowusermoves: yes
+lmtp_over_quota_perm_failure: yes
+</comandoNumerado>
+
+<lista>
+<item/><b>unixhierarchysep</b>: altera o delimitador de sub-pastas do
+caracter "." para o caracter "/", necessário para a utilização de usuários
+contendo ".", como "reinaldo.carvalho";
+
+<item/><b>admins</b>: fornece a determinados usuários recursos
+administrativos como a criação de caixas postais, controle de quota e
+compartilhamentos (ACLs). Pode-se especificar um administrador global sem o
+uso de um domínios (ex: imap-admin), ou usuários que somente podem gerenciar
+o domínio ao qual pertencem (ex: admin@exemplo.com.br);
+
+<item/><b>allowplaintext</b>: permite autenticação sem a obrigatoriedade do
+uso de criptografia. Em ambientes ideais, em que todas as conexões ocorrem
+sob TLS ou SSL, esta opção deve ser desativada;
+
+<item/><b>sasl_mech_list</b>: permite a autenticação através do padrão
+PLAIN;
+
+<item/><b>virtdomains</b>: define que as caixas postais serão baseados
+no e-mail, ou seja, com o uso de domínio, ao invés de ser baseado em usuário, sem
+o uso de domínio. Implicitamente exige que a autenticação seja realizada através
+do e-mail (rei@exemplo.com.br) e não somente com o usuário (rei);
+
+<item/><b>sasl_pwcheck_method</b>: seleciona a interface de autenticação
+(ex: saslauthd e auxprop);
+
+<item/><b>sasl_saslauthd_path</b>: indica o caminho do socket da
+interface de autenticação saslauthd;
+
+<item/><b>allowusermoves</b>: permite que caixas postais possam ser
+renomeadas;
+
+<item/><b>lmtp_over_quota_perm_failure</b>: retonar indisponibilidade
+permanente (5xx) em tentativas de entregas de mensagens através de LMTP
+para usuários com quota excedida;
+
+</lista>
+
+    A lista completa das opções configuráveis está disponível em:
+
+<comando>
+    $ man imapd.conf
+</comando>
+
+<subsecao>Administrador</subsecao>
+
+    Através de uma conexão IMAP e a autenticação de um usuário previamente
+definido como administrador na configuração (/etc/imapd.conf), é possível
+realizar operações sobre qualquer caixa postal, seja a criação ou remoção de
+caixas postais, definição de quota, compartilhamento (acls) ou políticas de
+expiração de mensagens.
+
+    Assim, é necessário a existência deste usuário na base LDAP, pode-se
+utilizar o LDIF (imap.ldif) indicado a seguir:
+
+<comandoNumerado>
+dn: cn=Imap Admin,o=Example
+objectClass: inetOrgPerson
+cn: Imap Admin
+mail: imap-admin@imap.exemplo.com.br
+sn: Admin
+userPassword: secret
+</comandoNumerado>
+
+    O utilitário <i>slappasswd</i> pode ser utilizado para a codificação da
+senha em formato de hash, como {SSHA} e {MD5}. Para adicionar o registro a base,
+utilize o seguinte comando:
+
+<comando>
+	$ ldapadd -h ldap.exemplo.com.br -x -D cn=admin,o=Example -W -f imap.ldif
+</comando>
+
+<subsecao>Administração</subsecao>
+
+<subsubsecao>Protocolo IMAP</subsubsecao>
+
+<lista>
+<item/>LOGIN
+</lista>
+
+<comando>
+   $ nc localhost 143
+S: * OK water Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready
+
+C: . LOGIN imap-admin 123456
+S: . OK User logged in
+</comando>
+
+<lista>
+<item/>LIST/CREATE
+</lista>
+
+<comando>
+C: . LIST * *
+S: . OK Completed (0.000 secs 1 calls)
+
+C: . CREATE user/rei@exemplo.com.br
+S: . OK Completed
+
+C: . CREATE user/rei/Sent@exemplo.com.br
+S: . OK Completed
+
+C: . CREATE user/rei/Trash@exemplo.com.br
+S: . OK Completed
+
+C: . CREATE user/rei/Drafts@exemplo.com.br
+S: . OK Completed
+
+C: . LIST * *
+S: * LIST (\HasChildren) "/" "user/rei@exemplo.com.br"
+S: * LIST (\HasNoChildren) "/" "user/rei/Drafts@exemplo.com.br"
+S: * LIST (\HasNoChildren) "/" "user/rei/Sent@exemplo.com.br"
+S: * LIST (\HasNoChildren) "/" "user/rei/Trash@exemplo.com.br"
+S: . OK Completed (0.000 secs 5 calls)
+</comando>
+
+<lista>
+<item/>RENAME
+</lista>
+
+<comando>
+C: . RENAME user/rei@exemplo.com.br user/reinaldo@exemplo.com.br
+S: * OK rename user/rei@exemplo.com.br user/reinaldo@exemplo.com.br
+S: * OK rename user/rei/Drafts@exemplo.com.br user/reinaldo/Drafts@exemplo.com.br
+S: * OK rename user/rei/Sent@exemplo.com.br user/reinaldo/Sent@exemplo.com.br
+S: * OK rename user/rei/Trash@exemplo.com.br user/reinaldo/Trash@exemplo.com.br
+S: . OK Completed
+</comando>
+
+<lista>
+<item/>QUOTA
+</lista>
+
+<comando>
+C: . GETQUOTA user/reinaldo@exemplo.com.br
+S: . NO Quota root does not exist
+
+C: . SETQUOTA user/reinaldo@exemplo.com.br (STORAGE 1024000)
+S: . OK Completed
+
+C: . GETQUOTA user/reinaldo@exemplo.com.br
+S: * QUOTA user/reinaldo@exemplo.com.br (STORAGE 0 1024000)
+S: . OK Completed
+</comando>
+
+<lista>
+<item/>ACL
+</lista>
+
+<comando>
+C: . GETACL user/reinaldo/Sent@exemplo.com.br
+S: * ACL user/reinaldo/Sent@exemplo.com.br reinaldo@exemplo.com.br lrswipcda
+S: . OK Completed
+
+C: . SETACL user/reinaldo/Sent@exemplo.com.br johndoe@exemplo.com.br lrsw
+S: . OK Completed
+
+C: . GETACL user/reinaldo@exemplo.com.br
+S: * ACL user/reinaldo@exemplo.com.br reinaldo@exemplo.com.br lrswipcda
+                                      johndoe@exemplo.com.br  lrsw
+S: . OK Completed
+</comando>
+
+    As permissões são representadas pelas letras <i>lrswipcda</i>, que
+possuem o seguinte significado:
+
+<tabela>{|c|l|}
+<lh><th>Letra</th> <col/> <th>Permissão</th></lh>
+<tr> l       <col/> Listar a caixa postal (ver que ela existe).</tr>
+<tr> r       <col/> Ler as mensagens da caixa postal.</tr>
+<tr> s       <col/> Manter as flags 'lida' e 'nova' para este usuário.</tr>
+<tr> w       <col/> Permite alterar flags 'lida' e 'delete'.</tr>
+<tr> i       <col/> Permite a inserção de novas mensagens.</tr>
+<tr> p       <col/> Permite postagens diretas através do padrao usuario+pasta@exemplo.com.br.</tr>
+<tr> c       <col/> Permite a criação de subpastas.</tr>
+<tr> d       <col/> Permite o uso de expunge, rename ou deletar a caixa postal.</tr>
+<tr> a       <col/> Permite alteração das ACLs.</tr>
+<tr> lrsw    <col/> Permissão padrão para leitura.</tr>
+<tr> lrswi   <col/> Permissão padrão para leitura e adição de mensagens.</tr>
+<tr> lrswicd <col/> Permissão padrão para escrita.</tr>
+<tr> lrswipcda <col/> Permissão total.</tr>
+<legenda>Permissões de pastas IMAP.</legenda>
+<nome>tab:imap-acls</nome>
+</tabela>
+
+
+<lista>
+<item/>ANNOTATION
+</lista>
+
+<comando>
+C: . GETANNOTATION user/reinaldo@exemplo.com.br "*" "value.shared"
+S: * ANNOTATION "user/reinaldo@exemplo.com.br" "/vendor/cmu/cyrus-imapd/lastpop"
+                ("value.shared" " ")
+   * ANNOTATION "user/reinaldo@exemplo.com.br" "/vendor/cmu/cyrus-imapd/lastupdate"
+                ("value.shared" "28-Mar-2011 14:49:00 -0300")
+   * ANNOTATION "user/reinaldo@exemplo.com.br" "/vendor/cmu/cyrus-imapd/size"
+                ("value.shared" "0")
+   * ANNOTATION "user/reinaldo@exemplo.com.br" "/vendor/cmu/cyrus-imapd/partition"
+                ("value.shared" "default")
+   . OK Completed
+
+C: . SETANNOTATION "user/reinaldo@exemplo.com.br" "/vendor/cmu/cyrus-imapd/expire"
+                   ("value.shared" "30")
+S: . OK Completed
+</comando>
+
+<lista>
+<item/>DELETE
+</lista>
+
+<comando>
+C: . DELETE user/reinaldo@exemplo.com.br
+S: . NO Permission denied
+
+C: . SETACL user/reinaldo@exemplo.com.br imap-admin c
+S: . OK Completed
+
+C: . DELETE user/reinaldo@exemplo.com.br
+S: . OK Completed
+
+C: . LIST * *
+S: . OK Completed (0.000 secs 1 calls)
+</comando>
+
+<subsubsecao>Cyradm</subsubsecao>
+
+    O IMAP-client <i>cyradm</i> é uma ferramenta que permite o uso do
+protocolo IMAP através de linhas de comando, como descrito na tabela abaixo:
+
+<tabela>{|c|l|}
+<lh><th>Comando</th> <col/> <th>Descrição</th></lh>
+<tr> lm       <col/> Lista caixas postais.</tr>
+<tr> cm       <col/> Cria caixa postal.</tr>
+<tr> dm       <col/> Remove caixa postal.</tr>
+<tr> renm     <col/> Renomeia caixa postal.</tr>
+<tr> lq       <col/> Lista quota da caixa postal.</tr>
+<tr> sq       <col/> Altera quota da caixa postal.</tr>
+<tr> lam      <col/> Lista ACLs de caixa postais.</tr>
+<tr> sam      <col/> Aplica ACLs a caixa postais.</tr>
+<tr> info     <col/> Lista Annotations da caixa postal.</tr>
+<tr> mboxcfg  <col/> Aplica Annotations a caixa postais.</tr>
+<tr> exit     <col/> Desconecta.</tr>
+<legenda>Principais comandos do cyradm.</legenda>
+<nome>tab:cyrus-1</nome>
+</tabela>
+
+<comando>
+    # aptitude install cyrus-admin-2.2
+    $ cyradm -u imap-admin localhost
+</comando>
+
+<lista>
+<item/>CREATE
+</lista>
+
+<comando>
+	cm user/rei@exemplo.com.br
+	cm user/rei/Sent@exemplo.com.br
+	cm user/rei/Drafts@exemplo.com.br
+	cm user/rei/Trash@exemplo.com.br
+</comando>
+	
+
+<lista>
+<item/>QUOTA
+</lista>
+
+<comando>
+	sq user/rei@exemplo.com.br 51200
+	lq user/rei@exemplo.com.br
+</comando>
+
+<lista>
+<item/>DELETE
+</lista>
+
+<comando>
+	sam user/rei@exemplo.com.br imap-admin c
+	dm user/rei@exemplo.com.br
+</comando>
+
+    <br/>0.3cm
+
+    <b>Tarefa</b>: realize os seguintes procedimentos através do
+<i>cyradm</i>: <b>(i)</b> crie uma caixa postal e as pastas <i>Sent</i>,
+<i>Drafts</i> e <i>Trash</i>; <b>(ii)</b> defina quota de 512 Mbytes;
+<b>(iii)</b> defina a <i>annotation expire</i> para a pasta <i>Trash</i>
+para 90 dias; <b>(iv)</b> compartilhe a pasta <i>Sent</i> com outro
+usuário com permissão de somente-leitura.
+
+    <br/>0.3cm
+
+<subsubsecao>Cyruslib</subsubsecao>
+
+    http://python-cyrus.sf.net
+
+<subsecao>IMAP Partitions</subsecao>
+
+    As partições IMAP é o recurso utilizado para o armazenamento de
+mensagens em diferentes áreas de disco. Recurso necessário quando se
+exauriu a capacidade de armazenamento ou de operações de entrada e saída
+de uma unidade de disco.
+
+    Para utilizar este recurso, deve-se <b>(i)</b> associar um <i>label</i> ao
+diretório de armazenamento de mensagens através da opção de configuração
+<i>partition-{label}</i> no arquivo de configuração <b>/etc/imapd.conf</b>,
+conforme exemplo a seguir:
+    
+<comando>
+partition-default: /var/spool/cyrus/mail
+partition-exemplo1: /var/spool/cyrus/mail1
+partition-exemplo2: /var/spool/cyrus/mail2
+</comando>
+
+    Em seguida, deve-se <b>(ii)</b> criar os diretórios no local apropriado,
+<b>(iii)</b> configurar as permissões para o usuário <i>cyrus</i>, e
+<b>(iv)</b> reiniciar o serviço.
+
+<comando>
+    # mkdir /var/spool/cyrus/mail1 /var/spool/cyrus/mail2
+    # chown cyrus: /var/spool/cyrus/mail1 /var/spool/cyrus/mail2
+    # invoke-rc.d cyrus2.2 restart
+</comando>
+
+    Neste momento, as novas partições IMAP estão disponíveis para uso, e
+pode-se solicitar ao serviço de armazenamento de mensagens que mova
+determinadas caixas postais existentes para estas áreas de disco, conforme
+exemplo a seguir:
+
+<comando>
+   $ nc localhost 143
+S: * OK water Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready
+
+C: . LOGIN imap-admin 123456
+S: . OK User logged in
+
+C: . RENAME user/rei@exemplo.com.br user/rei@exemplo.com.br exemplo1
+S: . OK Completed
+
+C: . RENAME user/johndoe@exemplo.com.br user/johndoe@exemplo.com.br exemplo2
+S: . OK Completed
+</comando>
+
+    <br/>0.3cm
+
+    <b>Tarefa</b>: verifique o caminho de armazenamento de mensagens,
+realize a alteração da partição IMAP conforme indicado, e confirme o novo
+local da mensagem em disco.
+
+    <br/>0.3cm
+
+    Ao realizar o procedimento de criação de caixas postais, pode-se indicar
+a partição IMAP ao qual esta pertencerá, em caso de omissão, a partição IMAP
+configurada na opção <i>defaultpartition</i> será utilizada. Para que a
+caixa postal seja criada diretamente em uma determinada partição IMAP
+pode-se utilizar o exemplo a seguir:
+
+<comando>
+C: . CREATE user/reinaldo@exemplo.com.br exemplo1
+S: . OK Completed
+</comando>
+ 
+<subsecao>Caixas postais globais</subsecao>
+
+    As caixas postais globais possuem ACLs que garantem a permissão de
+leitura para todos os usuários do mesmo domínio. São criadas através da
+omissão do termo "user/". O exemplo a seguir, cria a caixa postal global
+<i>avisos</i>:
+
+<comando>
+   $ nc localhost 143
+S: * OK water Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready
+
+C: . LOGIN imap-admin 123456
+S: . OK User logged in
+
+C: . CREATE avisos@exemplo.com.br
+S: . OK Completed
+</comando>
+
+    As caixas postais globais podem possuir permissão de escrita para
+determinados usuários, permitindo a este usuário a inserção e remoção de
+mensagens. Para isto, utilize o procedimento a seguir:
+
+<comando>
+   $ nc localhost 143
+S: * OK water Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready
+
+C: . LOGIN imap-admin 123456
+S: . OK User logged in
+
+C: . SETACL avisos@exemplo.com.br rei@exemplo.com.br lrswipcd
+S: . OK Completed
+</comando>
+
+<subsubsecao>Postagens em caixas postais globais</subsubsecao>
+
+    As caixas postais globais podem ser associadas a um determinado endereço
+de e-mail para recepção direta de mensagens. Primeiramente crie um usuário
+conforme indicado (usuario.ldif):
+	
+<comandoNumerado>
+dn: cn=Imap Global,o=Example
+objectClass: inetOrgPerson
+cn: Imap Global
+mail: imap-global@exemplo.com.br
+sn: Global
+</comandoNumerado>
+
+<comando>
+	$ ldapadd -x -D cn=admin,o=Example -W -f usuario.ldif
+</comando>
+	
+    Configure a opção <i>postuser</i> no arquivo <i>/etc/imapd.conf</i> conforme
+indicado:
+
+<comando>
+postuser: imap-global
+</comando>
+
+    Desta forma, os emails enviados para o destinatário
+<i>imap-global+avisos@exemplo.com.br</i> serão armazenados diretamente na
+caixa postal global <i>avisos</i>, que está disponível para todos os usuários.
+
+    Toda caixa postal deve possuir a ACL <i>p</i> para o usuário
+<i>anyone</i> para aceitar postagens, conforme indicado:
+
+<comando>
+   $ nc localhost 143
+S: * OK water Cyrus IMAP4 v2.2.13-Debian-2.2.13-19 server ready
+
+C: . LOGIN imap-admin 123456
+S: . OK User logged in
+
+C: . SETACL avisos@exemplo.com.br anyone lrsp
+S: . OK Completed
+</comando>
+
+<subsecao>Sieve</subsecao>
+
+    Exemplo de Script sieve (exemplo.sie):
+
+<comando>
+require ["vacation","fileinto"];
+
+if address :contains ["from","cc"] "user1@example.com" {
+   fileinto "INBOX/Folder1";
+}
+
+if address :contains ["from","cc"] "user2@example.com" {
+   redirect "user3@example.com";
+   keep;
+   stop;
+}
+
+if header :contains "subject" "viagra" {
+   discard;
+   stop;
+}
+
+vacation :days 5 :subject "Estou de Ferias" :addresses ["rei@example.com"]
+"Estou de ferias, retornarei em 30/02.
+
+Atenciosamente,
+
+--
+Reinaldo de Carvalho";
+
+</comando>
+
+<subsubsecao>Manage Sieve</subsubsecao>
+
+<comando>
+    $ sieveshell -u rei@exemplo.com.br -a imap-admin localhost
+connecting to localhost
+Please enter your password: 
+> ?
+help             - this screen
+list             - list scripts on server
+put filename     - upload script to server
+get name         - get script. if no filename display to stdout
+delete name      - delete script.
+activate name    - set a script as the active script
+deactivate       - deactivate all scripts
+quit             - quit
+> list
+> put exemplo.sie
+> list
+exemplo.sie
+> activate exemplo.sie
+> list
+exemplo.sie  <- active script
+</comando>
+
+<subsecao>Criptografia</subsecao>
+
+<subsubsecao>Ativando TLS</subsubsecao>
+
+<lista>
+<item/>/etc/imapd.conf
+</lista>
+
+<comando>
+tls_cert_file: /etc/ssl/cert/hostname.cer
+tls_key_file: /etc/ssl/cert/hostname.key
+</comando>
+
+<subsubsecao>Ativando SSL</subsubsecao>
+
+<lista>
+<item/>/etc/cyrus.conf
+</lista>
+
+<comando>
+SERVICES {
+   #
+   imaps           cmd="imapd -s -U 30" listen="imaps" prefork=5 maxchild=100
+   pop3s           cmd="pop3d -s -U 30" listen="pop3s" prefork=5 maxchild=50
+   #
+}
+</comando>
+
+    O serviço deve ser reinciado para as novas configurações serem utilizadas.
+
+<subsecao>Mail User Agents</subsecao>
+
+	Instale um cliente de e-mail e realize testes com caixas postais.
+
+<lista>
+<item/> Icedove (Thundebird)
+</lista>
+<comando>
+    # aptitude install icedove icedove-locale-pt-br
+</comando>
+
+<lista>
+<item/> Evolution
+</lista>
+<comando>
+    # aptitude install evolution
+</comando>
+
+<lista>
+<item/> Kmail
+</lista>
+<comando>
+    # aptitude install kmail
+</comando>
+
+    <br/>0.3cm
+
+    <b>Tarefa</b>: <b>(i)</b> configure uma conta IMAP, <b>(ii)</b> crie uma mensagem
+de rascunho,  <b>(iii)</b> copie-a para outras pastas,  <b>(iv)</b>
+verifique no sistema de arquivos a estrutura de diretórios, o padrão de nome
+do arquivo de mensagem, e o conteúdo da mensagem armazenada.
+
+    <br/>0.3cm
+
+
+

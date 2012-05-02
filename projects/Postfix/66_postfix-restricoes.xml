@@ -1,0 +1,263 @@
+<capitulo>Postfix: restrições</capitulo>
+
+	As restrições.
+
+<subsecao>Desabilitando comando VRFY</subsecao>
+
+<comando>
+disable_vrfy_command = yes
+</comando>
+
+<subsecao>Endereços restritos</subsecao>
+
+	De acordo com RFC 821, endereços de e-mail utilizados nos comandos MAIL FROM e RCPT TO devem estar delimitados entre os sinais  < e > para serem considerados válidos. O comportamento padrão é não realizar esta verificação, para ativá-la, utilize a configuração abaixo:
+
+<comando>
+	strict_rfc821_envelopes = yes
+</comando>
+
+	Exemplo de diálogo:
+
+<comandoNumerado>
+telnet localhost 25
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+220 boca.4linux.com.br ESMTP Postfix
+helo origem.dominio.com.br
+250 boca.4linux.com.br
+mail from: usuario@dominio.com.br
+501 Bad address syntax
+</comandoNumerado>
+
+
+<subsecao>Sender Policy Framework - SPF</subsecao>
+
+	Sender Policy Framework - SPF (Tradução livre: “Estrutura e Regras de Origem”) é uma política anti-spam baseada em consultas de DNS. A primeira é etapa é divulgar através de um registro na zona de DNS quais endereços IP podem realizar entregras utilizando como remetente um endereço de e-mail deste domínio.
+	
+	A seguir observemos um exemplo de um registro TXT do tipo SPF informando que somente o ip 200.212.122.137 tem permissão para entregar e-mails utilizando o remetente pertencente ao domínio 4linux.com.br.
+
+<comando>
+	$ host -t txt 4linux.com.br
+</comando>
+<comando>
+4linux.com.br           TXT     "v=spf1 ip4:200.212.122.137 -all"
+</comando>
+
+	Para incluir este registro, é necessário alterar a zona de DNS que responde pelo respectivo domínio, incluindo um campo TXT conforme o exemplo:
+
+<comandoNumerado>
+$TTL 1D
+@       IN	SOA  ns1.4linux.com.br.  rei.4linux.com.br. (
+			2007080201      ; serial
+			86400           ; refresh
+			7200            ; retry
+			2592000         ; expire
+			86400 )         ; minimun
+	IN	NS    ns1
+	IN	NS    ns2
+	IN	A     192.168.100.1
+	IN	MX 10 mail
+	IN	TXT   "v=spf1 ip4:192.168.100.3 -all"
+
+ns1     IN	A     192.168.100.1
+ns2     IN	A     192.168.100.2
+mail    IN	A     192.168.100.3
+</comandoNumerado>
+
+	A inserção deste registro de SPF informa ao servidores de correio eletrônico que somente devem receber e-mails com remetente do domínio 4linux.com.br, caso seja proveniente o ip 192.168.100.3.
+
+	A próxima etapa é configurar o postfix para verificar SPF dos emails recebidos. Para realizar esta verificação utilizaremos um módulo adicional que pode ser obtido:
+
+<comando>
+	$ wget http://www.nautilus.com.br/~rei/material/lost+found/libspf2.so.1
+	# mv libspf2.so.1 /usr/lib
+	$ wget http://www.nautilus.com.br/~rei/material/lost+found/policyd
+	# mv policyd /usr/lib/postfix/spf-policy
+	# chmod 755 /usr/lib/postfix/spf-policy
+</comando>
+
+	Este módulo deve ser cadastrado no master.cf através das configuração indicada:
+
+<comandoNumerado>
+# ==========================================================================
+# service type  private unpriv  chroot  wakeup  maxproc command + args
+#               (yes)   (yes)   (yes)   (never) (100)
+# ==========================================================================
+spf       unix    -       n       n        -      -     spawn user=nobody
+          argv=/usr/lib/postfix/spf-policy
+</comandoNumerado>
+
+<subsecao>Greylist</subsecao>
+	Greylist é a validação do servidor de e-mail que está entregando a mensagem. Na primeira tentativa de entrega de um determinado e-mail, o conjunto formado pelo ip do servidor de origem, endereço de e-mail do remetente e endereço de e-mail do destinatário - tripla - é armazenada. Nesta fase, esta tentativa de entrega do e-mail é rejeitada com um código de erro 4xx. Este código indica um erro temporário, e induz ao servidor que está entregando a mensagem, a realização de uma nova tentativa depois de algum tempo.<citar>Spam</citar>
+
+	Caso o servidor de origem seja um servidor de e-mail seja válido, seguindo as RFC's, ao receber esta notificação de erro temporário, uma nova tentativa de entrega será realizada, quando o sistema de greylist aceitará a mensagem. Emails com a mesma tripla, após um certo número de entregas com sucesso podem ser aceitos diretamente por um determinado período, minimizando o atraso natural do sistema de greylist. Outras opções também são configuráveis, maiores informações podem ser obtidas no manual: man postgrey.<citar>Spam</citar>
+
+	A eurística utilizada no sistema de greylist atua no bloqueio de SPAM's gerados uma única vez utilizando a tripla ip, remetente e destinatário. A maior parte dos e-mails gerados por vírus, SPAM's originados por programas de envio de e-mails em massa, além dos ataques de SPAM's baseados em dicionários, apresentam este comportamento sendo rejeitados pelo sistema de greylist. Entretando este sistema é ineficais contra SPAM's provenientes de "open relays", visto que estes são MTA's "válidos", e re-enviarão o e-mail rejeitado inicialmente pela greylist.<citar>Spam</citar>
+
+	Para a instalação deste sistema, utilze o comando a seguir:
+
+<comando>
+	# aptitude install postgrey
+</comando>
+
+	/etc/default/postgrey
+<comandoNumerado>
+POSTGREY_OPTS="--inet=127.0.0.1:60000 --delay=120 --max-age=60
+               --retry-window=1 --auto-whitelist-clients=1"
+POSTGREY_TEXT="Try again latter"
+</comandoNumerado>
+
+<lista>
+<item/><b>--delay</b>: Números de segundos que devem ser aguardados para a re-entrega do e-mail ser aceita.
+<item/><b>--max-age</b>: Número de dias que não será exigido greylist após a primeira tentativa com sucesso.
+<item/><b>--retry-window</b>: Número de dias que a segunda tentativa será aguardada.
+<item/><b>--auto-whitelist-clients</b>: Número de entregas com sucesso para não sofrer greylist.
+</lista>
+
+<subsecao>Restrições de cabeçalho</subsecao>
+
+	Expressões regulares aplicadas ao cabeçalho da mensagem.
+
+<comando>
+header_checks = regexp:/etc/postfix/header_checks
+</comando>
+
+	/etc/postfix/header_checks
+
+<comando>
+/.*(file)?name=.*\.(bat|exe|src|scr|pif|chm|hta|vbs)/     REJECT ATTACH TAG: EXEC.
+/^(Return-Path|From):.*<.*_.*_.*_.*@.*/                   REJECT SPAM TAG: _.
+/^Subject:.*([Rr][Ee](:)?( )?\[[0-9]{1,2}\](:)?)/         REJECT SPAM TAG: re[].
+/^Subject:.*([oO0][eE][mM]).*/                            REJECT SPAM TAG: OEM.
+</comando>
+
+<subsecao>Restrições de conteúdo</subsecao>
+
+	Expressões regulares aplicadas ao corpo da mensagem.
+
+<comando>
+body_checks = regexp:/etc/postfix/body_checks
+</comando>
+
+	/etc/postfix/body_checks
+
+<comando>
+/(http|https|ftp):\/\/.*\/.*\.(bat|pif|scr|[eE][xX][eE]).*(\s|\")/ REJECT PHISHING
+</comando>
+
+<subsecao>Restrições de IP e reverso.</subsecao>
+
+<comandoNumerado>
+smtpd_client_restrictions = permit_mynetworks,
+                            permit_sasl_authenticated,
+                            check_client_access hash:/etc/postfix/client_whitelist,
+                            check_client_access hash:/etc/postfix/client_blacklist,
+                            reject_unknown_client_hostname,
+                            reject_rbl_client bl.spamcop.net
+                            reject_rbl_client dnsbl.njabl.org
+</comandoNumerado>
+
+<subsecao>Restrições de helo</subsecao>
+
+<comandoNumerado>
+smtpd_helo_required = yes
+smtpd_helo_restrictions = permit_mynetworks,
+                          permit_sasl_authenticated,
+                          check_helo_access hash:/etc/postfix/helo_blacklist,
+                          check_client_access hash:/etc/postfix/helo_whitelist,
+                          reject_invalid_helo_hostname,
+                          reject_non_fqdn_helo_hostname,
+                          reject_unknown_helo_hostname
+</comandoNumerado>
+
+<subsecao>Restrições de remetente</subsecao>
+
+<comandoNumerado>
+smtpd_sender_restrictions = reject_non_fqdn_sender,
+                            reject_unknown_sender_domain,
+                            reject_unlisted_sender,
+                            reject_authenticated_sender_login_mismatch,
+                            permit_sasl_authenticated,
+                            check_policy_service unix:private/spf
+</comandoNumerado>
+
+<subsecao>Restrições de destinatários</subsecao>
+
+<comandoNumerado>
+smtpd_recipient_restrictions = reject_non_fqdn_recipient,
+                               reject_unknown_recipient_domain,
+                               permit_mynetworks,
+                               permit_sasl_authenticated,
+                               reject_unauth_destination,
+                               check_policy_service inet:127.0.0.1:60000
+</comandoNumerado>
+
+<subsecao>Restrições após comando DATA</subsecao>
+
+<comandoNumerado>
+smtpd_data_restrictions = reject_unauth_pipelining,
+                          reject_multi_recipient_bounce
+</comandoNumerado>
+
+<subsecao>Restrições condicionais</subsecao>
+
+<comandoNumerado>
+smtpd_restriction_classes = reject_if_sender_match1, reject_if_sender_match2
+reject_if_sender_match1 = check_sender_access hash:/etc/postfix/sender1_denied
+reject_if_sender_match2 = check_sender_access hash:/etc/postfix/sender2_denied
+smtpd_recipient_restrictions = reject_non_fqdn_recipient,
+                               reject_unknown_recipient_domain,
+                               check_recipient_access hash:/etc/postfix/rcpts,
+                               permit_mynetworks,
+                               permit_sasl_authenticated,
+                               reject_unauth_destination,
+                               check_policy_service inet:127.0.0.1:60000
+</comandoNumerado>
+
+	/etc/postfix/rcpts
+
+<comando>
+rei@4linux.com.br            reject_if_sender_match1
+tha@4linux.com.br            reject_if_sender_match2
+</comando>
+
+	/etc/postfix/sender1_denied
+
+<comando>
+saito@4linux.com.br        reject
+cesar@4linux.com.br        reject
+fike@4linux.com.br         reject
+</comando>
+
+	/etc/postfix/sender2_denied
+
+<comando>
+origem1@origem.com.br        dunno
+origem.com.br                reject
+</comando>
+
+
+<subsecao>Restrições de conexões</subsecao>
+
+<comando>
+smtpd_client_connection_count_limit = 10
+smtpd_recipient_limit = 200
+smtpd_timeout = 60s
+smtpd_hard_error_limit = 1
+</comando>
+
+<subsecao>Restrições de conexões por período de tempo</subsecao>
+
+<comando>
+anvil_rate_time_unit = 60s
+smtpd_client_connection_rate_limit = 10
+smtpd_client_message_rate_limit = 20
+smtpd_client_recipient_rate_limit = 200
+</comando>
+
+<subsecao>Restrições do tamanho da mensagem</subsecao>
+
+<comando>
+message_size_limit = 20480000
+</comando>
