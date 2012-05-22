@@ -1,31 +1,69 @@
 <capitulo>Postfix: introdução</capitulo>
 
-	A criação de todo software depende de uma motivação especial ou deficiência de alguma ferramenta. Ao analisar o software livre, o mesmo foi criado por aqueles que não concordavam em um modelo de licenciamento totalmente fechado e que só beneficiavam as grandes companhias. Você era obrigado a pagar uma quantia significativa para ter o direito de usar um determinado software.
-
-	Aos poucos os projetos chamados de alternativos começavam a surgir. Nasceu o movimento do software livre assim os programadores ganharam mais liberdades para criar e melhorar aquilo que já existia. O modelo de negócio proprietário começou a perder força e nos dias atuais, o software livre está presente cada vez mais nos computadores de todo o mundo. 
-
-	Já que o Postfix é um software livre e foi criado a partir de deficiência dos softwares existentes naquela época, é mais que justo incluir esse grandioso MTA no grupo de softwares livres de sucesso.
-
 <subsecao>História</subsecao>
 
-	Na década de 70, as primeiras mensagens eram enviadas pela Arpanet, antecessora da atual Internet. A troca de mensagens era feita em sua maioria por estudantes, pesquisadores e profissionais dos grandes centros de pesquisa, restrita a poucos usuários que tinham acesso a essa rede. As mensagens eram enviadas através de um protocolo semelhante ao atual SMTP, que foi definido apenas em 1982.
+    Na década de 70, as primeiras mensagens eram enviadas pela Arpanet,
+antecessora da atual Internet. A troca de mensagens era feita em sua
+maioria por estudantes, pesquisadores e profissionais dos grandes
+centros de pesquisa, restrita a poucos usuários que tinham acesso a essa
+rede. As mensagens eram enviadas através de um protocolo semelhante ao
+atual SMTP, que foi definido apenas em 1982.
 
-	O Sendmail era o servidor de correios mais utilizado na decada de 90, causando amor e ódio aos administradores de sistema. Causava amor àqueles que tinham tempo de ler, estudar e compreender o seu funcionamento complexo e cheio de macros. Ódio para aqueles que precisavam apenas rotear suas mensagens e não havia necessidade de perder horas e mais horas tentando compreender seu funcionamento. A sua forma monolítica também era um grande ponto negativo. Sendo apenas um único processo controlando todas as etapas de transmissão de email, o Sendmail apresentava inúmeras falhas de segurança, de maior risco quando executado em modo root. Muitos servidores eram invadidos por crackers e naturalmente os administradores de sistema procuravam alternativas. Na época não existia muitas alternativas, os administradores continuavam a utilizar o Sendmail.
+    O Sendmail era o servidor de correios mais utilizado na decada de 90,
+causando amor e ódio aos administradores de sistema. Causava amor àqueles
+que tinham tempo de ler, estudar e compreender o seu funcionamento complexo
+e cheio de macros. Ódio para aqueles que precisavam apenas rotear suas
+mensagens e não havia necessidade de perder horas e mais horas tentando
+compreender seu funcionamento. A sua forma monolítica também era um grande
+ponto negativo. Sendo apenas um único processo controlando todas as etapas
+de transmissão de email, o Sendmail apresentava inúmeras falhas de segurança,
+de maior risco quando executado em modo root. Muitos servidores eram
+invadidos por crackers e naturalmente os administradores de sistema
+procuravam alternativas. Na época não existia muitas alternativas, os
+administradores continuavam a utilizar o Sendmail.
 
-	Em 1998 as primeiras versões do Postfix começaram a surgir. Wietse Venema é seu criador e possui inúmeros trabalhos relacionados à segurança da informação. Wietse é pesquisador da IBM até hoje. A primeira versão oficial do Postfix, em software livre foi lançada em Dezembro de 1998.
+    Em 1998 as primeiras versões do Postfix começaram a surgir. Wietse
+Venema é seu criador e possui inúmeros trabalhos relacionados à segurança
+da informação. Wietse é pesquisador da IBM até hoje. A primeira versão
+oficial do Postfix, em software livre foi lançada em Dezembro de 1998.
+
+    As configurações feitas de maneira simples, fazem o seu uso bastante
+eficiente e simplificado. É importante compreender em detalhes cada etapa
+de seu funcionamento, desta forma será possível agir de forma rápida e
+eficiente em caso de problemas ou eventualidades em sua estrutura de correio.
+
+    A sua arquitetura é diferente de outros sistemas monolíticos, como o
+Sendmail. O Postfix separa em módulos cada etapa da entrega da mensagens,
+desta forma, diferentes aplicativos trabalham individualmente em uma ordem
+pré-definida para que a entrega das mensagens seja feita com sucesso. Isso
+garante uma estabilidade no sistema e naturalmente um ganho de performance.
 
 <subsecao>Características</subsecao>
 
-	As principais características em seu desenvolvimento:
+    As principais características em seu desenvolvimento:
 
 <lista>
-	<item/><b>Sistema multitarefa</b> – O Postfix possui um conjunto completo de módulos que desempenham um papel específico para cada etapa do tráfego de e-mails; este comportamento permite melhor desempenho em equipamentos multiprocessados.
-	<item/><b>Separação de privilégios</b> – O Postfix é executado em chroot que restringe o acesso a arquivos internos a jaula, separando assim muito de seus módulos. Um possível invasor que explore uma vulnerabilidade do Postfix será restrito a um pequeno espaço do sistema, normalmente /var/spool/postfix, assim, não comprometendo a base de usuários, base de mensagens, ou a obtenção de informações do sistema.
-	<item/><b>Modular</b> – É possível criar módulos para trabalhar em conjunto com o Postfix, tornando-o facilmente extendível.
-	<item/><b>Compatibilidade</b> – O Postfix foi desenvolvido para suportar os formatos de armazenamentos de mensagens existentes.
-</lista>
+  <item/><b>Sistema multitarefa</b> – O Postfix possui um conjunto
+completo de módulos que desempenham um papel específico para cada etapa
+do tráfego de e-mails; este comportamento permite melhor desempenho em
+equipamentos multiprocessados.
 
-	É possível perceber que o Postfix é um software criado para ter uma arquitetura rica, diversificada e modular, permitindo assim seu uso em ambientes diferentes.
+  <item/><b>Separação de privilégios</b> – O Postfix é executado em
+chroot que restringe o acesso a arquivos internos a jaula, separando
+assim muito de seus módulos. Um possível invasor que explore uma
+vulnerabilidade do Postfix será restrito a um pequeno espaço do sistema,
+normalmente /var/spool/postfix, assim, não comprometendo os arquivos do
+sistema, base de mensagens.
+
+  <item/><b>Modular</b> – É possível criar módulos para trabalhar em
+conjunto com o Postfix, tornando-o facilmente extendível.
+
+  <item/><b>Compatibilidade</b> – O Postfix foi desenvolvido para suportar
+os formatos de armazenamentos de mensagens existentes, e possui suporte a
+LMTP para entregar a mensagem a um serviço de aramazenamento de mensagens
+especializado.
+
+</lista>
 
 <subsecao>Avanços</subsecao>
 
@@ -35,7 +73,6 @@
 	<tr> Postfix 1.0 <col/> Suporte a LMTP. </tr>
 	<tr> Postfix 1.0 <col/> Pipelining (SMTP client and server). </tr>
 	<tr> Postfix 1.0 <col/> Suporte a autenticação SASL. </tr>
-	<tr> Postfix 1.1 <col/> QMQP server. </tr>
 	<tr> Postfix 2.0 <col/> MIME (including 8BITMIME to 7BIT conversion). </tr>
 	<tr> Postfix 2.2 <col/> Cache de conexão SMTP. </tr>
 	<tr> Postfix 2.2 <col/> Suporte a IPV6. </tr>
@@ -73,26 +110,7 @@
 
 <subsecao>Componentes</subsecao>
 
-	As configurações feitas de maneira simples fazem o seu uso bastante eficiente e simplificado. É importante compreender em detalhes cada etapa de seu funcionamento, desta forma será possível agir de forma rápida e eficiente em caso de problemas ou eventualidades em sua estrutura de correio.
-
-	A sua arquitetura é diferente de outros sistemas monolíticos, como o Sendmail. O Postfix separa em módulos cada etapa da entrega da mensagens, desta forma, diferentes aplicativos trabalham individualmente em uma ordem pré-definida para que a entrega das mensagens seja feita com sucesso. Isso garante uma estabilidade no sistema e naturalmente um ganho de performance.
-
-	A outra grande vantagem da utilização de separação privilégios é poder controlar melhor o objetivo de seu sistema de e-mail. Caso seu servidor só receba mensagens da internet (MX), você pode priorizar o processo responsável por essa tarefa, deixando as outras atividades com um peso menor. Isso agilizará o trabalho de seu servidor e o ganho de performance será visível.
-
-	É possível também fazer o Postfix trabalhar de forma individual. Em uma situação que o servidor recebeu uma grande quantidadede mensagens e não está conseguindo realizar a entrega destas mensagens. É possível interromper o processo de recepção de novas mensagens (smtpd) fazendo com que as mensagens enfileiradas sejam entregues. No momento que a fila diminuir, pode-se reativaro processo smtpd, voltando a permitir recepção de novas mensagens. Esta lógica também é utilizada nas demais etapas de entrega de mensagens.
-
-<subsecao>Filas de mensagens</subsecao>
-
-	O Postfix possui uma fila para cada etapa da entrega de mensagens. Vamos agora explorar cada uma dessas filas na tabela abaixo:
-
-<figura>
-    <tamanho>0.7</tamanho>
-    <arquivo>imgs/postfix-intro-1</arquivo>
-    <legenda>Descrição das filas de mensagens</legenda>
-    <nome>fig:postfix-intro-1</nome>
-</figura>
-
-<subsecao>Diagrama de interação dos módulos</subsecao>
+<subsubsecao>Diagrama de interação dos módulos</subsubsecao>
 
 <figura>
     <tamanho>1.0</tamanho>
@@ -101,54 +119,297 @@
     <nome>fig:postfix-intro-2</nome>
 </figura>
 
-<subsecao>Recepção de mensagens</subsecao>
+<subsubsecao>Filas de mensagens</subsubsecao>
+
+    O Postfix possui uma fila para cada etapa da entrega de mensagens.
+Vamos agora explorar cada uma dessas filas na tabela abaixo:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-intro-1</arquivo>
+    <legenda>Descrição das filas de mensagens</legenda>
+    <nome>fig:postfix-intro-1</nome>
+</figura>
 
 <subsubsecao>Recepção de mensagens locais</subsubsecao>
 
-	As mensagens locais são inseridas na fila maildrop pelo comando "sendmail", sendo uma interface para o utilitário postdrop. Estas mensagens podem ser provenientes do próprio sistema, como mensagems do Cron ou outro aplicativo. O módulo pickup monitora a fila maildrop, e ao ser detectada uma nova mensagem, esta é entregue ao módulo cleanup. Caso a mensagem não possua todos os itens necessários em seu cabeçalho, o módulo cleanup realizará a inserção dos mesmos. Antes do e-mail prosseguir, o módulo trivial-rewrite é acionada para verificar se o destinatário deve ser alterado. Veja os detalhes no gráfico a seguir.
+    As mensagens locais são inseridas na fila maildrop pelo comando
+"sendmail", sendo uma interface de compatibilidade para o utilitário
+postdrop. Estas mensagens podem ser provenientes do próprio sistema,
+como mensagems do Cron ou outro aplicativo. O módulo pickup monitora
+a fila maildrop, e ao ser detectada uma nova mensagem, esta é
+entregue ao módulo cleanup. Caso a mensagem não possua todos os
+itens necessários em seu cabeçalho, o módulo cleanup realizará a
+inserção dos mesmos. Antes do e-mail prosseguir, o módulo
+trivial-rewrite é acionada para verificar se o destinatário deve ser
+alterado. Em seguinda a mensagem é movida para a fila incoming.
 
 <subsubsecao>Recepção de mensagens via rede</subsubsecao>
 
-	O uso mais comum do Postfix é via rede, onde um servidor de correio (que não precisa ser necessariamente outro Postfix) realiza a entrega do email, muitas vezes passando por vários cantos do planeta até chegar à caixa do usuário. Tendo como base o gráfico 2, percebemos que as mensagens chegam pelo daemon smtpd, que faz várias checagens de segurança (verifica se as mensagens atende os padrões mínimos, se o cliente tem o direito de fazer relay por esse servidor ou não e se o destinatário existe no servidor). O smtpd repassa a mensagem para o cleanup, que como já vimos acima, faz suas checagens e entrega a mensagem para a fila de incoming. A partir daí, a mensagem segue seu ciclo até chegar à caixa postal do usuário. 
+    O uso mais comum do Postfix é via rede, onde um servidor de correio
+(que não precisa ser necessariamente outro Postfix) realiza a entrega do
+email, muitas vezes passando por vários cantos do planeta até chegar à
+caixa do usuário. As mensagens chegam pelo daemon smtpd, que faz várias
+checagens de segurança (verifica se as mensagens atende os padrões,
+se o cliente tem o direito de fazer relay por esse servidor ou não e se
+o destinatário existe no servidor). O smtpd repassa a mensagem para o
+cleanup, que como já vimos acima, faz suas checagens e entrega a mensagem
+para a fila de incoming. A partir daí, a mensagem segue seu ciclo até
+chegar à caixa postal do usuário.
 
-<subsecao>Entrega local de mensagens</subsecao>
+<subsubsecao>Entrega local de mensagens</subsubsecao>
 
-	Após a recepção da mensagem, esta é enfileirada sendo necessário a realização da sua entrega a caixa de mensagens. Este procedimento é chamado de "Mail Delivery Agent - MDA", sendo possível a utilização de um software externo ao Postfix para a realização deste procedimento como o procmail ou o maildrop, ou a utilização do próprio Postfix, como documentado a seguir.
+    Após a recepção da mensagem, esta é enfileirada sendo necessário a
+realização da sua entrega a caixa de mensagens. Este procedimento é chamado
+de "Mail Delivery Agent - MDA", sendo possível a utilização de um software
+externo ao Postfix para a realização deste procedimento como o procmail ou
+o maildrop, ou a utilização do próprio Postfix, como documentado a seguir.
 
-	A mensagem pode ser entregue em um diretório no sistema de arquivos, sendo armazenada no formato mbox ou Maildir, assim como, pode ser entregue através do protocolo LMTP.
+    A mensagem pode ser entregue em um diretório no sistema de arquivos,
+sendo armazenada no formato mbox ou Maildir, assim como, pode ser entregue
+através do protocolo LMTP.
 
-<subsubsecao>Formato mbox</subsubsecao>
+<lista>
+<item/>Formato mbox
+</lista>
 
-	O formato de armazenamento mbox utiliza um único arquivo para armazenar a caixa postal de cada usuário, sendo que as mensagens ficam concatenadas e separadas por um linha indicativa de início de mensagem. As mensagens do usuário "rei", ficam localizadas no arquivo /var/spool/mail/rei, sendo que este arquivo pode ser grande, dificultando a leitura de seu conteúdo pelo servidor de POP/IMAP.
+    O formato de armazenamento mbox utiliza um único arquivo para armazenar
+a caixa postal de cada usuário, sendo que as mensagens ficam concatenadas e
+separadas por um linha indicativa de início de mensagem. As mensagens do
+usuário "rei", ficam localizadas no arquivo /var/spool/mail/rei, sendo que
+este arquivo pode ser grande, dificultando a leitura de seu conteúdo pelo
+servidor de POP/IMAP.
 
-	O comportamento padrão do Postfix é realizar a entrega da mensagem no formato mbox, em /var/spool/mail/usuario, e é determinada pelo valor do parâmetro especificado a seguir:
+    O comportamento padrão do Postfix é realizar a entrega da mensagem no
+formato mbox, em /var/spool/mail/usuario, e é determinada pelo valor do
+parâmetro especificado a seguir:
 
 <comando>
 mail_spool_directory = /var/spool/mail
 </comando>
 
-<subsubsecao>Formato Maildir</subsubsecao>
+<lista>
+<item/>Formato Maildir
+</lista>
 
-	O formato de armazenamento Maildir cria um novo arquivo para cada mensagem recebida. Criado para resolver deficiências do formato mbox, como a lentidão para acesso as mensagens em grandes caixas postais.
+    O formato de armazenamento Maildir cria um novo arquivo para cada
+mensagem recebida. Criado para resolver deficiências do formato mbox, como
+a lentidão para acesso as mensagens em grandes caixas postais.
 
-	Para o Postfix realizar a entrega da mensagem no formado Maildir deve utilizar a configuração a seguir:
+    Para o Postfix realizar a entrega da mensagem no formado Maildir deve
+utilizar a configuração a seguir:
 
 <comando>	
 mail_spool_directory = /var/spool/mail/
 </comando>
 
-	A escolha do formato de armazenamento depende diretamente do software de POP3/IMAP que é utilizado, pois sua configuração precisa acessar exatamente o mesmo diretório e as mensagens devem estar no formato esperado por este software.
+    A escolha do formato de armazenamento depende diretamente do software de
+POP3/IMAP que é utilizado, pois sua configuração precisa acessar exatamente o
+mesmo diretório e as mensagens devem estar no formato esperado por este software.
 
-<subsubsecao>LMTP - Local Mail Transport Protocol</subsubsecao>
+<lista>
+<item/>LMTP - Local Mail Transport Protocol
+</lista>
 
-	O LMTP criado para a transferência de mensagens em redes internas, é semelhante ao protocolo SMTP, entretando seu objetivo é transferir as mensagens entre servidores com endereços determinados.
+    O LMTP criado para a transferência de mensagens em redes internas, é
+semelhante ao protocolo SMTP, entretando seu objetivo é transferir as
+mensagens entre servidores locais.
 
-	Este meio de entrega é utilizado pelo Cyrus, software utilizado durante este treinamento. Assim, o Postfix recebe a mensagem, verifica a existência do usuário, entre outros validações, encaminhando a mensagem para o Cyrus.
+    Este meio de entrega é utilizado pelo Cyrus, software utilizado durante
+este treinamento. Assim, o Postfix recebe a mensagem, verifica a existência
+do usuário, entre outros validações, encaminhando a mensagem para o Cyrus.
 
-	O LMTP permite a utilização de um conjunto de servidores para o armazenamento de e-mails, caso inúmeros domínios precisem ser armazenados em diferentes servidores. O Cyrus fornece recebe as mensagens através da porta TCP/24.
+    O LMTP permite a utilização de um conjunto de servidores para o
+armazenamento de e-mails, caso inúmeros domínios precisem ser armazenados em
+diferentes servidores. O Cyrus fornece recebe as mensagens através da porta
+TCP/24.
 
-	O LMTP não deve ser acessível através da internet, visto que somente o MTA necessita realizar conexões a este protocolo. O parâmetro de configuração a seguir tem prioridade em relação a entrega nos formatos mbox e Maildir.
+    O LMTP não deve ser acessível através da internet, visto que somente o
+MTA necessita realizar conexões a este protocolo. O parâmetro de configuração
+a seguir tem prioridade em relação a entrega nos formatos mbox e Maildir.
 
 <comando>
 mailbox_transport = lmtp:unix:/var/run/cyrus/socket/lmtp
 </comando>
+
+<comando>
+mailbox_transport = lmtp:inet:[127.0.0.1]:24
+</comando>
+
+
+<subsecao>Instalação</subsecao>
+
+	A instalação Postfix no Debian é demonstrada abaixo:
+
+<comando>
+	# aptitude install postfix postfix-ldap
+</comando>
+
+	O comando acima vai automaticamente instalar o Postfix e desinstalar automaticamente o Exim, já que pela política do Debian (e da maioria das outras distribuições), cada servidor pode ter apenas um único MTA. 
+
+	Depois de instalado, os arquivos de configurações ficam localizados no diretório /etc/postfix , que no próximo capítulo estudaremos com detalhes suas configurações. 
+
+
+<subsubsecao>Arquivos e utilitários instalados</subsubsecao>
+
+	O Postfix possui uma série de recursos e ferramentas para trabalhar com fila, mensagens, aliases entre outros. Abaixo, a lista dos comandos e seu significado, em seguida uma relação mais detalhada de cada um deles:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-conf-3</arquivo>
+    <legenda>Ferramentas do Postfix</legenda>
+    <nome>fig:postfix-conf-3</nome>
+</figura> 
+
+	No Debian, os arquivos no diretório /etc/postfix são os seguintes:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-conf-1</arquivo>
+    <legenda>Arquivos do Postfix</legenda>
+    <nome>fig:postfix-conf-1</nome>
+</figura>
+
+<subsubsecao>main.cf</subsubsecao>
+
+	O main.cf é o arquivo principal de configuração, com ele você pode determinar todo o funcionamento do seu Postfix. Abaixo, o main.cf padrão do Debian, que por sinal é bastante reduzido e suficiente para colocar o servidor em produção. Adiante, veremos mais detalhes de configurações e comandos úteis para gerenciar seu sistema.
+
+<comando>
+# See /usr/share/postfix/main.cf.dist for a commented, more complete version
+
+# Debian specific:  Specifying a file name will cause the first
+# line of that file to be used as the name.  The Debian default
+# is /etc/mailname.
+#myorigin = /etc/mailname
+
+smtpd_banner = $myhostname ESMTP $mail_name (Debian/GNU)
+biff = no
+
+# appending .domain is the MUA's job.
+append_dot_mydomain = no
+
+# Uncomment the next line to generate "delayed mail" warnings
+#delay_warning_time = 4h
+# TLS parameters
+smtpd_tls_cert_file=/etc/ssl/certs/ssl-cert-snakeoil.pem
+smtpd_tls_key_file=/etc/ssl/private/ssl-cert-snakeoil.key
+smtpd_use_tls=yes
+smtpd_tls_session_cache_database = btree:${queue_directory}/smtpd_scache
+smtp_tls_session_cache_database = btree:${queue_directory}/smtp_scache
+
+# See /usr/share/doc/postfix/TLS_README.gz in the postfix-doc package for
+# information on enabling SSL in the smtp client.
+
+myhostname = devil.exemplo.com.br
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
+myorigin = /etc/mailname
+mydestination = localhost
+relayhost =
+mynetworks = 127.0.0.0/8
+mailbox_size_limit = 0
+recipient_delimiter = +
+#inet_interfaces = 127.0.0.1
+</comando>
+
+	A saída acima é o arquivo padrão, gerado logo após a instalação do Postfix no Debian. Não foi feita nenhuma modificação nesse arquivo, mas desta forma o Postfix funcionaria perfeitamente no sistema Debian. 
+
+	Vamos agora explorar cada uma das diretivas do arquivo padrão e depois vamos aos poucos aprofundando em outras diretivas:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-conf-2</arquivo>
+    <legenda>Principais opções do main.cf</legenda>
+    <nome>fig:postfix-conf-2</nome>
+</figura> 
+
+
+	As diretivas acima são as mais comuns e já são suficientes para colocar o servidor em produção. O Debian por padrão, faz a entrega local das mensagens, localizados no /var/spool/mail e usa como padrão os usuários criados no sistema. O esquema acima não tem muitas vantagens, apenas faz a entrega de mensagens, nada muito além disso. 
+
+<subsubsecao>master.cf</subsubsecao>
+
+	O master.cf controla a inicialização e ações de cada daemon do Postfix. O exemplo abaixo mostra o modelo do master.cf do Postfix instalado no Debian e logo após alguns comentários importantes sobre seu formato:
+
+<comando>
+#
+# Postfix master process configuration file.  For details on the format
+# of the file, see the master(5) manual page (command: "man 5 master").
+#
+# ==========================================================================
+# service type  private unpriv  chroot  wakeup  maxproc command + args
+#               (yes)   (yes)   (yes)   (never) (100)
+# ==========================================================================
+smtp      inet  n       -       -       -       -       smtpd
+pickup    fifo  n       -       -       60      1       pickup
+cleanup   unix  n       -       -       -       0       cleanup
+qmgr      fifo  n       -       n       300     1       qmgr
+#qmgr     fifo  n       -       -       300     1       oqmgr
+tlsmgr    unix  -       -       -       1000?   1       tlsmgr
+rewrite   unix  -       -       -       -       -       trivial-rewrite
+bounce    unix  -       -       -       -       0       bounce
+defer     unix  -       -       -       -       0       bounce
+trace     unix  -       -       -       -       0       bounce
+verify    unix  -       -       -       -       1       verify
+flush     unix  n       -       -       1000?   0       flush
+proxymap  unix  -       -       n       -       -       proxymap
+smtp      unix  -       -       -       -       -       smtp
+relay     unix  -       -       -       -       -       smtp
+	-o fallback_relay=
+#       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
+showq     unix  n       -       -       -       -       showq
+error     unix  -       -       -       -       -       error
+discard   unix  -       -       -       -       -       discard
+local     unix  -       n       n       -       -       local
+virtual   unix  -       n       n       -       -       virtual
+lmtp      unix  -       -       n       -       -       lmtp
+anvil     unix  -       -       -       -       1       anvil
+scache    unix  -       -       -       -       1       scache
+# ====================================================================
+# Interfaces to non-Postfix software. Be sure to examine the manual
+# pages of the non-Postfix software to find out what options it wants.
+#
+# Many of the following services use the Postfix pipe(8) delivery
+# agent.  See the pipe(8) man page for information about ${recipient}
+# and other message envelope options.
+# ====================================================================
+maildrop  unix  -       n       n       -       -       pipe
+          flags=DRhu user=vmail argv=/usr/bin/maildrop -d ${recipient}
+uucp      unix  -       n       n       -       -       pipe
+	  flags=Fqhu user=uucp
+	  argv=uux -r -n -z -a$sender - $nexthop!rmail ($recipient)
+ifmail    unix  -       n       n       -       -       pipe
+	  flags=F user=ftn
+	  argv=/usr/lib/ifmail/ifmail -r $nexthop ($recipient)
+bsmtp     unix  -       n       n       -       -       pipe
+	  flags=Fq. user=bsmtp
+	  argv=/usr/lib/bsmtp/bsmtp -t$nexthop -f$sender $recipient
+scalemail-backend unix  -       n       n       -       2       pipe
+	  flags=R user=scalemail
+	  argv=/usr/lib/scalemail/bin/scalemail-store ${nexthop} ${user} ${extension}
+mailman   unix  -       n       n       -       -       pipe
+	  flags=FR user=list
+	  argv=/usr/lib/mailman/bin/postfix-to-mailman.py ${nexthop} ${user}
+
+</comando>
+
+Abaixo, a descrição de cada coluna:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-conf-4</arquivo>
+    <legenda>Opções de cada módulo do master.cf</legenda>
+    <nome>fig:postfix-conf-4</nome>
+</figura> 
+
+
+Alguns exemplos de serviços:
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/postfix-conf-5</arquivo>
+    <legenda>Exemplos de módulos utilizados no master.cf</legenda>
+    <nome>fig:postfix-conf-5</nome>
+</figura> 
+
+
+

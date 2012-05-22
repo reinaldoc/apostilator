@@ -63,7 +63,7 @@ Se a mensagem está em deferred, o motivo da não entrega da mensagem também é
 
 <comando>
 -Queue ID- --Size-- ----Arrival Time---- -Sender/Recipient-------
-4754B2B068A0*    3906 Sun Jun19 11:22:41  rei@4linux.com.br
+4754B2B068A0*    3906 Sun Jun19 11:22:41  rei@exemplo.com.br
                                           reinaldoc@gmail.com
 </comando>
 
@@ -89,7 +89,7 @@ Se você deseja remover todas as mensagens da fila, basta um:
 	Repare que o parâmetro ALL deve ser informado tudo em maiúsculo.
 
 
-<subsecao>Segurando mensagens</subsecao>
+<subsecao>Retendo mensagens</subsecao>
 
 	Pode existir situações onde você tenha necessidade de segurar mensagens na fila. Para isso, você pode usar o comando postsuper, com a opção -h. As mensagens em espera ficam marcadas com uma exclamação após seu ID e ficam nessa fila por tempo indeterminado, até que o administrador rode outro comando para soltar as mensagens, o postsuper -H (maíusculo). Veja o exemplo:
 <comando>

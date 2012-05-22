@@ -19,15 +19,12 @@ disable_vrfy_command = yes
 	Exemplo de diálogo:
 
 <comandoNumerado>
-telnet localhost 25
-Trying 127.0.0.1...
-Connected to localhost.
-Escape character is '^]'.
-220 boca.4linux.com.br ESMTP Postfix
-helo origem.dominio.com.br
-250 boca.4linux.com.br
-mail from: usuario@dominio.com.br
-501 Bad address syntax
+	  $ nc localhost 25
+S:	220 zeus.exemplo.com.br ESMTP Postfix
+C:	HELO origem.dominio.com.br
+S:	250 zeus.exemplo.com.br
+C:	MAIL FROM: usuario@dominio.com.br
+S:	501 Bad address syntax
 </comandoNumerado>
 
 
@@ -35,20 +32,20 @@ mail from: usuario@dominio.com.br
 
 	Sender Policy Framework - SPF (Tradução livre: “Estrutura e Regras de Origem”) é uma política anti-spam baseada em consultas de DNS. A primeira é etapa é divulgar através de um registro na zona de DNS quais endereços IP podem realizar entregras utilizando como remetente um endereço de e-mail deste domínio.
 	
-	A seguir observemos um exemplo de um registro TXT do tipo SPF informando que somente o ip 200.212.122.137 tem permissão para entregar e-mails utilizando o remetente pertencente ao domínio 4linux.com.br.
+	A seguir observemos um exemplo de um registro TXT do tipo SPF informando que somente o ip 200.212.122.137 tem permissão para entregar e-mails utilizando o remetente pertencente ao domínio exemplo.com.br.
 
 <comando>
-	$ host -t txt 4linux.com.br
+	$ host -t txt exemplo.com.br
 </comando>
 <comando>
-4linux.com.br           TXT     "v=spf1 ip4:200.212.122.137 -all"
+exemplo.com.br           TXT     "v=spf1 ip4:200.212.122.137 -all"
 </comando>
 
 	Para incluir este registro, é necessário alterar a zona de DNS que responde pelo respectivo domínio, incluindo um campo TXT conforme o exemplo:
 
 <comandoNumerado>
 $TTL 1D
-@       IN	SOA  ns1.4linux.com.br.  rei.4linux.com.br. (
+@       IN	SOA  ns1.exemplo.com.br.  rei.exemplo.com.br. (
 			2007080201      ; serial
 			86400           ; refresh
 			7200            ; retry
@@ -65,30 +62,59 @@ ns2     IN	A     192.168.100.2
 mail    IN	A     192.168.100.3
 </comandoNumerado>
 
-	A inserção deste registro de SPF informa ao servidores de correio eletrônico que somente devem receber e-mails com remetente do domínio 4linux.com.br, caso seja proveniente o ip 192.168.100.3.
+	A inserção deste registro de SPF informa ao servidores de correio eletrônico que somente devem receber e-mails com remetente do domínio exemplo.com.br, caso seja proveniente o ip 192.168.100.3.
 
 	A próxima etapa é configurar o postfix para verificar SPF dos emails recebidos. Para realizar esta verificação utilizaremos um módulo adicional que pode ser obtido:
 
 <comando>
-	$ wget http://www.nautilus.com.br/~rei/material/lost+found/libspf2.so.1
-	# mv libspf2.so.1 /usr/lib
-	$ wget http://www.nautilus.com.br/~rei/material/lost+found/policyd
-	# mv policyd /usr/lib/postfix/spf-policy
-	# chmod 755 /usr/lib/postfix/spf-policy
+    # aptitude install postfix-policyd-spf-python
 </comando>
 
-	Este módulo deve ser cadastrado no master.cf através das configuração indicada:
+<lista>
+<item/><b>/etc/postfix/master.cf</b>
+</lista>
 
 <comandoNumerado>
-# ==========================================================================
-# service type  private unpriv  chroot  wakeup  maxproc command + args
-#               (yes)   (yes)   (yes)   (never) (100)
-# ==========================================================================
-spf       unix    -       n       n        -      -     spawn user=nobody
-          argv=/usr/lib/postfix/spf-policy
+spf       unix  -       n       n       -       0       spawn
+          user=nobody argv=/usr/bin/python /usr/bin/policyd-spf
+          /etc/postfix-policyd-spf-python/policyd-spf.conf
 </comandoNumerado>
 
+<lista>
+<item/><b>/etc/postfix/main.cf</b>
+</lista>
+
+<comando>
+smtpd_sender_restrictions = check_policy_service unix:private/spf
+</comando>
+
+<comando>
+    # invoke-rc.d postfix restart
+</comando>
+
+<comando>
+	  # nc 10.118.118.6 25
+S:	220 rpawsds10.redetre.jus.br ESMTP Postfix (Debian/GNU)
+C:	EHLO uol.com.br
+S:	250-rpawsds10.redetre.jus.br
+S:	250-PIPELINING
+S:	250-SIZE 10240000
+S:	250-VRFY
+S:	250-ETRN
+S:	250-STARTTLS
+S:	250-ENHANCEDSTATUSCODES
+S:	250-8BITMIME
+S:	250 DSN
+C:	MAIL FROM:<rei@uol.com.br>
+S:	250 2.1.0 Ok
+C:	RCPT TO:<rei@rpawsds10.redetre.jus.br>
+S:	550 5.7.1 <rei@uol.com.br>: Sender address rejected: Message rejected due
+	to: SPF fail - not authorized. Please see
+	http://www.openspf.org/Why?s=helo;id=uol.com.br;ip=10.118.118.6;r=rei@rpawsds10.redetre.jus.br
+</comando>
+
 <subsecao>Greylist</subsecao>
+
 	Greylist é a validação do servidor de e-mail que está entregando a mensagem. Na primeira tentativa de entrega de um determinado e-mail, o conjunto formado pelo ip do servidor de origem, endereço de e-mail do remetente e endereço de e-mail do destinatário - tripla - é armazenada. Nesta fase, esta tentativa de entrega do e-mail é rejeitada com um código de erro 4xx. Este código indica um erro temporário, e induz ao servidor que está entregando a mensagem, a realização de uma nova tentativa depois de algum tempo.<citar>Spam</citar>
 
 	Caso o servidor de origem seja um servidor de e-mail seja válido, seguindo as RFC's, ao receber esta notificação de erro temporário, uma nova tentativa de entrega será realizada, quando o sistema de greylist aceitará a mensagem. Emails com a mesma tripla, após um certo número de entregas com sucesso podem ser aceitos diretamente por um determinado período, minimizando o atraso natural do sistema de greylist. Outras opções também são configuráveis, maiores informações podem ser obtidas no manual: man postgrey.<citar>Spam</citar>
@@ -218,16 +244,16 @@ smtpd_recipient_restrictions = reject_non_fqdn_recipient,
 	/etc/postfix/rcpts
 
 <comando>
-rei@4linux.com.br            reject_if_sender_match1
-tha@4linux.com.br            reject_if_sender_match2
+rei@exemplo.com.br            reject_if_sender_match1
+tha@exemplo.com.br            reject_if_sender_match2
 </comando>
 
 	/etc/postfix/sender1_denied
 
 <comando>
-saito@4linux.com.br        reject
-cesar@4linux.com.br        reject
-fike@4linux.com.br         reject
+saito@exemplo.com.br        reject
+cesar@exemplo.com.br        reject
+fike@exemplo.com.br         reject
 </comando>
 
 	/etc/postfix/sender2_denied
