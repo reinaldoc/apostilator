@@ -2,3 +2,9 @@
 20_smtp.axml
 30_saslauthd.axml
 40_cyrus.axml
+60_postfix-intro.axml
+64_postfix-integracao.axml
+66_postfix-restricoes.axml
+68_postfix-filas.axml
+70_webmail.axml
+75_troubleshooting.axml
