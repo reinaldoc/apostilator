@@ -385,6 +385,9 @@ configuração do servidor de aplicações:
 
 <quebraPagina/>
 
+<subsecao>SCM</subsecao>
+
+
 <subsecao>Framework Demoiselle</subsecao>
 
 	O Framework demoiselle é formado por: archétipos do maven que estão
