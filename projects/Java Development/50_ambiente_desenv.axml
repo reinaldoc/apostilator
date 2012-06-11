@@ -387,6 +387,84 @@ configuração do servidor de aplicações:
 
 <subsecao>SCM</subsecao>
 
+	Sistemas de controle de versão permitem o controle sobre as alterações
+de documentos, incluindo código fonte de software, e tem a função de
+repositório centralizado destes arquivos. Cada alteração é identificada
+com autor e descrição, permitindo o mapeamento do histórico das evoluções
+do software.
+
+	Implementações populares como CVS, Subversion e Git são suportados pelo
+eclipse. Enquanto o suporte ao Git, provido pelo plugin E-Git, é instalado
+simultaneamente ao Jboss Tools, o suporte ao Subversion pode ser adicionado
+através do plugin Subclipse.
+
+<lista>
+<item/> acesse o menu: <b>Help</b> => <b>Eclipse Marketplace...</b>;
+<item/> digite o termo <b>subclipse</b> para a pesquisa, e clique em <b>Go</b>;
+<item/> identifique o item <b>Subclipse</b> e clique em <b>Install</b>;
+</lista>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/scm_subclipse_install_01</arquivob>
+    <legenda>Instalação do Subclipse</legenda>
+    <nome>fig:scm-subclipse-01</nome>
+</figura>
+
+	Na nova janela, realize os seguintes procedimentos:
+
+<lista>
+<item/> identifique os items selecionados, e clique em <b>Next</b>;
+<item/> verifique os termos da licença de uso e caso concorde, selecione:
+<b>I accept the terms of the license agreements</b>;
+<item/> clique em <b>Finish</b>;
+<item/> Aguarde o download, e após a conclusão da instalação, reinicie o Eclipse;
+</lista>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/scm_subclipse_install_02</arquivob>
+    <legenda>Instalação do Subclipse</legenda>
+    <nome>fig:scm-subclipse-02</nome>
+</figura>
+
+	Projetos que utilizam Maven em seu gerenciamento, podem ser importados
+diretamente como um projeto Maven a partir de um sistema de controle de
+versão. O maven provê esta funcionalidade através de conectores específicos
+para cada implementação de controle de versão, como o <b>m2e-egit</b> para Git.
+
+<lista>
+	<item/> acesse o menu: <b>Window</b> => <b>Preferences</b> => <b>Maven</b> =>
+<b>Discovery</b>;
+	<item/> clique em <b>Open Catalog</b>;
+	<item/> selecione os items compatíveis com os sistemas de controle de
+versão de seu interesse;
+	<item/> clique em <b>Finish</b>;
+</lista>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/scm_maven_install_01</arquivob>
+    <legenda>Instalação da integração do maven com SCM</legenda>
+    <nome>fig:scm-maven-01</nome>
+</figura>
+
+<lista>
+<item/> identifique os items selecionados, e clique em <b>Next</b>;
+<item/> verifique os termos da licença de uso e caso concorde, selecione:
+<b>I accept the terms of the license agreements</b>;
+<item/> clique em <b>Finish</b>;
+<item/> Aguarde o download, e após a conclusão da instalação, reinicie o Eclipse;
+</lista>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/scm_maven_install_02</arquivob>
+    <legenda>Instalação da integração do maven com SCM</legenda>
+    <nome>fig:scm-maven-02</nome>
+</figura>
+
+<quebraPagina/>
 
 <subsecao>Framework Demoiselle</subsecao>
 
