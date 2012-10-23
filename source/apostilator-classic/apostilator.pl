@@ -22,8 +22,8 @@
 
 use strict ;
 
-my $version = "v0.3-20120211";
-my $pdf_view = "xpdf";
+my $version = "v0.3-20121018";
+my $pdf_view = "okular";
 my $pdf_exec = "on";
 my $pdf_make = "on";
 my $lst_make = "off";
@@ -398,7 +398,7 @@ sub start() {
 }
 
 sub pdf() {
-  my @programs = ("$pdf_view","xpdf","evince","kpdf","acroread");
+  my @programs = ("$pdf_view","xpdf","evince","kpdf","okular","acroread");
   foreach( @programs ) {
         if (system("which $_ 2>&1 >/dev/null") == 0) {
             my $project = &project_name();
