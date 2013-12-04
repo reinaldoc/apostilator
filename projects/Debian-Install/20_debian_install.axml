@@ -50,8 +50,8 @@ aptitude install syslinux mbr
 </comandoNumerado>
 
 <lista>
-<item/>ftp://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/hd-media/vmlinuz
-<item/>ftp://ftp.debian.org/debian/dists/stable/main/installer-i386/current/images/hd-media/initrd.gz
+<item/>http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/vmlinuz
+<item/>http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz
 </lista>
 
     Pode-se realizar a instalaçao do Debian GNU/Linux a partir de uma mídia
@@ -76,8 +76,8 @@ identificando a versão apropriadamente:
 <comandoNumerado>
 mount /dev/sdX1 /mnt
 mkdir /mnt/boot
-cp vmlinuz /mnt/boot/vmlinuz-debian505
-cp initrd.gz /mnt/boot/initrd-debian505.gz
+cp vmlinuz /mnt/boot/vmlinuz-deb702-amd64
+cp initrd.gz /mnt/boot/initrd-deb702-amd64.gz
 </comandoNumerado>
 
 <lista>
@@ -86,14 +86,14 @@ com o conteúdo abaixo:
 </lista>
 
 <comando>
-default boot/vmlinuz-debian505
-append initrd=boot/initrd-debian505.gz
+default boot/vmlinuz-deb702-amd64
+append initrd=boot/initrd-deb702-amd64.gz
 </comando>
 
     Copie a imagem de CD para a raiz da unidade, e desmonte-a:
 
 <comandoNumerado>
-cp debian-505-i386-netinst.iso /mnt/
+cp debian-7.2.0-amd64-netinst.iso /mnt/
 umount /mnt
 </comandoNumerado>
 
