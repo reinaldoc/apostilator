@@ -49,11 +49,6 @@ utilizados, além do kernel e initrd para iniciar o debian-installer.
 aptitude install syslinux mbr
 </comandoNumerado>
 
-<lista>
-<item/>http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/vmlinuz
-<item/>http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/initrd.gz
-</lista>
-
     Pode-se realizar a instalaçao do Debian GNU/Linux a partir de uma mídia
 removível (pen-drive, hd externo, etc), para isto crie a primeira partição nesta
 unidade e formate-a:
@@ -69,6 +64,14 @@ para realizar a inicialização do kernel, como indicado a seguir:
 syslinux /dev/sdX1
 install-mbr /dev/sdX
 </comandoNumerado>
+
+<lista>
+<item/>http://ftp.debian.org/debian/dists/stable/main/installer-amd64/current/images/hd-media/
+    <lista>
+        <item/>vmlinuz
+        <item/>initrd.gz
+    </lista>
+</lista>
 
     Copie o kernel e a initrd utilizados pelo debian-installer para a unidade,
 identificando a versão apropriadamente:
