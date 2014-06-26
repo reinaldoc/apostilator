@@ -1,0 +1,29 @@
+<capitulo>Instalação</capitulo>
+
+	Zabbix <citar>ZabbixSite</citar>
+
+<comando>
+$ wget http://repo.zabbix.com/zabbix/2.2/debian/pool/main/z/zabbix-release/
+       zabbix-release_2.2-1+wheezy_all.deb
+# dpkg -i zabbix-release_2.2-1+wheezy_all.deb
+# aptitude update
+</comando>
+
+    A lista de <i>software</i> disponíveis pode ser consultada, como indicado
+no exemplo abaixo:
+
+<lista>
+<item/>Pesquisar pelo nome do <i>software</i>:
+</lista>
+
+<comando>
+$ aptitude search zabbix
+</comando>
+
+    Maiores informações sobre um determinado <i>software</i> podem ser obtidas
+como indicado a seguir:
+
+<comando>
+$ aptitude show zabbix-server-pgsql
+</comando>
+
