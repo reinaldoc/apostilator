@@ -110,50 +110,45 @@ utilizados do <i>software</i>.
 
     Após o levantamento destas características, é notável que em ambientes
 corporativos a utilização de <i>software</i> fornecido por um distribuidor é
-essencial para continuidade da disponibilidade dos sistemas.
+contribui para a disponibilidade dos sistemas e consequente continuidade do
+negócio.
 
-    Diminui-se o esforço empregado para manter o parque tecnológico atualizado
-e livre de falhas. Dessa forma, o treinamento utilizará os pacotes fornecidos
-pelo distribuidor do sistema operacional escolhido.
+    Diminui-se o esforço empregado para manter o <i>software</i> atualizado
+e livre de falhas. Assim, o treinamento utilizará os pacotes fornecidos pelo
+distribuidor do sistema operacional.
 
 <subsecao>Debian GNU/Linux</subsecao>
 
-    Os sistemas operacionais baseados em tecnologias livres tendem a fornecer
-<i>software</i> que realizam instalações automatizadas. O Debian fornece os
-utilitários <b>apt-get</b> e <b>aptitude</b> para esta funcionalidade, sendo o
-segundo, sucessor e atualmente de uso recomendado.
+    Os sistemas operacionais baseados em tecnologias abertas comumente
+fornecem um aplicativo que realiza a obtem-se e instalação de <i>software</i>.
+O Debian fornece os utilitários <b>apt-get</b> e <b>aptitude</b> para esta
+funcionalidade, sendo o segundo sucessor e atualmente recomendado.
 
-    O Debian fornece repositórios web que contém os <i>software</i>
-disponíveis para instalação, e estes são distribuídos em forma de pacotes:
-arquivos compactados com rotinas de pré/pós instalação e remoção, e
-informações sobre dependências, recomendações e sugestões de software
-adicionais.
+    O Debian fornece repositórios web que contém os pacotes de <i>software</i>
+disponíveis para instalação: arquivos compactados com rotinas de pré/pós
+instalação e remoção, e informações sobre dependências, recomendações e
+sugestões de software adicionais.
 
     O comportamento padrão do utilitário <i>aptitude</i> ao instalar um
 <i>software</i> é realizar a instalação das <b>dependências</b>, e também
 daqueles especificados como <b>recomendações</b>. Entretanto, este
-comportamento induz a instalação de <i>software</i> não requeridos, e
-demanda a utilização de espaço em disco adicional.
+comportamento induz a instalação de <i>software</i> não necessários.
 
     A instalação automática de <i>software</i> recomendado pode ser
 desabilitada através da adição da configuração abaixo ao arquivo
 <b>/etc/apt/apt.conf</b>:
 
-<lista>
-<item/>Debian Wheezy (desde aptitude >0.4.11):
-</lista>
-
 <comando>
 Apt::Install-Recommends "false";
 </comando>
 
-    O utilitário <i>aptitude</i> também requer a configuração da fonte dos
-<i>software</i> a serem instalados, e isto é realizado no arquivo
-<b>/etc/apt/sources.list</b>, conforme indicado no quadro abaixo.
+    O utilitário <i>aptitude</i> também requer a configuração da fonte do
+<i>software</i> a ser instalado, e isto é realizado no arquivo
+<b>/etc/apt/sources.list</b>, conforme indicado no quadro abaixo:
 
 <comando>
 deb http://ftp.br.debian.org/debian wheezy main contrib non-free
-deb http://ftp.br.debian.org/debian/ wheezy-updates main contrib
+deb http://ftp.br.debian.org/debian wheezy-updates main contrib
 deb http://security.debian.org/ wheezy/updates main contrib
 </comando>
 
