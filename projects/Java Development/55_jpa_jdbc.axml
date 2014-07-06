@@ -10,7 +10,7 @@
 	<item/> http://www.oracle.com/technetwork/database/enterprise-edition/jdbc-112010-090769.html
 </lista>
 
-<subsubsecao>Data Source</subsubsecao>
+<subsubsecao>Data Source: JBoss 6.x</subsubsecao>
 
 <comando>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -26,6 +26,13 @@
     </metadata> 
   </local-tx-datasource> 
 </datasources>
+</comando>
+
+<subsubsecao>Data Source: JBoss 7.x</subsubsecao>
+
+<comando>
+cd /opt/eclipse/workset/jboss-as-7.1.1.Final/bin
+./add-user.sh
 </comando>
 
 <subsubsecao>Persistence</subsubsecao>
