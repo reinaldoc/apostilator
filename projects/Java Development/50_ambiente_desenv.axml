@@ -6,18 +6,18 @@ sistemas utilizando tecnologias J2EE e de ferramentas que aumentam a
 produtividade.
 
 <lista>
-	<item/> Eclipse Indigo SR1 v3.7.1;
-	<item/> Maven Intergration for Web Tools Platform;
-	<item/> JbossTools v3.3.0-M5;
-	<item/> Jboss AS v6.1.0 Final;
-	<item/> Demoiselle 2.2.0 (Maven archetypes; JARs;);
+	<item/> Eclipse Juno SR2 v4.2.2;
+	<item/> JbossTools v4.0.0-Final;
+	<item/> Maven Intergration for Eclipse - m2e;
+	<item/> Jboss AS v7.1.1 Final;
+	<item/> Demoiselle 2.3.2 (JSF-JPA Maven archetype; demoiselle-core package);
 </lista>
 
 <subsecao>Eclipse</subsecao>
 
 	Os procedimentos indicados neste capítulo centralizam a instalação do
 conjunto de programas que formam o ambiente de desenvolvimento no diretório
-<i>/opt/eclipse</i>, possibilitando a replicação deste ambiente de forma ágil,
+<b>/opt/eclipse</b>, possibilitando a replicação deste ambiente de forma ágil,
 podendo-se copiar este diretório para outra estação de trabalho.
 
 	É requisito mínimo a existência de <b>2Gb de memória RAM</b>.
@@ -27,8 +27,7 @@ podendo-se copiar este diretório para outra estação de trabalho.
 	O <i>Eclipse IDE for Java Developers</i> esta disponível em
 <i>www.eclipse.org</i>, cuja versão atual é:
 
-
-	<i><b>eclipse-java-indigo-SR1-linux-gtk.tar.gz</b></i>
+	<b>eclipse-java-juno-SR2-linux-gtk-x86_64.tar.gz</b>
 
 <figura>
     <tamanhob>0.7</tamanhob>
@@ -43,7 +42,7 @@ podendo-se copiar este diretório para outra estação de trabalho.
 
 <comando>
 # cd /opt
-# tar xzf /path/to/eclipse-java-indigo-SR1-linux-gtk.tar.gz
+# tar xzf /path/to/eclipse-java-juno-SR2-linux-gtk-x86_64.tar.gz
 # chown -R johndoe: eclipse
 </comando>
 
@@ -53,7 +52,7 @@ instalar os programas adicionais no diretório <i>/opt/eclipse</i>, ao invés
 de instalados em <i>~/.eclipse</i>. Posteriormente pode-se alterar a
 permissão deste diretório.
 
-<subsubsecao>Pós-instalação</subsubsecao>
+<subsubsecao>Pós-instalação: eclipse.ini</subsubsecao>
 
 	O procedimento para a configuração de maior uso de memória e consequente
 melhora no desempenho do Eclipse, é indicado a seguir:
@@ -82,6 +81,8 @@ programas, para isto inicialize o <i>eclipse</i> através do executável
     <nome>fig:eclipse-config-workspace-1</nome>
 </figura>
 
+<subsubsecao>Pós-instalação: Proxy</subsubsecao>
+
 	A configuração de proxy poderá ser realizada como demonstrado a seguir:
 
 <lista>
@@ -102,57 +103,13 @@ em <b>Edit</b>;
     <nome>fig:eclipse-config-proxy-1</nome>
 </figura>
 
-<quebraPagina/>
-
-<subsecao>Maven Integration for WTP</subsecao>
+<subsubsecao>Pós-instalação: Maven</subsubsecao>
 
 	O suporte ao Apache Maven é fornecido ao Eclipse através do componente
-<i>Maven Integration for WTP</i> (m2e-wtp).
-
-<subsubsecao>Instalação</subsubsecao>
-
-	A instalação é realizada através do Eclipse, como indicado:
-
-<lista>
-<item/> acesse o menu: <b>Help</b> => <b>Eclipse Marketplace...</b>;
-<item/> digite o termo <b>maven</b> para a pesquisa;
-<item/> clique em <b>Go</b>;
-<item/> identifique o item <b>Maven Integration for Eclipse WTP</b> e clique em <b>Install</b>;
-</lista>
-
-<figura>
-    <tamanhob>1.0</tamanhob>
-    <arquivob>imgs/maven_install_01</arquivob>
-    <legenda>Instalação do Maven (m2e-wtp)</legenda>
-    <nome>fig:maven-install-1</nome>
-</figura>
-
-	Na nova janela, realize os seguintes procedimentos:
-
-<lista>
-<item/> identifique os items selecionados;
-<item/> clique em <b>Next</b>;
-<item/> verifique os termos da licença de uso e caso concorde, selecione:
-<b>I accept the terms of the license agreements</b>;
-<item/> clique em <b>Finish</b>;
-<item/> Aguarde o download, o acesso pode ser lento e este processo pode
-demorar;
-<item/> Após a conclusão da instalação, será solicitado para
-reiniciar o Eclipse;
-</lista>
-
-<figura>
-    <tamanhob>1.0</tamanhob>
-    <arquivob>imgs/maven_install_02</arquivob>
-    <legenda>Instalação do Maven (m2e-wtp)</legenda>
-    <nome>fig:maven-install-2</nome>
-</figura>
-
-<subsubsecao>Pós-instalação</subsubsecao>
-
-	O procedimento a seguir tem objetivo de alterar o diretório do repositório
-local do Maven de <i>~/.m2</i> para <i>/opt/eclipse/workset/maven</i>, e se
-necessário, configurar o uso de proxy para acesso aos repositórios remotos.
+<i>Maven Integration for Eclipse</i>. O procedimento a seguir tem objetivo de
+alterar o diretório do repositório local do Maven de <i>~/.m2</i> para
+<i>/opt/eclipse/workset/maven</i>, e se necessário, configurar o uso de proxy
+para acesso aos repositórios remotos.
 
 	<b>Atenção:</b> o usuário que esta executando o Eclipse precisa de
 permissão de escrita neste diretório. Realize os procedimentos a seguir
@@ -160,7 +117,6 @@ com este usuário, ou seja, não use o <i>root</i>.
 
 <comando>
 $ mkdir -p /opt/eclipse/workset/maven/repository
-$ ln -s /opt/eclipse/workset/maven/repository ~/.m2
 </comando>
 
 <lista>
@@ -301,7 +257,7 @@ esta executando o Eclipse, ou seja, não requer o <i>root</i>.
 
 <comando>
 $ cd /opt/eclipse/workset
-$ unzip /path/to/jboss-as-distribution-6.1.0.Final.zip
+$ unzip /path/to/jboss-as-7.1.1.Final.zip
 </comando>
 
 
@@ -329,7 +285,7 @@ $ unzip /path/to/jboss-as-distribution-6.1.0.Final.zip
 	<item/> selecione a opção em <i>server type</i>: <b>JBoss AS 6.x</b>,
 	e clique em <b>Next</b>;
 	<item/> indique o diretório na opção <i>Home Directory</i>:
-	<b>/opt/eclipse/workset/jboss-6.1.0.Final</b>;
+	<b>/opt/eclipse/workset/jboss-as-7.1.1.Final</b>;
 	<item/> clique em <b>Finish</b>;
 </lista>
 
@@ -374,7 +330,7 @@ configuração do servidor de aplicações:
 </lista>
 
 	A partir das configuração supramencionadas, o diretório de publicação será:
-<i>/opt/eclipse/workset/ jboss-6.1.0.Final/server/default/deploy</i>.
+<i>/opt/eclipse/workset/ jboss-6.1.0.Final/standalone/deployments</i>.
 
 <figura>
     <tamanhob>1.0</tamanhob>
@@ -464,7 +420,23 @@ versão de seu interesse;
     <nome>fig:scm-maven-02</nome>
 </figura>
 
+<comando>
+deb http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu lucid main
+</comando>
+
+<comando>
+# aptitude update
+# aptitude install -t lucid libsvn-java
+# ln -s /usr/lib/jni/libsvnjavahl-1.so /usr/lib
+</comando>
+
+
 <quebraPagina/>
+
+<subsecao>Resource Bundle Editor</subsecao>
+
+
+
 
 <subsecao>Framework Demoiselle</subsecao>
 
