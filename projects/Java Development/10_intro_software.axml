@@ -2,8 +2,8 @@
 
 <subsecao>Debian GNU/Linux</subsecao>
 
-    Os sistemas operacionais baseados em tecnologias livres tendem a fornecer
-um utilitário que realiza instalações automatizadas, sendo no Debian
+    Os sistemas operacionais baseados em código aberto comumente fornecem
+aplicativo para instalação automatizada de software, sendo no Debian
 <citar>Debian</citar> utilizado o <b>aptitude</b>.
 
     Ao realizar a instalação de um determinado <i>software</i>, este informa
