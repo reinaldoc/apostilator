@@ -1,0 +1,116 @@
+<capitulo>Instalação</capitulo>
+
+	Zabbix <citar>ZabbixSite</citar>
+
+<comando>
+$ wget http://repo.zabbix.com/zabbix/2.2/debian/pool/main/z/zabbix-release/
+       zabbix-release_2.2-1+wheezy_all.deb
+# dpkg -i zabbix-release_2.2-1+wheezy_all.deb
+# aptitude update
+</comando>
+
+    A lista de <i>software</i> disponíveis pode ser consultada, como indicado
+no exemplo abaixo:
+
+<lista>
+<item/>Pesquisar pelo nome do <i>software</i>:
+</lista>
+
+<comando>
+$ aptitude search zabbix
+</comando>
+
+    Maiores informações sobre um determinado <i>software</i> podem ser obtidas
+como indicado a seguir:
+
+<comando>
+$ aptitude show zabbix-server-pgsql
+</comando>
+
+<subsecao>Zabbix Server</subsecao>
+
+	O zabbix server intermedia os dados coletados pelo zabbix agent e a
+inserção no banco de dados.
+
+<figura>
+    <tamanho>1.0</tamanho>
+    <arquivo>imgs/zabbix_server_diagram</arquivo>
+    <legenda>Diagrama do Zabbix Server</legenda>
+    <nome>fig:zabbix-server-diagram</nome>
+</figura>
+
+
+<subsubsecao>PostgreSQL</subsubsecao>
+
+	A instalação:
+
+<comando>
+$ aptitude install zabbix-server-pgsql
+> Deseja configurar a base de dados?
+> Não
+</comando>
+
+	Criando as tabelas e carregando dados iniciais:
+
+<comando>
+$ cd /usr/share/zabbix-server-pgsql
+$ psql -h pgserver.example.com -U zabbix -d zabbix < schema.sql
+$ psql -h pgserver.example.com -U zabbix -d zabbix < images.sql
+$ psql -h pgserver.example.com -U zabbix -d zabbix < data.sql
+</comando>
+
+<subsubsecao>MySQL</subsubsecao>
+
+	A instalação:
+
+<comando>
+$ aptitude install zabbix-server-mysql
+> Deseja configurar a base de dados?
+> Não
+</comando>
+
+	Criando as tabelas e carregando dados iniciais:
+
+<comando>
+$ cd /usr/share/zabbix-server-pgsql
+$ mysql -h pgserver.example.com -u zabbix -p zabbix < schema.sql
+$ mysql -h pgserver.example.com -u zabbix -p zabbix < images.sql
+$ mysql -h pgserver.example.com -u zabbix -p zabbix < data.sql
+</comando>
+
+<subsubsecao>Configuração</subsubsecao>
+
+<lista>
+<item/>/etc/zabbix/zabbix_server.conf:
+</lista>
+
+<comandoNumerado>
+LogFileSize=200               # l.50
+DBHost=pgserver.example.com   # l.83
+DBName=zabbix                 # l.93
+DBUser=zabbix                 # l.109
+DBPassword=zabbixpwd          # l.119
+StartPollersUnreachable=3     # l.162
+StartPingers=3                # l.181
+HistoryCacheSize=128M         # l.350
+TrendCacheSize=32M            # l.359
+</comandoNumerado>
+
+<lista>
+<item/>/etc/sysctl.conf
+</lista>
+
+<comando>
+kernel.shmmax=250000000
+</comando>
+
+<comando>
+# sysctl -p
+</comando>
+
+
+
+
+
+
+
