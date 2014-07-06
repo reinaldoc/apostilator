@@ -1,0 +1,74 @@
+<capitulo>Database</capitulo>
+
+	Zabbix <citar>ZabbixSite</citar>
+
+
+<subsecao>PostgreSQL</subsecao>
+
+<comando>
+# aptitude install postgresql
+</comando>
+
+	Para definir interfaces para o postgresql receberá conexões, altere o
+parâmetro <b>listen_addresses</b>. Use <b>'0.0.0.0'</b> para interfaces ipv4
+ou <b>'*'</b> para interfaces ipv4 e ipv6.
+
+<lista>
+<item/>/etc/postgresql/9.1/main/postgresql.conf:
+</lista>
+
+<comando>
+listen_addresses = '0.0.0.0'	# l.59
+</comando>
+
+	Para definir os IPs que o postgresql receberá conexões, use
+<b>0.0.0.0/0</b> para qualquer rede, ou indique uma rede como
+<b>192.168.0.0/24</b>.
+
+<lista>
+<item/>/etc/postgresql/9.1/main/pg_hba.conf:
+</lista>
+
+<comando>
+host	all	all	0.0.0.0/0	md5	# l.92
+</comando>
+
+	Para criar o usuário (<i>role</i>) <b>zabbix</b> no postgresql, utilize a
+sintáxe:
+
+<lista>
+<item/><b>createuser [OPÇÃO]... [NOME_ROLE]</b>
+</lista>
+
+<comando>
+# su - postgres
+$ createuser -D -S -R -P zabbix
+</comando>
+
+	Descrição de cada opção:
+
+<lista>
+<item/><b>-D</b>: role não pode criar novos bancos de dados
+<item/><b>-S</b>: role não será super-usuário
+<item/><b>-R</b>: role não pode criar novas roles
+<item/><b>-P</b>: atribui uma senha a nova role
+</lista>
+
+	Para criar a database <b>zabbix</b>, utilize a sintáxe:
+
+<lista>
+<item/><b>createdb [OPÇÃO]... [NOMEBD] [DESCRIÇÃO]</b>
+</lista>
+
+<comando>
+$ createdb -O zabbix zabbix "Zabbix Database"
+</comando>
+
+	Descrição de cada opção:
+
+<lista>
+<item/><b>-O [ROLE]</b>: usuário do banco que será dono do novo banco de dados
+</lista>
+
+
+
