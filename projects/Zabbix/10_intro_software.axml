@@ -6,9 +6,9 @@ da <i>Universidade Federal do Pará</i> e ministrado por <i>Reinaldo Gil Lima
 de Carvalho</i>. Realiza(ou)-se de <i>xx/xx/xxxx a xx/xx/xxxx</i>.
 
     Os procedimentos descritos neste material foram validados sob a
-distribuição Debian GNU/Linux Wheezy, todavia a base teórica ministrada é o
-conhecimento fundamental para a aplicabilidade dos procedimentos técnicos sob
-qualquer sistema operacional.
+distribuição Debian GNU/Linux Wheezy, todavia entede-se que a base teórica
+abordada é o fundamental para a aplicabilidade deste curso sob qualquer
+sistema operacional.
 
     Apesar das peculiaridades de cada sistema operacional o conteúdo será
 abordado de forma isenta, para que o participante tenha a possibilidade de
@@ -45,11 +45,11 @@ License" ou "Licença de Documentação Livre GNU".
 
     A <b>Licença de Documentação Livre GNU</b> permite que todo conteúdo
 esteja livre para cópia e distribuição, assim como que a propriedade autoral
-seja protegida. O objetivo é garantir que o conhecimento seja livre, assim como,
-garantir o reconhecimento ao autor. O autor recomenda ainda que este material
-seja sempre distribuído "como está", no formato original. Contribuições e
-sugestões de melhorias sobre este material podem ser enviadas ao autor e serão
-sempre bem vindas.
+seja protegida. O objetivo é garantir que o conhecimento seja livre e o
+reconhecimento ao autor. O autor recomenda ainda que este material seja sempre
+distribuído "como está", no formato original. Contribuições e sugestões de
+melhorias sobre este material podem ser enviadas ao autor e serão sempre bem
+vindas.
 
 <subsecao>Compilação de <i>software</i> X <i>software</i> da distribuição/sistema operacional</subsecao>
 
