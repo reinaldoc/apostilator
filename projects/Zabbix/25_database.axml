@@ -71,4 +71,36 @@ $ createdb -O zabbix zabbix "Zabbix Database"
 </lista>
 
 
+<subsecao>MySQL</subsecao>
+
+<comando>
+# aptitude install mysql-server-5.5
+> Nova palavra-passe para o utilizador "root" do MySQL: mypassword
+> Repita a palavra-passe para o utilizador "root" de MySQL: mypassword
+</comando>
+
+	Para definir interfaces que o MySQL receberá conexões, altere o
+parâmetro <b>bind-address</b>. Use <b>0.0.0.0</b> para todas interfaces ipv4.
+
+<lista>
+<item/>/etc/mysql/my.cnf:
+</lista>
+
+<comando>
+bind-address = 0.0.0.0	# l.47
+</comando>
+
+	Para criar o usuário e database <b>zabbix</b>, faça:
+
+<comando>
+# mysql -u root -p
+mysql> create database zabbix;
+mysql> create user zabbix;
+mysql> grant all on zabbix.* to 'zabbix'@'%' identified by 'zabbixpwd';
+mysql> flush privileges;
+</comando>
+
+
+
+
 
