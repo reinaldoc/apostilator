@@ -256,7 +256,7 @@ sub clean() {
       my $file = "$workdir/.tex/$_";
       if (-l "$file") {	unlink("$file") }
       next if (-d "$file");
-      next if /^(titlepage\.tex|titlepage\.png|titlepage\.jpg|base\.tex|babelbib\.sty|portuguese\.bdf)$/; 
+      next if /^(titlepage\.tex|titlepage\.png|titlepage\.jpg|base\.tex|bbm\.sty|babelbib\.sty|portuguese\.bdf)$/; 
       unlink("$file");
     }
     unlink("$workdir/.apostilator.log");
