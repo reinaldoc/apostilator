@@ -10,7 +10,7 @@ Apostilator Classic - A Latex Interface
     1.1 Debian
     **********
         # echo 'Aptitude::Recommends-Important "false";' >> /etc/apt/apt.conf
-        # aptitude install texlive texlive-latex-extra texlive-fonts-extra
+        # aptitude install texlive texlive-latex-extra
 
     1.2 Gentoo
     **********
