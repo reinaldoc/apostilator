@@ -142,6 +142,14 @@ desabilitada através da adição da configuração abaixo ao arquivo
 Apt::Install-Recommends "false";
 </comando>
 
+    Caso a conectividade seja fornecida por um proxy via http, a seguinte
+configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
+devida adequação ao endereço IP do proxy:
+
+<comando>
+Acquire::http::Proxy "http://172.16.0.1:3128/";
+</comando>
+
     O utilitário <i>aptitude</i> também requer a configuração da fonte do
 <i>software</i> a ser instalado, e isto é realizado no arquivo
 <b>/etc/apt/sources.list</b>, conforme indicado no quadro abaixo:
@@ -152,12 +160,12 @@ deb http://ftp.br.debian.org/debian wheezy-updates main contrib
 deb http://security.debian.org/ wheezy/updates main contrib
 </comando>
 
-    Caso a conectividade seja fornecida por um proxy via http, a seguinte
-configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
-devida adequação ao endereço IP do proxy:
+	Adicionar repositórios da Zabbix SIA<citar>ZabbixSite</citar>:
 
 <comando>
-Acquire::http::Proxy "http://172.16.0.1:3128/";
+$ wget http://repo.zabbix.com/zabbix/2.2/debian/pool/main/z/zabbix-release/
+       zabbix-release_2.2-1+wheezy_all.deb
+# dpkg -i zabbix-release_2.2-1+wheezy_all.deb
 </comando>
 
     Após a definição das fontes de <i>pacotes</i>, é necessário o
@@ -166,6 +174,19 @@ informações como versão e descrição de cada <i>software</i>. Esse
 <i>download</i> deve ser realizado através do comando:
 
 <comando>
-    # aptitude update
+# aptitude update
 </comando>
 
+    A lista de <i>software</i> disponíveis pode ser consultada, como indicado
+no exemplo abaixo:
+
+<comando>
+$ aptitude search zabbix
+</comando>
+
+    Maiores informações sobre um determinado <i>software</i> podem ser obtidas
+como indicado a seguir:
+
+<comando>
+$ aptitude show zabbix-server-pgsql
+</comando>
