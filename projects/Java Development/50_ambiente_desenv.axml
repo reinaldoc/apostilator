@@ -1,9 +1,8 @@
 <capitulo>Ambiente de Desenvolvimento J2EE</capitulo>
 
 	O ambiente de desenvolvimento é formado por um conjunto de programas
-disponíveis através de licenças livres, que permitem a codificação de
-sistemas utilizando tecnologias J2EE e de ferramentas que aumentam a
-produtividade.
+de licenças livres que permitem a codificação de sistemas utilizando
+tecnologias J2EE e de ferramentas que aumentam a produtividade.
 
 <lista>
 	<item/> Eclipse Juno SR2 v4.2.2;
@@ -48,8 +47,8 @@ podendo-se copiar este diretório para outra estação de trabalho.
 
 	Substitua o termo <i>johndoe</i> pelo usuário que executará o eclipse.
 Isto é necessário neste momento para que o Eclipse tenham permissão para
-instalar os programas adicionais no diretório <i>/opt/eclipse</i>, ao invés
-de instalados em <i>~/.eclipse</i>. Posteriormente pode-se alterar a
+instalar os programas adicionais no diretório <i>/opt/eclipse</i>, caso
+contrário serão instalados em <i>~/.eclipse</i>. Posteriormente pode-se alterar a
 permissão deste diretório.
 
 <subsubsecao>Pós-instalação: eclipse.ini</subsubsecao>
@@ -68,7 +67,7 @@ a seguir.
 -Xmx1024m
 </comando>
 
-	É necessário a execução do Eclipse para proceder a instalação dos demais
+	É necessária a execução do Eclipse para proceder a instalação dos demais
 programas, para isto inicialize o <i>eclipse</i> através do executável
 <b>/opt/eclipse/eclipse</b>, e selecione o diretório
 (<b>/opt/eclipse/ workset/workspace</b>) onde os projetos serão armazenados

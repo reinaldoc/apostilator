@@ -2,9 +2,9 @@
 
 <subsecao>Debian GNU/Linux</subsecao>
 
-    Os sistemas operacionais baseados em código aberto comumente fornecem
-aplicativo para instalação automatizada de software, sendo no Debian
-<citar>Debian</citar> utilizado o <b>aptitude</b>.
+    Os sistemas operacionais baseados em código aberto fornecem um aplicativo
+para instalação automatizada de software, sendo no Debian <citar>Debian</citar>
+utilizado o <b>aptitude</b>.
 
     Ao realizar a instalação de um determinado <i>software</i>, este informa
 ao <i>aptitude</i> quais bibliotecas são necessárias para o seu
