@@ -1,0 +1,28 @@
+<capitulo>Overview</capitulo>
+
+	O Zabbix Server controla a coleta de informações de telemetria dos
+itens monitorados. A cada consulta a estes itens os valores obtidos são
+armazenados (<i>history</i>) e periodicamente dados resumidos são gerados
+(<i>trends</i>).
+
+	Os dados históricos são necessários para a geração de gráficos de
+escala reduzida, como na exibição de valores coletados a cada 5 minutos. Os
+dados analíticos (<i>trends</i>) são utilizados para escala maiores, como
+para a geração de gráfico de valores coletados de hora em hora. O tempo de
+armazenamento dos dados hitóricos influecia o tamanho da base de dados.
+Enquanto é comum manter os dados históricos por até 7 dias, os dados
+analíticos costumam ser preservados por muitos anos.
+
+	A coleta das informações de telemetria pode ser realizada de duas
+formas. De forma passiva quando o <i>Zabbix Server</i> processa os itens
+monitorados, isto é realizado através de processos de Pollers. De forma
+ativa quando o processamento dos itens monitorados é delegado ao <i>Zabbix
+Agent</i>.
+
+<figura>
+    <tamanho>1.0</tamanho>
+    <arquivo>imgs/zabbix_server_diagram</arquivo>
+    <legenda>Diagrama do Zabbix Server</legenda>
+    <nome>fig:zabbix-server-diagram</nome>
+</figura>
+
