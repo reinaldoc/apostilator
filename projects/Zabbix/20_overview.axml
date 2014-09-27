@@ -8,7 +8,7 @@ e periodicamente dados resumidos são gerados - <i>trends</i>.
 
 	Os dados históricos são necessários para a geração de gráficos de
 escala reduzida, como na exibição de valores coletados a cada 5 minutos. E os
-dados analíticos são utilizados para escala maiores, como a exibição de
+dados analíticos são utilizados para escalas maiores, como a exibição de
 valores coletados de hora em hora. O tempo de armazenamento dos dados
 hitóricos influeciam o tamanho da base de dados. Enquanto é comum manter
 os dados históricos por até 7 dias, os dados analíticos costumam ser
