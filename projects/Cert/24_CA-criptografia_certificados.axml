@@ -1,0 +1,308 @@
+<capitulo>Autoridade Certificadora</capitulo>
+
+    Neste capítulo, serão abordados os <b>procedimentos técnicos</b> que são
+realizados por uma Autoridade Certificadora, desde a criação do certificado
+raiz até a emissão de certificados digitais. Todos os adjetivos de relevância
+são relativos aos procedimentos técnicos.
+
+    É importante ressaltar que as normas que descrevem o funcionamento da
+Autoridade Certificadora (Declaração de Políticas de Certificação - DPC), e
+o cumprimento integral de sua especificação, são preceitos indispensáveis para
+o funcionamento de uma Autoridade Certificadora.
+
+    Deve-se considerar que os procedimentos aqui demonstrados são semelhantes
+aos executados por uma Autoridade Certificadora, todavia, a emissão de
+certificados através dos utilitários da biblioteca OpenSSL não é compatível
+com o nível de segurança requerido por uma Autoridade Certificadora,
+em que é necessário a utilização de um <i>software</i> de <i>front-end</i>,
+um <i>software</i> independente ou um <i>Hardware security module</i> para a
+proteção da chave privada da Autoridade Certificadora.
+
+    Nesta demonstração, serão utilizadas as ferramentas fornecidas pelo projeto
+OpenSSL (http://www .openssl.org/) que estão disponíveis no pacote openssl. A
+instalação deve ser realizada como indicado:
+
+<comando>
+    # aptitude install openssl
+</comando>
+
+<subsecao>Emissão do certificado raiz da Autoridade Certificadora</subsecao>
+
+    O procedimento técnico fundamental para a inicialização de uma Autoridade
+Certificadora é a criação da chave privada e emissão do certificado raiz.
+O quadro abaixo indica como emitir o certificado raiz; atente que os três
+primeiros campos (Country, State, City) não serão utilizados no certificado,
+sendo preenchidos com um ponto ".".
+
+<comando>
+    # cd /etc/ssl/certs
+    # openssl req -x509 -newkey rsa:2048 -keyout Universidade_CA.key.3des
+                  -out Universidade_CA.cer -days 7305
+
+    Country Name (2 letter code) [AU]:.
+    State or Province Name (full name) [Some-State]:.
+    Locality Name (eg, city) []:.
+    Organization Name (eg, company) []: Universidade Federal do Para
+    Organizational Unit Name (eg, section) []:Servico de Processamento de Dados
+    Common Name (eg, YOUR name) []:Autoridade Certificadora da Universidade
+    Email Address []:cert@ufpa.br
+</comando>
+
+<lista>
+
+<item/><b>req</b>: opção utilizada para a criação da requisição de certificado
+(Certificate Signing Request - CSR) e para emissão de certificados raízes.
+
+<item/><b>-x509</b>: indica a criação de um certificado raiz.
+
+<item/><b>-newkey rsa:2048</b>: solicita a criação de uma chave privada com
+algoritmo RSA de 2048 bits. Pode-se utilizar a opção <b>-key</b> para indicar
+uma chave privada pré-existente.
+
+<item/><b>-keyout Universidade_CA.key.3des</b>: caso a seja solicitada a
+criação da chave privada através da opção <b>-newkey</b>, pode-se indicar
+através desta opção o nome do arquivo que a chave privada será salva. Note que
+será requerida uma senha para a proteção da chave privada através de
+criptografia simétrica com o algoritmo 3DES, a opção <b>-nodes</b> pode ser
+utilizada para evitar esta proteção, mas isto não é recomendado.
+
+<item/><b>-out Universidade_CA.cer</b>: indica o nome do arquivo em que o
+certificado raiz criado será salvo.
+
+<item/><b>-days 7305</b>: indica a validade do certificado raiz. Em geral os
+certificados raízes de Autoridade Certificadora tem validade de 20 anos.
+
+</lista>
+
+<tabela>{|l|l|}
+    <lh><th>Arquivo</th> <col/> <th>Descrição</th></lh>
+    <tr>Universidade_CA.cer		<col/> Certificado raiz da Autoridade Certificadora</tr>
+    <tr>Universidade_CA.key.3des	<col/> Chave privada criptografada da AC (3DES)</tr>
+    <legenda>Arquivos referentes a Autoridade Certificadora</legenda>
+    <nome>tab:openssl-1</nome>
+</tabela>
+
+<subsecao>Requisição de Certificado</subsecao>
+
+    O procedimento inicial para a obtenção de um certificado digital padrão
+x509 é a criação uma requisição de certificado (<i>Certificate Signing Request
+- CSR</i>) pelo requerente. O arquivo CSR gerado deve ser levado à Autoridade
+de Registro juntamente com documento identificatório; sendo encaminhados à
+emissão do certificado pela Autoridade Certificadora.
+
+<comandoNumerado>
+    # cd /etc/ssl/certs
+    # openssl req -new -out ldap.csr -keyout ldap.key.3des
+
+    Country Name (2 letter code) [AU]:.
+    State or Province Name (full name) [Some-State]:.
+    Locality Name (eg, city) []:.
+    Organization Name (eg, company) []:Universidade Federal do Para
+    Organizational Unit Name (eg, section) []:Servico de Processamento de Dados
+    Common Name (eg, YOUR name) []:ldap.ufpa.br
+    Email Address []:cert@ufpa.br
+</comandoNumerado>
+
+<lista>
+
+<item/><b>req</b>: opção utilizada para a criação da requisição de certificado
+(Certificate Signing Request - CSR) e para emissão de certificados raízes.
+
+<item/><b>-new</b>:  indica a criação de uma requisição de certificado
+digital.
+
+<item/><b>-out ldap.csr</b>: indica o nome do arquivo que será criado contendo
+a requisição de certificado digital.
+
+<item/><b>-keyout ldap.key.3des</b>: a omissão do parâmetro <b>-key</b>
+implica na solicitação de criação de chave privada, e esta opção indica o nome
+do arquivo que será criado contendo a chave privada.
+
+</lista>
+
+    A requisição de certificado <b>ldap.csr</b> contém informações necessárias
+para a Autoridade Certificadora gerar o certificado assinado. No caso de
+certificados utilizados em <i>software</i>, como é o caso do exemplo acima, a
+verificação dos documentos do solicitante deve ser referente ao responsável
+pela máquina, diretor ou represente da empresa que detém o nome e domínio
+mencionado na requisição.
+
+<subsecao>Emissão de certificado assinado pela Autoridade Certificadora</subsecao>
+
+    A requisição de um certificado deve ser enviada a Autoridade de Registro,
+juntamente com documentos que comprovem as informações contidas na requisição.
+A autoridade certificadora irá emitir um certificado e encaminhar ao requerente:
+
+<subsubsecao>Certificado de <i>software</i></subsubsecao>
+
+    A emissão do primeiro certificado, seja de <i>software</i> ou de usuário,
+deve-se utilizar o parâmetro <b>-CAcreateserial</b> e em todos demais
+certificados o parâmetro <b>-CAserial Universidade_CA.srl</b>.
+
+    Considerando o requisição <b>ldap.csr</b> e a validade de 3 anos:
+
+<comando>
+    # openssl x509 -in ldap.csr -out ldap.cer -req
+                   -CA Universidade_CA.cer -CAkey Universidade_CA.key.3des
+                   -CAserial Universidade_CA.srl -days 1095
+</comando>
+
+<lista>
+
+<item/><b>x509</b>: opção utilizada para a emissão de certificados digitais.
+
+<item/><b>-in ldap.csr</b>: informa o arquivo contendo a requisição de
+certificado.
+
+<item/><b>-out ldap.cer</b>: informa o nome do arquivo a ser criado contendo o
+certificado digital assinado pela Autoridade Certificadora.
+
+<item/><b>-req</b>: indica que a emissão do certificado será baseada em uma
+requisição de certificado (outras fontes possíveis são certificados
+pré-existentes).
+
+<item/><b>-CA Universidade_CA.cer</b>: informa o certificado utilizado para
+assinar o novo certificado digital. Os dados do certificado assinante
+(<i>Subject</i>) estarão contidos no certificado criado (<i>Issuer</i>).
+
+<item/><b>-CAkey Universidade_CA.key.3des</b>: informa a chave privada do
+certificado assinante, utilizada para a criação da assinatura digital
+(<i>hash</i> criptográfico).
+
+<item/><b>-CAserial Universidade_CA.srl</b>: indica um arquivo utilizado como
+contador para identificar o número de série do certificado. O primeiro
+certificado emitido deve utilizar a opção <b>-CAcreateserial</b>.
+
+<item/><b>-days 1095</b>: indica a validade do certificado, em geral,
+entre 1 e 3 anos. A justificativa para uso da validade é para a
+prevenção de ataques de força bruta, visto que quando ocorre o vencimento do
+certificado, um novo certificado deve ser emitido.
+
+</lista>
+<subsubsecao>Certificado de usuário</subsubsecao>
+
+    Considerando o requisição <b>reinaldo-carvalho.csr</b> e a validade de 3
+anos:
+
+<comando>
+    # openssl x509 -in reinaldo-carvalho.csr -out reinaldo-carvalho.cer -req
+                   -CA Universidade_CA.cer -CAkey Universidade_CA.key.3des
+                   -CAserial Universidade_CA.srl -days 1095
+</comando>
+
+    Ao receber o certificado digital, o usuário pode gerar um arquivo no
+formato <b>PKCS #12</b>. Formato que é formado a partir da junção do
+certificado digital com a chave privada. Este recurso pode ser fornecido pela
+Autoridade de Registro, ou realizado pelo próprio usuário como indicado
+abaixo:
+
+<comando>
+    # openssl pkcs12 -export -in reinaldo-carvalho.cer
+                     -inkey reinaldo-carvalho.key.3des -out reinaldo-carvalho.p12
+                     -name 'Reinaldo Gil Lima de Carvalho'
+</comando>
+
+<lista>
+
+<item/><b>pkcs12</b>: formato de arquivo unificado para certificados digitais
+e chave privada.
+
+<item/><b>-export</b>: opção para criação de arquivo no formato <b>PKCS #12</b>.
+
+<item/><b>-in reinaldo-carvalho.cer</b>: certificado digital do usuário.
+
+<item/><b>-inkey reinaldo-carvalho.key.3des</b>: chave privada do usuário.
+
+<item/><b>-out reinaldo-carvalho.p12</b>: informa nome do arquivo <b>PKCS
+#12</b>
+gerado.
+
+<item/><b>-name 'Reinaldo Gil Lima de Carvalho'</b>: informa o nome do
+usuário.
+
+</lista>
+
+<subsecao>Arquivos gerados</subsecao>
+
+    Observemos a lista comentada dos arquivos gerados:
+
+<tabela>{|l|l|}
+    <lh><th>Arquivo</th> <col/> <th>Descrição</th></lh>
+    <tr>ldap.csr                      <col/> Requisição de Certificado para o host ldap.ufpa.br</tr>
+    <tr>ldap.key.3des                 <col/> Chave privada RSA criptografada com 3DES</tr>
+    <tr>ldap.cer                      <col/> Certificado emitido para ldap.ufpa.br</tr>
+    <tr>reinaldo-carvalho.csr         <col/> Requisição de Certificado para Reinaldo Gil Lima de Carvalho</tr>
+    <tr>reinaldo-carvalho.key.3des    <col/> Chave privada RSA criptografada com 3DES</tr>
+    <tr>reinaldo-carvalho.cer         <col/> Certificado emitido para Reinaldo Gil Lima de Carvalho</tr>
+    <tr>reinaldo-carvalho.p12         <col/> Certificado padrão PKCS#12 (assinatura e descriptografia)</tr>
+    <legenda>Arquivos gerados</legenda>
+    <nome>tab:openssl-2</nome>
+</tabela>
+
+    As requisições de certificados podem ser descartadas após a emissão do
+certificado.
+
+<subsecao>Descriptografando a chave privada</subsecao>
+
+    Ao gerar uma requisição de certificado, uma chave privada
+criptografada é criada. Para que os serviços (ldap, imap, smtp, http, etc)
+possam ser inicializados sem requerem a senha de descriptografia da chave
+privada, é necessário exportar a chave privada sem criptografia, conforme
+indicado:
+
+<comando>
+    # openssl rsa -in ldap.key.3des -out ldap.key
+</comando>
+
+    O parâmetro <i>-nodes</i> pode ser utilizado quando da geração da chave
+privada ou requisição de certificado, para que a chave privada não seja
+criptografada.
+
+<subsecao>Análise da Requisição de Certificado</subsecao>
+
+    A requisição de certificado é formada por:
+
+<lista>
+
+<item/><b>Subject</b>: Informações referentes ao solicitante do certificado.
+
+<item/><b>RSA Public Key</b>: Chave pública do solicitante do certificado.
+
+<item/><b>Signature</b>: Assinatura das informações acima com a chave privada
+do solicitante. Este campo é implícito após o campo Signature Algorithm.
+
+</lista>
+
+    Estes dados são armazenados com representação binária e codificados em
+base-64 nos arquivos .csr, e seu conteúdo decodificado com o comando:
+
+<comando>
+    # openssl req -noout -text -in ldap.csr
+</comando>
+
+<subsecao>Análise do Certificado</subsecao>
+
+    O certificado é formado por:
+
+<lista>
+<item/><b>Issuer</b>: Informações referentes autoridade certificadora.
+
+<item/><b>Validity</b>: Validade do certificado.
+
+<item/><b>Subject</b>: Informações referentes ao proprietário do certificado.
+
+<item/><b>RSA Public Key</b>: Chave pública do proprietário certificado.
+
+<item/><b>Signature</b>: Assinatura com a chave privada da autoridade
+certificadora das informações contidas no certificado. Este campo é implícito
+após o campo Signature Algorithm.
+
+</lista>
+
+    Estes dados são armazenados com representação binária e codificados em
+base-64 nos arquivos .cer, e seu conteúdo pode ser decodificado com o comando:
+
+<comando>
+    # openssl x509 -noout -text -in ldap.cer
+</comando>
+

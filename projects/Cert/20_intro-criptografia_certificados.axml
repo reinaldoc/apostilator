@@ -1,0 +1,157 @@
+<capitulo>Introdução a certificação digital</capitulo>
+
+    O estudo da certificação digital pode ser divido em duas temáticas:
+tecnologia e processos. A tecnologia envolve a criptografia simétrica,
+criptografia assimétrica, hash, codificação base-64, formato de arquivos,
+padrão X509 que inclui a requisição de certificado (<u>Certificate Signing
+Request - CSR</u>) e o certificado digital.
+
+    Os processos descrevem os procedimentos para emissão do certificado
+digital de forma segura. Estes processos são descritos por meio dos documentos:
+<u>Declaração de Práticas de Certificação</u> e <u>Política de Segurança da
+Autoridade Certificadora</u>. A entidade que emite o certificado
+digital é chamada de <i>Autoridade Certificadora</i> e o procedimento de
+recepção e verificação dos dados do solicitante é realizado por meio de
+<i>Autoridades de Registro</i>.
+
+<subsecao>Criptografia assimétrica</subsecao>
+
+    A criptografia assimétrica utiliza um par de chaves (sequências de
+bits), denominadas de chave privada e chave pública (chaves assimétricas).
+Como induzido por sua nomenclatura, a chave privada é de domínio restrito a
+parte (indivíduo, software, etc) e a chave pública pode estar publicamente
+acessível.
+
+    As chaves assimétricas não podem ser formadas a partir de qualquer
+combinação de, por exemplo, 1024 bits. É necessário a utilização de um
+algoritmo que gere uma chave que permita a criação futura de uma segunda chave
+associada a primeira, existindo um relacionamento entre elas.
+
+    Após a criação do par de chaves assimétricas, uma delas deve ser
+selecionada para ser a chave privada e a outra será a chave pública. Na
+prática, a chave inicialmente criada é a chave privada, e a posterior é
+chamada de chave pública. Isto ocorre, pois a chave privada é armazenada em um
+arquivo em separado e a pública estará contida na requisição de certificado
+(Certificate Signing Request - CSR) e posteriormente no certificado digital.
+
+    As chaves serão utilizadas para a criptografia e descriptografia dos dados;
+dados criptografados por uma das chaves só podem ser descriptografados pela
+outra. A criptografia através da chave pública torna-se válida a partir do
+fato que somente os detentores da chave privada terão acesso a este conteúdo,
+já a criptografia utilizando a chave privada não tem objetivo da
+confidencialidade, visto que a chave pública é de domínio público.
+
+    Assim, a chave privada é utilizada para a criação de <i>hash</i>
+criptográficos, chamado de assinatura digital. Este recurso é utilizado para
+verificar se um determinado conteúdo foi gerado pelo detentor da chave privada.
+Isto pode ser verificado utilizando a chave pública.
+
+    O certificado é um arquivo que contém informações assinadas digitalmente
+com a chave privada de alguém confiável, normalmente uma Autoridade
+Certificadora - AC (Certificate Authority - CA). A Infra-estrutura de Chaves
+Públicas - ICP (Public Key Infrastructure - PKI) é a parte logística da
+utilização de tecnologias criptográficas.
+
+    Os principais elementos desta infra-estrutura são os Certificados Digitais
+e as Autoridades Certificadoras (AC). A ICP-Brasil é exemplo de uma Autoridade
+Certificadora no Brasil, foi instituída pela Medida Provisória 2.200 de julho
+de 2001, sendo o comitê gestor da ICP-Brasil regulamentado pelo decreto 3.872.
+
+<subsecao>Diagrama da criptografia assimétrica</subsecao>
+
+    Uma biblioteca de criptografia, como o OpenSSL, fornece um conjunto de
+recursos para manipulação de certificados digitais. Em relação a criptografia
+assimétrica, as seguintes funções podem ser destacadas:
+
+<lista>
+
+<item/>Criação de chave privada a partir de um algoritmo de criptografia
+assimétrica como o RSA, sendo este algoritmo também utilizado nas demais
+funcionalidades da criptografia assimétrica.
+
+<item/>Criação de chave pública a partir de uma chave privada existente. Em
+geral, ocorre automaticamente com a criação da requisição de certificado
+digital ou do certificado raíz.
+
+<item/>Assinatura de dados com utilização da chave privada.
+
+<item/>Verificação de dados assinados com a utilização da chave pública.
+
+<item/>Criptografia de dados com a utilização da chave pública.
+
+<item/>Descriptografia de dados com a utilização da chave privada.
+
+</lista>
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/openssl-1</arquivo>
+    <legenda>Diagrama dos recursos de criptografia assimétrica</legenda>
+    <nome>fig:openssl-1</nome>
+</figura>
+
+<subsecao>Autoridade Certificadora</subsecao>
+
+    A Autoridade Certificadora emite e revoga certificados digitais, mas sua
+atuação não depende apenas destes recursos tecnológicos. Uma Autoridade
+Certificadora também deve manter rígidos controles quanto a emissão de
+certificados, validando o requerente com a verificação de documentos
+identificatórios (procedimento realizado pela Autoridade de Registro).
+
+    Além disso, a Autoridade Certificadora deve possuir sistemas para emissão
+de certificados que não permitam acesso a chave privada do certificado raíz nem
+aos funcionários de maior privilégio. Assim como, deve manter procedimentos
+de controle para o acesso ao ambiente de emissão de certificados, como a
+necessidade de presença de ao menos dois funcionários, e utilização de
+câmeras para monitorar este acesso.
+
+    Apesar disto, a criação de uma Autoridade Certificadora não esta limitada
+por decretos governamentais ou a grandes empresas; sendo que a base
+tecnológica será demonstrada a seguir. Textos adicionais podem ser
+encontrados em <citar>SSL</citar>.
+
+    Em relação aos procedimentos internos de uma Autoridade Certificadora, as
+seguintes funções podem ser destacadas:
+
+<lista>
+
+<item/>Recepção ou criação da requisição de certificado digital (Certificate
+Signing Request - CSR) e verificação de documentos identificatórios do
+requerente.
+
+<item/>Emissão do certificado digital do requerente assinado pelo certificado
+raíz da Autoridade Certificadora, com a utilização de <i>software</i> que
+impeça acesso direto a chave privada do certificado raíz pelo operador.
+
+<item/>Envio do certificado digital para a Autoridade de Registro e posterior
+entrega ao requerente.
+
+</lista>
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/autoridade-certificadora</arquivo>
+    <legenda>Diagrama dos procedimentos de uma Autoridade Certificadora</legenda>
+    <nome>fig:autoridade-certificadora</nome>
+</figura>
+
+<subsecao>Diagrama de certificados digitais (x509)</subsecao>
+
+    Os certificados digitais são amplamente baseados em criptografia
+assimétrica, mas dependem de outras informações além da chave pública e
+privada. Os certificados digitais são formados pela associação da chave
+(pública) com os dados do proprietário (nome, e-mail, empresa, etc), e
+definidos pelo padrão x509 que especifica o formato do arquivo para
+o armazenamento destas informações.
+
+    A especificação x509 também define o formato do arquivo enviado a
+Autoridade Certificadora que contém os dados do solicitante, chamado de
+requisição de certificado (Certificate Signing Request - CSR).
+
+<figura>
+    <tamanho>0.8</tamanho>
+    <arquivo>imgs/openssl-2</arquivo>
+    <legenda>Topologia da especificação x509</legenda>
+    <nome>fig:openssl-2</nome>
+</figura>
+
