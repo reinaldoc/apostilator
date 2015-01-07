@@ -22,7 +22,7 @@
 
 use strict ;
 
-my $version = "v0.3-20121018";
+my $version = "v0.3.1-20150107";
 my $pdf_view = "okular";
 my $pdf_exec = "on";
 my $pdf_make = "on";
@@ -46,6 +46,8 @@ my %tags = (	"<capitulo>" => "\\newpage \\chapter{",
                 "</b>" => "}",
                 "<i>" => "{\\it ",
                 "</i>" => "}",
+                "<u>" => "\\ul{",
+                "</u>" => "}",
                 "<lista>" => "\\begin{itemize}",
                 "</lista>" => "\\end{itemize}",
                 "<enumerar>" => "\\begin{enumerate}",
@@ -256,7 +258,7 @@ sub clean() {
       my $file = "$workdir/.tex/$_";
       if (-l "$file") {	unlink("$file") }
       next if (-d "$file");
-      next if /^(titlepage\.tex|titlepage\.png|titlepage\.jpg|base\.tex|bbm\.sty|babelbib\.sty|portuguese\.bdf)$/; 
+      next if /^(titlepage\.tex|titlepage\.png|titlepage\.jpg|base\.tex|.*\.sty|portuguese\.bdf)$/; 
       unlink("$file");
     }
     unlink("$workdir/.apostilator.log");
