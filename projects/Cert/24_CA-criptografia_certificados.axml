@@ -92,14 +92,14 @@ emissão do certificado pela Autoridade Certificadora.
 
 <comandoNumerado>
     # cd /etc/ssl/certs
-    # openssl req -new -out ldap.csr -keyout ldap.key.3des
+    # openssl req -new -out web.csr -keyout web.key.3des
 
     Country Name (2 letter code) [AU]:.
     State or Province Name (full name) [Some-State]:.
     Locality Name (eg, city) []:.
     Organization Name (eg, company) []:Universidade Federal do Para
     Organizational Unit Name (eg, section) []:Servico de Processamento de Dados
-    Common Name (eg, YOUR name) []:ldap.ufpa.br
+    Common Name (eg, YOUR name) []:web.ufpa.br
     Email Address []:cert@ufpa.br
 </comandoNumerado>
 
@@ -111,16 +111,16 @@ emissão do certificado pela Autoridade Certificadora.
 <item/><b>-new</b>:  indica a criação de uma requisição de certificado
 digital.
 
-<item/><b>-out ldap.csr</b>: indica o nome do arquivo que será criado contendo
+<item/><b>-out web.csr</b>: indica o nome do arquivo que será criado contendo
 a requisição de certificado digital.
 
-<item/><b>-keyout ldap.key.3des</b>: a omissão do parâmetro <b>-key</b>
+<item/><b>-keyout web.key.3des</b>: a omissão do parâmetro <b>-key</b>
 implica na solicitação de criação de chave privada, e esta opção indica o nome
 do arquivo que será criado contendo a chave privada.
 
 </lista>
 
-    A requisição de certificado <b>ldap.csr</b> contém informações necessárias
+    A requisição de certificado <b>web.csr</b> contém informações necessárias
 para a Autoridade Certificadora gerar o certificado assinado. No caso de
 certificados utilizados em <i>software</i>, como é o caso do exemplo acima, a
 verificação dos documentos do solicitante deve ser referente ao responsável
@@ -139,10 +139,10 @@ A autoridade certificadora irá emitir um certificado e encaminhar ao requerente
 deve-se utilizar o parâmetro <b>-CAcreateserial</b> e em todos demais
 certificados o parâmetro <b>-CAserial Universidade_CA.srl</b>.
 
-    Considerando o requisição <b>ldap.csr</b> e a validade de 3 anos:
+    Considerando o requisição <b>web.csr</b> e a validade de 3 anos:
 
 <comando>
-    # openssl x509 -in ldap.csr -out ldap.cer -req
+    # openssl x509 -in web.csr -out web.cer -req
                    -CA Universidade_CA.cer -CAkey Universidade_CA.key.3des
                    -CAserial Universidade_CA.srl -days 1095
 </comando>
@@ -151,10 +151,10 @@ certificados o parâmetro <b>-CAserial Universidade_CA.srl</b>.
 
 <item/><b>x509</b>: opção utilizada para a emissão de certificados digitais.
 
-<item/><b>-in ldap.csr</b>: informa o arquivo contendo a requisição de
+<item/><b>-in web.csr</b>: informa o arquivo contendo a requisição de
 certificado.
 
-<item/><b>-out ldap.cer</b>: informa o nome do arquivo a ser criado contendo o
+<item/><b>-out web.cer</b>: informa o nome do arquivo a ser criado contendo o
 certificado digital assinado pela Autoridade Certificadora.
 
 <item/><b>-req</b>: indica que a emissão do certificado será baseada em uma
@@ -228,9 +228,9 @@ usuário.
 
 <tabela>{|l|l|}
     <lh><th>Arquivo</th> <col/> <th>Descrição</th></lh>
-    <tr>ldap.csr                      <col/> Requisição de Certificado para o host ldap.ufpa.br</tr>
-    <tr>ldap.key.3des                 <col/> Chave privada RSA criptografada com 3DES</tr>
-    <tr>ldap.cer                      <col/> Certificado emitido para ldap.ufpa.br</tr>
+    <tr>web.csr                       <col/> Requisição de Certificado para o host web.ufpa.br</tr>
+    <tr>web.key.3des                  <col/> Chave privada RSA criptografada com 3DES</tr>
+    <tr>web.cer                       <col/> Certificado emitido para web.ufpa.br</tr>
     <tr>reinaldo-carvalho.csr         <col/> Requisição de Certificado para Reinaldo Gil Lima de Carvalho</tr>
     <tr>reinaldo-carvalho.key.3des    <col/> Chave privada RSA criptografada com 3DES</tr>
     <tr>reinaldo-carvalho.cer         <col/> Certificado emitido para Reinaldo Gil Lima de Carvalho</tr>
@@ -251,7 +251,7 @@ privada, é necessário exportar a chave privada sem criptografia, conforme
 indicado:
 
 <comando>
-    # openssl rsa -in ldap.key.3des -out ldap.key
+    # openssl rsa -in web.key.3des -out web.key
 </comando>
 
     O parâmetro <i>-nodes</i> pode ser utilizado quando da geração da chave
@@ -277,7 +277,7 @@ do solicitante. Este campo é implícito após o campo Signature Algorithm.
 base-64 nos arquivos .csr, e seu conteúdo decodificado com o comando:
 
 <comando>
-    # openssl req -noout -text -in ldap.csr
+    # openssl req -noout -text -in web.csr
 </comando>
 
 <subsecao>Análise do Certificado</subsecao>
@@ -303,6 +303,6 @@ após o campo Signature Algorithm.
 base-64 nos arquivos .cer, e seu conteúdo pode ser decodificado com o comando:
 
 <comando>
-    # openssl x509 -noout -text -in ldap.cer
+    # openssl x509 -noout -text -in web.cer
 </comando>
 
