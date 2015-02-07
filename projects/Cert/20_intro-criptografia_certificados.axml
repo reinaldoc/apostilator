@@ -1,9 +1,9 @@
 <capitulo>Introdução a certificação digital</capitulo>
 
     A certificação digital tem o objetivo de identificar o usuário de forma
-inequívoca e permite a associação de ações a um indivíduo único. Utiliza
-tecnologias e processos para garantir a auditabilidade do fornecimento da
-identidade ao indivíduo que impedem o repúdio de uma ação.
+inequívoca e permite a associação de ações ao seu detentor. Utiliza processos
+e tecnologias para garantir a auditabilidade do fornecimento da identidade ao
+indivíduo que impedem o repúdio de uma ação.
 
     As funções de hash, a codificação base-64, a criptografia simétrica, a
 criptografia assimétrica, o padrão X.509 que define a requisição de
@@ -12,18 +12,19 @@ codificação do certificado digital, e o padrão PKCS#12, são tecnologia
 realacionadas a certificação digital.
 
     A <i>Autoridade Certificadora</i> é a entidade, pública ou privada, que
-gerencia a emissão de certificados digitais. Processos descrevem as rotinas
+gerencia a emissão de certificados digitais. Os processos descrevem as rotinas
 para emissão do certificado digital de forma segura, e envolvem procedimentos,
-políticas e pessoas, por meio de documentos formais, como a <u>Declaração de
-Práticas de Certificação</u> e a <u>Política de Segurança da Autoridade
-Certificadora</u>.
+políticas e pessoas, por meio de documentos formais, como a <i>Declaração de
+Práticas de Certificação</i> e a <i>Política de Segurança da Autoridade
+Certificadora</i>.
 
     A recepção e verificação dos dados do solicitante do certificado digital é
 realizado por meio de <i>Autoridades de Registro</i>, que na prática, são os
 postos de atendimento ao público das Autoridades Certificadoras.
 
-    <b>Tarefa:</b> Identifique os principais tópicos abordados em uma
-Declaração de Práticas de Certificação.
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique os principais tópicos de uma Declaração de
+Práticas de Certificação.
 
 <subsecao>Processos</subsecao>
 
@@ -33,16 +34,15 @@ Declaração de Práticas de Certificação.
 atuação não depende apenas de tecnologia. A Autoridade Certificadora mantem
 rígidos controles quanto a todo o processo de emissão de certificados.
 
-    A Autoridade Certificadora utiliza sistema para emissão de certificados
-que não permite acesso a chave privada do certificado raíz nem a
-funcionários de maior privilégio. Mantem procedimentos de controle para o
-acesso ao ambiente de emissão de certificados, como a necessidade de presença
-de ao menos dois funcionários em ambiente importante e a utilização de
-câmeras para monitorar este acesso.
+    A Autoridade Certificadora utiliza <i>software</i> e <i>hardware</i> para
+emissão de certificados de forma que não é possível acesso as chaves privadas,
+mesmo por funcionários de maior privilégio. Mantem procedimentos de controle
+para o acesso ao ambiente de emissão de certificados, como a necessidade da
+presença de ao menos dois funcionários em determinados ambientes, e o
+monitoramento de toda sua operação por meio de câmeras.
 
-    Apesar disto, a criação de uma Autoridade Certificadora não esta limitada
-por decretos governamentais ou a grandes empresas; sendo que a base
-tecnológica será demonstrada a seguir. Textos adicionais podem ser
+    Apesar disto, a criação de uma Autoridade Certificadora não está limitada
+por decretos governamentais ou a grandes empresas. Textos adicionais podem ser
 encontrados em <citar>SSL</citar>.
 
     Em relação aos procedimentos internos de uma Autoridade Certificadora, as
@@ -50,8 +50,8 @@ seguintes funções podem ser destacadas:
 
 <lista>
 
-<item/>Recepção ou criação da requisição de certificado digital (Certificate
-Signing Request - CSR) e verificação de documentos identificatórios do
+<item/>Recepção ou criação da requisição de certificado digital (<i>Certificate
+Signing Request</i> - CSR) e verificação de documentos de identificação do
 requerente por meio da Autoridade de Registro.
 
 <item/>Envio para a Autoridade Certificado das solicitações de certificado
@@ -74,7 +74,7 @@ entrega ao requerente.
 
     Os certificados digitais contém a chave pública do proprietário, assim como,
 seu nome, e-mail, e outras informações. A certificação digital apoia-se na relação
-de confiança entre a autoridade certificado e aqueles que detém os certificados.
+de confiança entre a autoridade certificadora e aqueles que detém os certificados.
 
     Confia-se que os processos da autoridade certificadora são suficientemente
 seguros para não haja a emissão de certificados contendo informações falsas (nome,
@@ -99,13 +99,31 @@ melhor é o algoritmo<citar>Hash</citar>.
 isto quer dizer?
 
     <br/>0.2cm
-    <b>Tarefa:</b> Quais os algoritmos de hash mais usados e de quantos bytes
-é a sequência gerada por cada um deles?
+    <b>Tarefa:</b> Identifique os algoritmos de hash mais usados e o tamanho
+da sequência gerada por cada um deles.
 
     <br/>0.2cm
-    <b>Tarefa:</b> Qual algoritmo de hash é utilizado nos seguintes casos?
+    <b>Tarefa:</b> Identifique o algoritmo de hash utilizado nos seguintes casos:
 
     i) protocolo TCP; ii) formato ZIP; iii) certificado digital.
+
+<subsubsecao>Criptografia simétrica</subsubsecao>
+
+    A criptografia simétrica utiliza uma chave única para cifragem e
+decifragem, geralmente necessitando de baixo custo computacional. Os
+algoritmos utilizam operações matemáticas reversíveis, que combinam
+os dados de entrada com a chave.
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique as operações essenciais de criptografia simétrica.
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique os algoritmos de criptografia simétrica mais
+comuns. Classifique cada algoritmo em cifras de bloco ou cifras de fluxo.
+Identifique o tamanho do bloco (para a cifras de bloco), e o tamanho da chave.
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique os estágios para criptografia com o AES (Rijndael).
 
 
 <subsubsecao>Criptografia assimétrica</subsubsecao>
@@ -147,8 +165,6 @@ e as Autoridades Certificadoras (AC). A ICP-Brasil é exemplo de uma Autoridade
 Certificadora no Brasil, foi instituída pela Medida Provisória 2.200 de julho
 de 2001, sendo o comitê gestor da ICP-Brasil regulamentado pelo decreto 3.872.
 
-<subsubsecao>Diagrama da criptografia assimétrica</subsubsecao>
-
     Uma biblioteca de criptografia, como o OpenSSL, fornece um conjunto de
 recursos para manipulação de certificados digitais. Em relação a criptografia
 assimétrica, as seguintes funções podem ser destacadas:
@@ -179,6 +195,12 @@ digital ou do certificado raíz.
     <legenda>Diagrama dos recursos de criptografia assimétrica</legenda>
     <nome>fig:openssl-1</nome>
 </figura>
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique o algoritmo de criptografia assimétrica mais comum.
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Identifique as operações essenciais de criptografia assimétrica.
 
 <subsubsecao>Conexão SSL</subsubsecao>
 
