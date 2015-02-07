@@ -1,20 +1,31 @@
 <capitulo>Introdução a certificação digital</capitulo>
 
-    O estudo da certificação digital pode ser divido em duas temáticas:
-tecnologia e processos. A tecnologia envolve a criptografia simétrica,
-criptografia assimétrica, hash, codificação base-64, formato de arquivos,
-padrão X509 que inclui a requisição de certificado (<u>Certificate Signing
-Request - CSR</u>) e o certificado digital.
+    A certificação digital tem o objetivo de identificar o usuário de forma
+inequívoca e permite a associação de ações a um indivíduo único. Utiliza
+tecnologias e processos para garantir a auditabilidade do fornecimento da
+identidade ao indivíduo que impedem o repúdio de uma ação.
 
-    Os processos descrevem os procedimentos para emissão do certificado
-digital de forma segura. Estes processos são descritos por meio dos documentos:
-<u>Declaração de Práticas de Certificação</u> e <u>Política de Segurança da
-Autoridade Certificadora</u>. A entidade que emite o certificado
-digital é chamada de <i>Autoridade Certificadora</i> e o procedimento de
-recepção e verificação dos dados do solicitante é realizado por meio de
-<i>Autoridades de Registro</i>.
+    As funções de hash, a codificação base-64, a criptografia simétrica, a
+criptografia assimétrica, o padrão X.509 que define a requisição de
+certificado e o certificado digital, o padrão X.690 que define as regras de
+codificação do certificado digital, e o padrão PKCS#12, são tecnologia
+realacionadas a certificação digital.
 
-<subsecao>Criptografia assimétrica</subsecao>
+    A <i>Autoridade Certificadora</i> é a entidade, pública ou privada, que
+gerencia a emissão de certificados digitais. Processos descrevem as rotinas
+para emissão do certificado digital de forma segura, e envolvem procedimentos,
+políticas e pessoas, por meio de documentos formais, como a <u>Declaração de
+Práticas de Certificação</u> e a <u>Política de Segurança da Autoridade
+Certificadora</u>.
+
+    A recepção e verificação dos dados do solicitante do certificado digital é
+realizado por meio da <i>Autoridades de Registro</i>, que na prática, são os
+postos de atendimento ao público das Autoridades Certificadoras.
+
+
+<subsecao>Tecnologias</subsecao>
+
+<subsubsecao>Criptografia assimétrica</subsubsecao>
 
     A criptografia assimétrica utiliza um par de chaves (sequências de
 bits), denominadas de chave privada e chave pública (chaves assimétricas).
@@ -57,7 +68,7 @@ e as Autoridades Certificadoras (AC). A ICP-Brasil é exemplo de uma Autoridade
 Certificadora no Brasil, foi instituída pela Medida Provisória 2.200 de julho
 de 2001, sendo o comitê gestor da ICP-Brasil regulamentado pelo decreto 3.872.
 
-<subsecao>Diagrama da criptografia assimétrica</subsecao>
+<subsubsecao>Diagrama da criptografia assimétrica</subsubsecao>
 
     Uma biblioteca de criptografia, como o OpenSSL, fornece um conjunto de
 recursos para manipulação de certificados digitais. Em relação a criptografia
@@ -90,7 +101,9 @@ digital ou do certificado raíz.
     <nome>fig:openssl-1</nome>
 </figura>
 
-<subsecao>Autoridade Certificadora</subsecao>
+<subsecao>Processos</subsecao>
+
+<subsubsecao>Autoridade Certificadora</subsubsecao>
 
     A Autoridade Certificadora emite e revoga certificados digitais, mas sua
 atuação não depende apenas destes recursos tecnológicos. Uma Autoridade
@@ -135,7 +148,7 @@ entrega ao requerente.
     <nome>fig:autoridade-certificadora</nome>
 </figura>
 
-<subsecao>Diagrama de certificados digitais (x509)</subsecao>
+<subsubsecao>Diagrama de certificados digitais (x509)</subsubsecao>
 
     Os certificados digitais são amplamente baseados em criptografia
 assimétrica, mas dependem de outras informações além da chave pública e
