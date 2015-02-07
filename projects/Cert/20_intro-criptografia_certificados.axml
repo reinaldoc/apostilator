@@ -72,6 +72,16 @@ entrega ao requerente.
     <nome>fig:autoridade-certificadora</nome>
 </figura>
 
+    Os certificados digitais contém a chave pública do proprietário, assim como,
+seu nome, e-mail, e outras informações. A certificação digital apoia-se na relação
+de confiança entre a autoridade certificado e aqueles que detém os certificados.
+
+    Confia-se que os processos da autoridade certificadora são suficientemente
+seguros para não haja a emissão de certificados contendo informações falsas (nome,
+e-mail, etc), e que a tecnologia seja suficientemente segura para que não haja
+dúvidas quanto a autoria de uma assinatura digital ou quanto a inviolabilidade de
+uma conexão cifrada.
+
 <subsecao>Tecnologias</subsecao>
 
 <subsubsecao>Função hash</subsubsecao>
