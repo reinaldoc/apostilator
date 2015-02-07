@@ -19,11 +19,37 @@ Práticas de Certificação</u> e a <u>Política de Segurança da Autoridade
 Certificadora</u>.
 
     A recepção e verificação dos dados do solicitante do certificado digital é
-realizado por meio da <i>Autoridades de Registro</i>, que na prática, são os
+realizado por meio de <i>Autoridades de Registro</i>, que na prática, são os
 postos de atendimento ao público das Autoridades Certificadoras.
 
+    <b>Tarefa:</b> Identifique os principais tópicos abordados em uma
+Declaração de Práticas de Certificação.
 
 <subsecao>Tecnologias</subsecao>
+
+<subsubsecao>Função hash</subsubsecao>
+
+     O <i>hash</i> é a transformação de uma grande quantidade de dados em uma
+pequena quantidade de informação, de tal forma que o resultado (<i>message
+digest</i>) seja (quase) exclusivo<citar>Hash</citar>. Como o resultado gerado
+é uma sequência limitada, comumente não maior que 512 bits (64 bytes ou 128
+hexadecimais), existem colisões (sequências iguais para dados diferentes),
+sendo assim, quanto maior for a dificuldade de se criar colisões intencionais,
+melhor é o algoritmo<citar>Hash</citar>.
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Quando diz-se que um algoritmo de hash é de 16 bytes, o que
+isto quer dizer?
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Quais os algoritmos de hash mais usados e de quantos bytes
+é a sequência gerada por cada um deles?
+
+    <br/>0.2cm
+    <b>Tarefa:</b> Qual algoritmo de hash é utilizado nos seguintes casos?
+
+    i) protocolo TCP; ii) formato ZIP; iii) certificado digital.
+
 
 <subsubsecao>Criptografia assimétrica</subsubsecao>
 
