@@ -25,6 +25,53 @@ postos de atendimento ao público das Autoridades Certificadoras.
     <b>Tarefa:</b> Identifique os principais tópicos abordados em uma
 Declaração de Práticas de Certificação.
 
+<subsecao>Processos</subsecao>
+
+<subsubsecao>Autoridade Certificadora</subsubsecao>
+
+    A Autoridade Certificadora emite e revoga certificados digitais, mas sua
+atuação não depende apenas de tecnologia. A Autoridade Certificadora mantem
+rígidos controles quanto a todo o processo de emissão de certificados.
+
+    A Autoridade Certificadora utiliza sistema para emissão de certificados
+que não permite acesso a chave privada do certificado raíz nem a
+funcionários de maior privilégio. Mantem procedimentos de controle para o
+acesso ao ambiente de emissão de certificados, como a necessidade de presença
+de ao menos dois funcionários em ambiente importante e a utilização de
+câmeras para monitorar este acesso.
+
+    Apesar disto, a criação de uma Autoridade Certificadora não esta limitada
+por decretos governamentais ou a grandes empresas; sendo que a base
+tecnológica será demonstrada a seguir. Textos adicionais podem ser
+encontrados em <citar>SSL</citar>.
+
+    Em relação aos procedimentos internos de uma Autoridade Certificadora, as
+seguintes funções podem ser destacadas:
+
+<lista>
+
+<item/>Recepção ou criação da requisição de certificado digital (Certificate
+Signing Request - CSR) e verificação de documentos identificatórios do
+requerente por meio da Autoridade de Registro.
+
+<item/>Envio para a Autoridade Certificado das solicitações de certificado
+digital;
+
+<item/>Emissão do certificado digital do requerente assinado pela Autoridade
+Certificadora;
+
+<item/>Envio do certificado digital para a Autoridade de Registro e posterior
+entrega ao requerente.
+
+</lista>
+
+<figura>
+    <tamanho>0.7</tamanho>
+    <arquivo>imgs/autoridade-certificadora</arquivo>
+    <legenda>Diagrama dos procedimentos de uma Autoridade Certificadora</legenda>
+    <nome>fig:autoridade-certificadora</nome>
+</figura>
+
 <subsecao>Tecnologias</subsecao>
 
 <subsubsecao>Função hash</subsubsecao>
@@ -33,7 +80,7 @@ Declaração de Práticas de Certificação.
 pequena quantidade de informação, de tal forma que o resultado (<i>message
 digest</i>) seja (quase) exclusivo<citar>Hash</citar>. Como o resultado gerado
 é uma sequência limitada, comumente não maior que 512 bits (64 bytes ou 128
-hexadecimais), existem colisões (sequências iguais para dados diferentes),
+hexadecimais), existem colisões (sequências iguais para entradas diferentes),
 sendo assim, quanto maior for a dificuldade de se criar colisões intencionais,
 melhor é o algoritmo<citar>Hash</citar>.
 
@@ -55,33 +102,29 @@ isto quer dizer?
 
     A criptografia assimétrica utiliza um par de chaves (sequências de
 bits), denominadas de chave privada e chave pública (chaves assimétricas).
-Como induzido por sua nomenclatura, a chave privada é de domínio restrito a
-parte (indivíduo, software, etc) e a chave pública pode estar publicamente
-acessível.
-
-    As chaves assimétricas não podem ser formadas a partir de qualquer
-combinação de, por exemplo, 1024 bits. É necessário a utilização de um
-algoritmo que gere uma chave que permita a criação futura de uma segunda chave
-associada a primeira, existindo um relacionamento entre elas.
+As chaves assimétricas não podem ser formadas a partir de qualquer
+combinação aleatória. É necessário a utilização de um algoritmo que gere
+uma chave que permita a criação futura de uma segunda chave associada a
+primeira, existindo um relacionamento entre elas.
 
     Após a criação do par de chaves assimétricas, uma delas deve ser
 selecionada para ser a chave privada e a outra será a chave pública. Na
 prática, a chave inicialmente criada é a chave privada, e a posterior é
-chamada de chave pública. Isto ocorre, pois a chave privada é armazenada em um
-arquivo em separado e a pública estará contida na requisição de certificado
+a chave pública. A chave privada é comumente armazenada em um arquivo em
+separado e a pública estará contida na requisição de certificado
 (Certificate Signing Request - CSR) e posteriormente no certificado digital.
 
     As chaves serão utilizadas para a criptografia e descriptografia dos dados;
 dados criptografados por uma das chaves só podem ser descriptografados pela
-outra. A criptografia através da chave pública torna-se válida a partir do
+outra. A criptografia por meio da chave pública torna-se válida a partir do
 fato que somente os detentores da chave privada terão acesso a este conteúdo,
 já a criptografia utilizando a chave privada não tem objetivo da
 confidencialidade, visto que a chave pública é de domínio público.
 
     Assim, a chave privada é utilizada para a criação de <i>hash</i>
-criptográficos, chamado de assinatura digital. Este recurso é utilizado para
-verificar se um determinado conteúdo foi gerado pelo detentor da chave privada.
-Isto pode ser verificado utilizando a chave pública.
+criptográficos, também chamado de assinatura digital. Este recurso é utilizado
+para verificar se um determinado conteúdo foi gerado pelo detentor da chave
+privada. Esta verificação ocorre por meio da chave pública.
 
     O certificado é um arquivo que contém informações assinadas digitalmente
 com a chave privada de alguém confiável, normalmente uma Autoridade
@@ -127,65 +170,23 @@ digital ou do certificado raíz.
     <nome>fig:openssl-1</nome>
 </figura>
 
-<subsecao>Processos</subsecao>
+<subsubsecao>Conexão SSL</subsubsecao>
 
-<subsubsecao>Autoridade Certificadora</subsubsecao>
+    Os certificados digitais também são utilizados para tornar segura a
+comunicação entre procolos de rede, como http, smtp, imap, ldap, etc. Tomando
+como exemplo uma página web, o administrador do serviço deverá obter um
+certificado digital e configurá-lo no servidor web.
 
-    A Autoridade Certificadora emite e revoga certificados digitais, mas sua
-atuação não depende apenas destes recursos tecnológicos. Uma Autoridade
-Certificadora também deve manter rígidos controles quanto a emissão de
-certificados, validando o requerente com a verificação de documentos
-identificatórios (procedimento realizado pela Autoridade de Registro).
+    Em toda conexão SSL, o certificado digital presente no servidor é enviado
+ao cliente da conexão a cada nova conexão, e assim ocorre quando o navegador
+realiza uma conexão https. Ao receber o certificado do servidor o navegador
+realiza a verificação da assinatura digital (hash) presente no certificado.
 
-    Além disso, a Autoridade Certificadora deve possuir sistemas para emissão
-de certificados que não permitam acesso a chave privada do certificado raíz nem
-aos funcionários de maior privilégio. Assim como, deve manter procedimentos
-de controle para o acesso ao ambiente de emissão de certificados, como a
-necessidade de presença de ao menos dois funcionários, e utilização de
-câmeras para monitorar este acesso.
-
-    Apesar disto, a criação de uma Autoridade Certificadora não esta limitada
-por decretos governamentais ou a grandes empresas; sendo que a base
-tecnológica será demonstrada a seguir. Textos adicionais podem ser
-encontrados em <citar>SSL</citar>.
-
-    Em relação aos procedimentos internos de uma Autoridade Certificadora, as
-seguintes funções podem ser destacadas:
-
-<lista>
-
-<item/>Recepção ou criação da requisição de certificado digital (Certificate
-Signing Request - CSR) e verificação de documentos identificatórios do
-requerente.
-
-<item/>Emissão do certificado digital do requerente assinado pelo certificado
-raíz da Autoridade Certificadora, com a utilização de <i>software</i> que
-impeça acesso direto a chave privada do certificado raíz pelo operador.
-
-<item/>Envio do certificado digital para a Autoridade de Registro e posterior
-entrega ao requerente.
-
-</lista>
-
-<figura>
-    <tamanho>0.7</tamanho>
-    <arquivo>imgs/autoridade-certificadora</arquivo>
-    <legenda>Diagrama dos procedimentos de uma Autoridade Certificadora</legenda>
-    <nome>fig:autoridade-certificadora</nome>
-</figura>
-
-<subsubsecao>Diagrama de certificados digitais (x509)</subsubsecao>
-
-    Os certificados digitais são amplamente baseados em criptografia
-assimétrica, mas dependem de outras informações além da chave pública e
-privada. Os certificados digitais são formados pela associação da chave
-(pública) com os dados do proprietário (nome, e-mail, empresa, etc), e
-definidos pelo padrão x509 que especifica o formato do arquivo para
-o armazenamento destas informações.
-
-    A especificação x509 também define o formato do arquivo enviado a
-Autoridade Certificadora que contém os dados do solicitante, chamado de
-requisição de certificado (Certificate Signing Request - CSR).
+    Para realizar isto, o navegador possui uma base de certificados digitais
+de autoridades certificadoras. Assim, quando tenta-se realizar uma conexão
+https, e o certificado recebido não foi assinado por uma das autoridades
+certificadoras pré-existente no navegador, o certificado do servidor não
+poderá ser validado.
 
 <figura>
     <tamanho>0.8</tamanho>
