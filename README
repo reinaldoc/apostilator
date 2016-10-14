@@ -11,7 +11,7 @@ Apostilator Classic - A Latex Interface
     **********
         # echo 'Aptitude::Recommends-Important "false";' >> /etc/apt/apt.conf
         # aptitude install perl texlive texlive-latex-recommended \
-                           texlive-latex-extra texlive-fonts-extra
+                           texlive-latex-extra texlive-lang-portuguese
 
     1.2 Gentoo
     **********
