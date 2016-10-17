@@ -1,57 +1,59 @@
 <capitulo>Sistema Operacional</capitulo>
 
+A utilização do Linux como ambiente de desenvolvimento Java contribuiu com o
+aumento de produtividade das equipes, principalmente pela maior
+disponibilidade do ambiente e rapidez no <i>deploy</i> de aplicações.
+
 <subsecao>Debian GNU/Linux</subsecao>
 
-    Os sistemas operacionais baseados em código aberto fornecem um aplicativo
-para instalação automatizada de software, sendo no Debian <citar>Debian</citar>
-utilizado o <b>aptitude</b>.
-
-    Ao realizar a instalação de um determinado <i>software</i>, este informa
-ao <i>aptitude</i> quais bibliotecas são necessárias para o seu
-funcionamento (<i>dependências</i>) e quais são <i>recomendadas</i>, sendo
-que estas não são essenciais para a execução do <i>software</i> principal.
-
-    Por padrão, ambos conjuntos de bibliotecas serão instalados, todavia
-isto induz a utilização de espaço em disco adicional e a presença de serviços
-que não serão utilizados. Pode-se desabilitar a instalação de <i>software</i>
-<i>recomendado</i> através da adição da seguinte configuração ao arquivo
+    Os sistemas operacionais de código aberto fornecem um aplicativo para
+download e instalação automatizada de software, no Debian<citar>Debian</citar>
+utiliza-se o <b>apt-get</b>. Ao realizar a instalação de um software, também
+são instaladas suas dependências, além de software adicional recomendado que
+não é obrigatório. Para não instalar o software recomendado, configure em
 <b>/etc/apt/apt.conf</b>:
 
 <comando>
-Apt::Install-Recommends "false";
+APT::Install-Recommends "0";
 </comando>
 
-    Caso a conectividade seja fornecida por um proxy via http, a seguinte
-configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
-devida adequação ao endereço IP do proxy:
+    O download do software pode ser realizado por meio de proxy http, para
+isso, com a devida adequação ao endereço IP do proxy, configure em
+<b>/etc/apt/apt.conf</b>:
 
 <comando>
 Acquire::http::Proxy "http://192.168.0.1:3128";
 </comando>
 
-    O utilitário <i>aptitude</i> também requer a configuração da fonte do
+    O utilitário <i>apt-get</i> também requer a configuração da fonte do
 <i>software</i> a ser instalado, e isto é realizado no arquivo
 <b>/etc/apt/sources.list</b>, conforme indicado a seguir:.
 
 <comando>
-deb http://security.debian.org/ squeeze/updates main contrib non-free
-deb http://ftp.br.debian.org/debian/ squeeze main contrib non-free
-deb http://ftp.br.debian.org/debian/ squeeze-updates main contrib non-free
+# Jessie Repository
+deb http://ftp.br.debian.org/debian/ jessie main contrib non-free
+deb http://security.debian.org/ jessie/updates main contrib
+deb http://ftp.br.debian.org/debian/ jessie-updates main contrib
+
+# Backport for Java 8
+deb http://ftp.de.debian.org/debian jessie-backports main
 </comando>
 
-    Após a definição das fontes, é necessário o <i>download</i> da lista de
-<i>software</i> disponível, e posterior atualização do sistema:
+    Faça o <i>download</i> da lista de <i>software</i> disponível e a
+atualização do sistema:
 
 <comando>
-    # aptitude update
-    # aptitude safe-upgrade
+    # apt-get update
+    # apt-get upgrade
 </comando>
 
 <subsecao>JVM</subsecao>
 
-	A máquina virtual Java é essencial para a execução dos aplicativos Java.
-A instalação pode ser realizada conforme indicado:
+	A máquina virtual Java é essencial para a execução do ambiente de
+desenvolvido Java. A substituição do Java7 pelo Java8 pode ser realizada
+conforme indicado:
 
 <comando>
-    # aptitude install sun-java6-jdk libaio1
+    # apt-get install openjdk-8-jdk
+    # apt-get purge openjdk-7-jre openjdk-7-jre-headless
 </comando>
