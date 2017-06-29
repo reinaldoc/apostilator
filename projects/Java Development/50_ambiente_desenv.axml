@@ -1,12 +1,12 @@
 <capitulo>Ambiente de Desenvolvimento JEE</capitulo>
 
 	O ambiente de desenvolvimento é formado por um conjunto de programas
-de licenças livres que permitem a codificação de sistemas utilizando
-tecnologias JEE e de ferramentas de produtividade.
+que utilizam licenças livres e permitem a codificação de sistemas utilizando
+tecnologias JEE e ferramentas de produtividade.
 
 <lista>
-	<item/> Eclipse Juno SR2 v4.2.2;
-	<item/> JbossTools v4.0.0-Final;
+	<item/> Eclipse Neon.1a v4.6.1;
+	<item/> JbossTools v4.1.1.Final;
 	<item/> Maven Intergration for Eclipse - m2e;
 	<item/> Jboss AS v7.1.1 Final;
 	<item/> Demoiselle 2.3.2 (JSF-JPA Maven archetype; demoiselle-core package);
@@ -14,19 +14,19 @@ tecnologias JEE e de ferramentas de produtividade.
 
 <subsecao>Eclipse</subsecao>
 
-	Os procedimentos indicados neste capítulo centralizam a instalação do
+	Os procedimentos indicados neste capítulo realizam a instalação do
 conjunto de programas que formam o ambiente de desenvolvimento no diretório
 <b>/opt/eclipse</b>, possibilitando a replicação deste ambiente de forma ágil,
-podendo-se copiar este diretório para outra estação de trabalho.
+apenas com a cópia deste diretório para outra estação de trabalho.
 
-	É requisito mínimo a existência de <b>2Gb de memória RAM</b>.
+	É requisito mínimo a existência de <b>4 Gb de memória RAM</b>.
 
 <subsubsecao>Download</subsubsecao>
 
 	O <i>Eclipse IDE for Java Developers</i> esta disponível em
 <i>www.eclipse.org</i>, cuja versão atual é:
 
-	<b>eclipse-java-juno-SR2-linux-gtk-x86_64.tar.gz</b>
+	<b>eclipse-java-neon-1a-linux-gtk-x86_64.tar.gz</b>
 
 <figura>
     <tamanhob>0.7</tamanhob>
@@ -41,15 +41,14 @@ podendo-se copiar este diretório para outra estação de trabalho.
 
 <comando>
 # cd /opt
-# tar xzf /path/to/eclipse-java-juno-SR2-linux-gtk-x86_64.tar.gz
+# tar xzf /path/to/eclipse-java-neon-1a-linux-gtk-x86_64.tar.gz
 # chown -R johndoe: eclipse
 </comando>
 
-	Substitua o termo <i>johndoe</i> pelo usuário que executará o eclipse.
-Isto é necessário neste momento para que o Eclipse tenham permissão para
-instalar os programas adicionais no diretório <i>/opt/eclipse</i>, caso
-contrário serão instalados em <i>~/.eclipse</i>. Posteriormente pode-se alterar a
-permissão deste diretório.
+	Substitua o termo <i>johndoe</i> pelo usuário que executará o eclipse,
+uma vez que o Eclipse necessita instalar componentes adicionais no diretório
+<i>/opt/eclipse</i>. Caso contrário, estes componentes serão instalados em
+<i>~/.eclipse</i>. Posteriormente pode-se ajustar esta permissão.
 
 <subsubsecao>Pós-instalação: eclipse.ini</subsubsecao>
 
@@ -57,21 +56,19 @@ permissão deste diretório.
 melhora no desempenho do Eclipse, é indicado a seguir:
 
 <lista>
-<item/> <b>/opt/eclipse/eclipse.ini</b>: incremente os parâmetros como indicado
-a seguir.
+<item/> <b>/opt/eclipse/eclipse.ini</b>: ajuste os parâmetros existentes como
+indicado a seguir:
 </lista>
 
 <comando>
--XX:MaxPermSize=512m
 -Xms512m
--Xmx1024m
+-Xmx2048m
 </comando>
 
-	É necessária a execução do Eclipse para proceder a instalação dos demais
-programas, para isto inicialize o <i>eclipse</i> através do executável
-<b>/opt/eclipse/eclipse</b>, e selecione o diretório
-(<b>/opt/eclipse/ workset/workspace</b>) onde os projetos serão armazenados
-(<i>workspace</i>).
+	Deve-se iniciar o Eclipse para proceder a instalação dos demais
+componentes por meio do executável <b>/opt/eclipse/eclipse</b>. Ao iniciá-lo,
+é requerido a indicação onde os projetos serão armazenados (<i>workspace</i>), use
+o diretório <b>/opt/eclipse/workset/workspace</b>.
 
 <figura>
     <tamanhob>0.9</tamanhob>
@@ -88,10 +85,9 @@ programas, para isto inicialize o <i>eclipse</i> através do executável
 <item/> acesse o menu: <b>Window</b> => <b>Preferences</b> => <b>General</b> =>
  <b>Network Connections</b>;
 <item/> selecione em <i>Active Provder</i> a opção <b>Manual</b>;
-<item/> para cada schema (<i>HTTP, HTTPS, SOCKS</i>), selecione-o e clique
-em <b>Edit</b>;
-<item/> preencha adequadamente IP/host do serviço de proxy e clique em
-<b>OK</b>;
+<item/> para os schemas <i>HTTP e HTTPS</i>, selecione-o e clique em <b>Edit</b>;
+<item/> não configure o schema SOCKS;
+<item/> preencha adequadamente IP/host do serviço de proxy e clique em <b>OK</b>;
 <item/>Clique em <b>OK</b> novamente para concluir a configuração;
 </lista>
 
@@ -104,7 +100,7 @@ em <b>Edit</b>;
 
 <subsubsecao>Pós-instalação: Maven</subsubsecao>
 
-	O suporte ao Apache Maven é fornecido ao Eclipse através do componente
+	O suporte ao Apache Maven é fornecido ao Eclipse por meio do componente
 <i>Maven Integration for Eclipse</i>. O procedimento a seguir tem objetivo de
 alterar o diretório do repositório local do Maven de <i>~/.m2</i> para
 <i>/opt/eclipse/workset/maven</i>, e se necessário, configurar o uso de proxy
@@ -201,7 +197,7 @@ classes Java;
 <item/> acesse o menu: <b>Help</b> => <b>Eclipse Marketplace...</b>;
 <item/> digite o termo <b>jboss</b> para a pesquisa;
 <item/> clique em <b>Go</b>;
-<item/> identifique o item <b>JBoss Tools (Indigo)</b> e clique em <b>Install</b>;
+<item/> identifique o item <b>JBoss Tools</b> e clique em <b>Install</b>;
 </lista>
 
 <figura>
@@ -342,16 +338,20 @@ configuração do servidor de aplicações:
 
 <subsecao>SCM</subsecao>
 
-	Sistemas de controle de versão permitem o controle sobre as alterações
-de documentos, incluindo código fonte de software, e tem a função de
-repositório centralizado destes arquivos. Cada alteração é identificada
-com autor e descrição, permitindo o mapeamento do histórico das evoluções
-do software.
+    Sistemas de controle de versão permitem o controle sobre as alterações
+de documentos, incluindo código fonte de software, em forma de repositório
+centralizado. Cada alteração é identificada com autor e descrição, permitindo
+o mapeamento do histórico das evoluções do software.
 
-	Implementações populares como CVS, Subversion e Git são suportados pelo
+    Implementações populares como CVS, Subversion e Git são suportados pelo
 eclipse. Enquanto o suporte ao Git, provido pelo plugin E-Git, é instalado
 simultaneamente ao Jboss Tools, o suporte ao Subversion pode ser adicionado
-através do plugin Subclipse.
+através do plugin Subclipse. O subclipse depende do pacote <b>libsvn-java</b>.
+
+<comando>
+# apt-get install libsvn-java
+</comando>
+
 
 <lista>
 <item/> acesse o menu: <b>Help</b> => <b>Eclipse Marketplace...</b>;
@@ -382,6 +382,22 @@ através do plugin Subclipse.
     <legenda>Instalação do Subclipse</legenda>
     <nome>fig:scm-subclipse-02</nome>
 </figura>
+
+    Caso não haja versão disponível no Marketplace, configure o repositório:
+
+<lista>
+<item/>SVN 1.9.x - https://dl.bintray.com/subclipse/archive/release/1.12.x/
+<item/>SVN 1.8.x - https://dl.bintray.com/subclipse/archive/release/1.10.x/
+<item/>SVN 1.7.x - https://dl.bintray.com/subclipse/archive/release/1.8.x/
+</lista>
+ 
+<lista>
+<item/> acesse o menu: <b>Help</b> => <b>Install new software...</b>;
+<item/> clique em <b>Add...</b>;
+<item/> preencha a URL <b>https://dl.bintray.com/subclipse/archive/release/1.8.x/</b> e clique em <b>OK</b>;
+<item/> preencha a URL <b>http://subclipse.tigris.org/m2eclipse/latest/</b> e clique em <b>OK</b>;
+<item/> identifique o item <b>Subclipse</b> e clique em <b>Próximo</b> e <b>Install</b>;
+</lista>
 
 	Projetos que utilizam Maven em seu gerenciamento, podem ser importados
 diretamente como um projeto Maven a partir de um sistema de controle de
@@ -419,15 +435,6 @@ versão de seu interesse;
     <nome>fig:scm-maven-02</nome>
 </figura>
 
-<comando>
-deb http://ppa.launchpad.net/dominik-stadler/subversion-1.7/ubuntu lucid main
-</comando>
-
-<comando>
-# aptitude update
-# aptitude install -t lucid libsvn-java
-# ln -s /usr/lib/jni/libsvnjavahl-1.so /usr/lib
-</comando>
 
 
 <quebraPagina/>
