@@ -126,7 +126,7 @@ my $bibliografy = "off";
 sub main() {
   &verify_depends();
   my $all_stages = "on";
-  if( defined @ARGV ) {
+  if( @ARGV ) {
       my @ARGS = @ARGV;
       while ($#ARGS >= 0) {
           $_ = $ARGS[0];
