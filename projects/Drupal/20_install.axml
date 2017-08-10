@@ -7,6 +7,7 @@ essencial dos pacotes de software necessários para a execução do Drupal.
 
 <comando>
 # apt-get install apache2 libapache2-mod-php7.0
+# apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql php-uploadprogress
 # mkdir /var/www/novoportal
 </comando>
 
@@ -16,6 +17,11 @@ essencial dos pacotes de software necessários para a execução do Drupal.
 
 <comandoNumerado>
 <IfModule mod_ssl.c>
+    <Directory /var/www/novoportal/>
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
     <VirtualHost *:80>
         ServerName novoportal.trt8.net
         Redirect / https://novoportal.exmaple.com/
@@ -31,15 +37,21 @@ essencial dos pacotes de software necessários para a execução do Drupal.
         SSLEngine on
         SSLCertificateFile    /etc/ssl/private/novoportal.cer
         SSLCertificateKeyFile /etc/ssl/private/novoportal.key
-
         <FilesMatch "\.php$">
             SSLOptions +StdEnvVars
         </FilesMatch>
+
+        <Directory /var/www/novoportal/>
+            Options Indexes FollowSymLinks
+            AllowOverride All
+            Require all granted
+        </Directory>
     </VirtualHost>
 </IfModule>
 </comandoNumerado>
 
 <comando>
+# a2enmod rewrite
 # a2enmod ssl
 # a2ensite novoportal
 </comando>
@@ -60,11 +72,22 @@ ServerTokens Prod
 post_max_size = 20M
 # l.809
 upload_max_filesize = 12M
+# l.924
+date.timezone = America/Belem
 </comando>
 
 <comando>
-# /etc/init.d/apache2 restart
+# /etc/php/7.0/cli/php.ini
+# l.389
+memory_limit = 512M
+# l.656
+post_max_size = 100M
+# l.809
+upload_max_filesize = 100M
+# l.924
+date.timezone = America/Belem
 </comando>
+
 
 <subsecao>MySQL</subsecao>
 
@@ -118,13 +141,39 @@ utf8_filesystem=YES
 <item/>https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
 </lista>
 
+	Criar usuário e diretório:
+
 <comando>
-adduser --home /var/www/novoportal --no-create-home --shell /bin/false novoportal
-mkdir /var/www/novoportal
-chown novoportal: /var/www/novoportal
-su - novoportal -s /bin/bash
-tar --strip-components=1 -xzf /path/to/drupal-7.xx.tar.gz
-mv /path/to/drupal-7.56.pt-br.po profiles/standard/translations
+*** criar usuário
+# adduser --home /var/www/novoportal --shell /bin/false novoportal
+
+*** extrair o drupal e o instalar arquivo de tradução
+# su - novoportal -s /bin/bash
+$ tar xzf /path/to/drupal-7.xx.tar.gz
+$ rm CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt MAINTAINERS.txt README.txt UPGRADE.txt
+$ mv drupal-7.xx drupal
+$ mv /path/to/drupal-7.56.pt-br.po drupal/profiles/standard/translations
+$ exit
+
+*** criar diretórios para upload
+# cd /var/www/novoportal
+# mkdir sites/default/files sites/default/files-private
+# chown www-data:novoportal sites/default/files sites/default/files-private
+
+*** criar arquivo de configuração
+# cp sites/default/default.settings.php sites/default/settings.php
+# chown www-data:novoportal sites/default/settings.php
 </comando>
 
-    Inicie o navegador para acesso ao Drupal.
+    Inicie o navegador para acesso ao Drupal e configuração da conexão ao banco.
+
+<comando>
+*** redefinir permissões do arquivo de configuração
+# chown novoportal: sites/default/settings.php
+
+*** obtenha uma chave de acesso ao cron:
+acesse Administration > Configuration > System > Cron;
+
+*** ativar o cron
+# echo '0 * * * * novoportal wget -O - -q -t 1 https://example.com/cron.php?cron_key=KEY' >> /etc/crontab
+</comando>
