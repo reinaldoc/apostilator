@@ -1,0 +1,130 @@
+<capitulo>Instalação</capitulo>
+
+    Este capítulo contém os procedimentos para instalação e configuração
+essencial dos pacotes de software necessários para a execução do Drupal.
+
+<subsecao>Apache e PHP</subsecao>
+
+<comando>
+# apt-get install apache2 libapache2-mod-php7.0
+# mkdir /var/www/novoportal
+</comando>
+
+<lista>
+<item/>VirtualHost: /etc/apache2/sites-available/novoportal.conf
+</lista>
+
+<comandoNumerado>
+<IfModule mod_ssl.c>
+    <VirtualHost *:80>
+        ServerName novoportal.trt8.net
+        Redirect / https://novoportal.exmaple.com/
+    </VirtualHost>
+    <VirtualHost *:443>
+        ServerAdmin reinaldoc@gmail.com
+        ServerName novoportal.example.com
+        DocumentRoot /var/www/novoportal
+        ErrorLog ${APACHE_LOG_DIR}/error.log
+        CustomLog ${APACHE_LOG_DIR}/access.log combined
+
+        # SSL Engine
+        SSLEngine on
+        SSLCertificateFile    /etc/ssl/private/novoportal.cer
+        SSLCertificateKeyFile /etc/ssl/private/novoportal.key
+
+        <FilesMatch "\.php$">
+            SSLOptions +StdEnvVars
+        </FilesMatch>
+    </VirtualHost>
+</IfModule>
+</comandoNumerado>
+
+<comando>
+# a2enmod ssl
+# a2ensite novoportal
+</comando>
+
+<lista>
+<item/>Configurações gerais
+</lista>
+
+<comando>
+# /etc/apache2/conf-available/security.conf
+# l.25
+ServerTokens Prod
+</comando>
+
+<comando>
+# /etc/php/7.0/apache2/php.ini
+# l.656
+post_max_size = 20M
+# l.809
+upload_max_filesize = 12M
+</comando>
+
+<comando>
+# /etc/init.d/apache2 restart
+</comando>
+
+<subsecao>MySQL</subsecao>
+
+<comando>
+# apt-get install mariadb-server-10.1
+</comando>
+
+<lista>
+<item/>Preparar banco de dados
+</lista>
+
+<comando>
+# mysql -p
+> CREATE DATABASE novoportal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+> CREATE USER 'novoportal'@'localhost' IDENTIFIED BY 'top-secret';
+> GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, REFERENCES ON novoportal.* TO 'novoportal'@'localhost';
+> FLUSH PRIVILEGES;
+> QUIT;
+</comando>
+
+<subsecao>FTP Server</subsecao>
+
+<comando>
+@ instalar servidor VS FTP
+# apt-get install vsftpd
+
+@ permitir que usuários com shell /bin/false realizem login no FTP.
+# echo '/bin/false' >> /etc/shells
+</comando>
+
+<lista>
+<item/>Configurações: /etc/vsftpd.conf
+</lista>
+
+<comando>
+# l.31
+write_enable=YES
+# l.103
+ftpd_banner=FTP Server ready.
+# l.114
+chroot_local_user=YES
+allow_writeable_chroot=YES
+# l.155
+utf8_filesystem=YES
+</comando>
+
+<subsecao>Drupal</subsecao>
+
+<lista>
+<item/>https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
+<item/>https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
+</lista>
+
+<comando>
+adduser --home /var/www/novoportal --no-create-home --shell /bin/false novoportal
+mkdir /var/www/novoportal
+chown novoportal: /var/www/novoportal
+su - novoportal -s /bin/bash
+tar --strip-components=1 -xzf /path/to/drupal-7.xx.tar.gz
+mv /path/to/drupal-7.56.pt-br.po profiles/standard/translations
+</comando>
+
+    Inicie o navegador para acesso ao Drupal.

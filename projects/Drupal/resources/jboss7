@@ -1,0 +1,103 @@
+#!/bin/bash
+# JBoss7 invoke script
+# Copyright (c) 2013 - Reinaldo de Carvalho <reinaldoc@gmail.com>
+
+### BEGIN INIT INFO
+# Provides:          jboss7
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: JBoss7 invoke script
+### END INIT INFO
+
+# @param $1 string to be checked
+# @return int command execution status
+function isEmpty {
+	[[ $1 =~ ^[[:space:]]*$ ]]
+	return $?
+}
+
+# @param $1 jboss home directory
+# @return void set $JBPID with jboss pid
+function setJbPid() {
+	JBPID=$(ps -ef | grep -E "java.*$1.*org.jboss.as.standalone" | grep -v ' grep ' | tr -s ' ' | cut -f2 -d ' ')
+}
+
+# @param $1 optional kill signal
+# @return void kill jboss pid
+function killJb() {
+	if ! isEmpty "$JBPID" ; then
+		kill "$1" "$JBPID" > /dev/null 2>&1
+	fi
+}
+
+# @param $1 jboss home directory
+function startjb() {
+	if isEmpty "$1"; then
+		echo "Err: jboss home directory required as argument"
+		return
+	fi
+	echo -n "Starting Java Application Server: jboss7"
+	setJbPid "$1"
+	if isEmpty "$JBPID"; then
+		su -l jboss7 -s /bin/bash -c "$1/bin/standalone.sh -b 0.0.0.0 >/dev/null 2>&1 &"
+		echo " ($1)."
+	else
+		echo " ($1 already started)."
+	fi
+}
+
+# @param $1 jboss home directory
+function stopjb() {
+	if isEmpty "$1"; then
+		echo "Err: jboss home directory required as argument"
+		return
+	fi
+	echo -n "Stopping Java Application Server: jboss7"
+	setJbPid "$1"
+	if isEmpty "$JBPID"; then
+		echo " ($1 already stopped)."
+		return
+	fi
+	# FIXME: detect correct instance to shutdown
+	su -l jboss7 -s /bin/bash -c "$1/bin/jboss-cli.sh --connect --command=:shutdown >/dev/null 2>&1"
+	i=0
+	while true; do
+		setJbPid "$1"
+		if ! isEmpty "$JBPID" ; then
+			if [ $i -gt 15 ] ; then
+				killJb -9
+			elif [ $i -gt 10 ] ; then
+				killJb
+			fi
+			echo -n .
+			sleep 2
+		else
+			break
+		fi
+		let i++
+	done
+	#rm "$1/server/local/tmp/*" >/dev/null 2>&1
+	#rm "$1/server/local/work/*" >/dev/null 2>&1
+	echo .
+}
+
+case "$1" in
+	start)
+		startjb /opt/jboss-as-7.1.1.Final
+	;;
+	stop)
+		stopjb /opt/jboss-as-7.1.1.Final
+	;;
+	restart)
+		stopjb /opt/jboss-as-7.1.1.Final
+		startjb /opt/jboss-as-7.1.1.Final
+	;;
+	*)
+		echo "Usage: $0 {start | stop | restart}"
+		exit 1
+	;;
+esac
+
+exit 0

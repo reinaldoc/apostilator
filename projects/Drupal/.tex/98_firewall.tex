@@ -1,0 +1,89 @@
+\newpage \chapter{Firewall}\setcounter{SteP}{1}
+
+\section{Logs no console}\setcounter{SteP}{1}
+
+\begin{itemize}
+\item{\bf } {\bf /etc/sysctl.conf}: descomentar configuração a seguir (l. 10).
+\end{itemize}
+
+\begin{BoxVerbatim}
+kernel.printk = 4 4 1 7
+\end{BoxVerbatim}
+
+	Aplicar configuração:
+
+\begin{VerbatimNumerado}
+sysctl -p
+\end{VerbatimNumerado}
+
+\section{Configuração}\setcounter{SteP}{1}
+
+\begin{itemize}
+\item{\bf } {\bf /etc/init.d/firewall.sh}: criar arquivo com conteúdo abaixo
+e realizar adequações necessárias.
+\end{itemize}
+
+\begin{BoxVerbatim}
+#!/bin/bash
+# Firewall invoke script
+# Copyright (c) 2012 - Reinaldo de Carvalho <reinaldoc@gmail.com>
+
+### BEGIN INIT INFO
+# Provides:          iptables
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Firewall invoke script
+### END INIT INFO
+
+case "$1" in
+    start)
+        iptables -F
+        iptables -P INPUT DROP
+        iptables -A INPUT -i lo -j ACCEPT
+        iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A INPUT -p tcp --syn --dport   22 -j ACCEPT -s 10.15.10.0/24
+        iptables -A INPUT -p tcp --syn --dport 4848 -j ACCEPT -s 10.15.10.0/24
+        iptables -A INPUT -p tcp --syn --dport 8080 -j ACCEPT
+        iptables -A INPUT -p tcp --syn --dport 5666 -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -m limit --limit 20/s -j LOG --log-prefix 'Firewall: '
+    ;;
+    stop)
+        iptables -P INPUT ACCEPT
+        iptables -F
+    ;;
+    status|list)
+        iptables -nvL
+    ;;
+    *)
+        echo "Sintaxe: $0 [ start | stop | list ]"
+    ;;
+esac
+\end{BoxVerbatim}
+
+    Definir permissão de execução e inicialização automática:
+
+\begin{VerbatimNumerado}
+chmod 755 /etc/init.d/firewall.sh
+update-rc.d firewall.sh defaults
+/etc/init.d/firewall.sh start
+\end{VerbatimNumerado}
+
+\section{FTP Conntrack}\setcounter{SteP}{1}
+
+\begin{itemize}
+\item{\bf } {\bf /etc/modules}: adicionar módulo para inicialização automática;
+\end{itemize}
+
+\begin{BoxVerbatim}
+nf_conntrack_ftp
+\end{BoxVerbatim}
+
+    Esta configuração é necessária para carregar o referido módulo durante o boot,
+para carréga-lo no boot atual, execute:
+
+\begin{BoxVerbatim}
+# modprobe nf_conntrack_ftp
+\end{BoxVerbatim}

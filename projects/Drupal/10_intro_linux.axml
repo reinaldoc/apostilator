@@ -1,0 +1,182 @@
+<capitulo>Introdução ao curso</capitulo>
+
+    Seja bem-vindo ao <b>Curso de Drupal</b>. Este curso esta sendo
+fomentado pelo <i>Xxxxx</i>
+da <i>Zzzzz</i> e ministrado por <i>Reinaldo Gil Lima
+de Carvalho</i>. Realiza(ou)-se de <i>xx/yy/2017 a xx/yy/2017</i>.
+
+    Os procedimentos descritos neste material foram validados sob a
+distribuição GNU/Linux Debian Stretch<citar>Debian</citar>, todavia a base teórica ministrada é o
+conhecimento fundamental para a aplicabilidade desses procedimentos sob
+qualquer sistema operacional. Busca-se que o participante esteja apto a
+utilizar o conhecimento adquirido no ambiente que lhe for mais adequado.
+
+    Neste capítulo, serão abordados os seguintes temas: licenciamento deste
+material, origem do <i>software</i> utilizado (executável ou do código fonte)
+e configurações essenciais da distribuição Debian GNU/Linux.
+
+<subsecao>Licença do material</subsecao>
+
+    Todas as marcas registradas são de propriedade de seus respectivos
+detentores, sendo apenas citadas neste material educacional.
+
+    O ministrante nem a fomentadora responsabilizam-se por danos causados
+devido a utilização das informações contidas neste material. Não há
+garantias de que este material está livre de erros, assim como, todos os
+sistemas em produção devem possuir <i>backup</i> antes de sua manipulação.
+
+    Este material esta licenciado sobre a <b>GNU Free Documentation
+License - GFDL</b> ou <b>Licença de Documentação Livre GNU</b> conforme descrito a
+seguir:
+
+<comando>
+    Copyright (c) 2017 Reinaldo Gil Lima de Carvalho - reinaldoc@gmail.com
+
+    É garantida a permissão para copiar, distribuir e/ou modificar este documento
+sob os termos da Licença de Documentação Livre GNU (GNU Free Documentation
+License) Versão 1.3, publicada pela Free Software Foundation; com todas Seções
+Secundárias Invariantes.
+</comando>
+
+    A <b>Licença de Documentação Livre GNU</b> permite que todo conteúdo
+esteja livre para cópia e distribuição, bem como que a propriedade autoral
+seja protegida. O objetivo é garantir que o conhecimento seja livre, assim
+como garante o reconhecimento ao autor.
+
+     O autor recomenda ainda que este material seja sempre distribuído
+"como está", no formato original. Contribuições e sugestões de melhorias
+sobre este material podem ser enviadas ao autor e serão consideradas para
+aprimoramento do material.
+
+<subsecao>Compilação de <i>software</i> X <i>software</i> da distribuição/sistema operacional</subsecao>
+
+    O acesso ao código fonte do <i>software</i> e sua compilação, é uma das
+liberdades propiciadas pelo <i>software livre</i>. Entretanto, o <i>software</i>
+também pode ser obtido em forma executável (compilada), e de forma integrada
+ao sistema operacional (empacotado), já estando pronto para utilização.
+Cada uma destas opções possui vantagens e desvantagens que serão enumeradas
+a seguir:
+
+    Características do <i>software</i> obtido na forma de executável (previamente compilado):
+
+<lista>
+<item/> <b>V:</b> Instalação rápida que requer menos espaço em disco; evita a
+compilação do <i>software</i>, assim como, a instalação de <i>software</i> de compilação
+(make, gcc, etc) e cabeçalhos de bibliotecas (libc6-dev, etc)
+
+<item/> <b>V:</b> Instalação automatizada de <i>software</i> e de bibliotecas
+necessárias (dependências) para o funcionamento do <i>software</i> principal.
+
+<item/> <b>V:</b> Versão testada pelo distribuidor do <i>software</i> (em geral
+o distribuidor do sistema operacional), e possivelmente livre de erros.
+
+<item/> <b>V:</b> Possibilita atualizações e correções de falhas de segurança
+de forma automática, e fornecida pelo distribuidor do sistema operacional.
+
+<item/> <b>V:</b> Facilita suporte externo devido ao método de instalação
+padronizado e utilização de versões invariantes do <i>software</i>.
+
+<item/> <b>V/D:</b> Pode não ser a versão mais nova do <i>software</i>, e não
+possuir funcionalidades mais recentes. Todavia, a utilização de versões 
+maduras, tende a fornecer maior estabilidade.
+
+</lista>
+
+
+    Características do <i>software</i> obtido a partir do código fonte:
+
+<lista>
+<item/> <b>D:</b> Instalação mais complexa e demorada, demanda instalação
+manual de bibliotecas externas.
+
+<item/> <b>D:</b> Atualizações e correções são manuais, exigindo atenção
+diária às atualizações necessárias para correções de falhas de segurança.
+
+<item/> <b>D:</b> Dificulta suporte externo pois não é um método de
+instalação padronizado.
+
+<item/> <b>V/D:</b> Permite utilizar a última versão do <i>software</i>,
+com os novos recursos, mas trata-se de código menos testado podendo possuir
+falhas não detectadas.
+
+<item/> <b>V:</b> Pode permitir um ganho de performace com a compilação com
+otimizações do processador, e também com o desligamento de recursos não
+utilizados do <i>software</i>.
+
+</lista>
+
+    Após o levantamento destas características, é notável que em ambientes
+corporativos a utilização de <i>software</i> fornecido por um distribuidor é
+essencial para continuidade da disponibilidade dos sistemas.
+
+    Diminui-se o esforço empregado para manter o parque tecnológico atualizado
+e livre de falhas. Dessa forma, o treinamento utilizará os pacotes fornecidos
+pelo distribuidor do sistema operacional escolhido.
+
+<subsecao>Debian GNU/Linux</subsecao>
+
+    Os sistemas operacionais desenvolvidos a partir de tecnologias livres
+fornecem ferramentas que realizam instalações automatizadas de <b>pacotes
+<i>software</i></b>. O Debian utiliza o <b>apt-get</b> para este fim e fornece
+repositórios web que contém pacotes de <i>software</i> disponíveis para
+instalação. Os pacotes são contém arquivos compactados com rotinas de
+pré/pós instalação e remoção, além de informações sobre dependências.
+
+    O comportamento padrão do utilitário <i>apt-get</i>, ao instalar um
+<i>software</i>, é realizar a instalação das <b>dependências</b>, e também
+daqueles pacotes especificados como <b>recomendados</b>. Entretanto, isto
+ocasiona a instalação de pacotes não requeridos e demanda a utilização de
+espaço em disco adicional.
+
+    A instalação automática de <i>software</i> recomendado pode ser
+desabilitada por meio da adição da configuração abaixo ao arquivo
+<b>/etc/apt/apt.conf</b>:
+
+<comando>
+APT::Install-Recommends "0";
+</comando>
+
+    A configuração da fonte dos pacotes a serem instalados é realizada
+no arquivo <b>/etc/apt/sources.list</b>:
+
+<comando>
+deb http://ftp.br.debian.org/debian stretch main contrib non-free
+deb http://security.debian.org/ stretch/updates main contrib non-free
+</comando>
+
+    Caso a conectividade seja fornecida por um proxy via http, a seguinte
+configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
+devida adequação ao endereço IP do servidor proxy:
+
+<comando>
+Acquire::http::Proxy "http://172.16.0.1:3128/";
+</comando>
+
+    Após a definição das fontes, é necessário o <i>download</i> da lista de
+pacotes de <i>software</i> disponíveis, que é formada por informações de
+versão e descrição. Esse <i>download</i>, bem como a atualização do sistema,
+podem ser realizados pelos comandos:
+
+<comando>
+    # apt-get update
+    # apt-get upgrade
+</comando>
+
+    A lista de <i>software</i> disponíveis pode ser consultada, como indicado
+no exemplo abaixo:
+
+<lista>
+<item/>Pesquisar pelo nome do <i>software</i>:
+</lista>
+
+<comando>
+    # apt-cache search ^apache2
+</comando>
+
+    Maiores informações sobre um determinado <i>software</i> podem ser obtidas
+como indicado a seguir:
+
+<comando>
+    # apt-cache show apache2
+</comando>
+
