@@ -170,10 +170,19 @@ $ exit
 <comando>
 *** redefinir permissões do arquivo de configuração
 # chown novoportal: sites/default/settings.php
+# chmod 644 sites/default/settings.php
 
-*** obtenha uma chave de acesso ao cron:
-acesse Administration > Configuration > System > Cron;
+*** configure o proxy para o drupal obter as atualizações (l.585-590)
+$conf['proxy_server'] = '10.x.y.z';
+$conf['proxy_port'] = 8080;
+$conf['proxy_username'] = 'usernames';
+$conf['proxy_password'] = 'password';
+$conf['proxy_user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:54.0) Gecko/20100101 Drupal/7';
+$conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
+
+*** obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal:
+acesse Configuração > Sistema > Agendador de tarefas;
 
 *** ativar o cron
-# echo '0 * * * * novoportal wget -O - -q -t 1 https://example.com/cron.php?cron_key=KEY' >> /etc/crontab
+# echo '0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY' >> /etc/crontab
 </comando>
