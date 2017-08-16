@@ -168,12 +168,8 @@ $ exit
 # mkdir sites/novoportal/files sites/novoportal/files-private
 # chown www-data:novoportal sites/novoportal/files sites/novoportal/files-private
 
-*** criar novo site
-# cp -a sites/default sites/novoportal
-# echo ''
-
 *** criar arquivo de configuração
-# cp sites/novoportal/default.settings.php sites/novoportal/settings.php
+# mv sites/novoportal/default.settings.php sites/novoportal/settings.php
 # chown www-data:novoportal sites/novoportal/settings.php
 </comando>
 
