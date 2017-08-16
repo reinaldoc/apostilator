@@ -7,7 +7,8 @@ essencial dos pacotes de software necessários para a execução do Drupal.
 
 <comando>
 # apt-get install apache2 libapache2-mod-php7.0
-# apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql php-uploadprogress
+# apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql
+# apt-get install php-uploadprogress
 # mkdir /var/www/novoportal
 </comando>
 
@@ -16,6 +17,12 @@ essencial dos pacotes de software necessários para a execução do Drupal.
 </lista>
 
 <comandoNumerado>
+<Directory /var/www/novoportal/>
+    Options Indexes FollowSymLinks
+    AllowOverride All
+    Require all granted
+</Directory>
+
 <IfModule mod_ssl.c>
     <Directory /var/www/novoportal/>
         Options Indexes FollowSymLinks
@@ -23,12 +30,12 @@ essencial dos pacotes de software necessários para a execução do Drupal.
         Require all granted
     </Directory>
     <VirtualHost *:80>
-        ServerName novoportal.trt8.net
-        Redirect / https://novoportal.exmaple.com/
+        ServerName novoportal.net
+        Redirect / https://novoportal.net/
     </VirtualHost>
     <VirtualHost *:443>
         ServerAdmin reinaldoc@gmail.com
-        ServerName novoportal.example.com
+        ServerName novoportal.net
         DocumentRoot /var/www/novoportal
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
@@ -41,11 +48,6 @@ essencial dos pacotes de software necessários para a execução do Drupal.
             SSLOptions +StdEnvVars
         </FilesMatch>
 
-        <Directory /var/www/novoportal/>
-            Options Indexes FollowSymLinks
-            AllowOverride All
-            Require all granted
-        </Directory>
     </VirtualHost>
 </IfModule>
 </comandoNumerado>
@@ -103,8 +105,8 @@ date.timezone = America/Belem
 # mysql -p
 > CREATE DATABASE novoportal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 > CREATE USER 'novoportal'@'localhost' IDENTIFIED BY 'top-secret';
-> GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, REFERENCES ON novoportal.* TO 'novoportal'@'localhost';
-> FLUSH PRIVILEGES;
+> GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, \
+        REFERENCES ON novoportal.* TO 'novoportal'@'localhost';
 > QUIT;
 </comando>
 
@@ -150,39 +152,59 @@ utf8_filesystem=YES
 *** extrair o drupal e o instalar arquivo de tradução
 # su - novoportal -s /bin/bash
 $ tar xzf /path/to/drupal-7.xx.tar.gz
-$ rm CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt MAINTAINERS.txt README.txt UPGRADE.txt
-$ mv drupal-7.xx drupal
+$ rm CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
+$ rm MAINTAINERS.txt README.txt UPGRADE.txt
+$ mv drupal-7.xx drupal-7
 $ mv /path/to/drupal-7.56.pt-br.po drupal/profiles/standard/translations
 $ exit
 
-*** criar diretórios para upload
-# cd /var/www/novoportal
-# mkdir sites/default/files sites/default/files-private
-# chown www-data:novoportal sites/default/files sites/default/files-private
+*** ativar virtualhost do drupal
+# cd /var/www/novoportal/drupal-7
+# mv sites/example.sites.php sites/sites.php
+# echo -e "\$sites['novoportal.net'] = 'novoportal';\n?>" >> sites/sites.php
+
+*** criar diretório do virtualhost e diretório de upload
+# cp -a sites/default sites/novoportal
+# mkdir sites/novoportal/files sites/novoportal/files-private
+# chown www-data:novoportal sites/novoportal/files sites/novoportal/files-private
+
+*** criar novo site
+# cp -a sites/default sites/novoportal
+# echo ''
 
 *** criar arquivo de configuração
-# cp sites/default/default.settings.php sites/default/settings.php
-# chown www-data:novoportal sites/default/settings.php
+# cp sites/novoportal/default.settings.php sites/novoportal/settings.php
+# chown www-data:novoportal sites/novoportal/settings.php
 </comando>
 
-    Inicie o navegador para acesso ao Drupal e configuração da conexão ao banco.
+<lista>
+<item/>Inicie o navegador para acesso ao Drupal e configuração da conexão ao banco.
+</lista>
 
 <comando>
 *** redefinir permissões do arquivo de configuração
-# chown novoportal: sites/default/settings.php
-# chmod 644 sites/default/settings.php
+# chown novoportal: sites/novoportal/settings.php
+# chmod 644 sites/novoportal/settings.php
 
 *** configure o proxy para o drupal obter as atualizações (l.585-590)
 $conf['proxy_server'] = '10.x.y.z';
 $conf['proxy_port'] = 8080;
 $conf['proxy_username'] = 'usernames';
 $conf['proxy_password'] = 'password';
-$conf['proxy_user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:54.0) Gecko/20100101 Drupal/7';
+$conf['proxy_user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:54.0)
+                             Gecko/20100101 Drupal/7';
 $conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
 
 *** obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal:
 acesse Configuração > Sistema > Agendador de tarefas;
 
-*** ativar o cron
-# echo '0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY' >> /etc/crontab
+*** cadastrar chamada ao crontab
+0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
+
+***configurar caminho do repositório privado de arquivos (Mídia->Filesystem);
+sites/novoportal/files-private
+
+***configurar caminho do diretório temporário
+/tmp/drupal-novoportal
+
 </comando>
