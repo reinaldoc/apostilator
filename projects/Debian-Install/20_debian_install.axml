@@ -12,9 +12,9 @@ livre formado em linhas gerais por:
 <lista>
 <item/><i>debian installer</i>: o instalador do sistema operacional;
 <item/><i>Linux</i>: o kernel do sistema operacional;
-<item/><i>GNU</i>: software básico para sistema operacional;
-<item/><i>aptitude</i>: sistema de <i>download</i> de <i>software</i> e interface para o
-<i>dpkg</i>;
+<item/><i>GNU</i>: o software básico para sistema operacional;
+<item/><i>apt</i>: sistema de <i>download</i> de <i>software</i> e interface
+para o <i>dpkg</i>;
 <item/><i>dpkg</i>: sistema de instalação, remoção e atualização de
 <i>software</i>;
 <item/>Disponibilização de <i>software</i> prontos para utilização, com rotinas pré e pós
@@ -25,33 +25,33 @@ instalação;
 <subsecao>Mídia de instalação</subsecao>
 
     O Debian GNU/Linux esta disponível em versões para Desktop que
-inclui <i>software</i> de interface gráfica como KDE e GNOME, e versões
-reduzidas como a <i>netinst</i> que realiza a instalação de um sistema mínimo,
+inclui <i>software</i> de interface gráfica como KDE e GNOME e versões
+reduzidas como a <i>netinst</i> para a instalação de um sistema mínimo,
 recomendado para servidores.
 
 <subsubsecao>Imagem de CD</subsubsecao>
 
-    A imagem de CD <i>netinst</i>, atualmente pode ser obtida no endereço abaixo:
+    A imagem de instalação <i>netinst</i> atualmente pode ser obtida no endereço abaixo:
 
 <lista>
-<item/>http://cdimage.debian.org/debian-cd/5.0.5/i386/iso-cd/debian-505-i386-netinst.iso
+<item/>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
 </lista>
 
-    Deve-se gravar a imagem obtida, <i>debian-505-i386-netinst.iso</i>, e realizar
-o boot da máquina por esta mídia.
+    Pode-se gravar a imagem obtida, <i>debian-9.1.0-amd64-netinst.iso</i>, ou
+selecioná-la para instalação em um sistema de virtualização, a partir do boot
+por esta mídia.
 
 <subsubsecao>USB-HDD</subsubsecao>
 
-    Neste procedimento os utilitários syslinux e install-mbr serão
-utilizados, além do kernel e initrd para iniciar o debian-installer.
+    Neste procedimento os utilitários syslinux e install-mbr, um kernel e uma
+initrd serão preparados em uma mídia removível para boot e inicialização do
+debian-installer.
 
 <comandoNumerado>
 aptitude install syslinux mbr
 </comandoNumerado>
 
-    Pode-se realizar a instalaçao do Debian GNU/Linux a partir de uma mídia
-removível (pen-drive, hd externo, etc), para isto crie a primeira partição nesta
-unidade e formate-a:
+    Crie a primeira partição nesta unidade e formate-a:
 
 <comandoNumerado>
 mkfs.vfat /dev/sdX1
@@ -79,8 +79,8 @@ identificando a versão apropriadamente:
 <comandoNumerado>
 mount /dev/sdX1 /mnt
 mkdir /mnt/boot
-cp vmlinuz /mnt/boot/vmlinuz-deb702-amd64
-cp initrd.gz /mnt/boot/initrd-deb702-amd64.gz
+cp /path/vmlinuz /mnt/boot/vmlinuz-amd64
+cp /path/initrd.gz /mnt/boot/initrd-amd64.gz
 </comandoNumerado>
 
 <lista>
@@ -89,14 +89,14 @@ com o conteúdo abaixo:
 </lista>
 
 <comando>
-default boot/vmlinuz-deb702-amd64
-append initrd=boot/initrd-deb702-amd64.gz
+default boot/vmlinuz-amd64
+append initrd=boot/initrd-amd64.gz
 </comando>
 
     Copie a imagem de CD para a raiz da unidade, e desmonte-a:
 
 <comandoNumerado>
-cp debian-7.2.0-amd64-netinst.iso /mnt/
+cp debian-9.1.0-amd64-netinst.iso /mnt/
 umount /mnt
 </comandoNumerado>
 
@@ -107,15 +107,16 @@ Deve-se agora realizar o boot da máquina por esta mídia USB-HDD.
 <subsecao>Instalação</subsecao>
 
     As seções a seguir contém informações sobre os questionamentos
-solicitados durante a instalação do sistema operacional.
+solicitados durante a instalação do sistema operacional. Ao realizar o boot
+com mídia do Debian será apresentado 'Debian GNU/Linux installer boot menu',
+então prossiga para a inicialização do instalador.
 
 <subsubsecao>Língua</subsubsecao>
 
 <lista>
-<item/> <b>Língua</b>: Portuguese (Brazil) - Português do Brasil
-<item/> <b>País</b>: Brasil
-<item/> <b>Mapa de teclado (com cedilha)</b>: Português Brasileiro (layout ABNT2).
-<item/> <b>Mapa de teclado (sem cedilha)</b>: Português Brasileiro (layout EUA).
+<item/> <b>Língua</b>: Portuguese (Brazil) - Português do Brasil.
+<item/> <b>País</b>: Brasil.
+<item/> <b>Mapa de teclado (com cedilha)</b>: Português Brasileiro.
 </lista>
 
 <subsubsecao>Firmware</subsubsecao>
@@ -126,16 +127,25 @@ software enviado ao <i>hardware</i> para posterior comunicação com o driver
 a nível de sistema operacional.
 
     Os <i>firmware</i> são armazenados no diretório <b>/lib/firmware/</b>,
-podendo ser copiados diretamente ou instalados através de pacotes. Durante a
-instalação do Debian, o <i>debian-installer</i> pode identificar a necessidade de um
-<i>firmware</i> e requisitar os arquivos. Em geral, pode-se realizar a
-instalação destes posteriormente, já com o sistema operacional instalado.
+podendo ser copiados diretamente, instalados por meio de pacotes ou, durante a
+instalação do Debian, a partir de um pen-drive (apenas arquivos de firmware,
+não sendo aceitos pacotes .deb).
 
-	Assim, ignore o questionamento, como indicado a seguir:
+    O <i>debian-installer</i> pode identificar a necessidade de um
+<i>firmware</i> e requisitar os arquivos. Pode-se extrair os firmwares
+solicitados a partir de pacotes do debian, que podem ser obtidos em
+http://packages.debian.org. Nesse site, preencha o nome do firmware na
+pesquisa por conteúdo dos pacotes.
+
+    Em geral, pode-se realizar a instalação destes posteriormente, já com o
+sistema operacional instalado, a partir do pacote Debian.
+
+<subsubsecao>Configuração de contas e regionais</subsubsecao>
 
 <lista>
-<item/> <b>Carregar firmware que esta faltando a partir de uma mídia
-removível?</b>: não
+<item/> <b>Senha do root</b>: senha complexa.
+<item/> <b>Novo usuário</b>: suporte
+<item/> <b>Senha do novo usuário</b>: outra senha complexa.
 </lista>
 
 <subsubsecao>Rede</subsubsecao>
@@ -171,14 +181,17 @@ instalação.
 <item/> <b>Criar volume lógico servidor.var (ext3)</b>: 30 Gb
 </lista>
 
-	<b>Atenção:</b> caso um <i>storage</i> esteja conectado ao servidor, e
+    <b>Atenção:</b> caso um <i>storage</i> esteja conectado ao servidor, e
 um eventual <i>firmware</i> tenha sido carregado, o <i>debian-installer</i>
-selecionará automaticamente para uso uma partição swap pré-existente. Este
-procedimento deve ser desfeito para que uma possível partição swap em
+selecionará automaticamente para uso uma partição swap pré-existente.
+
+    Este procedimento deve ser desfeito para que uma possível partição swap em
 uso não seja formatada. Para isto, selecione a partição swap detectada pelo
-<i>debian-installer</i> e use a opção <b>não usar partição</b>.
-	Após este procedimento, utilize como swap o volume lógico servidor.swap
-recém criado. <br/>0.3cm
+<i>debian-installer</i> e use a opção <b>não usar partição</b>. Após este
+procedimento, utilize como swap o volume lógico servidor.swap recém criado.
+
+    <br/>0.3cm
+
     Abaixo é indicado o esquema de particionamento para servidores sem
 virtualização:
 
@@ -192,15 +205,13 @@ virtualização:
 <item/> <b>Escrever as mudanças nos discos</b>: Sim.
 </lista>
 
-<subsubsecao>Opções finais</subsubsecao>
+<subsubsecao>Configurações finais</subsubsecao>
 
 <lista>
-<item/> <b>Senha do root</b>: senha complexa.
-<item/> <b>Novo usuário</b>: suporte
-<item/> <b>Senha do novo usuário</b>: outra senha complexa.
+<item/> <b>Ler outro CD ou DVD?</b>: não.
+<item/> <b>País do espelho do repositório Debian:</b>: Brasil.
 <item/> <b>Escolha o software a ser instalado</b>: nenhum (desmarque todos).
 <item/> <b>Instalar o carregador de inicialização GRUB na MBR</b>: sim.
+<item/> <b>Dispositivo no qual instalar o carregador de inicialização</b>: /dev/sda (disco principal).
 <item/> <b>Instalação finalizada</b>: continuar.
 </lista>
-
-
