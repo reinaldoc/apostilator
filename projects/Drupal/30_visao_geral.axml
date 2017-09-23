@@ -1,0 +1,258 @@
+<capitulo>Visão geral do Drupal</capitulo>
+
+<subsecao>Estrutura - /admin/structure</subsecao>
+
+<subsubsecao>Blocos - /admin/structure/block</subsubsecao>
+
+<lista>
+<item/>exibição das regiões do tema;
+<item/>vincular de blocos 'Search form' e 'User login' a região 'Second sidebar';
+<item/>desativar o bloco de menu 'Navigation';
+<item/>ativar o bloco de menu 'Development' na região 'Second sidebar';
+<item/>reordenar os blocos da região 'Second sidebar' com 'Development' em 1º;
+<item/>acesso às configurações de cada bloco;
+<item/>controlar visibilidade do bloco por path, tipo de conteúdo, papel, etc;
+<item/>adicionar novo bloco de texto formatado;
+<item/>search form: exibir o bloco de pesquisa ao usuário anônimo (permissão);
+</lista>
+
+<subsubsecao>Tipos de conteúdo (tipos de node) - /admin/structure/types</subsubsecao>
+
+<lista>
+<item/>adição de tipo de conteúdo;
+<item/>configuração de submissão, publicação (revisão) e comentários;
+<item/>configuração de exibição do autor do conteúdo;
+<item/>configuração de menus autorizados para inserção de item;
+<item/>adição de campos (tipo de dado[text,image,list,term] e widgets);
+<item/>configuração de campo (tamanho máximo, número de valores);
+<item/>configuração de campo para cada tipo de conteúdo (valor padrão, etc);
+<item/>gerenciar exibição do campo (peso, posição do label e formato);
+</lista>
+
+<subsubsecao>Menus - /admin/structure/menu</subsubsecao>
+
+<lista>
+<item/>configuração: definir menu principal e secundário;
+<item/>criar um menu;
+<item/>criar links (itens do menu);
+<item/>organizar links hierarquicamente;
+<item/>criar um link a partir do conteúdo;
+<item/>associar um menu a uma região;
+<item/>gerenciar o menu de usuário;
+</lista>
+
+<subsubsecao>Taxonomia - /admin/structure/taxonomy</subsubsecao>
+
+<lista>
+<item/>adicionar vocabulário (lista de categorias);
+<item/>adicionar termos (categorias) a um vocabulário;
+<item/>reiniciar termos para ordem alfabética (mantém a hierarquia);
+<item/>adicionar um campo 'Term reference' a um tipo de conteúdo;
+</lista>
+
+<subsecao>Conteúdo (node) - /admin/content</subsecao>
+
+<subsubsecao>Gerenciamento de conteúdo</subsubsecao>
+
+<lista>
+<item/>lista conteúdo (nodes) existente - /admin/content;
+<item/>adição de conteúdo (node) de tipos pré-definidos - /node/add;
+<item/>configuração do node (menu, revisão, URL alias);
+<item/>gerenciamento de comentários - /admin/content/comment;
+<item/>gerenciamento de revisões (listar, reverter e remover);
+</lista>
+
+<subsecao>Módulos - /admin/modules</subsecao>
+
+<subsubsecao>Referências</subsubsecao>
+
+<lista>
+<item/>https://drupal.org/project/project_module
+<item/>https://drupal.org/documentation/modules/views/add-ons [Views]
+<item/>https://groups.drupal.org/node/20291 [Uploading]
+</lista>
+
+<subsubsecao>Gerenciamento de módulos</subsubsecao>
+
+<lista>
+<item/>listar módulos instalados e os ativados;
+<item/>remover módulos;
+<item/>ativar módulo ‘Update manager’ para permitir instalação pela web;
+<item/>identificar local de instalação dos módulos (local:sites/all/modules);
+</lista>
+
+<subsecao>Aparência - /admin/appearance</subsecao>
+
+<subsubsecao>Temas Populares</subsubsecao>
+
+<lista>
+  <item/>https://drupal.org/project/bluez
+    <lista>
+      <item/>fixed front page, n-level menu, não responsivo;
+    </lista>
+  <item/>https://drupal.org/project/busy
+  <lista>
+    <item/>1-level main menu, 1-level right menu, não responsivo;
+  </lista>
+  <item/>https://drupal.org/project/danland
+  <lista>
+    <item/>1-level main menu, n-level right menu, não responsivo;
+  </lista>
+  <item/>https://drupal.org/project/garland
+  <lista>
+    <item/>1-level main menu no topo, n-level right menu, não responsivo;
+  </lista>
+  <item/>https://drupal.org/project/corporateclean
+  <lista>
+    <item/>n-level main menu, n-level right menu, adaptativo; effects: fade;
+  </lista>
+</lista>
+
+<subsubsecao>Temas Responsivos</subsubsecao>
+
+<lista>
+  <item/>https://drupal.org/project/bootstrap - 2-level menus, sub-menu ao clicar; 
+  <item/>https://drupal.org/project/responsive_blog
+  <item/>https://drupal.org/u/zymphonies.com - Zymphonies Themes
+  <lista>
+    <item/>https://drupal.org/project/execute_responsive_theme
+    <item/>https://drupal.org/project/rubix_responsive_theme
+    <item/>https://drupal.org/project/business_responsive_theme
+    <item/>https://drupal.org/project/multipurpose_zymphonies_theme
+    <item/>https://drupal.org/project/thecompany_responsive_theme
+    <item/>https://drupal.org/project/software_responsive_theme
+    <item/>https://drupal.org/project/blogon_responsive_theme
+  </lista>
+</lista>
+
+<subsubsecao>Configurações globais dos temas</subsubsecao>
+
+<lista>
+<item/>controlar a exibição de elementos (logo, site name, menu, etc);
+<item/>não exibir o nome do site (site name);
+<item/>definir imagem de logo;
+<item/>definir favicon;
+</lista>
+
+<subsubsecao>Avaliar o tema</subsubsecao>
+
+<lista>
+<item/>pesquisar temas ⇒ https://drupal.org/project/project_theme;
+<item/>instalar um tema;
+<item/>ativar e definir um tema como padrão (set default);
+<item/>configurar o menu primário para 'Development' (Menu settings->Main links);
+<item/>reorganizar itens do menu 'Development' em níveis (Menu->Development);
+<item/>habilitar exibição (drop-down) dos sub-menus (Show as expanded);
+<item/>associar menu 'Development' à região 'Second/Secondary/Right Sidebar';
+<item/>gerar conteúdo em 'Devel generate';
+</lista>
+
+<subsubsecao>Configurações disponíveis por tema</subsubsecao>
+
+<lista>
+<item/>acessar configurações do tema;
+<item/>bartik: esquema de cor (header, sidebar, footer, text, link);
+<item/>bartik: likar itens do esquema de cor para gerar cor compatível;
+</lista>
+
+<subsubsecao>Adquirir temas</subsubsecao>
+
+<lista>
+<item/>http://www.zymphonies.com/drupal-premium-theme
+<item/>https://www.templatemonster.com/drupal-themes.php
+<item/>https://adaptivethemes.com/project/themes
+<item/>https://themeforest.net/category/cms-themes/drupal
+<item/>http://www.morethanthemes.com/drupal-themes/premium
+<item/>http://demo.morethanthemes.com/enterpriseplus8/default/
+<item/>http://demo.morethanthemes.com/chique/blue/
+</lista>
+
+<subsecao>Pessoas - /admin/people</subsecao>
+
+<subsubsecao>Permissões - /admin/people/permissions</subsubsecao>
+
+<lista>
+<item/>listar permissões fornecidas por cada módulo;
+<item/>listar permissões associadas a cada papel;
+<item/>listar permissões por tipo de conteúdo (consultar módulo Node);
+</lista>
+
+<subsubsecao>Papéis - /admin/people/permissions/roles</subsubsecao>
+
+<lista>
+<item/>criar papéis;
+<item/>listar permissões associadas a determinado papel;
+<item/>associar permissões a um papel;
+<item/>associar permissão a papel por tipo de conteúdo (criar, editar, etc);
+</lista>
+
+<subsubsecao>Usuários</subsubsecao>
+
+<lista>
+<item/>listar usuários com status, papéis atribuídos e data do último acesso;
+<item/>criar novo e editar usuário (nome, senha, status, imagem, etc);
+<item/>associar usuários a papéis;
+</lista>
+
+<subsecao>Configurações - /admin/config</subsecao>
+
+<subsubsecao>Regional e Idioma</subsubsecao>
+
+<lista>
+<item/>definir fuso horário (configurações regionais);
+<item/>desativar configuração pelo usuário do fuso horário (opcional);
+<item/>definir formato para exibição da data (data e hora);
+</lista>
+
+<subsubsecao>Pessoas</subsubsecao>
+
+<lista>
+<item/>adicionar novos campos ao usuário (data de nascimento, etc);
+<item/>definir imagem padrão do usuário;
+<item/>definir parâmetros (tamanho máximo, etc) para imagem do usuário;
+<item/>definir modelos de e-mails de alteração da conta;
+<item/>configurar registro da conta somente pelo administrador;
+<item/>configurar ação sob conteúdo de um usuário removido;
+<item/>definir papel (admin) que recebe as permissões de cada módulo;
+</lista>
+
+<subsubsecao>Sistema → Informação do site</subsubsecao>
+
+<lista>
+<item/>definir nome do site apresentado no título da janela do navegador;
+<item/>definir remetente usado nos e-mails enviados pelo sistema;
+<item/>definir URL interna utilizada como página inicial (front page);
+<item/>definir URL interna para página de acesso negado (403);
+<item/>definir URL interna para página não encontrada (404);
+</lista>
+
+<subsubsecao>Media</subsubsecao>
+
+<lista>
+<item/>redefinir estilos de imagens (thumbnail, medium, large);
+<item/>adicionar novo estilo de imagem (resize, crop, etc);
+</lista>
+
+<subsubsecao>Development</subsubsecao>
+
+<lista>
+<item/>otimização de banda (agregar e comprimir CSS/JavaScripts);
+<item/>gerar conteúdo e usuários;
+</lista>
+
+<subsecao>Reports - /admin/people</subsecao>
+
+<lista>
+  <item/>Relatório de informações da plataforma (status report);
+    <lista>
+      <item/>identificar versão do Drupal;
+      <item/>identificar versão do apache, php e database;
+    </lista>
+  <item/>Relatório de atualizações disponíveis (core e módulos);
+  <item/>Relatório de mensagens de log;
+  <item/>Relatório com lista campos dos tipos de conteúdo (field list);
+  <item/>Relatório de requisições de acesso negado (erro 403);
+  <item/>Relatório de requisições de página não encontrada (erro 404);
+  <item/>Relatório de termos utilizados na pesquisa;
+</lista>
+
