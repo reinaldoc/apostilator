@@ -8,12 +8,12 @@ essencial dos pacotes de software necessários para a execução do Drupal.
 <comando>
 # apt-get install apache2 libapache2-mod-php7.0
 # apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql
-# apt-get install php-uploadprogress
+# apt-get install php-uploadprogress ca-certificates
 # mkdir /var/www/novoportal
 </comando>
 
 <lista>
-<item/>VirtualHost: /etc/apache2/sites-available/novoportal.conf
+<item/><b>VirtualHost</b>: /etc/apache2/sites-available/novoportal.conf
 </lista>
 
 <comandoNumerado>
@@ -73,7 +73,7 @@ ServerTokens Prod
 # l.656
 post_max_size = 20M
 # l.809
-upload_max_filesize = 12M
+upload_max_filesize = 16M
 # l.924
 date.timezone = America/Belem
 </comando>
@@ -113,7 +113,7 @@ date.timezone = America/Belem
 <subsecao>FTP Server</subsecao>
 
 <comando>
-@ instalar servidor VS FTP
+@ instalar servidor VSFtpd
 # apt-get install vsftpd
 
 @ permitir que usuários com shell /bin/false realizem login no FTP.
@@ -121,7 +121,7 @@ date.timezone = America/Belem
 </comando>
 
 <lista>
-<item/>Configurações: /etc/vsftpd.conf
+<item/><b>Configurações</b>: /etc/vsftpd.conf
 </lista>
 
 <comando>
@@ -131,58 +131,56 @@ write_enable=YES
 ftpd_banner=FTP Server ready.
 # l.114
 chroot_local_user=YES
-allow_writeable_chroot=YES
 # l.155
 utf8_filesystem=YES
 </comando>
 
+A documentação recomenda a não utilização da opção allow_writeable_chroot=YES,
+em vez disso, o usuário não deve possuir permissão de escrita na raiz do seu
+home, podendo escrever em diretórios internos. Optou-se por manter o usuário
+root como proprietário do diretório /var/www/novoportal, home do usuário para
+o site, utilizando uma diretório interno para armazenar o CMS.
+
+
 <subsecao>Drupal</subsecao>
+
+Realize download do Drupal e do arquivo de trandução da interface web:
 
 <lista>
 <item/>https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
 <item/>https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
 </lista>
 
-	Criar usuário e diretório:
+Execute os procedimentos:
 
 <comando>
-*** criar usuário
+@ criar usuário
 # adduser --home /var/www/novoportal --shell /bin/false novoportal
 
-*** extrair o drupal e o instalar arquivo de tradução
+@ extrair o drupal e copiar o arquivo de tradução
 # su - novoportal -s /bin/bash
 $ tar xzf /path/to/drupal-7.xx.tar.gz
-$ rm CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
-$ rm MAINTAINERS.txt README.txt UPGRADE.txt
+$ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
+$ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
 $ mv drupal-7.xx drupal-7
-$ mv /path/to/drupal-7.56.pt-br.po drupal/profiles/standard/translations
+$ mv /path/to/drupal-7.56.pt-br.po drupal-7/profiles/standard/translations
 $ exit
 
-*** ativar virtualhost do drupal
+@ ativar virtualhost do drupal
 # cd /var/www/novoportal/drupal-7
 # mv sites/example.sites.php sites/sites.php
 # echo -e "\$sites['novoportal.net'] = 'novoportal';\n?>" >> sites/sites.php
 
-*** criar diretório do virtualhost e diretório de upload
+@ criar diretório do virtualhost e diretório de upload
 # cp -a sites/default sites/novoportal
 # mkdir sites/novoportal/files sites/novoportal/files-private
 # chown www-data:novoportal sites/novoportal/files sites/novoportal/files-private
 
-*** criar arquivo de configuração
-# mv sites/novoportal/default.settings.php sites/novoportal/settings.php
+@ criar arquivo de configuração
+# cp sites/novoportal/default.settings.php sites/novoportal/settings.php
 # chown www-data:novoportal sites/novoportal/settings.php
-</comando>
 
-<lista>
-<item/>Inicie o navegador para acesso ao Drupal e configuração da conexão ao banco.
-</lista>
-
-<comando>
-*** redefinir permissões do arquivo de configuração
-# chown novoportal: sites/novoportal/settings.php
-# chmod 644 sites/novoportal/settings.php
-
-*** configure o proxy para o drupal obter as atualizações (l.585-590)
+@ configure o proxy (atualizações) em sites/novoportal/settings.php
 $conf['proxy_server'] = '10.x.y.z';
 $conf['proxy_port'] = 8080;
 $conf['proxy_username'] = 'usernames';
@@ -190,17 +188,26 @@ $conf['proxy_password'] = 'password';
 $conf['proxy_user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:54.0)
                              Gecko/20100101 Drupal/7';
 $conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
+</comando>
 
-*** obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal:
-acesse Configuração > Sistema > Agendador de tarefas;
 
-*** cadastrar chamada ao crontab
-0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
+    Inicie o navegador para acesso ao Drupal e proceda a configuração
+do idioma e configurações de conexão ao banco. As configurações serão salvas
+em sites/novoportal/settings.php.
 
-***configurar caminho do repositório privado de arquivos (Mídia->Filesystem);
+<comando>
+@ redefinir permissões do arquivo de configuração
+# chown novoportal: sites/novoportal/settings.php
+# chmod 644 sites/novoportal/settings.php
+
+@configurar caminho do repositório privado de arquivos
+acesse 'Mídia -> Filesystem';
 sites/novoportal/files-private
 
-***configurar caminho do diretório temporário
-/tmp/drupal-novoportal
+@ obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal:
+acesse 'Configuração -> Sistema -> Agendador de tarefas';
+
+@ cadastre a chamada no /etc/crontab
+0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
 
 </comando>
