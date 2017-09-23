@@ -1,0 +1,39 @@
+<capitulo>Introdução ao Drupal</capitulo>
+
+<subsecao>Referências</subsecao>
+
+<lista>
+<item/>https://www.drupal.com/showcases ⇒ Sites com drupal;
+<item/>https://drupal.org/project/usage ⇒ estatísticas de uso dos módulos;
+<item/>https://drupal.org/project/drupal/releases ⇒ download 7.xx;
+<item/>https://localize.drupal.org/download?project=drupal ⇒ tradução;
+<item/>https://drupal.org/project/project_module ⇒ módulos;
+<item/>https://drupal.org/project/project_theme ⇒ temas;
+</lista>
+
+
+<subsecao>Segurança</subsecao>
+
+<lista>
+<item/>https://drupal.org/security/secure-configuration
+<item/>https://drupal.org/node/244924 ⇒ permissões dos arquivos do Drupal;
+<item/>https://drupal.org/project/security_review ⇒ checklist de segurança;
+<item/>https://www.youtube.com/watch?v=rH4Kb3EQXu8 ⇒ apresentação;
+<item/>https://www.amazon.com/dp/B015EH48MO ⇒ eBook: Security Best Practices;
+<item/>https://openconcept.ca/sites/openconcept/files/drupal_security_best_practices_v1.3_-_2015-12-8_0.pdf
+</lista>
+
+Orientações:
+
+<lista>
+<item/>utilizar somente módulos necessários;
+<item/>desabilitar módulo 'Devel' em produção;
+<item/>preferir módulos cobertos pela política de segurança do projeto Drupal;
+</lista>
+
+Módulos não cobertos pela política de segurança:
+
+<lista>
+<item/>https://www.drupal.org/project/admin_menu
+</lista>
+
