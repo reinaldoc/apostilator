@@ -1,27 +1,15 @@
 <capitulo>Modulos do Drupal</capitulo>
 
 <lista>
-<item/>
-<item/>
-<item/>
-<item/>
-<item/>
-<item/>
+<item/>https://drupal.org/project/usage
+<item/>https://drupal.org/project/project_module
+<item/>https://drupal.org/documentation/modules/views/add-ons [Views]
+<item/>https://groups.drupal.org/node/20291 [Uploading]
 </lista>
-
-<subsubsecao></subsubsecao>
-
-
-<subsubsecao></subsubsecao>
-
-
-<subsubsecao></subsubsecao>
-
 
 <subsecao>Devel Generate</subsecao>
 
 <lista>
-  <item/>
   <item/>URL: https://drupal.org/project/devel
   <item/>Função: gerar usuários, menus, taxonomias e conteúdos;
   <item/>Uso:
@@ -31,16 +19,14 @@
   </lista>
 </lista>
 
-<subsecao></subsecao>
+<subsecao>Image Block</subsecao>
 
-Image Block
 URL: https://drupal.org/project/imageblock
 Função: permite criar blocos contendo imagem acima do texto;
 Uso: /admin/structure/block/imageblock_add
 
-<subsecao></subsecao>
+<subsecao>Admin Menu</subsecao>
 
-Admin Menu
 URL: https://drupal.org/project/admin_menu
 Função: adiciona capacidade de 'drop-down' na barra administrativa;
 Uso:
@@ -48,45 +34,40 @@ desabilitar módulo 'Toolbar' com menu administrativo padrão;
 desabilitar módulo 'Overlay' para desativar o uso de dialog (opcional);
 habilitar módulo 'Administration menu' e 'Administrat. menu Toolbar style';
 
-<subsecao></subsecao>
+<subsecao>Menu block</subsecao>
 
-Menu block
 URL: https://drupal.org/project/menu_block
-Função: permite criar blocos a partir de um submenu (superfish implementa);
+Função: permite criar blocos a partir de um submenu (superfish também tem essa função);
 Uso: /admin/structure/block/add-menu-block
 criar blocos a partir de submenus;
 selecionar opções avançadas;
 usar rótulo administrativo prefixado com 'Submenu:' (opcional);
 definir nó inicial do menu (fixed parent item);
 
-<subsecao></subsecao>
+<subsecao>Menu attributes</subsecao>
 
-Menu attributes
 URL: https://drupal.org/project/menu_attributes
 Função: adiciona opções de ID, classes, estilos, target, access key aos menus;
 Uso:
 use os novos campos ao editar um item de menu;
 
-<subsecao></subsecao>
+<subsecao>Special menu itens</subsecao>
 
-Special menu itens
 URL: https://drupal.org/project/special_menu_items
 Função: permite os valores '<nolink>' ou '<separator>' como item de menu;
 Uso:
 ao editar um item de menu use <nolink> como endereço;
 
-<subsecao></subsecao>
+<subsecao>Menu Admin per Menu</subsecao>
 
-Menu Admin per Menu
 URL: https://drupal.org/project/menu_admin_per_menu
 Função: permite associar um papel (role) para administrar cada menu;
 Uso: /admin/people/permissions
 acessar o gerenciamento de permissões;
 associar cada menu a um determinado papel;
 
-<subsecao></subsecao>
+<subsecao>Display Suite</subsecao>
 
-Display Suite
 URL: https://drupal.org/project/ds
 Função: gerenciamento do leiaute dos campos (node, comentários e usuário);
 Uso: /admin/structure/ds
@@ -111,9 +92,8 @@ Função: listagem de conteúdo em diversos formatos: tabela, grid, slideshow;
 Uso: /admin/structure/views (manage display na edição do tipo de conteúdo);
 ativar módulo View UI para gerenciar listas customizadas (views);
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Listar e Pesquisar views por nome e descrição administrativos</subsubsecao>
 
-Listar e Pesquisar por nome e descrição administrativos da view
 listar views (nome, descrição administrativa, tags, path e operações);
 identificar operações: ativar, editar, clonar, exportar ou desabilitar;
 ativar uma view (Glossary);
@@ -122,9 +102,8 @@ editar a descrição administrativa de view (descrever onde será usada);
 configuração: exibir filtro de pesquisa de views;
 configuração: omitir aviso de ajuda avançada;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Área de pré-visualização da view</subsubsecao>
 
-Área de pré-visualização da view
 editar rótulo de uma view (title);
 identificar área de pré-visualização das alterações na view;
 configuração: exibir informações abaixo da pré-visualização;
@@ -132,9 +111,8 @@ configuração: exibir SQL da pré-visualização;
 configuração: exibir estatísticas de performance do SQL;
 configuração avançada: adicionar o nome da view no SELECT (debug only);
 
-<subsubsecao></subsubsecao>
+<subsubsecao>View de página e formato de tabela</subsubsecao>
 
-Criar lista em formato de tabela
 criar uma view de página para listar conteúdo (node);
 definir o nome administrativo da view;
 definir a descrição administrativa de view (descrever onde será usada);
@@ -153,9 +131,8 @@ definir critérios de filtragem (por tipo de conteúdo, se publicado);
 adicionar relacionamento a view (Author->User, tipo de conteúdo);
 definir critérios de ordenação (por mês desc, por rótulo asc.);
 
-<subsubsecao></subsubsecao>
+<subsubsecao>View de bloco</subsubsecao>
 
-Criar uma view de bloco
 configurar nome do bloco (padrão: “View: nome administrativo”);
 definir outro formato da lista e salvar para o bloco;
 remover rótulo de um campo e salvar para o bloco;
@@ -167,9 +144,8 @@ ativar a view padrão ‘Tracker’;
 associar o bloco ‘View: Tracker’ a região ‘Content’;
 configurar o bloco para se exibido somente nas páginas ‘user/*’;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsecao>
 
-Outras configurações
 configurar acesso por permissão ou por papel;
 configurar um cabeçalho a view (header);
 configurar um rodapé para a view (footer);
@@ -178,9 +154,8 @@ configurar um filtro contextual (por URL, valor padrão, sumário);
 redefinir o rótulo da view quando o filtro contextual for aplicado;
 redefinir o breadcrumb quando o filtro contextual for ativado;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>View de bloco com filtro contextual a partir do node (utiliza Display Suite)</subsubsecao>
 
-Criar view para exibição no node (utiliza Display Suite)
 adicionar campo de imagem com limite de 5 imagens ao tipo de conteúdo;
 adicionar view de bloco;
 configurar a view para campo de imagens;
@@ -189,9 +164,8 @@ configurar o paginador para exibir um número específico de itens: 1;
 configurar filtro contextual (node Id) com valor padrão da node da URL;
 associar bloco da view ao leiaute do tipo de conteúdo (add custom field);
 
-<subsecao></subsecao>
+<subsecao>Views Accordeon</subsecao>
 
-Views Accordeon
 URL: https://drupal.org/project/views_accordion
 Função: construir acordeões a partir de conteúdos;
 Uso:
@@ -204,9 +178,8 @@ configuração do formato: não exibir linha aberta;
 configuração do formato: permitir que todas as linhas sejam fechadas;
 configuração do formato: não definir altura automática da linha;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Filtro contextual em modo glossário</subsubsecao>
 
-Adicionar filtro contextual em modo glossário
 selecionar filtro contextual a partir do campo 'title';
 definir valor padrão 'a';
 ativar modo glossário limitado a 1 caractere;
@@ -221,9 +194,8 @@ vincular o attachment a page:
 'header->view area' aplicado somente a tela page;
 desabilite a herança de filtros contextuais em qualquer caso;
 
-<subsecao></subsecao>
+<subsecao>Views Slideshow</subsecao>
 
-Views Slideshow
 URL: https://drupal.org/project/views_slideshow
 Função: construir slideshow a partir de conteúdos ou imagens;
 Dependências: “Ctools”, “Views UI”, “Views Slideshow: Cycle”, “Libraries”;
@@ -260,9 +232,8 @@ aplicar CSS ao paginador:
 .views-field-title {position:absolute; top:0px; left:0px; z-index:100; background-color: rgba(0,0,0,0.6); border-radius:0 0 6px 0; padding:10px;}
 .views-field-title a {color:#ccc; text-shadow: 2px 2px 000;}
 
-<subsecao></subsecao>
+<subsecao>Views Slideshow Configurable Controls</subsecao>
 
-Views Slideshow Configurable Controls
 URL: https://drupal.org/project/vscc
 Função: permite customizar os controles do slideshow em views;
 ative o controle do paginador do tipo ‘configurable controls’;
@@ -273,9 +244,8 @@ aplicar CSS ao controle:
 .vscc-controls-previous {position:absolute; top 120px; left:0px; background: #ddd; padding: 0 5px 5px; border:2px solid #333; border-radius: 5px;}
 .vscc-controls-next {position:absolute; top 120px; right:0px; background: #ddd; padding: 0 5px 5px; border:2px solid #333; border-radius: 5px;}
 
-<subsecao></subsecao>
+<subsecao>Link (Field)</subsecao>
 
-Link (Field)
 URL: https://drupal.org/project/link
 Função: permite adicionar campo com link aos tipos de conteúdo;
 Uso: adicionar campo link;
@@ -287,19 +257,17 @@ desative o link original;
 reescrever o resultado: expôr o campo como link;
 definir link path para [field_slide_link]
 
-<subsecao></subsecao>
+<subsecao>Panels</subsecao>
 
-Panels - /admin/structure/panels
-Visão geral
 URL: https://drupal.org/project/panels
 Função: gerenciamento do leiaute de página ou bloco;
 Dependência: Ctools (page manager, views content panes);
+Uso: /admin/structure/panels
 ativar módulos Page Manager, Panels e Stylizer;
 visão geral dos elementos do módulo Panels (pages, mini, stylizer);
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Panel Pages - /admin/structure/pages</subsubsecao>
 
-Panel Pages - /admin/structure/pages
 listar páginas de painéis (panel page/custom page);
 criar um painel (leiaute de página);
 definir o rótulo administrativo do painel (interface administrativa);
@@ -334,9 +302,8 @@ definir o operador lógico (AND, OR) das regras de seleção;
 exportar e importar painel variante para outra página de painéis;
 remover ou desabilitar painel variante;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Stylizer - /admin/structure/stylizer</subsubsecao>
 
-Stylizer - /admin/structure/stylizer
 listar estilos customizável (custom style);
 adicionar novo estilo;
 definir estilo de área do leiaute (region) ou de seu conteúdo (pane);
@@ -345,9 +312,8 @@ definir cor de fundo, cor do texto, fonte, espaçamento, padding, etc,
 definir estilo como reutilizável (quando criado design de páginas);
 exportar o estilo para utilização em outra instância do drupal;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Mini Panels - /admin/structure/mini-panels</subsubsecao>
 
-Mini Panels - /admin/structure/mini-panels
 listar mini-painéis;
 criar mini-painel (leiaute de bloco);
 definir o rótulo, descrição e categoria administrativa do mini-painel;
@@ -357,9 +323,8 @@ associar mini-painel a uma região do tema (bloco);
 exportar e importar mini-painéis (em outra instância do drupal);
 vincular mini-painéis em áreas (região) de páginas de painéis;
 
-<subsubsecao></subsubsecao>
+<subsubsecao>Layout - /admin/structure/panels/layouts</subsubsecao>
 
-Layout - /admin/structure/panels/layouts
 listar leiautes (Panels -> Layouts);
 criar um novo leiaute para páginas de painéis (flexible layout);
 definir o rótulo administrativo do leiaute;
@@ -371,9 +336,8 @@ identificar Panels In-Place Editor;
 ativar módulo Panel nodes;
 redefinir leiaute de um tipo de conteúdo;
 
-<subsecao></subsecao>
+<subsecao>File (Field) Paths</subsecao>
 
-File (Field) Paths
 URL: https://drupal.org/project/filefield_paths
 Função: fornece máscara para renomear arquivo no upload;
 Uso:
@@ -385,44 +349,39 @@ File name:
 [node:nid]_[node:title].[file:ffp-extension-original]
 [node:field-data-relatorio:custom:Y-m]-[node:field-categoria-despesa:name].[file:ffp-extension-original
 
-<subsecao></subsecao>
+<subsecao>Token</subsecao>
 
-Token
 URL: https://drupal.org/project/token
 Função: fornece tokens [tipo:atributo:valor] para utilização diversa;
 Tokens: https://www.drupal.org/node/390482
 Uso:
 usar token [current-date:custom:Y] para prefixar nome do arquivo em upload;
 
-<subsecao></subsecao>
+<subsecao>Transliteration</subsecao>
 
-Transliteration
 URL: https://drupal.org/project/transliteration
 Função: substituição de strings e limpeza de caracteres durante upload;
 Uso:
 ativar substituição de caracteres acentuados no campo File ou Image;
 
-<subsecao></subsecao>
+<subsecao>Pathauto</subsecao>
 
-Pathauto
 URL: https://drupal.org/project/pathauto
 Função: gerar URLs amigáveis do conteúdo baseado no título;
 Uso:
 configurar padrões de URL (como o prefixo) por tipo de conteúdo;
 configuração: 'Busca e metadados -> URLs alternativas -> Patterns';
 
-<subsecao></subsecao>
+<subsecao>Submitted By</subsecao>
 
-Submitted By
 URL: https://drupal.org/project/submitted_by
 Dependência: Token
 Função: customiza a identificação do autor do conteúdo (node);
 Uso:
 editar o tipo de conteúdo e definir o texto nas 'opções de exibição';
 
-<subsecao></subsecao>
+<subsecao>Path Breadcrumbs</subsecao>
 
-Path Breadcrumbs
 URL: https://drupal.org/project/path_breadcrumbs
 Função: permite controlar os breadcrumbs;
 Dependências: https://drupal.org/project/entity
@@ -434,17 +393,15 @@ definir regra de seleção para 'Node: type': Article;
 definir rótulo (title) e path para cada nó do breadcrumb;
 definir rótulo (title) '%node:title' e link '<none>';
 
-<subsecao></subsecao>
+<subsecao>IMCE</subsecao>
 
-IMCE
 URL: https://drupal.org/project/imce
 Função: uploader de arquivos;
 Uso: /admin/config/media/imce
 configurações -> Mídia -> IMCE;
 
-<subsecao></subsecao>
+<subsecao>CKEditor</subsecao>
 
-CKEditor
 URL: https://drupal.org/project/ckeditor
 https://ckeditor.com/download
 cd sites/all/libraries
@@ -459,91 +416,79 @@ configurações -> criação de conteúdo -> CKEditor;
 Global profile: configurar caminho no servidor '%l/ckeditor';
 Full profile: configurar 'file browser type' para IMCE;
 
-<subsecao></subsecao>
+<subsecao>Nodeblock</subsecao>
 
-Nodeblock
 adiciona capacidade ao tipo de conteúdo ser listado como bloco;
 
-<subsecao></subsecao>
+<subsecao>Flood control</subsecao>
 
-Flood control
 interface para controlar variáveis de falha de login;
 
-<subsecao></subsecao>
+<subsecao>Poll</subsecao>
 
-Poll
 tipo de conteúdo para votações de múltipla escolha;
 
-<subsecao></subsecao>
+<subsecao>Webform</subsecao>
 
-Webform
 tipo de conteúdo para formulário de contato (e-mail);
 
-<subsecao></subsecao>
+<subsecao>ShareThis</subsecao>
 
-ShareThis
+URL: https://www.drupal.org/project/sharethis
+Função: integração para compartilhar nodes em redes sociais;
+Uso:
+ícones para compartilhar abaixo do conteúdo;
 
-<subsecao></subsecao>
+<subsecao>Social Media</subsecao>
 
-integração para compartilhar página em redes sociais;
-
-<subsecao></subsecao>
-
-Social Media
 bloco de ícones com links para redes sociais;
 
-<subsecao></subsecao>
+<subsecao>Footer Sitemap</subsecao>
 
-Footer Sitemap
 URL: https://drupal.org/project/footer_sitemap
 Função: gerar mapa do site em formato de colunas para uso no rodapé;
 Uso:
 configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
 vincular bloco 'Footer Sitemap' a uma região do tema;
 
-<subsecao></subsecao>
+<subsecao>Masquerade</subsecao>
 
-Masquerade
 permite testar permissões de usuários;
-Voting API
-backend para módulos de votações;
 
-<subsecao></subsecao>
+<subsecao>Voting API</subsecao>
 
-Fivestar
+backend para módulos de votações como o Fivestart;
+
+<subsecao>Fivestar (Field)</subsecao>
+
 campo (field) para votação;
 
-<subsecao></subsecao>
+<subsecao>Flag</subsecao>
 
-Flag
 integração para selecionar (bookmark) conteúdos;
 
-<subsecao></subsecao>
+<subsecao>Entity Reference (Field)</subsecao>
 
-Entity Reference
-campo (field) para outro tipo de conteúdo;
+campo relacionar um node a outro tipo de node (Node de Pessoa com o Node de Livro);
 
-<subsecao></subsecao>
+<subsecao>Date (Field)</subsecao>
 
-Date
 URL: https://drupal.org/project/date
 Função: campo (field) para datas e widget (Date Popup);
 Uso:
 adicione a qualquer tipo de conteúdo um campo do tipo 'Date';
 ativar módulo 'Date Views' para usar filtros por combobox nas Views;
 
-<subsecao></subsecao>
+<subsecao>Youtube (Field)</subsecao>
 
-Youtube
 URL: https://drupal.org/project/youtube
 Função: campo (field) para vídeos do youtube;
 Uso:
 adicione a qualquer tipo de conteúdo um campo do tipo 'Youtube';
 este campo recebe uma URL do youtube que será renderizada em um iframe;
 
-<subsecao></subsecao>
+<subsecao>Iframe (Field)</subsecao>
 
-Iframe
 URL: https://drupal.org/project/iframe
 Função: campo (field) para inserção de URL para iframe;
 Uso:
@@ -551,9 +496,8 @@ adicione a qualquer tipo de conteúdo um campo do tipo 'iframe';
 este campo recebe uma URL que será renderizada em um iframe;
 somente é possível abrir iframe https se o site estiver usando https;
 
-<subsecao></subsecao>
+<subsecao>Backup and Migrate</subsecao>
 
-Backup and Migrate
 URL: https://drupal.org/project/backup_migrate
 Função: exporta a database e arquivos com opção de agendamento;
 Uso: /admin/config/system/backup_migrate
@@ -564,9 +508,8 @@ criar profile para backup com lock das tabelas e site offline;
 criar agendamento para backup a cada 3 horas [usar profile default];
 criar agendamento para backup semanal [usar profile com lock de tabelas];
 
-<subsecao></subsecao>
+<subsecao>Superfish</subsecao>
 
-Superfish
 URL: https://drupal.org/project/superfish
 Função: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
 Uso:
@@ -574,9 +517,8 @@ definir número de blocos de menu em configurações->interface do usuário;
 desabilite a exibição do 'Main Menu' nas configurações do tema;
 configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
 
-<subsecao></subsecao>
+<subsecao>Responsive menu</subsecao>
 
-Responsive menu
 URL: https://drupal.org/project/responsive_menus
 Função: substituir menu por menu responsivo a partir do tamanho da tela;
 Observação: módulo útil para:
@@ -591,9 +533,8 @@ configurar o menu responsivo em configuração - interface do usuário;
 adicionar seletor CSS para identificar a tag 'ul' o menu;
 definir tamanho da tela que ativará a substituição do menu (screen width);
 
-<subsecao></subsecao>
+<subsecao>Fitvids</subsecao>
 
-Fitvids
 URL: https://drupal.org/project/fitvids
 Função: torna vídeos (youtube, vimeo e kickstarter) responsivos;
 Dependência: Libraries API, jquery.fitvids.js, jquery_update;
@@ -601,18 +542,16 @@ Uso:
 instalar e ativar módulo;
 adicionar seletor CSS para identificar o vídeo;
 
-<subsecao></subsecao>
+<subsecao>String overrides</subsecao>
 
-String overrides
 URL: https://drupal.org/project/stringoverrides
 Função: regras de substituição de texto;
 Uso:
 instalar e ativar módulo;
 adicionar string para substituição em configurações regionais e de idioma;
 
-<subsecao></subsecao>
+<subsecao>Context</subsecao>
 
-Context
 URL: https://drupal.org/project/context
 Dependência: Ctools
 Função: evolui as configurações de visibilidade dos blocos (if-then-reaction);
@@ -621,18 +560,16 @@ criar regras de contexto;
 adicionar condição (ex: se página for <front>);
 adicionar reação (ex: exibir determinado bloco);
 
-<subsecao></subsecao>
+<subsecao>LDAP</subsecao>
 
-LDAP
 URL: https://drupal.org/project/ldap
 Dependência: Entity
 Função: integra a autenticação e autorização por meio do protocolo LDAP;
 Uso: /admin/config/people/ldap
 ativar o módulo LDAP Servers a cadastrar o servidor LDAP:
 
-<subsecao></subsecao>
+<subsecao>Reg with Pic</subsecao>
 
-Reg with Pic
 URL: https://www.drupal.org/project/reg_with_pic
 Função: adiciona a interface de registro de usuários um campo para imagem;
 Uso:
