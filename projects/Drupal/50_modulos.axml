@@ -1,88 +1,129 @@
 <capitulo>Modulos do Drupal</capitulo>
 
 <lista>
-<item/>https://drupal.org/project/usage
-<item/>https://drupal.org/project/project_module
-<item/>https://drupal.org/documentation/modules/views/add-ons [Views]
-<item/>https://groups.drupal.org/node/20291 [Uploading]
+  <item/>https://drupal.org/project/usage
+  <item/>https://drupal.org/project/project_module
+  <item/>https://drupal.org/documentation/modules/views/add-ons [Views]
+  <item/>https://groups.drupal.org/node/20291 [Uploading]
 </lista>
 
 <subsecao>Devel Generate</subsecao>
 
 <lista>
-  <item/>URL: https://drupal.org/project/devel
-  <item/>Função: gerar usuários, menus, taxonomias e conteúdos;
-  <item/>Uso:
+  <item/><b>URL</b>: https://drupal.org/project/devel
+  <item/><b>Função</b>: gerar usuários, menus, taxonomias e conteúdos;
+  <item/><b>Uso</b>: /admin/config/development
   <lista>
     <item/>habilitar módulo 'Devel generate';
-    <item/>gerar conteúdo 
+    <item/>gerar conteúdo em Configurações ⇒ Desenvolvimento ⇒ Generate content;
   </lista>
 </lista>
 
+<subsecao>Administration Menu</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/admin_menu
+  <item/><b>Função</b>: adiciona capacidade de 'drop-down' para a barra administrativa;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>desabilitar o módulo 'Toolbar' com menu administrativo padrão;
+    <item/>desabilitar o módulo 'Overlay' para desativar o uso de dialog (opcional);
+    <item/>habilitar módulo 'Administration menu' e 'Administration menu Toolbar style';
+  </lista>
+</lista>
+
+    O módulo <b>Admin Menu</b> não segue a política de anúncio de problemas de
+segurança, parece ser prudente desabilitá-lo em produção.
+
 <subsecao>Image Block</subsecao>
 
-URL: https://drupal.org/project/imageblock
-Função: permite criar blocos contendo imagem acima do texto;
-Uso: /admin/structure/block/imageblock_add
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/imageblock
+  <item/><b>Função</b>: permite criar blocos contendo imagem acima do texto;
+  <item/><b>Uso</b>: /admin/structure/block/imageblock_add
+  <lista>
+    <item/>crie um novo bloco com imagem em Estrutura ⇒ Blocos;
+  </lista>
+</lista>
 
-<subsecao>Admin Menu</subsecao>
-
-URL: https://drupal.org/project/admin_menu
-Função: adiciona capacidade de 'drop-down' na barra administrativa;
-Uso:
-desabilitar módulo 'Toolbar' com menu administrativo padrão;
-desabilitar módulo 'Overlay' para desativar o uso de dialog (opcional);
-habilitar módulo 'Administration menu' e 'Administrat. menu Toolbar style';
+    O módulo <b>Image Block</b> é desnecessário em projetos que utilizam um
+editor Wysiwyg (módulo CKEditor) com capacidade de upload de arquivos (módulo
+IMCE).
 
 <subsecao>Menu block</subsecao>
 
-URL: https://drupal.org/project/menu_block
-Função: permite criar blocos a partir de um submenu (superfish também tem essa função);
-Uso: /admin/structure/block/add-menu-block
-criar blocos a partir de submenus;
-selecionar opções avançadas;
-usar rótulo administrativo prefixado com 'Submenu:' (opcional);
-definir nó inicial do menu (fixed parent item);
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/menu_block
+  <item/><b>Função</b>: permite criar blocos a partir de um submenu;
+  <item/><b>Uso</b>: /admin/structure/block/add-menu-block
+  <lista>
+    <item/>crie um novo bloco a partir de um submenus em Estrutura ⇒ Blocos;
+    <item/>selecione opções avançadas;
+    <item/>use um rótulo administrativo prefixado com 'Submenu:' para facilitar a identificação;
+    <item/>definir submenu, ou seja, o nó inicial do menu (fixed parent item);
+  </lista>
+</lista>
+
+   O módulo <b>Superfish</b> também provê esta funcionalidade. Normalmente
+quando o tema já possui menu principal com 'drop-down', parece razoável optar
+pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 
 <subsecao>Menu attributes</subsecao>
 
-URL: https://drupal.org/project/menu_attributes
-Função: adiciona opções de ID, classes, estilos, target, access key aos menus;
-Uso:
-use os novos campos ao editar um item de menu;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/menu_attributes
+  <item/><b>Função</b>: adiciona opções de ID, classes, estilos, target e access key aos menus;
+  <item/><b>Uso</b>: 
+  <lista>
+    <item/>use os novos campos disponíveis ao editar um item de menu;
+  </lista>
+</lista>
 
-<subsecao>Special menu itens</subsecao>
+<subsecao>Special menu items</subsecao>
 
-URL: https://drupal.org/project/special_menu_items
-Função: permite os valores '<nolink>' ou '<separator>' como item de menu;
-Uso:
-ao editar um item de menu use <nolink> como endereço;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/special_menu_items
+  <item/><b>Função</b>: permite os valores especiais como endereço do item de menu;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>edite um item de menu;
+    <item/>use as tags <i>nolink</i> ou <i>separator</i> como endereço (entre <>);
+  </lista>
+</lista>
 
 <subsecao>Menu Admin per Menu</subsecao>
 
-URL: https://drupal.org/project/menu_admin_per_menu
-Função: permite associar um papel (role) para administrar cada menu;
-Uso: /admin/people/permissions
-acessar o gerenciamento de permissões;
-associar cada menu a um determinado papel;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/menu_admin_per_menu
+  <item/><b>Função</b>: permite associar um papel (role) para administrar cada menu;
+  <item/><b>Uso</b>: /admin/people/permissions
+  <lista>
+    <item/>acesse o gerenciamento de permissões;
+    <item/>cada menu poderá ser associado individualmente a um papel;
+  </lista>
+</lista>
 
 <subsecao>Display Suite</subsecao>
 
-URL: https://drupal.org/project/ds
-Função: gerenciamento do leiaute dos campos (node, comentários e usuário);
-Uso: /admin/structure/ds
-acessar a opção 'manage display' ao editar um tipo de conteúdo;
-identificar views modes habilitados;
-/node/[Id] usa view mode 'default' se 'Full Content' não for ativado;
-selecionar um leiaute para view mode 'default' deste tipo de conteúdo;
-identificar os arquivos de template (.tpl.php) aplicáveis ao leiaute;
-associar os campos do tipo de conteúdo às regiões do leiaute;
-ativar o view mode 'Full Content';
-acessar um node;
-desativar o view mode 'Full Content';
-criar view mode 'Teaser small' (descrição) para a entidade 'node';
-selecionar leiaute para o view mode 'Teaser small' e associar campos;
-criar uma view e configuração exibição para conteúdo e 'Teaser small';
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/ds
+  <item/><b>Função</b>: gerenciamento do leiaute dos campos (node, comentários e usuário);
+  <item/><b>Uso</b>: /admin/structure/ds
+  <lista>
+    <item/>acesse a opção 'manage display' ao editar um tipo de conteúdo;
+    <item/>identifique os views modes habilitados;
+    <item/>as páginas /node/[Id] usam o view mode 'default', se o 'Full Content' não for ativado;
+    <item/>selecione um leiaute para view mode 'default' deste tipo de conteúdo;
+    <item/>identifique os arquivos de template (.tpl.php) aplicáveis ao leiaute;
+    <item/>associe os campos do tipo de conteúdo às regiões do leiaute;
+    <item/>ativar o view mode para 'Full Content';
+    <item/>acesse um node;
+    <item/>desative o view mode 'Full Content';
+    <item/>crie o view mode 'Teaser small' (descrição) para a entidade 'node';
+    <item/>selecione o leiaute para o view mode 'Teaser small' e associe os campos;
+    <item/>crie uma view e use a configuração de exibição para conteúdo de 'Teaser small';
+  </lista>
+</lista>
 
 <subsecao>Views</subsecao>
 
