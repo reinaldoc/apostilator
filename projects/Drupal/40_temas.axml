@@ -92,53 +92,57 @@ $breadcrumb[] = drupal_get_title(); }
 </lista>
 
 <lista>
-  <item/>Hierarquia de Templates
-</lista>
-
-<comando>
-modules/system/html.tpl.php
-modules/system/page.tpl.php
-sites/all/themes/mynewtheme/page.tpl.php
-sites/all/themes/mynewtheme/page--front.tpl.php
-  modules/system/region.tpl.php
-    modules/block/block.tpl.php
-    sites/all/themes/mynewtheme/block.tpl.php
-    sites/all/themes/mynewtheme/block--[region-name].tpl.php
-    modules/node/node.tpl.php
-    themes/bartik/templates/node.tpl.php
-    sites/all/themes/mynewtheme/node.tpl.php
-    sites/all/themes/mynewtheme/node--[contenttype].tpl.php
-    sites/all/themes/mynewtheme/node--[nid].tpl.php
-    modules/comment/comment.tpl.php
-    themes/bartik/templates/comment.tpl.php
-    modules/comment/comment-wrapper.tpl.php
-    themes/bartik/templates/comment-wrapper.tpl.php
-        modules/system/maintenance-page.tpl.php
-        modules/user/user-profile.tpl.php
-</comando>
-
-<lista>
-  <item/>Processamento do template
+  <item/><b>Processamento do template</b>: a renderização ocorre a partir do mais específico;
   <lista>
-    <item/>a renderização ocorre a partir do mais específico;
     <item/>↓ node.tpl.php;
     <item/>↓ region.tpl.php;
     <item/>↓ page.tpl.php;
     <item/>↓ html.tpl.php;
   </lista>
-  <item/>Seleção do template
+  <item/><b>Seleção do template</b>: somente o template mais específico que existir será utilizado;
   <lista>
-    <item/>somente o template mais específico que existir será utilizado;
     <item/>↓ node--1.tpl.php;
     <item/>↓ node--article.tpl.php;
     <item/>↓ node.tpl.php (theme);
     <item/>↓ node.tpl.php (core);
   </lista>
-  <item/>Sobreposição de templates
+  <item/><b>Sobreposição de templates</b>
   <lista>
     <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/
     <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/node--2.tpl.php;
     <item/>cp modules/system/maintenance-page.tpl.php sites/all/themes/mynewtheme/
+  </lista>
+</lista>
+
+<lista>
+  <item/><b>Hierarquia de Templates</b>
+  <item/><b>html</b>: modules/system/html.tpl.php
+  <lista>
+    <item/><b>page</b>: modules/system/page.tpl.php
+    <item/><b>page</b>: sites/all/themes/mynewtheme/page.tpl.php
+    <item/><b>page</b>: sites/all/themes/mynewtheme/page--front.tpl.php
+    <lista>
+      <item/><b>region</b>: modules/system/region.tpl.php
+      <item/><b>region</b>: modules/system/region--[region-name].tpl.php
+      <lista>
+        <item/><b>block</b>: modules/block/block.tpl.php
+        <item/><b>block</b>: sites/all/themes/mynewtheme/block.tpl.php
+        <item/><b>block</b>: sites/all/themes/mynewtheme/block--[region-name].tpl.php
+        <item/><b>node</b>: modules/node/node.tpl.php
+        <item/><b>node</b>: themes/bartik/templates/node.tpl.php
+        <item/><b>node</b>: sites/all/themes/mynewtheme/node.tpl.php
+        <item/><b>node</b>: sites/all/themes/mynewtheme/node--[contenttype].tpl.php
+        <item/><b>node</b>: sites/all/themes/mynewtheme/node--[nid].tpl.php
+        <item/><b>comment</b>: modules/comment/comment.tpl.php
+        <item/><b>comment</b>: themes/bartik/templates/comment.tpl.php
+        <item/><b>comment-wrapper</b>: modules/comment/comment-wrapper.tpl.php
+        <item/><b>comment-wrapper</b>: themes/bartik/templates/comment-wrapper.tpl.php
+        <item/><b>maintenance-page</b>: modules/system/maintenance-page.tpl.php
+        <item/><b>maintenance-page</b>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
+        <item/><b>user-profile</b>: modules/user/user-profile.tpl.php
+        <item/><b>user-profile</b>: sites/all/themes/mynewtheme/user-profile.tpl.php
+      </lista>
+    </lista>
   </lista>
 </lista>
 
