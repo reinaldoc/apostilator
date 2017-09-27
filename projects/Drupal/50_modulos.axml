@@ -1,4 +1,4 @@
-<capitulo>Modulos do Drupal</capitulo>
+<capitulo>Módulos do Drupal</capitulo>
 
 <lista>
   <item/>https://drupal.org/project/usage
@@ -127,335 +127,466 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 
 <subsecao>Views</subsecao>
 
-URL: https://drupal.org/project/views
-Dependência: https://drupal.org/project/ctools
-Função: listagem de conteúdo em diversos formatos: tabela, grid, slideshow;
-Uso: /admin/structure/views (manage display na edição do tipo de conteúdo);
-ativar módulo View UI para gerenciar listas customizadas (views);
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/views
+  <item/><b>Dependência</b>: https://drupal.org/project/ctools
+  <item/><b>Função</b>: listagem de conteúdo (node) em diversos formatos: tabela, grid, slideshow;
+  <item/><b>Uso</b>: /admin/structure/views
+  <lista>
+    <item/>ativar módulo View UI para gerenciar listas customizadas (views);
+  </lista>
+</lista>
 
 <subsubsecao>Listar e Pesquisar views por nome e descrição administrativos</subsubsecao>
 
-listar views (nome, descrição administrativa, tags, path e operações);
-identificar operações: ativar, editar, clonar, exportar ou desabilitar;
-ativar uma view (Glossary);
-editar o nome administrativo da view;
-editar a descrição administrativa de view (descrever onde será usada);
-configuração: exibir filtro de pesquisa de views;
-configuração: omitir aviso de ajuda avançada;
+<lista>
+  <item/>listar views (nome, descrição administrativa, tags, path e operações);
+  <item/>identificar operações: ativar, editar, clonar, exportar ou desabilitar;
+  <item/>ativar uma view (Glossary);
+  <item/>editar o nome administrativo da view;
+  <item/>editar a descrição administrativa de view (descrever onde será usada);
+  <item/>configuração: exibir filtro de pesquisa de views;
+  <item/>configuração: omitir aviso de ajuda avançada;
+</lista>
 
 <subsubsecao>Área de pré-visualização da view</subsubsecao>
 
-editar rótulo de uma view (title);
-identificar área de pré-visualização das alterações na view;
-configuração: exibir informações abaixo da pré-visualização;
-configuração: exibir SQL da pré-visualização;
-configuração: exibir estatísticas de performance do SQL;
-configuração avançada: adicionar o nome da view no SELECT (debug only);
+<lista>
+  <item/>editar rótulo de uma view (title);
+  <item/>identificar área de pré-visualização das alterações na view;
+  <item/>configuração: exibir informações abaixo da pré-visualização;
+  <item/>configuração: exibir SQL da pré-visualização;
+  <item/>configuração: exibir estatísticas de performance do SQL;
+  <item/>configuração avançada: adicionar o nome da view no SELECT (debug only);
+</lista>
 
 <subsubsecao>View de página e formato de tabela</subsubsecao>
 
-criar uma view de página para listar conteúdo (node);
-definir o nome administrativo da view;
-definir a descrição administrativa de view (descrever onde será usada);
-definir formato da lista (tabela, grid, slideshow, não formatada, etc);
-!tabela: formato de exibição (conteúdo ou campos, resumo ou completo);
-definir caminho relativo (path);
-configurar item de menu vinculado;
-definir campos que serão exibidos (colunas p/ tabela);
-tabela: adicionar campo global contador de resultados (linhas);
-tabela: definir o rótulo do campo (cabeçalho das colunas);
-tabela: ordenar os campos (ordem das colunas);
-tabela: combinar campos em uma coluna (configuração do formato tabela);
-tabela: definir campo de ordenação padrão (default sort);
-tabela: ativar campos com reordenação pelo usuário (sortable);
-definir critérios de filtragem (por tipo de conteúdo, se publicado);
-adicionar relacionamento a view (Author->User, tipo de conteúdo);
-definir critérios de ordenação (por mês desc, por rótulo asc.);
+<lista>
+  <item/>criar uma view de página para listar conteúdo (node);
+  <item/>definir o nome administrativo da view;
+  <item/>definir a descrição administrativa de view (descrever onde será usada);
+  <item/>definir formato da lista (tabela, grid, slideshow, não formatada, etc);
+  <item/>!tabela: formato de exibição (conteúdo ou campos, resumo ou completo);
+  <item/>definir caminho relativo (path);
+  <item/>configurar item de menu vinculado;
+  <item/>definir campos que serão exibidos (colunas p/ tabela);
+  <item/>tabela: adicionar campo global contador de resultados (linhas);
+  <item/>tabela: definir o rótulo do campo (cabeçalho das colunas);
+  <item/>tabela: ordenar os campos (ordem das colunas);
+  <item/>tabela: combinar campos em uma coluna (configuração do formato tabela);
+  <item/>tabela: definir campo de ordenação padrão (default sort);
+  <item/>tabela: ativar campos com reordenação pelo usuário (sortable);
+  <item/>definir critérios de filtragem (por tipo de conteúdo, se publicado);
+  <item/>adicionar relacionamento a view (Author->User, tipo de conteúdo);
+  <item/>definir critérios de ordenação (por mês desc, por rótulo asc.);
+</lista> 
 
 <subsubsecao>View de bloco</subsubsecao>
 
-configurar nome do bloco (padrão: “View: nome administrativo”);
-definir outro formato da lista e salvar para o bloco;
-remover rótulo de um campo e salvar para o bloco;
-alterar o paginador para mini e salvar para o bloco;
-alterar a paginação para 5 itens e salvar para o bloco;
-desvincular o paginador da view de página (Pager ID);
-ativar paginação por ajax (recomendado somente para view de bloco);
-ativar a view padrão ‘Tracker’;
-associar o bloco ‘View: Tracker’ a região ‘Content’;
-configurar o bloco para se exibido somente nas páginas ‘user/*’;
+<lista>
+  <item/>configurar nome do bloco (padrão: “View: nome administrativo”);
+  <item/>definir outro formato da lista e salvar para o bloco;
+  <item/>remover rótulo de um campo e salvar para o bloco;
+  <item/>alterar o paginador para mini e salvar para o bloco;
+  <item/>alterar a paginação para 5 itens e salvar para o bloco;
+  <item/>desvincular o paginador da view de página (Pager ID);
+  <item/>ativar paginação por ajax (recomendado somente para view de bloco);
+  <item/>ativar a view padrão 'Tracker';
+  <item/>associar o bloco 'View: Tracker' a região 'Content';
+  <item/>configurar o bloco para se exibido somente nas páginas 'user/*';
+</lista>
 
 <subsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsecao>
 
-configurar acesso por permissão ou por papel;
-configurar um cabeçalho a view (header);
-configurar um rodapé para a view (footer);
-configurar a paginação da view (itens por página, rótulos do pager);
-configurar um filtro contextual (por URL, valor padrão, sumário);
-redefinir o rótulo da view quando o filtro contextual for aplicado;
-redefinir o breadcrumb quando o filtro contextual for ativado;
+<lista>
+  <item/>configurar acesso por permissão ou por papel;
+  <item/>configurar um cabeçalho a view (header);
+  <item/>configurar um rodapé para a view (footer);
+  <item/>configurar a paginação da view (itens por página, rótulos do pager);
+  <item/>configurar um filtro contextual (por URL, valor padrão, sumário);
+  <item/>redefinir o rótulo da view quando o filtro contextual for aplicado;
+  <item/>redefinir o breadcrumb quando o filtro contextual for ativado;
+</lista>
 
-<subsubsecao>View de bloco com filtro contextual a partir do node (utiliza Display Suite)</subsubsecao>
+<subsubsecao>View de bloco com filtro contextual a partir do node</subsubsecao>
 
-adicionar campo de imagem com limite de 5 imagens ao tipo de conteúdo;
-adicionar view de bloco;
-configurar a view para campo de imagens;
-configurar o campo com separador de valores múltiplos em linha;
-configurar o paginador para exibir um número específico de itens: 1;
-configurar filtro contextual (node Id) com valor padrão da node da URL;
-associar bloco da view ao leiaute do tipo de conteúdo (add custom field);
+<lista>
+  <item/>adicionar campo de imagem com limite de 5 imagens ao tipo de conteúdo;
+  <item/>adicionar view de bloco;
+  <item/>configurar a view para campo de imagens;
+  <item/>configurar o campo com separador de valores múltiplos em linha;
+  <item/>configurar o paginador para exibir um número específico de itens: 1;
+  <item/>configurar filtro contextual (node Id) com valor padrão da node da URL;
+  <item/>associar bloco da view ao leiaute do tipo de conteúdo (add custom field);
+</lista>
+
+    O módulo <b>Display Suite</b> adiciona a capacidade ao gerenciamento
+de exibição para associar views de bloco à páginas de conteúdo (node) ou à
+página do perfil do usuário.
 
 <subsecao>Views Accordeon</subsecao>
 
-URL: https://drupal.org/project/views_accordion
-Função: construir acordeões a partir de conteúdos;
-Uso:
-criar view accordeon a partir de um tipo de conteúdo;
-definir o formato de exibição para campos (requerido);
-manter o título como primeiro campo;
-adicionar os demais campos à view;
-definir ordenação pelo título;
-configuração do formato: não exibir linha aberta;
-configuração do formato: permitir que todas as linhas sejam fechadas;
-configuração do formato: não definir altura automática da linha;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/views_accordion
+  <item/><b>Função</b>: construir lista de conteúdo (node) em formato de acordeões;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>criar view accordeon a partir de um tipo de conteúdo;
+    <item/>definir o formato de exibição para campos (requerido);
+    <item/>manter o título como primeiro campo;
+    <item/>adicionar os demais campos à view;
+    <item/>definir ordenação pelo título;
+    <item/>configuração do formato: não exibir linha aberta;
+    <item/>configuração do formato: permitir que todas as linhas sejam fechadas;
+    <item/>configuração do formato: não definir altura automática da linha;
+  </lista>
+</lista>
 
 <subsubsecao>Filtro contextual em modo glossário</subsubsecao>
 
-selecionar filtro contextual a partir do campo 'title';
-definir valor padrão 'a';
-ativar modo glossário limitado a 1 caractere;
-adicionar 'attachment';
-configurar filtro contextual do campo 'title' para exibir um sumário;
-o sumário deve ser aplicado somente ao attachment;
-definir o formato do sumário para 'não formatado';
-desabilitar visualização de contador dos itens (opcional);
-definir a exibição dos itens como 'inline';
-vincular o attachment a page:
-'attach to' page na tela do attachment, ou;
-'header->view area' aplicado somente a tela page;
-desabilite a herança de filtros contextuais em qualquer caso;
+<lista>
+  <item/>selecionar filtro contextual a partir do campo 'title';
+  <item/>definir valor padrão 'a';
+  <item/>ativar modo glossário limitado a 1 caractere;
+  <item/>adicionar 'attachment';
+  <item/>configurar filtro contextual do campo 'title' para exibir um sumário;
+  <item/>o sumário deve ser aplicado somente ao attachment;
+  <item/>definir o formato do sumário para 'não formatado';
+  <item/>desabilitar visualização de contador dos itens (opcional);
+  <item/>definir a exibição dos itens como 'inline';
+  <item/>vincular o attachment a page:
+  <item/>'attach to' page na tela do attachment, ou;
+  <item/>'header->view area' aplicado somente a tela page;
+  <item/>desabilite a herança de filtros contextuais em qualquer caso;
+</lista>
 
 <subsecao>Views Slideshow</subsecao>
 
-URL: https://drupal.org/project/views_slideshow
-Função: construir slideshow a partir de conteúdos ou imagens;
-Dependências: “Ctools”, “Views UI”, “Views Slideshow: Cycle”, “Libraries”;
-https://github.com/malsup/cycle/blob/master/jquery.cycle.all.js
-sites/all/libraries/jquery.cycle/jquery.cycle.all.js
-Hooks: https://drupal.org/node/909020
-Uso: /admin/structure/views/add
-criar uma página de slideshow a partir de um conteúdo;
-criar um bloco de slideshow a partir de um conteúdo;
-configuração: não fixar a altura do slide no bloco (view actions advanced);
-criar um bloco de slideshow a partir de campo de imagem;
-configuração: definir efeito de transição do slide;
-configuração: definir o tempo de exibição do slide (time delay);
-configuração: definir o tempo de transição de slide (speed);
-definir a paginação para um número específico de slides (5);
-configuração: adicionar controles (anterior, pause, próximo);
-configuração: adicionar contador de slide (1 of 5);
-configuração: adicionar paginador como contador (1 2 3 4 5);
-adicionar o campo ‘Global: view result counter’;
-exibir o campo como link ‘#’ (rewrite results);
-aplicar CSS ao paginador:
-.views-slideshow-pager-field-item {float: left; padding: 5px;}
-.views-slideshow-pager-field-item.active {background-color: #bbb; border-radius: 5px;}
-configuração: adicionar paginador como thumbnail;
-remover o campo ‘Global: view result counter’;
-criar estilo de imagem com scale e crop com 40px/40px;
-adicionar um segundo campo com a imagem (add field) na view;
-não exibir este campo de imagem (exclude from display);
-usar o novo estilo da imagem nesse campo;
-configuração: selecionar este campo como paginador;
-ativar slide e pausar slide ao passar o mouse (hover);
-aplicar CSS ao paginador:
-.view-slideshow-page-fields {position:absolute; bottom:20px; right:10px; z-index:100; background-color: rgba(0,0,0,0.6); border-radius:6px; padding:10px;}
-.views-field-title {position:absolute; top:0px; left:0px; z-index:100; background-color: rgba(0,0,0,0.6); border-radius:0 0 6px 0; padding:10px;}
-.views-field-title a {color:#ccc; text-shadow: 2px 2px 000;}
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/views_slideshow
+  <item/><b>Função</b>: construir slideshow a partir de conteúdos ou imagens;
+  <item/><b>Dependências</b>: “ctools”, “Views UI”, “Views Slideshow: Cycle”, “Libraries”;
+  <lista>
+    <item/>Src: https://github.com/malsup/cycle/blob/master/jquery.cycle.all.js
+    <item/>Dst: sites/all/libraries/jquery.cycle/jquery.cycle.all.js
+  </lista>
+  <item/><b>Tutorial do desenvolvedor</b>: https://drupal.org/node/2858279
+  <item/><b>Uso</b>: /admin/structure/views/add
+  <lista>
+    <item/>criar uma página de slideshow a partir de um conteúdo;
+    <item/>criar um bloco de slideshow a partir de um conteúdo;
+    <item/>configuração: não fixar a altura do slide no bloco (view actions advanced);
+    <item/>criar um bloco de slideshow a partir de campo de imagem;
+    <item/>configuração: definir efeito de transição do slide;
+    <item/>configuração: definir o tempo de exibição do slide (time delay);
+    <item/>configuração: definir o tempo de transição de slide (speed);
+    <item/>definir a paginação para um número específico de slides (5);
+    <item/>configuração: adicionar controles (anterior, pause, próximo);
+    <item/>configuração: adicionar contador de slide (1 of 5);
+    <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
+    <item/>adicionar o campo 'Global: view result counter';
+    <item/>exibir o campo como link '#' (rewrite results);
+  </lista>
+</lista>
+
+<comando>
+/* CSS do paginador */
+.views-slideshow-pager-field-item {
+    float: left; padding: 5px; }
+.views-slideshow-pager-field-item.active {
+    background-color: #bbb; border-radius: 5px; }
+</comando>
+
+<subsubsecao>Usar paginador como thumbnail da imagem</subsubsecao>
+
+<lista>
+  <item/>configuração: adicionar paginador como thumbnail;
+  <item/>remover o campo 'Global: view result counter';
+  <item/>criar estilo de imagem com scale e crop com 40px/40px;
+  <item/>adicionar um segundo campo com a imagem (add field) na view;
+  <item/>não exibir este campo de imagem (exclude from display);
+  <item/>usar o novo estilo da imagem nesse campo;
+  <item/>configuração: selecionar este campo como paginador;
+  <item/>ativar slide e pausar slide ao passar o mouse (hover);
+</lista>
+
+<comando>
+/* CSS do paginador */
+.view-slideshow-page-fields {
+    position: absolute; bottom: 20px; right: 10px; z-index: 100;
+    background-color: rgba(0,0,0,0.6); border-radius:6px; padding:10px; }
+.views-field-title {
+    position: absolute; top: 0px; left: 0px; z-index: 100;
+    background-color: rgba(0,0,0,0.6); border-radius: 0 0 6px 0; padding: 10px; }
+.views-field-title a {
+    color:#ccc; text-shadow: 2px 2px 000; }
+</comando>
 
 <subsecao>Views Slideshow Configurable Controls</subsecao>
 
-URL: https://drupal.org/project/vscc
-Função: permite customizar os controles do slideshow em views;
-ative o controle do paginador do tipo ‘configurable controls’;
-omita o controle de ‘pause’ do slide;
-altere a skin do controle para ícones pretos;
-aplicar CSS ao controle:
-.vscc-controls {position:relative; z-index:100}
-.vscc-controls-previous {position:absolute; top 120px; left:0px; background: #ddd; padding: 0 5px 5px; border:2px solid #333; border-radius: 5px;}
-.vscc-controls-next {position:absolute; top 120px; right:0px; background: #ddd; padding: 0 5px 5px; border:2px solid #333; border-radius: 5px;}
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/vscc
+  <item/><b>Função</b>: permite customizar os controles do slideshow em views;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>ative o controle do paginador do tipo 'configurable controls';
+    <item/>omita o controle de 'pause' do slide;
+    <item/>altere a skin do controle para ícones pretos;
+  </lista>
+</lista>
+
+<comando>
+/* CSS do paginador */
+.vscc-controls {
+    position: relative; z-index: 100; }
+.vscc-controls-previous {
+    position: absolute; top: 120px; left: 0px; background: #ddd;
+    padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
+.vscc-controls-next {
+    position: absolute; top: 120px; right: 0px; background: #ddd;
+    padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
+</comando>
 
 <subsecao>Link (Field)</subsecao>
 
-URL: https://drupal.org/project/link
-Função: permite adicionar campo com link aos tipos de conteúdo;
-Uso: adicionar campo link;
-slideshow: selecionar ‘no title’ nas opções do campo;
-slideshow: adicione o campo link à view, sem exibi-lo;
-slideshow: reorganize os campos da view para o link ficar em 1º;
-slideshow: edite o campo da imagem:
-desative o link original;
-reescrever o resultado: expôr o campo como link;
-definir link path para [field_slide_link]
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/link
+  <item/><b>Função</b>: permite adicionar campo com link aos tipos de conteúdo;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicionar campo link ao tipo de conteúdo;
+  </lista>
+</lista>
+
+<subsubsecao>Link para Slideshow</subsubsecao>
+
+<lista>
+  <item/>acesse as configurações da view no formato de slideshow;
+  <item/>selecione 'no title' nas opções do campo;
+  <item/>adicione o campo link à view, sem exibi-lo;
+  <item/>reordene os campos da view para o link ficar acima dos demais;
+  <item/>edite o campo da imagem:
+  <lista>
+    <item/>desative o link original;
+    <item/>reescreva o resultado: expôr o campo como link;
+    <item/>definir link para [field_slide_link] (use o nome do campo de link);
+  </lista>
+</lista>
 
 <subsecao>Panels</subsecao>
 
-URL: https://drupal.org/project/panels
-Função: gerenciamento do leiaute de página ou bloco;
-Dependência: Ctools (page manager, views content panes);
-Uso: /admin/structure/panels
-ativar módulos Page Manager, Panels e Stylizer;
-visão geral dos elementos do módulo Panels (pages, mini, stylizer);
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/panels
+  <item/><b>Função</b>: gerenciamento do leiaute de página e de bloco;
+  <item/><b>Dependência</b>: ctools (page manager, views content panes);
+  <item/><b>Uso</b>: /admin/structure/panels
+  <lista>
+    <item/>ativar módulos Page Manager, Panels e Stylizer;
+    <item/>visão geral dos elementos do módulo Panels (pages, mini, stylizer);
+  </lista>
+</lista>
 
 <subsubsecao>Panel Pages - /admin/structure/pages</subsubsecao>
 
-listar páginas de painéis (panel page/custom page);
-criar um painel (leiaute de página);
-definir o rótulo administrativo do painel (interface administrativa);
-definir a URL relativa do painel;
-decidir se o novo painel será a página inicial do site;
-definir o leiaute do painel (2-cols, 3-cols, bricks ou stacked);
-definir se o leiaute se aplica ao Canvas ou a área do leiaute;
-adicionar ou remover classes CSS do body (raramente usado);
-definir se o usuário poderá trocar o conteúdo entre áreas do leiaute;
-definir CSS ID para o novo painel;
-adicionar código CSS para o painel;
-definir ou remover o rótulo (title) do painel;
-identificar as áreas do leiaute (top, left side, bottom, etc);
-vincular conteúdo existente às áreas de leiaute (node, bloco, views);
-definir a exibição do rótulo da área e do conteúdo;
-definir a exibição de link no conteúdo para comentários;
-definir a exibição de link para ler mais (quando em modo teaser);
-definir modo de exibição (conteúdo completo, teaser ou RSS);
-reorganizar o conteúdo do leiaute entre as áreas do leiaute;
-travar posição (lock) do conteúdo vinculado (impede mudá-lo de área);
-travar posição do conteúdo vinculado, limitado a áreas definidas;
-adicionar painel variante;
-clonar painel variante;
-definir o leiaute do painel variante;
-vincular conteúdo às áreas de leiaute do painel variante;
-definir nome administrativo para o painel variante;
-definir a ordem do painel variante (prioridade no teste das regras);
-definir regras de seleção para cada painel variante;
-definir regras de seleção a partir de papéis;
-editar ou remover regras de seleção;
-definir o operador lógico (AND, OR) das regras de seleção;
-exportar e importar painel variante para outra página de painéis;
-remover ou desabilitar painel variante;
+<lista>
+  <item/>listar páginas de painéis (panel page/custom page);
+  <item/>criar um painel (leiaute de página);
+  <item/>definir o rótulo administrativo do painel (interface administrativa);
+  <item/>definir a URL relativa do painel;
+  <item/>decidir se o novo painel será a página inicial do site;
+  <item/>definir o leiaute do painel (2-cols, 3-cols, bricks ou stacked);
+  <item/>definir se o leiaute se aplica ao Canvas ou a área do leiaute;
+  <item/>adicionar ou remover classes CSS do body (raramente usado);
+  <item/>definir se o usuário poderá trocar o conteúdo entre áreas do leiaute;
+  <item/>definir CSS ID para o novo painel;
+  <item/>adicionar código CSS para o painel;
+  <item/>definir ou remover o rótulo (title) do painel;
+  <item/>identificar as áreas do leiaute (top, left side, bottom, etc);
+  <item/>vincular conteúdo existente às áreas de leiaute (node, bloco, views);
+  <item/>definir a exibição do rótulo da área e do conteúdo;
+  <item/>definir a exibição de link no conteúdo para comentários;
+  <item/>definir a exibição de link para ler mais (quando em modo teaser);
+  <item/>definir modo de exibição (conteúdo completo, teaser ou RSS);
+  <item/>reorganizar o conteúdo do leiaute entre as áreas do leiaute;
+  <item/>travar posição (lock) do conteúdo vinculado (impede mudá-lo de área);
+  <item/>travar posição do conteúdo vinculado, limitado a áreas definidas;
+  <item/>adicionar painel variante;
+  <item/>clonar painel variante;
+  <item/>definir o leiaute do painel variante;
+  <item/>vincular conteúdo às áreas de leiaute do painel variante;
+  <item/>definir nome administrativo para o painel variante;
+  <item/>definir a ordem do painel variante (prioridade no teste das regras);
+  <item/>definir regras de seleção para cada painel variante;
+  <item/>definir regras de seleção a partir de papéis;
+  <item/>editar ou remover regras de seleção;
+  <item/>definir o operador lógico (AND, OR) das regras de seleção;
+  <item/>exportar e importar painel variante para outra página de painéis;
+  <item/>remover ou desabilitar painel variante;
+</lista>
 
 <subsubsecao>Stylizer - /admin/structure/stylizer</subsubsecao>
 
-listar estilos customizável (custom style);
-adicionar novo estilo;
-definir estilo de área do leiaute (region) ou de seu conteúdo (pane);
-definir estilo da borda (rounded shadow box ou plain);
-definir cor de fundo, cor do texto, fonte, espaçamento, padding, etc, 
-definir estilo como reutilizável (quando criado design de páginas);
-exportar o estilo para utilização em outra instância do drupal;
+<lista>
+  <item/>listar estilos customizável (custom style);
+  <item/>adicionar novo estilo;
+  <item/>definir estilo de área do leiaute (region) ou de seu conteúdo (pane);
+  <item/>definir estilo da borda (rounded shadow box ou plain);
+  <item/>definir cor de fundo, cor do texto, fonte, espaçamento, padding, etc, 
+  <item/>definir estilo como reutilizável (quando criado design de páginas);
+  <item/>exportar o estilo para utilização em outra instância do drupal;
+</lista>
 
 <subsubsecao>Mini Panels - /admin/structure/mini-panels</subsubsecao>
 
-listar mini-painéis;
-criar mini-painel (leiaute de bloco);
-definir o rótulo, descrição e categoria administrativa do mini-painel;
-definir o leiaute do mini-painel;
-vincular conteúdo às áreas de leiaute do mini-painel;
-associar mini-painel a uma região do tema (bloco);
-exportar e importar mini-painéis (em outra instância do drupal);
-vincular mini-painéis em áreas (região) de páginas de painéis;
+<lista>
+  <item/>listar mini-painéis;
+  <item/>criar mini-painel (leiaute de bloco);
+  <item/>definir o rótulo, descrição e categoria administrativa do mini-painel;
+  <item/>definir o leiaute do mini-painel;
+  <item/>vincular conteúdo às áreas de leiaute do mini-painel;
+  <item/>associar mini-painel a uma região do tema (bloco);
+  <item/>exportar e importar mini-painéis (em outra instância do drupal);
+  <item/>vincular mini-painéis em áreas (região) de páginas de painéis;
+</lista>
 
 <subsubsecao>Layout - /admin/structure/panels/layouts</subsubsecao>
 
-listar leiautes (Panels -> Layouts);
-criar um novo leiaute para páginas de painéis (flexible layout);
-definir o rótulo administrativo do leiaute;
-definir categoria do leiaute;
-adicionar colunas, linhas e regiões (áreas do leiaute);
-redimensionar colunas;
-ativar Panels In-Place Editor;
-identificar Panels In-Place Editor;
-ativar módulo Panel nodes;
-redefinir leiaute de um tipo de conteúdo;
+<lista>
+  <item/>listar leiautes (Panels -> Layouts);
+  <item/>criar um novo leiaute para páginas de painéis (flexible layout);
+  <item/>definir o rótulo administrativo do leiaute;
+  <item/>definir categoria do leiaute;
+  <item/>adicionar colunas, linhas e regiões (áreas do leiaute);
+  <item/>redimensionar colunas;
+  <item/>ativar Panels In-Place Editor;
+  <item/>identificar Panels In-Place Editor;
+  <item/>ativar módulo Panel nodes;
+  <item/>redefinir leiaute de um tipo de conteúdo;
+</lista>
 
 <subsecao>File (Field) Paths</subsecao>
 
-URL: https://drupal.org/project/filefield_paths
-Função: fornece máscara para renomear arquivo no upload;
-Uso:
-adicionar máscara na configuração do campo File ou Image;
-ativar módulo 'Entity Tokens' para formatar campos via máscara;
-File path: [current-date:custom:Y]/slides_home
-File name:
-[file:ffp-name-only-original].[file:ffp-extension-original]
-[node:nid]_[node:title].[file:ffp-extension-original]
-[node:field-data-relatorio:custom:Y-m]-[node:field-categoria-despesa:name].[file:ffp-extension-original
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/filefield_paths
+  <item/><b>Função</b>: fornece máscara para renomear arquivos no upload;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicionar máscara na configuração do campo File ou Image;
+    <item/>ativar módulo 'Entity Tokens' para usar tokens com valores dos campos;
+  </lista>
+  <item/><b>File path</b>:
+  <lista>
+    <item/>[current-date:custom:Y]/slides_home
+  </lista>
+  <item/><b>File name</b>:
+  <lista>
+    <item/>[file:ffp-name-only-original].[file:ffp-extension-original]
+    <item/>[node:nid]_[node:title].[file:ffp-extension-original]
+    <item/>[node:field-data-relatorio:custom:Y-m]-[node:field-categoria-despesa:name].[file:ffp-extension-original]
+  </lista>
+</lista>
 
 <subsecao>Token</subsecao>
 
-URL: https://drupal.org/project/token
-Função: fornece tokens [tipo:atributo:valor] para utilização diversa;
-Tokens: https://www.drupal.org/node/390482
-Uso:
-usar token [current-date:custom:Y] para prefixar nome do arquivo em upload;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/token
+  <item/><b>Função</b>: fornece tokens [tipo:atributo:valor] para vários fins;
+  <item/><b>Tokens</b>: https://www.drupal.org/node/390482
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>tokens são suportados em diversos locais no drupal;
+    <item/>o token [current-date:custom:Y] retorna o ano atual;
+  </lista>
+</lista>
 
 <subsecao>Transliteration</subsecao>
 
-URL: https://drupal.org/project/transliteration
-Função: substituição de strings e limpeza de caracteres durante upload;
-Uso:
-ativar substituição de caracteres acentuados no campo File ou Image;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/transliteration
+  <item/><b>Função</b>: substituição e remoção de caracteres acentuados do nome do arquivo durante upload;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adiciona capacidade ao módulo Pathauto para gerar URLs sem caracteres acentuados;
+    <item/>adiciona capacidade do módulo File (Field) Path para retirar caractes acentuados do nome do arquivo;
+    <item/>ativar a opção Transliteration no campo File ou Image;
+  </lista>
+</lista>
 
 <subsecao>Pathauto</subsecao>
 
-URL: https://drupal.org/project/pathauto
-Função: gerar URLs amigáveis do conteúdo baseado no título;
-Uso:
-configurar padrões de URL (como o prefixo) por tipo de conteúdo;
-configuração: 'Busca e metadados -> URLs alternativas -> Patterns';
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/pathauto
+  <item/><b>Função</b>: gerar URLs amigáveis do conteúdo baseado em seu título;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>configurar padrões de URL (como o prefixo) por tipo de conteúdo;
+    <item/>configuração: 'Busca e metadados -> URLs alternativas -> Patterns';
+  </lista>
+</lista>
 
 <subsecao>Submitted By</subsecao>
 
-URL: https://drupal.org/project/submitted_by
-Dependência: Token
-Função: customiza a identificação do autor do conteúdo (node);
-Uso:
-editar o tipo de conteúdo e definir o texto nas 'opções de exibição';
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/submitted_by
+  <item/><b>Dependência</b>: Token
+  <item/><b>Função</b>: customiza a identificação do autor do conteúdo (node);
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>edite o tipo de conteúdo e defina o texto nas 'opções de exibição';
+  </lista>
+</lista>
 
 <subsecao>Path Breadcrumbs</subsecao>
 
-URL: https://drupal.org/project/path_breadcrumbs
-Função: permite controlar os breadcrumbs;
-Dependências: https://drupal.org/project/entity
-Uso: /admin/structure/path-breadcrumbs
-Configurar breadcrumbs para nodes do tipo Articles
-usar o path 'node/%node';
-definir o contexto 'Node: ID';
-definir regra de seleção para 'Node: type': Article;
-definir rótulo (title) e path para cada nó do breadcrumb;
-definir rótulo (title) '%node:title' e link '<none>';
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/path_breadcrumbs
+  <item/><b>Dependência</b>: https://drupal.org/project/entity
+  <item/><b>Função</b>: permite definir o breadcrumb a partir de expressões;
+  <item/><b>Uso</b>: /admin/structure/path-breadcrumbs
+  <lista>
+    <item/>configure o breadcrumbs para nodes do tipo Artigo;
+    <item/>usar o path 'node/%node';
+    <item/>definir o contexto 'Node: ID';
+    <item/>definir regra de seleção para 'Node: type': Article;
+    <item/>definir rótulo (title) e path para cada nó do breadcrumb;
+    <item/>definir rótulo (title) '%node:title' e link '<none>';
+  </lista>
+</lista>
 
 <subsecao>IMCE</subsecao>
 
-URL: https://drupal.org/project/imce
-Função: uploader de arquivos;
-Uso: /admin/config/media/imce
-configurações -> Mídia -> IMCE;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/imce
+  <item/><b>Função</b>: uploader de arquivos;
+  <item/><b>Uso</b>: /admin/config/media/imce
+  <lista>
+    <item/>configurações -> Mídia -> IMCE;
+  </lista>
+</lista>
 
 <subsecao>CKEditor</subsecao>
 
-URL: https://drupal.org/project/ckeditor
-https://ckeditor.com/download
-cd sites/all/libraries
-unzip ckeditor_4.7.3_full.zip
-chown devportal: ckeditor -R
-cd ckeditor/skins/
-ln -s moono-lisa/ moono
-chown -h devportal: moono
-Função: editor HTML visual (WYSIWYG);
-Uso: /admin/config/content/ckeditor
-configurações -> criação de conteúdo -> CKEditor;
-Global profile: configurar caminho no servidor '%l/ckeditor';
-Full profile: configurar 'file browser type' para IMCE;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/ckeditor
+  <item/><b>Função</b>: editor HTML visual (WYSIWYG);
+  <item/><b>Instalação</b>:
+  <lista>
+    <item/>https://ckeditor.com/download
+    <item/>cd sites/all/libraries
+    <item/>unzip ckeditor_4.7.3_full.zip
+    <item/>chown devportal: ckeditor -R
+    <item/>cd ckeditor/skins/
+    <item/>ln -s moono-lisa/ moono
+    <item/>chown -h devportal: moono
+  </lista>
+  <item/><b>Uso</b>: /admin/config/content/ckeditor
+  <lista>
+    <item/>configurações -> criação de conteúdo -> CKEditor;
+    <item/>Global profile: configurar caminho no servidor '%l/ckeditor';
+    <item/>Full profile: configurar 'file browser type' para IMCE;
+  </lista>
+</lista>
 
 <subsecao>Nodeblock</subsecao>
 
