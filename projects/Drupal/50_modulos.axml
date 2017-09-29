@@ -590,160 +590,239 @@ página do perfil do usuário.
 
 <subsecao>Nodeblock</subsecao>
 
-adiciona capacidade ao tipo de conteúdo ser listado como bloco;
+<lista>
+  <item/><b>URL (Drupal 7)</b>: https://www.drupal.org/project/nodeblock
+  <item/><b>URL (Drupal 8)</b>: https://www.drupal.org/project/entityblock
+  <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
+</lista>
 
 <subsecao>Flood control</subsecao>
 
-interface para controlar variáveis de falha de login;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/ckeditor
+  <item/><b>Função</b>: interface para controlar variáveis de falha de login;
+</lista>
 
-<subsecao>Poll</subsecao>
+<subsecao>Advanced Poll</subsecao>
 
-tipo de conteúdo para votações de múltipla escolha;
-
-<subsecao>Webform</subsecao>
-
-tipo de conteúdo para formulário de contato (e-mail);
-
-<subsecao>ShareThis</subsecao>
-
-URL: https://www.drupal.org/project/sharethis
-Função: integração para compartilhar nodes em redes sociais;
-Uso:
-ícones para compartilhar abaixo do conteúdo;
-
-<subsecao>Social Media</subsecao>
-
-bloco de ícones com links para redes sociais;
-
-<subsecao>Footer Sitemap</subsecao>
-
-URL: https://drupal.org/project/footer_sitemap
-Função: gerar mapa do site em formato de colunas para uso no rodapé;
-Uso:
-configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
-vincular bloco 'Footer Sitemap' a uma região do tema;
-
-<subsecao>Masquerade</subsecao>
-
-permite testar permissões de usuários;
-
-<subsecao>Voting API</subsecao>
-
-backend para módulos de votações como o Fivestart;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/advpoll
+  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
+  <item/><b>Função</b>: tipo de conteúdo para votações de múltipla escolha;
+</lista>
 
 <subsecao>Fivestar (Field)</subsecao>
 
-campo (field) para votação;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/fivestar
+  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
+  <item/><b>Função</b>: campo (field) para votação por meio de estrelas;
+</lista>
 
 <subsecao>Flag</subsecao>
 
-integração para selecionar (bookmark) conteúdos;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/flag
+  <item/><b>Função</b>: integração para selecionar (bookmark) conteúdos;
+</lista>
+
+<subsecao>Webform</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/webform
+  <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
+</lista>
+
+<subsecao>ShareThis</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/sharethis
+  <item/><b>Função</b>: integração para compartilhar nodes em redes sociais;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>ícones para compartilhar página abaixo do conteúdo;
+  </lista>
+</lista>
+
+<subsecao>Social Media</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/socialmedia
+  <item/><b>Função</b>: bloco de ícones com links para redes sociais;
+</lista>
+
+<subsecao>Footer Sitemap</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/footer_sitemap
+  <item/><b>Função</b>: gerar mapa do site em formato de colunas para uso no rodapé;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
+    <item/>vincular bloco 'Footer Sitemap' a uma região do tema;
+  </lista>
+</lista>
+
+<subsecao>Masquerade</subsecao>
+
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/masquerade
+  <item/><b>Função</b>: permite logar no site como outro usuário;
+</lista>
 
 <subsecao>Entity Reference (Field)</subsecao>
 
-campo relacionar um node a outro tipo de node (Node de Pessoa com o Node de Livro);
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/entityreference
+  <item/><b>Função</b>: campo que relaciona um node a outro tipo de node (Node de Pessoa com o Node de Livro);
+</lista>
 
 <subsecao>Date (Field)</subsecao>
 
-URL: https://drupal.org/project/date
-Função: campo (field) para datas e widget (Date Popup);
-Uso:
-adicione a qualquer tipo de conteúdo um campo do tipo 'Date';
-ativar módulo 'Date Views' para usar filtros por combobox nas Views;
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/date
+  <item/><b>Função</b>: campo (field) para datas e widget (Date Popup);
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'Date';
+    <item/>ativar módulo 'Date Views' para usar filtros por combobox nas Views;
+  </lista>
+</lista>
 
 <subsecao>Youtube (Field)</subsecao>
 
-URL: https://drupal.org/project/youtube
-Função: campo (field) para vídeos do youtube;
-Uso:
-adicione a qualquer tipo de conteúdo um campo do tipo 'Youtube';
-este campo recebe uma URL do youtube que será renderizada em um iframe;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/youtube
+  <item/><b>Função</b>: campo (field) para vídeos do youtube;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'Youtube';
+    <item/>este campo recebe uma URL do youtube que será renderizada em um iframe;
+  </lista>
+</lista>
 
 <subsecao>Iframe (Field)</subsecao>
 
-URL: https://drupal.org/project/iframe
-Função: campo (field) para inserção de URL para iframe;
-Uso:
-adicione a qualquer tipo de conteúdo um campo do tipo 'iframe';
-este campo recebe uma URL que será renderizada em um iframe;
-somente é possível abrir iframe https se o site estiver usando https;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/iframe
+  <item/><b>Função</b>: campo (field) para inserção de URL para iframe;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'iframe';
+    <item/>este campo recebe uma URL que será renderizada em um iframe;
+    <item/>somente é possível abrir iframe https se o site estiver usando https;
+  </lista>
+</lista>
 
 <subsecao>Backup and Migrate</subsecao>
 
-URL: https://drupal.org/project/backup_migrate
-Função: exporta a database e arquivos com opção de agendamento;
-Uso: /admin/config/system/backup_migrate
-configurar diretório privado de arquivos (config/media/file-system)
-sites/default/files/private;
-realizar backup rápido;
-criar profile para backup com lock das tabelas e site offline;
-criar agendamento para backup a cada 3 horas [usar profile default];
-criar agendamento para backup semanal [usar profile com lock de tabelas];
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/backup_migrate
+  <item/><b>Função</b>: exporta a database e arquivos com opção de agendamento;
+  <item/><b>Uso</b>: /admin/config/system/backup_migrate
+  <lista>
+    <item/>configurar diretório privado de arquivos (config/media/file-system)
+    <item/>sites/default/files/private;
+    <item/>realizar backup rápido;
+    <item/>criar profile para backup com lock das tabelas e site offline;
+    <item/>criar agendamento para backup a cada 3 horas [usar profile default];
+    <item/>criar agendamento para backup semanal [usar profile com lock de tabelas];
+  </lista>
+</lista>
 
 <subsecao>Superfish</subsecao>
 
-URL: https://drupal.org/project/superfish
-Função: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
-Uso:
-definir número de blocos de menu em configurações->interface do usuário;
-desabilite a exibição do 'Main Menu' nas configurações do tema;
-configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/superfish
+  <item/><b>Função</b>: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>definir número de blocos de menu em configurações->interface do usuário;
+    <item/>desabilite a exibição do 'Main Menu' nas configurações do tema;
+    <item/>configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
+  </lista>
+</lista>  
 
 <subsecao>Responsive menu</subsecao>
 
-URL: https://drupal.org/project/responsive_menus
-Função: substituir menu por menu responsivo a partir do tamanho da tela;
-Observação: módulo útil para:
-útil para criar um tema standalone;
-útil para criar um sub-tema do Zen;
-útil para temas adaptativos que não possuem menu responsivo;
-em regra, opte por um tema responsivo em vez de usar este módulo;
-Uso:
-instalar e ativar módulo;
-identificar a classe ou id da tag 'ul' do menu que será responsivo;
-configurar o menu responsivo em configuração - interface do usuário;
-adicionar seletor CSS para identificar a tag 'ul' o menu;
-definir tamanho da tela que ativará a substituição do menu (screen width);
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/responsive_menus
+  <item/><b>Função</b>: substituir menu por menu responsivo a partir do tamanho da tela;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>instalar e ativar módulo;
+    <item/>identificar a classe ou id da tag 'ul' do menu que será responsivo;
+    <item/>configurar o menu responsivo em configuração - interface do usuário;
+    <item/>adicionar seletor CSS para identificar a tag 'ul' o menu;
+    <item/>definir tamanho da tela que ativará a substituição do menu (screen width);
+  </lista>
+</lista>
+
+    O módulo <b>Responsive menu</b> pode ser útil para criar temas
+standalone, sub-temas do Zen ou para temas adaptativos que não possuem menu
+responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 
 <subsecao>Fitvids</subsecao>
 
-URL: https://drupal.org/project/fitvids
-Função: torna vídeos (youtube, vimeo e kickstarter) responsivos;
-Dependência: Libraries API, jquery.fitvids.js, jquery_update;
-Uso:
-instalar e ativar módulo;
-adicionar seletor CSS para identificar o vídeo;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/fitvids
+  <item/><b>Função</b>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
+  <item/><b>Dependência</b>: Libraries API, jquery.fitvids.js, jquery_update;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>instalar e ativar módulo;
+    <item/>adicionar seletor CSS para identificar o vídeo;
+  </lista>
+</lista>
 
 <subsecao>String overrides</subsecao>
 
-URL: https://drupal.org/project/stringoverrides
-Função: regras de substituição de texto;
-Uso:
-instalar e ativar módulo;
-adicionar string para substituição em configurações regionais e de idioma;
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/stringoverrides
+  <item/><b>Função</b>: regras de substituição de texto;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>instalar e ativar módulo;
+    <item/>adicionar string para substituição em configurações regionais e de idioma;
+  </lista>
+</lista>
 
 <subsecao>Context</subsecao>
 
-URL: https://drupal.org/project/context
-Dependência: Ctools
-Função: evolui as configurações de visibilidade dos blocos (if-then-reaction);
-Uso: /admin/structure/context
-criar regras de contexto;
-adicionar condição (ex: se página for <front>);
-adicionar reação (ex: exibir determinado bloco);
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/context
+  <item/><b>Dependência</b>: https://drupal.org/project/ctools
+  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
+  <item/><b>Uso</b>: /admin/structure/context
+  <lista>
+    <item/>criar regras de contexto;
+    <item/>adicionar condição (ex: se página for <front>);
+    <item/>adicionar reação (ex: exibir determinado bloco);
+  </lista>
+</lista>
 
 <subsecao>LDAP</subsecao>
 
-URL: https://drupal.org/project/ldap
-Dependência: Entity
-Função: integra a autenticação e autorização por meio do protocolo LDAP;
-Uso: /admin/config/people/ldap
-ativar o módulo LDAP Servers a cadastrar o servidor LDAP:
+<lista>
+  <item/><b>URL</b>: https://drupal.org/project/ldap
+  <item/><b>Dependência</b>: https://drupal.org/project/entity
+  <item/><b>Função</b>: integra a autenticação e autorização por meio do protocolo LDAP;
+  <item/><b>Uso</b>: /admin/config/people/ldap
+  <lista>
+    <item/>ativar o módulo LDAP Servers a configurar o servidor LDAP:
+    <item/>ativar o módulo LDAP Users e configurar a sincronização de dados do LDAP;
+    <item/>ativar o módulo LDAP Authentication e configurar a autenticação no servidor LDAP;
+    <item/>ativar o módulo LDAP Authorization Role e configurar a autorização de grupos do LDAP para roles:
+  </lista>
+</lista>
 
 <subsecao>Reg with Pic</subsecao>
 
-URL: https://www.drupal.org/project/reg_with_pic
-Função: adiciona a interface de registro de usuários um campo para imagem;
-Uso:
-o módulo LDAP User possa sincronizar a thumbailPhoto no primeiro login;
-
+<lista>
+  <item/><b>URL</b>: https://www.drupal.org/project/reg_with_pic
+  <item/><b>Função</b>: adiciona a interface de registro de usuários um campo para imagem;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>o módulo LDAP User possa sincronizar a thumbailPhoto no primeiro login;
+  </lista>
+</lista>
