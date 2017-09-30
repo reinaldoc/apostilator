@@ -3,29 +3,29 @@
 <subsecao>Referências</subsecao>
 
 <lista>
-<item/>https://drupal.org/node/2792973 ⇒ guia do sistema de temas do Drupal 7;
-<item/>https://drupal.org/node/171194 ⇒ overview;
-<item/>https://drupal.org/node/225125 ⇒ sub-theme;
-<item/>https://drupal.org/node/388372 ⇒ default CSS classes;
-<item/>https://drupal.org/node/778884 ⇒ blocks CSS IDs;
-<item/>https://drupal.org/node/2802991 ⇒ code standards;
-<item/>https://drupal.org/node/1886770 ⇒ CSS code standards;
-<item/>https://drupal.org/node/1354 ⇒ API documentation and comment standards;
-<item/>https://drupal.org/node/1089656 ⇒ themes hook;
-<item/>https://drupal.org/node/190815 ⇒ core .tpl.php;
-<item/>https://drupal.org/node/313510 ⇒ convertendo o leiaute para template;
-<item/>https://drupal.org/node/394094 ⇒ boas práticas de acessibilidade;
-<item/>https://www.youtube.com/watch?v=cOqVXvepAlw ⇒ Evaluating Base Themes;
-<item/>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf
+  <item/>https://drupal.org/node/2792973 ⇒ guia do sistema de temas do Drupal 7;
+  <item/>https://drupal.org/node/171194 ⇒ overview;
+  <item/>https://drupal.org/node/225125 ⇒ sub-theme;
+  <item/>https://drupal.org/node/388372 ⇒ default CSS classes;
+  <item/>https://drupal.org/node/778884 ⇒ blocks CSS IDs;
+  <item/>https://drupal.org/node/2802991 ⇒ code standards;
+  <item/>https://drupal.org/node/1886770 ⇒ CSS code standards;
+  <item/>https://drupal.org/node/1354 ⇒ API documentation and comment standards;
+  <item/>https://drupal.org/node/1089656 ⇒ themes hook;
+  <item/>https://drupal.org/node/190815 ⇒ core .tpl.php;
+  <item/>https://drupal.org/node/313510 ⇒ convertendo o leiaute para template;
+  <item/>https://drupal.org/node/394094 ⇒ boas práticas de acessibilidade;
+  <item/>https://www.youtube.com/watch?v=cOqVXvepAlw ⇒ Evaluating Base Themes;
+  <item/>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf
 </lista>
 
 <subsecao>Diretórios Locais</subsecao>
 
 <lista>
-<item/>/themes/* ⇒ temas do core do Drupal;
-<item/>/sites/all/themes/* ⇒ temas para todos os sites;
-<item/>/sites/default/themes/* ⇒ tema para determinado site;
-<item/>/sites/default/themes/mynewtheme ⇒ diretório para o novo tema;
+  <item/>/themes/* ⇒ temas do core do Drupal;
+  <item/>/sites/all/themes/* ⇒ temas para todos os sites;
+  <item/>/sites/default/themes/* ⇒ tema para determinado site;
+  <item/>/sites/default/themes/mynewtheme ⇒ diretório para o novo tema;
 </lista>
 
 <subsecao>Estrutura do Tema</subsecao>
@@ -151,10 +151,10 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Theme developer</subsubsecao>
 
 <lista>
-  <item/>URL: https://drupal.org/project/devel_themer
-  <item/>Função: informações sobre a hierarquia de renderização do template;
-  <item/>Dependências: Devel e simplehtmldom 7.x-1.12
-  <item/>Uso:
+  <item/><b>URL</b>: https://drupal.org/project/devel_themer
+  <item/><b>Função</b>: informações sobre a hierarquia de renderização do template;
+  <item/><b>Dependências</b>: Devel e simplehtmldom 7.x-1.12
+  <item/><b>Uso</b>:
   <lista>
     <item/>ative o checkbox (Themer info) no canto inferior esquerdo da tela;
     <item/>selecione o elemento para obter os templates e funções processadas;
@@ -164,9 +164,9 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Styleguide</subsubsecao>
 
 <lista>
-  <item/>URL: https://drupal.org/project/styleguide
-  <item/>Função: lista estilos aplicados a cada componente;
-  <item/>Uso: /admin/appearance/styleguide
+  <item/><b>URL</b>: https://drupal.org/project/styleguide
+  <item/><b>Função</b>: lista estilos aplicados a cada componente;
+  <item/><b>Uso</b>: /admin/appearance/styleguide
 </lista>
 
 <subsecao>Atividades de fixação</subsecao>
@@ -174,13 +174,13 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Block Class</subsubsecao>
 
 <lista>
-  <item/>URL: https://drupal.org/project/block_class
-  <item/>Função: definir classe CSS para cada bloco;
-  <item/>Uso:
+  <item/><b>URL</b>: https://drupal.org/project/block_class
+  <item/><b>Função</b>: definir classe CSS para cada bloco;
+  <item/><b>Uso</b>:
   <lista>
     <item/>instalar módulo;
     <item/>criar sub-thema;
-    <item/>copiar template 'block.tpl.php' do core, ou do tema, se houve;
+    <item/>copiar template 'block.tpl.php' do core ou, se houver, do tema;
     <item/>adicionar '<?php print $block->css_class; ?>' ao fim das classes do bloco;
   </lista>
 </lista>
@@ -188,15 +188,15 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Responsive Blog Theme</subsubsecao>
 
 <lista>
-  <item/>URL: https://drupal.org/project/responsive_blog
-  <item/>Uso:
+  <item/><b>URL</b>: https://drupal.org/project/responsive_blog
+  <item/><b>Uso</b>:
   <lista>
     <item/>instalar tema;
     <item/>criar sub-tema;
     <item/>copiar template 'page.tpl.php' do tema para diretório do sub-tema;
-    <item/>identificar o <div> com id="preface-area" em page.tpl.php;
+    <item/>identificar o <div > com id="preface-area" em page.tpl.php;
     <item/>adicionar '<?php if($page['header'] || $page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>' antes;
-    <item/>adicionar '<?php endif; ?>' após o </div> correspondente;
+    <item/>adicionar '<?php endif; ?>' após o </div > correspondente;
   </lista>
 </lista>
 
@@ -218,7 +218,7 @@ $breadcrumb[] = drupal_get_title(); }
 "Starter theme" altamente configurável.
 
 <lista>
-  <item/>URL: https://drupal.org/project/adaptivetheme
+  <item/><b>URL</b>: https://drupal.org/project/adaptivetheme
   <item/>AdaptiveTheme sub-themes
   <lista>
     <item/>https://drupal.org/project/sky
@@ -239,8 +239,11 @@ $breadcrumb[] = drupal_get_title(); }
 "Starter theme" p/ desenvolvimento em HTML/SASS/GULP.
 
 <lista>
-<item/>URL: https://drupal.org/project/zen
-<item/>Uso: Criar subtema (zen/STARTERKIT/README.txt)
+  <item/><b>URL</b>: https://drupal.org/project/zen
+  <item/>Uso:
+  <lista>
+    <item/>Criar subtema (zen/STARTERKIT/README.txt)
+  </lista>
 </lista>
 
 <comando>
