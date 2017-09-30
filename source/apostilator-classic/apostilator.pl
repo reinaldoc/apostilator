@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #
-# apostilator.pl v0.3-20120211
+# apostilator.pl v0.3.2-20170930
 # Copyright (c) 2007-2012 Reinaldo de Carvalho <reinaldoc@gmail.com>
 # Copyright (c) 2005-2006 Luiz C. B. Mostaço Guidolin <lcguid@gmail.com>
 #
@@ -22,7 +22,7 @@
 
 use strict ;
 
-my $version = "v0.3.1-20150107";
+my $version = "v0.3.2-20170930";
 my $pdf_view = "okular";
 my $pdf_exec = "on";
 my $pdf_make = "on";
@@ -99,10 +99,14 @@ my %tags = (	"<capitulo>" => "\\newpage \\chapter{",
                 "<linha>" => "\\\\ \\makebox[1\\textwidth]{\\hrulefill}",
                 "<linha/>" => "\\\\ \\makebox[1\\textwidth]{\\hrulefill}",
                 "<linha />" => "\\\\ \\makebox[1\\textwidth]{\\hrulefill}",
-                "<lpi>" => "\\lpi{}",
-                "<lpi/>" => "\\lpi{}",
-                "<lpi />" => "\\lpi{}",
-                "</lpi>" => "",
+                "<atividade>" => "\\atividade{}",
+                "<atividade/>" => "\\atividade{}",
+                "<atividade />" => "\\atividade{}",
+                "</atividade>" => "",
+                "<importante>" => "\\importante{}",
+                "<importante/>" => "\\importante{}",
+                "<importante />" => "\\importante{}",
+                "</importante>" => "",
                 "<bslash/>" => "\\textbackslash ",
                 "<br/>" => "\\vskip ",
                 "<rh>" => "\\rh{}",
