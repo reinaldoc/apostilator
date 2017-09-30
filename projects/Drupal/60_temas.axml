@@ -169,8 +169,6 @@ $breadcrumb[] = drupal_get_title(); }
   <item/><b>Uso</b>: /admin/appearance/styleguide
 </lista>
 
-<subsecao>Atividades de fixação</subsecao>
-
 <subsubsecao>Block Class</subsubsecao>
 
 <lista>
