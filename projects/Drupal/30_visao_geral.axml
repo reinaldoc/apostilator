@@ -1,22 +1,92 @@
 <capitulo>Visão geral do Drupal</capitulo>
 
-<subsecao>Estrutura - /admin/structure</subsecao>
-
-<subsubsecao>Blocos - /admin/structure/block</subsubsecao>
+<subsecao>Estrutura</subsecao>
 
 <lista>
-<item/>exibição das regiões do tema;
-<item/>vincular de blocos 'Search form' e 'User login' a região 'Second sidebar';
-<item/>desativar o bloco de menu 'Navigation';
-<item/>ativar o bloco de menu 'Development' na região 'Second sidebar';
-<item/>reordenar os blocos da região 'Second sidebar' com 'Development' em 1º;
-<item/>acesso às configurações de cada bloco;
-<item/>controlar visibilidade do bloco por path, tipo de conteúdo, papel, etc;
-<item/>adicionar novo bloco de texto formatado;
-<item/>search form: exibir o bloco de pesquisa ao usuário anônimo (permissão);
+  <item/><b>URL</b>: /admin/structure
 </lista>
 
-<subsubsecao>Tipos de conteúdo (tipos de node) - /admin/structure/types</subsubsecao>
+<comando>
+**********************************************************************************
+*             Região do Topo                                                     *
+*               Bloco 1, Bloco 2, Bloco N                                        *
+**********************************************************************************
+*                                           *                                    *
+*   Aŕea sem região (Logo, nome do site)    *         Região de Pesquisa         *
+*                                           *                                    *
+**********************************************************************************
+*                   *                                        *                   *
+*                   *                                        *                   *
+*  Região Esquerda  *      Região do Conteúdo (Node)         *  Região Direita   *
+*                   *                                        *                   *
+*    Bloco 1        *        Field 1 (imagem)                *    Bloco 1        *
+*    Bloco 2        *        Field 2 (texto)                 *    Bloco 2        *
+*    Bloco 3        *        Field 3 (arquivo)               *    Bloco 3        *
+*    Bloco N        *        Field 4 (taxonomia)             *    Bloco N        *
+*                   *                                        *                   *
+*                   *                                        *                   *
+*                   *                                        *                   *
+**********************************************************************************
+*             Região do Rodapé                                                   *
+*               Bloco 1, Bloco 2, Bloco N                                        *
+**********************************************************************************
+</comando>
+
+<subsubsecao>Blocos</subsubsecao>
+
+<lista>
+  <item/><b>URL</b>: /admin/structure/block
+  <item/><b>Conceito</b>: O bloco é a unidade que pode ser associada uma
+região do tema, pode ser criado a partir de um trecho de código HTML ou
+fornecido por algum módulo.
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>exibir as regiões do tema;
+    <item/>vincule de blocos 'Search form' e 'User login' a região 'Second sidebar';
+    <item/>desative o bloco de menu 'Navigation';
+    <item/>ative o bloco de menu 'Development' na região 'Second sidebar';
+    <item/>reordene os blocos da região 'Second sidebar' com 'Development' em 1º;
+    <item/>acesse às configurações de cada bloco;
+    <item/>controle a visibilidade do bloco por path, tipo de conteúdo, papel;
+    <item/>adicione novo bloco com um trecho de código HTML;
+    <item/>search form: exibir o bloco de pesquisa ao usuário anônimo (permissão);
+  </lista>
+</lista>
+
+    O bloco 'Search form' é fornecido pelo módulo <b>Search</b> que faz parte
+do núcleo do Drupal. Verifique que apesar do bloco 'Search form' estar
+associado a uma região, ele só é exibido quando o usuário com permissão de
+administrador está autenticado.
+
+    <importante/>Cada módulo implementa determinadas permissões, identifique a
+lista de permissões fornecidas pelo módulo <b>Search</b> por meio do menu
+<i>Pessoas -> Permissões</i> ou pelo caminho <i>/admin/people/permissions</i>.
+Ative a permissão 'Use search' para que usuários autenticados e não
+autenticados, denominados anônimos, possam utilizar o bloco 'Search form'.
+
+<subsubsecao>Menus</subsubsecao>
+
+<lista>
+  <item/><b>URL</b>: /admin/structure/menu
+  <item/><b>Conceito</b>: Todo menu é um bloco que deve ser associado a uma
+região do tema pela interface de blocos.
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>configuração: definir menu principal e secundário;
+    <item/>criar um menu;
+    <item/>criar links (itens do menu);
+    <item/>organizar links hierarquicamente;
+    <item/>criar um link a partir do conteúdo;
+    <item/>associar um menu a uma região;
+    <item/>gerenciar o menu de usuário;
+  </lista>
+</lista>
+
+<subsubsecao>Tipos de conteúdo</subsubsecao>
+
+<lista>
+  <item/><b>URL</b>: /admin/structure/types
+</lista>
 
 <lista>
 <item/>adição de tipo de conteúdo;
@@ -29,25 +99,19 @@
 <item/>gerenciar exibição do campo (peso, posição do label e formato);
 </lista>
 
-<subsubsecao>Menus - /admin/structure/menu</subsubsecao>
+<subsubsecao>Taxonomia</subsubsecao>
 
 <lista>
-<item/>configuração: definir menu principal e secundário;
-<item/>criar um menu;
-<item/>criar links (itens do menu);
-<item/>organizar links hierarquicamente;
-<item/>criar um link a partir do conteúdo;
-<item/>associar um menu a uma região;
-<item/>gerenciar o menu de usuário;
-</lista>
-
-<subsubsecao>Taxonomia - /admin/structure/taxonomy</subsubsecao>
-
-<lista>
-<item/>adicionar vocabulário (lista de categorias);
-<item/>adicionar termos (categorias) a um vocabulário;
-<item/>reiniciar termos para ordem alfabética (mantém a hierarquia);
-<item/>adicionar um campo 'Term reference' a um tipo de conteúdo;
+  <item/><b>URL</b>: /admin/structure/taxonomy
+  <item/><b>Conceito</b>: Toda taxonomia é um campo do tipo <b>Term
+reference</b> que pode compor um ou mais tipos de conteúdo.
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>adicione um vocabulário (lista de termos);
+    <item/>adicione termos (categorias) a um vocabulário;
+    <item/>ao reiniciar termos para ordem alfabética a hierarquia é mantida;
+    <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de conteúdo;
+  </lista>
 </lista>
 
 <subsecao>Conteúdo (node) - /admin/content</subsecao>
