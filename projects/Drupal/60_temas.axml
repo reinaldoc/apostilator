@@ -200,6 +200,37 @@ $breadcrumb[] = drupal_get_title(); }
   </lista>
 </lista>
 
+<subsubsecao>Responsive menu</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/responsive_menus
+  <item/><b>Função</b>: substituir menu por menu responsivo a partir do tamanho da tela;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>instalar e ativar módulo;
+    <item/>identificar a classe ou id da tag 'ul' do menu que será responsivo;
+    <item/>configurar o menu responsivo em configuração - interface do usuário;
+    <item/>adicionar seletor CSS para identificar a tag 'ul' o menu;
+    <item/>definir tamanho da tela que ativará a substituição do menu (screen width);
+  </lista>
+</lista>
+
+    O módulo <b>Responsive menu</b> pode ser útil para criar temas
+standalone, sub-temas do Zen ou para temas adaptativos que não possuem menu
+responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
+
+<subsubsecao>Fitvids</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/fitvids
+  <item/><b>Função</b>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
+  <item/><b>Dependência</b>: Libraries API, jquery.fitvids.js, jquery_update;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicionar seletor CSS para identificar o vídeo;
+  </lista>
+</lista>
+
 <subsubsecao>Views em formato de Grid responsivas</subsubsecao>
 
 <comando>
