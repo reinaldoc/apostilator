@@ -1,16 +1,11 @@
+%
+% Apostilator Template Latex Root
+%
 
-\pdfinfo{
-   /Author (Reinaldo Gil Lima de Carvalho)
-   /Title  (Curso de Drupal)
-   /CreationDate (D:20170810142530)
-%   /ModDate (D:\pdfdate)
-   /Subject (Material para curso de Drupal)
-   /Keywords (Drupal)
-}
-
-
+% paper
 \documentclass[12pt,a4paper,heading]{report}
 
+% packages
 \usepackage[brazil]{babel}
 \usepackage{ucs}
 \usepackage[utf8x]{inputenc}
@@ -21,21 +16,34 @@
 \usepackage[a4paper,body={21.0cm,29.7cm},left=2.0cm,right=1.0cm,top=2.0cm,bottom=2.0cm]{geometry}
 \usepackage{soul}
 \usepackage{wrapfig}
-\usepackage{hyperref}
-\usepackage{enumitem}
+\usepackage{hyperref}      % provide \hypersetup
+\usepackage{enumitem}      % provide \itemize
+\usepackage{datetime}      % provide \pdfdate
+
+% setup for enumitem package
 \setlist[itemize]{noitemsep,itemsep=0.1cm}
 
-\definecolor{darkblue}{rgb}{0.3,0.3,0.3}
+% pdf setup
+\pdfpagewidth=\paperwidth
+\pdfpageheight=\paperheight
+\pdfinfo{
+   /CreationDate (D:20170810142530)
+   /ModDate (D:\pdfdate)
+}
+
+% linked summary
 \hypersetup{
-	pdfcreator={Apostilator v0.3-20120211},
+	pdfcreator={Apostilator v0.3.2-20170930},
 	pdfauthor={Reinaldo Gil Lima de Carvalho},
-	pdftitle={Drupal},
+	pdfproducer={Reinaldo Gil Lima de Carvalho},
+	pdftitle={Curso de Drupal 7},
 	pdfsubject={Drupal},
-	pdfkeywords={Drupal, CMS},
+	pdfkeywords={Drupal, Drupal Modules, Drupal Themes},
+	pdftoolbar=false,
+	pdfstartview=FitH,
 	plainpages=true,
 	bookmarksopen=true,
 	bookmarksopenlevel=1,
-	pdfstartview=FitV,
 	bookmarksnumbered=true,
 	linktocpage=true,
 	colorlinks=true,
@@ -45,17 +53,26 @@
 	citecolor=darkblue
 }
 
-\pdfpagewidth=\paperwidth
-\pdfpageheight=\paperheight
+% set darkblue color label
+\definecolor{darkblue}{rgb}{0.3,0.3,0.3}
 
-\newcounter{SteP}
-\setcounter{SteP}{1}
+% margin-left first paragraph line
+\setlength{\parindent}{2.5em}
 
-%\pagecolor{grey}
-%\color{red} % altera a cor do texto
+% margin-bottom paragraph
+\setlength{\parskip}{0.5em}
 
-\definecolor{myColor}{rgb}{0.9,0.9,0.9}
-\sethlcolor{myColor}
+% page background-color
+% \pagecolor{red}
+
+% text color
+% \color{red}
+
+% \definecolor{myColor}{rgb}{0.9,0.9,0.9}
+% \sethlcolor{myColor}
+% \DefineVerbatimEnvironment%
+%  {MyVerbatim3}{Verbatim}
+%    {numbers=none,frame=single,backgroundcolor=myColor}
 
 \DefineVerbatimEnvironment%
   {VerbatimNumerado}{Verbatim}
@@ -66,9 +83,6 @@
   {BoxVerbatim}{Verbatim}
     {numbers=none,frame=single}
 
-% \DefineVerbatimEnvironment%
-%  {MyVerbatim3}{Verbatim}
-%    {numbers=none,frame=single,backgroundcolor=myColor}
       
 \fancypagestyle{plain}{
 \fancyhf{}
@@ -77,6 +91,7 @@
 \fancyfoot[L]{\bf \small \slshape Drupal CMS} %% @chapterfooter
 }
 
+% set page style
 \fancypagestyle{rcsfooters}
 {
     \fancyhf{}
@@ -85,9 +100,6 @@
     \renewcommand{\headwidth}{\textwidth}
     \renewcommand{\linewidth}{\textwidth}
 
-    %
-    %\fancyhead[L]{\bf Curso III: Emacs}
-    %\fancyhead[R]{\includegraphics[scale=0.25]{figs/capa.eps}}
     \fancyhead[L]{\bf Curso de Drupal} %% @header
     \fancyhead[R]{\bf \slshape \nouppercase{\leftmark}}
 
@@ -96,24 +108,47 @@
     \fancyfoot[L]{\bf \small \slshape Reinaldo Gil Lima de Carvalho - reinaldoc@gmail.com} %% @footer
 }
 
-\newcommand{\lpi}{\begin{wrapfigure}{l}{1.5cm}\centering \includegraphics[width=1.3cm]{titlepage-imgs/lpi.png} \end{wrapfigure}}
-\newcommand{\rh}{\begin{wrapfigure}{l}{1.5cm}\centering \includegraphics[width=1.3cm]{titlepage-imgs/redhat.png} \end{wrapfigure}}
+\newcommand{\atividade}{
+  \begin{wrapfigure}[3]{R}{1cm}
+    \centering
+    \vspace{-11pt}
+    \includegraphics[width=1cm,height=1cm]{imgs/atividade.png}
+  \end{wrapfigure}
+}
+
+\newcommand{\importante}{
+  \begin{wrapfigure}[3]{R}{1cm}
+    \centering
+    \vspace{-11pt}
+    \includegraphics[width=1cm,height=1cm]{imgs/importante.png}
+  \end{wrapfigure}
+}
+
 
 \PrerenderUnicode {^^c3^^b3}
 
-\begin{document}\pagestyle{rcsfooters}
+\newcounter{SteP}
+\setcounter{SteP}{1}
 
-\thispagestyle{empty}
-\input{titlepage}
-\newpage
-\tableofcontents
-\newpage
-\input{Chapters}
-\newpage
-\bibliographystyle{unsrt}
-\bibliography{Bibliography}
-\newpage
-\appendix
-\input{Appendix}
+\begin{document}
+
+  % apply pagestyle
+  \pagestyle{rcsfooters}
+  \thispagestyle{empty}
+  \input{titlepage}
+
+  \newpage
+  \tableofcontents
+
+  \newpage
+  \input{Chapters}
+
+  \newpage
+  \bibliographystyle{unsrt}
+  \bibliography{Bibliography}
+
+  \newpage
+  \appendix
+  \input{Appendix}
 
 \end{document}
