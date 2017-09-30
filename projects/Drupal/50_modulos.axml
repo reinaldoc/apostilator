@@ -7,7 +7,9 @@
   <item/>https://groups.drupal.org/node/20291 [Uploading]
 </lista>
 
-<subsecao>Devel Generate</subsecao>
+<subsecao>Administração</subsecao>
+
+<subsubsecao>Devel Generate</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/devel
@@ -19,7 +21,7 @@
   </lista>
 </lista>
 
-<subsecao>Administration Menu</subsecao>
+<subsubsecao>Administration Menu</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/admin_menu
@@ -35,7 +37,101 @@
     O módulo <b>Admin Menu</b> não segue a política de anúncio de problemas de
 segurança, parece ser prudente desabilitá-lo em produção.
 
-<subsecao>Image Block</subsecao>
+<subsubsecao>Flood control</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/flood_control
+  <item/><b>Função</b>: interface para controlar variáveis de falha de login;
+  <item/><b>URL</b>: /admin/config/system/flood-control
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>acessar <i>Configurações -> Sistema -> Flood control</i>;
+    <item/>configurar limite para erros de autenticação para o usuário;
+    <item/>configurar limite para erros de autenticação para o IP de requisição;
+  </lista>
+</lista>
+
+<subsubsecao>String overrides</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/stringoverrides
+  <item/><b>Função</b>: regras de substituição de texto;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicionar string para substituição em configurações regionais e de idioma;
+  </lista>
+</lista>
+
+<subsubsecao>Masquerade</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/masquerade
+  <item/><b>Função</b>: permite logar no site como outro usuário;
+</lista>
+
+<subsubsecao>LDAP</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/ldap
+  <item/><b>Dependência</b>: https://drupal.org/project/entity
+  <item/><b>Função</b>: integra a autenticação e autorização por meio do protocolo LDAP;
+  <item/><b>Uso</b>: /admin/config/people/ldap
+  <lista>
+    <item/>ativar o módulo LDAP Servers a configurar o servidor LDAP:
+    <item/>ativar o módulo LDAP Users e configurar a sincronização de dados do LDAP;
+    <item/>ativar o módulo LDAP Authentication e configurar a autenticação no servidor LDAP;
+    <item/>ativar o módulo LDAP Authorization Role e configurar a autorização de grupos do LDAP para roles:
+  </lista>
+</lista>
+
+<subsubsecao>Reg with Pic</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/reg_with_pic
+  <item/><b>Função</b>: adiciona à interface de registro de usuários o campo para imagem do perfil;
+  <item/><b>Uso</b>:
+</lista>
+
+    A instalação do módulo <b>Reg with Pic</b> permite que o módulo <b>LDAP
+User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
+campo de imagem do perfil do usuário <u>no primeiro login</u>;
+
+<subsubsecao>Path Breadcrumbs</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/path_breadcrumbs
+  <item/><b>Dependência</b>: https://drupal.org/project/entity
+  <item/><b>Função</b>: permite definir o breadcrumb a partir de expressões;
+  <item/><b>Uso</b>: /admin/structure/path-breadcrumbs
+  <lista>
+    <item/>configure o breadcrumbs para nodes do tipo Artigo;
+    <item/>usar o path 'node/%node';
+    <item/>definir o contexto 'Node: ID';
+    <item/>definir regra de seleção para 'Node: type': Article;
+    <item/>definir rótulo (title) e path para cada nó do breadcrumb;
+    <item/>definir rótulo (title) '%node:title' e link '<none >';
+  </lista>
+</lista>
+
+<subsubsecao>Backup and Migrate</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/backup_migrate
+  <item/><b>Função</b>: exporta a database e arquivos com opção de agendamento;
+  <item/><b>Uso</b>: /admin/config/system/backup_migrate
+  <lista>
+    <item/>configurar diretório privado de arquivos (config/media/file-system)
+    <item/>sites/default/files/private;
+    <item/>realizar backup rápido;
+    <item/>criar profile para backup com lock das tabelas e site offline;
+    <item/>criar agendamento para backup a cada 3 horas [usar profile default];
+    <item/>criar agendamento para backup semanal [usar profile com lock de tabelas];
+  </lista>
+</lista>
+
+<subsecao>Blocos</subsecao>
+
+<subsubsecao>Image Block</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/imageblock
@@ -50,7 +146,50 @@ segurança, parece ser prudente desabilitá-lo em produção.
 editor Wysiwyg (módulo CKEditor) com capacidade de upload de arquivos (módulo
 IMCE).
 
-<subsecao>Menu block</subsecao>
+<subsubsecao>Social Media</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/socialmedia
+  <item/><b>Função</b>: bloco de ícones com links para redes sociais;
+</lista>
+
+<subsubsecao>Footer Sitemap</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/footer_sitemap
+  <item/><b>Função</b>: gerar mapa do site em formato de colunas para uso no rodapé;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
+    <item/>vincular bloco 'Footer Sitemap' a uma região do tema;
+  </lista>
+</lista>
+
+<subsubsecao>Nodeblock</subsubsecao>
+
+<lista>
+  <item/><b>Download (Drupal 7)</b>: https://drupal.org/project/nodeblock
+  <item/><b>Download (Drupal 8)</b>: https://drupal.org/project/entityblock
+  <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
+</lista>
+
+<subsubsecao>Context</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/context
+  <item/><b>Dependência</b>: https://drupal.org/project/ctools
+  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
+  <item/><b>Uso</b>: /admin/structure/context
+  <lista>
+    <item/>criar regras de contexto;
+    <item/>adicionar condição (ex: se página for <front >);
+    <item/>adicionar reação (ex: exibir determinado bloco);
+  </lista>
+</lista>
+
+<subsecao>Menu</subsecao>
+
+<subsubsecao>Menu block</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/menu_block
@@ -68,7 +207,7 @@ IMCE).
 quando o tema já possui menu principal com 'drop-down', parece razoável optar
 pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 
-<subsecao>Menu attributes</subsecao>
+<subsubsecao>Menu attributes</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/menu_attributes
@@ -79,7 +218,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   </lista>
 </lista>
 
-<subsecao>Special menu items</subsecao>
+<subsubsecao>Special menu items</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/special_menu_items
@@ -91,7 +230,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   </lista>
 </lista>
 
-<subsecao>Menu Admin per Menu</subsecao>
+<subsubsecao>Menu Admin per Menu</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/menu_admin_per_menu
@@ -103,29 +242,22 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   </lista>
 </lista>
 
-<subsecao>Display Suite</subsecao>
+<subsubsecao>Superfish</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/ds
-  <item/><b>Função</b>: gerenciamento do leiaute dos campos (node, comentários e usuário);
-  <item/><b>Uso</b>: /admin/structure/ds
+  <item/><b>Download</b>: https://drupal.org/project/superfish
+  <item/><b>Função</b>: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
+  <item/><b>Uso</b>:
   <lista>
-    <item/>acesse a opção 'manage display' ao editar um tipo de conteúdo;
-    <item/>identifique os views modes habilitados;
-    <item/>as páginas /node/[Id] usam o view mode 'default', se o 'Full Content' não for ativado;
-    <item/>selecione um leiaute para view mode 'default' deste tipo de conteúdo;
-    <item/>identifique os arquivos de template (.tpl.php) aplicáveis ao leiaute;
-    <item/>associe os campos do tipo de conteúdo às regiões do leiaute;
-    <item/>ativar o view mode para 'Full Content';
-    <item/>acesse um node;
-    <item/>desative o view mode 'Full Content';
-    <item/>crie o view mode 'Teaser small' (descrição) para a entidade 'node';
-    <item/>selecione o leiaute para o view mode 'Teaser small' e associe os campos;
-    <item/>crie uma view e use a configuração de exibição para conteúdo de 'Teaser small';
+    <item/>definir número de blocos de menu em configurações->interface do usuário;
+    <item/>desabilite a exibição do 'Main Menu' nas configurações do tema;
+    <item/>configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
   </lista>
-</lista>
+</lista>  
 
 <subsecao>Views</subsecao>
+
+<subsubsecao>Views</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/views
@@ -137,7 +269,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   </lista>
 </lista>
 
-<subsubsecao>Listar e Pesquisar views por nome e descrição administrativos</subsubsecao>
+<subsubsubsecao>Listar e Pesquisar views por nome e descrição administrativos</subsubsubsecao>
 
 <lista>
   <item/>listar views (nome, descrição administrativa, tags, path e operações);
@@ -149,7 +281,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   <item/>configuração: omitir aviso de ajuda avançada;
 </lista>
 
-<subsubsecao>Área de pré-visualização da view</subsubsecao>
+<subsubsubsecao>Área de pré-visualização da view</subsubsubsecao>
 
 <lista>
   <item/>editar rótulo de uma view (title);
@@ -160,7 +292,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   <item/>configuração avançada: adicionar o nome da view no SELECT (debug only);
 </lista>
 
-<subsubsecao>View de página e formato de tabela</subsubsecao>
+<subsubsubsecao>View de página e formato de tabela</subsubsubsecao>
 
 <lista>
   <item/>criar uma view de página para listar conteúdo (node);
@@ -182,7 +314,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   <item/>definir critérios de ordenação (por mês desc, por rótulo asc.);
 </lista> 
 
-<subsubsecao>View de bloco</subsubsecao>
+<subsubsubsecao>View de bloco</subsubsubsecao>
 
 <lista>
   <item/>configurar nome do bloco (padrão: “View: nome administrativo”);
@@ -197,7 +329,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   <item/>configurar o bloco para se exibido somente nas páginas 'user/*';
 </lista>
 
-<subsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsecao>
+<subsubsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsubsecao>
 
 <lista>
   <item/>configurar acesso por permissão ou por papel;
@@ -209,7 +341,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
   <item/>redefinir o breadcrumb quando o filtro contextual for ativado;
 </lista>
 
-<subsubsecao>View de bloco com filtro contextual a partir do node</subsubsecao>
+<subsubsubsecao>View de bloco com filtro contextual a partir do node</subsubsubsecao>
 
 <lista>
   <item/>adicionar campo de imagem com limite de 5 imagens ao tipo de conteúdo;
@@ -225,7 +357,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 de exibição para associar views de bloco à páginas de conteúdo (node) ou à
 página do perfil do usuário.
 
-<subsecao>Views Accordeon</subsecao>
+<subsubsecao>Views Accordeon</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/views_accordion
@@ -243,7 +375,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsubsecao>Filtro contextual em modo glossário</subsubsecao>
+<subsubsubsecao>Filtro contextual em modo glossário</subsubsubsecao>
 
 <lista>
   <item/>selecionar filtro contextual a partir do campo 'title';
@@ -261,7 +393,7 @@ página do perfil do usuário.
   <item/>desabilite a herança de filtros contextuais em qualquer caso;
 </lista>
 
-<subsecao>Views Slideshow</subsecao>
+<subsubsecao>Views Slideshow</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/views_slideshow
@@ -298,7 +430,7 @@ página do perfil do usuário.
     background-color: #bbb; border-radius: 5px; }
 </comando>
 
-<subsubsecao>Usar paginador como thumbnail da imagem</subsubsecao>
+<subsubsubsecao>Usar paginador como thumbnail da imagem</subsubsubsecao>
 
 <lista>
   <item/>configuração: adicionar paginador como thumbnail;
@@ -323,7 +455,7 @@ página do perfil do usuário.
     color:#ccc; text-shadow: 2px 2px 000; }
 </comando>
 
-<subsecao>Views Slideshow Configurable Controls</subsecao>
+<subsubsecao>Views Slideshow Configurable Controls</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/vscc
@@ -348,7 +480,31 @@ página do perfil do usuário.
     padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
 </comando>
 
-<subsecao>Link (Field)</subsecao>
+<subsecao>Node</subsecao>
+
+<subsubsecao>Display Suite</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/ds
+  <item/><b>Função</b>: gerenciamento do leiaute dos campos (node, comentários e usuário);
+  <item/><b>Uso</b>: /admin/structure/ds
+  <lista>
+    <item/>acesse a opção 'manage display' ao editar um tipo de conteúdo;
+    <item/>identifique os views modes habilitados;
+    <item/>as páginas /node/[Id] usam o view mode 'default', se o 'Full Content' não for ativado;
+    <item/>selecione um leiaute para view mode 'default' deste tipo de conteúdo;
+    <item/>identifique os arquivos de template (.tpl.php) aplicáveis ao leiaute;
+    <item/>associe os campos do tipo de conteúdo às regiões do leiaute;
+    <item/>ativar o view mode para 'Full Content';
+    <item/>acesse um node;
+    <item/>desative o view mode 'Full Content';
+    <item/>crie o view mode 'Teaser small' (descrição) para a entidade 'node';
+    <item/>selecione o leiaute para o view mode 'Teaser small' e associe os campos;
+    <item/>crie uma view e use a configuração de exibição para conteúdo de 'Teaser small';
+  </lista>
+</lista>
+
+<subsubsecao>Link (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/link
@@ -359,7 +515,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsubsecao>Link para Slideshow</subsubsecao>
+<subsubsubsecao>Link para Slideshow</subsubsubsecao>
 
 <lista>
   <item/>acesse as configurações da view no formato de slideshow;
@@ -374,98 +530,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Panels</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/panels
-  <item/><b>Função</b>: gerenciamento do leiaute de página e de bloco;
-  <item/><b>Dependência</b>: ctools (page manager, views content panes);
-  <item/><b>Uso</b>: /admin/structure/panels
-  <lista>
-    <item/>ativar módulos Page Manager, Panels e Stylizer;
-    <item/>visão geral dos elementos do módulo Panels (pages, mini, stylizer);
-  </lista>
-</lista>
-
-<subsubsecao>Panel Pages - /admin/structure/pages</subsubsecao>
-
-<lista>
-  <item/>listar páginas de painéis (panel page/custom page);
-  <item/>criar um painel (leiaute de página);
-  <item/>definir o rótulo administrativo do painel (interface administrativa);
-  <item/>definir a URL relativa do painel;
-  <item/>decidir se o novo painel será a página inicial do site;
-  <item/>definir o leiaute do painel (2-cols, 3-cols, bricks ou stacked);
-  <item/>definir se o leiaute se aplica ao Canvas ou a área do leiaute;
-  <item/>adicionar ou remover classes CSS do body (raramente usado);
-  <item/>definir se o usuário poderá trocar o conteúdo entre áreas do leiaute;
-  <item/>definir CSS ID para o novo painel;
-  <item/>adicionar código CSS para o painel;
-  <item/>definir ou remover o rótulo (title) do painel;
-  <item/>identificar as áreas do leiaute (top, left side, bottom, etc);
-  <item/>vincular conteúdo existente às áreas de leiaute (node, bloco, views);
-  <item/>definir a exibição do rótulo da área e do conteúdo;
-  <item/>definir a exibição de link no conteúdo para comentários;
-  <item/>definir a exibição de link para ler mais (quando em modo teaser);
-  <item/>definir modo de exibição (conteúdo completo, teaser ou RSS);
-  <item/>reorganizar o conteúdo do leiaute entre as áreas do leiaute;
-  <item/>travar posição (lock) do conteúdo vinculado (impede mudá-lo de área);
-  <item/>travar posição do conteúdo vinculado, limitado a áreas definidas;
-  <item/>adicionar painel variante;
-  <item/>clonar painel variante;
-  <item/>definir o leiaute do painel variante;
-  <item/>vincular conteúdo às áreas de leiaute do painel variante;
-  <item/>definir nome administrativo para o painel variante;
-  <item/>definir a ordem do painel variante (prioridade no teste das regras);
-  <item/>definir regras de seleção para cada painel variante;
-  <item/>definir regras de seleção a partir de papéis;
-  <item/>editar ou remover regras de seleção;
-  <item/>definir o operador lógico (AND, OR) das regras de seleção;
-  <item/>exportar e importar painel variante para outra página de painéis;
-  <item/>remover ou desabilitar painel variante;
-</lista>
-
-<subsubsecao>Stylizer - /admin/structure/stylizer</subsubsecao>
-
-<lista>
-  <item/>listar estilos customizável (custom style);
-  <item/>adicionar novo estilo;
-  <item/>definir estilo de área do leiaute (region) ou de seu conteúdo (pane);
-  <item/>definir estilo da borda (rounded shadow box ou plain);
-  <item/>definir cor de fundo, cor do texto, fonte, espaçamento, padding, etc, 
-  <item/>definir estilo como reutilizável (quando criado design de páginas);
-  <item/>exportar o estilo para utilização em outra instância do drupal;
-</lista>
-
-<subsubsecao>Mini Panels - /admin/structure/mini-panels</subsubsecao>
-
-<lista>
-  <item/>listar mini-painéis;
-  <item/>criar mini-painel (leiaute de bloco);
-  <item/>definir o rótulo, descrição e categoria administrativa do mini-painel;
-  <item/>definir o leiaute do mini-painel;
-  <item/>vincular conteúdo às áreas de leiaute do mini-painel;
-  <item/>associar mini-painel a uma região do tema (bloco);
-  <item/>exportar e importar mini-painéis (em outra instância do drupal);
-  <item/>vincular mini-painéis em áreas (região) de páginas de painéis;
-</lista>
-
-<subsubsecao>Layout - /admin/structure/panels/layouts</subsubsecao>
-
-<lista>
-  <item/>listar leiautes (Panels -> Layouts);
-  <item/>criar um novo leiaute para páginas de painéis (flexible layout);
-  <item/>definir o rótulo administrativo do leiaute;
-  <item/>definir categoria do leiaute;
-  <item/>adicionar colunas, linhas e regiões (áreas do leiaute);
-  <item/>redimensionar colunas;
-  <item/>ativar Panels In-Place Editor;
-  <item/>identificar Panels In-Place Editor;
-  <item/>ativar módulo Panel nodes;
-  <item/>redefinir leiaute de um tipo de conteúdo;
-</lista>
-
-<subsecao>File (Field) Paths</subsecao>
+<subsubsecao>File (Field) Paths</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/filefield_paths
@@ -487,7 +552,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Token</subsecao>
+<subsubsecao>Token</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/token
@@ -500,7 +565,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Transliteration</subsecao>
+<subsubsecao>Transliteration</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/transliteration
@@ -513,7 +578,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Pathauto</subsecao>
+<subsubsecao>Pathauto</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/pathauto
@@ -525,7 +590,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Submitted By</subsecao>
+<subsubsecao>Submitted By</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/submitted_by
@@ -537,24 +602,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Path Breadcrumbs</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/path_breadcrumbs
-  <item/><b>Dependência</b>: https://drupal.org/project/entity
-  <item/><b>Função</b>: permite definir o breadcrumb a partir de expressões;
-  <item/><b>Uso</b>: /admin/structure/path-breadcrumbs
-  <lista>
-    <item/>configure o breadcrumbs para nodes do tipo Artigo;
-    <item/>usar o path 'node/%node';
-    <item/>definir o contexto 'Node: ID';
-    <item/>definir regra de seleção para 'Node: type': Article;
-    <item/>definir rótulo (title) e path para cada nó do breadcrumb;
-    <item/>definir rótulo (title) '%node:title' e link '<none >';
-  </lista>
-</lista>
-
-<subsecao>IMCE</subsecao>
+<subsubsecao>IMCE</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/imce
@@ -565,7 +613,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>CKEditor</subsecao>
+<subsubsecao>CKEditor</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/ckeditor
@@ -588,29 +636,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Nodeblock</subsecao>
-
-<lista>
-  <item/><b>Download (Drupal 7)</b>: https://drupal.org/project/nodeblock
-  <item/><b>Download (Drupal 8)</b>: https://drupal.org/project/entityblock
-  <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
-</lista>
-
-<subsecao>Flood control</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/flood_control
-  <item/><b>Função</b>: interface para controlar variáveis de falha de login;
-  <item/><b>URL</b>: /admin/config/system/flood-control
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>acessar <i>Configurações -> Sistema -> Flood control</i>;
-    <item/>configurar limite para erros de autenticação para o usuário;
-    <item/>configurar limite para erros de autenticação para o IP de requisição;
-  </lista>
-</lista>
-
-<subsecao>Advanced Poll</subsecao>
+<subsubsecao>Advanced Poll</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/advpoll
@@ -618,7 +644,7 @@ página do perfil do usuário.
   <item/><b>Função</b>: tipo de conteúdo para votações de múltipla escolha;
 </lista>
 
-<subsecao>Fivestar (Field)</subsecao>
+<subsubsecao>Fivestar (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/fivestar
@@ -626,21 +652,21 @@ página do perfil do usuário.
   <item/><b>Função</b>: campo (field) para votação por meio de estrelas;
 </lista>
 
-<subsecao>Flag</subsecao>
+<subsubsecao>Flag</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/flag
   <item/><b>Função</b>: integração para selecionar (bookmark) conteúdos;
 </lista>
 
-<subsecao>Webform</subsecao>
+<subsubsecao>Webform</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/webform
   <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
 </lista>
 
-<subsecao>ShareThis</subsecao>
+<subsubsecao>ShareThis</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/sharethis
@@ -651,40 +677,14 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Social Media</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/socialmedia
-  <item/><b>Função</b>: bloco de ícones com links para redes sociais;
-</lista>
-
-<subsecao>Footer Sitemap</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/footer_sitemap
-  <item/><b>Função</b>: gerar mapa do site em formato de colunas para uso no rodapé;
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
-    <item/>vincular bloco 'Footer Sitemap' a uma região do tema;
-  </lista>
-</lista>
-
-<subsecao>Masquerade</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/masquerade
-  <item/><b>Função</b>: permite logar no site como outro usuário;
-</lista>
-
-<subsecao>Entity Reference (Field)</subsecao>
+<subsubsecao>Entity Reference (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/entityreference
   <item/><b>Função</b>: campo que relaciona um node a outro tipo de node (Node de Pessoa com o Node de Livro);
 </lista>
 
-<subsecao>Date (Field)</subsecao>
+<subsubsecao>Date (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/date
@@ -696,7 +696,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Youtube (Field)</subsecao>
+<subsubsecao>Youtube (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/youtube
@@ -708,7 +708,7 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Iframe (Field)</subsecao>
+<subsubsecao>Iframe (Field)</subsubsecao>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/iframe
@@ -721,116 +721,109 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsecao>Backup and Migrate</subsecao>
+<subsecao>Panels</subsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/backup_migrate
-  <item/><b>Função</b>: exporta a database e arquivos com opção de agendamento;
-  <item/><b>Uso</b>: /admin/config/system/backup_migrate
+  <item/><b>Download</b>: https://drupal.org/project/panels
+  <item/><b>Função</b>: gerenciamento do leiaute de página e de bloco;
+  <item/><b>Dependência</b>: ctools (page manager, views content panes);
+  <item/><b>Uso</b>: /admin/structure/panels
   <lista>
-    <item/>configurar diretório privado de arquivos (config/media/file-system)
-    <item/>sites/default/files/private;
-    <item/>realizar backup rápido;
-    <item/>criar profile para backup com lock das tabelas e site offline;
-    <item/>criar agendamento para backup a cada 3 horas [usar profile default];
-    <item/>criar agendamento para backup semanal [usar profile com lock de tabelas];
+    <item/>ativar módulos Page Manager, Panels e Stylizer;
+    <item/>visão geral dos elementos do módulo Panels (pages, mini, stylizer);
   </lista>
 </lista>
 
-<subsecao>Superfish</subsecao>
+<subsubsecao>Panel Pages</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/superfish
-  <item/><b>Função</b>: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
+  <item/><b>URL</b>: /admin/structure/pages
   <item/><b>Uso</b>:
   <lista>
-    <item/>definir número de blocos de menu em configurações->interface do usuário;
-    <item/>desabilite a exibição do 'Main Menu' nas configurações do tema;
-    <item/>configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
+    <item/>listar páginas de painéis (panel page/custom page);
+    <item/>criar um painel (leiaute de página);
+    <item/>definir o rótulo administrativo do painel (interface administrativa);
+    <item/>definir a URL relativa do painel;
+    <item/>decidir se o novo painel será a página inicial do site;
+    <item/>definir o leiaute do painel (2-cols, 3-cols, bricks ou stacked);
+    <item/>definir se o leiaute se aplica ao Canvas ou a área do leiaute;
+    <item/>adicionar ou remover classes CSS do body (raramente usado);
+    <item/>definir se o usuário poderá trocar o conteúdo entre áreas do leiaute;
+    <item/>definir CSS ID para o novo painel;
+    <item/>adicionar código CSS para o painel;
+    <item/>definir ou remover o rótulo (title) do painel;
+    <item/>identificar as áreas do leiaute (top, left side, bottom, etc);
+    <item/>vincular conteúdo existente às áreas de leiaute (node, bloco, views);
+    <item/>definir a exibição do rótulo da área e do conteúdo;
+    <item/>definir a exibição de link no conteúdo para comentários;
+    <item/>definir a exibição de link para ler mais (quando em modo teaser);
+    <item/>definir modo de exibição (conteúdo completo, teaser ou RSS);
+    <item/>reorganizar o conteúdo do leiaute entre as áreas do leiaute;
+    <item/>travar posição (lock) do conteúdo vinculado (impede mudá-lo de área);
+    <item/>travar posição do conteúdo vinculado, limitado a áreas definidas;
+    <item/>adicionar painel variante;
+    <item/>clonar painel variante;
+    <item/>definir o leiaute do painel variante;
+    <item/>vincular conteúdo às áreas de leiaute do painel variante;
+    <item/>definir nome administrativo para o painel variante;
+    <item/>definir a ordem do painel variante (prioridade no teste das regras);
+    <item/>definir regras de seleção para cada painel variante;
+    <item/>definir regras de seleção a partir de papéis;
+    <item/>editar ou remover regras de seleção;
+    <item/>definir o operador lógico (AND, OR) das regras de seleção;
+    <item/>exportar e importar painel variante para outra página de painéis;
+    <item/>remover ou desabilitar painel variante;
   </lista>
-</lista>  
+</lista>
 
-<subsecao>Responsive menu</subsecao>
+<subsubsecao>Stylizer</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/responsive_menus
-  <item/><b>Função</b>: substituir menu por menu responsivo a partir do tamanho da tela;
+  <item/><b>URL</b>: /admin/structure/stylizer
   <item/><b>Uso</b>:
   <lista>
-    <item/>instalar e ativar módulo;
-    <item/>identificar a classe ou id da tag 'ul' do menu que será responsivo;
-    <item/>configurar o menu responsivo em configuração - interface do usuário;
-    <item/>adicionar seletor CSS para identificar a tag 'ul' o menu;
-    <item/>definir tamanho da tela que ativará a substituição do menu (screen width);
+    <item/>listar estilos customizável (custom style);
+    <item/>adicionar novo estilo;
+    <item/>definir estilo de área do leiaute (region) ou de seu conteúdo (pane);
+    <item/>definir estilo da borda (rounded shadow box ou plain);
+    <item/>definir cor de fundo, cor do texto, fonte, espaçamento, padding, etc, 
+    <item/>definir estilo como reutilizável (quando criado design de páginas);
+    <item/>exportar o estilo para utilização em outra instância do drupal;
   </lista>
 </lista>
 
-    O módulo <b>Responsive menu</b> pode ser útil para criar temas
-standalone, sub-temas do Zen ou para temas adaptativos que não possuem menu
-responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
-
-<subsecao>Fitvids</subsecao>
+<subsubsecao>Mini Panels</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/fitvids
-  <item/><b>Função</b>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
-  <item/><b>Dependência</b>: Libraries API, jquery.fitvids.js, jquery_update;
+  <item/><b>URL</b>: /admin/structure/mini-panels
   <item/><b>Uso</b>:
   <lista>
-    <item/>instalar e ativar módulo;
-    <item/>adicionar seletor CSS para identificar o vídeo;
+    <item/>listar mini-painéis;
+    <item/>criar mini-painel (leiaute de bloco);
+    <item/>definir o rótulo, descrição e categoria administrativa do mini-painel;
+    <item/>definir o leiaute do mini-painel;
+    <item/>vincular conteúdo às áreas de leiaute do mini-painel;
+    <item/>associar mini-painel a uma região do tema (bloco);
+    <item/>exportar e importar mini-painéis (em outra instância do drupal);
+    <item/>vincular mini-painéis em áreas (região) de páginas de painéis;
   </lista>
 </lista>
 
-<subsecao>String overrides</subsecao>
+<subsubsecao>Layout</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/stringoverrides
-  <item/><b>Função</b>: regras de substituição de texto;
+  <item/><b>URL</b>: /admin/structure/panels/layouts
   <item/><b>Uso</b>:
   <lista>
-    <item/>instalar e ativar módulo;
-    <item/>adicionar string para substituição em configurações regionais e de idioma;
+    <item/>listar leiautes (Panels -> Layouts);
+    <item/>criar um novo leiaute para páginas de painéis (flexible layout);
+    <item/>definir o rótulo administrativo do leiaute;
+    <item/>definir categoria do leiaute;
+    <item/>adicionar colunas, linhas e regiões (áreas do leiaute);
+    <item/>redimensionar colunas;
+    <item/>ativar Panels In-Place Editor;
+    <item/>identificar Panels In-Place Editor;
+    <item/>ativar módulo Panel nodes;
+    <item/>redefinir leiaute de um tipo de conteúdo;
   </lista>
 </lista>
-
-<subsecao>Context</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/context
-  <item/><b>Dependência</b>: https://drupal.org/project/ctools
-  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
-  <item/><b>Uso</b>: /admin/structure/context
-  <lista>
-    <item/>criar regras de contexto;
-    <item/>adicionar condição (ex: se página for <front >);
-    <item/>adicionar reação (ex: exibir determinado bloco);
-  </lista>
-</lista>
-
-<subsecao>LDAP</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/ldap
-  <item/><b>Dependência</b>: https://drupal.org/project/entity
-  <item/><b>Função</b>: integra a autenticação e autorização por meio do protocolo LDAP;
-  <item/><b>Uso</b>: /admin/config/people/ldap
-  <lista>
-    <item/>ativar o módulo LDAP Servers a configurar o servidor LDAP:
-    <item/>ativar o módulo LDAP Users e configurar a sincronização de dados do LDAP;
-    <item/>ativar o módulo LDAP Authentication e configurar a autenticação no servidor LDAP;
-    <item/>ativar o módulo LDAP Authorization Role e configurar a autorização de grupos do LDAP para roles:
-  </lista>
-</lista>
-
-<subsecao>Reg with Pic</subsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/reg_with_pic
-  <item/><b>Função</b>: adiciona à interface de registro de usuários o campo para imagem do perfil;
-  <item/><b>Uso</b>:
-</lista>
-
-    A instalação do módulo <b>Reg with Pic</b> permite que o módulo <b>LDAP
-User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
-campo de imagem do perfil do usuário <u>no primeiro login</u>;
