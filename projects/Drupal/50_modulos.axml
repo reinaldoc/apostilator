@@ -10,7 +10,7 @@
 <subsecao>Devel Generate</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/devel
+  <item/><b>Download</b>: https://drupal.org/project/devel
   <item/><b>Função</b>: gerar usuários, menus, taxonomias e conteúdos;
   <item/><b>Uso</b>: /admin/config/development
   <lista>
@@ -22,7 +22,7 @@
 <subsecao>Administration Menu</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/admin_menu
+  <item/><b>Download</b>: https://drupal.org/project/admin_menu
   <item/><b>Função</b>: adiciona capacidade de 'drop-down' para a barra administrativa;
   <item/><b>Uso</b>:
   <lista>
@@ -38,7 +38,7 @@ segurança, parece ser prudente desabilitá-lo em produção.
 <subsecao>Image Block</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/imageblock
+  <item/><b>Download</b>: https://drupal.org/project/imageblock
   <item/><b>Função</b>: permite criar blocos contendo imagem acima do texto;
   <item/><b>Uso</b>: /admin/structure/block/imageblock_add
   <lista>
@@ -53,7 +53,7 @@ IMCE).
 <subsecao>Menu block</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/menu_block
+  <item/><b>Download</b>: https://drupal.org/project/menu_block
   <item/><b>Função</b>: permite criar blocos a partir de um submenu;
   <item/><b>Uso</b>: /admin/structure/block/add-menu-block
   <lista>
@@ -71,7 +71,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsecao>Menu attributes</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/menu_attributes
+  <item/><b>Download</b>: https://drupal.org/project/menu_attributes
   <item/><b>Função</b>: adiciona opções de ID, classes, estilos, target e access key aos menus;
   <item/><b>Uso</b>: 
   <lista>
@@ -82,19 +82,19 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsecao>Special menu items</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/special_menu_items
+  <item/><b>Download</b>: https://drupal.org/project/special_menu_items
   <item/><b>Função</b>: permite os valores especiais como endereço do item de menu;
   <item/><b>Uso</b>:
   <lista>
     <item/>edite um item de menu;
-    <item/>use as tags <i>nolink</i> ou <i>separator</i> como endereço (entre <>);
+    <item/>use as tags <i><nolink ></i> ou <i><separator ></i> como endereço;
   </lista>
 </lista>
 
 <subsecao>Menu Admin per Menu</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/menu_admin_per_menu
+  <item/><b>Download</b>: https://drupal.org/project/menu_admin_per_menu
   <item/><b>Função</b>: permite associar um papel (role) para administrar cada menu;
   <item/><b>Uso</b>: /admin/people/permissions
   <lista>
@@ -106,7 +106,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsecao>Display Suite</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/ds
+  <item/><b>Download</b>: https://drupal.org/project/ds
   <item/><b>Função</b>: gerenciamento do leiaute dos campos (node, comentários e usuário);
   <item/><b>Uso</b>: /admin/structure/ds
   <lista>
@@ -128,7 +128,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsecao>Views</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/views
+  <item/><b>Download</b>: https://drupal.org/project/views
   <item/><b>Dependência</b>: https://drupal.org/project/ctools
   <item/><b>Função</b>: listagem de conteúdo (node) em diversos formatos: tabela, grid, slideshow;
   <item/><b>Uso</b>: /admin/structure/views
@@ -228,7 +228,7 @@ página do perfil do usuário.
 <subsecao>Views Accordeon</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/views_accordion
+  <item/><b>Download</b>: https://drupal.org/project/views_accordion
   <item/><b>Função</b>: construir lista de conteúdo (node) em formato de acordeões;
   <item/><b>Uso</b>:
   <lista>
@@ -264,7 +264,7 @@ página do perfil do usuário.
 <subsecao>Views Slideshow</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/views_slideshow
+  <item/><b>Download</b>: https://drupal.org/project/views_slideshow
   <item/><b>Função</b>: construir slideshow a partir de conteúdos ou imagens;
   <item/><b>Dependências</b>: “ctools”, “Views UI”, “Views Slideshow: Cycle”, “Libraries”;
   <lista>
@@ -326,7 +326,7 @@ página do perfil do usuário.
 <subsecao>Views Slideshow Configurable Controls</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/vscc
+  <item/><b>Download</b>: https://drupal.org/project/vscc
   <item/><b>Função</b>: permite customizar os controles do slideshow em views;
   <item/><b>Uso</b>:
   <lista>
@@ -351,7 +351,7 @@ página do perfil do usuário.
 <subsecao>Link (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/link
+  <item/><b>Download</b>: https://drupal.org/project/link
   <item/><b>Função</b>: permite adicionar campo com link aos tipos de conteúdo;
   <item/><b>Uso</b>:
   <lista>
@@ -377,7 +377,7 @@ página do perfil do usuário.
 <subsecao>Panels</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/panels
+  <item/><b>Download</b>: https://drupal.org/project/panels
   <item/><b>Função</b>: gerenciamento do leiaute de página e de bloco;
   <item/><b>Dependência</b>: ctools (page manager, views content panes);
   <item/><b>Uso</b>: /admin/structure/panels
@@ -468,7 +468,7 @@ página do perfil do usuário.
 <subsecao>File (Field) Paths</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/filefield_paths
+  <item/><b>Download</b>: https://drupal.org/project/filefield_paths
   <item/><b>Função</b>: fornece máscara para renomear arquivos no upload;
   <item/><b>Uso</b>:
   <lista>
@@ -490,9 +490,9 @@ página do perfil do usuário.
 <subsecao>Token</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/token
+  <item/><b>Download</b>: https://drupal.org/project/token
   <item/><b>Função</b>: fornece tokens [tipo:atributo:valor] para vários fins;
-  <item/><b>Tokens</b>: https://www.drupal.org/node/390482
+  <item/><b>Tokens</b>: https://drupal.org/node/390482
   <item/><b>Uso</b>:
   <lista>
     <item/>tokens são suportados em diversos locais no drupal;
@@ -503,7 +503,7 @@ página do perfil do usuário.
 <subsecao>Transliteration</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/transliteration
+  <item/><b>Download</b>: https://drupal.org/project/transliteration
   <item/><b>Função</b>: substituição e remoção de caracteres acentuados do nome do arquivo durante upload;
   <item/><b>Uso</b>:
   <lista>
@@ -516,7 +516,7 @@ página do perfil do usuário.
 <subsecao>Pathauto</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/pathauto
+  <item/><b>Download</b>: https://drupal.org/project/pathauto
   <item/><b>Função</b>: gerar URLs amigáveis do conteúdo baseado em seu título;
   <item/><b>Uso</b>:
   <lista>
@@ -528,7 +528,7 @@ página do perfil do usuário.
 <subsecao>Submitted By</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/submitted_by
+  <item/><b>Download</b>: https://drupal.org/project/submitted_by
   <item/><b>Dependência</b>: Token
   <item/><b>Função</b>: customiza a identificação do autor do conteúdo (node);
   <item/><b>Uso</b>:
@@ -540,7 +540,7 @@ página do perfil do usuário.
 <subsecao>Path Breadcrumbs</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/path_breadcrumbs
+  <item/><b>Download</b>: https://drupal.org/project/path_breadcrumbs
   <item/><b>Dependência</b>: https://drupal.org/project/entity
   <item/><b>Função</b>: permite definir o breadcrumb a partir de expressões;
   <item/><b>Uso</b>: /admin/structure/path-breadcrumbs
@@ -550,14 +550,14 @@ página do perfil do usuário.
     <item/>definir o contexto 'Node: ID';
     <item/>definir regra de seleção para 'Node: type': Article;
     <item/>definir rótulo (title) e path para cada nó do breadcrumb;
-    <item/>definir rótulo (title) '%node:title' e link '<none>';
+    <item/>definir rótulo (title) '%node:title' e link '<none >';
   </lista>
 </lista>
 
 <subsecao>IMCE</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/imce
+  <item/><b>Download</b>: https://drupal.org/project/imce
   <item/><b>Função</b>: uploader de arquivos;
   <item/><b>Uso</b>: /admin/config/media/imce
   <lista>
@@ -568,7 +568,7 @@ página do perfil do usuário.
 <subsecao>CKEditor</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/ckeditor
+  <item/><b>Download</b>: https://drupal.org/project/ckeditor
   <item/><b>Função</b>: editor HTML visual (WYSIWYG);
   <item/><b>Instalação</b>:
   <lista>
@@ -591,22 +591,29 @@ página do perfil do usuário.
 <subsecao>Nodeblock</subsecao>
 
 <lista>
-  <item/><b>URL (Drupal 7)</b>: https://www.drupal.org/project/nodeblock
-  <item/><b>URL (Drupal 8)</b>: https://www.drupal.org/project/entityblock
+  <item/><b>Download (Drupal 7)</b>: https://drupal.org/project/nodeblock
+  <item/><b>Download (Drupal 8)</b>: https://drupal.org/project/entityblock
   <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
 </lista>
 
 <subsecao>Flood control</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/ckeditor
+  <item/><b>Download</b>: https://drupal.org/project/flood_control
   <item/><b>Função</b>: interface para controlar variáveis de falha de login;
+  <item/><b>URL</b>: /admin/config/system/flood-control
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>acessar <i>Configurações -> Sistema -> Flood control</i>;
+    <item/>configurar limite para erros de autenticação para o usuário;
+    <item/>configurar limite para erros de autenticação para o IP de requisição;
+  </lista>
 </lista>
 
 <subsecao>Advanced Poll</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/advpoll
+  <item/><b>Download</b>: https://drupal.org/project/advpoll
   <item/><b>Dependência</b>: https://drupal.org/project/votingapi
   <item/><b>Função</b>: tipo de conteúdo para votações de múltipla escolha;
 </lista>
@@ -614,7 +621,7 @@ página do perfil do usuário.
 <subsecao>Fivestar (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/fivestar
+  <item/><b>Download</b>: https://drupal.org/project/fivestar
   <item/><b>Dependência</b>: https://drupal.org/project/votingapi
   <item/><b>Função</b>: campo (field) para votação por meio de estrelas;
 </lista>
@@ -622,21 +629,21 @@ página do perfil do usuário.
 <subsecao>Flag</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/flag
+  <item/><b>Download</b>: https://drupal.org/project/flag
   <item/><b>Função</b>: integração para selecionar (bookmark) conteúdos;
 </lista>
 
 <subsecao>Webform</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/webform
+  <item/><b>Download</b>: https://drupal.org/project/webform
   <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
 </lista>
 
 <subsecao>ShareThis</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/sharethis
+  <item/><b>Download</b>: https://drupal.org/project/sharethis
   <item/><b>Função</b>: integração para compartilhar nodes em redes sociais;
   <item/><b>Uso</b>:
   <lista>
@@ -647,14 +654,14 @@ página do perfil do usuário.
 <subsecao>Social Media</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/socialmedia
+  <item/><b>Download</b>: https://drupal.org/project/socialmedia
   <item/><b>Função</b>: bloco de ícones com links para redes sociais;
 </lista>
 
 <subsecao>Footer Sitemap</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/footer_sitemap
+  <item/><b>Download</b>: https://drupal.org/project/footer_sitemap
   <item/><b>Função</b>: gerar mapa do site em formato de colunas para uso no rodapé;
   <item/><b>Uso</b>:
   <lista>
@@ -666,21 +673,21 @@ página do perfil do usuário.
 <subsecao>Masquerade</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/masquerade
+  <item/><b>Download</b>: https://drupal.org/project/masquerade
   <item/><b>Função</b>: permite logar no site como outro usuário;
 </lista>
 
 <subsecao>Entity Reference (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/entityreference
+  <item/><b>Download</b>: https://drupal.org/project/entityreference
   <item/><b>Função</b>: campo que relaciona um node a outro tipo de node (Node de Pessoa com o Node de Livro);
 </lista>
 
 <subsecao>Date (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/date
+  <item/><b>Download</b>: https://drupal.org/project/date
   <item/><b>Função</b>: campo (field) para datas e widget (Date Popup);
   <item/><b>Uso</b>:
   <lista>
@@ -692,7 +699,7 @@ página do perfil do usuário.
 <subsecao>Youtube (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/youtube
+  <item/><b>Download</b>: https://drupal.org/project/youtube
   <item/><b>Função</b>: campo (field) para vídeos do youtube;
   <item/><b>Uso</b>:
   <lista>
@@ -704,7 +711,7 @@ página do perfil do usuário.
 <subsecao>Iframe (Field)</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/iframe
+  <item/><b>Download</b>: https://drupal.org/project/iframe
   <item/><b>Função</b>: campo (field) para inserção de URL para iframe;
   <item/><b>Uso</b>:
   <lista>
@@ -717,7 +724,7 @@ página do perfil do usuário.
 <subsecao>Backup and Migrate</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/backup_migrate
+  <item/><b>Download</b>: https://drupal.org/project/backup_migrate
   <item/><b>Função</b>: exporta a database e arquivos com opção de agendamento;
   <item/><b>Uso</b>: /admin/config/system/backup_migrate
   <lista>
@@ -733,7 +740,7 @@ página do perfil do usuário.
 <subsecao>Superfish</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/superfish
+  <item/><b>Download</b>: https://drupal.org/project/superfish
   <item/><b>Função</b>: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
   <item/><b>Uso</b>:
   <lista>
@@ -746,7 +753,7 @@ página do perfil do usuário.
 <subsecao>Responsive menu</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/responsive_menus
+  <item/><b>Download</b>: https://drupal.org/project/responsive_menus
   <item/><b>Função</b>: substituir menu por menu responsivo a partir do tamanho da tela;
   <item/><b>Uso</b>:
   <lista>
@@ -765,7 +772,7 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsecao>Fitvids</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/fitvids
+  <item/><b>Download</b>: https://drupal.org/project/fitvids
   <item/><b>Função</b>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
   <item/><b>Dependência</b>: Libraries API, jquery.fitvids.js, jquery_update;
   <item/><b>Uso</b>:
@@ -778,7 +785,7 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsecao>String overrides</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/stringoverrides
+  <item/><b>Download</b>: https://drupal.org/project/stringoverrides
   <item/><b>Função</b>: regras de substituição de texto;
   <item/><b>Uso</b>:
   <lista>
@@ -790,13 +797,13 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsecao>Context</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/context
+  <item/><b>Download</b>: https://drupal.org/project/context
   <item/><b>Dependência</b>: https://drupal.org/project/ctools
   <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
   <item/><b>Uso</b>: /admin/structure/context
   <lista>
     <item/>criar regras de contexto;
-    <item/>adicionar condição (ex: se página for <front>);
+    <item/>adicionar condição (ex: se página for <front >);
     <item/>adicionar reação (ex: exibir determinado bloco);
   </lista>
 </lista>
@@ -804,7 +811,7 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsecao>LDAP</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/ldap
+  <item/><b>Download</b>: https://drupal.org/project/ldap
   <item/><b>Dependência</b>: https://drupal.org/project/entity
   <item/><b>Função</b>: integra a autenticação e autorização por meio do protocolo LDAP;
   <item/><b>Uso</b>: /admin/config/people/ldap
@@ -819,10 +826,11 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsecao>Reg with Pic</subsecao>
 
 <lista>
-  <item/><b>URL</b>: https://www.drupal.org/project/reg_with_pic
-  <item/><b>Função</b>: adiciona a interface de registro de usuários um campo para imagem;
+  <item/><b>Download</b>: https://drupal.org/project/reg_with_pic
+  <item/><b>Função</b>: adiciona à interface de registro de usuários o campo para imagem do perfil;
   <item/><b>Uso</b>:
-  <lista>
-    <item/>o módulo LDAP User possa sincronizar a thumbailPhoto no primeiro login;
-  </lista>
 </lista>
+
+    A instalação do módulo <b>Reg with Pic</b> permite que o módulo <b>LDAP
+User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
+campo de imagem do perfil do usuário <u>no primeiro login</u>;
