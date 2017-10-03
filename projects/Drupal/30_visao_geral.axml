@@ -1,5 +1,13 @@
 <capitulo>Visão geral do Drupal</capitulo>
 
+    O Drupal foi implementado para ser altamente customizável, o que levou ao
+desenvolvimento de quatro estruturas genéricas: blocos, tipos de conteúdo,
+menus e taxonomias, que compõe seu núcleo.
+
+    De forma similar a um framework de programação, as estruturas do Drupal
+foram desenvolvidas com inúmeros pontos de integração que são utilizados
+para extendê-las por meio de módulos.
+
 <subsecao>Estrutura</subsecao>
 
 <lista>
