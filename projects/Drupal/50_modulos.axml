@@ -712,7 +712,16 @@ página do perfil do usuário.
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/entityreference
-  <item/><b>Função</b>: campo que relaciona um node a outro tipo de node (Node de Pessoa com o Node de Livro);
+  <item/><b>Função</b>: campo que relaciona um node a outro node (Node de
+Pessoa com o Node de Livro);
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione um campo do tipo <b>Entity Reference</b> a qualquer node;
+    <item/>defina a forma de exibição do campo (autocomplete, select list or
+checkbox/radio);
+    <item/>defina o relacionamento (<i>target type</i>) para node, usuário,
+termo ou vocabulário de taxonomia; 
+  </lista>
 </lista>
 
 <subsubsecao>Date (Field)</subsubsecao>
