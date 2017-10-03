@@ -129,6 +129,20 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
   </lista>
 </lista>
 
+<subsubsecao>Context</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/context
+  <item/><b>Dependência</b>: https://drupal.org/project/ctools
+  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
+  <item/><b>Uso</b>: /admin/structure/context
+  <lista>
+    <item/>criar regras de contexto;
+    <item/>adicionar condição (ex: se página for <front >);
+    <item/>adicionar reação (ex: exibir determinado bloco);
+  </lista>
+</lista>
+
 <subsecao>Blocos</subsecao>
 
 <subsubsecao>Image Block</subsubsecao>
@@ -177,18 +191,31 @@ uma área sem região customizável pela configuração do tema.
   <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
 </lista>
 
-<subsubsecao>Context</subsubsecao>
+<subsubsecao>QuickTabs</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/context
+  <item/><b>Download</b>: https://drupal.org/project/quicktabs
   <item/><b>Dependência</b>: https://drupal.org/project/ctools
-  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
-  <item/><b>Uso</b>: /admin/structure/context
+  <item/><b>Função</b>: bloco com abas compostas por outros blocos, nodes, views ou qtabs;
+  <item/><b>Uso</b>: /admin/structure/quicktabs
   <lista>
-    <item/>criar regras de contexto;
-    <item/>adicionar condição (ex: se página for <front >);
-    <item/>adicionar reação (ex: exibir determinado bloco);
+    <item/>adicionar uma quicktab;
   </lista>
+</lista>
+
+    O submódulo <b>Quicktabs Styles</b> fornece estilos, que estão disponíveis
+somente para o formato quicktabs (<i>renderer</i>). Os formatos ui_tabs e
+accordion podem ser customizados por meio de CSS em subtema.
+
+<subsubsubsecao>QuickTabs em formato de Accordion</subsubsubsecao>
+
+<lista>
+    <item/>adicionar uma quicktab;
+    <item/>selecionar formato de accordion (<i>renderer</i>);
+    <item/>opcional: memorizar aba ativa quando usar a opção voltar do navegador (<i>history</i>);
+    <item/>opcional: ativar altura automática;
+    <item/>opcional: permitir que todas as tabs sejam fechadas (<i>collapsible</i>);
+    <item/>vincular cada aba a uma bloco, node, view ou qtab;
 </lista>
 
 <subsecao>Menu</subsecao>
