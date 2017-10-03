@@ -153,6 +153,10 @@ IMCE).
   <item/><b>Função</b>: bloco de ícones com links para redes sociais;
 </lista>
 
+    O módulo <b>Social Media</b> é desnecessário em projetos que o tema já
+fornece ícones para links de redes sociais. Nesse caso, os ícones estarão em
+uma área sem região customizável pela configuração do tema.
+
 <subsubsecao>Footer Sitemap</subsubsecao>
 
 <lista>
