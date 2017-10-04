@@ -49,6 +49,7 @@ sobre este material podem ser enviadas ao autor e serão consideradas para
 aprimoramento do material.
 
 <subsecao>Compilação de <i>software</i> X <i>software</i> da distribuição/sistema operacional</subsecao>
+<nome>compilacao-vs-pacote</nome>
 
     O acesso ao código fonte do <i>software</i> e sua compilação, é uma das
 liberdades propiciadas pelo <i>software livre</i>. Entretanto, o <i>software</i>

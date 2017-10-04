@@ -2,6 +2,9 @@
 
     Este capítulo contém os procedimentos para instalação e configuração
 essencial dos pacotes de software necessários para a execução do Drupal.
+Foi exposto na seção<ref>compilacao-vs-pacote</ref> as vatangens do uso de uma
+distribuição para o fornecimento de softwares estáveis e das respectivas
+correções de falhas de segurança.
 
 <subsecao>Apache e PHP</subsecao>
 
