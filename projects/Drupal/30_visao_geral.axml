@@ -36,7 +36,7 @@
 
 <lista>
   <item/><b>URL</b>: /admin/structure/block
-  <item/><b>Conceito</b>: O bloco é a unidade que pode ser associada uma
+  <item/><b>Conceito</b>: O bloco é a unidade que pode ser associada a uma
 região do tema, pode ser criado a partir de um trecho de código HTML ou
 fornecido por algum módulo.
   <item/><b>Atividades</b>:
@@ -68,8 +68,9 @@ autenticados, denominados anônimos, possam utilizar o bloco 'Search form'.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/menu
-  <item/><b>Conceito</b>: Todo menu é um bloco que deve ser associado a uma
-região do tema pela interface de blocos.
+  <item/><b>Conceito</b>: Um menu é formado por um conjunto de links (itens de
+menu) que podem ser organizados hierarquicamente em vários níveis. Todo menu é
+um bloco que deve ser associado a uma região do tema pela interface de blocos.
   <item/><b>Atividades</b>:
   <lista>
     <item/>configuração: definir menu principal e secundário;
@@ -86,44 +87,59 @@ região do tema pela interface de blocos.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/types
-</lista>
-
-<lista>
-<item/>adição de tipo de conteúdo;
-<item/>configuração de submissão, publicação (revisão) e comentários;
-<item/>configuração de exibição do autor do conteúdo;
-<item/>configuração de menus autorizados para inserção de item;
-<item/>adição de campos (tipo de dado[text,image,list,term] e widgets);
-<item/>configuração de campo (tamanho máximo, número de valores);
-<item/>configuração de campo para cada tipo de conteúdo (valor padrão, etc);
-<item/>gerenciar exibição do campo (peso, posição do label e formato);
+  <item/><b>Conceito</b>: Um tipo de conteúdo é formado por campos de texto,
+numéricos (inteiro, float), boleanos, de imagem, de arquivo, de lista de texto
+ou de números (checkbox, radio, autocomplete) e lista de termos de determinada
+taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos,
+como campos para data, link e relacionamento com outro tipo de conteúdo.
+  <item/><b>Atividades</b>:
+  <lista>
+  <item/>adição de tipo de conteúdo;
+  <item/>configuração de submissão, publicação (revisão) e comentários;
+  <item/>configuração de exibição do autor do conteúdo;
+  <item/>configuração de menus autorizados para inserção de item;
+  <item/>adição de campos (tipo de dado[text,image,list,term] e widgets);
+  <item/>configuração de campo (tamanho máximo, número de valores);
+  <item/>configuração de campo para cada tipo de conteúdo (valor padrão, etc);
+  <item/>gerenciar exibição do campo (peso, posição do label e formato);
+  </lista>
 </lista>
 
 <subsubsecao>Taxonomia</subsubsecao>
 
 <lista>
   <item/><b>URL</b>: /admin/structure/taxonomy
-  <item/><b>Conceito</b>: Toda taxonomia é um campo do tipo <b>Term
-reference</b> que pode compor um ou mais tipos de conteúdo.
+  <item/><b>Conceito</b>: Uma taxonomia (vacabulário) equivale a
+categorias, é formada por termos que podem ser organizados hierarquicamente.
+Também pode ser entendida como uma lista de elementos. A taxanomia é
+representada por um campo do tipo <b>Term reference</b> que pode compor um ou
+mais tipos de conteúdo.
   <item/><b>Atividades</b>:
   <lista>
     <item/>adicione um vocabulário (lista de termos);
-    <item/>adicione termos (categorias) a um vocabulário;
+    <item/>adicione termos a um vocabulário;
     <item/>ao reiniciar termos para ordem alfabética a hierarquia é mantida;
     <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de conteúdo;
   </lista>
 </lista>
 
-<subsecao>Conteúdo (node) - /admin/content</subsecao>
+<subsecao>Conteúdo (node)</subsecao>
 
 <subsubsecao>Gerenciamento de conteúdo</subsubsecao>
 
 <lista>
-<item/>lista conteúdo (nodes) existente - /admin/content;
-<item/>adição de conteúdo (node) de tipos pré-definidos - /node/add;
-<item/>configuração do node (menu, revisão, URL alias);
-<item/>gerenciamento de comentários - /admin/content/comment;
-<item/>gerenciamento de revisões (listar, reverter e remover);
+  <item/><b>URL</b>: /admin/content
+  <item/><b>Conceito</b>: O conteúdo (node) é uma instância de um tipo de
+conteúdo. É possível fazer paralelo em que o tipo de conteúdo seria uma tabela
+e o conteúdo (node) seria cada linha da tabela.
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>lista conteúdo (nodes) existente - /admin/content;
+    <item/>adição de conteúdo (node) de tipos pré-definidos - /node/add;
+    <item/>configuração do node (menu, revisão, URL alias);
+    <item/>gerenciamento de comentários - /admin/content/comment;
+    <item/>gerenciamento de revisões (listar, reverter e remover);
+  </lista>
 </lista>
 
 <subsecao>Módulos - /admin/modules</subsecao>
@@ -304,14 +320,15 @@ reference</b> que pode compor um ou mais tipos de conteúdo.
 <item/>gerar conteúdo e usuários;
 </lista>
 
-<subsecao>Reports - /admin/people</subsecao>
+<subsecao>Relatórios</subsecao>
 
 <lista>
-  <item/>Relatório de informações da plataforma (status report);
-    <lista>
-      <item/>identificar versão do Drupal;
-      <item/>identificar versão do apache, php e database;
-    </lista>
+  <item/><b>URL</b>: /admin/reports
+  <item/>Relatório de informações da plataforma;
+  <lista>
+    <item/>identificar versão do Drupal;
+    <item/>identificar versão do apache, php e database;
+  </lista>
   <item/>Relatório de atualizações disponíveis (core e módulos);
   <item/>Relatório de mensagens de log;
   <item/>Relatório com lista campos dos tipos de conteúdo (field list);
