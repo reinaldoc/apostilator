@@ -129,6 +129,20 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
   </lista>
 </lista>
 
+<subsubsecao>Context</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/context
+  <item/><b>Dependência</b>: https://drupal.org/project/ctools
+  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
+  <item/><b>Uso</b>: /admin/structure/context
+  <lista>
+    <item/>criar regras de contexto;
+    <item/>adicionar condição (ex: se página for <front >);
+    <item/>adicionar reação (ex: exibir determinado bloco);
+  </lista>
+</lista>
+
 <subsecao>Blocos</subsecao>
 
 <subsubsecao>Image Block</subsubsecao>
@@ -153,6 +167,10 @@ IMCE).
   <item/><b>Função</b>: bloco de ícones com links para redes sociais;
 </lista>
 
+    O módulo <b>Social Media</b> é desnecessário em projetos que o tema já
+fornece ícones para links de redes sociais. Nesse caso, os ícones estarão em
+uma área sem região customizável pela configuração do tema.
+
 <subsubsecao>Footer Sitemap</subsubsecao>
 
 <lista>
@@ -173,18 +191,31 @@ IMCE).
   <item/><b>Função</b>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
 </lista>
 
-<subsubsecao>Context</subsubsecao>
+<subsubsecao>QuickTabs</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/context
+  <item/><b>Download</b>: https://drupal.org/project/quicktabs
   <item/><b>Dependência</b>: https://drupal.org/project/ctools
-  <item/><b>Função</b>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
-  <item/><b>Uso</b>: /admin/structure/context
+  <item/><b>Função</b>: bloco com abas compostas por outros blocos, nodes, views ou qtabs;
+  <item/><b>Uso</b>: /admin/structure/quicktabs
   <lista>
-    <item/>criar regras de contexto;
-    <item/>adicionar condição (ex: se página for <front >);
-    <item/>adicionar reação (ex: exibir determinado bloco);
+    <item/>adicionar uma quicktab;
   </lista>
+</lista>
+
+    O submódulo <b>Quicktabs Styles</b> fornece estilos, que estão disponíveis
+somente para o formato quicktabs (<i>renderer</i>). Os formatos ui_tabs e
+accordion podem ser customizados por meio de CSS em subtema.
+
+<subsubsubsecao>QuickTabs em formato de Accordion</subsubsubsecao>
+
+<lista>
+    <item/>adicionar uma quicktab;
+    <item/>selecionar formato de accordion (<i>renderer</i>);
+    <item/>opcional: memorizar aba ativa quando usar a opção voltar do navegador (<i>history</i>);
+    <item/>opcional: ativar altura automática;
+    <item/>opcional: permitir que todas as tabs sejam fechadas (<i>collapsible</i>);
+    <item/>vincular cada aba a uma bloco, node, view ou qtab;
 </lista>
 
 <subsecao>Menu</subsecao>
@@ -681,7 +712,16 @@ página do perfil do usuário.
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/entityreference
-  <item/><b>Função</b>: campo que relaciona um node a outro tipo de node (Node de Pessoa com o Node de Livro);
+  <item/><b>Função</b>: campo que relaciona um node a outro node (Node de
+Pessoa com o Node de Livro);
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione um campo do tipo <b>Entity Reference</b> a qualquer node;
+    <item/>defina a forma de exibição do campo (autocomplete, select list or
+checkbox/radio);
+    <item/>defina o relacionamento (<i>target type</i>) para node, usuário,
+termo ou vocabulário de taxonomia; 
+  </lista>
 </lista>
 
 <subsubsecao>Date (Field)</subsubsecao>
