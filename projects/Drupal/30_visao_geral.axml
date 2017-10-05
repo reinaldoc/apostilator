@@ -4,10 +4,6 @@
 desenvolvimento de quatro estruturas genéricas: blocos, tipos de conteúdo,
 menus e taxonomias, que compõe seu núcleo.
 
-    De forma similar a um framework de programação, as estruturas do Drupal
-foram desenvolvidas com inúmeros pontos de integração que são utilizados
-para extendê-las por meio de módulos.
-
 <subsecao>Estrutura</subsecao>
 
 <lista>
@@ -40,13 +36,23 @@ para extendê-las por meio de módulos.
 **********************************************************************************
 </comando>
 
+    A <b>Região do Conteúdo</b> pode ser preenchida por um conteúdo,
+denominado <b>node</b>, por uma View de página, denominada <b>Page View</b>,
+ou por um Painel, denominado <b>Panel Page</b>, em qualquer um dos três casos,
+a configuração da URL da página será definida por esta região.
+
+    As demais regiões conterão blocos que possuem em sua configuração
+individual a lista de URLs em que serão exibidos.
+
 <subsubsecao>Blocos</subsubsecao>
+
+    O bloco é a unidade que pode ser associada a uma região do tema, pode ser
+criado a partir de um trecho de código HTML ou fornecido por algum módulo.
+Configura-se no bloco em quais URLs ele será exibido, dentro da região que foi
+associado.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/block
-  <item/><b>Conceito</b>: O bloco é a unidade que pode ser associada a uma
-região do tema, pode ser criado a partir de um trecho de código HTML ou
-fornecido por algum módulo.
   <item/><b>Atividades</b>:
   <lista>
     <item/>exibir as regiões do tema;
@@ -61,24 +67,15 @@ fornecido por algum módulo.
   </lista>
 </lista>
 
-    O bloco 'Search form' é fornecido pelo módulo <b>Search</b> que faz parte
-do núcleo do Drupal. Verifique que apesar do bloco 'Search form' estar
-associado a uma região, ele só é exibido quando o usuário com permissão de
-administrador está autenticado.
-
-    <importante/>Cada módulo implementa determinadas permissões, identifique a
-lista de permissões fornecidas pelo módulo <b>Search</b> por meio do menu
-<i>Pessoas -> Permissões</i> ou pelo caminho <i>/admin/people/permissions</i>.
-Ative a permissão 'Use search' para que usuários autenticados e não
-autenticados, denominados anônimos, possam utilizar o bloco 'Search form'.
 
 <subsubsecao>Menus</subsubsecao>
 
+    Um <b>menu</b> é formado por um conjunto de links (itens de menu) que
+podem ser organizados hierarquicamente em vários níveis. Todo menu é um bloco
+que deve ser associado a uma região do tema pela interface de blocos.
+
 <lista>
   <item/><b>URL</b>: /admin/structure/menu
-  <item/><b>Conceito</b>: Um menu é formado por um conjunto de links (itens de
-menu) que podem ser organizados hierarquicamente em vários níveis. Todo menu é
-um bloco que deve ser associado a uma região do tema pela interface de blocos.
   <item/><b>Atividades</b>:
   <lista>
     <item/>configuração: definir menu principal e secundário;
@@ -93,13 +90,14 @@ um bloco que deve ser associado a uma região do tema pela interface de blocos.
 
 <subsubsecao>Tipos de conteúdo</subsubsecao>
 
-<lista>
-  <item/><b>URL</b>: /admin/structure/types
-  <item/><b>Conceito</b>: Um tipo de conteúdo é formado por campos de texto,
-numéricos (inteiro, float), boleanos, de imagem, de arquivo, de lista de texto
-ou de números (checkbox, radio, autocomplete) e lista de termos de determinada
+    Um <b>tipo de conteúdo</b> é formado por campos de texto, numéricos
+(inteiro ou float), boleanos, de imagem, de arquivo, de lista (checkbox,
+radio, autocomplete) de texto ou de números e lista de termos de determinada
 taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos,
 como campos para data, link e relacionamento com outro tipo de conteúdo.
+
+<lista>
+  <item/><b>URL</b>: /admin/structure/types
   <item/><b>Atividades</b>:
   <lista>
   <item/>adição de tipo de conteúdo;
@@ -115,13 +113,13 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
 
 <subsubsecao>Taxonomia</subsubsecao>
 
+    Uma <b>taxonomia</b> (vacabulário) equivale a categorias, é formada por
+termos que podem ser organizados hierarquicamente. Também pode ser entendida
+como uma lista de elementos. A taxanomia é representada por um campo do tipo
+<b>Term reference</b> que pode compor um ou mais tipos de conteúdo.
+
 <lista>
   <item/><b>URL</b>: /admin/structure/taxonomy
-  <item/><b>Conceito</b>: Uma taxonomia (vacabulário) equivale a
-categorias, é formada por termos que podem ser organizados hierarquicamente.
-Também pode ser entendida como uma lista de elementos. A taxanomia é
-representada por um campo do tipo <b>Term reference</b> que pode compor um ou
-mais tipos de conteúdo.
   <item/><b>Atividades</b>:
   <lista>
     <item/>adicione um vocabulário (lista de termos);
@@ -135,11 +133,12 @@ mais tipos de conteúdo.
 
 <subsubsecao>Gerenciamento de conteúdo</subsubsecao>
 
+    O conteúdo (node) é uma instância de um tipo de conteúdo. É possível fazer
+um paralelo em que o tipo de conteúdo seria uma tabela e o conteúdo (node)
+seria cada linha da tabela.
+
 <lista>
   <item/><b>URL</b>: /admin/content
-  <item/><b>Conceito</b>: O conteúdo (node) é uma instância de um tipo de
-conteúdo. É possível fazer paralelo em que o tipo de conteúdo seria uma tabela
-e o conteúdo (node) seria cada linha da tabela.
   <item/><b>Atividades</b>:
   <lista>
     <item/>lista conteúdo (nodes) existente - /admin/content;
@@ -152,16 +151,32 @@ e o conteúdo (node) seria cada linha da tabela.
 
 <subsecao>Módulos</subsecao>
 
+    De forma similar a um framework de programação, as estruturas do Drupal
+foram desenvolvidas com inúmeros pontos de integração que são utilizados
+para extendê-las por meio de módulos.
+
+    A instalação de módulo pode ser realizada por meio da interface web a
+a partir de uma conexão FTP para acesso ao diretório <b>sites/all/modules</b>.
+
+    Os módulos podem fornecer blocos especializados, novos tipos de campos
+(fields) para serem utilizados em tipos de conteúdo, podem também adicionar
+recursos à Região de conteúdo, como os botões de compartilamento da página
+em redes sociais ou a informação da responsabilidade do conteúdo, além disso
+há módulos importantes que estendem as funcionalidades dos menus.
+
 <subsubsecao>Referências</subsubsecao>
 
-<lista>
-  <item/>https://drupal.org/project/project_module
-  <item/>https://drupal.org/documentation/modules/views/add-ons [Views]
-  <item/>https://groups.drupal.org/node/20291 [Uploading]
-</lista>
+    A página de pesquisa de módulos [1] contém a listagem com filtros de todos
+os módulos disponíveis, embora a pesquisa por meio do Google costume ser
+bastante eficiente. Há também páginas que consolidam uma relação de módulos
+por um determinado tema, como os módulos para Views [2] e para Upload de
+arquivos [3].
 
-    A pesquisa de módulo por meio do Google parece ser mais eficiente do que
-pesquisar diretamente no drupal.org.
+<lista>
+  <item/>[1] https://drupal.org/project/project_module
+  <item/>[2] https://drupal.org/documentation/modules/views/add-ons [Views]
+  <item/>[3] https://groups.drupal.org/node/20291 [Uploading]
+</lista>
 
 <subsubsecao>Gerenciamento de módulos</subsubsecao>
 
@@ -170,20 +185,47 @@ pesquisar diretamente no drupal.org.
   <item/><b>Atividades</b>:
   <lista>
     <item/>listar módulos instalados e os ativados;
-    <item/>desativar módulos;
-    <item/>ativar módulo ‘Update manager’ para permitir instalação pela web;
-    <item/>identificar local de instalação dos módulos (local:sites/all/modules);
+    <item/>desativar módulo <b>Overlay</b>;
+    <item/>ativar módulo <b>Update manager</b> para permitir instalação de
+novos módulos pela web;
+    <item/>identificar local de instalação dos módulos (sites/all/modules);
   </lista>
 </lista>
 
 <subsecao>Aparência</subsecao>
 
+    Os <b>temas</b> <u>são formados por regiões</u> em que os blocos podem ser
+associados e <u>por áreas sem regiões</u> que são customizáveis por meio da
+configuração do tema. Interessante notar que nem todo tema exibe menus
+multiníveis, tampouco são responsivos.
+
 <lista>
   <item/><b>URL</b>: /admin/appearance
-  <item/><b>Conceito</b>: Os temas são formados por regiões em que os blocos
-podem ser associados e áreas sem regiões que são customizáveis por meio da
-configuração do tema. Interessante notar que nem todo tema exibe menu
-multinível, tampouco são responsivos.
+</lista>
+
+<subsubsecao>Configurações globais dos temas</subsubsecao>
+
+<lista>
+  <item/><b>URL</b>: /admin/appearance/settings
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>controlar a exibição de elementos (logo, site name, menu, etc);
+    <item/>não exibir o nome do site (site name);
+    <item/>definir imagem de logo;
+    <item/>definir favicon;
+  </lista>
+</lista>
+
+<subsubsecao>Configurações disponíveis por tema</subsubsecao>
+
+<lista>
+  <item/><b>URL</b>: /admin/appearance/settings/bartik
+  <item/><b>Atividades</b>:
+  <lista>
+    <item/>acessar configurações do tema;
+    <item/>bartik: esquema de cor (header, sidebar, footer, text, link);
+    <item/>bartik: likar itens do esquema de cor para gerar cor compatível;
+  </lista>
 </lista>
 
 <subsubsecao>Temas Populares</subsubsecao>
@@ -231,15 +273,6 @@ multinível, tampouco são responsivos.
   </lista>
 </lista>
 
-<subsubsecao>Configurações globais dos temas</subsubsecao>
-
-<lista>
-  <item/>controlar a exibição de elementos (logo, site name, menu, etc);
-  <item/>não exibir o nome do site (site name);
-  <item/>definir imagem de logo;
-  <item/>definir favicon;
-</lista>
-
 <subsubsecao>Procedimento para avaliar um tema</subsubsecao>
 
 <lista>
@@ -251,14 +284,6 @@ multinível, tampouco são responsivos.
   <item/>habilitar exibição (drop-down) dos sub-menus (Show as expanded);
   <item/>associar menu 'Development' à região 'Second/Secondary/Right Sidebar';
   <item/>gerar conteúdo em 'Devel generate';
-</lista>
-
-<subsubsecao>Configurações disponíveis por tema</subsubsecao>
-
-<lista>
-  <item/>acessar configurações do tema;
-  <item/>bartik: esquema de cor (header, sidebar, footer, text, link);
-  <item/>bartik: likar itens do esquema de cor para gerar cor compatível;
 </lista>
 
 <subsubsecao>Adquirir temas</subsubsecao>
@@ -275,32 +300,45 @@ multinível, tampouco são responsivos.
 
 <subsecao>Pessoas</subsecao>
 
-<lista>
-  <item/><b>URL</b>: /admin/people
-  <item/><b>Conceito</b>: Opção que permite a criação da usuários e papéis
-(roles), bem como associação de usuários e permissões aos papéis.
-</lista>
+    Opção que permite a criação da usuários e papéis (roles), bem como
+associação de usuários e permissões aos papéis.
 
 <subsubsecao>Permissões</subsubsecao>
 
+    As <b>permissões</b> são fornecidas por cada módulo, devendo ser
+concedidas a papéis, que por sua vez são vinculados aos usuários.
+
 <lista>
   <item/><b>URL</b>: /admin/people/permissions
-  <item/><b>Conceito</b>: As permissões são fornecidas por cada módulo,
-devendo ser concedidas a papéis, que por sua vez, são vinculados aos usuários.
   <item/><b>Atividades</b>:
   <lista>
     <item/>listar permissões fornecidas por cada módulo;
     <item/>listar permissões associadas a cada papel;
     <item/>listar permissões por tipo de conteúdo (consultar módulo Node);
+    <item/>concerder permissão 'Use search' para usuários autenticados e
+usuários não autenticados.
   </lista>
 </lista>
 
+    O bloco 'Search form' é fornecido pelo módulo <b>Search</b> que faz parte
+do núcleo do Drupal. Verifique que apesar do bloco 'Search form' estar
+associado a uma região, ele só é exibido quando o usuário com permissão de
+administrador está autenticado.
+
+    <importante/>Cada módulo implementa determinadas permissões, identifique a
+lista de permissões fornecidas pelo módulo <b>Search</b> por meio do menu
+<i>Pessoas -> Permissões</i> ou pelo caminho <i>/admin/people/permissions</i>.
+Ative a permissão 'Use search' para que usuários autenticados e não
+autenticados, denominados anônimos, possam utilizar o bloco 'Search form'.
+
 <subsubsecao>Papéis</subsubsecao>
+
+    Os <b>papéis</b> são o elo que ligam as permissões fornecidas pelos
+módulos aos usuários. Há três papéis pré-existentes: usuários não autenticados
+(usuário anônimo), usuários autenticados e administradores.
 
 <lista>
   <item/><b>URL</b>: /admin/people/permissions/roles
-  <item/><b>Conceito</b>: Os papéis são o elo que ligam as permissões
-fornecidas pelos módulos aos usuários.
   <item/><b>Atividades</b>:
   <lista>
     <item/>criar papéis;
@@ -311,6 +349,9 @@ fornecidas pelos módulos aos usuários.
 </lista>
 
 <subsubsecao>Usuários</subsubsecao>
+
+    Os <b>usuários</b> podem ser criados localmente ou integrados por meio
+do protocolo LDAP.
 
 <lista>
   <item/><b>URL</b>: /admin/people
@@ -324,11 +365,12 @@ fornecidas pelos módulos aos usuários.
 
 <subsecao>Configurações</subsecao>
 
+    As <b>configurações</b> disponíveis inicialmente são referentes aos
+módulos que compõe o núcleo do Drupal. A instalação de novos módulos comumente
+adiciona novas opções de configuração.
+
 <lista>
   <item/><b>URL</b>: /admin/config
-  <item/><b>Conceito</b>: As configurações disponíveis inicialmente são
-referentes ao núcleo do Drupal. A instalação de novos módulos comumente
-adicionam novas opções de configuração.
 </lista>
 
 <subsubsecao>Regional e Idioma</subsubsecao>
@@ -394,15 +436,17 @@ adicionam novas opções de configuração.
 
 <lista>
   <item/><b>URL</b>: /admin/reports
-  <item/>Relatório de informações da plataforma;
   <lista>
-    <item/>identificar versão do Drupal;
-    <item/>identificar versão do apache, php e database;
+    <item/>Relatório de informações da plataforma;
+    <lista>
+      <item/>identificar versão do Drupal;
+      <item/>identificar versão do apache, php e database;
+    </lista>
+    <item/>Relatório de atualizações disponíveis (core e módulos);
+    <item/>Relatório de mensagens de log;
+    <item/>Relatório com lista campos dos tipos de conteúdo (field list);
+    <item/>Relatório de requisições de acesso negado (erro 403);
+    <item/>Relatório de requisições de página não encontrada (erro 404);
+    <item/>Relatório de termos utilizados na pesquisa;
   </lista>
-  <item/>Relatório de atualizações disponíveis (core e módulos);
-  <item/>Relatório de mensagens de log;
-  <item/>Relatório com lista campos dos tipos de conteúdo (field list);
-  <item/>Relatório de requisições de acesso negado (erro 403);
-  <item/>Relatório de requisições de página não encontrada (erro 404);
-  <item/>Relatório de termos utilizados na pesquisa;
 </lista>
