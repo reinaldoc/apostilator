@@ -3,8 +3,6 @@
 <lista>
   <item/>https://drupal.org/project/usage
   <item/>https://drupal.org/project/project_module
-  <item/>https://drupal.org/documentation/modules/views/add-ons [Views]
-  <item/>https://groups.drupal.org/node/20291 [Uploading]
 </lista>
 
 <subsecao>Administração</subsecao>
@@ -169,7 +167,7 @@ IMCE).
 
     O módulo <b>Social Media</b> é desnecessário em projetos que o tema já
 fornece ícones para links de redes sociais. Nesse caso, os ícones estarão em
-uma área sem região customizável pela configuração do tema.
+uma área sem região que é customizável pela configuração do tema.
 
 <subsubsecao>Footer Sitemap</subsubsecao>
 
@@ -667,63 +665,6 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsubsecao>Advanced Poll</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/advpoll
-  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
-  <item/><b>Função</b>: tipo de conteúdo para votações de múltipla escolha;
-</lista>
-
-<subsubsecao>Fivestar (Field)</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/fivestar
-  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
-  <item/><b>Função</b>: campo (field) para votação por meio de estrelas;
-</lista>
-
-<subsubsecao>Flag</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/flag
-  <item/><b>Função</b>: integração para selecionar (bookmark) conteúdos;
-</lista>
-
-<subsubsecao>Webform</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/webform
-  <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
-</lista>
-
-<subsubsecao>ShareThis</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/sharethis
-  <item/><b>Função</b>: integração para compartilhar nodes em redes sociais;
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>ícones para compartilhar página abaixo do conteúdo;
-  </lista>
-</lista>
-
-<subsubsecao>Entity Reference (Field)</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/entityreference
-  <item/><b>Função</b>: campo que relaciona um node a outro node (Node de
-Pessoa com o Node de Livro);
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>adicione um campo do tipo <b>Entity Reference</b> a qualquer node;
-    <item/>defina a forma de exibição do campo (autocomplete, select list or
-checkbox/radio);
-    <item/>defina o relacionamento (<i>target type</i>) para node, usuário,
-termo ou vocabulário de taxonomia; 
-  </lista>
-</lista>
-
 <subsubsecao>Date (Field)</subsubsecao>
 
 <lista>
@@ -759,6 +700,63 @@ termo ou vocabulário de taxonomia;
     <item/>este campo recebe uma URL que será renderizada em um iframe;
     <item/>somente é possível abrir iframe https se o site estiver usando https;
   </lista>
+</lista>
+
+<subsubsecao>Entity Reference (Field)</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/entityreference
+  <item/><b>Função</b>: campo que relaciona um node a outro node (Node de
+Pessoa com o Node de Livro);
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicione um campo do tipo <b>Entity Reference</b> a qualquer node;
+    <item/>defina a forma de exibição do campo (autocomplete, select list or
+checkbox/radio);
+    <item/>defina o relacionamento (<i>target type</i>) para node, usuário,
+termo ou vocabulário de taxonomia; 
+  </lista>
+</lista>
+
+<subsubsecao>ShareThis</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/sharethis
+  <item/><b>Função</b>: integração para compartilhar nodes em redes sociais;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>ícones para compartilhar página abaixo do conteúdo;
+  </lista>
+</lista>
+
+<subsubsecao>Advanced Poll</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/advpoll
+  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
+  <item/><b>Função</b>: tipo de conteúdo para votações de múltipla escolha;
+</lista>
+
+<subsubsecao>Fivestar (Field)</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/fivestar
+  <item/><b>Dependência</b>: https://drupal.org/project/votingapi
+  <item/><b>Função</b>: campo (field) para votação por meio de estrelas;
+</lista>
+
+<subsubsecao>Flag</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/flag
+  <item/><b>Função</b>: integração para selecionar (bookmark) conteúdos;
+</lista>
+
+<subsubsecao>Webform</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/webform
+  <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
 </lista>
 
 <subsecao>Panels</subsecao>
