@@ -137,12 +137,12 @@ $breadcrumb[] = drupal_get_title(); }
         <item/><b>comment</b>: themes/bartik/templates/comment.tpl.php
         <item/><b>comment-wrapper</b>: modules/comment/comment-wrapper.tpl.php
         <item/><b>comment-wrapper</b>: themes/bartik/templates/comment-wrapper.tpl.php
-        <item/><b>maintenance-page</b>: modules/system/maintenance-page.tpl.php
-        <item/><b>maintenance-page</b>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
         <item/><b>user-profile</b>: modules/user/user-profile.tpl.php
         <item/><b>user-profile</b>: sites/all/themes/mynewtheme/user-profile.tpl.php
       </lista>
     </lista>
+    <item/><b>maintenance-page</b>: modules/system/maintenance-page.tpl.php
+    <item/><b>maintenance-page</b>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
   </lista>
 </lista>
 
