@@ -1,6 +1,11 @@
 <capitulo>Step</capitulo>
 
+    Uma forma alternativa de enumerar itens é utilizar a <i>tag</i>
+<b>step</b>, ela permite a utilização de outras tags entre os elementos.
+
 <step>Legal esse passo!</step>
+
+    Podemos utilizar a <i>tag</i> <b>comando</b> entre os itens da lista.
 
 <comando>
 teste de comando
@@ -8,7 +13,13 @@ teste de comando
 
 <step>Bacana esse passo também!</step>
 
-<subsecao>Step 2</subsecao>
-antes do step
+    E ainda continuar em uma lista numerada.
+
+<subsecao>Numeração por seção</subsecao>
+
+    Entretanto, veja que após uma subseção, a lista é reiniciada.
+
 <step>Mais um passo</step>
-depois do step
+
+    Use <b>step</b> para enriquecer seus procedimentos.
+

@@ -21,3 +21,6 @@ Veja só como fica fácil falar da tag ;lt;tr;gt;, usando os
 marcadores especiais! O problema é que até o momento só 
 funciona dentro de uma ambiente de ;lt;comando;gt;.
 </comando>
+
+    Há uma alternativa para o uso de tags a partir da adição de um espaço
+antes da símbolo de maior: <body > <head >.

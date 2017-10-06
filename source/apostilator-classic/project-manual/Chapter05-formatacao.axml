@@ -1,19 +1,21 @@
 <capitulo>Negrito / Itálico / Sublinhado</capitulo>
 
-Para transformar um trecho de texto em negrito ou itálico basta
-utilizar as mesmas <i>tags</i> existentes em <b>HTML</b>. São elas:
+    Para transformar um trecho de texto em negrito, itálico ou sublinhado,
+basta utilizar as mesmas <i>tags</i> existentes em <b>HTML</b>. São elas:
 
 <comando>
   Texto em <b>Negrito</b>
   Texto em <i>Itálico</i>
+  Texto em <u>Sublinhado</u>
 </comando>
 
-O efeito do código apresentado pode ser visto a seguir:
+    O efeito do código apresentado pode ser visto a seguir:
 
-Texto em <b>Negrito</b>
+    Texto em <b>Negrito</b>
 
-Texto <i>Itálico</i>
+    Texto em <i>Itálico</i>
 
-No exemplo acima, apenas as palavras entre as <i>tags</i> sofreram o efeito
+    Texto em <u>Sublinhado</u>
+
+    No exemplo acima, apenas as palavras entre as <i>tags</i> sofreram o efeito
 descrito pela própria palavra que está sendo modificada.
-

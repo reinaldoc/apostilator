@@ -1,57 +1,54 @@
-<capitulo>Citando tabelas, figuras ou capítulos</capitulo>
+<capitulo>Citando capítulos, seções, figuras, etc.</capitulo>
 <nome>sec:citando</nome>
 
-Um dos atributos de uma tabela ou de uma figura (sendo ela um gráfico, um
-diagrama ou mesmo um desenho) é a sua numeração. Em um texto, todas as tabelas
-e figuras devem ser numerados e quando nos referimos a elas devemos fazer
-referência a esse número. Entretanto não precisamos nos preocupar com o
-número dos capítulos, subseções, tabelas ou figuras, o próprio software
-controla a numeração. 
+    Um recurso importante para a editoração de texto é a numeração dos
+elementos textuais, seja ele um capítulo, subseção, subsubseção, etc. Em um
+texto, todas as tabelas e figuras também devem ser numerados e quando
+desejamos comentar sobre esses elementos, devemos fazer referência a esse
+número.
 
-Sendo assim, a forma mais prática de fazer referência a
-uma tabela, figura, capítulo ou subseção é definindo um nome para o objeto
-desejado e depois fazer referência a esse nome, por exemplo: se eu desejo citar
-o número da seção que está sendo explicado como trabalhar com listas, basta eu
-dizer que ela é a seção<ref>sec:listas</ref>. Não, eu não inclui o número dessa
-seção manualmente, mas sim da seguinte forma:
+    Entretanto não precisamos nos preocupar com o número dos capítulos,
+subseções, tabelas ou figuras, pois o próprio software gerará a numeração.
+Sendo assim, a forma mais prática de fazer referência é definindo um nome
+para o objeto desejado e depois fazer referência a esse nome.
 
-Quando inicio um capítulo eu adiciono o seguinte conjunto de <i>tags</i>:
+    Por exemplo, se eu desejo citar o número da seção que está sendo
+explicado como trabalhar com listas, basta eu dizer que ela é a seção
+<ref>sec:listas</ref>. Não, eu não inclui o número dessa seção manualmente,
+mas sim da seguinte forma:
 
-<comando>
-<capitulo>Como fazer referência a um capítulo ou tabela ou...</capitulo>
-</comando>
-
-Mas, para que eu possa citar esse capítulo pelo seu número eu tenho que
-adicionar um outro conjunto adicional de <i>tags</i> atribuindo um nome à esse 
-capítulo. Isso se faz utilizando as <i>tags</i> 'nome' da seguinte forma:
+    Quando se inicia um capítulo, utiliza-se as <i>tags</i>:
 
 <comando>
-<capitulo>Como fazer referência a um capítulo ou tabela ou...</capitulo>
-<nome>sec:referencia</nome>
+<capitulo>Referência a um capítulo</capitulo>
 </comando>
 
-Dessa forma, atribuímos o nome 'sec:referencia' ao capítulo 'Como fazer
-referência a ...'.
-
-Uma vez atribuído um nome ao capítulo ou subseção basta fazer referência ao
-nome dele da seguinte forma:
+    Mas para que seja possível citar esse capítulo deve utilizar em conjunto
+com a <i>tag</i> <b>nome</b>:
 
 <comando>
-Estou fazendo referência ao capítulo<ref>sec:referencia</ref>
+<capitulo>Referência a um capítulo</capitulo>
+<nome>capitulo-referencia</nome>
 </comando>
 
-O nome entre as <i>tags</i> 'ref' será substituído pelo numero da seção que
-possui como nome 'sec:referencia'
+    Dessa forma, atribuímos o nome, que deve ser único, 'capitulo-referencia'
+ao capítulo 'Referência a um capítulo'. Uma vez atribuído um nome ao capítulo
+ou subseção basta fazer referência ao nome dele da seguinte forma:
 
-O princípio para adicionar nomes a tabelas, figuras e equações é o mesmo e
-será mostrado nas seções<ref>sec:tabelas</ref>, <ref>sec:figuras</ref> e
-<ref>sec:equacao</ref> respectivamente.  Entretanto a forma de fazer
-referência a elas é a mesma!
+<comando>
+Estou fazendo referência ao capítulo<ref>capitulo-referencia</ref>
+</comando>
 
-Para citar uma bibliografia use:
+    O nome entre as <i>tags</i> 'ref' será substituído pelo numero do
+elemento que possui como nome 'capitulo-referencia'. O princípio para
+adicionar nomes a tabelas, figuras e qualquer outro elemento é o mesmo.
+
+<subsecao>Citando a bibliografia</subsecao>
+
+    Para citar uma bibliografia use:
+
 <comando>
 Conforme o TANENBAUM <citar>Test1</citar>, etc...
 </comando>
 
-Gerando: Conforme o TANENBAUM <citar>Test1</citar>, etc...
-
+    Gerando: Conforme o TANENBAUM<citar>Test1</citar>, etc...

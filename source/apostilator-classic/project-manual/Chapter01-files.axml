@@ -1,16 +1,29 @@
-<capitulo>Capítulos: Chapters.lst</capitulo>
+<capitulo>Capítulos e Apêndices</capitulo>
 
-    Ao redigir um texto muito grande é interessante dividí-lo em arquivos menores, facilitando a manipulação e tornando o processo mais eficiente.
+    Ao redigir um texto muito grande é interessante dividí-lo em arquivos
+menores, facilitando a manipulação e tornando o processo mais eficiente.
 
-    Recomanda-se que seja criado um arquivo por capítulo, ao qual deve ser inserido no arquivo 'Chapters.lst' que contém a lista ordenada dos capítulo do projeto.
+    Recomanda-se que seja criado um arquivo por capítulo e um arquivo por
+apêndice. O nome de cada arquivo deve ser inserido <b>Chapters.lst</b> e
+<b>Appendix.lst</b>, respectivamente, para determinar a ordem de
+apresentação no arquivo final.
 
-<subsecao>Sintaxe do 'Chapters.lst'</subsecao>
+    Caso todos os arquivos de capítulos tenham seu nome prefixado por
+número pode-se usar a opção <b>apostilator -l</b> para que o Apostilator
+gere os arquivos Chapters.lst e Appendix.lst. Exemplo: 15_introdução.axml.
+Já os capítulos nomeados com números a partir de 90 serão considerados
+Apêndices, como 90_licença.axml.
 
-    A sintaxe do arquivo <b>Chapters.lst</b>:
+<subsecao>Sintaxe de 'Chapters.lst' e 'Appendix.lst'</subsecao>
+
+    A sintaxe dos arquivos de ordenação:
 
 <lista>
-  <item>Comentários:</item> o caracter '#' faz com que a linha por ele iniciada seja considerada como comentário;
-  <item>Um arquivo por linha:</item> cada linha do arquivo corresponde a apenas um arquivo;
-  <item>Sem extensão .xml:</item> apenas o nome do arquivo, sem extensão;
-  <item>Ordenados:</item> a ordem na qual os arquivos são inseridos será a mesma ordem que o processador texto irá inseri-los no documento.
+  <item>Comentários:</item> o caracter '#' faz com que a linha por ele
+iniciada seja considerada como comentário;
+  <item>Um arquivo por linha:</item> cada linha do arquivo corresponde a
+apenas um arquivo;
+  <item>Extensão .axml:</item> nomeie o arquivo como 30_tema_do_capítlo.axml;
+  <item>Ordenados:</item> a ordem na qual os arquivos são inseridos será a
+mesma ordem que o processador texto irá inseri-los no documento.
 </lista>

@@ -1,20 +1,34 @@
-<capitulo>Dividindo o texto em Capítulos</capitulo>
+<capitulo>Dividindo o texto em Capítulos e Seções</capitulo>
 
-Um texto pode ser subdividido em até três níveis, <b>capítulo</b>,
-<b>sub-seção</b> e <b>sub-sub-seção</b>. Para realizar tal procedimento 
-há três <i>tags</i> envolvidas, são elas:
+    Um texto pode ser subdividido em até quatro níveis, <b>capítulo</b>,
+<b>sub-seção</b>, <b>sub-sub-seção</b> e <b>sub-sub-sub-seção</b>.
+Entretanto, ao último nível não será atribuído número nem será vinculado ao
+sumário.
+
+      Para realizar tal procedimento há <i>tags</i>:
 
 <comando>
 <capitulo>Título do Capítulo</capitulo>
-    <subsecao>Sub Seção</subsecao>
-        <subsubsecao>Sub Sub Seção</subsubsecao>
+
+   Texto...
+
+<subsecao>Sub Seção</subsecao>
+
+   Texto...
+
+<subsubsecao>Sub Sub Seção</subsubsecao>
+
+   Texto...
+
+<subsubsubsecao>Sub Sub Sub Seção</subsubsecao>
+
+   Texto...
+
 </comando>
 
-No exemplo acima, o processador de texto irá gerar um capítulo cujo título
-será <b>Título do Capítulo</b> e atribuirá um número a ele automaticamente.
+    No exemplo acima, o apostilator irá gerar um capítulo cujo título será
+<b>Título do Capítulo</b> e atribuirá um número a ele automaticamente.
 Dessa forma o escritor não precisa ficar se preocupando com numerações. Ao
 adicionar a tag 'subsecao' o processador irá gerar a subseção cujo
 título será, segundo o exemplo, <b>Sub Seção</b> e o número atribuído a ela
 será coerente com o número do capítulo corrente.
-
-Teste <ref>chap02</ref> foi feito.
