@@ -2,7 +2,14 @@
 
     O Drupal foi implementado para ser altamente customizável, o que levou ao
 desenvolvimento de quatro estruturas genéricas: blocos, tipos de conteúdo,
-menus e taxonomias, que compõe seu núcleo.
+menus e taxonomias, que compõe seu núcleo. É possível dividí-lo em três
+camadas: os temas, o núcleo do Drupal e os módulos.
+
+    A primeira camada é composta por temas que contém a visão em HTML/CSS
+com identificação de regiões que serão controladas pelo núcleo do Drupal.
+Já o núcleo do Drupal pode ser extendido por módulos que adicionam
+capacidades tanto para gerar estruturas de visão quando para armazenar novos
+tipos de dados em banco de dados.
 
 <subsecao>Estrutura</subsecao>
 
@@ -46,10 +53,10 @@ individual a lista de URLs em que serão exibidos.
 
 <subsubsecao>Blocos</subsubsecao>
 
-    O bloco é a unidade que pode ser associada a uma região do tema, pode ser
-criado a partir de um trecho de código HTML ou fornecido por algum módulo.
-Configura-se no bloco em quais URLs ele será exibido, dentro da região que foi
-associado.
+    O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
+pode ser criado a partir de um trecho de código HTML ou fornecido por algum
+módulo. Configura-se no bloco em quais URLs ele será exibido, dentro da região
+que foi associado.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/block
@@ -66,7 +73,6 @@ associado.
     <item/>search form: exibir o bloco de pesquisa ao usuário anônimo (permissão);
   </lista>
 </lista>
-
 
 <subsubsecao>Menus</subsubsecao>
 
@@ -133,9 +139,9 @@ como uma lista de elementos. A taxanomia é representada por um campo do tipo
 
 <subsubsecao>Gerenciamento de conteúdo</subsubsecao>
 
-    O conteúdo (node) é uma instância de um tipo de conteúdo. É possível fazer
-um paralelo em que o tipo de conteúdo seria uma tabela e o conteúdo (node)
-seria cada linha da tabela.
+    O <b>conteúdo</b> (node) é uma instância de um tipo de conteúdo. É
+possível fazer um paralelo em que o tipo de conteúdo seria uma tabela e o
+conteúdo (node) seria cada linha da tabela.
 
 <lista>
   <item/><b>URL</b>: /admin/content
