@@ -121,21 +121,26 @@ então prossiga para a inicialização do instalador.
 
 <subsubsecao>Firmware</subsubsecao>
 
-    Certos dispositivos de <i>hardware</i> necessitam que um <i>firmware</i>
-seja carregado para seu adequado funcionamento. <i>Firmware</i> é um
-software enviado ao <i>hardware</i> para posterior comunicação com o driver
-a nível de sistema operacional.
-
-    Os <i>firmware</i> são armazenados no diretório <b>/lib/firmware/</b>,
-podendo ser copiados diretamente, instalados por meio de pacotes ou, durante a
-instalação do Debian, a partir de um pen-drive (apenas arquivos de firmware,
-não sendo aceitos pacotes .deb).
-
     O <i>debian-installer</i> pode identificar a necessidade de um
-<i>firmware</i> e requisitar os arquivos. Pode-se extrair os firmwares
-solicitados a partir de pacotes do debian, que podem ser obtidos em
-http://packages.debian.org. Nesse site, preencha o nome do firmware na
-pesquisa por conteúdo dos pacotes.
+<i>firmware</i> e requisitar os arquivos. Caso o instalador já esteja na
+<u>configuração do nome da máquina</u>, esta etapa não se aplica a sua
+instalação. Vá para a próxima seção.
+
+    Certos dispositivos de <i>hardware</i> necessitam que um <i>firmware</i>
+seja carregado para o seu funcionamento. O <i>Firmware</i> é um software
+enviado para execução no <i>hardware</i> que se comunica com o driver a nível
+de sistema operacional.
+
+    Os arquivos de <i>firmware</i> deven ser armazenados no diretório
+<b>/lib/firmware/</b>, podendo ser copiados diretamente, instalados por meio
+de pacotes ou durante a instalação do Debian obtidos a partir da raiz de um
+pen-drive (apenas arquivos de firmware, não sendo aceitos pacotes .deb).
+
+    Nesse último caso, pode-se obter pacotes do Debian com o firmware,
+extraí-los (dpkg -x) e copiá-los para a raiz do pen-drive. Os pacotes podem
+ser pesquisados em <i>http://packages.debian.org</i>. Nesse site, preencha
+o nome do firmware na pesquisa por conteúdo dos pacotes, localizada no
+final da página.
 
     Em geral, pode-se realizar a instalação destes posteriormente, já com o
 sistema operacional instalado, a partir do pacote Debian.
