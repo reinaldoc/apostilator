@@ -166,7 +166,7 @@ installer boot menu', prossiga então com a instalação.
   <item>Escrever as mudanças nos discos</item>: Sim.
 </enumerar>
 
-<subsubsecao>Configurações de repositório e boot</subsubsecao>
+<subsubsecao>Configuração de repositório e boot</subsubsecao>
 
 <lista>
   <item>Ler outro CD ou DVD?</item>: não
