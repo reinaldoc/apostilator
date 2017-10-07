@@ -1,20 +1,20 @@
 <capitulo>Introdução ao Drupal</capitulo>
 
     Drupal é um projeto de código aberto para o gerenciamento de conteúdo em
-Portais Corporativos que <u>tem sido utilizado em grandes projetos</u> por ser
-<b>seguro</b>, <b>altamente customizável</b> e <b>extensível</b>. Estas
-características nem sempre permitem que o Drupal seja <i>Plug-and-Play</i>,
-pois normalmente há uma relação inversa entre elas e a facilidade de
-aprendizado.
+Portais Corporativos que <b>tem sido utilizado em grandes projetos</b> por ser
+<u>seguro, altamente customizável e extensível</u>. Estas características nem
+sempre permitem que o Drupal seja <i>Plug-and-Play</i>, pois normalmente há
+uma relação inversa entre elas e a facilidade de aprendizado.
 
     Entretanto, depois de imerso na forma como o Drupal organiza o
 conteúdo, é inegável a relação positiva com a eficiência em entregar
 resultados.
 
-    Outra característica relevante é o total desacoplamento entre o
-<i>front-end</i> e o Drupal. Isso permite que o desenvolvedor crie a
-apresentação do site sem necessitar conhecer o Drupal ou a linguagem de
-programação em que ele foi desenvolvido.
+    Outra característica relevante é o <u>fraco acoplamento entre as páginas
+HTML e o Drupal</u>. Isso permite que o desenvolvedor <i>front-end</i> crie
+a identidade visual com pouco conhecimento sobre o Drupal ou sobre a
+linguagem de programação em que ele foi desenvolvido, sendo necessário
+conhecer apenas a estrutura dos arquivos de <i>template</i>.
 
 <subsecao>Referências</subsecao>
 
