@@ -1,14 +1,30 @@
 <capitulo>Relação de Tags</capitulo>
 
+<subsecao>Resumo</subsecao>
+
+<comando>
+;lt;resumo;gt;
+   Conteúdo para o capítulo de resumo.
+;lt;/resumo;gt;
+</comando>
+
+    A opção <b>apostilator -y</b> gera um capítulo adicional com todos os
+textos identificados pela tag <b>resumo</b>.
+
 <subsecao>Capítulos e subseções</subsecao>
 
 <comando>
 <capitulo></capitulo>
 <nome></nome>
-    <subsecao></subsecao>
-    <nome></nome>
-        <subsubsecao></subsubsecao>
-        <nome></nome>
+
+<subsecao></subsecao>
+<nome></nome>
+
+<subsubsecao></subsubsecao>
+<nome></nome>
+
+<subsubsubsecao></subsubsubsecao>
+<nome></nome>
 </comando>
 
 <subsecao>Quebras de Página</subsecao>
@@ -20,14 +36,16 @@
 <subsecao>Comandos e linhas de código</subsecao>
 
 <comando>
-<\comando><\/comando>
+;lt;comando;gt;
+;lt;/comando;gt;
 </comando>
 
-<subsecao>Negrito e itálico</subsecao>
+<subsecao>Negrito, itálico e sublinhado</subsecao>
 
 <comando>
 <b></b>
 <i></i>
+<u></u>
 </comando>
 
 <subsecao>Listas</subsecao>
@@ -39,6 +57,7 @@
 <enumerar>
     <item></item>
 </enumerar>
+<step></step>
 </comando>
 
 <subsecao>Atividade e Importante</subsecao>
@@ -85,3 +104,4 @@
     <nome></nome>
 </equacao>
 </comando>
+

@@ -7,6 +7,8 @@ sumário.
 
       Para realizar tal procedimento há <i>tags</i>:
 
+<resumo>
+
 <comando>
 <capitulo>Título do Capítulo</capitulo>
 
@@ -32,3 +34,5 @@ Dessa forma o escritor não precisa ficar se preocupando com numerações. Ao
 adicionar a tag 'subsecao' o processador irá gerar a subseção cujo
 título será, segundo o exemplo, <b>Sub Seção</b> e o número atribuído a ela
 será coerente com o número do capítulo corrente.
+
+</resumo>

@@ -1,6 +1,8 @@
 <capitulo>Inserir Comandos / Linhas de Código</capitulo>
 <nome>xxx</nome>
 
+<resumo>
+
     Para inserir linhas de código, comandos ou arquivos de configuração, é
 necessário utilizar o par de <i>tags</i> <b>comando</b>, como no exemplo a
 seguir:
@@ -15,6 +17,8 @@ impressos:
     Dentro do parênteses há 5 (     ) espaços! :o)
 ;lt;/comando;gt;
 </comando>
+
+</resumo>
 
     Repare que o texto acima foi colocado dentro de um ambiente para comandos.
 Note que todos os espaços em branco foram impressos exatamente da forma que
