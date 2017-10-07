@@ -12,41 +12,36 @@ correções de falhas de segurança.
 # apt-get install apache2 libapache2-mod-php7.0
 # apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql
 # apt-get install php-uploadprogress ca-certificates
-# mkdir /var/www/novoportal
+# mkdir /var/www/portal
 </comando>
 
 <lista>
-<item/><b>VirtualHost</b>: /etc/apache2/sites-available/novoportal.conf
+  <item>VirtualHost</item>: /etc/apache2/sites-available/portal.conf
 </lista>
 
 <comandoNumerado>
-<Directory /var/www/novoportal/>
+<Directory /var/www/portal/>
     Options Indexes FollowSymLinks
     AllowOverride All
     Require all granted
 </Directory>
 
 <IfModule mod_ssl.c>
-    <Directory /var/www/novoportal/>
-        Options Indexes FollowSymLinks
-        AllowOverride All
-        Require all granted
-    </Directory>
     <VirtualHost *:80>
-        ServerName novoportal.net
-        Redirect / https://novoportal.net/
+        ServerName example.com
+        Redirect / https://example.com/
     </VirtualHost>
     <VirtualHost *:443>
         ServerAdmin reinaldoc@gmail.com
-        ServerName novoportal.net
-        DocumentRoot /var/www/novoportal
+        ServerName example.com
+        DocumentRoot /var/www/portal
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
         # SSL Engine
         SSLEngine on
-        SSLCertificateFile    /etc/ssl/private/novoportal.cer
-        SSLCertificateKeyFile /etc/ssl/private/novoportal.key
+        SSLCertificateFile    /etc/ssl/private/portal.cer
+        SSLCertificateKeyFile /etc/ssl/private/portal.key
         <FilesMatch "\.php$">
             SSLOptions +StdEnvVars
         </FilesMatch>
@@ -58,11 +53,11 @@ correções de falhas de segurança.
 <comando>
 # a2enmod rewrite
 # a2enmod ssl
-# a2ensite novoportal
+# a2ensite portal
 </comando>
 
 <lista>
-<item/>Configurações gerais
+  <item>Configurações gerais</item>:
 </lista>
 
 <comando>
@@ -93,7 +88,6 @@ upload_max_filesize = 100M
 date.timezone = America/Belem
 </comando>
 
-
 <subsecao>MySQL</subsecao>
 
 <comando>
@@ -101,30 +95,34 @@ date.timezone = America/Belem
 </comando>
 
 <lista>
-<item/>Preparar banco de dados
+  <item>Preparar banco de dados</item>:
 </lista>
 
 <comando>
 # mysql -p
-> CREATE DATABASE novoportal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-> CREATE USER 'novoportal'@'localhost' IDENTIFIED BY 'top-secret';
+> CREATE DATABASE portal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+> CREATE USER 'portal'@'localhost' IDENTIFIED BY 'top-secret';
 > GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, \
-        REFERENCES ON novoportal.* TO 'novoportal'@'localhost';
+        REFERENCES ON portal.* TO 'portal'@'localhost';
 > QUIT;
 </comando>
 
 <subsecao>FTP Server</subsecao>
 
-<comando>
-@ instalar servidor VSFtpd
-# apt-get install vsftpd
+<step>Instalar servidor VSFtpd</step>
 
-@ permitir que usuários com shell /bin/false realizem login no FTP.
+<comando>
+# apt-get install vsftpd
+</comando>
+
+<step>Permitir que usuários com shell /bin/false realizem login no FTP</step>
+
+<comando>
 # echo '/bin/false' >> /etc/shells
 </comando>
 
 <lista>
-<item/><b>Configurações</b>: /etc/vsftpd.conf
+  <item>Configurações</item>: /etc/vsftpd.conf
 </lista>
 
 <comando>
@@ -138,79 +136,81 @@ chroot_local_user=YES
 utf8_filesystem=YES
 </comando>
 
-A documentação recomenda a não utilização da opção allow_writeable_chroot=YES,
-em vez disso, o usuário não deve possuir permissão de escrita na raiz do seu
-home, podendo escrever em diretórios internos. Optou-se por manter o usuário
-root como proprietário do diretório /var/www/novoportal, home do usuário para
-o site, utilizando uma diretório interno para armazenar o CMS.
-
+    A documentação recomenda a não utilização da opção
+allow_writeable_chroot=YES, em vez disso, o usuário não deve possuir permissão
+de escrita na raiz do seu home, podendo escrever em diretórios internos.
+Optou-se por manter o usuário root como proprietário do diretório
+/var/www/portal, home do usuário para o site, utilizando uma diretório interno
+para armazenar o CMS.
 
 <subsecao>Drupal</subsecao>
 
-Realize download do Drupal e do arquivo de trandução da interface web:
+    Realize download do Drupal e do arquivo de trandução da interface web:
 
 <lista>
-<item/>https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
-<item/>https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
+  <item/>https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
+  <item/>https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
 </lista>
 
-Execute os procedimentos:
+    Execute os procedimentos:
 
+<step>Crie o usuário para acesso FTP</step>
 <comando>
-@ criar usuário
-# adduser --home /var/www/novoportal --shell /bin/false novoportal
+# adduser --home /var/www/portal --shell /bin/false portal
+</comando>
 
-@ extrair o drupal e copiar o arquivo de tradução
-# su - novoportal -s /bin/bash
+<step>Extraia o Drupal e copie o arquivo de tradução</step>
+<comando>
+# su - portal -s /bin/bash
 $ tar xzf /path/to/drupal-7.xx.tar.gz
 $ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
 $ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
 $ mv drupal-7.xx drupal-7
 $ mv /path/to/drupal-7.56.pt-br.po drupal-7/profiles/standard/translations
 $ exit
-
-@ ativar virtualhost do drupal
-# cd /var/www/novoportal/drupal-7
-# mv sites/example.sites.php sites/sites.php
-# echo -e "\$sites['novoportal.net'] = 'novoportal';\n?>" >> sites/sites.php
-
-@ criar diretório do virtualhost e diretório de upload
-# cp -a sites/default sites/novoportal
-# mkdir sites/novoportal/files sites/novoportal/files-private
-# chown www-data:novoportal sites/novoportal/files sites/novoportal/files-private
-
-@ criar arquivo de configuração
-# cp sites/novoportal/default.settings.php sites/novoportal/settings.php
-# chown www-data:novoportal sites/novoportal/settings.php
-
-@ configure o proxy (atualizações) em sites/novoportal/settings.php
-$conf['proxy_server'] = '10.x.y.z';
-$conf['proxy_port'] = 8080;
-$conf['proxy_username'] = 'usernames';
-$conf['proxy_password'] = 'password';
-$conf['proxy_user_agent'] = 'Mozilla/5.0 (X11; Linux x86_64; rv:54.0)
-                             Gecko/20100101 Drupal/7';
-$conf['proxy_exceptions'] = array('127.0.0.1', 'localhost');
 </comando>
 
-
-    Inicie o navegador para acesso ao Drupal e proceda a configuração
-do idioma e configurações de conexão ao banco. As configurações serão salvas
-em sites/novoportal/settings.php.
-
+<step>Ative o virtualhost do drupal</step>
 <comando>
-@ redefinir permissões do arquivo de configuração
-# chown novoportal: sites/novoportal/settings.php
-# chmod 644 sites/novoportal/settings.php
+# cd /var/www/portal/drupal-7
+# mv sites/example.sites.php sites/sites.php
+# echo -e "\$sites['exmaple.com'] = 'portal';\n?>" >> sites/sites.php
+</comando>
 
-@configurar caminho do repositório privado de arquivos
-acesse 'Mídia -> Filesystem';
-sites/novoportal/files-private
+<step>Crie o diretório do virtualhost e diretório de upload</step>
+<comando>
+# cp -a sites/default sites/portal
+# mkdir sites/portal/files sites/portal/files-private
+# chown www-data:portal sites/portal/files sites/portal/files-private
+</comando>
 
-@ obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal:
-acesse 'Configuração -> Sistema -> Agendador de tarefas';
+<step>Crie o arquivo de configuração</step>
+<comando>
+# cp sites/portal/default.settings.php sites/portal/settings.php
+# chown www-data:portal sites/portal/settings.php
+</comando>
 
-@ cadastre a chamada no /etc/crontab
-0 * * * * novoportal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
+<step>Inicie o navegador</step>
 
+    Acesse o Drupal e proceda a configuração do idioma e configurações de
+conexão ao banco. As configurações serão salvas em
+<b>sites/portal/settings.php</b>.
+
+<step>Redefina permissões do arquivo de configuração</step>
+<comando>
+# chown portal: sites/portal/settings.php
+# chmod 644 sites/portal/settings.php
+</comando>
+
+<step>Configure o caminho do repositório privado de arquivos</step>
+
+    Acesse 'Mídia -> Filesystem' e defina para: <b>sites/portal/files-private</b>
+
+<step>Obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal</step>
+
+    Acesse 'Configuração -> Sistema -> Agendador de tarefas';
+
+<step>Cadastre a chamada no /etc/crontab</step>
+<comando>
+0 * * * * portal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
 </comando>
