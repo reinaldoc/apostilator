@@ -2,13 +2,13 @@
 
     O Drupal foi implementado para ser altamente customizável, o que levou ao
 desenvolvimento de quatro estruturas genéricas: blocos, tipos de conteúdo,
-menus e taxonomias, que compõe seu núcleo. É possível dividí-lo em três
-camadas: os temas, o núcleo do Drupal e os módulos.
+menus e taxonomias, que compõe seu núcleo. É possível ainda dividí-lo em três
+componentes: os temas, o núcleo do Drupal e os módulos.
 
     A primeira camada é composta por temas que contém a visão em HTML/CSS
 com identificação de regiões que serão controladas pelo núcleo do Drupal.
 Já o núcleo do Drupal pode ser extendido por módulos que adicionam
-capacidades tanto para gerar estruturas de visão quando para armazenar novos
+capacidades tanto para gerar estruturas de visão quanto para armazenar novos
 tipos de dados em banco de dados.
 
 <subsecao>Estrutura</subsecao>
@@ -53,7 +53,7 @@ individual a lista de URLs em que serão exibidos.
 
 <subsubsecao>Blocos</subsubsecao>
 
-    O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
+    O <b>bloco</b> é a unidade que pode ser associada a uma região do tema e
 pode ser criado a partir de um trecho de código HTML ou fornecido por algum
 módulo. Configura-se no bloco em quais URLs ele será exibido, dentro da região
 que foi associado.
@@ -62,17 +62,20 @@ que foi associado.
   <item/><b>URL</b>: /admin/structure/block
   <item/><b>Atividades</b>:
   <lista>
-    <item/>exibir as regiões do tema;
-    <item/>vincule de blocos 'Search form' e 'User login' a região 'Second sidebar';
-    <item/>desative o bloco de menu 'Navigation';
-    <item/>ative o bloco de menu 'Development' na região 'Second sidebar';
-    <item/>reordene os blocos da região 'Second sidebar' com 'Development' em 1º;
+    <item/>exibir as regiões do tema por meio da opção <u>Demonstrate block
+regions</u>;
+    <item/>clique em <u>Sair da demonstração de regiões de blocos</u>;
+    <item/>mova os blocos da região <b>Primeira barra lateral</b> para <b>Segunda
+barra lateral</b>;
+    <item/>reordene os blocos da região <b>Segunda barra lateral</b>,
+mantenha <b>Nevageção</b> em 1º;
     <item/>acesse às configurações de cada bloco;
-    <item/>controle a visibilidade do bloco por path, tipo de conteúdo, papel;
+    <item/>identifique os controles de visibilidade do bloco;
     <item/>adicione novo bloco com um trecho de código HTML;
-    <item/>search form: exibir o bloco de pesquisa ao usuário anônimo (permissão);
   </lista>
 </lista>
+
+    Os formatos de texto...
 
 <subsubsecao>Menus</subsubsecao>
 
