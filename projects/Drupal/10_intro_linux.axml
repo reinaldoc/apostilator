@@ -48,7 +48,7 @@ como garante o reconhecimento ao autor.
 sobre este material podem ser enviadas ao autor e serão consideradas para
 aprimoramento do material.
 
-<subsecao>Compilação de <i>software</i> X <i>software</i> da distribuição/sistema operacional</subsecao>
+<subsecao>Compilação de <i>software</i> X <i>software</i> empacotado</subsecao>
 <nome>compilacao-vs-pacote</nome>
 
     O acesso ao código fonte do <i>software</i> e sua compilação, é uma das
@@ -83,7 +83,6 @@ maduras, tende a fornecer maior estabilidade.
 
 </lista>
 
-
     Características do <i>software</i> obtido a partir do código fonte:
 
 <lista>
@@ -110,35 +109,99 @@ utilizados do <i>software</i>.
 corporativos a utilização de <i>software</i> fornecido por um distribuidor é
 essencial para continuidade da disponibilidade dos sistemas.
 
-    Diminui-se o esforço empregado para manter o parque tecnológico atualizado
-e livre de falhas. Dessa forma, o treinamento utilizará os pacotes fornecidos
-pelo distribuidor do sistema operacional escolhido.
+    Diminui-se o esforço empregado para manter o sistema atualizado e livre
+de falhas. O Debian GNU/Linux possui uma equipe eficiente, que disponibiliza
+rapidamente correções para as falhas descorbertas.
 
 <subsecao>Debian GNU/Linux</subsecao>
 
-    Os sistemas operacionais desenvolvidos a partir de tecnologias livres
-fornecem ferramentas que realizam instalações automatizadas de <b>pacotes
-<i>software</i></b>. O Debian utiliza o <b>apt-get</b> para este fim e fornece
-repositórios web que contém pacotes de <i>software</i> disponíveis para
-instalação. Os pacotes são contém arquivos compactados com rotinas de
-pré/pós instalação e remoção, além de informações sobre dependências.
+    A instalação do Debian GNU/Linux é bastante simplificada, sendo
+basicamente composta pela configuração do idioma, criação de contas de usuário
+e particionamento do disco.
+
+    Acesse o site <i>www.debian.org</i> e obtenha a mídia de instalação
+mínima, denominada <i>netinst</i>.
+
+<lista>
+  <item/>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso
+</lista>
+
+    Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
+installer boot menu', prossiga então com a instalação.
+
+<subsubsecao>Língua</subsubsecao>
+
+<lista>
+  <item>Língua</item>: Portuguese (Brazil) - Português do Brasil.
+  <item>País</item>: Brasil.
+  <item>Mapa de teclado</item>: Português Brasileiro.
+</lista>
+
+<subsubsecao>Configuração de contas e relógio</subsubsecao>
+
+<lista>
+  <item>Nome da máquina</item>: drupal7
+  <item>Nome do domínio</item>: localdomain
+  <item>Senha do root</item>: senha*complexa
+  <item>Nome completo do novo usuário</item>: Reinaldo Gil Lima de Carvalho
+  <item>Nome de usuário</item>: reinaldoc
+  <item>Senha do novo usuário</item>: outra*complexa
+  <item>Configurar o relógio</item>: Nome do Estado
+</lista>
+
+<subsubsecao>Particionamento</subsubsecao>
+
+    Abaixo é indicado um esquema simples de particionamento.
+
+<enumerar>
+  <item>Método de particionamento</item>: Manual.
+  <item>Selecione o disco local <i>HARDDISK</i> para criar nova tabela de partições</item>.
+  <item>Selecione a opção <i>ESPAÇO LIVRE</i> para criar novas partições</item>:
+  <lista>
+    <item>#1:</item> 256 MB - primária, início, área de troca (swap);
+    <item>#2:</item> 3 GB   - primária, início, ext4, /, Rótulo: RootFS, Flag inicializável: ligado;
+    <item>#3:</item> 20 GB  - primária, início, ext4, /var, Rótulo: VarFS, Blocos reservados: 0%;
+  </lista>
+  <item>Finalizar o particionamento e escrever as mudanças no disco</item>.
+  <item>Escrever as mudanças nos discos</item>: Sim.
+</enumerar>
+
+<subsubsecao>Configurações de repositório e boot</subsubsecao>
+
+<lista>
+  <item>Ler outro CD ou DVD?</item>: não
+  <item>País do espelho do repositório Debian</item>: tecle ESC para cancelar
+  <item>Continuar sem um espelho de rede?</item>: sim
+  <item>Participar do concurso de utilização de pacotes?</item>: não
+  <item>Escolha o software a ser instalado</item>: nenhum (desmarque todos)
+  <item>Instalar o carregador de inicialização GRUB na MBR</item>: sim
+  <item>Dispositivo no qual instalar o carregador de inicialização</item>: /dev/sda (disco principal)
+  <item>Instalação finalizada</item>: continuar
+</lista>
+
+<subsecao>Atualização do Sistema Operacional</subsecao>
+
+    Os sistemas operacionais Linux fornecem ferramentas para a instalação
+automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
+<b>apt-get</b> que obtém os pacotes de repositórios web. Os pacotes contém
+arquivos compactados com rotinas de pré/pós instalação e remoção, além de
+informações sobre dependências.
 
     O comportamento padrão do utilitário <i>apt-get</i>, ao instalar um
-<i>software</i>, é realizar a instalação das <b>dependências</b>, e também
+<i>software</i>, é realizar a instalação das <b>dependências</b> e também
 daqueles pacotes especificados como <b>recomendados</b>. Entretanto, isto
 ocasiona a instalação de pacotes não requeridos e demanda a utilização de
 espaço em disco adicional.
 
-    A instalação automática de <i>software</i> recomendado pode ser
-desabilitada por meio da adição da configuração abaixo ao arquivo
-<b>/etc/apt/apt.conf</b>:
+    A instalação de pacotes "recomendados" pode ser desabilitada por meio
+da adição da configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>:
 
 <comando>
 APT::Install-Recommends "0";
 </comando>
 
-    A configuração da fonte dos pacotes a serem instalados é realizada
-no arquivo <b>/etc/apt/sources.list</b>:
+    A configuração da fonte dos pacotes é realizada no arquivo
+<b>/etc/apt/sources.list</b>:
 
 <comando>
 deb http://ftp.br.debian.org/debian stretch main contrib non-free
@@ -180,4 +243,3 @@ como indicado a seguir:
 <comando>
     # apt-cache show apache2
 </comando>
-
