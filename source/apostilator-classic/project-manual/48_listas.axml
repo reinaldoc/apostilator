@@ -75,3 +75,29 @@ O resultado do texto acima é o seguinte:
     Sendo assim, a forma de trabalhar com listas é a mesma, não importa se é uma
 lista numerada ou não. A única diferença entre elas é a <i>tag</i> principal,
 ou seja 'lista' ou 'enumerar'.
+
+<subsecao>Parágrafos Numerados</subsecao>
+
+    Uma forma alternativa de enumerar itens é utilizar a <i>tag</i>
+<b>step</b>, ela permite a utilização de outras tags entre os elementos.
+
+<step>Legal esse passo!</step>
+
+    Podemos utilizar a <i>tag</i> <b>comando</b> entre os itens da lista.
+
+<comando>
+teste de comando
+</comando>
+
+<step>Bacana esse passo também!</step>
+
+    E ainda continuar em uma lista numerada.
+
+<subsubsecao>Numeração por seção</subsubsecao>
+
+    Entretanto, veja que após uma subseção, a lista é reiniciada.
+
+<step>Mais um passo</step>
+
+    Use <b>step</b> para enriquecer seus procedimentos.
+
