@@ -11,6 +11,12 @@
         <nome></nome>
 </comando>
 
+<subsecao>Quebras de Página</subsecao>
+
+<comando>
+<quebraPagina>
+</comando>
+
 <subsecao>Comandos e linhas de código</subsecao>
 
 <comando>
@@ -33,6 +39,13 @@
 <enumerar>
     <item></item>
 </enumerar>
+</comando>
+
+<subsecao>Atividade e Importante</subsecao>
+
+<comando>
+<atividade/> Texto da atividade.
+<importante/> Texto importante.
 </comando>
 
 <subsecao>Nomes e referências</subsecao>
@@ -72,10 +85,3 @@
     <nome></nome>
 </equacao>
 </comando>
-
-<subsecao>Quebras de Página</subsecao>
-
-<comando>
-<quebraPagina>
-</comando>
-

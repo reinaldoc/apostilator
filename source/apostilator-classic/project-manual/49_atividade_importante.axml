@@ -1,0 +1,21 @@
+<capitulo>Atividade e Importante</capitulo>
+
+    <atividade/>Em um texto é comum a necessidade de destacar uma parágrafo,
+seja porque é uma atividade ou há algo importante que deve-se dar mais
+atenção. Para isto existem as tags <b>atividade</b> e <b>importante</b>.
+Este parágrafo é exemplo da tag de atividade.
+
+    <importante/>Em ambos os casos elas inserem uma imagem a direita do
+parágrafo. Este parágrafo é um exemplo da tag importante. As imagens são
+obtidas de 'imgs/atividade.png' e 'imgs/importante.png' respectivamente.
+
+<comando>
+<atividade/>Texto de atividade.
+
+<imporatnte/>Texto importante.
+</comando>
+
+    Perceba que as tags são auto-fechadas.
+
+    As imagens utilizadas por padrão são de Saki (Alexandre Moore), obtidas
+em <citar>AtividadeIMG</citar> e <citar>ImportanteIMG</citar>
