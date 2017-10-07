@@ -1,3 +1,13 @@
+20170930 (v0.3.2 released):
+- base.tex: revisado e comentado.
+- base.tex: ajustado pacote para sublinhado de palavras com acentos (soulutf8).
+- base.tex: gera sumário como estrutura do documento PDF (hypersetup).
+- base.tex: novo estilo para início de capítulos e seções.
+- base.tex: define margin-bottom entre parágrafos.
+- base.tex: define margin-bottom para itens do sumário.
+- Adicionadas tags <atividade> e <importante>, inclusive no manual.
+- Conteúdo do manual revisado.
+- Manual atualizado para a tag <resumo> para utilização com apostilator -y.
 
 20120119 (v0.3 released):
 - Requerida extensão .axml nos arquivos do projeto.
