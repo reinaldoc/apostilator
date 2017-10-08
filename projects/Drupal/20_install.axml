@@ -256,7 +256,7 @@ $sites['exmaple.com'] = 'portal'; ?>
 
     Considerações sobre o compartilhamento do núcleo do Drupal por meio de
 configurações multi-site estão disponíveis em
-<b>http://drupal.org/documentation/install/multi-site</b>.
+<url>http://drupal.org/documentation/install/multi-site</url>.
 
 <step>Prepare o diretório do virtualhost do Drupal</step>
 <comando>
@@ -268,9 +268,8 @@ $ exit
 
 <step>Conceda permissão ao usuário do servidor web</step>
 <comando>
-# cd /var/www/portal/drupal-7
-# chown www-data:portal sites/portal/settings.php
-# chown www-data:portal sites/portal/files sites/portal/files-private
+# cd /var/www/portal/drupal-7/sites/portal
+# chown www-data:portal settings.php files files-private
 </comando>
 
 <step>Inicie o navegador</step>
@@ -281,7 +280,7 @@ conexão ao banco. As configurações serão salvas em
 
 <step>Redefina permissões do arquivo de configuração</step>
 <comando>
-# chown portal: sites/portal/settings.php
+# chown portal: settings.php
 </comando>
 
 <step>Configure o caminho do repositório privado de arquivos</step>
@@ -301,5 +300,5 @@ URL chave para registro no crontab do sistema operacional.
      O agendador de tarefas do Drupal tem funções de indexação de conteúdo,
 produção de relatórios de atualizações disponíveis, além de remover arquivos
 temporários. Consulte a documentação sobre o agendador de tarefas em
-<b>https://www.drupal.org/docs/7/setting-up-cron/overview</b>.
+<url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
 
