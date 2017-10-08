@@ -1,15 +1,16 @@
 <capitulo>Visão geral do Drupal</capitulo>
 
     O Drupal foi implementado para ser altamente customizável, o que levou ao
-desenvolvimento de quatro estruturas genéricas: blocos, tipos de conteúdo,
-menus e taxonomias, que compõe seu núcleo. É possível ainda dividí-lo em três
-componentes: os temas, o núcleo do Drupal e os módulos.
+desenvolvimento de quatro estruturas genéricas: <u>blocos, tipos de conteúdo,
+menus e taxonomias</u>, que compõe seu núcleo. A partir de uma visão mais
+abrangente é possível identificar três componentes do Drupal: <u>os temas, o
+núcleo do Drupal e os módulos</u>.
 
-    A primeira camada é composta por temas que contém a visão em HTML/CSS
-com identificação de regiões que serão controladas pelo núcleo do Drupal.
-Já o núcleo do Drupal pode ser extendido por módulos que adicionam
-capacidades tanto para gerar estruturas de visão quanto para armazenar novos
-tipos de dados em banco de dados.
+    A primeira camada é composta por <u>temas</u> que contém a visão em
+HTML/CSS com identificação de <u>regiões que serão controladas pelo núcleo do
+Drupal</u>. Já o <u>núcleo do Drupal pode ser extendido por módulos</u> que
+adicionam capacidades tanto para gerar estruturas de visão quanto para
+armazenar novos tipos de dados em banco de dados.
 
 <subsecao>Estrutura</subsecao>
 
@@ -43,20 +44,28 @@ tipos de dados em banco de dados.
 **********************************************************************************
 </comando>
 
-    A <b>Região do Conteúdo</b> pode ser preenchida por um conteúdo,
-denominado <b>node</b>, por uma View de página, denominada <b>Page View</b>,
-ou por um Painel, denominado <b>Panel Page</b>, em qualquer um dos três casos,
-a configuração da URL da página será definida por esta região.
+    A <b>Região do Conteúdo</b> pode ser preenchida por:
 
-    As demais regiões conterão blocos que possuem em sua configuração
-individual a lista de URLs em que serão exibidos.
+<lista>
+  <item><u>um conteúdo</u></item>, denominado <b>Node</b>, que contém uma
+instância de um determinado tipo, que é formada por campos de diversos
+tipos, como texto, texto longo, imagem, arquivo, taxonomia, etc.
+  <item><u>por uma View de página</u></item>, denominada <b>Page View</b>, que
+contém uma listagem de um ou vários tipos de conteúdo.
+  <item><u>por um Painel</u></item>, denominado <b>Panel Page</b>, que contém
+subregiões que podem ser alocados <b>Nodes, Blocos ou Views</b>.
+</lista>
+
+    Em qualquer um dos três casos, a configuração da URL da página será
+definida por esta região. As demais regiões conterão blocos que possuem em
+sua configuração individual a lista de URLs em que serão exibidos.
 
 <subsubsecao>Blocos</subsubsecao>
 
-    O <b>bloco</b> é a unidade que pode ser associada a uma região do tema e
-pode ser criado a partir de um trecho de código HTML ou fornecido por algum
-módulo. Configura-se no bloco em quais URLs ele será exibido, dentro da região
-que foi associado.
+    O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
+inclusive à Região de Conteúdo, e pode ser criado a partir de um trecho de
+código HTML ou fornecido por algum módulo. Configura-se no bloco em quais
+URLs ele será exibido, dentro da região que foi associado.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/block
@@ -69,19 +78,22 @@ regions</u>;
 barra lateral</b>;
     <item/>reordene os blocos da região <b>Segunda barra lateral</b>,
 mantenha <b>Nevageção</b> em 1º;
-    <item/>acesse às configurações de cada bloco;
+    <item/>salve os blocos e acesse às configurações de um bloco;
     <item/>identifique os controles de visibilidade do bloco;
     <item/>adicione novo bloco com um trecho de código HTML;
   </lista>
 </lista>
 
-    Os formatos de texto...
+   <importante/> Os formatos de texto restringem as <i>tags</i> HTML
+permitidas <u>para campos de texto longo</u>, como o utilizado ao criar um
+bloco. É possível criar novos formatos de texto por meio em 'Configurações
+-> Criação de conteúdo -> Formatos de texto'.
 
 <subsubsecao>Menus</subsubsecao>
 
     Um <b>menu</b> é formado por um conjunto de links (itens de menu) que
-podem ser organizados hierarquicamente em vários níveis. Todo menu é um bloco
-que deve ser associado a uma região do tema pela interface de blocos.
+podem ser organizados em vários níveis, de forma hierárquica. Todo menu é um
+bloco que deve ser associado a uma região do tema pela interface de blocos.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/menu
