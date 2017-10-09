@@ -134,10 +134,12 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
 
 <subsubsecao>Taxonomia</subsubsecao>
 
-    Uma <b>taxonomia</b> (vacabulário) equivale a categorias, é formada por
-termos que podem ser organizados hierarquicamente. Também pode ser entendida
-como uma lista de elementos. A taxanomia é representada por um campo do tipo
-<b>Term reference</b> que pode compor um ou mais tipos de conteúdo.
+    Uma <b>taxonomia</b> (vacabulário) refere-se a classificação do
+conteúdo, categorias, que são formadas por termos que podem ser organizados
+hierarquicamente. Também pode ser entendida como uma lista de elementos do
+tipo gênero e espécie. A taxanomia é representada por um campo do tipo
+<b>Term reference</b> que pode compor um ou mais tipos de conteúdo. As
+<i>tags</i> são um exemplo de taxonomia.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/taxonomy
