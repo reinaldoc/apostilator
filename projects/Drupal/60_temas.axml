@@ -265,7 +265,8 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 
 <subsecao>Zen Base Theme</subsecao>
 
-"Starter theme" p/ desenvolvimento em HTML/SASS/GULP.
+    O tema Zen é recomendado para o desenvolvimento <i>from scratch<i>, é
+considerado um <i>Starter theme</i> para desenvolvedores HTML/SASS/GULP.
 
 <lista>
   <item/><b>URL</b>: https://drupal.org/project/zen
