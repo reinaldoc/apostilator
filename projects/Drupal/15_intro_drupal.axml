@@ -21,39 +21,42 @@ conhecer apenas a estrutura dos arquivos de <i>template</i>.
 <lista>
   <item>Quem usa o Drupal?</item>
   <lista>
-    <item/>https://drupal.com/showcases
+    <item/><url>https://drupal.com/showcases</url>
   </lista>
 </lista>
+
+    Pesquise em <b>Industry...</b> por <b>Public sector</b>.
 
 <lista>
   <item>Onde posso testar o Drupal antes de instalá-lo?</item>
   <lista>
-    <item/>http://simplytest.me
+    <item/><url>http://simplytest.me</url>
   </lista>
 </lista>
 
-Instale o módulo <b>l10n_update</b> para poder ativar a tradução para Português do Brasil.
+    Instale o módulo <b>l10n_update</b> e ative o idioma Português do Brasil,
+consulte a seção<ref>module-l10n-update</ref>.
 
 <lista>
   <item>Onde obter o Drupal?</item>
   <lista>
-    <item/>https://drupal.org/project/drupal/releases [download 7.xx]
-    <item/>https://localize.drupal.org/download?project=drupal [tradução]
+    <item/><url>https://drupal.org/project/drupal</url>
+    <item/><url>https://localize.drupal.org/download?project=drupal</url> [tradução]
   </lista>
 </lista>
 
 <lista>
   <item>Quais os módulos mais usados do Drupal?</item>
   <lista>
-    <item/>https://drupal.org/project/usage
+    <item/><url>https://drupal.org/project/usage</url>
   </lista>
 </lista>
 
 <lista>
   <item>Onde obter módulos e temas?</item>
   <lista>
-    <item/>https://drupal.org/project/project_module [módulos]
-    <item/>https://drupal.org/project/project_theme [temas]
+    <item/><url>https://drupal.org/project/project_module</url> [módulos]
+    <item/><url>https://drupal.org/project/project_theme</url> [temas]
   </lista>
 </lista>
 
@@ -62,7 +65,7 @@ Instale o módulo <b>l10n_update</b> para poder ativar a tradução para Portugu
 <lista>
   <item>Onde obter informações sobre controles de segurança para o Drupal?</item>
   <lista>
-    <item/>https://drupal.org/security/secure-configuration
+    <item/><url>https://drupal.org/security/secure-configuration</url>
   </lista>
 </lista>
 
@@ -93,23 +96,23 @@ pela política de segurança do Drupal.
   <lista>
     <item>Controle 1:</item> Restringir login por IP.
     <lista>
-      <item/>https://drupal.org/project/restrict_by_ip
+      <item/><url>https://drupal.org/project/restrict_by_ip</url>
     </lista>
     <item>Controle 2:</item> Aplicar políticas de senhas.
     <lista>
-      <item/>https://drupal.org/node/598562
+      <item/><url>https://drupal.org/node/598562</url>
     </lista>
     <item>Controle 3:</item> Restringir tentativas de login.
     <lista>
-      <item/>https://drupal.org/project/flood_control
+      <item/><url>https://drupal.org/project/flood_control</url>
     </lista>
     <item>Controle 4:</item> Verificar permissões dos arquivos.
     <lista>
-      <item/>https://drupal.org/project/security_review
+      <item/><url>https://drupal.org/project/security_review</url>
     </lista>
     <item>Controle 5:</item> Impedir concessão de uso de código PHP.
     <lista>
-      <item/>https://drupal.org/project/paranoia
+      <item/><url>https://drupal.org/project/paranoia</url>
     </lista>
   </lista>
 </lista>
@@ -119,15 +122,15 @@ pela política de segurança do Drupal.
   <lista>
     <item/>Palestra de segurança do DrupalCon 2012
     <lista>
-      <item/>https://www.youtube.com/watch?v=rH4Kb3EQXu8
+      <item/><url>https://www.youtube.com/watch?v=rH4Kb3EQXu8</url>
     </lista>
     <item/>eBook: Security Best Practices
     <lista>
-      <item/>https://www.amazon.com/dp/B015EH48MO
+      <item/><url>https://www.amazon.com/dp/B015EH48MO</url>
     </lista>
     <item/>Guia de melhores práticas de segurança no Drupal [há link direto para o PDF na página]
     <lista>
-      <item/>https://openconcept.ca/drupal-security-best-practices-practical-guide
+      <item/><url>https://openconcept.ca/drupal-security-best-practices-practical-guide</url>
     </lista>
   </lista>
 </lista>
