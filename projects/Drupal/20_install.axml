@@ -131,7 +131,7 @@ date.timezone = America/Belem
 
 <step>Criação do schema e concessão de permissões</step>
 
-    No momento de criação do usuário é possível determinar o IP de origem da
+    Durante a criação do usuário é possível restringir o IP de origem da
 conexão, caso deseje permitir a conexão a partir de qualquer IP, substitua o
 termo <b>localhost</b> por <b>%</b>.
 
@@ -170,17 +170,18 @@ configuração foi alterado.
 # apt-get install vsftpd
 </comando>
 
-<step>Permitir que usuários com shell /bin/false realizem login no FTP</step>
-
-    Definir o shell do usuário para <b>/bin/false</b> é uma forma de evitar
-logins por meio de shells remotos, entretanto deve-se permitir a
-autenticação para login no FTP.
-
-<comando>
-# echo '/bin/false' >> /etc/shells
-</comando>
-
 <step>Configuração do VSFtpd</step>
+
+    <importante/>Um recurso esperado do serviço de FTP é a limitação de
+acesso apenas ao diretório do usuário autenticado (<i>chroot</i>). Um
+requisito para essa restrição funcionar corretamente é que o usuário <u>não
+tenha permissão de escrita</u> na raiz do seu diretório <i>home</i>. A
+documentação não recomenda usar a opção allow_writeable_chroot=YES para
+contornar isso.
+
+    Assim, optou-se por manter o usuário root como proprietário do diretório
+/var/www/portal, home do usuário para o site, utilizando um diretório interno
+para armazenar o CMS.
 
 <comando>
 # /etc/vsftpd.conf
@@ -194,12 +195,20 @@ chroot_local_user=YES
 utf8_filesystem=YES
 </comando>
 
-    A documentação recomenda a não utilização da opção
-allow_writeable_chroot=YES, em vez disso, o usuário não deve possuir permissão
-de escrita na raiz do seu home, podendo escrever em diretórios internos.
-Optou-se por manter o usuário root como proprietário do diretório
-/var/www/portal, home do usuário para o site, utilizando uma diretório interno
-para armazenar o CMS.
+<step>Permitir que usuários com shell /bin/false realizem login no FTP</step>
+
+    Usuários utilizados para acesso FTP não necessitam de um <i>shell</i>
+válido, podendo ser definido para <b>/bin/false</b> quando o usuário for
+criado. Dessa forma, pode-se configurar a PAM para não requerer um
+<i>shell</i> válido para autenticação FTP. Isso fará com que o usuário não
+conseguira realizar autenticação em outros serviços eventualmente ativados
+no servidor.
+
+<comando>
+# /etc/pam.d/vsftpd
+# l.10
+#auth   required        pam_shells.so
+</comando>
 
 <step>Recarregar configurações do VSFtpd</step>
 
