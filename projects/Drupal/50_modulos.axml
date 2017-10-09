@@ -1,23 +1,68 @@
 <capitulo>Módulos do Drupal</capitulo>
 
 <lista>
-  <item/>https://drupal.org/project/usage
-  <item/>https://drupal.org/project/project_module
+  <item/><url>https://drupal.org/project/usage</url>
+  <item/><url>https://drupal.org/project/project_module</url>
 </lista>
 
 <subsecao>Administração</subsecao>
 
-<subsubsecao>Devel Generate</subsubsecao>
+<subsubsecao>Devel</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/devel
-  <item/><b>Função</b>: gerar usuários, menus, taxonomias e conteúdos;
+  <item/><b>Download</b>: <url>https://drupal.org/project/devel</url>
+  <item/><b>Função</b>: recursos de depuração para o desenvolvedor de
+módulos, log de consultas e atalhos.
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>habilite o módulo <b>Devel</b>;
+    <item/>vincule o bloco <u>Desenvolvimento</u> à região <b>Segunda barra
+lateral</b>;
+    <item/>acesse o item <b>Devel settings</b> do menu
+<u>Desenvolvimento</u>;
+    <item/>habilite as opções 'Display query log' para exibir os SQLs
+realizados;
+    <item/>ordene os SQLs por tempo de duração em execução;
+    <item/>habilite as opções 'Display page timer' e 'Display memory usage';
+  </lista>
+</lista>
+
+    <importante/>Durante o desenvolvimento de temas é necessário usar a
+opção <u>Limpar cache</u>, do menu <u>Desenvolvimento</u>, a cada alteração
+dos arquivos do tema. Como alternativa a isto, habilite, temporariamente, a
+opção <b>Rebuild the theme registry on every page load</b> em <b>Devel
+settings</b>.
+
+     <br/>0.3cm
+
+<subsubsubsecao>Devel generate</subsubsubsecao>
+
+<lista>
+  <item/><b>Função</b>: geração de conteúdo, de menus, de usuários, de
+taxonomias e termos.
   <item/><b>Uso</b>: /admin/config/development
   <lista>
-    <item/>habilitar módulo 'Devel generate';
+    <item/>habilite módulo <b>Devel generate</b>;
     <item/>gerar conteúdo em Configurações ⇒ Desenvolvimento ⇒ Generate content;
   </lista>
 </lista>
+
+<subsubsubsecao>Devel node access</subsubsubsecao>
+
+<lista>
+  <item/><b>Função</b>: recursos de depuração de autorizações (permissões
+para ler, editar e apagar conteúdo).
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>habilite o módulo <b>Devel node access</b>;
+    <item/>vincule o bloco <u>Devel Node Access by User</u> à região
+<b>Rodapé</b>;
+    <item/>acesse um conteúdo e identifique as informações de permissão;
+  </lista>
+</lista>
+
+    Verifique que este módulo adiciona o item <b>Node_access summary</b> ao
+menu <u>Desenvolvimento</u>.
 
 <subsubsecao>Administration Menu</subsubsecao>
 
