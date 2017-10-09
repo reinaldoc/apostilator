@@ -7,6 +7,29 @@
 
 <subsecao>Administração</subsecao>
 
+<subsubsecao>Localization update</subsubsecao>
+<nome>module-l10n-update</nome>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/l10n_update</url>
+  <item/><b>Função</b>: implementa o mecanismo para <i>download</i> da
+tradução da interface web;
+  <item/><b>Uso</b>: /admin/config/regional/language
+  <lista>
+    <item/>habilite o módulo <b>Localization update</b>;
+    <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
+    <item/>reordene a língua <b>Portuguese, Brazil (Português)</b> para cima;
+    <item/>define a língua <b>Portuguese, Brazil (Português)</b> como padrão;
+    <item/>atualize a página;
+  </lista>
+</lista>
+
+    O módulo <b>Localization update</b> não é necessário em uma
+instalação própria, pois o arquivo de tradução é obtido, armazenado em
+<b>profiles/standard/translations</b> e carregado pelo instalador,
+mas é útil para instâncias criadas no
+<url>http://simplytest.me</url>.
+
 <subsubsecao>Devel</subsubsecao>
 
 <lista>
