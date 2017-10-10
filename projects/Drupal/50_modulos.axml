@@ -355,6 +355,7 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsecao>Views</subsecao>
 
 <subsubsecao>Views</subsubsecao>
+<nome>module-views</nome>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/views
@@ -828,6 +829,7 @@ termo ou vocabulário de taxonomia;
 </lista>
 
 <subsecao>Panels</subsecao>
+<nome>module-panels</nome>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/panels

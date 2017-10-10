@@ -14,9 +14,14 @@ armazenar novos tipos de dados em banco de dados.
 
 <subsecao>Estrutura</subsecao>
 
-<lista>
-  <item/><b>URL</b>: /admin/structure
-</lista>
+    As regiões do tema são definidas durante o seu desenvolvimento, podendo
+ser criado um subtema para alteração, adição ou exclusão de regiões, o que
+depende da edição de arquivos HTML. Esse assunto será apresentado no
+capítulo<ref>capitulo-tema</ref>.
+
+    As regiões são nomeadas a fim de descrever sua posição na página. Os
+blocos associados as regiões podem ser facilmente reordenados a fim de
+organizar a sua exibição. 
 
 <comando>
 **********************************************************************************
@@ -44,21 +49,30 @@ armazenar novos tipos de dados em banco de dados.
 **********************************************************************************
 </comando>
 
+    Os temas também possuem <b>áreas sem região</b> que, caso sejam
+customizáveis, são controladas pelas configurações do tema. O tema padrão,
+Bartik, possui três aŕeas sem região, uma com o logotipo e nome do site,
+uma que é exibida o menu primário e outra que é exibido o menu secundário.
+
     A <b>Região do Conteúdo</b> pode ser preenchida por:
 
 <lista>
-  <item><u>um conteúdo</u></item>, denominado <b>Node</b>, que contém uma
-instância de um determinado tipo, que é formada por campos de diversos
-tipos, como texto, texto longo, imagem, arquivo, taxonomia, etc.
+  <item><u>um conteúdo</u></item>, denominado <b>Node</b>, que é uma
+instância de um determinado tipo de conteúdo, sendo formado por campos de
+diversos tipos, como texto, texto longo, imagem, arquivo, taxo-nomia, etc.
   <item><u>por uma View de página</u></item>, denominada <b>Page View</b>, que
-contém uma listagem de um ou vários tipos de conteúdo.
+contém uma listagem de um ou vários tipos de conteúdo que podem ser exibidos
+em diversos formatos, como slideshow, accordion, grid, tabela, etc. As views
+são abordadas na seção<ref>module-views</ref>.
   <item><u>por um Painel</u></item>, denominado <b>Panel Page</b>, que contém
-subregiões que podem ser alocados <b>Nodes, Blocos ou Views</b>.
+subregiões em que podem ser alocados um ou mais <b>Nodes, Blocos ou Views</b>.
+Os Panels são abordados na seção<ref>module-panels</ref>.
 </lista>
 
     Em qualquer um dos três casos, a configuração da URL da página será
-definida por esta região. As demais regiões conterão blocos que possuem em
-sua configuração individual a lista de URLs em que serão exibidos.
+definida por esta região. <b>As demais regiões</b> conterão blocos que
+possuem em sua configuração individual a lista de URLs em que serão
+exibidos.
 
 <subsubsecao>Blocos</subsubsecao>
 
@@ -84,10 +98,10 @@ mantenha <b>Nevageção</b> em 1º;
   </lista>
 </lista>
 
-   <importante/> Os formatos de texto restringem as <i>tags</i> HTML
+   <importante/> Os <b>formatos de texto</b> restringem as <i>tags</i> HTML
 permitidas <u>para campos de texto longo</u>, como o utilizado ao criar um
-bloco. É possível criar novos formatos de texto por meio em 'Configurações
--> Criação de conteúdo -> Formatos de texto'.
+bloco. É possível criar novos formatos de texto em 'Configurações ->
+Criação de conteúdo -> Formatos de texto'.
 
 <subsubsecao>Menus</subsubsecao>
 
@@ -99,15 +113,21 @@ bloco que deve ser associado a uma região do tema pela interface de blocos.
   <item/><b>URL</b>: /admin/structure/menu
   <item/><b>Atividades</b>:
   <lista>
+    <item/>identificar os menus padrão (não podem ser apagados);
+    <item/>crie um menu;
+    <item/>crie links (itens do menu);
+    <item/>organize links hierarquicamente;
+    <item/>crie um link (item de menu) a partir do conteúdo;
+    <item/>associe um menu a uma região;
+    <item/>crie um link no menu de usuário;
     <item/>configuração: definir menu principal e secundário;
-    <item/>criar um menu;
-    <item/>criar links (itens do menu);
-    <item/>organizar links hierarquicamente;
-    <item/>criar um link a partir do conteúdo;
-    <item/>associar um menu a uma região;
-    <item/>gerenciar o menu de usuário;
   </lista>
 </lista>
+
+    É possível identificar o menu principal, que pode automaticamente ser
+exibido na parte superior do site, por meio da opção <b>Origem para os links
+Principais</b>, bem como o menu secundário, que pode vir a ser exibido no
+topo do site, por meio da opção <b>Origem para os links Secundários</b>.
 
 <subsubsecao>Tipos de conteúdo</subsubsecao>
 
