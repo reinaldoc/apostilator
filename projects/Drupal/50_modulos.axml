@@ -30,6 +30,31 @@ instalação própria, pois o arquivo de tradução é obtido, armazenado em
 mas é útil para instâncias criadas no
 <url>http://simplytest.me</url>.
 
+<subsubsecao>Restrict by IP</subsubsecao>
+<nome>module-restrict-by-ip</nome>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/restrict_by_ip</url>
+  <item/><b>Função</b>: restringe a autenticação, a partir do IP de origem,
+por usuário ou papel;
+  <item/><b>Uso</b>: /admin/config/people/restrict_by_ip
+  <lista>
+    <item/>identifique a opção para restringir a autenticação de todos os
+usuários;
+    <item/>identifique a opção para restringir a autenticação de um usuário;
+    <item/>identifique a opção para restringir a autenticação dos usuários
+que possuem um papel;
+  </lista>
+</lista>
+
+    <importante/>Atente para o fato de que a utilização de um servidor proxy
+no navegador faz com que o IP de conexão ao Drupal seja o IP do proxy. Antes
+de restringir o acesso dos usuários administradores, certifique-se de
+cadastrar a exceção ao proxy nas configurações do navegador.
+
+    Verifique também o IP da conexão identificado pelo Drupal no topo da
+tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
+
 <subsubsecao>Devel</subsubsecao>
 
 <lista>
