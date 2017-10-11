@@ -86,8 +86,18 @@ permitindo execução de código PHP.
     <item/>Assegurar que os pacotes do sistema operacional estejam atualizados.
     <item/>Assegurar a utilização somente dos módulos que serão necessários.
     <item/>Assegurar que o módulo 'Devel' não esteja habilitado em produção.
-    <item/>Assegurar que há controle na utilização de módulos não cobertos
-pela política de segurança do Drupal.
+  </enumerar>
+</lista>
+
+<lista>
+  <item>Quais os controles de segurança complementares?</item>
+  <enumerar><letras/>
+    <item/>Assegurar a utilização de autenticação por dois fatores ou por
+certificado digital;
+    <item/>Assegurar que o usuário será deslogado após um tempo de
+inatividade;
+    <item/>Assegurar a geração de hash de todos os arquivos e
+notificação em caso de alteração;
   </enumerar>
 </lista>
 
@@ -115,8 +125,25 @@ pela política de segurança do Drupal.
     <lista>
       <item/><url>https://drupal.org/project/paranoia</url>
     </lista>
+    <item>Controle A:</item> Ativar autenticação por dois fatores ou
+    certificado digital.
+    <lista>
+      <item/><url>https://drupal.org/project/tfa</url>
+      <item/><url>https://drupal.org/project/certificatelogin</url>
+    </lista>
+    <item>Controle B:</item> Deslogar usuário por inatividade.
+    <lista>
+      <item/><url>https://drupal.org/project/autologout</url>
+    </lista>
+    <item>Controle C:</item> Gerar MD5 checksum dos arquivos de todos os
+    módulos.
+    <lista>
+      <item/><url>https://drupal.org/project/md5check</url>
+    </lista>
   </lista>
 </lista>
+
+<quebraPagina/>
 
 <lista>
   <item>Há mais sobre segurança no Drupal?</item>
