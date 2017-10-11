@@ -105,6 +105,7 @@ pela política de segurança do Drupal.
     <item>Controle 3:</item> Restringir tentativas de login.
     <lista>
       <item/><url>https://drupal.org/project/flood_control</url>
+      <item/><url>https://drupal.org/project/login_security</url>
     </lista>
     <item>Controle 4:</item> Verificar permissões dos arquivos.
     <lista>
@@ -120,6 +121,10 @@ pela política de segurança do Drupal.
 <lista>
   <item>Há mais sobre segurança no Drupal?</item>
   <lista>
+    <item/>Lista com módulos relacionados aos controles de segurança
+    <lista>
+      <item/><url>https://www.drupal.org/node/382752</url>
+    </lista>
     <item/>Palestra de segurança do DrupalCon 2012
     <lista>
       <item/><url>https://www.youtube.com/watch?v=rH4Kb3EQXu8</url>
