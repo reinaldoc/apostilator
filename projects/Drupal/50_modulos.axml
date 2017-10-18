@@ -19,15 +19,16 @@ tradução da interface web;
     <item/>habilite o módulo <b>Localization update</b>;
     <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
     <item/>reordene a língua <b>Portuguese, Brazil (Português)</b> para cima;
-    <item/>define a língua <b>Portuguese, Brazil (Português)</b> como padrão;
-    <item/>atualize a página;
+    <item/>salve a configuração;
+    <item/>defina a língua <b>Portuguese, Brazil (Português)</b> como padrão;
+    <item/>salve a configuração;
   </lista>
 </lista>
 
     O módulo <b>Localization update</b> não é necessário em uma
 instalação própria, pois o arquivo de tradução é obtido, armazenado em
-<b>profiles/standard/translations</b> e carregado pelo instalador,
-mas é útil para instâncias criadas no
+<b>profiles/standard/translations</b> e carregado para o banco de dados pelo
+instalador, mas é útil para instâncias criadas no
 <url>http://simplytest.me</url>.
 
 <subsubsecao>Restrict by IP</subsubsecao>
