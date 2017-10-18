@@ -107,27 +107,45 @@ Criação de conteúdo -> Formatos de texto'.
 
     Um <b>menu</b> é formado por um conjunto de links (itens de menu) que
 podem ser organizados em vários níveis, de forma hierárquica. Todo menu é um
-bloco que deve ser associado a uma região do tema pela interface de blocos.
+bloco que pode ser associado a uma região do tema pela interface de blocos.
 
 <lista>
   <item/><b>URL</b>: /admin/structure/menu
   <item/><b>Atividades</b>:
   <lista>
-    <item/>identificar os menus padrão (não podem ser apagados);
+    <item/>identifique os menus padrão;
+    <lista>
+      <item>Management</item>: menu utilizado pela barra administrativa;
+      <item>Main menu</item>: menu principal para a barra de navegação no topo;
+      <item>Navigation</item>: menu alternativo para a página principal;
+      <item>User menu</item>: menu secundário para acesso ao perfil do usuário logado e <i>logout</i>;
+      <lista>
+        <item/><u>Os menus padrão e seus itens de menu não podem ser apagados</u>;
+        <item/><u>A utilização dos menus padrão é opcional</u>;
+      </lista>
+    </lista>
     <item/>crie um menu;
-    <item/>crie links (itens do menu);
-    <item/>organize links hierarquicamente;
-    <item/>crie um link (item de menu) a partir do conteúdo;
-    <item/>associe um menu a uma região;
-    <item/>crie um link no menu de usuário;
-    <item/>configuração: definir menu principal e secundário;
+    <item/>adicione links (itens do menu) a este menu;
+    <item/>organize os links hierarquicamente;
+    <item/>ative a opção 'Exibir expandido' para os itens de nível intermediário;
+    <item/>configuração: defina o menu principal;
+    <item/>associe um menu a uma região lateral;
+    <item/>edite um item de menu para movê-lo para outro menu pela opção <b>Link superior</b>;
+    <item/>crie um link (item de menu) a partir de um conteúdo (node);
   </lista>
 </lista>
 
-    É possível identificar o menu principal, que pode automaticamente ser
-exibido na parte superior do site, por meio da opção <b>Origem para os links
-Principais</b>, bem como o menu secundário, que pode vir a ser exibido no
-topo do site, por meio da opção <b>Origem para os links Secundários</b>.
+    É possível identificar o menu principal, que normalmente é utilizado
+pelo tema em uma área sem região da parte superior do site, por meio da
+opção <b>Origem para os links Principais</b>, bem como o menu secundário,
+que pode vir a ser exibido no topo do site, por meio da opção <b>Origem
+para os links Secundários</b>.
+
+    <importante/>Apesar desta atividade ter criado itens de menu pela
+interface de gerenciamento de menus, essa opção é comumente utilizada para
+links externos. A criação de itens de menu para páginas internas deve
+ser realizada <u>pela interface de criação de conteúdo (node), de View de
+página ou de Painel</u>, como será visto posteriormente.
 
 <subsubsecao>Tipos de conteúdo</subsubsecao>
 
