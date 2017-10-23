@@ -62,6 +62,15 @@ consulte a seção<ref>module-l10n-update</ref>.
 
 <subsecao>Segurança</subsecao>
 
+    Manter o Drupal atualizado é um controle de segurança essencial. Pode-se
+obter informações sobre atualizações de segurança por meio da página
+<url>https://drupal.org/security</url> ou assinando a <i>newsletter</i>,
+neste caso, crie uma conta no site pelo link
+<url>https://drupal.org/user/register</url>, depois acesse os dados da sua
+conta pelo link <url>https://drupal.org/user</url>, então clique em
+<b>Edit</b>, depois clique em <b>My newsletters</b> e ative a lista de e-mail
+<b>Security announcements</b>. 
+
 <lista>
   <item>Onde obter informações sobre controles de segurança para o Drupal?</item>
   <lista>
@@ -143,8 +152,6 @@ notificação em caso de alteração;
   </lista>
 </lista>
 
-<quebraPagina/>
-
 <lista>
   <item>Há mais sobre segurança no Drupal?</item>
   <lista>
@@ -166,3 +173,4 @@ notificação em caso de alteração;
     </lista>
   </lista>
 </lista>
+
