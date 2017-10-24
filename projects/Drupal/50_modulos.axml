@@ -5,31 +5,7 @@
   <item/><url>https://drupal.org/project/project_module</url>
 </lista>
 
-<subsecao>Administração</subsecao>
-
-<subsubsecao>Localization update</subsubsecao>
-<nome>module-l10n-update</nome>
-
-<lista>
-  <item/><b>Download</b>: <url>https://drupal.org/project/l10n_update</url>
-  <item/><b>Função</b>: implementa o mecanismo para <i>download</i> da
-tradução da interface web;
-  <item/><b>Uso</b>: /admin/config/regional/language
-  <lista>
-    <item/>habilite o módulo <b>Localization update</b>;
-    <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
-    <item/>reordene a língua <b>Portuguese, Brazil (Português)</b> para cima;
-    <item/>salve a configuração;
-    <item/>defina a língua <b>Portuguese, Brazil (Português)</b> como padrão;
-    <item/>salve a configuração;
-  </lista>
-</lista>
-
-    O módulo <b>Localization update</b> não é necessário em uma
-instalação própria, pois o arquivo de tradução é obtido, armazenado em
-<b>profiles/standard/translations</b> e carregado para o banco de dados pelo
-instalador, mas é útil para instâncias criadas no
-<url>http://simplytest.me</url>.
+<subsecao>Segurança</subsecao>
 
 <subsubsecao>Restrict by IP</subsubsecao>
 <nome>module-restrict-by-ip</nome>
@@ -55,6 +31,71 @@ cadastrar a exceção ao proxy nas configurações do navegador.
 
     Verifique também o IP da conexão identificado pelo Drupal no topo da
 tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
+
+<subsubsecao>Flood control</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/flood_control</url>
+  <item/><b>Função</b>: interface para controlar limites de falha de autenticação;
+  <item/><b>Uso</b>: /admin/config/system/flood-control
+  <lista>
+    <item/>configurar limite para falhas de autenticação para o IP de requisição [50];
+    <item/>configurar a janela de tempo que autenticações deste IP serão rejeitadas [1h];
+    <item/>configurar limite para falhas de autenticação para o usuário [5];
+    <item/>configurar a janela de tempo que autenticações deste usuário serão rejeitadas [6h];
+  </lista>
+</lista>
+
+    Os limites para falhas de autenticação são aplicados pelo núcleo do
+Drupal, assim a função deste módulo é permitir a alteração dos valores padrão
+de bloqueio.
+
+<quebraPagina/>
+
+<subsubsecao>Flood Unblock</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/flood_unblock</url>
+  <item/><b>Função</b>: interface para listar e desbloquear IPs e usuários
+bloqueados por falha de autenticação;
+  <item/><b>Uso</b>: /admin/config/system/flood-unblock
+  <lista>
+    <item/>listar número de tentativas mal sucedidas de autenticação;
+    <item/>desbloquear usuário ou IP;
+  </lista>
+</lista>
+
+    O módulo <b>Flood unblock Services</b> fornece uma interface REST, a
+patir da API provida pelo módulo <b>Services</b>, para a integração com
+outras aplicações do gerenciamento do desbloqueio de IPs e usuários
+<u>decorrentes de falhas de autenticação</u>. Assim, o referido módulo
+só necessita ser ativado para este caso.
+
+<subsecao>Administração</subsecao>
+
+<subsubsecao>Localization update</subsubsecao>
+<nome>module-l10n-update</nome>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/l10n_update</url>
+  <item/><b>Função</b>: implementa o mecanismo para <i>download</i> da
+tradução da interface web;
+  <item/><b>Uso</b>: /admin/config/regional/language
+  <lista>
+    <item/>habilite o módulo <b>Localization update</b>;
+    <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
+    <item/>reordene a língua <b>Portuguese, Brazil (Português)</b> para cima;
+    <item/>salve a configuração;
+    <item/>defina a língua <b>Portuguese, Brazil (Português)</b> como padrão;
+    <item/>salve a configuração;
+  </lista>
+</lista>
+
+    O módulo <b>Localization update</b> não é necessário em uma
+instalação própria, pois o arquivo de tradução é obtido, armazenado em
+<b>profiles/standard/translations</b> e carregado para o banco de dados pelo
+instalador, mas é útil para instâncias criadas no
+<url>http://simplytest.me</url>.
 
 <subsubsecao>Devel</subsubsecao>
 
@@ -128,20 +169,6 @@ menu <u>Desenvolvimento</u>.
 
     O módulo <b>Admin Menu</b> não segue a política de anúncio de problemas de
 segurança, parece ser prudente desabilitá-lo em produção.
-
-<subsubsecao>Flood control</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/flood_control
-  <item/><b>Função</b>: interface para controlar variáveis de falha de login;
-  <item/><b>URL</b>: /admin/config/system/flood-control
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>acessar <i>Configurações -> Sistema -> Flood control</i>;
-    <item/>configurar limite para erros de autenticação para o usuário;
-    <item/>configurar limite para erros de autenticação para o IP de requisição;
-  </lista>
-</lista>
 
 <subsubsecao>String overrides</subsubsecao>
 
