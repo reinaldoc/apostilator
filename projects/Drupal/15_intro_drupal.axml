@@ -64,8 +64,13 @@ consulte a seção<ref>module-l10n-update</ref>.
 
     Manter o Drupal atualizado é um controle de segurança essencial. Pode-se
 obter informações sobre atualizações de segurança por meio da página
-<url>https://drupal.org/security</url> ou assinando a <i>newsletter</i>,
-neste caso, crie uma conta no site pelo link
+<url>https://drupal.org/security</url>, que lista os avisos de segurança do
+núcleo do Drupal, e também, ao clicar em <b>Contributed projects</b>,
+consultar os avisos de segurança dos módulos.
+
+    Além de consultar diretamente no site do Drupal, é possível receber os
+avisos de segurança por e-mail, assinando a <i>newsletter</i> <b>Security
+announcements</b>. Neste caso, crie uma conta no site pelo link
 <url>https://drupal.org/user/register</url>, depois acesse os dados da sua
 conta pelo link <url>https://drupal.org/user</url>, então clique em
 <b>Edit</b>, depois clique em <b>My newsletters</b> e ative a lista de e-mail
@@ -87,9 +92,9 @@ administrativa).
     <item/>Assegurar o bloqueio automático a partir de falhas de autenticação.
     <item/>Assegurar que o usuário do sistema que executa o serviço web
 (www-data) tenha permissão de escrita somente em sites/default/files.
-    <item/>Assegurar que formatos de textos autorizados aos usuários contenham
-apenas as tags HTML necessárias, não concedendo o perfil "Full HTML" nem
-permitindo execução de código PHP.
+    <item/>Assegurar que os formatos de textos autorizados aos usuários
+contenham apenas as tags HTML necessárias. Não conceder o perfil <i>Full
+HTML</i> nem o perfil <i>PHP Code</i>, e ainda, não ativar o módulo PHP filter.
     <item/>Assegurar que o site seja acessível somente por HTTPS.
     <item/>Assegurar que o Drupal esteja atualizado.
     <item/>Assegurar que os pacotes do sistema operacional estejam atualizados.
@@ -152,6 +157,10 @@ notificação em caso de alteração;
   </lista>
 </lista>
 
+    <atividade/>Uma outra ação para atender ao <b>Controle 1</b> é definir
+um nome de usuário menos óbvio para a conta administrativa #1. É possível
+fazer isso durante a instalação do Drupal, ou ainda a qualquer momento.
+
 <lista>
   <item>Há mais sobre segurança no Drupal?</item>
   <lista>
@@ -170,6 +179,10 @@ notificação em caso de alteração;
     <item/>Guia de melhores práticas de segurança no Drupal [há link direto para o PDF na página]
     <lista>
       <item/><url>https://openconcept.ca/drupal-security-best-practices-practical-guide</url>
+    </lista>
+    <item/>Identificar referências a links externos fraudulentos
+    <lista>
+      <item/><url>http://www.unmaskparasites.com</url>
     </lista>
   </lista>
 </lista>
