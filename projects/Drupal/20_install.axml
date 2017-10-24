@@ -195,7 +195,7 @@ chroot_local_user=YES
 utf8_filesystem=YES
 </comando>
 
-<step>Permitir que usuários com shell /bin/false realizem login no FTP</step>
+<step>Permita que usuários com shell /bin/false realizem login no FTP</step>
 
     Usuários utilizados para acesso FTP não necessitam de um <i>shell</i>
 válido, podendo ser definido para <b>/bin/false</b> quando o usuário for
@@ -210,13 +210,13 @@ no servidor.
 #auth   required        pam_shells.so
 </comando>
 
-<step>Recarregar configurações do VSFtpd</step>
+<step>Recarregue as configurações do VSFtpd</step>
 
 <comando>
 # /etc/init.d/vsftpd reload
 </comando>
 
-<step>Criar usuário para acesso FTP e publicação do portal</step>
+<step>Crie o usuário para acesso FTP e publicação do portal</step>
 <comando>
 # adduser --home /var/www/portal --shell /bin/false portal
 </comando>
@@ -228,7 +228,7 @@ diretório foi criado anteriormente e não deve possuir permissão de escrita
 para o usuário, para atender a funcionalidade de <i>chroot</i> do servidor
 FTP.
 
-<step>Criar diretório para instalação do Drupal</step>
+<step>Crie o diretório para instalação do Drupal</step>
 <comando>
 # mkdir /var/www/portal/drupal-7
 # chown portal: /var/www/portal/drupal-7
@@ -256,16 +256,19 @@ $ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
 $ cp /tmp/drupal-7.56.pt-br.po profiles/standard/translations
 </comando>
 
-<step>Ative o virtualhost do Drupal</step>
+<step>Defina o diretório do domínio do Drupal</step>
 <comando>
 $ mv sites/example.sites.php sites/sites.php
 > adicione ao final arquivo sites/sites.php:
-$sites['exmaple.com'] = 'portal'; ?>
+$sites['example.com'] = 'portal'; ?>
 </comando>
 
     Considerações sobre o compartilhamento do núcleo do Drupal por meio de
 configurações multi-site estão disponíveis em
-<url>http://drupal.org/documentation/install/multi-site</url>.
+<url>http://drupal.org/documentation/install/multi-site</url>. Caso este
+passo não seja realizado, o drupal utilizará o diretório
+<b>sites/default</b> para qualquer nome de domínio que possua DNS
+referenciando este servidor.
 
 <step>Prepare o diretório do virtualhost do Drupal</step>
 <comando>
@@ -275,7 +278,7 @@ $ cp sites/portal/default.settings.php sites/portal/settings.php
 $ exit
 </comando>
 
-<step>Conceda permissão ao usuário do servidor web</step>
+<step>Conceda permissão ao usuário do serviço web</step>
 <comando>
 # cd /var/www/portal/drupal-7/sites/portal
 # chown www-data:portal settings.php files files-private
@@ -283,18 +286,32 @@ $ exit
 
 <step>Inicie o navegador</step>
 
-    Acesse o Drupal e proceda a configuração do idioma e configurações de
-conexão ao banco. As configurações serão salvas em
+    Acesse o Drupal pelo navegador e proceda a configuração do idioma e da
+conexão ao banco de dados. Essas configurações serão salvas no arquivo
 <b>sites/portal/settings.php</b>.
 
-<step>Redefina permissões do arquivo de configuração</step>
+<step>Redefina a permissão do arquivo de configuração</step>
 <comando>
 # chown portal: settings.php
 </comando>
 
+    Após a criação do <i>schema</i> do Drupal no banco de dados e
+configuração das credenciais para conexão ao banco no arquivo
+<b>sites/portal/settings.php</b>, o usuário do serviço web não necessita
+mais ter permissão para modificação deste arquivo, para isto, basta alterar
+a propriedade deste arquivo para o usuário utilizado para acesso FTP.
+
 <step>Configure o caminho do repositório privado de arquivos</step>
 
-    Acesse 'Configurações -> Mídia -> Sistema de arquivos' e defina para: <b>sites/portal/files-private</b>
+    Acesse 'Configurações -> Mídia -> Sistema de arquivos' e defina para:
+<b>sites/portal/files-private</b>.
+
+    O Drupal irá criar um arquivo <b>.htaccess</b> neste diretório para
+instruir ao serviço web que não forneça acesso diretamente aos arquivos
+armazenados nele. Apesar disso, pode-se alterar o caminho deste diretório
+para um local que não seja acessível pela web, ou seja, um diretório
+superior aquele informado na opção <b>DocumentRoot</b> do serviço web,
+tornando mais difícil o acesso aos arquivos definidos como privados.
 
 <step>Obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal</step>
 
@@ -310,4 +327,9 @@ URL chave para registro no crontab do sistema operacional.
 produção de relatórios de atualizações disponíveis, além de remover arquivos
 temporários. Consulte a documentação sobre o agendador de tarefas em
 <url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
+
+    <atividade/>Acesse o Drupal por meio do usuário definido durante a
+instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
+das configurações, consultar as versões dos serviços e conferir se algum
+problema foi detectado nesta instalação.
 
