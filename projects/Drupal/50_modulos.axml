@@ -75,7 +75,7 @@ só necessita ser ativado para este caso.
 
 <lista>
   <item/><b>Download</b>: <url>https://drupal.org/project/security_review</url>
-  <item/><b>Função</b>: fornece um relatório com um <i>checklist</i> de
+  <item/><b>Função</b>: fornece um relatório com <i>checklist</i> de
 verificações de segurança;
   <item/><b>Uso</b>: /admin/reports/security-review
   <lista>
