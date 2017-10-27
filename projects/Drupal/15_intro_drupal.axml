@@ -187,3 +187,39 @@ fazer isso durante a instalação do Drupal, ou ainda a qualquer momento.
   </lista>
 </lista>
 
+<subsecao>Desempenho</subsecao>
+
+    É comum que o desempenho de qualquer aplicação esteja relacionado ao seu
+<i>design</i> que, por sua vez, sofre influência dos requisitos ou,
+no caso de sistemas de código aberto, das diretrizes de seu autor. A
+abordagem de <i>design</i> do Drupal foi guiada em favor da integração de um
+conjunto de componentes, denominados módulos, desenvolvidos
+independentemente a fim de sustentar um ecossistema colaborativo.
+
+    Nesse contexto, a renderização de uma página irá demandar o
+processamento de um conjunto de módulos que realizam acesso à base de dados
+para obter os dados necessários para o provimento de sua respectiva
+funcionalidade. Como consequência, em uma instalação padrão, há um elevado
+número de consultas à base de dados.
+ 
+    Uma página principal, normalmente composta por algumas listagens de
+conteúdo, menu principal e menus laterais, pode realizar dezenas de
+operações de SELECT na base de dados. Se considerarmos a execução
+serializada sob um base de dados remota que leva 20ms para executar cada
+operação, entender-se-á porque há páginas que necessitam de alguns segundos
+para serem exibidas.
+
+    Assim, não é dispensável a execução de procedimentos relacionados a
+melhora do desempenho do sistema a fim de manter o tempo de carregamento de
+página inferior a 500ms. Considerações sobre desempenho e escalabilidade
+estão disponíveis em
+<url>https://www.drupal.org/docs/7/managing-site-performance-and-scalability</url>.
+
+    Um procedimento que reduz drasticamente a quantidade de consultas à base
+de dados é ativar a cache provida pelo núcleo do Drupal. Acesse
+<b>Configurações -> Desenvolvimento -> Desempenho</b> e ative as opções:
+<b>Manter cache de páginas para usuários anônimos</b> e <b>Manter cache de
+blocos</b>, dessa forma, somente quando houver modificações que o conjunto
+completo de SELECTs será executado. Entretanto, isso aplica-se somente a
+requisições em que o usuário não esteja logado.
+
