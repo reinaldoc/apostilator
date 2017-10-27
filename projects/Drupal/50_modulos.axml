@@ -893,7 +893,12 @@ termo ou vocabulário de taxonomia;
 <link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text> e
 <link>https://drupal.org/project/entity</link><text>Entity API</text>.
   <item>Função</item>: permite definir o breadcrumb a partir de condições;
-  <item>Uso</item>: /admin/structure/path-breadcrumbs
+  <item>Uso</item>: /admin/structure/path-breadcrumbs/settings
+  <lista>
+    <item/>configure o separador dos níveis do Breadcrumb;
+    <item/>altere o rótulo da raiz <b>Home</b> do Breadcrumb;
+    <item/>identifique a opção que ativa o rótulo raiz;
+  </lista>
 </lista>
 
 <subsubsubsecao>Criar novo caminho para um breadcrumb</subsubsubsecao>
