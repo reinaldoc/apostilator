@@ -892,7 +892,7 @@ termo ou vocabulário de taxonomia;
   <item>Dependência</item>:
 <link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text> e
 <link>https://drupal.org/project/entity</link><text>Entity API</text>.
-  <item>Função</item>: permite definir o breadcrumb a partir de condições;
+  <item>Função</item>: permite definir o breadcrumb a partir de critérios;
   <item>Uso</item>: /admin/structure/path-breadcrumbs/settings
   <lista>
     <item/>configure o separador dos níveis do Breadcrumb;
