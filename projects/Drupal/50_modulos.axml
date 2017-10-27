@@ -29,8 +29,8 @@ no navegador faz com que o IP de conexão ao Drupal seja o IP do proxy. Antes
 de restringir o acesso dos usuários administradores, certifique-se de
 cadastrar a exceção ao proxy nas configurações do navegador.
 
-    Verifique também o IP da conexão identificado pelo Drupal no topo da
-tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
+    Verifique o IP da conexão identificado pelo Drupal, ele estará no topo
+da tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
 
 <subsubsecao>Flood control</subsubsecao>
 
@@ -109,6 +109,19 @@ instalação própria, pois o arquivo de tradução é obtido, armazenado em
 instalador, mas é útil para instâncias criadas no
 <url>http://simplytest.me</url>.
 
+<subsubsecao>Masquerade</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/masquerade</url>
+  <item>Função</item>: permite logar no site como outro usuário;
+  <item>Uso</item>:
+  <lista>
+    <item/>habilite o bloco <b>Masquerade</b> em uma região;
+    <item/>utilize o bloco <b>Masquerade</b> para indicar o usuário;
+    <item/>use a opção <b>Switch back</b> para retornar ao usuário administrator;
+  </lista>
+</lista>
+
 <subsubsecao>Devel</subsubsecao>
 
 <lista>
@@ -169,80 +182,48 @@ menu <u>Desenvolvimento</u>.
 <subsubsecao>Administration Menu</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/admin_menu
-  <item/><b>Função</b>: adiciona capacidade de 'drop-down' para a barra administrativa;
+  <item/><b>Download</b>: <url>https://drupal.org/project/admin_menu</url>
+  <item/><b>Função</b>: fornece uma barra administrativa com capacidade de 'drop-down';
   <item/><b>Uso</b>:
   <lista>
-    <item/>desabilitar o módulo 'Toolbar' com menu administrativo padrão;
-    <item/>desabilitar o módulo 'Overlay' para desativar o uso de dialog (opcional);
-    <item/>habilitar módulo 'Administration menu' e 'Administration menu Toolbar style';
+    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra administrativa padrão;
+    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal (opcional);
+    <item/>habilite os módulos <b>Administration menu</b> e <b>Administration menu Toolbar style</b>;
   </lista>
 </lista>
 
-    O módulo <b>Admin Menu</b> não segue a política de anúncio de problemas de
-segurança, parece ser prudente desabilitá-lo em produção.
-
-<subsubsecao>String overrides</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/stringoverrides
-  <item/><b>Função</b>: regras de substituição de texto;
-  <item/><b>Uso</b>:
-  <lista>
-    <item/>adicionar string para substituição em configurações regionais e de idioma;
-  </lista>
-</lista>
-
-<subsubsecao>Masquerade</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/masquerade
-  <item/><b>Função</b>: permite logar no site como outro usuário;
-</lista>
+    O módulo <b>Admin Menu</b> não segue a política de anúncio de segurança,
+por isso parece ser prudente desabilitá-lo em produção.
 
 <subsubsecao>LDAP</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/ldap
-  <item/><b>Dependência</b>: https://drupal.org/project/entity
-  <item/><b>Função</b>: integra a autenticação e autorização por meio do protocolo LDAP;
-  <item/><b>Uso</b>: /admin/config/people/ldap
+  <item>Download</item>: <url>https://drupal.org/project/ldap</url>
+  <item>Dependência</item>: <url>https://drupal.org/project/entity</url>
+  <item>Função</item>: integra a autenticação e autorização por meio do protocolo LDAP;
+  <item>Uso</item>: /admin/config/people/ldap
   <lista>
-    <item/>ativar o módulo LDAP Servers a configurar o servidor LDAP:
-    <item/>ativar o módulo LDAP Users e configurar a sincronização de dados do LDAP;
-    <item/>ativar o módulo LDAP Authentication e configurar a autenticação no servidor LDAP;
-    <item/>ativar o módulo LDAP Authorization Role e configurar a autorização de grupos do LDAP para roles:
+    <item/>ativar o módulo <b>LDAP Servers</b>;
+    <item/>configurar o servidor LDAP:
+    <item/>ativar o módulo <b>LDAP Users</b>;
+    <item/>configurar a sincronização de dados do LDAP;
+    <item/>ativar o módulo <b>LDAP Authentication</b>;
+    <item/>configurar a autenticação no servidor LDAP;
+    <item/>ativar o módulo <b>LDAP Authorization Role</b>;
+    <item/>configurar a autorização por grupos do LDAP e associação a papéis (roles):
   </lista>
 </lista>
 
 <subsubsecao>Reg with Pic</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/reg_with_pic
+  <item/><b>Download</b>: <url>https://drupal.org/project/reg_with_pic</url>
   <item/><b>Função</b>: adiciona à interface de registro de usuários o campo para imagem do perfil;
-  <item/><b>Uso</b>:
 </lista>
 
     A instalação do módulo <b>Reg with Pic</b> permite que o módulo <b>LDAP
 User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
 campo de imagem do perfil do usuário <u>no primeiro login</u>;
-
-<subsubsecao>Path Breadcrumbs</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/path_breadcrumbs
-  <item/><b>Dependência</b>: https://drupal.org/project/entity
-  <item/><b>Função</b>: permite definir o breadcrumb a partir de expressões;
-  <item/><b>Uso</b>: /admin/structure/path-breadcrumbs
-  <lista>
-    <item/>configure o breadcrumbs para nodes do tipo Artigo;
-    <item/>usar o path 'node/%node';
-    <item/>definir o contexto 'Node: ID';
-    <item/>definir regra de seleção para 'Node: type': Article;
-    <item/>definir rótulo (title) e path para cada nó do breadcrumb;
-    <item/>definir rótulo (title) '%node:title' e link '<none >';
-  </lista>
-</lista>
 
 <subsubsecao>Backup and Migrate</subsubsecao>
 
@@ -271,6 +252,17 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
     <item/>criar regras de contexto;
     <item/>adicionar condição (ex: se página for <front >);
     <item/>adicionar reação (ex: exibir determinado bloco);
+  </lista>
+</lista>
+
+<subsubsecao>String overrides</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/stringoverrides
+  <item/><b>Função</b>: regras de substituição de texto;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>adicionar string para substituição em configurações regionais e de idioma;
   </lista>
 </lista>
 
@@ -891,6 +883,40 @@ termo ou vocabulário de taxonomia;
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/webform
   <item/><b>Função</b>: tipo de conteúdo para formulários e pesquisas;
+</lista>
+
+<subsubsecao>Path Breadcrumbs</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/path_breadcrumbs</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text> e
+<link>https://drupal.org/project/entity</link><text>Entity API</text>.
+  <item>Função</item>: permite definir o breadcrumb a partir de condições;
+  <item>Uso</item>: /admin/structure/path-breadcrumbs
+</lista>
+
+<subsubsubsecao>Criar novo caminho para um breadcrumb</subsubsubsecao>
+
+<lista>
+  <item>Uso</item>: /admin/structure/path-breadcrumbs/create
+  <lista>
+    <item/>identifique onde será usado este breadcrumb: 'Breadcrumb para
+nodes do tipo artigo';
+    <item/>use o endereço como <b>node/%node</b> para criar o argumento
+<b>%node</b>;
+    <item/>clique em <b>Change</b> para vincular o argumento <b>%node</b>
+ao valor <b>Node: ID</b>;
+    <item/>adicione o critério de seleção para <b>Node: type</b>: Artigo;
+    <item/>identifique a opção <i>Prepend Home link to the breadcrumb</i>
+para omitir a raíz <b>Home</b>;
+    <item/>adicione os rótulos (link title) e urls (link path) para cada
+nível do breadcrumb;
+    <lista>
+      <item/>link title: <b>Artigos</b>, link path <b>/artigos</b>;
+      <item/>link title: <b>%node:title</b>, link path <b>< none></b>;
+    </lista>
+  </lista>
 </lista>
 
 <subsecao>Panels</subsecao>
