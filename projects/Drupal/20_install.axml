@@ -228,6 +228,8 @@ diretório foi criado anteriormente e não deve possuir permissão de escrita
 para o usuário, para atender a funcionalidade de <i>chroot</i> do servidor
 FTP.
 
+<quebraPagina/>
+
 <step>Crie o diretório para instalação do Drupal</step>
 <comando>
 # mkdir /var/www/portal/drupal-7
@@ -289,6 +291,8 @@ $ exit
     Acesse o Drupal pelo navegador e proceda a configuração do idioma e da
 conexão ao banco de dados. Essas configurações serão salvas no arquivo
 <b>sites/portal/settings.php</b>.
+
+<quebraPagina/>
 
 <step>Redefina a permissão do arquivo de configuração</step>
 <comando>
