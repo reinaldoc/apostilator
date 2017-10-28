@@ -62,11 +62,17 @@ consulte a seção<ref>module-l10n-update</ref>.
 
 <subsecao>Segurança</subsecao>
 
-    Manter o Drupal atualizado é um controle de segurança essencial. Pode-se
-obter informações sobre atualizações de segurança por meio da página
-<url>https://drupal.org/security</url>, que lista os avisos de segurança do
-núcleo do Drupal, e também, ao clicar em <b>Contributed projects</b>,
-consultar os avisos de segurança dos módulos.
+    A <b>segurança da informação</b> é um processo contínuo de avaliação
+dos controles a fim de assegurar que estejam atingindo seus objetivos. Como
+parte desse processo deve-se estabelecer controles específicos para o
+Portal Corporativo, essencialmente para garantir a disponibilidade e
+integridade das informações.
+
+    Manter o Drupal atualizado e livre de vulnerabilidades conhecidas é um
+dos controles essenciais. As correções de segurança e o impacto das
+vulnerabilidades são publicados por meio dos avisos de segurança, que são
+disponibilizados na página <url>https://drupal.org/security</url> e também,
+ao clicar em <b>Contributed projects</b>, os avisos de segurança dos módulos.
 
     Além de consultar diretamente no site do Drupal, é possível receber os
 avisos de segurança por e-mail, assinando a <i>newsletter</i> <b>Security
@@ -83,83 +89,96 @@ conta pelo link <url>https://drupal.org/user</url>, então clique em
   </lista>
 </lista>
 
-<lista>
-  <item>Quais os controles de segurança essenciais?</item>
-  <enumerar>
-    <item/>Assegurar que não ocorra acesso indevido a conta #1 (conta
-administrativa).
-    <item/>Assegurar a utilização de uma política rígida de senhas.
-    <item/>Assegurar o bloqueio automático a partir de falhas de autenticação.
-    <item/>Assegurar que o usuário do sistema que executa o serviço web
-(www-data) tenha permissão de escrita somente em sites/default/files.
-    <item/>Assegurar que os formatos de textos autorizados aos usuários
-contenham apenas as tags HTML necessárias. Não conceder o perfil <i>Full
-HTML</i> nem o perfil <i>PHP Code</i>, e ainda, não ativar o módulo PHP filter.
-    <item/>Assegurar que o site seja acessível somente por HTTPS.
-    <item/>Assegurar que o Drupal esteja atualizado.
-    <item/>Assegurar que os pacotes do sistema operacional estejam atualizados.
-    <item/>Assegurar a utilização somente dos módulos que serão necessários.
-    <item/>Assegurar que o módulo 'Devel' não esteja habilitado em produção.
-  </enumerar>
-</lista>
+<subsubsecao>Objetivos de Controle</subsubsecao>
 
+<step>Assegurar que não ocorra acesso indevido a conta #1 (conta
+administrativa).</step>
 <lista>
-  <item>Quais os controles de segurança complementares?</item>
-  <enumerar><letras/>
-    <item/>Assegurar a utilização de autenticação por dois fatores ou por
-certificado digital;
-    <item/>Assegurar que o usuário será deslogado após um tempo de
-inatividade;
-    <item/>Assegurar a geração de hash de todos os arquivos e
-notificação em caso de alteração;
-  </enumerar>
-</lista>
-
-<lista>
-  <item>Há módulos que podem atender aos controles?</item>
+  <item/>Restringir login por IP.
   <lista>
-    <item>Controle 1:</item> Restringir login por IP.
-    <lista>
-      <item/><url>https://drupal.org/project/restrict_by_ip</url>
-    </lista>
-    <item>Controle 2:</item> Aplicar políticas de senhas.
-    <lista>
-      <item/><url>https://drupal.org/node/598562</url>
-    </lista>
-    <item>Controle 3:</item> Restringir tentativas de login.
-    <lista>
-      <item/><url>https://drupal.org/project/flood_control</url>
-      <item/><url>https://drupal.org/project/login_security</url>
-    </lista>
-    <item>Controle 4:</item> Verificar permissões dos arquivos.
-    <lista>
-      <item/><url>https://drupal.org/project/security_review</url>
-    </lista>
-    <item>Controle 5:</item> Impedir concessão de uso de código PHP.
-    <lista>
-      <item/><url>https://drupal.org/project/paranoia</url>
-    </lista>
-    <item>Controle A:</item> Ativar autenticação por dois fatores ou
-    certificado digital.
-    <lista>
-      <item/><url>https://drupal.org/project/tfa</url>
-      <item/><url>https://drupal.org/project/certificatelogin</url>
-    </lista>
-    <item>Controle B:</item> Deslogar usuário por inatividade.
-    <lista>
-      <item/><url>https://drupal.org/project/autologout</url>
-    </lista>
-    <item>Controle C:</item> Gerar MD5 checksum dos arquivos de todos os
-    módulos.
-    <lista>
-      <item/><url>https://drupal.org/project/md5check</url>
-    </lista>
+    <item/><url>https://drupal.org/project/restrict_by_ip</url>
+  </lista>
+  <item/>Ativar autenticação por dois fatores ou por certificado digital.
+  <lista>
+    <item/><url>https://drupal.org/project/tfa</url>
+    <item/><url>https://drupal.org/project/certificatelogin</url>
   </lista>
 </lista>
 
-    <atividade/>Uma outra ação para atender ao <b>Controle 1</b> é definir
-um nome de usuário menos óbvio para a conta administrativa #1. É possível
-fazer isso durante a instalação do Drupal, ou ainda a qualquer momento.
+    <atividade/>Um controle adicional é definir um nome de usuário menos
+óbvio para a conta administrativa #1. É possível fazer isso durante a
+instalação do Drupal, ou ainda a qualquer momento.
+
+<br/>0.2cm
+
+<step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
+<lista>
+  <item/>Bloqueio temporário a partir de falhas de autenticação.
+  <lista>
+    <item/><url>https://drupal.org/project/flood_control</url>
+    <item/><url>https://drupal.org/project/login_security</url>
+  </lista>
+  <item/>Aplicar políticas de senhas.
+  <lista>
+    <item/><url>https://drupal.org/node/598562</url>
+  </lista>
+  <item/>Deslogar o usuário por inatividade.
+  <lista>
+    <item/><url>https://drupal.org/project/autologout</url>
+  </lista>
+</lista>
+
+<quebraPagina/>
+
+<step>Assegurar permissões adequadas aos arquivos do Drupal.</step>
+<lista>
+  <item/>O usuário do sistema que executa o serviço web (www-data)
+         deve possuir permissão de escrita somente no diretório
+         <b>sites/default/files</b>.
+  <item/>Executar <i>checklist</i> para verificação de configurações
+         inseguras.
+  <lista>
+    <item/><url>https://drupal.org/project/security_review</url>
+  </lista>
+</lista>
+
+<step>Assegurar que usuários não publiquem conteúdo inseguro.</step>
+<lista>
+  <item/>Os formatos de textos autorizados aos usuários devem conter
+         apenas as tags HTML necessárias.
+  <item/>Não deve ser concedido o perfil <i>Full HTML</i> nem o perfil
+         <i>PHP Code</i>, e ainda, o módulo PHP filter não deve ser
+         ativado.
+  <item/>Impedir concessão de uso de código PHP.
+  <lista>
+    <item/><url>https://drupal.org/project/paranoia</url>
+  </lista>
+</lista>
+
+<step>Assegurar que os arquivos do Drupal não sejam indevidamente
+modificados.</step>
+<lista>
+  <item/>Gerar periodicamente MD5 checksum dos arquivos de todos os módulos
+         e notificar alterações.
+  <lista>
+    <item/><url>https://drupal.org/project/md5check</url>
+  </lista>
+</lista>
+
+<step>Assegurar que o site seja acessível somente por HTTPS.</step>
+
+<step>Assegurar que o Drupal esteja atualizado.</step>
+
+<step>Assegurar que os pacotes do sistema operacional estejam
+atualizados.</step>
+
+<step>Assegurar a utilização somente dos módulos que são
+necessários.</step>
+<lista>
+  <item/>O módulo 'Devel' não deve estar habilitado em produção.
+</lista>
+
+<subsubsecao>Material complementar</subsubsecao>
 
 <lista>
   <item>Há mais sobre segurança no Drupal?</item>
@@ -215,8 +234,8 @@ página inferior a 500ms. Considerações sobre desempenho e escalabilidade
 estão disponíveis em
 <url>https://www.drupal.org/docs/7/managing-site-performance-and-scalability</url>.
 
-    Um procedimento que reduz drasticamente a quantidade de consultas à base
-de dados é ativar a cache provida pelo núcleo do Drupal. Acesse
+    A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
+de consultas à base de dados, por isso é importante ativá-la. Acesse
 <b>Configurações -> Desenvolvimento -> Desempenho</b> e ative as opções:
 <b>Manter cache de páginas para usuários anônimos</b> e <b>Manter cache de
 blocos</b>, dessa forma, somente quando houver modificações que o conjunto
