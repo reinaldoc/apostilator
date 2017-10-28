@@ -1,20 +1,22 @@
 <capitulo>Introdução ao Drupal</capitulo>
 
-    Drupal é um projeto de código aberto para o gerenciamento de conteúdo em
-Portais Corporativos que <b>tem sido utilizado em grandes projetos</b> por ser
-<u>seguro, altamente customizável e extensível</u>. Estas características nem
-sempre permitem que o Drupal seja <i>Plug-and-Play</i>, pois normalmente há
-uma relação inversa entre elas e a facilidade de aprendizado.
+    O <link>https://drupal.org</link><text><b>Drupal</b></text> é um
+projeto de código aberto para o gerenciamento de conteúdo em Portais
+Corporativos que <b>tem sido utilizado em grandes projetos</b> por ser
+<u>seguro, altamente customizável e extensível</u>.
 
-    Entretanto, depois de imerso na forma como o Drupal organiza o
-conteúdo, é inegável a relação positiva com a eficiência em entregar
+    Por consequência, estas características não fazem com que o Drupal,
+em um primeiro momento, seja intuitivo de usar, uma vez que normalmente há
+uma relação inversa entre esses fatores. Apesar disso, após imerso na forma
+como o Drupal organiza o conteúdo é inegável a eficiência em entregar
 resultados.
 
     Outra característica relevante é o <u>fraco acoplamento entre as páginas
 HTML e o Drupal</u>. Isso permite que o desenvolvedor <i>front-end</i> crie
 a identidade visual com pouco conhecimento sobre o Drupal ou sobre a
 linguagem de programação em que ele foi desenvolvido, sendo necessário
-conhecer apenas a estrutura dos arquivos de <i>template</i>.
+conhecer apenas a estrutura dos arquivos de <i>template</i> que são
+utilizados para a criação de temas.
 
 <subsecao>Referências</subsecao>
 
@@ -69,10 +71,12 @@ Portal Corporativo, essencialmente para garantir a disponibilidade e
 integridade das informações.
 
     Manter o Drupal atualizado e livre de vulnerabilidades conhecidas é um
-dos controles essenciais. As correções de segurança e o impacto das
-vulnerabilidades são publicados por meio dos avisos de segurança, que são
-disponibilizados na página <url>https://drupal.org/security</url> e também,
-ao clicar em <b>Contributed projects</b>, os avisos de segurança dos módulos.
+dos controles essenciais. Para assegurar isso, é importante monitorar os
+avisos de segurança do Drupal e de seus módulos, neles são informados o
+impacto das vulnerabilidades e as correções de segurança disponibilizadas.
+Os avisos de segurança são disponibilizados na página
+<url>https://drupal.org/security</url> e também, ao clicar em
+<b>Contributed projects</b>, os avisos de segurança dos módulos.
 
     Além de consultar diretamente no site do Drupal, é possível receber os
 avisos de segurança por e-mail, assinando a <i>newsletter</i> <b>Security
@@ -94,6 +98,7 @@ conta pelo link <url>https://drupal.org/user</url>, então clique em
 <step>Assegurar que não ocorra acesso indevido a conta #1 (conta
 administrativa).</step>
 <lista>
+  <item/>Tornar o site acessível somente por HTTPS.
   <item/>Restringir login por IP.
   <lista>
     <item/><url>https://drupal.org/project/restrict_by_ip</url>
@@ -130,7 +135,7 @@ instalação do Drupal, ou ainda a qualquer momento.
 
 <quebraPagina/>
 
-<step>Assegurar permissões adequadas aos arquivos do Drupal.</step>
+<step>Assegurar a integridade do código do Drupal.</step>
 <lista>
   <item/>O usuário do sistema que executa o serviço web (www-data)
          deve possuir permissão de escrita somente no diretório
@@ -140,7 +145,24 @@ instalação do Drupal, ou ainda a qualquer momento.
   <lista>
     <item/><url>https://drupal.org/project/security_review</url>
   </lista>
+  <item/>Gerar periodicamente MD5 checksum dos arquivos de todos os módulos
+         e notificar alterações.
+  <lista>
+    <item/><url>https://drupal.org/project/md5check</url>
+  </lista>
 </lista>
+
+    <importante/>É recomendado que o monitoramento de alterações nos
+arquivos do Drupal seja realizado por uma ferramenta do sistema
+operacional, uma vez que o módulo <b>md5check</b> pode ser facilmente
+desativado.
+
+    O utilitário <b>fam</b> - <i>File Alteration Monitor</i> - é
+uma opção, bem como um simples <i>shell-script</i> baseado no comando
+<b>md5sum</b> que envie um e-mail em caso de alteração ou criação de
+arquivos novos.
+
+<br/>0.2cm
 
 <step>Assegurar que usuários não publiquem conteúdo inseguro.</step>
 <lista>
@@ -155,27 +177,17 @@ instalação do Drupal, ou ainda a qualquer momento.
   </lista>
 </lista>
 
-<step>Assegurar que os arquivos do Drupal não sejam indevidamente
-modificados.</step>
+<step>Assegurar o ambiente esteja livre de vulnerabilidades
+conhecidas</step>
 <lista>
-  <item/>Gerar periodicamente MD5 checksum dos arquivos de todos os módulos
-         e notificar alterações.
+  <item/>Manter o Drupal atualizado.
+  <item/>Manter os pacotes do sistema operacional atualizados.
+  <item/>Restringir a utilização de módulos que não seguem a política de
+         avisos de segurança.
+  <item/>Utilizar somente os módulos que são necessários.
   <lista>
-    <item/><url>https://drupal.org/project/md5check</url>
+    <item/>O módulo 'Devel' não deve estar habilitado em produção.
   </lista>
-</lista>
-
-<step>Assegurar que o site seja acessível somente por HTTPS.</step>
-
-<step>Assegurar que o Drupal esteja atualizado.</step>
-
-<step>Assegurar que os pacotes do sistema operacional estejam
-atualizados.</step>
-
-<step>Assegurar a utilização somente dos módulos que são
-necessários.</step>
-<lista>
-  <item/>O módulo 'Devel' não deve estar habilitado em produção.
 </lista>
 
 <subsubsecao>Material complementar</subsubsecao>
@@ -224,13 +236,13 @@ número de consultas à base de dados.
     Uma página principal, normalmente composta por algumas listagens de
 conteúdo, menu principal e menus laterais, pode realizar dezenas de
 operações de SELECT na base de dados. Se considerarmos a execução
-serializada sob um base de dados remota que leva 20ms para executar cada
+serializada sob um base de dados remota que leva 20ms para retornar cada
 operação, entender-se-á porque há páginas que necessitam de alguns segundos
 para serem exibidas.
 
     Assim, não é dispensável a execução de procedimentos relacionados a
-melhora do desempenho do sistema a fim de manter o tempo de carregamento de
-página inferior a 500ms. Considerações sobre desempenho e escalabilidade
+melhoria do desempenho do sistema a fim de manter o tempo de carregamento de
+página inferior a 500ms. Considera-ções sobre desempenho e escalabilidade
 estão disponíveis em
 <url>https://www.drupal.org/docs/7/managing-site-performance-and-scalability</url>.
 
