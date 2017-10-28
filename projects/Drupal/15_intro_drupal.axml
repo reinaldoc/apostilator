@@ -157,9 +157,11 @@ arquivos do Drupal seja realizado por uma ferramenta do sistema
 operacional, uma vez que o módulo <b>md5check</b> pode ser facilmente
 desativado.
 
-    O utilitário <b>fam</b> - <i>File Alteration Monitor</i> - é
-uma opção, bem como um simples <i>shell-script</i> baseado no comando
-<b>md5sum</b> que envie um e-mail em caso de alteração ou criação de
+    Os utilitários <b>fam</b> - <i>File Alteration Monitor</i> - e
+<b>inotify-tools</b> implementam isto por meio da associação de eventos
+do kernel, uma forma mais leve para monitorar arquivos. Uma forma mais
+simples pode ser implementa como o uso do comando <b>md5sum</b>
+associado ao envio envio de e-mail em caso de alteração ou criação de
 arquivos novos.
 
 <br/>0.2cm
