@@ -179,8 +179,7 @@ arquivos novos.
   </lista>
 </lista>
 
-<step>Assegurar o ambiente esteja livre de vulnerabilidades
-conhecidas</step>
+<step>Assegurar o ambiente esteja livre de vulnerabilidades</step>
 <lista>
   <item/>Manter o Drupal atualizado.
   <item/>Manter os pacotes do sistema operacional atualizados.
@@ -199,7 +198,7 @@ conhecidas</step>
   <lista>
     <item/>Lista com módulos relacionados aos controles de segurança
     <lista>
-      <item/><url>https://www.drupal.org/node/382752</url>
+      <item/><url>https://drupal.org/node/382752</url>
     </lista>
     <item/>Palestra de segurança do DrupalCon 2012
     <lista>
@@ -246,7 +245,7 @@ para serem exibidas.
 melhoria do desempenho do sistema a fim de manter o tempo de carregamento de
 página inferior a 500ms. Considera-ções sobre desempenho e escalabilidade
 estão disponíveis em
-<url>https://www.drupal.org/docs/7/managing-site-performance-and-scalability</url>.
+<url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>.
 
     A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
 de consultas à base de dados, por isso é importante ativá-la. Acesse
