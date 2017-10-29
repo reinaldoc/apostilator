@@ -257,8 +257,12 @@ novos módulos pela web;
 
     Os <b>temas</b> <u>são formados por regiões</u> em que os blocos podem ser
 associados e <u>por áreas sem regiões</u> que são customizáveis por meio da
-configuração do tema. Interessante notar que nem todo tema exibe menus
-multiníveis, tampouco são responsivos.
+configuração do tema.
+
+    Interessante notar que nem todo tema exibe menus multiníveis, tampouco são
+responsivos. Por isso, é importante conhecer as características implementadas
+pelos principais temas e optar pelo que melhor atende as necessidades de
+cada projeto.
 
 <lista>
   <item/><b>URL</b>: /admin/appearance
@@ -292,23 +296,25 @@ multiníveis, tampouco são responsivos.
 <subsubsecao>Temas Populares</subsubsecao>
 
 <lista>
-  <item/>https://drupal.org/project/bluez
+  <item/><url>https://drupal.org/project/bluez</url>
   <lista>
-    <item/>fixed front page, n-level menu, não responsivo;
+    <item/>página inicial sem regiões que é customizável pelas
+           configurações do tema;
+    <item/>n-level menu, não responsivo;
   </lista>
-  <item/>https://drupal.org/project/busy
+  <item/><url>https://drupal.org/project/busy</url>
   <lista>
     <item/>1-level main menu, 1-level right menu, não responsivo;
   </lista>
-  <item/>https://drupal.org/project/danland
+  <item/><url>https://drupal.org/project/danland</url>
   <lista>
     <item/>1-level main menu, n-level right menu, não responsivo;
   </lista>
-  <item/>https://drupal.org/project/garland
+  <item/><url>https://drupal.org/project/garland</url>
   <lista>
     <item/>1-level main menu no topo, n-level right menu, não responsivo;
   </lista>
-  <item/>https://drupal.org/project/corporateclean
+  <item/><url>https://drupal.org/project/corporateclean</url>
   <lista>
     <item/>n-level main menu, n-level right menu, adaptativo; effects: fade;
   </lista>
@@ -317,46 +323,72 @@ multiníveis, tampouco são responsivos.
 <subsubsecao>Temas Responsivos</subsubsecao>
 
 <lista>
-  <item/>https://drupal.org/project/bootstrap
+  <item/><url>https://drupal.org/project/bootstrap</url>
   <lista>
     <item/>2-level menus, sub-menu ao clicar;
   </lista>
-  <item/>https://drupal.org/project/responsive_blog
-  <item/>https://drupal.org/u/zymphonies.com - Zymphonies Themes
+  <item/><url>https://drupal.org/project/responsive_blog</url>
+  <item/><url>https://drupal.org/u/zymphonies.com</url> - Zymphonies Themes
   <lista>
-    <item/>https://drupal.org/project/execute_responsive_theme
-    <item/>https://drupal.org/project/rubix_responsive_theme
-    <item/>https://drupal.org/project/business_responsive_theme
-    <item/>https://drupal.org/project/multipurpose_zymphonies_theme
-    <item/>https://drupal.org/project/thecompany_responsive_theme
-    <item/>https://drupal.org/project/software_responsive_theme
-    <item/>https://drupal.org/project/blogon_responsive_theme
+    <item/><url>https://drupal.org/project/execute_responsive_theme</url>
+    <item/><url>https://drupal.org/project/rubix_responsive_theme</url>
+    <item/><url>https://drupal.org/project/business_responsive_theme</url>
+    <item/><url>https://drupal.org/project/multipurpose_zymphonies_theme</url>
+    <item/><url>https://drupal.org/project/thecompany_responsive_theme</url>
+    <item/><url>https://drupal.org/project/software_responsive_theme</url>
+    <item/><url>https://drupal.org/project/blogon_responsive_theme</url>
   </lista>
 </lista>
+
+<subsubsecao>Temas para a interface de administração</subsubsecao>
+
+<lista>
+  <item/><url>https://drupal.org/project/ember</url>
+  <lista>
+    <item/>O módulo
+           <link>https://drupal.org/project/navbar</link>
+           <text><b>Navbar</b></text> provê uma nova barra administrativa,
+           em substituição aos módulos <b>Toolbar</b> e <b>Overlay</b>, que
+           cria um ambiente administrativo moderno quando usado em conjunto
+           com o tema <b>Ember</b>.
+    <item/>O módulo <link>https://drupal.org/project/ember_support</link>
+           <text><b>Ember Support</b></text> fornece estilos adicionais para o tema
+           <b>Ember</b> exibir corretamente telas fornecidas pelos módulos Panels
+           e Views.
+  </lista>
+  <item/><url>https://drupal.org/project/rubik</url> (depende do tema
+         <link>https://drupal.org/project/tao</link><text>Tao</text>);
+  <item/><url>https://drupal.org/project/cube</url> (depende do tema
+         <link>https://drupal.org/project/rubik</link><text>Rubik</text>);
+  <item/><url>https://drupal.org/project/adminimal_theme</url>
+</lista>
+
 
 <subsubsecao>Procedimento para avaliar um tema</subsubsecao>
 
 <lista>
-  <item/>pesquisar temas ⇒ https://drupal.org/project/project_theme;
-  <item/>instalar um tema;
-  <item/>ativar e definir um tema como padrão (set default);
-  <item/>configurar o menu primário para 'Development' (Menu settings->Main links);
-  <item/>reorganizar itens do menu 'Development' em níveis (Menu->Development);
-  <item/>habilitar exibição (drop-down) dos sub-menus (Show as expanded);
-  <item/>associar menu 'Development' à região 'Second/Secondary/Right Sidebar';
-  <item/>gerar conteúdo em 'Devel generate';
+  <item/>instale o tema e o módulo <b>Devel</b>;
+  <item/>defina o tema como padrão (set default);
+  <item/>configure o menu <b>Development</b> como menu principal (Menu
+         settings->Main links);
+  <item/>reorganize os itens do menu <b>Development</b> em níveis
+         (Menu->Development);
+  <item/>habilite a exibição <i>drop-down</i> dos submenus (Show as expanded);
+  <item/>associe o menu <b>Development</b> à região <b>Second/Secondary/Right
+         Sidebar</b>;
+  <item/>gere conteúdo com o módulo <b>Devel generate</b>;
 </lista>
 
-<subsubsecao>Adquirir temas</subsubsecao>
+<subsubsecao>Comprar temas</subsubsecao>
 
 <lista>
-  <item/>http://www.zymphonies.com/drupal-premium-theme
-  <item/>https://www.templatemonster.com/drupal-themes.php
-  <item/>https://adaptivethemes.com/project/themes
-  <item/>https://themeforest.net/category/cms-themes/drupal
-  <item/>http://www.morethanthemes.com/drupal-themes/premium
-  <item/>http://demo.morethanthemes.com/enterpriseplus8/default/
-  <item/>http://demo.morethanthemes.com/chique/blue/
+  <item/><url>http://www.zymphonies.com/drupal-premium-theme</url>
+  <item/><url>https://www.templatemonster.com/drupal-themes.php</url>
+  <item/><url>https://adaptivethemes.com/project/themes</url>
+  <item/><url>https://themeforest.net/category/cms-themes/drupal</url>
+  <item/><url>http://www.morethanthemes.com/drupal-themes/premium</url>
+  <item/><url>http://demo.morethanthemes.com/enterpriseplus8/default/</url>
+  <item/><url>http://demo.morethanthemes.com/chique/blue/</url>
 </lista>
 
 <subsecao>Pessoas</subsecao>
