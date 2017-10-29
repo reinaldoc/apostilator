@@ -1,8 +1,12 @@
 <capitulo>Módulos do Drupal</capitulo>
 
 <lista>
-  <item/><url>https://drupal.org/project/usage</url>
-  <item/><url>https://drupal.org/project/project_module</url>
+  <item>Pesquisa e índice de módulos</item>
+  <lista>
+    <item/><url>https://drupal.org/project/usage</url>
+    <item/><url>https://drupal.org/project/project_module</url>
+    <item/><url>https://drupal.org/project/project_module/index</url>
+  </lista>
 </lista>
 
 <subsecao>Segurança</subsecao>
@@ -193,7 +197,10 @@ menu <u>Desenvolvimento</u>.
 </lista>
 
     O módulo <b>Admin Menu</b> não segue a política de anúncio de segurança,
-por isso parece ser prudente desabilitá-lo em produção.
+por isso parece ser prudente desabilitá-lo em produção. O módulo
+<link>https://drupal.org/project/navbar</link><text>Navbar</text> é uma
+alternativa com vantagem de ser responsivo e compatível com
+<i>smartphones</i>.
 
 <subsubsecao>LDAP</subsubsecao>
 
@@ -344,6 +351,7 @@ accordion podem ser customizados por meio de CSS em subtema.
 <subsecao>Menu</subsecao>
 
 <subsubsecao>Menu block</subsubsecao>
+<nome>module-menu-block</nome>
 
 <lista>
   <item/><b>Download</b>: https://drupal.org/project/menu_block
@@ -399,15 +407,27 @@ pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
 <subsubsecao>Superfish</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/superfish
-  <item/><b>Função</b>: menu com capacidade de 'drop-down' e blocos a partir de um submenu;
+  <item/><b>Download</b>: <url>https://drupal.org/project/superfish</url>
+  <item/><b>Função</b>: fornece menus com capacidade de <i>drop-down</i> e
+                        blocos a partir de um submenu;
   <item/><b>Uso</b>:
   <lista>
-    <item/>definir número de blocos de menu em configurações->interface do usuário;
-    <item/>desabilite a exibição do 'Main Menu' nas configurações do tema;
-    <item/>configure o bloco Superfish1 e vincule-o ao menu 'Main Menu';
+    <item/>defina número de blocos menu <b>Superfish</b> em
+           <b>Configurações->Interface do usuário->Superfish</b>;
+    <item/>desabilite a exibição do <b>Main Menu</b> nas configurações do tema;
+    <item/>configure o bloco Superfish1 e vincule-o a região do tema para o
+          menu principal;
   </lista>
 </lista>  
+
+   O módulo <b>Menu block</b>, visto na subseção<ref>module-menu-block</ref>,
+também provê a funcionalidade de criar blocos a partir de um submenu.
+Normalmente quando o tema já possui menu principal com 'drop-down', parece
+razoável optar pelo módulo <b>Menu block</b> em vez do <b>Superfish</b> para
+atender a esta funcionalidade. Considerações sobre menus drop down estão disponíveis
+em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
+
+<br/>0.2cm
 
 <subsecao>Views</subsecao>
 
@@ -757,17 +777,6 @@ página do perfil do usuário.
   </lista>
 </lista>
 
-<subsubsecao>IMCE</subsubsecao>
-
-<lista>
-  <item/><b>Download</b>: https://drupal.org/project/imce
-  <item/><b>Função</b>: uploader de arquivos;
-  <item/><b>Uso</b>: /admin/config/media/imce
-  <lista>
-    <item/>configurações -> Mídia -> IMCE;
-  </lista>
-</lista>
-
 <subsubsecao>CKEditor</subsubsecao>
 
 <lista>
@@ -790,6 +799,40 @@ página do perfil do usuário.
     <item/>Full profile: configurar 'file browser type' para IMCE;
   </lista>
 </lista>
+
+<subsubsecao>IMCE</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: https://drupal.org/project/imce
+  <item/><b>Função</b>: uploader de arquivos integrável ao editor HTML visual;
+  <item/><b>Uso</b>: /admin/config/media/imce
+  <lista>
+    <item/>configurações -> Mídia -> IMCE;
+  </lista>
+</lista>
+
+<subsubsecao>LinkIt</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/linkit</url>
+  <item/><b>Função</b>: criação de links para páginas internas integrável
+                        ao editor HTML visual;
+  <item/><b>Uso</b>: /admin/config/content/linkit
+  <lista>
+    <item/>crie um novo perfil de configuração para o LinkIt;
+    <item/>edite um perfil do Ckeditor e identifique a seção <i>Editor
+Apperarance</i>;
+    <lista>
+      <item/>arraste o ícone de link com o sinal de <b>+</b> para <i>Current
+             toolbar</i>;
+      <item/>ative a opção <i>Support for Linkit module</i>;
+    </lista>
+  </lista>
+</lista>
+
+    O módulo <link>https://drupal.org/project/ckeditor_link</link>
+<text>CKEditor Link</text> é uma alternativa mais simples ao <b>LinkIt</b>,
+com configuração similar, porém sem possibilidade de criar perfil.
 
 <subsubsecao>Date (Field)</subsubsecao>
 
