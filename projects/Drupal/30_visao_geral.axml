@@ -293,6 +293,21 @@ cada projeto.
   </lista>
 </lista>
 
+<subsubsecao>Procedimento para avaliar um tema</subsubsecao>
+
+<lista>
+  <item/>instale o tema e o módulo <b>Devel</b>;
+  <item/>defina o tema como padrão (set default);
+  <item/>configure o menu <b>Development</b> como menu principal (Menu
+         settings->Main links);
+  <item/>reorganize os itens do menu <b>Development</b> em níveis
+         (Menu->Development);
+  <item/>habilite a exibição <i>drop-down</i> dos submenus (Show as expanded);
+  <item/>associe o menu <b>Development</b> à região <b>Second/Secondary/Right
+         Sidebar</b>;
+  <item/>gere conteúdo com o módulo <b>Devel generate</b>;
+</lista>
+
 <subsubsecao>Temas Populares</subsubsecao>
 
 <lista>
@@ -363,22 +378,6 @@ cada projeto.
   <item/><url>https://drupal.org/project/adminimal_theme</url>
 </lista>
 
-
-<subsubsecao>Procedimento para avaliar um tema</subsubsecao>
-
-<lista>
-  <item/>instale o tema e o módulo <b>Devel</b>;
-  <item/>defina o tema como padrão (set default);
-  <item/>configure o menu <b>Development</b> como menu principal (Menu
-         settings->Main links);
-  <item/>reorganize os itens do menu <b>Development</b> em níveis
-         (Menu->Development);
-  <item/>habilite a exibição <i>drop-down</i> dos submenus (Show as expanded);
-  <item/>associe o menu <b>Development</b> à região <b>Second/Secondary/Right
-         Sidebar</b>;
-  <item/>gere conteúdo com o módulo <b>Devel generate</b>;
-</lista>
-
 <subsubsecao>Comprar temas</subsubsecao>
 
 <lista>
@@ -387,8 +386,10 @@ cada projeto.
   <item/><url>https://adaptivethemes.com/project/themes</url>
   <item/><url>https://themeforest.net/category/cms-themes/drupal</url>
   <item/><url>http://www.morethanthemes.com/drupal-themes/premium</url>
-  <item/><url>http://demo.morethanthemes.com/enterpriseplus8/default/</url>
-  <item/><url>http://demo.morethanthemes.com/chique/blue/</url>
+  <lista>
+    <item/><url>http://demo.morethanthemes.com/enterpriseplus8/default/</url>
+    <item/><url>http://demo.morethanthemes.com/chique/blue/</url>
+  </lista>
 </lista>
 
 <subsecao>Pessoas</subsecao>
