@@ -796,20 +796,69 @@ página do perfil do usuário.
   <lista>
     <item/>configurações -> criação de conteúdo -> CKEditor;
     <item/>Global profile: configurar caminho no servidor '%l/ckeditor';
-    <item/>Full profile: configurar 'file browser type' para IMCE;
   </lista>
 </lista>
 
 <subsubsecao>IMCE</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/imce
-  <item/><b>Função</b>: uploader de arquivos integrável ao editor HTML visual;
+  <item/><b>Download</b>: <url>https://drupal.org/project/imce</url>
+  <item/><b>Função</b>: <i>uploader</i> de arquivos integrável ao editor
+         HTML visual;
   <item/><b>Uso</b>: /admin/config/media/imce
   <lista>
-    <item/>configurações -> Mídia -> IMCE;
+    <item/>edite um perfil do <b>CKEditor</b>;
+    <item/>identifique a seção <i>File browser settings</i>;
+    <item/>configure a opção <i>File browser type</i> para IMCE;
   </lista>
 </lista>
+
+    <atividade/>O módulo <b>IMCE</b> fornece uma interface para
+<u>upload</u> de arquivos integrada as funcionalidades de <u>adição de
+imagem</u> e <u>criação de link</u> do editor HTML visual. Ao acessar tais
+funcionalidades, use o botão <b>Localizar no servidor</b> para abrir
+a interface do IMCE.
+
+    Arquivos enviados por meio do módulo <b>IMCE</b> são armazenados
+diretamente no repositório de arquivos, normalmente em
+<b>sites/[instancia]/files</b>. Isso que dizer que, ao contrário dos
+arquivos e imagens armazenados em campos próprios dos tipos de conteúdo,
+não há controles adicionais sobres esses arquivos, não sendo possível
+restringir a extensão do arquivo, tamanho ou padrão de nomenclatura.
+
+<subsubsecao>Insert</subsubsecao>
+
+<lista>
+  <item/><b>Download</b>: <url>https://drupal.org/project/insert</url>
+  <item/><b>Função</b>: permite manter imagem em campo próprio e
+         adicioná-la a campo de texto longo;
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>edite um campo do tipo imagem;
+    <item/>ative a opção <i>Enable insert button</i>;
+    <item/>selecione os estilos de imagem que estarão disponíveis ao
+           usuário;
+    <item/>selecione o estilo padrão;
+  </lista>
+</lista>
+
+    O módulo <b>Insert</b> é uma alternativa ao módulo <b>IMCE</b>, para
+manter imagens em campos (<i>fields</i>) próprios, preservando as
+restrições configuráveis aos tipos de conteúdo, mas não o substitui
+completamente. O módulo <b>IMCE</b> é necessário para adicionar imagens a
+Blocos, a Mini Painéis ou a cabeçalhos de Views, que não fazem sentido
+estarem em tipos de conteúdo.
+
+    <atividade/>Ao adicionar um conteúdo contendo, ao menos, um campo de
+texto longo (<i>body</i>) e um campo de imagem, certifique-se de que o
+formato de texto selecionado tem permissão para usar a <i>tag HTML</i>
+<b>img</b>, e, após fazer <i>upload</i> da imagem no campo, use o botão
+<i>Insert</i>.
+
+    Ao habilitar a opção <i>Enable insert button</i>, tente-se a ocultar o
+campo de imagem no gerenciamento da exibição, caso contrário a imagem será
+exibida duas vezes. Por meio da propriedade da imagem inserida é possível
+configurar borda e alinhamento (<i>float</i>).
 
 <subsubsecao>LinkIt</subsubsecao>
 
