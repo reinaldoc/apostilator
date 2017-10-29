@@ -413,16 +413,16 @@ usuários não autenticados.
   </lista>
 </lista>
 
-    O bloco 'Search form' é fornecido pelo módulo <b>Search</b> que faz parte
-do núcleo do Drupal. Verifique que apesar do bloco 'Search form' estar
+    O bloco <b>Search form</b> é fornecido pelo módulo <b>Search</b>, que
+faz parte do núcleo do Drupal. Verifique que apesar deste bloco estar
 associado a uma região, ele só é exibido quando o usuário com permissão de
 administrador está autenticado.
 
-    <importante/>Cada módulo implementa determinadas permissões, identifique a
-lista de permissões fornecidas pelo módulo <b>Search</b> por meio do menu
-<i>Pessoas -> Permissões</i> ou pelo caminho <i>/admin/people/permissions</i>.
-Ative a permissão 'Use search' para que usuários autenticados e não
-autenticados, denominados anônimos, possam utilizar o bloco 'Search form'.
+    Consulte o conjunto de permissões que são implementadas por cada módulo
+em <i>Pessoas -> Permissões</i> e identifique a lista de permissões
+fornecidas pelo módulo <b>Search</b>. Ative a permissão <b>Use search</b>
+para que usuários autenticados e não autenticados, denominados anônimos,
+possam utilizar o bloco <b>Search form</b>.
 
 <subsubsecao>Papéis</subsubsecao>
 
