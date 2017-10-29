@@ -12,35 +12,155 @@
 <subsecao>Referências</subsecao>
 
 <lista>
-  <item/>https://drupal.org/node/2792973 ⇒ guia do sistema de temas do Drupal 7;
-  <item/>https://drupal.org/node/171194 ⇒ overview;
-  <item/>https://drupal.org/node/225125 ⇒ sub-theme;
-  <item/>https://drupal.org/node/388372 ⇒ default CSS classes;
-  <item/>https://drupal.org/node/778884 ⇒ blocks CSS IDs;
-  <item/>https://drupal.org/node/2802991 ⇒ code standards;
-  <item/>https://drupal.org/node/1886770 ⇒ CSS code standards;
-  <item/>https://drupal.org/node/1354 ⇒ API documentation and comment standards;
-  <item/>https://drupal.org/node/1089656 ⇒ themes hook;
-  <item/>https://drupal.org/node/190815 ⇒ core .tpl.php;
-  <item/>https://drupal.org/node/313510 ⇒ convertendo o leiaute para template;
-  <item/>https://drupal.org/node/394094 ⇒ boas práticas de acessibilidade;
-  <item/>https://www.youtube.com/watch?v=cOqVXvepAlw ⇒ Evaluating Base Themes;
-  <item/>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf
+  <item/><url>https://drupal.org/node/2792973</url> ⇒ guia do sistema de temas do Drupal 7;
+  <item/><url>https://drupal.org/node/171194</url> ⇒ overview;
+  <item/><url>https://drupal.org/node/225125</url> ⇒ sub-theme;
+  <item/><url>https://drupal.org/node/388372</url> ⇒ default CSS classes;
+  <item/><url>https://drupal.org/node/778884</url> ⇒ blocks CSS IDs;
+  <item/><url>https://drupal.org/node/2802991</url> ⇒ code standards;
+  <item/><url>https://drupal.org/node/1886770</url> ⇒ CSS code standards;
+  <item/><url>https://drupal.org/node/1354</url> ⇒ API documentation and comment standards;
+  <item/><url>https://drupal.org/node/1089656</url> ⇒ themes hook;
+  <item/><url>https://drupal.org/node/190815</url> ⇒ core .tpl.php;
+  <item/><url>https://drupal.org/node/313510</url> ⇒ convertendo o leiaute para template;
+  <item/><url>https://drupal.org/node/394094</url> ⇒ boas práticas de acessibilidade;
+  <item/><url>https://www.youtube.com/watch?v=cOqVXvepAlw</url> ⇒ Evaluating Base Themes;
+  <item/><link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link><text>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</text>
 </lista>
 
 <subsecao>Diretórios Locais</subsecao>
 
 <lista>
-  <item/>/themes/* ⇒ temas do core do Drupal;
-  <item/>/sites/all/themes/* ⇒ temas para todos os sites;
-  <item/>/sites/default/themes/* ⇒ tema para determinado site;
-  <item/>/sites/default/themes/mynewtheme ⇒ diretório para o novo tema;
+  <item>/themes/</item> ⇒ temas do núcleo do Drupal;
+  <item>/sites/all/themes/</item> ⇒ temas para todos os sites;
+  <item>/sites/default/themes/</item> ⇒ temas para determinado site;
 </lista>
+
+    Não coloque temas no diretório de temas do núcleo do Drupal, isto pode
+causar problemas de atualização do Drupal.
+
+<subsecao>Temas base</subsecao>
+
+   O processamento de temas do Drupal utiliza um modelo de herança em que
+qualquer tema pode ser utilizado como <b>tema base</b> para ser
+completamente customizado, seja com alterações de CSS, JavaScript,
+<i>templates</i> ou das opções de configuração disponíveis aos usuários.
+Criar um <b>subtema</b> é forma de realizar isto.
+
+   Apesar de qualquer tema poder ser utilizado como <b>tema base</b> para a
+criação de um <b>subtema</b>, há temas desenvolvidos unicamente para serem
+utilizados como <b>tema base</b>.
+
+   Dentre esse conjunto de temas, alguns são especializados para a criação
+de subtemas <i>from scratch</i>, ou seja, a partir de criação
+<i>templates</i> HTML, arquivos CSS e JavaScript. Esses temas fornecem uma
+estrutura básica de CSS e <i>templates</i>, como o tema <b>Tao</b>, ou
+alguns arquivos modelos para Gulp e SASS, como o tema <b>Zen</b>. Essa
+família de temas são úteis apenas para essa finalidade, apresentando uma
+interface sem estilos quando ativados diretamente.
+
+   Também há outra família de temas bases, denominada <b>Adaptive
+Theming - AT</b>, que seu obetivo é fornecer uma interface completa de
+configuração de leiaute e estilos para usuários que não conhecem
+programação.
+
+<subsubsecao>Adaptive Theme (AT Core)</subsubsecao>
+
+    <b>Adaptive Theme (AT Core)</b> é um <i>framework</i> que provê um
+leiaute responsivo e um conjunto de ferramentas para o desenvolvimento
+de subtemas. É também um tema base e não tem por finalidade ser ativado
+diretamente, devendo ser instalado com um de seus subtemas. A
+documentação para criação de subtemas do <b>Adaptive Theme</b> está
+disponível em <url>https://adaptivethemes.com/documentation</url>.
+
+<lista>
+  <item>URL</item>: <url>https://drupal.org/project/adaptivetheme</url>
+  <item>Função</item>: tema para customização por configuração;
+  <item>Adaptive Theme subtemas</item>
+  <lista>
+    <item/><url>https://drupal.org/project/pixture_reloaded</url>
+    <lista>
+      <item/>experimente os schemas de cores <b>Red Carpet</b> e
+             <b>Aquamarine</b>;
+      <item/>desative ou altere a largura máxima do site;
+      <item/>ative a extensão <b>Custom CSS</b>;
+    </lista>
+    <item/><url>https://drupal.org/project/sky</url>
+    <lista>
+      <item/>experimente o schema de cores <b>Blue Sky</b> com textura de
+             corpo da página <b>Grid</b>;
+      <item/>experimente o schema de cores <b>Purple</b> com textura de
+             corpo da página <b>Dots</b>;
+      <item/>altere o alinhamento do campo imagem para esquerda;
+    </lista>
+    <item/><url>https://drupal.org/project/omega</url>
+    <item/><url>https://drupal.org/project/corolla</url>
+    <item/><url>https://drupal.org/project/footheme</url> [skeleton para criar at sub-theme];
+  </lista>
+  <item/><b>Uso</b>:
+  <lista>
+    <item/>Instale o tema <link>http://drupal.org/project/adaptivetheme</link>
+           <text><b>AdaptiveTheme</b></text>;
+    <item/>Instale e ative um dos subtemas do <b>Adaptive Theme</b>;
+  </lista>
+</lista>
+
+
+<subsubsecao>Zen Base Theme</subsubsecao>
+
+    O <b>Zen</b> é um tema base para o desenvolvimento <i>from scratch</i>
+de subtemas em HTML/SASS/GULP.
+
+<lista>
+  <item>URL</item>: <url>https://drupal.org/project/zen</url>
+  <item>Função</item>: tema base para o desenvolvimento <i>from scratch</i>;
+  <item>Uso</item>:
+  <lista>
+    <item/>Criar subtema (zen/STARTERKIT/README.txt)
+  </lista>
+</lista>
+
+<comando>
+cp -a sites/all/themes/zen/STARTERKIT sites/all/themes/myzentheme
+cd sites/all/themes/myzentheme
+cp ../zen/templates/html.tpl.php templates/
+cp ../zen/templates/page.tpl.php templates/  # e outros templates;
+mv STARTERKIT.info.txt myzentheme.info
+editar myzentheme.info
+touch myzentheme.css
+sed -i 's/STARTERKIT/myzentheme/g' template.php
+sed -i 's/STARTERKIT/myzentheme/g' theme-settings.php
+</comando>
+
+<subsubsecao>Tao Base Theme</subsubsecao>
+
+    O <b>Tao</b> é um tema base para o desenvolvimento <i>from scratch</i> de
+subtemas. Fornece o CSS <i>reset.css</i> para sobrepor todos os estilos
+padrões do navegadores, bem como <i>drupal.css</i> para reimplementar
+estilos CSS do núcleo do Drupal que são funcionalmente importantes e
+o <i>base.css</i> para ajustes estruturais dos elementos.
+
+    Além disso, possui arquivos de <i>template</i> para fieldset.tpl.php,
+node.tpl.php, object.tpl.php, page.tpl.php e views-view-grid.tpl.php. Veja
+mais informações no arquivo <b>README.md</b> que acompanha o módulo.
+
+<lista>
+  <item>URL</item>: <url>https://drupal.org/project/tao</url>
+  <item>Função</item>: tema base para o desenvolvimento <i>from scratch</i>;
+  <item>Uso</item>:
+  <lista>
+    <item/>crie um novo subtema e defina o parâmetro <b>base theme =
+           tao</b> no arquivo .info;
+  </lista>
+</lista>
+
+    O tema administrativo <link>https://drupal.org/project/rubik</link>
+<text><b>Rubik</b></text> é um exemplo de subtema do Tao.
 
 <subsecao>Estrutura do Tema</subsecao>
 
 <lista>
-  <item/>mynewtheme.info ⇒ parametrização de regiões e arquivos CSS;
+  <item>mynewtheme.info</item> ⇒ parametrização de regiões e arquivos CSS;
 </lista>
 
 <comando>
@@ -77,7 +197,7 @@ datestamp = "1498069849"
 </comando>
 
 <lista>
-  <item/>template.php
+  <item>template.php</item>
   <lista>
     <item/>arquivo opcional para sobrepor funções geradoras de HTML;
     <item/>flush cache do drupal após qualquer mudanças;
@@ -93,7 +213,7 @@ $breadcrumb[] = drupal_get_title(); }
 </comando>
 
 <lista>
-  <item/>*.tpl.php
+  <item>templates/*.tpl.php</item>
   <lista>
     <item/>templates com a estrutura do HTML;
     <item/>html.tpl.php ⇒ page.tpl.php ⇒ region.tpl.php ⇒ block.tpl.php ⇒ ...
@@ -101,21 +221,21 @@ $breadcrumb[] = drupal_get_title(); }
 </lista>
 
 <lista>
-  <item/><b>Processamento do template</b>: a renderização ocorre a partir do mais específico;
+  <item>Processamento do template</item>: a renderização ocorre a partir do mais específico;
   <lista>
     <item/>↓ node.tpl.php;
     <item/>↓ region.tpl.php;
     <item/>↓ page.tpl.php;
     <item/>↓ html.tpl.php;
   </lista>
-  <item/><b>Seleção do template</b>: somente o template mais específico que existir será utilizado;
+  <item>Seleção do template</item>: somente o template mais específico que existir será utilizado;
   <lista>
     <item/>↓ node--1.tpl.php;
     <item/>↓ node--article.tpl.php;
     <item/>↓ node.tpl.php (theme);
     <item/>↓ node.tpl.php (core);
   </lista>
-  <item/><b>Sobreposição de templates</b>
+  <item>Sobreposição de templates</item>
   <lista>
     <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/
     <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/node--2.tpl.php;
@@ -124,34 +244,34 @@ $breadcrumb[] = drupal_get_title(); }
 </lista>
 
 <lista>
-  <item/><b>Hierarquia de Templates</b>
-  <item/><b>html</b>: modules/system/html.tpl.php
+  <item>Hierarquia de Templates</item>
+  <item>html</item>: modules/system/html.tpl.php
   <lista>
-    <item/><b>page</b>: modules/system/page.tpl.php
-    <item/><b>page</b>: sites/all/themes/mynewtheme/page.tpl.php
-    <item/><b>page</b>: sites/all/themes/mynewtheme/page--front.tpl.php
+    <item>page</item>: modules/system/page.tpl.php
+    <item>page</item>: sites/all/themes/mynewtheme/page.tpl.php
+    <item>page</item>: sites/all/themes/mynewtheme/page--front.tpl.php
     <lista>
-      <item/><b>region</b>: modules/system/region.tpl.php
-      <item/><b>region</b>: modules/system/region--[region-name].tpl.php
+      <item>region</item>: modules/system/region.tpl.php
+      <item>region</item>: modules/system/region--[region-name].tpl.php
       <lista>
-        <item/><b>block</b>: modules/block/block.tpl.php
-        <item/><b>block</b>: sites/all/themes/mynewtheme/block.tpl.php
-        <item/><b>block</b>: sites/all/themes/mynewtheme/block--[region-name].tpl.php
-        <item/><b>node</b>: modules/node/node.tpl.php
-        <item/><b>node</b>: themes/bartik/templates/node.tpl.php
-        <item/><b>node</b>: sites/all/themes/mynewtheme/node.tpl.php
-        <item/><b>node</b>: sites/all/themes/mynewtheme/node--[contenttype].tpl.php
-        <item/><b>node</b>: sites/all/themes/mynewtheme/node--[nid].tpl.php
-        <item/><b>comment</b>: modules/comment/comment.tpl.php
-        <item/><b>comment</b>: themes/bartik/templates/comment.tpl.php
-        <item/><b>comment-wrapper</b>: modules/comment/comment-wrapper.tpl.php
-        <item/><b>comment-wrapper</b>: themes/bartik/templates/comment-wrapper.tpl.php
-        <item/><b>user-profile</b>: modules/user/user-profile.tpl.php
-        <item/><b>user-profile</b>: sites/all/themes/mynewtheme/user-profile.tpl.php
+        <item>block</item>: modules/block/block.tpl.php
+        <item>block</item>: sites/all/themes/mynewtheme/block.tpl.php
+        <item>block</item>: sites/all/themes/mynewtheme/block--[region-name].tpl.php
+        <item>node</item>: modules/node/node.tpl.php
+        <item>node</item>: themes/bartik/templates/node.tpl.php
+        <item>node</item>: sites/all/themes/mynewtheme/node.tpl.php
+        <item>node</item>: sites/all/themes/mynewtheme/node--[contenttype].tpl.php
+        <item>node</item>: sites/all/themes/mynewtheme/node--[nid].tpl.php
+        <item>comment</item>: modules/comment/comment.tpl.php
+        <item>comment</item>: themes/bartik/templates/comment.tpl.php
+        <item>comment-wrapper</item>: modules/comment/comment-wrapper.tpl.php
+        <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.tpl.php
+        <item>user-profile</item>: modules/user/user-profile.tpl.php
+        <item>user-profile</item>: sites/all/themes/mynewtheme/user-profile.tpl.php
       </lista>
     </lista>
-    <item/><b>maintenance-page</b>: modules/system/maintenance-page.tpl.php
-    <item/><b>maintenance-page</b>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
+    <item>maintenance-page</item>: modules/system/maintenance-page.tpl.php
+    <item>maintenance-page</item>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
   </lista>
 </lista>
 
@@ -160,10 +280,10 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Theme developer</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/devel_themer
-  <item/><b>Função</b>: informações sobre a hierarquia de renderização do template;
-  <item/><b>Dependências</b>: Devel e simplehtmldom 7.x-1.12
-  <item/><b>Uso</b>:
+  <item>URL</item>: https://drupal.org/project/devel_themer
+  <item>Função</item>: informações sobre a hierarquia de renderização do template;
+  <item>Dependências</item>: Devel e simplehtmldom 7.x-1.12
+  <item>Uso</item>:
   <lista>
     <item/>ative o checkbox (Themer info) no canto inferior esquerdo da tela;
     <item/>selecione o elemento para obter os templates e funções processadas;
@@ -173,17 +293,17 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Styleguide</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/styleguide
-  <item/><b>Função</b>: lista estilos aplicados a cada componente;
-  <item/><b>Uso</b>: /admin/appearance/styleguide
+  <item>URL</item>: https://drupal.org/project/styleguide
+  <item>Função</item>: lista estilos aplicados a cada componente;
+  <item>Uso</item>: /admin/appearance/styleguide
 </lista>
 
 <subsubsecao>Block Class</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/block_class
-  <item/><b>Função</b>: definir classe CSS para cada bloco;
-  <item/><b>Uso</b>:
+  <item>URL</item>: https://drupal.org/project/block_class
+  <item>Função</item>: definir classe CSS para cada bloco;
+  <item>Uso</item>:
   <lista>
     <item/>instalar módulo;
     <item/>criar sub-thema;
@@ -195,8 +315,8 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Responsive Blog Theme</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: https://drupal.org/project/responsive_blog
-  <item/><b>Uso</b>:
+  <item>URL</item>: https://drupal.org/project/responsive_blog
+  <item>Uso</item>:
   <lista>
     <item/>instalar tema;
     <item/>criar sub-tema;
@@ -210,9 +330,9 @@ $breadcrumb[] = drupal_get_title(); }
 <subsubsecao>Responsive menu</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/responsive_menus
-  <item/><b>Função</b>: substituir menu por menu responsivo a partir do tamanho da tela;
-  <item/><b>Uso</b>:
+  <item>Download</item>: https://drupal.org/project/responsive_menus
+  <item>Função</item>: substituir menu por menu responsivo a partir do tamanho da tela;
+  <item>Uso</item>:
   <lista>
     <item/>instalar e ativar módulo;
     <item/>identificar a classe ou id da tag 'ul' do menu que será responsivo;
@@ -229,10 +349,10 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsubsecao>Fitvids</subsubsecao>
 
 <lista>
-  <item/><b>Download</b>: https://drupal.org/project/fitvids
-  <item/><b>Função</b>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
-  <item/><b>Dependência</b>: Libraries API, jquery.fitvids.js, jquery_update;
-  <item/><b>Uso</b>:
+  <item>Download</item>: https://drupal.org/project/fitvids
+  <item>Função</item>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
+  <item>Dependência</item>: Libraries API, jquery.fitvids.js, jquery_update;
+  <item>Uso</item>:
   <lista>
     <item/>adicionar seletor CSS para identificar o vídeo;
   </lista>
@@ -249,50 +369,4 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
   .page-views table tr td { display: block; }
   .page-views .view td { width: 100%;}
 }
-</comando>
-
-<subsecao>Adaptive Theming Engine</subsecao>
-
-"Starter theme" altamente configurável.
-
-<lista>
-  <item/><b>URL</b>: https://drupal.org/project/adaptivetheme
-  <item/>AdaptiveTheme sub-themes
-  <lista>
-    <item/>https://drupal.org/project/sky
-    <item/>https://drupal.org/project/omega
-    <item/>https://drupal.org/project/corolla
-    <item/>https://drupal.org/project/pixture_reloaded
-    <item/>https://drupal.org/project/footheme [skeleton para criar at sub-theme];
-  </lista>
-  <item/>Novo sub-theme
-  <lista>
-    <item/>https://adaptivethemes.com/documentation [Drupal 7];
-    <item/>https://adaptivethemes.com/documentation/superfish-menu-setup
-  </lista>
-</lista>
-
-<subsecao>Zen Base Theme</subsecao>
-
-    O tema Zen é recomendado para o desenvolvimento <i>from scratch<i>, é
-considerado um <i>Starter theme</i> para desenvolvedores HTML/SASS/GULP.
-
-<lista>
-  <item/><b>URL</b>: https://drupal.org/project/zen
-  <item/>Uso:
-  <lista>
-    <item/>Criar subtema (zen/STARTERKIT/README.txt)
-  </lista>
-</lista>
-
-<comando>
-cp -a sites/all/themes/zen/STARTERKIT sites/all/themes/myzentheme
-cd sites/all/themes/myzentheme
-cp ../zen/templates/html.tpl.php templates/
-cp ../zen/templates/page.tpl.php templates/  # e outros templates;
-mv STARTERKIT.info.txt myzentheme.info
-editar myzentheme.info
-touch myzentheme.css
-sed -i 's/STARTERKIT/myzentheme/g' template.php
-sed -i 's/STARTERKIT/myzentheme/g' theme-settings.php
 </comando>
