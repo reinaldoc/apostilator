@@ -1,6 +1,14 @@
 <capitulo>Temas do Drupal</capitulo>
 <nome>capitulo-tema</nome>
 
+<lista>
+  <item>Pesquisa e índice de temas</item>
+  <lista>
+    <item/><url>https://drupal.org/project/project_theme</url>
+    <item/><url>https://drupal.org/project/project_theme/index</url>
+  </lista>
+</lista>
+
 <subsecao>Referências</subsecao>
 
 <lista>
