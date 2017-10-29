@@ -179,7 +179,7 @@ arquivos novos.
   </lista>
 </lista>
 
-<step>Assegurar o ambiente esteja livre de vulnerabilidades</step>
+<step>Assegurar que o ambiente esteja livre de vulnerabilidades</step>
 <lista>
   <item/>Manter o Drupal atualizado.
   <item/>Manter os pacotes do sistema operacional atualizados.
@@ -244,8 +244,9 @@ para serem exibidas.
     Assim, não é dispensável a execução de procedimentos relacionados a
 melhoria do desempenho do sistema a fim de manter o tempo de carregamento de
 página inferior a 500ms. Considera-ções sobre desempenho e escalabilidade
-estão disponíveis em
-<url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>.
+estão disponíveis em:
+
+<url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>
 
     A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
 de consultas à base de dados, por isso é importante ativá-la. Acesse
