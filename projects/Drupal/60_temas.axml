@@ -97,7 +97,7 @@ disponível em <url>https://adaptivethemes.com/documentation</url>.
     <item/><url>https://drupal.org/project/corolla</url>
     <item/><url>https://drupal.org/project/footheme</url> [skeleton para criar at sub-theme];
   </lista>
-  <item/><b>Uso</b>:
+  <item>Uso</item>:
   <lista>
     <item/>Instale o tema <link>http://drupal.org/project/adaptivetheme</link>
            <text><b>AdaptiveTheme</b></text>;

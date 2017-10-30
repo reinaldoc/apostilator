@@ -82,8 +82,8 @@ código HTML ou fornecido por algum módulo. Configura-se no bloco em quais
 URLs ele será exibido, dentro da região que foi associado.
 
 <lista>
-  <item/><b>URL</b>: /admin/structure/block
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/structure/block
+  <item>Atividades</item>:
   <lista>
     <item/>exibir as regiões do tema por meio da opção <u>Demonstrate block
 regions</u>;
@@ -106,22 +106,26 @@ Criação de conteúdo -> Formatos de texto'.
 <subsubsecao>Menus</subsubsecao>
 
     Um <b>menu</b> é formado por um conjunto de links (itens de menu) que
-podem ser organizados em vários níveis, de forma hierárquica. Todo menu é um
-bloco que pode ser associado a uma região do tema pela interface de blocos.
+podem ser organizados em vários níveis, de forma hierárquica. Todo menu é
+um bloco que pode ser associado a uma região do tema pela interface de
+blocos.
 
 <lista>
-  <item/><b>URL</b>: /admin/structure/menu
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/structure/menu
+  <item>Atividades</item>:
   <lista>
-    <item/>identifique os menus padrão;
+    <item/>identifique os menus;
     <lista>
       <item>Management</item>: menu utilizado pela barra administrativa;
-      <item>Main menu</item>: menu principal para a barra de navegação no topo;
+      <item>Main menu</item>: menu principal para a barra de navegação no
+            topo;
       <item>Navigation</item>: menu alternativo para a página principal;
-      <item>User menu</item>: menu secundário para acesso ao perfil do usuário logado e <i>logout</i>;
+      <item>User menu</item>: menu secundário para acesso ao perfil do
+            usuário logado e <i>logout</i>;
       <lista>
-        <item/><u>Os menus padrão e seus itens de menu não podem ser apagados</u>;
-        <item/><u>A utilização dos menus padrão é opcional</u>;
+        <item/><u>Os itens desses menus não podem ser apagados, exceto o</u>
+               <b>Main menu</b>;
+        <item/><u>A utilização desses menus é opcional</u>;
       </lista>
     </lista>
     <item/>crie um menu;
@@ -130,7 +134,8 @@ bloco que pode ser associado a uma região do tema pela interface de blocos.
     <item/>ative a opção 'Exibir expandido' para os itens de nível intermediário;
     <item/>configuração: defina o menu principal;
     <item/>associe um menu a uma região lateral;
-    <item/>edite um item de menu para movê-lo para outro menu pela opção <b>Link superior</b>;
+    <item/>edite um item de menu para movê-lo para outro menu pela opção
+           <b>Link superior</b>;
     <item/>crie um link (item de menu) a partir de um conteúdo (node);
   </lista>
 </lista>
@@ -156,8 +161,8 @@ taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos,
 como campos para data, link e relacionamento com outro tipo de conteúdo.
 
 <lista>
-  <item/><b>URL</b>: /admin/structure/types
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/structure/types
+  <item>Atividades</item>:
   <lista>
   <item/>adição de tipo de conteúdo;
   <item/>configuração de submissão, publicação (revisão) e comentários;
@@ -180,8 +185,8 @@ tipo gênero e espécie. A taxanomia é representada por um campo do tipo
 <i>tags</i> são um exemplo de taxonomia.
 
 <lista>
-  <item/><b>URL</b>: /admin/structure/taxonomy
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/structure/taxonomy
+  <item>Atividades</item>:
   <lista>
     <item/>adicione um vocabulário (lista de termos);
     <item/>adicione termos a um vocabulário;
@@ -199,8 +204,8 @@ possível fazer um paralelo em que o tipo de conteúdo seria uma tabela e o
 conteúdo (node) seria cada linha da tabela.
 
 <lista>
-  <item/><b>URL</b>: /admin/content
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/content
+  <item>Atividades</item>:
   <lista>
     <item/>lista conteúdo (nodes) existente - /admin/content;
     <item/>adição de conteúdo (node) de tipos pré-definidos - /node/add;
@@ -242,8 +247,8 @@ arquivos [3].
 <subsubsecao>Gerenciamento de módulos</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: /admin/modules
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/modules
+  <item>Atividades</item>:
   <lista>
     <item/>listar módulos instalados e os ativados;
     <item/>desativar módulo <b>Overlay</b>;
@@ -265,14 +270,14 @@ pelos principais temas e optar pelo que melhor atende as necessidades de
 cada projeto.
 
 <lista>
-  <item/><b>URL</b>: /admin/appearance
+  <item>URL</item>: /admin/appearance
 </lista>
 
 <subsubsecao>Configurações globais dos temas</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: /admin/appearance/settings
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/appearance/settings
+  <item>Atividades</item>:
   <lista>
     <item/>controlar a exibição de elementos (logo, site name, menu, etc);
     <item/>não exibir o nome do site (site name);
@@ -284,8 +289,8 @@ cada projeto.
 <subsubsecao>Configurações disponíveis por tema</subsubsecao>
 
 <lista>
-  <item/><b>URL</b>: /admin/appearance/settings/bartik
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/appearance/settings/bartik
+  <item>Atividades</item>:
   <lista>
     <item/>acessar configurações do tema;
     <item/>bartik: esquema de cor (header, sidebar, footer, text, link);
@@ -403,8 +408,8 @@ associação de usuários e permissões aos papéis.
 concedidas a papéis, que por sua vez são vinculados aos usuários.
 
 <lista>
-  <item/><b>URL</b>: /admin/people/permissions
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/people/permissions
+  <item>Atividades</item>:
   <lista>
     <item/>listar permissões fornecidas por cada módulo;
     <item/>listar permissões associadas a cada papel;
@@ -432,8 +437,8 @@ módulos aos usuários. Há três papéis pré-existentes: usuários não autent
 (usuário anônimo), usuários autenticados e administradores.
 
 <lista>
-  <item/><b>URL</b>: /admin/people/permissions/roles
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/people/permissions/roles
+  <item>Atividades</item>:
   <lista>
     <item/>criar papéis;
     <item/>listar permissões associadas a determinado papel;
@@ -448,8 +453,8 @@ módulos aos usuários. Há três papéis pré-existentes: usuários não autent
 do protocolo LDAP.
 
 <lista>
-  <item/><b>URL</b>: /admin/people
-  <item/><b>Atividades</b>:
+  <item>URL</item>: /admin/people
+  <item>Atividades</item>:
   <lista>
     <item/>listar usuários com status, papéis atribuídos e data do último acesso;
     <item/>criar novo e editar usuário (nome, senha, status, imagem, etc);
@@ -464,13 +469,13 @@ módulos que compõe o núcleo do Drupal. A instalação de novos módulos comum
 adiciona novas opções de configuração.
 
 <lista>
-  <item/><b>URL</b>: /admin/config
+  <item>URL</item>: /admin/config
 </lista>
 
 <subsubsecao>Regional e Idioma</subsubsecao>
 
 <lista>
-  <item/><b>Atividades</b>:
+  <item>Atividades</item>:
   <lista>
     <item/>definir fuso horário (configurações regionais);
     <item/>desativar configuração pelo usuário do fuso horário (opcional);
@@ -481,7 +486,7 @@ adiciona novas opções de configuração.
 <subsubsecao>Pessoas</subsubsecao>
 
 <lista>
-  <item/><b>Atividades</b>:
+  <item>Atividades</item>:
   <lista>
     <item/>adicionar novos campos ao usuário (data de nascimento, etc);
     <item/>definir imagem padrão do usuário;
@@ -496,7 +501,7 @@ adiciona novas opções de configuração.
 <subsubsecao>Sistema → Informação do site</subsubsecao>
 
 <lista>
-  <item/><b>Atividades</b>:
+  <item>Atividades</item>:
   <lista>
     <item/>definir nome do site apresentado no título da janela do navegador;
     <item/>definir remetente usado nos e-mails enviados pelo sistema;
@@ -509,7 +514,7 @@ adiciona novas opções de configuração.
 <subsubsecao>Media</subsubsecao>
 
 <lista>
-  <item/><b>Atividades</b>:
+  <item>Atividades</item>:
   <lista>
     <item/>redefinir estilos de imagens (thumbnail, medium, large);
     <item/>adicionar novo estilo de imagem (resize, crop, etc);
@@ -519,7 +524,7 @@ adiciona novas opções de configuração.
 <subsubsecao>Development</subsubsecao>
 
 <lista>
-  <item/><b>Atividades</b>:
+  <item>Atividades</item>:
   <lista>
     <item/>otimização de banda (agregar e comprimir CSS/JavaScripts);
     <item/>gerar conteúdo e usuários;
@@ -529,7 +534,7 @@ adiciona novas opções de configuração.
 <subsecao>Relatórios</subsecao>
 
 <lista>
-  <item/><b>URL</b>: /admin/reports
+  <item>URL</item>: /admin/reports
   <lista>
     <item/>Relatório de informações da plataforma;
     <lista>

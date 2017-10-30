@@ -299,11 +299,11 @@ conexão ao banco de dados. Essas configurações serão salvas no arquivo
 # chown portal: settings.php
 </comando>
 
-    Após a criação do <i>schema</i> do Drupal no banco de dados e
-configuração das credenciais para conexão ao banco no arquivo
-<b>sites/portal/settings.php</b>, o usuário do serviço web não necessita
-mais ter permissão para modificação deste arquivo, para isto, basta alterar
-a propriedade deste arquivo para o usuário utilizado para acesso FTP.
+    Após o procedimento de instalação do Drupal, o usuário do serviço web
+não necessita mais ter permissão para modificação do arquivo de configuração
+<b>sites/portal/settings.php</b>, por isso, deve-se alterar a propriedade
+deste arquivo para o usuário <b>portal</b>, que pe utilizado para acesso
+FTP.
 
 <step>Configure o caminho do repositório privado de arquivos</step>
 
