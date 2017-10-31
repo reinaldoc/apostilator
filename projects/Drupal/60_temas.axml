@@ -25,15 +25,26 @@
   <item/><url>https://drupal.org/node/313510</url> ⇒ convertendo o leiaute para template;
   <item/><url>https://drupal.org/node/394094</url> ⇒ boas práticas de acessibilidade;
   <item/><url>https://www.youtube.com/watch?v=cOqVXvepAlw</url> ⇒ Evaluating Base Themes;
-  <item/><link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link><text>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</text>
 </lista>
+
+    Neste
+artigo<link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link>
+<text>[1]</text>, Emma Jane Hogbin, classifica os temas base em três grupos
+[pág. 3-4], com objetivos [pág. 5] e aplicabilidades [pág. 6] distintas,
+bem como apresenta suas principais características [pág. 9-12], pelas
+palavras de seus próprios autores. Talvez não seja o momento para a leitura
+desse artigo, será mais fácil entendê-lo após a conclusão deste capítulo. 
+
+    [1] <link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link>
+<text>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</text>
+
 
 <subsecao>Diretórios Locais</subsecao>
 
 <lista>
   <item>/themes/</item> ⇒ temas do núcleo do Drupal;
   <item>/sites/all/themes/</item> ⇒ temas para todos os sites;
-  <item>/sites/default/themes/</item> ⇒ temas para determinado site;
+  <item>/sites/default/themes/</item> ⇒ temas para site <b>default</b>;
 </lista>
 
     Não coloque temas no diretório de temas do núcleo do Drupal, isto pode
@@ -43,26 +54,27 @@ causar problemas de atualização do Drupal.
 
    O processamento de temas do Drupal utiliza um modelo de herança em que
 qualquer tema pode ser utilizado como <b>tema base</b> para ser
-completamente customizado, seja com alterações de CSS, JavaScript,
-<i>templates</i> ou das opções de configuração disponíveis aos usuários.
-Criar um <b>subtema</b> é forma de realizar isto.
+completamente customizado, seja com alterações de CSS, de JavaScript, de
+<i>templates</i> ou das opções de configuração do tema disponíveis aos
+usuários. Criar um <b>subtema</b> é a forma para sobrepor qualquer
+comportamento do <b>tema base</b>.
 
    Apesar de qualquer tema poder ser utilizado como <b>tema base</b> para a
 criação de um <b>subtema</b>, há temas desenvolvidos unicamente para serem
-utilizados como <b>tema base</b>.
+utilizados como <b>tema base</b>, são um ponto de partida e fornecem
+recursos que agilizam o desenvolvimento.
 
    Dentre esse conjunto de temas, alguns são especializados para a criação
 de subtemas <i>from scratch</i>, ou seja, a partir de criação
-<i>templates</i> HTML, arquivos CSS e JavaScript. Esses temas fornecem uma
-estrutura básica de CSS e <i>templates</i>, como o tema <b>Tao</b>, ou
-alguns arquivos modelos para Gulp e SASS, como o tema <b>Zen</b>. Essa
-família de temas são úteis apenas para essa finalidade, apresentando uma
-interface sem estilos quando ativados diretamente.
+<i>templates</i> HTML, arquivos CSS e JavaScript. Esses temas fornecem
+estilos e aprimoram o leiaute padrão, como o tema <b>Tao</b>, ou
+integram recursos como Gulp, SASS e COMPASS, como o tema <b>Zen</b>.
 
-   Também há outra família de temas bases, denominada <b>Adaptive
+   Também há outra família de temas base, denominada <b>Adaptive
 Theming - AT</b>, que seu obetivo é fornecer uma interface completa de
 configuração de leiaute e estilos para usuários que não conhecem
-programação.
+programação. Os temas base são úteis apenas para esse fim, apresentando uma
+interface sem estilos quando ativados diretamente.
 
 <subsubsecao>Adaptive Theme (AT Core)</subsubsecao>
 
@@ -105,11 +117,14 @@ disponível em <url>https://adaptivethemes.com/documentation</url>.
   </lista>
 </lista>
 
+    Os arquivos de <i>template</i> são mais complexos porque incluem lógica
+para que a definição do leiaute da página, como número de colunas e
+percentual de largura de cada uma, ocorra pela configuração do tema.
 
 <subsubsecao>Zen Base Theme</subsubsecao>
 
     O <b>Zen</b> é um tema base para o desenvolvimento <i>from scratch</i>
-de subtemas em HTML/SASS/GULP.
+de subtemas em HTML/SASS-COMPASS/GULP.
 
 <lista>
   <item>URL</item>: <url>https://drupal.org/project/zen</url>
@@ -157,6 +172,8 @@ mais informações no arquivo <b>README.md</b> que acompanha o módulo.
     O tema administrativo <link>https://drupal.org/project/rubik</link>
 <text><b>Rubik</b></text> é um exemplo de subtema do Tao.
 
+<quebraPagina/>
+
 <subsecao>Estrutura do Tema</subsecao>
 
 <lista>
@@ -167,23 +184,23 @@ mais informações no arquivo <b>README.md</b> que acompanha o módulo.
 ; theme info
 name = My New Theme
 description = Alguma descrição administrativa (suporta tags html)
-engine = phptemplate  ; para tema standalone;
-base theme = bartik   ; para subtema;
+engine = phptemplate    ; para tema standalone;
+base theme = bartik     ; para subtema;
 
-; CSS, JS e a screenshot são herdados do tema base
-; se declarar com mesmo nome, os arquivos do tema serão ignorados;
+; CSS, JS e a screenshot são herdados do tema base;
+; se declarar com mesmo nome, os arquivos do tema base serão ignorados;
 screenshot = screenshot.png
 stylesheets[all][] = styles2.css
 stylesheets[screen and (max-width: 480px)][] = mobile2.css
 stylesheets[print][] = print2.css
 scripts[] = script2.js
 
-; regiões não são herdadas do base theme, devem ser repetidas aqui
+; regiões não são herdadas do tema base, devem ser repetidas aqui;
 regions[sidebar_first] = Left sidebar
 regions[content] = Main Content for Node Rendering
 regions[nome_xyz] = Localização da região
 
-; opções não são herdadas do base theme, devem ser repetidas aqui
+; opções não são herdadas do tema base, devem ser repetidas aqui;
 features[] = logo
 features[] = name
 features[] = main_menu
@@ -199,8 +216,13 @@ datestamp = "1498069849"
 <lista>
   <item>template.php</item>
   <lista>
-    <item/>arquivo opcional para sobrepor funções geradoras de HTML;
-    <item/>flush cache do drupal após qualquer mudanças;
+    <item/>arquivo opcional com lógica de programação do tema;
+    <item/>as funções devem iniciar com o nome do tema;
+    <item/>permite modificar o vetor de variáveis <b>$variables</b>;
+    <item/>permitir definir variáveis para serem utilizadas nos arquivos de
+           template;
+    <item/>deve-se realizar <i>flush</i> da cache do drupal após qualquer
+           mudança;
   </lista>
 </lista>
 
@@ -208,15 +230,14 @@ datestamp = "1498069849"
 function mynewtheme_xyz() {}
 function mynewtheme_preprocess_page(&$variables) { // page.tpl.php vars }
 function mynewtheme_preprocess_node(&$variables) { kpr($variables); }
-function mynewtheme_breadcrumb() { // includes/theme.inc
-$breadcrumb[] = drupal_get_title(); }
 </comando>
 
 <lista>
   <item>templates/*.tpl.php</item>
   <lista>
     <item/>templates com a estrutura do HTML;
-    <item/>html.tpl.php ⇒ page.tpl.php ⇒ region.tpl.php ⇒ block.tpl.php ⇒ ...
+    <item/>html.tpl.php ⇒ page.tpl.php ⇒ region.tpl.php ⇒ block.tpl.php |
+           node.tpl.php;
   </lista>
 </lista>
 
@@ -228,12 +249,14 @@ $breadcrumb[] = drupal_get_title(); }
     <item/>↓ page.tpl.php;
     <item/>↓ html.tpl.php;
   </lista>
-  <item>Seleção do template</item>: somente o template mais específico que existir será utilizado;
+  <item>Seleção do template</item>: somente o template mais específico de cada tipo será
+  utilizado;
   <lista>
-    <item/>↓ node--1.tpl.php;
-    <item/>↓ node--article.tpl.php;
-    <item/>↓ node.tpl.php (theme);
-    <item/>↓ node.tpl.php (core);
+    <item>↓ node--1.tpl.php</item> ⇒ para o Node Id;
+    <item>↓ node--article.tpl.php</item> ⇒ para o tipo de conteúdo;
+    <item>↓ node.tpl.php</item> ⇒ do subtema;
+    <item>↓ node.tpl.php</item> ⇒ do tema: themes/bartik/templates/node.tpl.php;
+    <item>↓ node.tpl.php</item> ⇒ do core: modules/node/node.tpl.php;
   </lista>
   <item>Sobreposição de templates</item>
   <lista>
