@@ -374,7 +374,7 @@ tampouco espera-se aprensentá-lo sempre de forma completa.
 
     O módulo <b>Menu Block</b> permite que novos blocos possam ser criados
 para um mesmo menu, com a função adicional de poder-se <u>selecionar qual
-nó do menu</u> e <u>quantos níveis a apartir desse nó</u> deseja-se exibir.
+nó do menu</u> e <u>quantos níveis a partir desse nó</u> deseja-se exibir.
 Este recurso é bastante útil para criar menus contextuais para a barra
 lateral, ou seja, para determinar um subconjunto do menu principal que será
 exibido a partir da URL atual. Use as <b>configurações de visibilidade</b>
