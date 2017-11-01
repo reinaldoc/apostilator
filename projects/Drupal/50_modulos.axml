@@ -354,20 +354,38 @@ accordion podem ser customizados por meio de CSS em subtema.
 <nome>module-menu-block</nome>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/menu_block
+  <item>Download</item>: <url>https://drupal.org/project/menu_block</url>
   <item>Função</item>: permite criar blocos a partir de um submenu;
   <item>Uso</item>: /admin/structure/block/add-menu-block
   <lista>
-    <item/>crie um novo bloco a partir de um submenus em Estrutura ⇒ Blocos;
-    <item/>selecione opções avançadas;
-    <item/>use um rótulo administrativo prefixado com 'Submenu:' para facilitar a identificação;
-    <item/>definir submenu, ou seja, o nó inicial do menu (fixed parent item);
+    <item/>crie um novo bloco para um menu;
+    <item/>selecione <b>Opções avançadas</b>;
+    <item/>use um rótulo administrativo prefixado com <b>Submenu:</b> para
+           identificar o bloco;
+    <item/>defina o nó inicial para um item desse menu por meio da opção
+           <b>fixed parent item</b>;
   </lista>
 </lista>
 
-   O módulo <b>Superfish</b> também provê esta funcionalidade. Normalmente
-quando o tema já possui menu principal com 'drop-down', parece razoável optar
-pelo módulo <b>Menu block</b> em vez do <b>Superfish</b>.
+    Verifique que ao criar um menu ele é disponibilizado automaticamente como
+bloco para ser associado a uma região do tema, porém este bloco representa
+necessariamente o primeiro nível desse menu, o que nem sempre é o desejado,
+tampouco espera-se aprensentá-lo sempre de forma completa.
+
+    O módulo <b>Menu Block</b> permite que novos blocos possam ser criados
+para um mesmo menu, com a função adicional de poder-se <u>selecionar qual
+nó do menu</u> e <u>quantos níveis a apartir desse nó</u> deseja-se exibir.
+Este recurso é bastante útil para criar menus contextuais para a barra
+lateral, ou seja, para determinar um subconjunto do menu principal que será
+exibido a partir da URL atual. Use as <b>configurações de visibilidade</b>
+do bloco criado para implementar isto.
+
+    <importante/>Lembre-se que, ainda que um menu possua vários níveis, é
+a implementação do tema que determinará se a exibição ocorrrerá em forma
+<i>drop-down</i>, para o menu principal, ou por indentação, quando
+associado à barra lateral. Se o tema implementar um menu <i>drop-down</i>,
+ele funcionará após a ativação da opção <b>Exibir expandido</b> para cada
+item de menu.
 
 <subsubsecao>Menu attributes</subsubsecao>
 
