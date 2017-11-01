@@ -117,7 +117,7 @@ instalador, mas é útil para instâncias criadas no
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/masquerade</url>
-  <item>Função</item>: permite logar no site como outro usuário;
+  <item>Função</item>: permite simular o <i>login</i> como outro usuário;
   <item>Uso</item>:
   <lista>
     <item/>habilite o bloco <b>Masquerade</b> em uma região;
