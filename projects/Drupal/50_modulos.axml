@@ -364,14 +364,40 @@ para que o <i>link</i> seja aberto em uma nova janela.
 <subsubsecao>Special menu items</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/special_menu_items
-  <item>Função</item>: permite os valores especiais como endereço do item de menu;
+  <item>Download</item>: <url>https://drupal.org/project/special_menu_items</url>
+  <item>Função</item>: permite a criação de itens de menu sem link ou como
+                       linha horizontal;
   <item>Uso</item>:
   <lista>
     <item/>edite um item de menu;
-    <item/>use as tags <i><nolink ></i> ou <i><separator ></i> como endereço;
+    <item/>use a <i>tag</i> <b><<i>nolink</i>></b> como endereço para exibir
+           o item sem link;
+    <item/>use a <i>tag</i> <b><<i>separator</i>></b> como endereço para
+           exibir uma linha horizontal;
+    <item/>configure as <i>tags</i> HTML geradas em <b>Sistema ⇒ Special
+           Menu Items</b>;
+    <lista>
+      <item/><i>tag</i> HTML para <b><<i>nolink</i>></b>: <a href="#"> (não
+             é necessário alterar);
+    </lista>
   </lista>
 </lista>
+
+    O módulo <b>Special menu items</b> permite a criação de um item de menu
+sem <i>link</i>, com a <i>tag</i> <b><<i>nolink</i>></b>, que pode ser útil
+para os itens que possuam subitens e, por isso, não devam possuir
+<i>link</i>.
+
+    Também é possível simular o agrupamento de itens de menu de mesmo nível,
+com a inserção de um item de menu sem link, com a função de rótulo dos itens
+subsequentes, ou como uma linha horizontal que delimite o conjunto de itens,
+com a <i>tag</i> <b><<i>separator</i>></b>.
+
+    Em ambos os casos é necessário definir um estilo CSS que preserve um
+visual compatível com o tema utilizado e diferencie os itens que rotulam o
+grupo de itens de menu ou o separador, seja por meio do atributo
+<b>class</b> provido pelo módulo <b>Menu attributes</b> ou com CSS definido
+diretamente para a classe <b>.nolink</b> e <b>.separator</b>.
 
 <subsubsecao>Menu Admin per Menu</subsubsecao>
 
