@@ -273,6 +273,106 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
   </lista>
 </lista>
 
+<subsecao>Menu</subsecao>
+
+<subsubsecao>Menu block</subsubsecao>
+<nome>module-menu-block</nome>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/menu_block</url>
+  <item>Função</item>: permite criar blocos a partir de um submenu;
+  <item>Uso</item>: /admin/structure/block/add-menu-block
+  <lista>
+    <item/>crie um novo bloco para um menu;
+    <item/>selecione <b>Opções avançadas</b>;
+    <item/>use um rótulo administrativo prefixado com <b>Submenu:</b> para
+           identificar o bloco;
+    <item/>defina o nó inicial para um item desse menu por meio da opção
+           <b>fixed parent item</b>;
+  </lista>
+</lista>
+
+    Verifique que ao criar um menu ele é disponibilizado automaticamente como
+bloco para ser associado a uma região do tema, porém este bloco representa
+necessariamente o primeiro nível desse menu, o que nem sempre é o desejado,
+tampouco espera-se aprensentá-lo sempre de forma completa.
+
+    O módulo <b>Menu Block</b> permite que novos blocos possam ser criados
+para um mesmo menu, com a função adicional de poder-se <u>selecionar qual
+nó do menu</u> e <u>quantos níveis a partir desse nó</u> deseja-se exibir.
+Este recurso é bastante útil para criar menus contextuais para a barra
+lateral, ou seja, para determinar um subconjunto do menu principal que será
+exibido a partir da URL atual. Use as <b>configurações de visibilidade</b>
+do bloco criado para implementar isto.
+
+    <importante/>Lembre-se que, ainda que um menu possua vários níveis, é
+a implementação do tema que determinará se a exibição ocorrrerá em forma
+<i>drop-down</i>, para o menu principal, ou por indentação, quando
+associado à barra lateral. Se o tema implementar um menu <i>drop-down</i>,
+ele funcionará após a ativação da opção <b>Exibir expandido</b> para cada
+item de menu, caso contrário, será necessário usar módulos como o
+<b>Superfish</b> ou <b>Nice Menus</b>.
+
+<subsubsecao>Menu attributes</subsubsecao>
+
+<lista>
+  <item>Download</item>: https://drupal.org/project/menu_attributes
+  <item>Função</item>: adiciona opções de ID, classes, estilos, target e access key aos menus;
+  <item>Uso</item>: 
+  <lista>
+    <item/>use os novos campos disponíveis ao editar um item de menu;
+  </lista>
+</lista>
+
+<subsubsecao>Special menu items</subsubsecao>
+
+<lista>
+  <item>Download</item>: https://drupal.org/project/special_menu_items
+  <item>Função</item>: permite os valores especiais como endereço do item de menu;
+  <item>Uso</item>:
+  <lista>
+    <item/>edite um item de menu;
+    <item/>use as tags <i><nolink ></i> ou <i><separator ></i> como endereço;
+  </lista>
+</lista>
+
+<subsubsecao>Menu Admin per Menu</subsubsecao>
+
+<lista>
+  <item>Download</item>: https://drupal.org/project/menu_admin_per_menu
+  <item>Função</item>: permite associar um papel (role) para administrar cada menu;
+  <item>Uso</item>: /admin/people/permissions
+  <lista>
+    <item/>acesse o gerenciamento de permissões;
+    <item/>cada menu poderá ser associado individualmente a um papel;
+  </lista>
+</lista>
+
+<subsubsecao>Superfish</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/superfish</url>
+  <item>Função</item>: fornece menus com capacidade de <i>drop-down</i> e
+                        blocos a partir de um submenu;
+  <item>Uso</item>:
+  <lista>
+    <item/>defina número de blocos menu <b>Superfish</b> em
+           <b>Configurações->Interface do usuário->Superfish</b>;
+    <item/>desabilite a exibição do <b>Main Menu</b> nas configurações do tema;
+    <item/>configure o bloco Superfish1 e vincule-o a região do tema para o
+          menu principal;
+  </lista>
+</lista>  
+
+   O módulo <b>Menu block</b>, visto na subseção<ref>module-menu-block</ref>,
+também provê a funcionalidade de criar blocos a partir de um submenu.
+Normalmente quando o tema já possui menu principal com 'drop-down', parece
+razoável optar pelo módulo <b>Menu block</b> em vez do <b>Superfish</b> para
+atender a esta funcionalidade. Considerações sobre menus drop down estão disponíveis
+em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
+
+<br/>0.2cm
+
 <subsecao>Blocos</subsecao>
 
 <subsubsecao>Image Block</subsubsecao>
@@ -347,105 +447,6 @@ accordion podem ser customizados por meio de CSS em subtema.
     <item/>opcional: permitir que todas as tabs sejam fechadas (<i>collapsible</i>);
     <item/>vincular cada aba a uma bloco, node, view ou qtab;
 </lista>
-
-<subsecao>Menu</subsecao>
-
-<subsubsecao>Menu block</subsubsecao>
-<nome>module-menu-block</nome>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/menu_block</url>
-  <item>Função</item>: permite criar blocos a partir de um submenu;
-  <item>Uso</item>: /admin/structure/block/add-menu-block
-  <lista>
-    <item/>crie um novo bloco para um menu;
-    <item/>selecione <b>Opções avançadas</b>;
-    <item/>use um rótulo administrativo prefixado com <b>Submenu:</b> para
-           identificar o bloco;
-    <item/>defina o nó inicial para um item desse menu por meio da opção
-           <b>fixed parent item</b>;
-  </lista>
-</lista>
-
-    Verifique que ao criar um menu ele é disponibilizado automaticamente como
-bloco para ser associado a uma região do tema, porém este bloco representa
-necessariamente o primeiro nível desse menu, o que nem sempre é o desejado,
-tampouco espera-se aprensentá-lo sempre de forma completa.
-
-    O módulo <b>Menu Block</b> permite que novos blocos possam ser criados
-para um mesmo menu, com a função adicional de poder-se <u>selecionar qual
-nó do menu</u> e <u>quantos níveis a partir desse nó</u> deseja-se exibir.
-Este recurso é bastante útil para criar menus contextuais para a barra
-lateral, ou seja, para determinar um subconjunto do menu principal que será
-exibido a partir da URL atual. Use as <b>configurações de visibilidade</b>
-do bloco criado para implementar isto.
-
-    <importante/>Lembre-se que, ainda que um menu possua vários níveis, é
-a implementação do tema que determinará se a exibição ocorrrerá em forma
-<i>drop-down</i>, para o menu principal, ou por indentação, quando
-associado à barra lateral. Se o tema implementar um menu <i>drop-down</i>,
-ele funcionará após a ativação da opção <b>Exibir expandido</b> para cada
-item de menu.
-
-<subsubsecao>Menu attributes</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/menu_attributes
-  <item>Função</item>: adiciona opções de ID, classes, estilos, target e access key aos menus;
-  <item>Uso</item>: 
-  <lista>
-    <item/>use os novos campos disponíveis ao editar um item de menu;
-  </lista>
-</lista>
-
-<subsubsecao>Special menu items</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/special_menu_items
-  <item>Função</item>: permite os valores especiais como endereço do item de menu;
-  <item>Uso</item>:
-  <lista>
-    <item/>edite um item de menu;
-    <item/>use as tags <i><nolink ></i> ou <i><separator ></i> como endereço;
-  </lista>
-</lista>
-
-<subsubsecao>Menu Admin per Menu</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/menu_admin_per_menu
-  <item>Função</item>: permite associar um papel (role) para administrar cada menu;
-  <item>Uso</item>: /admin/people/permissions
-  <lista>
-    <item/>acesse o gerenciamento de permissões;
-    <item/>cada menu poderá ser associado individualmente a um papel;
-  </lista>
-</lista>
-
-<subsubsecao>Superfish</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/superfish</url>
-  <item>Função</item>: fornece menus com capacidade de <i>drop-down</i> e
-                        blocos a partir de um submenu;
-  <item>Uso</item>:
-  <lista>
-    <item/>defina número de blocos menu <b>Superfish</b> em
-           <b>Configurações->Interface do usuário->Superfish</b>;
-    <item/>desabilite a exibição do <b>Main Menu</b> nas configurações do tema;
-    <item/>configure o bloco Superfish1 e vincule-o a região do tema para o
-          menu principal;
-  </lista>
-</lista>  
-
-   O módulo <b>Menu block</b>, visto na subseção<ref>module-menu-block</ref>,
-também provê a funcionalidade de criar blocos a partir de um submenu.
-Normalmente quando o tema já possui menu principal com 'drop-down', parece
-razoável optar pelo módulo <b>Menu block</b> em vez do <b>Superfish</b> para
-atender a esta funcionalidade. Considerações sobre menus drop down estão disponíveis
-em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
-
-<br/>0.2cm
 
 <subsecao>Views</subsecao>
 
