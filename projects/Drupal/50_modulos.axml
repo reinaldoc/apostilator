@@ -330,13 +330,36 @@ item de menu, caso contrário, será necessário usar módulos como o
 <subsubsecao>Menu attributes</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/menu_attributes
-  <item>Função</item>: adiciona opções de ID, classes, estilos, target e access key aos menus;
+  <item>Download</item>: <url>https://drupal.org/project/menu_attributes</url>
+  <item>Função</item>: torna configurável os atributos HTML do item de
+                       menu;
   <item>Uso</item>: 
   <lista>
-    <item/>use os novos campos disponíveis ao editar um item de menu;
+    <item/>edite um item de menu;
+    <item/>identifique os atributos disponíveis em <b>MENU LINK</b> para a
+          <i>tag</i> <b>a</b>;
+    <lista>
+      <item/>title, id, name, rel, class, style, target, accesskey;
+    </lista>
+    <item/>identifique os atributos disponíveis em <b>MENU ITEM</b> para a
+           <i>tag</i> <b>li</b>;
+    <lista>
+      <item/>id, class, style;
+    </lista>
   </lista>
 </lista>
+
+    Ao utilizar o atributo <b>id</b> em um item de menu pode-se facilmente
+selecioná-lo por meio de JavaScript para aplicar algum novo comportamento,
+quando se estiver desenvolvendo um subtema.  O atributo <b>class</b> pode
+ser usado para aplicar uma classe CSS a fim de <u>destacar um dos itens do
+menu</u>, uma vez que o estilo padrão deve ser definido diretamente no arquivo
+CSS do subtema.
+
+    Já o atributo <b>accesskey</b> é importante para acessibilidade pois
+permite acesso ao item em conjunto com as teclas <b>Alt</b> ou
+<b>Shift+Alt</b>. O atributo <b>target</b> com valor <i>_blank</i> é útil
+para que o <i>link</i> seja aberto em uma nova janela.
 
 <subsubsecao>Special menu items</subsubsecao>
 
