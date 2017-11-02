@@ -287,7 +287,7 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
   </lista>
 </lista>
 
-<subsecao>Menu</subsecao>
+<subsecao>Menus</subsecao>
 
 <subsubsecao>Menu block</subsubsecao>
 <nome>module-menu-block</nome>
@@ -402,14 +402,30 @@ diretamente para a classe <b>.nolink</b> e <b>.separator</b>.
 <subsubsecao>Menu Admin per Menu</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/menu_admin_per_menu
-  <item>Função</item>: permite associar um papel (role) para administrar cada menu;
+  <item>Download</item>: <url>https://drupal.org/project/menu_admin_per_menu</url>
+  <item>Função</item>: permite associar um papel (role) para administrar
+                       cada menu;
   <item>Uso</item>: /admin/people/permissions
   <lista>
-    <item/>acesse o gerenciamento de permissões;
-    <item/>cada menu poderá ser associado individualmente a um papel;
+    <item/>conceda permissão para administração de um menu;
   </lista>
 </lista>
+
+    <importante/>Ao conceder permissão para administração de determinado
+menu, para que o usuário consiga adicionar um <i>link</i> a ele, é
+necessário também que o menu esteja vinculado ao respectivo tipo de
+conteúdo.
+
+    Em relação as outras opções de configuração do conteúdo que estão
+disponíveis usuário administrador, como a indicação de publicado ou
+despublicado, as informações de autor ou controle de revisões, o módulo
+<link>https://drupal.org/project/override_node_options</link><text><b>Override
+Node Options</b></text> fornece novas permissões para esse fim. Apesar
+deste módulo permitir que o conteúdo seja despublicado, o usuário não
+conseguirá acessar esse conteúdo despublicado, sendo necessário novas permissões
+fornecidas pelo módulo
+<link>https://www.drupal.org/project/view_unpublished</link>
+<text><b>view_unpublished</b></text>.
 
 <subsubsecao>Superfish</subsubsecao>
 
@@ -737,7 +753,7 @@ página do perfil do usuário.
     padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
 </comando>
 
-<subsecao>Node</subsecao>
+<subsecao>Nodes</subsecao>
 
 <subsubsecao>Display Suite</subsubsecao>
 
