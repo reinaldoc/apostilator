@@ -219,29 +219,40 @@ conteúdo (node) seria cada linha da tabela.
 
     De forma similar a um framework de programação, as estruturas do Drupal
 foram desenvolvidas com inúmeros pontos de integração que são utilizados
-para extendê-las por meio de módulos.
-
-    A instalação de módulo pode ser realizada por meio da interface web a
-a partir de uma conexão FTP para acesso ao diretório <b>sites/all/modules</b>.
+para extendê-las por meio de módulos. Os módulos podem ser instalados pela
+interface web do Drupal que realiza uma conexão FTP local para armazenar
+seus arquivos no diretório <b>sites/all/modules</b>.
 
     Os módulos podem fornecer blocos especializados, novos tipos de campos
-(fields) para serem utilizados em tipos de conteúdo, podem também adicionar
-recursos à Região de conteúdo, como os botões de compartilamento da página
-em redes sociais ou a informação da responsabilidade do conteúdo, além disso
-há módulos importantes que estendem as funcionalidades dos menus.
+(<i>fields</i>) para serem utilizados em tipos de conteúdo e também
+adicionar recursos à <b>Região de Conteúdo</b>, como os botões de
+compartilhamento da página em redes sociais ou a informação sobre a
+responsabilidade do conteúdo. Além disso há módulos importantes que
+estendem as funcionalidades dos menus.
 
-<subsubsecao>Referências</subsubsecao>
+    Encontrar o módulo que implementa uma determinada funcionalidade é uma
+das atividades que mais demandam tempo quando se está iniciando a trabalhar
+com o Drupal. A página de pesquisa de
+módulos<link>https://drupal.org/project/project_module</link><text>[1]</text>
+não ajuda muito, pois em muitos casos não é tão claro o que o módulo se
+propõe a fazer, tampouco o índice de
+módulos<link>https://drupal.org/project/project_module/index</link><text>[2]</text>
+facilita isso, mas podem ser úteis eventualmente.
 
-    A página de pesquisa de módulos [1] contém a listagem com filtros de todos
-os módulos disponíveis, embora a pesquisa por meio do Google costume ser
-bastante eficiente. Há também páginas que consolidam uma relação de módulos
-por um determinado tema, como os módulos para Views [2] e para Upload de
-arquivos [3].
+    A pesquisa por meio do Google costuma ser mais eficiente e também há
+páginas que consolidam uma relação de módulos por um determinado tema, como
+os módulos para
+Views<link>https://drupal.org/documentation/modules/views/add-ons</link><text>[3]</text>
+e para Upload de
+arquivos<link>https://groups.drupal.org/node/20291</link><text>[4]</text>. O
+capítulo<ref>drupal-modules</ref>, que trata de módulos, funciona como um
+catálogo que simplifica essa etapa.
 
 <lista>
-  <item/>[1] https://drupal.org/project/project_module
-  <item/>[2] https://drupal.org/documentation/modules/views/add-ons [Views]
-  <item/>[3] https://groups.drupal.org/node/20291 [Uploading]
+  <item>[1]</item> <url>https://drupal.org/project/project_module</url>
+  <item>[2]</item> <url>https://drupal.org/project/project_module/index</url>
+  <item>[3]</item> <url>https://drupal.org/documentation/modules/views/add-ons</url>
+  <item>[4]</item> <url>https://groups.drupal.org/node/20291</url>
 </lista>
 
 <subsubsecao>Gerenciamento de módulos</subsubsecao>
