@@ -766,28 +766,6 @@ página do perfil do usuário.
 
 <subsecao>Nodes</subsecao>
 
-<subsubsecao>Display Suite</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/ds
-  <item>Função</item>: gerenciamento do leiaute dos campos (node, comentários e usuário);
-  <item>Uso</item>: /admin/structure/ds
-  <lista>
-    <item/>acesse a opção 'manage display' ao editar um tipo de conteúdo;
-    <item/>identifique os views modes habilitados;
-    <item/>as páginas /node/[Id] usam o view mode 'default', se o 'Full Content' não for ativado;
-    <item/>selecione um leiaute para view mode 'default' deste tipo de conteúdo;
-    <item/>identifique os arquivos de template (.tpl.php) aplicáveis ao leiaute;
-    <item/>associe os campos do tipo de conteúdo às regiões do leiaute;
-    <item/>ativar o view mode para 'Full Content';
-    <item/>acesse um node;
-    <item/>desative o view mode 'Full Content';
-    <item/>crie o view mode 'Teaser small' (descrição) para a entidade 'node';
-    <item/>selecione o leiaute para o view mode 'Teaser small' e associe os campos;
-    <item/>crie uma view e use a configuração de exibição para conteúdo de 'Teaser small';
-  </lista>
-</lista>
-
 <subsubsecao>Link (Field)</subsubsecao>
 
 <lista>
@@ -1085,6 +1063,32 @@ termo ou vocabulário de taxonomia;
   <item>Download</item>: https://drupal.org/project/webform
   <item>Função</item>: tipo de conteúdo para formulários e pesquisas;
 </lista>
+
+<subsubsecao>Display Suite</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/ds</url>
+  <item>Função</item>: gerenciamento do leiaute do conteúdo (node, comentários e usuário);
+  <item>Uso</item>: /admin/structure/ds
+  <lista>
+    <item/>acesse a opção 'manage display' ao editar um tipo de conteúdo;
+    <item/>identifique os views modes habilitados;
+    <item/>as páginas /node/[Id] usam o view mode 'default', se o 'Full Content' não for ativado;
+    <item/>selecione um leiaute para view mode 'default' deste tipo de conteúdo;
+    <item/>identifique os arquivos de template (.tpl.php) aplicáveis ao leiaute;
+    <item/>associe os campos do tipo de conteúdo às regiões do leiaute;
+    <item/>ativar o view mode para 'Full Content';
+    <item/>acesse um node;
+    <item/>desative o view mode 'Full Content';
+    <item/>crie o view mode 'Teaser small' (descrição) para a entidade 'node';
+    <item/>selecione o leiaute para o view mode 'Teaser small' e associe os campos;
+    <item/>crie uma view e use a configuração de exibição para conteúdo de 'Teaser small';
+  </lista>
+</lista>
+
+    O módulo <b>Display Suite</b> substitui o uso do template
+<b>node.tpl.php</b> por um sistema de leiaute configurável com a capacidade
+de incluir <b>Views</b> de bloco com suporte a <u>links contextuais</u>.
 
 <subsubsecao>Path Breadcrumbs</subsubsecao>
 
