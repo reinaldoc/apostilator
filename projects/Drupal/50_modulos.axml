@@ -37,6 +37,18 @@ cadastrar a exceção ao proxy nas configurações do navegador.
     Verifique o IP da conexão identificado pelo Drupal, ele estará no topo
 da tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
 
+<subsubsecao>Captcha</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/captcha</url>
+  <item>Função</item>: implementa desafio de autenticação;
+  <item>Uso</item>: /admin/config/people/captcha
+  <lista>
+    <item/>habilite os módulos <b>CAPTCHA</b> e <b>Image CAPTCHA</b>;
+    <item/>altere o tipo de desafio padrão para <b>Image</b>;
+  </lista>
+</lista>
+
 <subsubsecao>Flood control</subsubsecao>
 
 <lista>
@@ -54,8 +66,6 @@ da tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
     Os limites para falhas de autenticação são aplicados pelo núcleo do
 Drupal, assim a função deste módulo é permitir a alteração dos valores padrão
 de bloqueio.
-
-<quebraPagina/>
 
 <subsubsecao>Flood Unblock</subsubsecao>
 

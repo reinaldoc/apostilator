@@ -118,6 +118,10 @@ instalação do Drupal, ou ainda a qualquer momento.
 
 <step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
 <lista>
+  <item/>Habilitar o desafio (<i>captcha</i>) de autenticação.
+  <lista>
+    <item/><url>https://drupal.org/project/captcha</url>
+  </lista>
   <item/>Bloqueio temporário a partir de falhas de autenticação.
   <lista>
     <item/><url>https://drupal.org/project/flood_control</url>
