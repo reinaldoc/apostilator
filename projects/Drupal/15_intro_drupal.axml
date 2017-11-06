@@ -158,15 +158,15 @@ instalação do Drupal, ou ainda a qualquer momento.
 
     <importante/>É recomendado que o monitoramento de alterações nos
 arquivos do Drupal seja realizado por uma ferramenta do sistema
-operacional, uma vez que o módulo <b>md5check</b> pode ser facilmente
-desativado.
+operacional, uma vez que o módulo <b>md5check</b> pode ser desativado pela
+interface web do Drupal.
 
     Os utilitários <b>fam</b> - <i>File Alteration Monitor</i> - e
 <b>inotify-tools</b> implementam isto por meio da associação de eventos
-do kernel, uma forma mais leve para monitorar arquivos. Uma forma mais
-simples pode ser implementa como o uso do comando <b>md5sum</b>
-associado ao envio envio de e-mail em caso de alteração ou criação de
-arquivos novos.
+do kernel, uma forma eficiente de monitorar arquivos. Uma alternativa mais
+simples é a utilização do comando <b>md5sum</b>, executado periodicamente
+pelo <b>Cron</b>, associado ao envio de e-mail em caso de alteração ou
+criação de arquivos novos.
 
 <br/>0.2cm
 
@@ -174,9 +174,8 @@ arquivos novos.
 <lista>
   <item/>Os formatos de textos autorizados aos usuários devem conter
          apenas as tags HTML necessárias.
-  <item/>Não deve ser concedido o perfil <i>Full HTML</i> nem o perfil
-         <i>PHP Code</i>, e ainda, o módulo PHP filter não deve ser
-         ativado.
+  <item/>Não deve ser concedido o perfil <b>Full HTML</b> nem o perfil
+         <b>PHP Code</b> e o módulo <b>PHP filter</b> não deve ser ativado.
   <item/>Impedir concessão de uso de código PHP.
   <lista>
     <item/><url>https://drupal.org/project/paranoia</url>
