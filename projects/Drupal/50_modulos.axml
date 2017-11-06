@@ -287,6 +287,12 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
   </lista>
 </lista>
 
+    O módulo <link>https://drupal.org/project/contextual_view_modes</link>
+<text><b>Contextual View Modes</b></text> permite o uso das regras de
+contexto para definir o modo de visualização (View Mode) do conteúdo, ou
+seja, se será exibido como <b>Conteúdo completo</b>, <b>Chamada (Teaser)</b>
+ou algum novo modo criado.
+
 <subsubsecao>String overrides</subsubsecao>
 
 <lista>
