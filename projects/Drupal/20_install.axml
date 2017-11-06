@@ -195,6 +195,11 @@ chroot_local_user=YES
 utf8_filesystem=YES
 </comando>
 
+    A opção <b>listen_address=127.0.0.1</b> em conjunto a opção
+<b>listen=YES</b> restringe a conexões somente locais. Não é necessário
+manter ativado o IPv6, uma vez que trata-se apenas de conexões locais,
+então use a opção <b>listen_ipv6=NO</b>.
+
 <step>Permita que usuários com shell /bin/false realizem login no FTP</step>
 
     Usuários utilizados para acesso FTP não necessitam de um <i>shell</i>
