@@ -491,13 +491,21 @@ seção<ref>module-imce</ref>.
 <subsubsecao>Social Media</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/socialmedia
-  <item>Função</item>: bloco de ícones com links para redes sociais;
+  <item>Download</item>: <url>https://drupal.org/project/socialmedia</url>
+  <item>Função</item>: links para redes sociais para o perfil dos usuários;
+  <item>Uso</item>: /admin/config/media/socialmedia
+  <lista>
+    <item/>defina as redes sociais disponíveis para o perfil do usuário;
+    <item/>atribua a permissão <b>Administer own social profiles</b> para um
+           usuário;
+  </lista>
 </lista>
 
-    O módulo <b>Social Media</b> é desnecessário em projetos que o tema já
-fornece ícones para links de redes sociais. Nesse caso, os ícones estarão em
-uma área sem região que é customizável pela configuração do tema.
+    O módulo <link>https://drupal.org/project/widgets</link>
+<text><b>Widgets</b></text> é requerido para disponibilizar blocos e
+customizar os links para redes sociais para o conteúdo (node). Caso
+deseje-se apenas links para redes sociais, pode-se optar por temas que já
+forneçam esse recurso, que são customizáveis pela configuração do tema.
 
 <subsubsecao>Footer Sitemap</subsubsecao>
 
