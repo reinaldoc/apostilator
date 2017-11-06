@@ -474,17 +474,19 @@ em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
 <subsubsecao>Image Block</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/imageblock
-  <item>Função</item>: permite criar blocos contendo imagem acima do texto;
+  <item>Download</item>: <url>https://drupal.org/project/imageblock</url>
+  <item>Função</item>: permite criar blocos contendo uma imagem acima do texto;
   <item>Uso</item>: /admin/structure/block/imageblock_add
   <lista>
-    <item/>crie um novo bloco com imagem em Estrutura ⇒ Blocos;
+    <item/>crie um novo bloco com imagem;
   </lista>
 </lista>
 
     O módulo <b>Image Block</b> é desnecessário em projetos que utilizam um
-editor Wysiwyg (módulo CKEditor) com capacidade de upload de arquivos (módulo
-IMCE).
+editor Wysiwyg, como o módulo <b>CKEditor</b> descrito na
+seção<ref>module-ckeditor</ref>, integrado a funcionalidade <i>upload</i>
+de arquivos, como o módulo <b>IMCE</b> descrito na
+seção<ref>module-imce</ref>.
 
 <subsubsecao>Social Media</subsubsecao>
 
@@ -871,6 +873,7 @@ página do perfil do usuário.
 </lista>
 
 <subsubsecao>CKEditor</subsubsecao>
+<nome>module-ckeditor</nome>
 
 <lista>
   <item>Download</item>: https://drupal.org/project/ckeditor
@@ -893,6 +896,7 @@ página do perfil do usuário.
 </lista>
 
 <subsubsecao>IMCE</subsubsecao>
+<nome>module-imce</nome>
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/imce</url>
