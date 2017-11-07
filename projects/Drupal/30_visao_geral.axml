@@ -483,64 +483,90 @@ adiciona novas opções de configuração.
   <item>URL</item>: /admin/config
 </lista>
 
-<subsubsecao>Regional e Idioma</subsubsecao>
+<subsubsecao>Mídia → Estilos de imagens</subsubsecao>
 
 <lista>
+  <item>URL</item>: /admin/config/media/image-styles
   <item>Atividades</item>:
   <lista>
-    <item/>definir fuso horário (configurações regionais);
-    <item/>desativar configuração pelo usuário do fuso horário (opcional);
-    <item/>definir formato para exibição da data (data e hora);
+    <item/>adicione o novo estilo de imagem <b>User (w120)</b>;
+    <item/>adicione o efeito <b>Escala</b> e defina a largura para 120 pixels;
+    <item/>adicione o novo estilo de imagem <b>Eslaide (726x166)</b>;
+    <item/>adicione o efeito <b>Escala</b>;
+    <item/>defina a largura para 726 pixels;
+    <item/>defina a altura para 166 pixels;
   </lista>
 </lista>
 
-<subsubsecao>Pessoas</subsubsecao>
+    Opte por padronizar o <b>Identificador textual</b> com o prefixo
+<b>i_</b>, como <i>i_user</i> e <i>i_eslaide</i>.
+
+<subsubsecao>Pessoas → Opções da conta</subsubsecao>
 
 <lista>
+  <item>URL</item>: /admin/config/people/accounts
   <item>Atividades</item>:
   <lista>
-    <item/>adicionar novos campos ao usuário (data de nascimento, etc);
-    <item/>definir imagem padrão do usuário;
-    <item/>definir parâmetros (tamanho máximo, etc) para imagem do usuário;
-    <item/>definir modelos de e-mails de alteração da conta;
-    <item/>configurar registro da conta somente pelo administrador;
-    <item/>configurar ação sob conteúdo de um usuário removido;
-    <item/>definir papel (admin) que recebe as permissões de cada módulo;
+    <item/>configure o registro de novas contas somente por administradores;
+    <item/>configure a ação sob conteúdo de um usuário removido;
+    <item/>defina o diretório para armazenamento da foto de perfil para
+           <b>images/user</b>;
+    <item/>defina imagem padrão do perfil do usuário;
+    <item/>selecione o estilo de imagem <b>User (w120)</b>;
+    <item/>defina os modelos de e-mails de alteração da conta;
+    <item/>adicione novos campos ao usuário, como telefone, seção de
+           trabalho, etc;
+  </lista>
+</lista>
+
+    Os novos campos adicionados à conta do usuário poderão ser
+sincronizados a partir de uma base LDAP.
+
+<subsubsecao>Regional e Idioma</subsubsecao>
+
+<lista>
+  <item>URL</item>: /admin/config/regional
+  <item>Atividades</item>:
+  <lista>
+    <item/>configurações regionais: defina o fuso horário;
+    <item/>configurações regionais: desative configuração pelo usuário do
+           fuso horário (opcional);
+    <item/>data e hora: defina o formato de data para dia/mês/ano;
   </lista>
 </lista>
 
 <subsubsecao>Sistema → Informação do site</subsubsecao>
 
 <lista>
+  <item>URL</item>: /admin/config/regional
   <item>Atividades</item>:
   <lista>
-    <item/>definir nome do site apresentado no título da janela do navegador;
-    <item/>definir remetente usado nos e-mails enviados pelo sistema;
-    <item/>definir URL interna utilizada como página inicial (front page);
-    <item/>definir URL interna para página de acesso negado (403);
-    <item/>definir URL interna para página não encontrada (404);
+    <item/>defina o nome do site que é apresentado no título da janela do
+           navegador;
+    <item/>defina o remetente dos e-mails enviados pelo sistema;
+    <item/>defina a URL interna utilizada como página inicial (<i>front
+           page</i>);
+    <item/>defina a URL interna para página de acesso negado (403);
+    <item/>defina a URL interna para página não encontrada (404);
   </lista>
 </lista>
 
-<subsubsecao>Media</subsubsecao>
+<subsubsecao>Desenvolvimento → Desempenho</subsubsecao>
 
 <lista>
+  <item>URL</item>: /admin/config/development/performance
   <item>Atividades</item>:
   <lista>
-    <item/>redefinir estilos de imagens (thumbnail, medium, large);
-    <item/>adicionar novo estilo de imagem (resize, crop, etc);
+    <item/>ative a cache de páginas para usuários anônimos;
+    <item/>ative a cache de bloco;
+    <item/>defina o tempo mínimo de vida do cache: <b>1 minuto</b>;
+    <item/>agrupe arquivos CSS;
+    <item/>agrupe arquivos JavaScript;
   </lista>
 </lista>
 
-<subsubsecao>Development</subsubsecao>
-
-<lista>
-  <item>Atividades</item>:
-  <lista>
-    <item/>otimização de banda (agregar e comprimir CSS/JavaScripts);
-    <item/>gerar conteúdo e usuários;
-  </lista>
-</lista>
+    Ainda que seja definido o tempo mínimo de vida do cache, este só será
+recriado se houver alguma alteração de conteúdo no site.
 
 <subsecao>Relatórios</subsecao>
 
@@ -554,9 +580,23 @@ adiciona novas opções de configuração.
     </lista>
     <item/>Relatório de atualizações disponíveis (core e módulos);
     <item/>Relatório de mensagens de log;
-    <item/>Relatório com lista campos dos tipos de conteúdo (field list);
     <item/>Relatório de requisições de acesso negado (erro 403);
     <item/>Relatório de requisições de página não encontrada (erro 404);
+    <item/>Relatório com bibliotecas JavaScript instaladas (fornecido pelo
+    módulo <b>Libraries</b>);
+    <item/>Relatório com lista de campos (<i>field list</i>);
+    <lista>
+      <item/>apresenta os campos indexados pelos tipos de conteúdo em que
+             são utilizados;
+    </lista>
     <item/>Relatório de termos utilizados na pesquisa;
+    <lista>
+      <item/>apresenta os termos utilizados em pesquisas;
+    </lista>
+    <item/>Relatório de com catálogo das Views (fornecido pelo módulo
+    <b>Views</b>);
+    <lista>
+      <item/>apresenta as Views indexadas por recurso que cada uma utiliza;
+    </lista>
   </lista>
 </lista>
