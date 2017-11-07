@@ -744,10 +744,6 @@ conteúdo com um campo do tipo imagem</u>, que denominaremos de
 <b>Eslaide</b>, e poste algumas imagens, normalmente de mesmo tamanho, por
 exemplo 726x166 pixels.
 
-    Opte por padronizar o <b>Identificador textual</b> de tipos de conteúdo
-com o prefixo <b>t_</b>, como <i>t_eslaide</i>, e de campos com prefixo
-<b>field_</b>, como <i>field_eslaide_imagem</i>.
-
 <br/>0.2cm
 
 <subsubsubsecao>Slideshow de imagem</subsubsubsecao>
@@ -970,8 +966,15 @@ Paths</b>.
 </lista>
 
     O módulo <b>Pathauto</b> gera URL alternativas automaticamente quando o
-conteúdo é salvo. Também é possível regerar todas as URLs alternativas a
-partir da opção <b>Bulk generate</b> nas configurações.
+conteúdo é salvo, a partir de <b>Patterns</b> configurados por tipo de
+conteúdo com o uso de tokens. Comumente usa-se como <b>Default path
+pattern</b> o token <b>[node:content-type:machine-name]/[node:title]</b>
+para prefixar a URL com o nome do tipo de conteúdo.
+
+    Também é possível regerar todas as URLs alternativas a partir da opção
+<b>Bulk generate</b> nas configurações. Isso pode ser útil quando um
+<b>Pattern</b> é alterado, caso contrário, apenas quando o conteúdo for
+salvo a URL será atualizada.
 
 <subsubsecao>Submitted By</subsubsecao>
 
