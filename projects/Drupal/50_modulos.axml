@@ -498,6 +498,8 @@ seção<ref>module-imce</ref>.
     <item/>configure o bloco <b>Footer Sitemap</b>;
     <item/>selecione o menu a ser utilizado;
     <item/>vincule o bloco <b>Footer Sitemap</b> a região <b>Footer</b>;
+    <item/>omita um item de menu por meio da opção <b>Hide from footer
+           sitemap</b>;
   </lista>
 </lista>
 
