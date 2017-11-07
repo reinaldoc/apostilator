@@ -753,15 +753,30 @@ exemplo 726x166 pixels.
          <b>Eslaide</b>;
   <item/>defina o formato de exibição como <b>Slideshow</b> de
          <i>fields</i>;
-  <item/>configuração: definir efeito de transição do slide;
-  <item/>configuração: definir o tempo de exibição do slide (time delay);
-  <item/>configuração: definir o tempo de transição de slide (speed);
-  <item/>definir a paginação para um número específico de slides (5);
-  <item/>configuração: adicionar controles (anterior, pause, próximo);
-  <item/>configuração: adicionar contador de slide (1 of 5);
-  <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
-  <item/>adicionar o campo 'Global: view result counter';
-  <item/>exibir o campo como link '#' (rewrite results);
+  <item/>continue e edite a view;
+  <item/>adicione o campo de imagem;
+  <item/>remova o campo de título;
+  <item/>defina ou remova o título da view;
+  <item/>defina a paginação para <b>Display all items</b>;
+</lista>
+
+<subsubsubsecao>Usar paginador como um contador</subsubsubsecao>
+
+<lista>
+  <item/>adicione o campo <b>Global: View result counter</b>;
+  <item/>configure o campo <b>Global: View result counter</b>:
+  <lista>
+    <item/><b>Exclude from display</b>;
+    <item/>na seção <b>Rewrite results</b> marque <b>Output this field as a
+           link</b> e use <b>#</b> (opcional);
+  </lista>
+  <item/>configure o formato <b>Slideshow</b>:
+  <lista>
+    <item/>ative o paginador em <b>Bottom Widgets</b>;
+    <item/>configure o paginador para o campo <b>Global: View result
+           counter</b>;
+    <item/>ative a opção <b>Activate Slide and Pause on Pager Hover</b>;
+  </lista>
 </lista>
 
 <comando>
@@ -809,8 +824,6 @@ exemplo 726x166 pixels.
   <item/>configuração: adicionar controles (anterior, pause, próximo);
   <item/>configuração: adicionar contador de slide (1 of 5);
   <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
-  <item/>adicionar o campo 'Global: view result counter';
-  <item/>exibir o campo como link '#' (rewrite results);
 </lista>
 
 <subsubsecao>Views Slideshow Configurable Controls</subsubsecao>
