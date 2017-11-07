@@ -510,14 +510,19 @@ forneçam esse recurso, que são customizáveis pela configuração do tema.
 <subsubsecao>Footer Sitemap</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/footer_sitemap
-  <item>Função</item>: gerar mapa do site em formato de colunas para uso no rodapé;
-  <item>Uso</item>:
+  <item>Download</item>: <url>https://drupal.org/project/footer_sitemap</url>
+  <item>Função</item>: gerar mapa do site a partir de menus em colunas;
+  <item>Uso</item>: /admin/structure/block/manage/footer_sitemap/footer_sitemap/configure
   <lista>
-    <item/>configurar bloco 'Footer Sitemap' e selecionar o menu a ser utilizado;
-    <item/>vincular bloco 'Footer Sitemap' a uma região do tema;
+    <item/>configure o bloco <b>Footer Sitemap</b>;
+    <item/>selecione o menu a ser utilizado;
+    <item/>vincule o bloco <b>Footer Sitemap</b> a região <b>Footer</b>;
   </lista>
 </lista>
+
+    <importante/>O módulo <b>Footer Sitemap</b> apresenta toda a hierarquia
+de um ou mais menus, entretando seu uso depende que ajustes de estilo sejam
+realizados por meio de subtema.
 
 <subsubsecao>Nodeblock</subsubsecao>
 
