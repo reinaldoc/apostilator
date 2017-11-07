@@ -488,25 +488,6 @@ seção<ref>module-ckeditor</ref>, integrado a funcionalidade <i>upload</i>
 de arquivos, como o módulo <b>IMCE</b> descrito na
 seção<ref>module-imce</ref>.
 
-<subsubsecao>Social Media</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/socialmedia</url>
-  <item>Função</item>: links para redes sociais para o perfil dos usuários;
-  <item>Uso</item>: /admin/config/media/socialmedia
-  <lista>
-    <item/>defina as redes sociais disponíveis para o perfil do usuário;
-    <item/>atribua a permissão <b>Administer own social profiles</b> para um
-           usuário;
-  </lista>
-</lista>
-
-    O módulo <link>https://drupal.org/project/widgets</link>
-<text><b>Widgets</b></text> é requerido para disponibilizar blocos e
-customizar os links para redes sociais para o conteúdo (node). Caso
-deseje-se apenas links para redes sociais, pode-se optar por temas que já
-forneçam esse recurso, que são customizáveis pela configuração do tema.
-
 <subsubsecao>Footer Sitemap</subsubsecao>
 
 <lista>
@@ -1151,6 +1132,27 @@ nível do breadcrumb;
     </lista>
   </lista>
 </lista>
+
+<subsubsecao>Social Media</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/socialmedia</url>
+  <item>Função</item>: links para redes sociais para o perfil dos usuários;
+  <item>Uso</item>: /admin/config/media/socialmedia
+  <lista>
+    <item/>defina as redes sociais disponíveis para o perfil do usuário;
+    <item/>atribua a permissão <b>Administer own social profiles</b> para um
+           usuário;
+  </lista>
+</lista>
+
+    O módulo <link>https://drupal.org/project/widgets</link>
+<text><b>Widgets</b></text> é requerido para disponibilizar blocos e
+customizar os links para redes sociais para o conteúdo (node). Caso
+deseje-se apenas links para redes sociais, pode-se optar por temas que já
+forneçam esse recurso, que são customizáveis pela configuração do tema.
+
+<br/>0.3cm
 
 <subsecao>Panels</subsecao>
 <nome>module-panels</nome>
