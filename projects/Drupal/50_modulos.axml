@@ -580,12 +580,13 @@ accordion podem ser customizados por meio de CSS em subtema.
 <nome>module-views</nome>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/views
-  <item>Dependência</item>: https://drupal.org/project/ctools
+  <item>Download</item>: <url>https://drupal.org/project/views</url>
+  <item>Dependência</item>: <link>https://drupal.org/project/ctools</link>
+                            <text>Chaos tool suite</text>;
   <item>Função</item>: listagem de conteúdo (node) em diversos formatos: tabela, grid, slideshow;
   <item>Uso</item>: /admin/structure/views
   <lista>
-    <item/>ativar módulo View UI para gerenciar listas customizadas (views);
+    <item/>ativar o módulo <b>View UI</b>;
   </lista>
 </lista>
 
