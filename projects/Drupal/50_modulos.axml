@@ -227,6 +227,38 @@ retornar ao módulo padrão <b>Toolbar</b>, substituí-lo pelo módulo
 alternativa que apesar de possuir um menu com menor profundidade tem a
 vantagem de ser responsivo e compatível com <i>smartphones</i>.
 
+<subsubsecao>Navbar</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/navbar</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/libraries</link><text>Libraries</text>,
+<link>http://backbonejs.org/</link><text>Backbone library</text>,
+<link>http://underscorejs.org/</link><text>Underscore library</text>,
+<link>http://modernizr.com/download/#-inputtypes-svg-touch-cssclasses-addtest-teststyles-prefixes-elem_details</link><text>Modernizr library</text>.
+  <item>Função</item>: fornece uma barra administrativa responsiva;
+  <item>Uso</item>:
+  <lista>
+    <item/>extraia as bibliotecas <b>Backbone</b>, <b>Underscore</b> e
+           <b>Modernizr</b> em <b>sites/all/libraries</b>;
+    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
+           administrativa padrão;
+    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
+           (opcional);
+    <item/>habilite os módulos <b>Libraries</b> e <b>Navbar</b>;
+  </lista>
+</lista>
+
+    O módulo <b>Libraries</b> fornece uma API para integração com
+bibliotecas JavaScript, que são armazenadas no diretório
+<b>sites/all/libraries</b> do Drupal, e disponibiliza o relatório
+<i>libraries</i> que contém as versões dessas bibliotecas. O relatório só
+conterá informações sobre determinada biblioteca após a instalação de um
+módulo que a requisite.
+
+    O módulo <b>Navbar</b> é uma alternativa responsiva ao módulo
+<b>Administration Menu</b>.
+
 <subsubsecao>LDAP</subsubsecao>
 
 <lista>
