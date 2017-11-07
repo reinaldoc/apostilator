@@ -717,30 +717,55 @@ página do perfil do usuário.
 <subsubsecao>Views Slideshow</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/views_slideshow
-  <item>Função</item>: construir slideshow a partir de conteúdos ou imagens;
-  <item>Dependências</item>: “ctools”, “Views UI”, “Views Slideshow: Cycle”, “Libraries”;
+  <item>Download</item>: <url>https://drupal.org/project/views_slideshow</url>
+  <item>Função</item>: construir slideshow a partir de conteúdos (nodes), campos de imagem, etc;
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text>,
+<link>https://drupal.org/project/views</link><text>Views</text>,
+<link>https://drupal.org/project/libraries</link><text>Libraries</text> e
+<link>https://github.com/malsup/cycle</link><text>jQuery Cycle library</text>.
   <lista>
-    <item/>Src: https://github.com/malsup/cycle/blob/master/jquery.cycle.all.js
-    <item/>Dst: sites/all/libraries/jquery.cycle/jquery.cycle.all.js
+    <item>Src</item>: <url>https://github.com/malsup/cycle/blob/master/jquery.cycle.all.js</url>
+    <item>Dst</item>: sites/all/libraries/jquery.cycle/jquery.cycle.all.js
   </lista>
-  <item>Tutorial do desenvolvedor</item>: https://drupal.org/node/2858279
+  <item>Tutorial do desenvolvedor</item>: <url>https://drupal.org/node/2858279</url>
   <item>Uso</item>: /admin/structure/views/add
   <lista>
-    <item/>criar uma página de slideshow a partir de um conteúdo;
-    <item/>criar um bloco de slideshow a partir de um conteúdo;
-    <item/>configuração: não fixar a altura do slide no bloco (view actions advanced);
-    <item/>criar um bloco de slideshow a partir de campo de imagem;
-    <item/>configuração: definir efeito de transição do slide;
-    <item/>configuração: definir o tempo de exibição do slide (time delay);
-    <item/>configuração: definir o tempo de transição de slide (speed);
-    <item/>definir a paginação para um número específico de slides (5);
-    <item/>configuração: adicionar controles (anterior, pause, próximo);
-    <item/>configuração: adicionar contador de slide (1 of 5);
-    <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
-    <item/>adicionar o campo 'Global: view result counter';
-    <item/>exibir o campo como link '#' (rewrite results);
+    <item/>habilite o módulo <b>Views Slideshow: Cycle</b>;
   </lista>
+</lista>
+
+    O módulo <b>Views Slideshow: Cycle</b> implementa a transição de
+conteúdo ou de determinado campo com recurso de controle para que o usuário
+avançe ou retroceda a transição.
+
+    Para criar um <b>Slideshow de imagem</b>, primeiro <u>crie um tipo de
+conteúdo com um campo do tipo imagem</u>, que denominaremos de
+<b>Eslaide</b>, e poste algumas imagens, normalmente de mesmo tamanho, por
+exemplo 726x166 pixels.
+
+    Opte por padronizar o <b>Identificador textual</b> de tipos de conteúdo
+com o prefixo <b>t_</b>, como <i>t_eslaide</i>, e de campos com prefixo
+<b>field_</b>, como <i>field_eslaide_imagem</i>.
+
+<br/>0.2cm
+
+<subsubsubsecao>Slideshow de imagem</subsubsubsecao>
+
+<lista>
+  <item/>crie uma <b>Page View</b> para exibir conteúdo do tipo
+         <b>Eslaide</b>;
+  <item/>defina o formato de exibição como <b>Slideshow</b> de
+         <i>fields</i>;
+  <item/>configuração: definir efeito de transição do slide;
+  <item/>configuração: definir o tempo de exibição do slide (time delay);
+  <item/>configuração: definir o tempo de transição de slide (speed);
+  <item/>definir a paginação para um número específico de slides (5);
+  <item/>configuração: adicionar controles (anterior, pause, próximo);
+  <item/>configuração: adicionar contador de slide (1 of 5);
+  <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
+  <item/>adicionar o campo 'Global: view result counter';
+  <item/>exibir o campo como link '#' (rewrite results);
 </lista>
 
 <comando>
@@ -776,6 +801,22 @@ página do perfil do usuário.
     color:#ccc; text-shadow: 2px 2px 000; }
 </comando>
 
+<subsubsubsecao>Slideshow de conteúdo</subsubsubsecao>
+
+<lista>
+  <item/>crie um <b>Block View</b> com formato slideshow;
+  <item/>configuração: não fixar a altura do slide no bloco em <i>view actions advanced</i>;
+  <item/>configuração: definir efeito de transição do slide;
+  <item/>configuração: definir o tempo de exibição do slide (time delay);
+  <item/>configuração: definir o tempo de transição de slide (speed);
+  <item/>definir a paginação para um número específico de slides (5);
+  <item/>configuração: adicionar controles (anterior, pause, próximo);
+  <item/>configuração: adicionar contador de slide (1 of 5);
+  <item/>configuração: adicionar paginador como contador (1 2 3 4 5);
+  <item/>adicionar o campo 'Global: view result counter';
+  <item/>exibir o campo como link '#' (rewrite results);
+</lista>
+
 <subsubsecao>Views Slideshow Configurable Controls</subsubsecao>
 
 <lista>
@@ -806,13 +847,18 @@ página do perfil do usuário.
 <subsubsecao>Link (Field)</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/link
-  <item>Função</item>: permite adicionar campo com link aos tipos de conteúdo;
+  <item>Download</item>: <url>https://drupal.org/project/link</url>
+  <item>Função</item>: campo (<i>field</i>) para URL;
   <item>Uso</item>:
   <lista>
-    <item/>adicionar campo link ao tipo de conteúdo;
+    <item/>adicione o campo link a um tipo de conteúdo;
   </lista>
 </lista>
+
+    Padronize o <b>Identificador textual</b> de campos com prefixo
+<b>field_</b>, como <i>field_eslaide_link</i>.
+
+<br/>0.3cm
 
 <subsubsubsecao>Link para Slideshow</subsubsubsecao>
 
