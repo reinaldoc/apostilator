@@ -49,6 +49,11 @@ da tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
   </lista>
 </lista>
 
+    O módulo <link>https://drupal.org/project/captcha_after</link>
+<text><b>CAPTCHA After</b></text> permite que o Captcha seja ativada
+somente após determinado número de falhas de autenticação, por sessão, por
+IP ou no total, dentro de 1 hora.
+
 <subsubsecao>Flood control</subsubsecao>
 
 <lista>
