@@ -852,6 +852,7 @@ com o prefixo <b>t_</b>, como <i>t_eslaide</i>, e de campos com prefixo
   <item>Uso</item>:
   <lista>
     <item/>adicione o campo link a um tipo de conteúdo;
+    <item/>selecione a opção <b>No title</b> nas configurações do campo;
   </lista>
 </lista>
 
@@ -878,18 +879,22 @@ com o prefixo <b>t_</b>, como <i>t_eslaide</i>, e de campos com prefixo
 <subsubsecao>File (Field) Paths</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/filefield_paths
-  <item>Função</item>: fornece máscara para renomear arquivos no upload;
+  <item>Download</item>: <url>https://drupal.org/project/filefield_paths</url>
+  <item>Função</item>: permite o uso de <b>Tokens</b> para nomear arquivos
+                       no <i>upload</i>;
   <item>Uso</item>:
   <lista>
-    <item/>adicionar máscara na configuração do campo File ou Image;
-    <item/>ativar módulo 'Entity Tokens' para usar tokens com valores dos campos;
+    <item/>edite um campo do tipo <b>Arquivo</b> ou <b>Imagem</b>;
+    <item/>identifique as novas opções em <b>File (Field) Path settings</b>;
+    <item/>use tokens para definir o diretório (<i>File path</i>);
+    <item/>use tokens para definir o nome do arquivo (<i>File name</i>);
   </lista>
-  <item>File path</item>:
+  <item>Diretório (<i>File path</i>)</item>:
   <lista>
-    <item/>[current-date:custom:Y]/slides_home
+    <item/>images/[node:content-type:machine-name]
+    <item/>images/[current-date:custom:Y]/[node:content-type:machine-name]
   </lista>
-  <item>File name</item>:
+  <item>Nome do arquivo (<i>File name</i>)</item>:
   <lista>
     <item/>[file:ffp-name-only-original].[file:ffp-extension-original]
     <item/>[node:nid]_[node:title].[file:ffp-extension-original]
@@ -897,18 +902,32 @@ com o prefixo <b>t_</b>, como <i>t_eslaide</i>, e de campos com prefixo
   </lista>
 </lista>
 
+    Apesar dos tokens <b>[node:nid]</b> e <b>[node:title]</b> já estarem
+disponíveis após a instalação do módulo <b>File (Field) Paths</b>, a lista
+com os tokens que podem ser utilizados é fornecida pelo módulo
+<b>Token</b>. O módulo <b>Token</b> também fornece dezenas de novos tokens,
+como o <b>[current-date:custom:Y]</b> que retorna o ano atual. Ative o
+módulo <b>Entity Tokens</b> para usar tokens para taxonomias e outros.
+
 <subsubsecao>Token</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/token
-  <item>Função</item>: fornece tokens [tipo:atributo:valor] para vários fins;
-  <item>Tokens</item>: https://drupal.org/node/390482
-  <item>Uso</item>:
+  <item>Download</item>: <url>https://drupal.org/project/token</url>
+  <item>Função</item>: fornece tokens <b>[tipo:atributo:valor]</b> para
+                       vários fins;
+  <item>Tokens</item>: <url>https://drupal.org/node/390482</url>
+  <item>Uso</item>: /admin/help/token
   <lista>
-    <item/>tokens são suportados em diversos locais no drupal;
-    <item/>o token [current-date:custom:Y] retorna o ano atual;
+    <item/>use o token <b>[current-date:custom:Y]</b> para obter o ano atual;
+    <item/>acesse <b>/admin/help/token</b> para obter a lista dos tokens
+           disponíveis;
   </lista>
 </lista>
+
+    Tokens são suportados em diversos locais no drupal, observe que surgirá
+a opção <b>Browse available tokens</b> próximo de alguns desses campos,
+como na definição do nome de arquivos no <i>upload</i> pelo módulo <b>File
+(Field) Paths</b>.
 
 <subsubsecao>Transliteration</subsubsecao>
 
