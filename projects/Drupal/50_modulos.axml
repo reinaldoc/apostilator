@@ -932,15 +932,27 @@ como na definição do nome de arquivos no <i>upload</i> pelo módulo <b>File
 <subsubsecao>Transliteration</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/transliteration
-  <item>Função</item>: substituição e remoção de caracteres acentuados do nome do arquivo durante upload;
+  <item>Download</item>: <url>https://drupal.org/project/transliteration</url>
+  <item>Função</item>: substitui caracteres acentuados para caixa baixa sem
+                       acento;
   <item>Uso</item>:
   <lista>
-    <item/>adiciona capacidade ao módulo Pathauto para gerar URLs sem caracteres acentuados;
-    <item/>adiciona capacidade do módulo File (Field) Path para retirar caractes acentuados do nome do arquivo;
-    <item/>ativar a opção Transliteration no campo File ou Image;
+    <item>File (Field) Paths</item>:
+    <lista>
+      <item/>ative a opção <b>Transliteration</b> ao editar um campo
+<b>Arquivo</b> ou <b>Imagem</b>;
+    </lista>
+    <item>Pathauto</item>:
+    <lista>
+      <item/>ative a opção <b>Transliteration</b> nas configurações;
+    </lista>
   </lista>
 </lista>
+
+    O módulo <b>Transliteration</b> adiciona a capacidade de gerar URLs sem
+caracteres acentuados ao módulo <b>Pathauto</b> e a capacidade de substituir
+caracteres acentuados dos arquivos em <i>upload</i> ao módulo <b>File (Field)
+Paths</b>.
 
 <subsubsecao>Pathauto</subsubsecao>
 
