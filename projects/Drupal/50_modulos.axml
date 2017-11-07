@@ -935,16 +935,17 @@ como na definição do nome de arquivos no <i>upload</i> pelo módulo <b>File
   <item>Download</item>: <url>https://drupal.org/project/transliteration</url>
   <item>Função</item>: substitui caracteres acentuados para caixa baixa sem
                        acento;
-  <item>Uso</item>:
+  <item>Uso</item>: /admin/config/media/file-system
   <lista>
     <item>File (Field) Paths</item>:
     <lista>
       <item/>ative a opção <b>Transliteration</b> ao editar um campo
-<b>Arquivo</b> ou <b>Imagem</b>;
+             <b>Arquivo</b> ou <b>Imagem</b>;
     </lista>
     <item>Pathauto</item>:
     <lista>
-      <item/>ative a opção <b>Transliteration</b> nas configurações;
+      <item/>ative a opção <b> Transliterate prior to creating alias</b>
+             nas configurações;
     </lista>
   </lista>
 </lista>
@@ -957,14 +958,20 @@ Paths</b>.
 <subsubsecao>Pathauto</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/pathauto
+  <item>Download</item>: <url>https://drupal.org/project/pathauto</url>
   <item>Função</item>: gerar URLs amigáveis do conteúdo baseado em seu título;
-  <item>Uso</item>:
+  <item>Uso</item>: /admin/config/search/path/patterns [Busca e metadados  →
+  URLs alternativas];
   <lista>
-    <item/>configurar padrões de URL (como o prefixo) por tipo de conteúdo;
-    <item/>configuração: 'Busca e metadados -> URLs alternativas -> Patterns';
+    <item/>configure os padrões de URL, como seu prefixo, por tipo de conteúdo;
+    <item/>ative a opção <b> Transliterate prior to creating alias</b>
+           nas configurações;
   </lista>
 </lista>
+
+    O módulo <b>Pathauto</b> gera URL alternativas automaticamente quando o
+conteúdo é salvo. Também é possível regerar todas as URLs alternativas a
+partir da opção <b>Bulk generate</b> nas configurações.
 
 <subsubsecao>Submitted By</subsubsecao>
 
