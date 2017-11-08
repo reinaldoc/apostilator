@@ -258,7 +258,7 @@ para serem exibidas.
 
     Assim, não é dispensável a execução de procedimentos relacionados a
 melhoria do desempenho do sistema a fim de manter o tempo de carregamento de
-página inferior a 500ms. Considera-ções sobre desempenho e escalabilidade
+página inferior a 500ms. Considerações sobre desempenho e escalabilidade
 estão disponíveis em:
 
 <url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>
