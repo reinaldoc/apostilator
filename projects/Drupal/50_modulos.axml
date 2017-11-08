@@ -99,7 +99,8 @@ só necessita ser ativado para este caso.
 verificações de segurança;
   <item>Uso</item>: /admin/reports/security-review
   <lista>
-    <item/>acesse o relatório e execute o <i>checklist</i>;
+    <item/>acesse o relatório <b>Security review</b>;
+    <item/>execute o <i>checklist</i>;
   </lista>
 </lista>
 

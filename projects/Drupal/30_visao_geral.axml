@@ -593,8 +593,10 @@ recriado se houver alguma alteração de conteúdo no site.
     <lista>
       <item/>apresenta os termos utilizados em pesquisas;
     </lista>
+    <item/>Relatório de verificações de segurança (fornecido pelo módulo
+           <b>Security Review</b>);
     <item/>Relatório de com catálogo das Views (fornecido pelo módulo
-    <b>Views</b>);
+           <b>Views</b>);
     <lista>
       <item/>apresenta as Views indexadas por recurso que cada uma utiliza;
     </lista>
