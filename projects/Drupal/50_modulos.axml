@@ -879,17 +879,26 @@ exemplo 726x166 pixels.
 <subsubsubsecao>Link para Slideshow</subsubsubsecao>
 
 <lista>
-  <item/>acesse as configurações da view no formato de slideshow;
-  <item/>selecione 'no title' nas opções do campo;
-  <item/>adicione o campo link à view, sem exibi-lo;
-  <item/>reordene os campos da view para o link ficar acima dos demais;
+  <item/>acesse as configurações da View no formato de slideshow;
+  <item/>adicione o campo link à View, sem exibi-lo, use a opção <b>Exclude
+         from display</b>;
+  <item/>reordene os campos da View para o campo link fique acima do campo
+         imagem;
   <item/>edite o campo da imagem:
   <lista>
-    <item/>desative o link original;
-    <item/>reescreva o resultado: expôr o campo como link;
-    <item/>definir link para [field_slide_link] (use o nome do campo de link);
+    <item/>verifique se o link da imagem está desabilitado;
+    <item/>reescreva o resultado como link, use a opção <b>Output this field
+           as a link</b>;
+    <item/>use o campo como link, por exemplo: [field_eslaide_link];
+    <item/>defina o <i>target</i> do link para <b>_blank</b>;
   </lista>
 </lista>
+
+    Perceba que a ordem dos campos da View é importante, pois permite
+utilizar os campos anteriores como token por meio da seção <b>Rewrite
+results</b> de um campo posterior. Os tokens disponíveis são listados pela
+subseção <b>Replacement patterns</b> que está ao final da seção <b>Rewrite
+results</b>.
 
 <subsubsecao>File (Field) Paths</subsubsecao>
 
