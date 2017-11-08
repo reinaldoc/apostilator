@@ -65,14 +65,14 @@ consulte a seção<ref>module-l10n-update</ref>.
 <subsecao>Segurança</subsecao>
 
     A <b>segurança da informação</b> é um processo contínuo de avaliação
-dos controles a fim de assegurar que estejam atingindo seus objetivos. Como
-parte desse processo deve-se estabelecer controles específicos para o
+dos controles a fim de assegurar que eles estejam atingindo seus objetivos.
+Como parte desse processo deve-se estabelecer controles específicos para o
 Portal Corporativo, essencialmente para garantir a disponibilidade e
 integridade das informações.
 
     Manter o Drupal atualizado e livre de vulnerabilidades conhecidas é um
-dos controles essenciais. Para assegurar isso, é importante monitorar os
-avisos de segurança do Drupal e de seus módulos, neles são informados o
+dos controles essenciais. Para assegurar isso, <u>é importante monitorar os
+avisos de segurança do Drupal e de seus módulos</u>, neles são informados o
 impacto das vulnerabilidades e as correções de segurança disponibilizadas.
 Os avisos de segurança são disponibilizados na página
 <url>https://drupal.org/security</url> e também, ao clicar em
@@ -95,11 +95,14 @@ conta pelo link <url>https://drupal.org/user</url>, então clique em
 
 <subsubsecao>Objetivos de Controle</subsubsecao>
 
-<step>Assegurar que não ocorra acesso indevido a conta #1 (conta
-administrativa).</step>
+    Um conjunto de objetivos de controle são previstos pela norma ISO 27001,
+porém de forma não exaustiva, sendo necessário que a organização considere a
+implementação de objetivos de controle e controles específicos.
+
+<step>Assegurar que não ocorra acesso indevido a conta administrativa.</step>
 <lista>
   <item/>Tornar o site acessível somente por HTTPS.
-  <item/>Restringir login por IP.
+  <item/>Restringir a autenticação a partir de determinados IPs.
   <lista>
     <item/><url>https://drupal.org/project/restrict_by_ip</url>
   </lista>
@@ -112,7 +115,7 @@ administrativa).</step>
 
     <atividade/>Um controle adicional é definir um nome de usuário menos
 óbvio para a conta administrativa #1. É possível fazer isso durante a
-instalação do Drupal, ou ainda a qualquer momento.
+instalação do Drupal ou a qualquer momento.
 
 <br/>0.2cm
 
@@ -136,8 +139,6 @@ instalação do Drupal, ou ainda a qualquer momento.
     <item/><url>https://drupal.org/project/autologout</url>
   </lista>
 </lista>
-
-<quebraPagina/>
 
 <step>Assegurar a integridade do código do Drupal.</step>
 <lista>
@@ -170,7 +171,21 @@ criação de arquivos novos.
 
 <br/>0.2cm
 
-<step>Assegurar que usuários não publiquem conteúdo inseguro.</step>
+<step>Assegurar que o ambiente esteja livre de vulnerabilidades</step>
+<lista>
+  <item/>Manter o Drupal atualizado.
+  <item/>Manter os pacotes do sistema operacional atualizados.
+  <item/>Restringir a utilização de módulos que não seguem a política de
+         avisos de segurança.
+  <item/>Utilizar o conjunto mínimo de módulos para atender aos requisitos
+         do projeto.
+  <lista>
+    <item/>O módulo <b>Devel</b> não deve estar habilitado em produção.
+  </lista>
+</lista>
+
+<step>Assegurar que usuários autorizados não publiquem conteúdo
+inseguro.</step>
 <lista>
   <item/>Os formatos de textos autorizados aos usuários devem conter
          apenas as tags HTML necessárias.
@@ -182,45 +197,35 @@ criação de arquivos novos.
   </lista>
 </lista>
 
-<step>Assegurar que o ambiente esteja livre de vulnerabilidades</step>
-<lista>
-  <item/>Manter o Drupal atualizado.
-  <item/>Manter os pacotes do sistema operacional atualizados.
-  <item/>Restringir a utilização de módulos que não seguem a política de
-         avisos de segurança.
-  <item/>Utilizar somente os módulos que são necessários.
-  <lista>
-    <item/>O módulo 'Devel' não deve estar habilitado em produção.
-  </lista>
-</lista>
+<subsubsecao>Material complementar sobre segurança no Drupal</subsubsecao>
 
-<subsubsecao>Material complementar</subsubsecao>
-
-<lista>
-  <item>Há mais sobre segurança no Drupal?</item>
   <lista>
-    <item/>Lista com módulos relacionados aos controles de segurança
+    <item/>Lista com módulos relacionados aos controles de segurança.
     <lista>
       <item/><url>https://drupal.org/node/382752</url>
     </lista>
-    <item/>Palestra de segurança do DrupalCon 2012
+    <item/>Drupal Security White Paper - Análise das falhas de segurança de 2005-2013.
+    <lista>
+      <item/><url>https://drupal.org/node/2838780</url>
+      <item/><url>https://drupal.org/files/drupal-security-whitepaper-1-3.pdf</url>
+    </lista>
+    <item/>Palestra de segurança do DrupalCon 2012.
     <lista>
       <item/><url>https://www.youtube.com/watch?v=rH4Kb3EQXu8</url>
     </lista>
-    <item/>eBook: Security Best Practices
+    <item/>eBook: Security Best Practices.
     <lista>
       <item/><url>https://www.amazon.com/dp/B015EH48MO</url>
     </lista>
-    <item/>Guia de melhores práticas de segurança no Drupal [há link direto para o PDF na página]
+    <item/>Guia de melhores práticas de segurança no Drupal [há link direto para o PDF na página].
     <lista>
       <item/><url>https://openconcept.ca/drupal-security-best-practices-practical-guide</url>
     </lista>
-    <item/>Identificar referências a links externos fraudulentos
+    <item/>Identificar referências a links externos fraudulentos.
     <lista>
       <item/><url>http://www.unmaskparasites.com</url>
     </lista>
   </lista>
-</lista>
 
 <subsecao>Desempenho</subsecao>
 
