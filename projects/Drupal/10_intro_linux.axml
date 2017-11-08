@@ -117,13 +117,13 @@ rapidamente correções para as falhas descorbertas.
 
     A instalação do <link>https://debian.org</link><text>Debian GNU/Linux</text>
 é bastante simplificada, sendo basicamente composta pela configuração do idioma,
-criação de contas de usuário e particionamento do disco. Acesse o site
-<link>https://debian.org</link><text>www.debian.org</text> e obtenha a mídia de
-instalação mínima, denominada <i>netinst</i>.
+criação de contas de usuário e particionamento do disco. Acesse o site do
+<link>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</link>
+<text>Debian</text> e obtenha a mídia de instalação mínima, denominada
+<i>debian-X.Y.Z-amd64-<b>netinst</b>.iso</i>.
 
 <lista>
-  <item/><link>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso</link>
-         <text>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.1.0-amd64-netinst.iso</text>
+  <item/><url>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</url>
 </lista>
 
     Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
