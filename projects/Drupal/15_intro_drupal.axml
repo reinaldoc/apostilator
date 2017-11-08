@@ -102,22 +102,26 @@ implementação de objetivos de controle e controles específicos.
 <step>Assegurar que não ocorra acesso indevido a conta administrativa.</step>
 <lista>
   <item/>Tornar o site acessível somente por HTTPS.
+  <item/>Alterar o nome de usuário da conta administrativa.
   <item/>Restringir a autenticação a partir de determinados IPs.
   <lista>
     <item/><url>https://drupal.org/project/restrict_by_ip</url>
   </lista>
-  <item/>Ativar autenticação por dois fatores ou por certificado digital.
+  <item/>Ativar autenticação por dois fatores.
   <lista>
     <item/><url>https://drupal.org/project/tfa</url>
+  </lista>
+  <item/>Ativar autenticação por certificado digital.
+  <lista>
     <item/><url>https://drupal.org/project/certificatelogin</url>
   </lista>
 </lista>
 
-    <atividade/>Um controle adicional é definir um nome de usuário menos
-óbvio para a conta administrativa #1. É possível fazer isso durante a
-instalação do Drupal ou a qualquer momento.
+    <atividade/>O nome de usuário da conta administrativa pode ser alterado
+durante a instalação do Drupal ou a qualquer momento. Opte por um nome menos
+óbvio.
 
-<br/>0.2cm
+<quebraPagina/>
 
 <step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
 <lista>
@@ -125,9 +129,12 @@ instalação do Drupal ou a qualquer momento.
   <lista>
     <item/><url>https://drupal.org/project/captcha</url>
   </lista>
-  <item/>Bloqueio temporário a partir de falhas de autenticação.
+  <item/>Bloqueio temporário da conta ou do IP a partir de falhas de autenticação.
   <lista>
     <item/><url>https://drupal.org/project/flood_control</url>
+  </lista>
+  <item/>Bloqueio permanente da conta ou do IP a partir de falhas de autenticação.
+  <lista>
     <item/><url>https://drupal.org/project/login_security</url>
   </lista>
   <item/>Aplicar políticas de senhas.
@@ -150,7 +157,7 @@ instalação do Drupal ou a qualquer momento.
   <lista>
     <item/><url>https://drupal.org/project/security_review</url>
   </lista>
-  <item/>Gerar periodicamente MD5 checksum dos arquivos de todos os módulos
+  <item/>Gerar <i>hash</i> periodicamente dos arquivos de todos os módulos
          e notificar alterações.
   <lista>
     <item/><url>https://drupal.org/project/md5check</url>
