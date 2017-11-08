@@ -538,7 +538,7 @@ sincronizados a partir de uma base LDAP.
 <subsubsecao>Sistema → Informação do site</subsubsecao>
 
 <lista>
-  <item>URL</item>: /admin/config/regional
+  <item>URL</item>: /admin/config/system/site-information
   <item>Atividades</item>:
   <lista>
     <item/>defina o nome do site que é apresentado no título da janela do
