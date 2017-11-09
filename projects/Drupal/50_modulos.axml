@@ -269,18 +269,65 @@ módulo que a requisite.
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/ldap</url>
-  <item>Dependência</item>: <url>https://drupal.org/project/entity</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text> e
+<link>https://drupal.org/project/entity</link><text>Entity API</text>.
   <item>Função</item>: integra a autenticação e autorização por meio do protocolo LDAP;
   <item>Uso</item>: /admin/config/people/ldap
   <lista>
-    <item/>ativar o módulo <b>LDAP Servers</b>;
-    <item/>configurar o servidor LDAP:
-    <item/>ativar o módulo <b>LDAP Users</b>;
-    <item/>configurar a sincronização de dados do LDAP;
-    <item/>ativar o módulo <b>LDAP Authentication</b>;
-    <item/>configurar a autenticação no servidor LDAP;
-    <item/>ativar o módulo <b>LDAP Authorization Role</b>;
-    <item/>configurar a autorização por grupos do LDAP e associação a papéis (roles):
+    <item/>ative o módulo <b>LDAP Servers</b>;
+    <item/>configure a conexão ao servidor LDAP;
+    <lista>
+      <item>nome da conexão</item>: ldap_ad1_sede
+      <item/>ative a opção: <b>Habilitado</b>;
+      <item>LDAP Server Type</item>: #selecione#;
+      <item>LDAP server</item>: informe o IP do servidor LDAP;
+      <item>DN for non-anonymous search</item>: informe o DN ou usuário para autenciação;
+      <item>Base DNs for LDAP users, groups, and other entries</item>: OU=example,DC= example,DC=net;
+      <item>AuthName attribute</item>: samaccountname;
+      <item>AccountName attribute</item>: cn;
+      <item>Email attribute</item>: mail;
+      <item>Thumbnail attribute</item>: thumbnailphoto;
+      <item>Persistent and Unique User ID Attribute</item>: samaccountname (use um atributo que não mude);
+      <item>Name of Group Object Class</item>: group;
+      <item/>ative a opção: <b>Nested groups are used in my LDAP</b> (grupos dentro de grupos);
+      <item/>ative a opção: <b>A user LDAP attribute such as memberOf exists that contains a list of their groups</b> para ActiveDirectory;
+      <item>Attribute in User Entry Containing Groups</item>: memberof;
+      <item>LDAP Group Entry Attribute Holding User's DN, CN, etc.</item>: member;
+      <item>User attribute held in 'LDAP Group Entry Attribute Holding...'</item>: dn;
+      <item/>ative a opção: <b>Use LDAP Pagination</b>;
+    </lista>
+    <item/>ative o módulo <b>LDAP User</b>;
+    <item/>configure a sincronização de dados do servidor LDAP;
+    <lista>
+      <item/>crie um campo no perfil do usuário para cada atributo a ser sincronizado;
+      <item>LDAP Servers Providing Provisioning Data</item>: ldap_ad1_sede;
+      <item/>ative a opção: <b>Disable the password fields at /admin/create/people...</b>;
+      <item>Provisioning from LDAP to Drupal Mappings</item>
+      <lista>
+        <item>[cn]</item>: <i>field_user_nome</i>;
+        <item>[telephoneNumber]</item>: <i>field_user_telefone</i>;
+        <item>[department]</item>: <i>field_user_unidade</i>;
+      </lista>
+    </lista>
+    <item/>ative o módulo <b>LDAP Authentication</b>;
+    <item/>configure a autenticação no servidor LDAP;
+    <lista>
+      <item>Allowable Authentications</item>: Only LDAP Authentication is allowed except for user 1;
+      <item>Authentication LDAP Server Configurations</item>: ldap_ad1_sede;
+      <item>Email Update</item>: Update stored email if LDAP email differs at login but don't notify user;
+      <item>Email Template Handling</item>: Never use the template;
+    </lista>
+    <item/>ative o módulo <b>LDAP Authorization - Drupal Roles</b>;
+    <item/>configure a autorização por grupos do LDAP e associação a papéis (roles):
+    <lista>
+      <item>LDAP Server used in drupal role configuration</item>: ldap_ad1_sede;
+      <item/>ative a opção: <b>Enable this configuration</b>;
+      <item>Mapping of LDAP to drupal role (one per line)</item>
+      <lista>
+        <item>CN=AdminGroup,OU=example,DC=example,DC=net</item>|<i>administrator</i>;
+      </lista>
+    </lista>
   </lista>
 </lista>
 
