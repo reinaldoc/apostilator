@@ -1418,3 +1418,27 @@ forneçam esse recurso, que são customizáveis pela configuração do tema.
     <item/>redefinir leiaute de um tipo de conteúdo;
   </lista>
 </lista>
+
+<subsecao>Acessibilidade</subsecao>
+
+<subsubsecao>High contrast</subsubsecao>
+
+<lista>
+  <item>Download</item>: https://drupal.org/project/high_contrast
+  <item>Função</item>: altera o visual para alto contraste;
+</lista>
+
+    Utilize o módulo <b>Menu attributes</b> para adicionar a um item de menu
+um ID ou uma classe CSS para identificá-lo como ativador do alto contraste,
+em seguida use javascript por meio do subtema para adicionar a chamada
+javascript <b>drupalHighContrast.toggleHighContrast();</b> a este item de
+menu.
+
+<comando>
+setTimeout(function() {
+  jQuery(".access-high-contrast").attr("href", "#");
+  jQuery(".access-high-contrast").click(function($) {
+      drupalHighContrast.toggleHighContrast();
+  } );
+}, 500);
+</comando>
