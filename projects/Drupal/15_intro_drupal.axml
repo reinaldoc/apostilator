@@ -101,47 +101,56 @@ implementação de objetivos de controle e controles específicos.
 
 <step>Assegurar que não ocorra acesso indevido a conta administrativa.</step>
 <lista>
-  <item/>Tornar o site acessível somente por HTTPS.
-  <item/>Alterar o nome de usuário da conta administrativa.
-  <item/>Restringir a autenticação a partir de determinados IPs.
+  <item/>O portal <b>deve</b> ser acessível somente por meio de protocolo
+         seguro (HTTPS).
+  <item/>O nome de usuário da conta administrativa <b>deve</b> ser alterado.
+  <item/>A senha da conta administrativa <b>deve</b> ser composta por
+         letras maiúsculas, minúsculas, números e caracteres especiais.
+  <item/>A autenticação da conta administrativa <b>deve</b> ser limitada a
+         determinados IPs.
   <lista>
     <item/><url>https://drupal.org/project/restrict_by_ip</url>
   </lista>
-  <item/>Ativar autenticação por dois fatores.
-  <lista>
-    <item/><url>https://drupal.org/project/tfa</url>
-  </lista>
-  <item/>Ativar autenticação por certificado digital.
-  <lista>
-    <item/><url>https://drupal.org/project/certificatelogin</url>
-  </lista>
 </lista>
 
-    <atividade/>O nome de usuário da conta administrativa pode ser alterado
-durante a instalação do Drupal ou a qualquer momento. Opte por um nome menos
-óbvio.
+    <importante/>A autenticação por dois fatores e a autenticação por
+certificado digital são dois métodos efetivos para impedir o acesso indevido
+à conta administrativa e devem ser considerados como controles desejáveis a
+serem implementados, porém nem sempre são convenientes.
+
+    No primeiro caso, por necessitar de um método seguro de recuperação do
+dispositivo gerador de One-Time-Password, como uma validação por SMS. Já o
+segundo, por necessitar da aquisição de token e do certificado digital.
+
+  <lista>
+    <item/><url>https://drupal.org/project/tfa</url>
+    <item/><url>https://drupal.org/project/certificatelogin</url>
+  </lista>
 
 <quebraPagina/>
 
 <step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
 <lista>
-  <item/>Habilitar o desafio (<i>captcha</i>) de autenticação.
+  <item/><b>Deve-se</b> habilitar o desafio-resposta (<i>captcha</i>) de
+         autenticação.
   <lista>
     <item/><url>https://drupal.org/project/captcha</url>
   </lista>
-  <item/>Bloqueio temporário da conta ou do IP a partir de falhas de autenticação.
+  <item/><b>Deve-se</b> bloquear temporariamente a conta e/ou o IP a partir
+         de falhas de autenticação.
   <lista>
     <item/><url>https://drupal.org/project/flood_control</url>
   </lista>
-  <item/>Bloqueio permanente da conta ou do IP a partir de falhas de autenticação.
+  <item/><b>Deve-se</b> bloquear permanentemente a conta e/ou o IP a partir
+         de falhas de autenticação.
   <lista>
     <item/><url>https://drupal.org/project/login_security</url>
   </lista>
-  <item/>Aplicar políticas de senhas.
+  <item/><b>Deve-se</b> aplicar políticas de senhas seguras.
   <lista>
     <item/><url>https://drupal.org/node/598562</url>
   </lista>
-  <item/>Deslogar o usuário por inatividade.
+  <item/><b>Deve-se</b> deslogar o usuário por inatividade.
   <lista>
     <item/><url>https://drupal.org/project/autologout</url>
   </lista>
@@ -149,18 +158,20 @@ durante a instalação do Drupal ou a qualquer momento. Opte por um nome menos
 
 <step>Assegurar a integridade do código do Drupal.</step>
 <lista>
-  <item/>O usuário do sistema que executa o serviço web (www-data)
-         deve possuir permissão de escrita somente no diretório
-         <b>sites/default/files</b>.
-  <item/>Executar <i>checklist</i> para verificação de configurações
-         inseguras.
+  <item/><b>Deve-se</b> estabelecer procedimento para <u>verificação
+         periódica de configurações inseguras</u>.
   <lista>
     <item/><url>https://drupal.org/project/security_review</url>
+    <item/>O usuário do sistema que executa o serviço web (www-data) deve
+           possuir permissão de escrita somente no diretório
+           <b>sites/default/files</b>.
   </lista>
-  <item/>Gerar <i>hash</i> periodicamente dos arquivos de todos os módulos
-         e notificar alterações.
+  <item/><b>Deve-se</b> estabelecer rotina automatizada para <u>identificar
+         alterações nos arquivos do Drupal</u>.
   <lista>
     <item/><url>https://drupal.org/project/md5check</url>
+    <item/>As alterações dos arquivos do Drupal devem ser imediatamente
+           notificadas a equipe competente.
   </lista>
 </lista>
 
@@ -178,12 +189,15 @@ criação de arquivos novos.
 
 <br/>0.2cm
 
-<step>Assegurar que o ambiente esteja livre de vulnerabilidades</step>
+<step>Assegurar que o ambiente esteja livre de vulnerabilidades
+conhecidas.</step>
 <lista>
-  <item/>Manter o Drupal atualizado.
-  <item/>Manter os pacotes do sistema operacional atualizados.
-  <item/>Restringir a utilização de módulos que não seguem a política de
-         avisos de segurança.
+  <item/>Estabelecer procedimento de <u>atualização periódica do
+         Drupal</u>.
+  <item/>Estabelecer procedimento de <u>atualização periódica dos pacotes
+         do sistema operacional</u>.
+  <item/>Restringir a utilização de módulos que não são cobertos pelo time
+         de segurança do Drupal.
   <item/>Utilizar o conjunto mínimo de módulos para atender aos requisitos
          do projeto.
   <lista>
@@ -194,11 +208,11 @@ criação de arquivos novos.
 <step>Assegurar que usuários autorizados não publiquem conteúdo
 inseguro.</step>
 <lista>
-  <item/>Os formatos de textos autorizados aos usuários devem conter
+  <item/>Os formatos de textos autorizados aos usuários <b>devem</b> conter
          apenas as tags HTML necessárias.
   <item/>Não deve ser concedido o perfil <b>Full HTML</b> nem o perfil
          <b>PHP Code</b> e o módulo <b>PHP filter</b> não deve ser ativado.
-  <item/>Impedir concessão de uso de código PHP.
+  <item/><b>Deve-se</b> impedir concessão de uso de código PHP.
   <lista>
     <item/><url>https://drupal.org/project/paranoia</url>
   </lista>
