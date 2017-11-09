@@ -580,6 +580,13 @@ accordion podem ser customizados por meio de CSS em subtema.
     <item/>vincular cada aba a uma bloco, node, view ou qtab;
 </lista>
 
+    O módulo <link>https://drupal.org/project/field_jquery_tabs</link>
+<text><b>jQuery Tabs Field</b></text> é uma alternativa mais simples,
+funciona como um campo do conteúdo (node), porém é limitado apenas a texto
+estático.
+
+<br/>0.2cm
+
 <subsecao>Views</subsecao>
 
 <subsubsecao>Views</subsubsecao>
