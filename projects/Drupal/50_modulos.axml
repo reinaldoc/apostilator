@@ -70,16 +70,21 @@ IP ou no total, dentro de 1 hora.
   <item>Função</item>: interface para controlar limites de falha de autenticação;
   <item>Uso</item>: /admin/config/system/flood-control
   <lista>
-    <item/>configurar limite para falhas de autenticação para o IP de requisição [50];
-    <item/>configurar a janela de tempo que autenticações deste IP serão rejeitadas [1h];
-    <item/>configurar limite para falhas de autenticação para o usuário [5];
-    <item/>configurar a janela de tempo que autenticações deste usuário serão rejeitadas [6h];
+    <item/>configure limite para falhas de autenticação para o IP de requisição [50];
+    <item/>configure a janela de tempo que autenticações deste IP serão rejeitadas [1h];
+    <item/>configure limite para falhas de autenticação para o usuário [5];
+    <item/>configure a janela de tempo que autenticações deste usuário serão rejeitadas [6h];
   </lista>
 </lista>
 
-    Os limites para falhas de autenticação são aplicados pelo núcleo do
-Drupal, assim a função deste módulo é permitir a alteração dos valores padrão
-de bloqueio.
+    O bloqueio temporário por falha de autenticação é nativamente aplicado
+pelo núcleo do Drupal, assim, este módulo permite a alteração dos limites
+para o bloqueio, que estão especificados acima entre colchetes.
+
+    O módulo <link>https://drupal.org/project/login_security</link>
+<text><b>Login Security</b></text> permite o bloqueio permanente da conta do
+usuário em caso de falhas de autenticação, ficando bloqueada até um
+administrador desbloqueá-la.
 
 <subsubsecao>Flood Unblock</subsubsecao>
 
