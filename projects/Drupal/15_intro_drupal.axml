@@ -74,7 +74,7 @@ integridade das informações.
 dos controles essenciais. Para assegurar isso, <u>é importante monitorar os
 avisos de segurança do Drupal e de seus módulos</u>, neles são informados o
 impacto das vulnerabilidades e as correções de segurança disponibilizadas.
-Os avisos de segurança são disponibilizados na página
+Os avisos de segurança do Drupal são publicados na página
 <url>https://drupal.org/security</url> e também, ao clicar em
 <b>Contributed projects</b>, os avisos de segurança dos módulos.
 
@@ -105,7 +105,7 @@ implementação de objetivos de controle e controles específicos.
          seguro (HTTPS).
   <item/>O nome de usuário da conta administrativa <b>deve</b> ser alterado.
   <item/>A senha da conta administrativa <b>deve</b> ser composta por
-         letras maiúsculas, minúsculas, números e caracteres especiais.
+         letras, números e caracteres especiais.
   <item/>A autenticação da conta administrativa <b>deve</b> ser limitada a
          determinados IPs.
   <lista>
@@ -121,6 +121,8 @@ serem implementados, porém nem sempre são convenientes.
     No primeiro caso, por necessitar de um método seguro de recuperação do
 dispositivo gerador de One-Time-Password, como uma validação por SMS. Já o
 segundo, por necessitar da aquisição de token e do certificado digital.
+Quando for possível implementá-los, consulte os módulos <b>tfa</b> e
+<b>certificatelogin</b>.
 
   <lista>
     <item/><url>https://drupal.org/project/tfa</url>
@@ -247,6 +249,11 @@ inseguro.</step>
       <item/><url>http://www.unmaskparasites.com</url>
     </lista>
   </lista>
+
+    O módulo <link>https://drupal.org/project/seckit</link>
+<text><b>SecKit</b></text> adiciona cabeçalhos http recomendados que
+ajudam a evitar ataques de Cross-site Scripting, Cross-site Request
+Forgery, Clickjacking e man-in-the-middle e eavesdropping.
 
 <subsecao>Desempenho</subsecao>
 
