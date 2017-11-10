@@ -1093,12 +1093,22 @@ salvo a URL será atualizada.
 <subsubsecao>Submitted By</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/submitted_by
-  <item>Dependência</item>: Token
-  <item>Função</item>: customiza a identificação do autor do conteúdo (node);
+  <item>Download</item>: <url>https://drupal.org/project/submitted_by</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/token</link><text>Token</text>.
+  <item>Função</item>: customizar a identificação do autor do conteúdo (node);
   <item>Uso</item>:
   <lista>
-    <item/>edite o tipo de conteúdo e defina o texto nas 'opções de exibição';
+    <item/>edite um tipo de conteúdo;
+    <item/>altere para baixo a ordem do campo <b>Submitted by</b> em
+           <b>Gerenciar a exibição</b>;
+    <item/>defina o texto nas <b>opções de exibição</b>;
+    <lista>
+      <item/>Conteúdo de responsabilidade da
+             <strong>[node:author:name]</strong>.
+      <item/>Atualizado em [node:changed:short].
+    </lista>
+    <item/>
   </lista>
 </lista>
 
