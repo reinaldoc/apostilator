@@ -1100,15 +1100,14 @@ salvo a URL será atualizada.
   <item>Uso</item>:
   <lista>
     <item/>edite um tipo de conteúdo;
-    <item/>altere para baixo a ordem do campo <b>Submitted by</b> em
-           <b>Gerenciar a exibição</b>;
     <item/>defina o texto nas <b>opções de exibição</b>;
     <lista>
-      <item/>Conteúdo de responsabilidade da
-             <strong>[node:author:name]</strong>.
+      <item/>Conteúdo de responsabilidade de
+             <<i>strong</i>>[node:author:name]</<i>strong</i>>.
       <item/>Atualizado em [node:changed:short].
     </lista>
-    <item/>
+    <item/>altere para baixo a ordem do campo <b>Submitted by</b> em
+           <b>Gerenciar a exibição</b>;
   </lista>
 </lista>
 
