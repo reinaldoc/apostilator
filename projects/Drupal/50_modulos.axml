@@ -342,6 +342,24 @@ módulo que a requisite.
 User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
 campo de imagem do perfil do usuário <u>no primeiro login</u>;
 
+<subsubsecao>Tab Tamer</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/tabtamer</url>
+  <item>Função</item>: controla as <b>tabs</b> da página do usuário e dos nodes;
+  <item>Uso</item>: /admin/config/system/tabtamer
+  <lista>
+    <item/>identifique as tabs do usuário na seção <b>USER/%</b>;
+    <item/>desative a tab <b>Edit</b> do usuário;
+    <item/>limpe a cache do drupal em <b>Desenvolvimento ⇒ Desempenho</b>;
+  </lista>
+</lista>
+
+    O módulo <b>Tab Tamer</b> é particularmente útil em conjunto ao módulo
+<b>LDAP</b>, pois ao realizar a sincronização de dados do usuário pode ser
+conveniente desativar a edição do perfil do usuário, desativando a aba
+<b>Edit</b>.
+
 <subsubsecao>Backup and Migrate</subsubsecao>
 
 <lista>
