@@ -159,7 +159,7 @@ bind-address            = 0.0.0.0
 configuração foi alterado.
 
 <comando>
-# /etc/init.d/mysql reload
+# /etc/init.d/mysql restart
 </comando>
 
 <subsecao>FTP Server</subsecao>
