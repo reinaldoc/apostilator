@@ -46,6 +46,15 @@ da tela <b>Restrict Login By IP</b>: "Your current IP address is 192.168.0.94".
   <lista>
     <item/>habilite os módulos <b>CAPTCHA</b> e <b>Image CAPTCHA</b>;
     <item/>altere o tipo de desafio padrão para <b>Image</b>;
+    <item/>ative a opção para diferenciar letras minúsculas e maiúsculas:
+    <b>Case sensitive validation</b>;
+    <item/>defina a mensagem (aceita HTML) explicando ao usuário o motivo do
+           <b>CAPTCHA</b>;
+    <lista>
+      <item/>O desafio evita que programadores testem senhas aleatórias
+             para descobrir a sua;
+      <item/>Use letras maiúsculas e minúsculas conforme a imagem;
+    </lista>
   </lista>
 </lista>
 
