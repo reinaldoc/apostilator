@@ -224,10 +224,10 @@ conteúdo (node) seria cada linha da tabela.
 <subsecao>Módulos</subsecao>
 
     De forma similar a um framework de programação, as estruturas do Drupal
-foram desenvolvidas com inúmeros pontos de integração que são utilizados
-para extendê-las por meio de módulos. Os módulos podem ser instalados pela
-interface web do Drupal que realiza uma conexão FTP local para armazenar
-seus arquivos no diretório <b>sites/all/modules</b>.
+foram desenvolvidas com inúmeros pontos de integração (<i>hooks/i> que são
+utilizados para extendê-las por meio de módulos. Os módulos podem ser
+instalados pela interface web do Drupal que realiza uma conexão FTP local
+para armazenar seus arquivos no diretório <b>sites/all/modules</b>.
 
     Os módulos podem fornecer blocos especializados, novos tipos de campos
 (<i>fields</i>) para serem utilizados em tipos de conteúdo e também
