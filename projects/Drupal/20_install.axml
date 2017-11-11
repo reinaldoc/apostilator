@@ -322,20 +322,34 @@ para um local que não seja acessível pela web, ou seja, um diretório
 superior aquele informado na opção <b>DocumentRoot</b> do serviço web,
 tornando mais difícil o acesso aos arquivos definidos como privados.
 
-<step>Obtenha a URL para cadastrar no cron o agendador de tarefas do Drupal</step>
+<step>Configure o agendador de tarefas do Drupal</step>
 
-    Acesse 'Configurações -> Sistema -> Agendador de tarefas' e obtenha uma
-URL chave para registro no crontab do sistema operacional.
+    O agendador de tarefas do Drupal tem funções de indexação de conteúdo
+para tornar as pesquisas mais eficientes, de verificação de atualizações
+disponíveis para subsidiar o respectivo relatório, além de remover
+arquivos temporários. Consulte a documentação sobre o agendador de tarefas
+em:
 
-<step>Cadastre a chamada no /etc/crontab</step>
+    <url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
+
+    A cada requisição a uma página qualquer do Drupal, por padrão, verifica
+se o agendador de tarefas necessita ser executado e, quando necessário, o
+executa como parte da requisição, conforme configuração de periodicidade
+definida em <b>Sistema ⇒ Agendador de tarefas</b>. Neste caso, o agendador
+de tarefas pode tornar lenta uma requisição do usuário a cada período de
+tempo.
+
+    Recomenda-se desativar esse comportamento automatizado do agendador de
+tarefas e delegar a chamada para o <b>Cron</b> do sistema operacional.
+Assim, acesse a configuração do agendador de tarefas, selecione
+<b>Nunca</b> na opção <b>Rodar agendador de tarefas a cada</b> e obtenha a
+URL para cadastro no <b>Cron</b>. Substitua a URL no exemplo a seguir, bem
+como substitua o usuário <b>drupal</b> por um usuário comum existente.
+
 <comando>
-0 * * * * portal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
+# /etc/crontab
+0 * * * * drupal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
 </comando>
-
-     O agendador de tarefas do Drupal tem funções de indexação de conteúdo,
-produção de relatórios de atualizações disponíveis, além de remover arquivos
-temporários. Consulte a documentação sobre o agendador de tarefas em
-<url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
 
     <atividade/>Acesse o Drupal por meio do usuário definido durante a
 instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
