@@ -1115,24 +1115,36 @@ salvo a URL será atualizada.
 <nome>module-ckeditor</nome>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/ckeditor
+  <item>Download</item>: <url>https://drupal.org/project/ckeditor</url>
   <item>Função</item>: editor HTML visual (WYSIWYG);
   <item>Instalação</item>:
   <lista>
-    <item/>https://ckeditor.com/download
-    <item/>cd sites/all/libraries
-    <item/>unzip ckeditor_4.7.3_full.zip
-    <item/>chown devportal: ckeditor -R
+    <item/><url>https://ckeditor.com/download</url>
+    <item/>su -s /bin/bash portal
+    <item/>cd /tmp
+    <item/>wget
+    <link>http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.7.3/ckeditor_4.7.3_full.zip</link><text>http://download.cksource.com/CKEditor/ckeditor_4.X.Y_full.zip</text>
+    <item/>cd ~
+    <item/>cd drupal-7/sites/all/libraries
+    <item/>unzip /tmp/ckeditor_4.X.Y_full.zip
     <item/>cd ckeditor/skins/
     <item/>ln -s moono-lisa/ moono
-    <item/>chown -h devportal: moono
+    <item/>touch moono/skin.js
   </lista>
   <item>Uso</item>: /admin/config/content/ckeditor
   <lista>
-    <item/>configurações -> criação de conteúdo -> CKEditor;
-    <item/>Global profile: configurar caminho no servidor '%l/ckeditor';
+    <item/>acesse a configuração: <b>criação de conteúdo ⇒ CKEditor</b>;
+    <item/>edite o <b>CKEditor Global profile</b>;
+    <item/>configure a opção <b>Local path to CKEditor</b> para <b>%l/ckeditor</b>;
   </lista>
 </lista>
+
+    O módulo <b>CKEditor</b> integra a rotina <b>ckeditor.js</b> ao Drupal,
+sendo obtido, por padrão, por meio do endereço
+<url>http://cdn.ckeditor.com/4.5.4/full-all/ckeditor.js</url>, entretanto,
+torna-se mais rápida a renderização da página ao instalá-la localmente,
+no diretório <b>sites/all/libraries</b>. Após extrair os arquivos do
+CKEditor, configure o caminho local para o <b>ckeditor.js</b>.
 
 <subsubsecao>IMCE</subsubsecao>
 <nome>module-imce</nome>
