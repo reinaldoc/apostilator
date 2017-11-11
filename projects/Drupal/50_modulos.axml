@@ -118,6 +118,27 @@ verificações de segurança;
   </lista>
 </lista>
 
+<subsubsecao>Apache Log</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/apachelog</url>
+  <item>Função</item>: adiciona variável %{DrupalUID}n ao Apache para
+                       logar o UID do usuário;
+  <item>Uso</item>: /admin/reports/security-review
+  <lista>
+    <item/>configure a opção LogFormat do Apache;
+    <item/>substitua <b>%u</b> por <b>%{DrupalUID}n</b>;
+  </lista>
+</lista>
+
+    O modulo <b>Apache Log</b> não é configurável e envia para o log apenas
+o UID do usuário no Drupal. Caso deseje logar o nome do usuário, pode-se
+criar um módulo derivado, como <b>Custom Apache Log</b>, fazendo uma cópia
+do diretório <b>sites/all/modules/apachelog</b> e substituindo no código do
+módulo o trecho <b>$user->uid</b> por <b>$user->name</b>.
+
+<br/>0.3cm
+
 <subsecao>Administração</subsecao>
 
 <subsubsecao>Localization update</subsubsecao>
