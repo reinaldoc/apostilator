@@ -228,8 +228,8 @@ datestamp = "1498069849"
 
 <comando>
 function mynewtheme_xyz() {}
-function mynewtheme_preprocess_page(&$variables) { // page.tpl.php vars }
-function mynewtheme_preprocess_node(&$variables) { kpr($variables); }
+function mynewtheme_preprocess_page(&$variables) { kpr($variables); }
+function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 </comando>
 
 <lista>
