@@ -137,7 +137,11 @@ criar um módulo derivado, como <b>Custom Apache Log</b>, fazendo uma cópia
 do diretório <b>sites/all/modules/apachelog</b> e substituindo no código do
 módulo o trecho <b>$user->uid</b> por <b>$user->name</b>.
 
-<br/>0.3cm
+<comando>
+LogFormat "%h %l %{DrupalUID}n %t \"%r\" %>s %O \"%{Referer}i\"
+          \"%{User-Agent}i\"" combined-drupal
+CustomLog ${APACHE_LOG_DIR}/access.log combined-drupal
+</comando>
 
 <subsecao>Administração</subsecao>
 
