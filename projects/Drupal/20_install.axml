@@ -324,20 +324,20 @@ tornando mais difícil o acesso aos arquivos definidos como privados.
 
 <step>Configure o agendador de tarefas do Drupal</step>
 
-    O agendador de tarefas do Drupal tem funções de indexação de conteúdo
-para tornar as pesquisas mais eficientes, de verificação de atualizações
-disponíveis para subsidiar o respectivo relatório, além de remover
-arquivos temporários. Consulte a documentação sobre o agendador de tarefas
-em:
+    O agendador de tarefas do Drupal executa tarefas periódicas, como a
+indexação de conteúdo para tornar as pesquisas mais eficientes, a
+verificação de atualizações disponíveis para subsidiar o respectivo
+relatório, além de remover arquivos temporários. A documentação sobre o
+agendador de tarefas está disponível em:
 
     <url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
 
-    A cada requisição a uma página qualquer do Drupal, por padrão, verifica
-se o agendador de tarefas necessita ser executado e, quando necessário, o
-executa como parte da requisição, conforme configuração de periodicidade
-definida em <b>Sistema ⇒ Agendador de tarefas</b>. Neste caso, o agendador
-de tarefas pode tornar lenta uma requisição do usuário a cada período de
-tempo.
+    O comportamento padrão do agendador de tarefas implica em que a cada
+requisição a uma página qualquer do Drupal seja verificado a necessidade
+de executá-lo e, quando necessário, sejam executadas as tarefas como parte
+da requisição, conforme configuração de periodicidade definida em <b>Sistema ⇒
+Agendador de tarefas</b>. Neste caso, o agendador de tarefas pode tornar
+lenta uma requisição do usuário a cada período de tempo.
 
     Recomenda-se desativar esse comportamento automatizado do agendador de
 tarefas e delegar a chamada para o <b>Cron</b> do sistema operacional.
@@ -350,6 +350,17 @@ como substitua o usuário <b>drupal</b> por um usuário comum existente.
 # /etc/crontab
 0 * * * * drupal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
 </comando>
+
+    Os módulos <link>https://drupal.org/project/elysia_cron</link>
+<text><b>Elysia Cron</b></text> e
+<link>https://www.drupal.org/project/ultimate_cron</link>
+<text><b>Ultimate Cron</b></text> extendem o agendador de tarefas do Drupal
+e agregam funções como a configuração por tarefa, execucação paralela de
+tarefas e estatísticas detalhadas da execução de tarefas. Opte por um deles
+se necessitar de mais recursos ou um controle mais específico do agendador
+de tarefas.
+
+<step>Verificação da instalação</step>
 
     <atividade/>Acesse o Drupal por meio do usuário definido durante a
 instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
