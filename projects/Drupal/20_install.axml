@@ -206,8 +206,8 @@ então use a opção <b>listen_ipv6=NO</b>.
 válido, podendo ser definido para <b>/bin/false</b> quando o usuário for
 criado. Dessa forma, pode-se configurar a PAM para não requerer um
 <i>shell</i> válido para autenticação FTP. Isso fará com que o usuário não
-conseguira realizar autenticação em outros serviços eventualmente ativados
-no servidor.
+consiga realizar autenticação em outros serviços eventualmente ativados no
+servidor.
 
 <comando>
 # /etc/pam.d/vsftpd
@@ -230,7 +230,7 @@ no servidor.
 diretório pessoal '/var/www/portal' não pertence ao usuário que você está
 criando atualmente</b>, o que é exatamente o comportamento esperado. Este
 diretório foi criado anteriormente e não deve possuir permissão de escrita
-para o usuário, para atender a funcionalidade de <i>chroot</i> do servidor
+para o usuário, isso atende a funcionalidade de <i>chroot</i> do servidor
 FTP.
 
 <quebraPagina/>
@@ -248,7 +248,7 @@ FTP.
     Realize download do Drupal e do arquivo de trandução da interface web:
 
 <comando>
-# su - portal -s /bin/bash
+# su -s /bin/bash -l portal
 $ cd /tmp
 $ wget https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
 $ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
@@ -266,7 +266,14 @@ $ cp /tmp/drupal-7.56.pt-br.po profiles/standard/translations
 <step>Defina o diretório do domínio do Drupal</step>
 <comando>
 $ mv sites/example.sites.php sites/sites.php
-> adicione ao final arquivo sites/sites.php:
+</comando>
+
+<lista>
+  <item/>Use um editor de texto para adicionar ao final do arquivo
+         <b>sites/sites.php</b>:
+</lista>
+
+<comando>
 $sites['example.com'] = 'portal'; ?>
 </comando>
 
@@ -307,12 +314,13 @@ conexão ao banco de dados. Essas configurações serão salvas no arquivo
     Após o procedimento de instalação do Drupal, o usuário do serviço web
 não necessita mais ter permissão para modificação do arquivo de configuração
 <b>sites/portal/settings.php</b>, por isso, deve-se alterar a propriedade
-deste arquivo para o usuário <b>portal</b>, que pe utilizado para acesso
+deste arquivo para o usuário <b>portal</b>, que será utilizado para acesso
 FTP.
 
 <step>Configure o caminho do repositório privado de arquivos</step>
 
-    Acesse 'Configurações -> Mídia -> Sistema de arquivos' e defina para:
+    Acesse a configuração em <b>Mídia ⇒ Sistema de arquivos</b> e defina
+o caminho do repositório privado de arquivos:
 <b>sites/portal/files-private</b>.
 
     O Drupal irá criar um arquivo <b>.htaccess</b> neste diretório para
@@ -332,10 +340,10 @@ agendador de tarefas está disponível em:
 
     <url>https://drupal.org/docs/7/setting-up-cron/overview</url>.
 
-    O comportamento padrão do agendador de tarefas implica em que a cada
-requisição a uma página qualquer do Drupal seja verificado a necessidade
-de executá-lo e, quando necessário, sejam executadas as tarefas como parte
-da requisição, conforme configuração de periodicidade definida em <b>Sistema ⇒
+    O comportamento padrão do agendador de tarefas implica que seja
+verificada a necessidade de executá-lo a cada requisição de página e,
+quando necessário, sejam executadas as tarefas como parte da requisição,
+conforme configuração de periodicidade definida em <b>Sistema ⇒
 Agendador de tarefas</b>. Neste caso, o agendador de tarefas pode tornar
 lenta uma requisição do usuário a cada período de tempo.
 
@@ -344,11 +352,11 @@ tarefas e delegar a chamada para o <b>Cron</b> do sistema operacional.
 Assim, acesse a configuração do agendador de tarefas, selecione
 <b>Nunca</b> na opção <b>Rodar agendador de tarefas a cada</b> e obtenha a
 URL para cadastro no <b>Cron</b>. Substitua a URL no exemplo a seguir, bem
-como substitua o usuário <b>drupal</b> por um usuário comum existente.
+como substitua o usuário <b>portal</b> por um usuário comum existente.
 
 <comando>
 # /etc/crontab
-0 * * * * drupal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
+0 * * * * portal wget -O - -q -t 1 http://example.com/cron.php?cron_key=KEY
 </comando>
 
     Os módulos <link>https://drupal.org/project/elysia_cron</link>
