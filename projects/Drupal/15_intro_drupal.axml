@@ -257,38 +257,39 @@ Forgery, Clickjacking, man-in-the-middle e eavesdropping.
 
 <subsecao>Desempenho</subsecao>
 
-    É comum que o desempenho de qualquer aplicação esteja relacionado ao seu
-<i>design</i> que, por sua vez, sofre influência dos requisitos ou,
-no caso de sistemas de código aberto, das diretrizes de seu autor. A
-abordagem de <i>design</i> do Drupal foi guiada em favor da integração de um
-conjunto de componentes, denominados módulos, desenvolvidos
-independentemente a fim de sustentar um ecossistema colaborativo.
+    É comum que o desempenho de um <i>software</i> esteja relacionado ao
+seu <i>design</i> que, por sua vez, sofre influência dos requisitos ou,
+no caso de sistemas de código aberto, das diretrizes de seu autor. O
+desenvolvimento do Drupal foi guiado em favor da integração de um
+conjunto de módulos desenvolvidos independentemente e a fim de sustentar
+um ecossistema colaborativo.
 
     Nesse contexto, a renderização de uma página irá demandar o
 processamento de um conjunto de módulos que realizam acesso à base de dados
-para obter os dados necessários para o provimento de sua respectiva
-funcionalidade. Como consequência, em uma instalação padrão, há um elevado
-número de consultas à base de dados.
+para obter os dados necessários e prover sua respectiva funcionalidade.
+Como consequência, em uma instalação padrão, há um elevado número de
+consultas à base de dados a cada requisição.
  
-    Uma página principal, normalmente composta por algumas listagens de
-conteúdo, menu principal e menus laterais, pode realizar dezenas de
-operações de SELECT na base de dados. Se considerarmos a execução
-serializada sob um base de dados remota que leva 20ms para retornar cada
-operação, entender-se-á porque há páginas que necessitam de alguns segundos
-para serem exibidas.
+    A apresentação de uma página principal, normalmente composta por
+algumas listagens de conteúdo, um menu principal e menus secundários, pode
+realizar dezenas de consultas à base de dados. Se considerarmos que em uma
+execução serializada das consultas, sob uma base de dados remota, o tempo
+total de renderização da página está relacionado com o tempo individual de
+cada consulta, este não pode levar mais do que 3ms, caso contratário, o
+carregamento da página não será percebido como instantâneo pelo usuário.
 
-    Assim, não é dispensável a execução de procedimentos relacionados a
-melhoria do desempenho do sistema a fim de manter o tempo de carregamento de
-página inferior a 500ms. Considerações sobre desempenho e escalabilidade
-estão disponíveis em:
+    Assim, é importante a execução de procedimentos relacionados a melhoria
+do desempenho do sistema a fim de manter o tempo de carregamento de página
+inferior a 500ms. Considerações sobre desempenho e escalabilidade estão
+disponíveis em:
 
 <url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>
 
     A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
-de consultas à base de dados, por isso é importante ativá-la. Acesse
-<b>Configurações -> Desenvolvimento -> Desempenho</b> e ative as opções:
+de consultas à base de dados, por isso é importante ativá-la. Acesse as
+configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative as opções:
 <b>Manter cache de páginas para usuários anônimos</b> e <b>Manter cache de
-blocos</b>, dessa forma, somente quando houver modificações que o conjunto
-completo de SELECTs será executado. Entretanto, isso aplica-se somente a
-requisições em que o usuário não esteja logado.
-
+blocos</b>, dessa forma, somente quando houver modificações na base de
+dados, que o conjunto completo de consultas será executado. Entretanto,
+esse benefício é restrito às requisições em que o usuário não esteja
+logado.
