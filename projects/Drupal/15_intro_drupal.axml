@@ -253,7 +253,7 @@ inseguro.</step>
     O módulo <link>https://drupal.org/project/seckit</link>
 <text><b>SecKit</b></text> adiciona cabeçalhos http recomendados que
 ajudam a evitar ataques de Cross-site Scripting, Cross-site Request
-Forgery, Clickjacking e man-in-the-middle e eavesdropping.
+Forgery, Clickjacking, man-in-the-middle e eavesdropping.
 
 <subsecao>Desempenho</subsecao>
 
