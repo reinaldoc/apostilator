@@ -32,8 +32,7 @@ artigo<link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-
 <text>[1]</text>, Emma Jane Hogbin, classifica os temas base em três grupos
 [pág. 3-4], com objetivos [pág. 5] e aplicabilidades [pág. 6] distintas,
 bem como apresenta suas principais características [pág. 9-12], pelas
-palavras de seus próprios autores. Talvez não seja o momento para a leitura
-desse artigo, será mais fácil entendê-lo após a conclusão deste capítulo. 
+palavras de seus próprios autores.
 
     [1] <link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link>
 <text>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</text>
@@ -80,15 +79,15 @@ interface sem estilos quando ativados diretamente.
 
     <b>Adaptive Theme (AT Core)</b> é um <i>framework</i> que provê um
 leiaute responsivo e um conjunto de ferramentas para o desenvolvimento
-de subtemas. É também um tema base e não tem por finalidade ser ativado
-diretamente, devendo ser instalado com um de seus subtemas. A
-documentação para criação de subtemas do <b>Adaptive Theme</b> está
-disponível em <url>https://adaptivethemes.com/documentation</url>.
+de subtemas. É um tema base utilizado por subtemas como o <b>Pixture
+Reloaded</b> e <b>Sky</b>. A documentação para criação de subtemas do
+<b>Adaptive Theme</b> está disponível em
+<url>https://adaptivethemes.com/documentation</url>.
 
 <lista>
   <item>URL</item>: <url>https://drupal.org/project/adaptivetheme</url>
   <item>Função</item>: tema para customização por configuração;
-  <item>Adaptive Theme subtemas</item>
+  <item>Subtemas do Adaptive Theme</item>
   <lista>
     <item/><url>https://drupal.org/project/pixture_reloaded</url>
     <lista>
@@ -111,9 +110,9 @@ disponível em <url>https://adaptivethemes.com/documentation</url>.
   </lista>
   <item>Uso</item>:
   <lista>
-    <item/>Instale o tema <link>http://drupal.org/project/adaptivetheme</link>
+    <item/>instale o tema <link>http://drupal.org/project/adaptivetheme</link>
            <text><b>AdaptiveTheme</b></text>;
-    <item/>Instale e ative um dos subtemas do <b>Adaptive Theme</b>;
+    <item/>instale e ative um dos subtemas do <b>Adaptive Theme</b>;
   </lista>
 </lista>
 
@@ -124,14 +123,15 @@ percentual de largura de cada uma, ocorra pela configuração do tema.
 <subsubsecao>Zen Base Theme</subsubsecao>
 
     O <b>Zen</b> é um tema base para o desenvolvimento <i>from scratch</i>
-de subtemas em HTML/SASS-COMPASS/GULP.
+de subtemas em HTML/SASS-COMPASS /GULP.
 
 <lista>
   <item>URL</item>: <url>https://drupal.org/project/zen</url>
   <item>Função</item>: tema base para o desenvolvimento <i>from scratch</i>;
   <item>Uso</item>:
   <lista>
-    <item/>Criar subtema (zen/STARTERKIT/README.txt)
+    <item/>consulte as instruções em <b>zen/STARTERKIT/README.txt</b> e crie
+um subtema;
   </lista>
 </lista>
 
@@ -176,18 +176,27 @@ mais informações no arquivo <b>README.md</b> que acompanha o módulo.
 
 <subsecao>Estrutura do Tema</subsecao>
 
+    Um novo tema depende unicamente da criação de um diretório em
+<b>sites/all/themes</b> e um arquivo de extensão <b>.info</b> com mesmo nome
+do diretório, neste exemplo, denominado <b>portal_brasil</b>.
+
+<comando>
+$ mkdir sites/all/themes/portal_brasil
+$ touch sites/all/themes/portal_brasil/portal_brasil.info
+</comando>
+
 <lista>
-  <item>mynewtheme.info</item> ⇒ parametrização de regiões e arquivos CSS;
+  <item>portal_brasil.info</item> ⇒ parametrização de regiões e arquivos CSS;
 </lista>
 
 <comando>
 ; theme info
-name = My New Theme
+name = Portal Brasil
 description = Alguma descrição administrativa (suporta tags html)
 engine = phptemplate    ; para tema standalone;
 base theme = bartik     ; para subtema;
 
-; CSS, JS e a screenshot são herdados do tema base;
+; os arquivos CSS, JS e a screenshot são herdados do tema base;
 ; se declarar com mesmo nome, os arquivos do tema base serão ignorados;
 screenshot = screenshot.png
 stylesheets[all][] = styles2.css
@@ -195,21 +204,21 @@ stylesheets[screen and (max-width: 480px)][] = mobile2.css
 stylesheets[print][] = print2.css
 scripts[] = script2.js
 
-; regiões não são herdadas do tema base, devem ser repetidas aqui;
+; as regiões não são herdadas do tema base, devem ser repetidas aqui;
 regions[sidebar_first] = Left sidebar
 regions[content] = Main Content for Node Rendering
 regions[nome_xyz] = Localização da região
 
-; opções não são herdadas do tema base, devem ser repetidas aqui;
+; as opções de configuração não são herdadas do tema base, devem ser repetidas aqui;
 features[] = logo
 features[] = name
 features[] = main_menu
 features[] = secondary_menu
 
-; added by drupal.org
+; configurações adicionadas ao publicar o tema em drupal.org;
 version = "7.x-1.0"
 core = "7.x"
-project = "mynewtheme"
+project = "portal_brasil"
 datestamp = "1498069849"
 </comando>
 
@@ -227,15 +236,15 @@ datestamp = "1498069849"
 </lista>
 
 <comando>
-function mynewtheme_xyz() {}
-function mynewtheme_preprocess_page(&$variables) { kpr($variables); }
-function mynewtheme_preprocess_node(&$variables) { kpr($user); }
+function portal_brasil_xyz() {}
+function portal_brasil_preprocess_page(&$variables) { kpr($variables); }
+function portal_brasil_preprocess_node(&$variables) { kpr($user); }
 </comando>
 
 <lista>
   <item>templates/*.tpl.php</item>
   <lista>
-    <item/>templates com a estrutura do HTML;
+    <item/>arquivos de <i>template</i> com a estrutura do HTML;
     <item/>html.tpl.php ⇒ page.tpl.php ⇒ region.tpl.php ⇒ block.tpl.php |
            node.tpl.php;
   </lista>
@@ -244,57 +253,94 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <lista>
   <item>Processamento do template</item>: a renderização ocorre a partir do mais específico;
   <lista>
-    <item/>↓ node.tpl.php;
-    <item/>↓ region.tpl.php;
-    <item/>↓ page.tpl.php;
-    <item/>↓ html.tpl.php;
+    <item>↓ node.tpl.php;</item>
+    <lista>
+      <item/><?php print $title; ?>
+      <item/><?php hide($content['comments']); ?>
+      <item/><?php render($content) ?>
+      <item/><?php render($content['comments']); ?>
+    </lista>
+    <item>↓ region.tpl.php ⇒ block.tpl.php | node.tpl.php;</item>
+    <lista>
+      <item/><?php print $content; ?>
+    </lista>
+    <item>↓ page.tpl.php;</item>
+    <lista>
+      <item/><?php print render($page['content']); ?>
+      <item/><?php print render($page['sidebar_second']); ?>
+      <item/><?php print render($page['footer']) ?>
+    </lista>
+    <item>↓ html.tpl.php;</item>
+    <lista>
+      <item/><<i>head</i>>;
+      <lista>
+        <item/><?php print $head; ?>
+        <item/><<i>title</i>><?php print $head_title; ?></<i>title</i>>
+        <item/><?php print $styles; ?>
+        <item/><?php print $scripts; ?>
+      </lista>
+      <item/></<i>head</i>>
+      <item/><<i>body</i>>
+      <lista>
+        <item/><?php print $page; ?>
+      </lista>
+      <item/></<i>body</i>>
+    </lista>
   </lista>
+</lista>
+
+<lista>
   <item>Seleção do template</item>: somente o template mais específico de cada tipo será
   utilizado;
   <lista>
-    <item>↓ node--1.tpl.php</item> ⇒ para o Node Id;
-    <item>↓ node--article.tpl.php</item> ⇒ para o tipo de conteúdo;
-    <item>↓ node.tpl.php</item> ⇒ do subtema;
+    <item>↓ node--1.tpl.php</item> ⇒ para determinado node Id;
+    <item>↓ node--article.tpl.php</item> ⇒ para determinado tipo de conteúdo;
+    <item>↓ node.tpl.php</item> ⇒ do subtema: sites/all/themes/portal_brasil/node.tpl.php;
     <item>↓ node.tpl.php</item> ⇒ do tema: themes/bartik/templates/node.tpl.php;
     <item>↓ node.tpl.php</item> ⇒ do core: modules/node/node.tpl.php;
   </lista>
+</lista>
+
+<lista>
   <item>Sobreposição de templates</item>
   <lista>
-    <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/
-    <item/>cp modules/node/node.tpl.php sites/all/themes/mynewtheme/node--2.tpl.php;
-    <item/>cp modules/system/maintenance-page.tpl.php sites/all/themes/mynewtheme/
+    <item/>cp modules/node/node.tpl.php sites/all/themes/portal_brasil/templates/
+    <item/>cp modules/node/node.tpl.php sites/all/themes/portal_brasil/templates/node--2.tpl.php
+    <item/>cp modules/system/maintenance-page.tpl.php sites/all/themes/portal_brasil/templates/
   </lista>
 </lista>
+
+<br/>0.6cm
 
 <lista>
   <item>Hierarquia de Templates</item>
   <item>html</item>: modules/system/html.tpl.php
   <lista>
     <item>page</item>: modules/system/page.tpl.php
-    <item>page</item>: sites/all/themes/mynewtheme/page.tpl.php
-    <item>page</item>: sites/all/themes/mynewtheme/page--front.tpl.php
+    <item>page</item>: sites/all/themes/portal_brasil/page.tpl.php
+    <item>page</item>: sites/all/themes/portal_brasil/page--front.tpl.php
     <lista>
       <item>region</item>: modules/system/region.tpl.php
       <item>region</item>: modules/system/region--[region-name].tpl.php
       <lista>
         <item>block</item>: modules/block/block.tpl.php
-        <item>block</item>: sites/all/themes/mynewtheme/block.tpl.php
-        <item>block</item>: sites/all/themes/mynewtheme/block--[region-name].tpl.php
+        <item>block</item>: sites/all/themes/portal_brasil/block.tpl.php
+        <item>block</item>: sites/all/themes/portal_brasil/block--[region-name].tpl.php
         <item>node</item>: modules/node/node.tpl.php
         <item>node</item>: themes/bartik/templates/node.tpl.php
-        <item>node</item>: sites/all/themes/mynewtheme/node.tpl.php
-        <item>node</item>: sites/all/themes/mynewtheme/node--[contenttype].tpl.php
-        <item>node</item>: sites/all/themes/mynewtheme/node--[nid].tpl.php
+        <item>node</item>: sites/all/themes/portal_brasil/node.tpl.php
+        <item>node</item>: sites/all/themes/portal_brasil/node--[contenttype].tpl.php
+        <item>node</item>: sites/all/themes/portal_brasil/node--[nid].tpl.php
         <item>comment</item>: modules/comment/comment.tpl.php
         <item>comment</item>: themes/bartik/templates/comment.tpl.php
         <item>comment-wrapper</item>: modules/comment/comment-wrapper.tpl.php
         <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.tpl.php
         <item>user-profile</item>: modules/user/user-profile.tpl.php
-        <item>user-profile</item>: sites/all/themes/mynewtheme/user-profile.tpl.php
+        <item>user-profile</item>: sites/all/themes/portal_brasil/user-profile.tpl.php
       </lista>
     </lista>
     <item>maintenance-page</item>: modules/system/maintenance-page.tpl.php
-    <item>maintenance-page</item>: sites/all/themes/mynewtheme/maintenance-page.tpl.php
+    <item>maintenance-page</item>: sites/all/themes/portal_brasil/maintenance-page.tpl.php
   </lista>
 </lista>
 
@@ -303,7 +349,7 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <subsubsecao>Theme developer</subsubsecao>
 
 <lista>
-  <item>URL</item>: https://drupal.org/project/devel_themer
+  <item>URL</item>: <url>https://drupal.org/project/devel_themer</url>
   <item>Função</item>: informações sobre a hierarquia de renderização do template;
   <item>Dependências</item>: Devel e simplehtmldom 7.x-1.12
   <item>Uso</item>:
@@ -316,7 +362,7 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <subsubsecao>Styleguide</subsubsecao>
 
 <lista>
-  <item>URL</item>: https://drupal.org/project/styleguide
+  <item>URL</item>: <url>https://drupal.org/project/styleguide</url>
   <item>Função</item>: lista estilos aplicados a cada componente;
   <item>Uso</item>: /admin/appearance/styleguide
 </lista>
@@ -324,7 +370,7 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <subsubsecao>Block Class</subsubsecao>
 
 <lista>
-  <item>URL</item>: https://drupal.org/project/block_class
+  <item>URL</item>: <url>https://drupal.org/project/block_class</url>
   <item>Função</item>: definir classe CSS para cada bloco;
   <item>Uso</item>:
   <lista>
@@ -338,7 +384,7 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <subsubsecao>Responsive Blog Theme</subsubsecao>
 
 <lista>
-  <item>URL</item>: https://drupal.org/project/responsive_blog
+  <item>URL</item>: <url>https://drupal.org/project/responsive_blog</url>
   <item>Uso</item>:
   <lista>
     <item/>instalar tema;
@@ -353,7 +399,7 @@ function mynewtheme_preprocess_node(&$variables) { kpr($user); }
 <subsubsecao>Responsive menu</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/responsive_menus
+  <item>Download</item>: <url>https://drupal.org/project/responsive_menus</url>
   <item>Função</item>: substituir menu por menu responsivo a partir do tamanho da tela;
   <item>Uso</item>:
   <lista>
@@ -372,7 +418,7 @@ responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 <subsubsecao>Fitvids</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/fitvids
+  <item>Download</item>: <url>https://drupal.org/project/fitvids</url>
   <item>Função</item>: torna vídeos (youtube, vimeo e kickstarter) responsivos;
   <item>Dependência</item>: Libraries API, jquery.fitvids.js, jquery_update;
   <item>Uso</item>:
