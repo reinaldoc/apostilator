@@ -1316,7 +1316,7 @@ Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
            como <b>Personlizado</b>;
     <item/>configure o formato da data para: <b>F/Y</b>;
     <item/>ative a opção <b>Output this field as a link</b>;
-    <item/>preencha o <b>Link path</b> com o token para o campo de
+    <item/>defina a opção <b>Link path</b> com o token para o campo de
           <b>Arquivo</b>;
     <item/>consulte o token clicando na opção <b>Replacement patterns</b>;
   </lista>
@@ -1330,8 +1330,15 @@ Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
     <item/>configure o valor padrão do filtro como <b>Enter relative
            date</b> como <b>Y</b>;
   </lista>
-  <item/>configure o filtro e selecione a granularidade para <b>Ano</b>;
-  <item/>ative a opção <b>Autosubmit</b> em <b>Avançado ⇒ Exposed Form</b>;
+  <item/>configure o filtro do campo de data e selecione a granularidade
+         para <b>Ano</b>;
+  <item/>configure as opções avançadas;
+  <lista>
+    <item/>ative a opção <b>Autosubmit</b> em <b>Exposed form style</b>;
+    <item/>ative a opção <b>Use AJAX</b> como <b>Sim</b>;
+  </lista>
+  <item/>configure o campo de dada com critério de ordenação;
+  <item/>remova o campo <b>Post date</b> como critério de ordenação;
 </lista>
 
     O submódulo <b>Date Views</b>, fornecido com o módulo <b>Date</b>,
