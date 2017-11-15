@@ -1381,18 +1381,30 @@ utilizado em uma View, sendo possível especificar a altura e largura do
 vídeo, início automático, repetição e ocultar o título ou os controles do
 vídeo.
 
-<subsubsecao>Iframe (Field)</subsubsecao>
+<subsubsecao>IFrame (Field)</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/iframe
-  <item>Função</item>: campo (field) para inserção de URL para iframe;
+  <item>Download</item>: <url>https://drupal.org/project/iframe</url>
+  <item>Função</item>: campo (field) para inserção de URL por <b>IFrame</b>;
   <item>Uso</item>:
   <lista>
-    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'iframe';
-    <item/>este campo recebe uma URL que será renderizada em um iframe;
-    <item/>somente é possível abrir iframe https se o site estiver usando https;
+    <item/>adicione o campo <b>IFrame</b> a um tipo de conteúdo;
+    <item/>caso altere as configurações do campo, como desalibitar o
+<i>Scroll</i>, limpe a cache do Drupal;
+    <item/>cadastre um conteúdo e informe a URL que será renderizada em
+           um <i>IFrame</i>;
   </lista>
 </lista>
+
+    O uso de IFrames possui algumas restrições aplicadas pelos navegadores.
+Quando o site principal estiver usando HTTPS, somente será possível incluir
+páginas que também estejam sob HTTPS.
+
+    Uma outra restrição depende da resposta HTTP para a URL alvo, que pode
+conter o cabeçalho <b>X-Frame-Options</b>, ou seu sucessor
+<b>Content-Security-Policy</b>, que determinará se o navegador está
+autorizado a exibí-la em um IFrame. Neste caso, alguns sites poderão
+estar configurados para não serem renderizados dentro de um IFrame.
 
 <subsubsecao>Entity Reference (Field)</subsubsecao>
 
