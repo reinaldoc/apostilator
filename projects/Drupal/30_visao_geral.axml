@@ -170,16 +170,24 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
   <item>URL</item>: /admin/structure/types
   <item>Atividades</item>:
   <lista>
-  <item/>adição de tipo de conteúdo;
-  <item/>configuração de submissão, publicação (revisão) e comentários;
-  <item/>configuração de exibição do autor do conteúdo;
-  <item/>configuração de menus autorizados para inserção de item;
-  <item/>adição de campos (tipo de dado[text,image,list,term] e widgets);
-  <item/>configuração de campo (tamanho máximo, número de valores);
-  <item/>configuração de campo para cada tipo de conteúdo (valor padrão, etc);
-  <item/>gerenciar exibição do campo (peso, posição do label e formato);
+    <item/>adicione um tipo de conteúdo;
+    <item/>defina o rótulo do campo de título;
+    <item/>desative a opção <b>Promovido para a página inicial</b> em
+           <b>Opções de publicação</b>;
+    <item/>verifique a exibição do autor do conteúdo em <b>Opções de
+           exibição</b>;
+    <item/>desative a publicação de comentários selecionando <b>Fechado</b>;
+    <item/>configure os menus autorizados para inserção de item para este
+           tipo de conteúdo;
+    <item/>adicione campos dentre os tipos disponíveis: text, image, list,
+           term;
+    <item/>configure o campo (tamanho máximo, número de valores);
+    <item/>gerencie a exibição do campo (peso, posição do label e formato);
   </lista>
 </lista>
+
+    A opção <b>Promovido para a página inicial</b>, disponível em <b>Opções
+de publicação</b>, refere-se a exibir este conteúdo na página <b>/node</b>.
 
 <subsubsecao>Taxonomia</subsubsecao>
 
