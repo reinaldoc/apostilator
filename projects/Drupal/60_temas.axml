@@ -42,8 +42,8 @@ palavras de seus próprios autores.
 
 <lista>
   <item>/themes/</item> ⇒ temas do núcleo do Drupal;
-  <item>/sites/all/themes/</item> ⇒ temas para todos os sites;
-  <item>/sites/default/themes/</item> ⇒ temas para site <b>default</b>;
+  <item>/sites/all/themes/</item> ⇒ temas disponíveis para todos os sites;
+  <item>/sites/[instância]/themes/</item> ⇒ temas disponíveis para um determinado site;
 </lista>
 
     Não coloque temas no diretório de temas do núcleo do Drupal, isto pode
