@@ -1366,14 +1366,20 @@ para seleção em forma de <i>combobox</i>.
 <subsubsecao>Youtube (Field)</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/youtube
-  <item>Função</item>: campo (field) para vídeos do youtube;
+  <item>Download</item>: <url>https://drupal.org/project/youtube</url>
+  <item>Função</item>: campo (field) para integrar vídeos do youtube a
+                       página;
   <item>Uso</item>:
   <lista>
-    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'Youtube';
-    <item/>este campo recebe uma URL do youtube que será renderizada em um iframe;
+    <item/>adicione o campo <b>Youtube vídeo</b> a um tipo de conteúdo;
+    <item/>cadastre um conteúdo e informe uma URL do Youtube neste campo;
   </lista>
 </lista>
+
+    O módulo <b>Youtube (Field)</b> fornece configurações adicionais quando
+utilizado em uma View, sendo possível especificar a altura e largura do
+vídeo, início automático, repetição e ocultar o título ou os controles do
+vídeo.
 
 <subsubsecao>Iframe (Field)</subsubsecao>
 
