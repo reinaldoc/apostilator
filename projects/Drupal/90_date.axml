@@ -1,0 +1,64 @@
+<capitulo>Date</capitulo>
+<nome>apendice-data</nome>
+
+<subsubsubsecao>Coleta de hora e minuto por seleção (Wvega Timepicker)</subsubsubsecao>
+
+    O <b>Timepicker</b> permite a coleta dos campos de hora e minuto por
+meio de seleção em um único campo. Esta rotina javascript é automaticamente
+integrável ao submódulo <b>Date Popup</b>, por isso não necessita de um
+módulo do Drupal adicional. Obtenha o <b>Timepicker</b> em
+<url>https://github.com/wvega/timepicker/archives/master</url>.
+
+<comando>
+# su -s /bin/bash -l portal
+$ cd /tmp
+$ wget https://github.com/downloads/wvega/timepicker/jquery-timepicker-1.2.2.zip
+$ mkdir sites/all/libraries/wvega-timepicker
+$ cd sites/all/libraries/wvega-timepicker
+$ unzip /tmp/jquery-timepicker-1.2.2.zip
+$ ln -s jquery.timepicker-1.2.2.min.js jquery.timepicker.js
+$ ln -s jquery.timepicker-1.2.2.min.css jquery.timepicker.css
+</comando>
+
+<lista>
+  <item/>habilite o módulo <b>Date Popup</b>;
+  <item/>configure um campo <b>Data</b> como o <i>widget</i> <b>Pop-up
+         calendar</b> em gerenciar campos;
+  <item/>crie um conteúdo e clique no campo de hora e minuto;  
+</lista>
+
+<subsubsubsecao>Coleta de hora e minuto por widget (Stanford Timepicker)</subsubsubsecao>
+
+    O módulo <b>Stanford Timepicker</b> é incompatível com o <b>Wvega
+Timepicker</b> pois extende a mesma funcionalidade. Antes de prosseguir,
+assegure que o diretório <b>sites/all/libraries/wvega-timepicker</b> não
+exista.
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/stanford_date_timepicker</url>
+  <item>Função</item>: adiciona um <i>widget drop-down</i> para coleta de
+                       hora e minuto;
+  <item>Uso</item>:
+  <lista>
+    <item/>habilite o módulo <b>Date Popup</b>;
+    <item/>configure um campo <b>Data</b> como o <i>widget</i> <b>Pop-up
+           calendar</b> em gerenciar campos;
+    <item/>crie um conteúdo e clique no campo de hora e minuto;  
+  </lista>
+</lista>
+
+    O módulo <b>Stanford Date Timepicker</b> permite a coleta dos campos de
+hora e minuto por meio de um <i>widget drop-down</i> fornecido pela rotina
+javascript <b>jQuery-Timepicker-Addon</b>, obtenha-a em
+<url>https://github.com/trentrichardson/jQuery-Timepicker-Addon/tree/master/src</url>.
+
+<comando>
+# su -s /bin/bash -l portal
+$ cd drupal-7
+$ mkdir sites/all/libraries/jquery-ui-timepicker
+$ cd sites/all/libraries/jquery-ui-timepicker
+$ url=https://github.com/trentrichardson/jQuery-Timepicker-Addon/raw/master/src/
+$ wget $url/jquery-ui-sliderAccess.js
+$ wget $url/jquery-ui-timepicker-addon.js
+$ wget $url/jquery-ui-timepicker-addon.css
+</comando>

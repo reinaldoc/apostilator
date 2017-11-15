@@ -1259,12 +1259,100 @@ com configuração similar, porém sem possibilidade de criar perfil.
 <subsubsecao>Date (Field)</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/date
-  <item>Função</item>: campo (field) para datas e widget (Date Popup);
+  <item>Download</item>: <url>https://drupal.org/project/date</url>
+  <item>Função</item>: campo (field) do tipo data;
   <item>Uso</item>:
   <lista>
-    <item/>adicione a qualquer tipo de conteúdo um campo do tipo 'Date';
-    <item/>ativar módulo 'Date Views' para usar filtros por combobox nas Views;
+    <item/>adicione um campo do tipo <b>Date</b> a um tipo de conteúdo;
+  </lista>
+</lista>
+
+    O campo de data pode ser apresentado por meio de um <b>Campo de
+texto</b>, em que usuário deve digitar seu conteúdo, como <b>11/2017</b>,
+ou de uma <b>Lista de seleção</b>, em que será exibido uma lista com valores
+específicos <u>para cada parte da data</u>. No segundo caso, os valores
+iniciais e finais para seleção do <b>Ano</b> são configuráveis pela edição
+do campo de data.
+
+    O submódulo <b>Date Popup</b> fornece um campo de texto que utiliza um
+calendário, quando clicado. Após habilitar este módulo, selecione a
+opção <b>Pop-up calendar</b> como <i>widget</i> do campo de data.
+
+    Embora o calendário seja útil somente para seleção de datas com
+<b>Dia</b>, <b>Mês</b> e <b>Ano</b>, a seleção de hora possui uma máscara
+bastante útil, que permite a seleção usando as setas <u>para cima</u> e
+<u>para baixo</u> do teclado. Quando a data utiliza apenas <b>Mês</b> e
+<b>Ano</b>, o <i>widget</i> a <b>Lista de seleção</b> tem melhor
+usabilidade.
+
+    Há outras opções específicas para a seleção da hora por meio do
+<i>mouse</i>, como as rotinas <b>Wvega Timepicker</b> ou <b>Stanford
+Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
+
+<br/>0.3cm
+
+<subsubsubsecao>View com lista de arquivos com filtro por ano</subsubsubsecao>
+
+<lista>
+  <item/>crie o tipo de conteúdo <b>Relatório de despesa mensal</b>;
+  <item/>adicione um campo do tipo <b>Data</b> ao tipo de conteúdo;
+  <item/>mantenha habilitado somente os atributos <b>Ano</b> e <b>Mês</b>;
+  <item/>adicione um campo do tipo <b>Arquivo</b> ao tipo de conteúdo;
+  <item/>publique algum conteúdo deste tipo;
+  <item/>crie uma View para exibir conteúdo do tipo <b>Relatório de despesa
+         mensal</b>;
+  <item/>selecione o formato de exibição como <b>Grid</b> de <b>fields</b>;
+  <item/>configure o paginador para exibir todos os itens;
+  <item/>adicione o campo de <b>Arquivo</b> à View;
+  <lista>
+    <item/>marque a opção <b>Exclude from display</b>;
+    <item/>configure a opção <b>Formatter</b> como <b>URL do arquivo</b>;
+    <item/>configure o formato da data para: <b>F/Y</b>;
+  </lista>
+  <item/>adicione o campo de <b>Data</b> à View;
+  <lista>
+    <item/>desabilite a opção <b>Create a label</b>;
+    <item/>configure a opção <b>Choose how users view dates and times</b>
+           como <b>Personlizado</b>;
+    <item/>configure o formato da data para: <b>F/Y</b>;
+    <item/>ative a opção <b>Output this field as a link</b>;
+    <item/>preencha o <b>Link path</b> com o token para o campo de
+          <b>Arquivo</b>;
+    <item/>consulte o token clicando na opção <b>Replacement patterns</b>;
+  </lista>
+  <item/>remova a campo <b>Título</b> da View;
+  <item/>remova o campo <b>Body</b> da View;
+  <item/>adicione o campo de data como critério de filtragem;
+  <lista>
+    <item/>marque a opção <b>Expose this filter to visitors, to allow them
+           to change it</b>;
+    <item/>configure o rótulo do o filtro;
+    <item/>configure o valor padrão do filtro como <b>Enter relative
+           date</b> como <b>Y</b>;
+  </lista>
+  <item/>configure o filtro e selecione a granularidade para <b>Ano</b>;
+  <item/>ative a opção <b>Autosubmit</b> em <b>Avançado ⇒ Exposed Form</b>;
+</lista>
+
+    O submódulo <b>Date Views</b>, fornecido com o módulo <b>Date</b>,
+permite a exposição ao usuário de filtros para o campo de data, inclusive
+para seleção em forma de <i>combobox</i>.
+
+<br/>0.3cm
+
+
+<subsubsecao>Field Validation</subsubsecao>
+
+<lista>
+  <item>Download</item>:
+<url>https://drupal.org/project/field_validation</url>
+  <item>Função</item>: recursos para validação de campos;
+  <item>Dependência</item>:
+<link>https://drupal.org/project/token</link><text>Token</text>.
+  <item>Uso</item>:
+  <lista>
+    <item/>adicione uma validação a um campo em <b>Gerenciar campos</b>;
+    <item/>
   </lista>
 </lista>
 
