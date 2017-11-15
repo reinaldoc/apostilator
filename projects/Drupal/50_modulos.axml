@@ -1433,34 +1433,12 @@ termo ou vocabulário de taxonomia;
   </lista>
 </lista>
 
-<subsubsecao>Advanced Poll</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/advpoll
-  <item>Dependência</item>: https://drupal.org/project/votingapi
-  <item>Função</item>: tipo de conteúdo para votações de múltipla escolha;
-</lista>
-
-<subsubsecao>Fivestar (Field)</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/fivestar
-  <item>Dependência</item>: https://drupal.org/project/votingapi
-  <item>Função</item>: campo (field) para votação por meio de estrelas;
-</lista>
 
 <subsubsecao>Flag</subsubsecao>
 
 <lista>
   <item>Download</item>: https://drupal.org/project/flag
   <item>Função</item>: integração para selecionar (bookmark) conteúdos;
-</lista>
-
-<subsubsecao>Webform</subsubsecao>
-
-<lista>
-  <item>Download</item>: https://drupal.org/project/webform
-  <item>Função</item>: tipo de conteúdo para formulários e pesquisas;
 </lista>
 
 <subsubsecao>Display Suite</subsubsecao>

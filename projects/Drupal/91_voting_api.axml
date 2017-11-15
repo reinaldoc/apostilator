@@ -1,0 +1,19 @@
+<capitulo>Voting API</capitulo>
+
+<subsubsubsecao>Advanced Poll</subsubsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/advpoll</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/votingapi</link><text>Voting API</text>
+  <item>Função</item>: tipo de conteúdo para votações de múltipla escolha;
+</lista>
+
+<subsubsubsecao>Fivestar (Field)</subsubsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/fivestar</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/votingapi</link><text>Voting API</text>
+  <item>Função</item>: campo (field) para votação por meio de estrelas;
+</lista>
