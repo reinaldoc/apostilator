@@ -1,6 +1,6 @@
 <capitulo>Firewall</capitulo>
 
-<subsecao>Logs no console</subsecao>
+<subsubsubsecao>Logs no console</subsubsubsecao>
 
 <lista>
 <item/> <b>/etc/sysctl.conf</b>: descomentar configuração a seguir (l. 10).
@@ -16,7 +16,7 @@ kernel.printk = 4 4 1 7
 sysctl -p
 </comandoNumerado>
 
-<subsecao>Configuração</subsecao>
+<subsubsubsecao>Configuração</subsubsubsecao>
 
 <lista>
 <item/> <b>/etc/init.d/firewall.sh</b>: criar arquivo com conteúdo abaixo
@@ -70,7 +70,7 @@ update-rc.d firewall.sh defaults
 /etc/init.d/firewall.sh start
 </comandoNumerado>
 
-<subsecao>FTP Conntrack</subsecao>
+<subsubsubsecao>FTP Conntrack</subsubsubsecao>
 
 <lista>
 <item/> <b>/etc/modules</b>: adicionar módulo para inicialização automática;
