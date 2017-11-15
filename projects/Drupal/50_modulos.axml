@@ -131,7 +131,7 @@ verificações de segurança;
   </lista>
 </lista>
 
-    O modulo <b>Apache Log</b> não é configurável e envia para o log apenas
+    O módulo <b>Apache Log</b> não é configurável e envia para o log apenas
 o UID do usuário no Drupal. Caso deseje logar o nome do usuário, pode-se
 criar um módulo derivado, como <b>Custom Apache Log</b>, fazendo uma cópia
 do diretório <b>sites/all/modules/apachelog</b> e substituindo no código do
