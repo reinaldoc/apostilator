@@ -1295,14 +1295,20 @@ Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
 
 <lista>
   <item/>crie o tipo de conteúdo <b>Relatório de despesa mensal</b>;
-  <item/>adicione um campo do tipo <b>Data</b> ao tipo de conteúdo;
-  <item/>mantenha habilitado somente os atributos <b>Ano</b> e <b>Mês</b>;
-  <item/>adicione um campo do tipo <b>Arquivo</b> ao tipo de conteúdo;
+  <lista>
+    <item/>adicione um campo do tipo <b>Data</b> ao tipo de conteúdo;
+    <item/>mantenha habilitado somente os atributos <b>Ano</b> e <b>Mês</b>;
+    <item/>adicione um campo do tipo <b>Arquivo</b> ao tipo de conteúdo;
+  </lista>
   <item/>publique algum conteúdo deste tipo;
   <item/>crie uma View para exibir conteúdo do tipo <b>Relatório de despesa
          mensal</b>;
-  <item/>selecione o formato de exibição como <b>Grid</b> de <b>fields</b>;
-  <item/>configure o paginador para exibir todos os itens;
+  <lista>
+    <item/>selecione o formato de exibição como <b>Grid</b> de <b>fields</b>;
+    <item/>configure o paginador para exibir todos os itens;
+  <item/>configure o campo de <b>Data</b> como critério de ordenação;
+  <item/>remova o campo <b>Post date</b> como critério de ordenação;
+  </lista>
   <item/>adicione o campo de <b>Arquivo</b> à View;
   <lista>
     <item/>marque a opção <b>Exclude from display</b>;
@@ -1322,7 +1328,7 @@ Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
   </lista>
   <item/>remova a campo <b>Título</b> da View;
   <item/>remova o campo <b>Body</b> da View;
-  <item/>adicione o campo de data como critério de filtragem;
+  <item/>adicione o campo de <b>Data</b> como critério de filtragem;
   <lista>
     <item/>marque a opção <b>Expose this filter to visitors, to allow them
            to change it</b>;
@@ -1330,15 +1336,13 @@ Timepicker</b>, exemplificados no Apêncice<ref>apendice-data</ref>.
     <item/>configure o valor padrão do filtro como <b>Enter relative
            date</b> como <b>Y</b>;
   </lista>
-  <item/>configure o filtro do campo de data e selecione a granularidade
-         para <b>Ano</b>;
+  <item/>configure o filtro do campo de <b>Data</b> e selecione a
+         granularidade para <b>Ano</b>;
   <item/>configure as opções avançadas;
   <lista>
     <item/>ative a opção <b>Autosubmit</b> em <b>Exposed form style</b>;
     <item/>ative a opção <b>Use AJAX</b> como <b>Sim</b>;
   </lista>
-  <item/>configure o campo de dada com critério de ordenação;
-  <item/>remova o campo <b>Post date</b> como critério de ordenação;
 </lista>
 
     O submódulo <b>Date Views</b>, fornecido com o módulo <b>Date</b>,
@@ -1359,7 +1363,6 @@ para seleção em forma de <i>combobox</i>.
   <item>Uso</item>:
   <lista>
     <item/>adicione uma validação a um campo em <b>Gerenciar campos</b>;
-    <item/>
   </lista>
 </lista>
 
