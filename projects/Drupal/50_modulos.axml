@@ -1412,15 +1412,18 @@ estar configurados para não serem renderizados dentro de um IFrame.
 <subsubsecao>Entity Reference (Field)</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/entityreference
+  <item>Download</item>: <url>https://drupal.org/project/entityreference</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text> e
+<link>https://drupal.org/project/entity</link><text>Entity API</text>.
   <item>Função</item>: campo que relaciona um node a outro node (Node de
 Pessoa com o Node de Livro);
   <item>Uso</item>:
   <lista>
-    <item/>adicione um campo do tipo <b>Entity Reference</b> a qualquer node;
+    <item/>adicione o campo <b>Entity Reference</b> a um tipo de conteúdo;
     <item/>defina a forma de exibição do campo (autocomplete, select list or
 checkbox/radio);
-    <item/>defina o relacionamento (<i>target type</i>) para node, usuário,
+    <item/>defina o relacionamento <i>target type</i> para node, usuário,
 termo ou vocabulário de taxonomia; 
   </lista>
 </lista>
