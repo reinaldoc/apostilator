@@ -1145,7 +1145,7 @@ salvo a URL será atualizada.
   <item>Instalação</item>:
   <lista>
     <item/><url>https://ckeditor.com/download</url>
-    <item/>su -s /bin/bash portal
+    <item/>su -s /bin/bash -l portal
     <item/>cd /tmp
     <item/>wget
     <link>http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.7.3/ckeditor_4.7.3_full.zip</link><text>http://download.cksource.com/CKEditor/ckeditor_4.X.Y_full.zip</text>
@@ -1180,7 +1180,8 @@ CKEditor, configure o caminho local para o <b>ckeditor.js</b>.
          HTML visual;
   <item>Uso</item>: /admin/config/media/imce
   <lista>
-    <item/>edite um perfil do <b>CKEditor</b>;
+    <item/>edite um perfil do <b>CKEditor</b> em configurações de criação de
+           conteúdo;
     <item/>identifique a seção <i>File browser settings</i>;
     <item/>configure a opção <i>File browser type</i> para IMCE;
   </lista>
@@ -1198,6 +1199,11 @@ diretamente no repositório de arquivos, normalmente em
 arquivos e imagens armazenados em campos próprios dos tipos de conteúdo,
 não há controles adicionais sobres esses arquivos, não sendo possível
 restringir a extensão do arquivo, tamanho ou padrão de nomenclatura.
+
+    O módulo <link>https://drupal.org/project/imce_mkdir</link>
+<text>IMCE Mkdir</text> adiciona a funcionalidade de criar e remover
+diretórios pela interface do IMCE. Após instalado, é necessário conceder a
+permissão para esta operação na configurações de perfil do IMCE.
 
 <subsubsecao>Insert</subsubsecao>
 
