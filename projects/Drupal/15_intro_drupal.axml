@@ -73,8 +73,8 @@ integridade das informações.
     Manter o Drupal atualizado e livre de vulnerabilidades conhecidas é um
 dos controles essenciais. Para assegurar isso, <u>é importante monitorar os
 avisos de segurança do Drupal e de seus módulos</u>, neles são informados o
-impacto das vulnerabilidades e as correções de segurança disponibilizadas.
-Os avisos de segurança do Drupal são publicados na página
+impacto das vulnerabilidades e as correções de segurança que são
+disponibilizadas. Os avisos de segurança do Drupal são publicados na página
 <url>https://drupal.org/security</url> e também, ao clicar em
 <b>Contributed projects</b>, os avisos de segurança dos módulos.
 
