@@ -571,12 +571,12 @@ diretamente para a classe <b>.nolink</b> e <b>.separator</b>.
 </lista>
 
     <importante/>Ao conceder permissão para administração de determinado
-menu, para que o usuário consiga adicionar um <i>link</i> a ele, é
-necessário também que o menu esteja vinculado ao respectivo tipo de
+menu, para que o usuário consiga adicionar um <i>link</i> a ele é
+necessário, também, que o menu esteja vinculado ao respectivo tipo de
 conteúdo.
 
     Em relação as outras opções de configuração do conteúdo que estão
-disponíveis usuário administrador, como a indicação de publicado ou
+disponíveis ao usuário administrador, como a indicação de publicado ou
 despublicado, as informações de autor ou controle de revisões, o módulo
 <link>https://drupal.org/project/override_node_options</link><text><b>Override
 Node Options</b></text> fornece novas permissões para esse fim. Apesar
