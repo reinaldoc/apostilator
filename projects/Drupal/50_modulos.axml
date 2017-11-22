@@ -182,6 +182,18 @@ instalador, mas é útil para instâncias criadas no
   </lista>
 </lista>
 
+<subsubsecao>Login destination</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/login_destination</url>
+  <item>Função</item>: permite criar regras para redirecionamento após login ou logout;
+  <item>Uso</item>: /admin/config/people/login-destination
+  <lista>
+    <item/>adicione uma regra para redirecionar usuários autenticados para
+           a página inicial;
+  </lista>
+</lista>
+
 <subsubsecao>Devel</subsubsecao>
 
 <lista>
