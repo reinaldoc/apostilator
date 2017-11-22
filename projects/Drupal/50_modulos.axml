@@ -779,6 +779,9 @@ estático.
   <item/>configurar o bloco para se exibido somente nas páginas 'user/*';
 </lista>
 
+    É necessário habilitar o modo <b>ajax</b> para apresentar filtros ao
+usuário em uma View de bloco.
+
 <subsubsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsubsecao>
 
 <lista>
