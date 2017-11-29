@@ -817,21 +817,32 @@ usuário em uma View de bloco.
 de exibição para associar views de bloco à páginas de conteúdo (node) ou à
 página do perfil do usuário.
 
-<subsubsecao>Views Accordeon</subsubsecao>
+<subsubsecao>Views Accordion</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/views_accordion
+  <item>Download</item>: <url>https://drupal.org/project/views_accordion</url>
   <item>Função</item>: construir lista de conteúdo (node) em formato de acordeões;
   <item>Uso</item>:
   <lista>
-    <item/>criar view accordeon a partir de um tipo de conteúdo;
-    <item/>definir o formato de exibição para campos (requerido);
-    <item/>manter o título como primeiro campo;
-    <item/>adicionar os demais campos à view;
-    <item/>definir ordenação pelo título;
-    <item/>configuração do formato: não exibir linha aberta;
+    <item/>crie uma <b>View</b> para exibir um determinado tipo de conteúdo;
+    <item/>informe o nome da view, geralmente usa-se o nome do tipo de
+           conteúdo no plural;
+    <item/>informe a descrição administrativa da view: "View de Accordion
+           utilizada na área Institucional.";
+    <item/>defina o formato de exibição como <b>Views Accordion</b> de <i>fields</i>;
+    <item/>continue e edite a view;
+    <item/>adicione os campos do tipo de conteúdo selecionado;
+    <item/>definir o campo para ordenação;
+    <item/>configuração do formato: exibir uma linha aberta: <b>Nenhum</b>;
     <item/>configuração do formato: permitir que todas as linhas sejam fechadas;
-    <item/>configuração do formato: não definir altura automática da linha;
+    <lista>
+      <item/><i>Allow for all rows to be closed</i>;
+    </lista>
+    <item/>configuração do formato: não usar altura automática da linha
+           (retira o <i>scroll</i>);
+    <lista>
+      <item/><i>Autoheight</i>;
+    </lista>
   </lista>
 </lista>
 
