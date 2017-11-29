@@ -172,7 +172,9 @@ instalador, mas é útil para instâncias criadas no
     <importante/>O módulo <b>Locale</b>, que é dependência do módulo
 <b>Localization update</b>, gera um <i>overhead</i> de 50% na quantidade de
 consultas. Em grandes projetos, é recomendável manter a interface em inglês
-e não habilitar estes módulos.
+e não habilitar estes módulos. Consulte a opção
+"$conf['locale_custom_strings_en']" no <b>settings.php</b> para traduzir
+itens específicos.
 
 <subsubsecao>Masquerade</subsubsecao>
 
