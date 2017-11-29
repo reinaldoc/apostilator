@@ -589,19 +589,23 @@ diretamente para a classe <b>.nolink</b> e <b>.separator</b>.
   </lista>
 </lista>
 
-    <importante/>Ao conceder permissão para administração de determinado
-menu, para que o usuário consiga adicionar um <i>link</i> a ele é
-necessário, também, que o menu esteja vinculado ao respectivo tipo de
-conteúdo.
+    <importante/>Para que o usuário consiga adicionar um <i>link</i> a
+determinado menu, é necessário, além de conceder permissão para
+administração desse menu, que o menu esteja vinculado ao respectivo tipo de
+conteúdo. Esse vínculo é realizado na edição do tipo de conteúdo.
 
     Em relação as outras opções de configuração do conteúdo que estão
 disponíveis ao usuário administrador, como a indicação de publicado ou
 despublicado, as informações de autor ou controle de revisões, o módulo
 <link>https://drupal.org/project/override_node_options</link><text><b>Override
-Node Options</b></text> fornece novas permissões para esse fim. Apesar
-deste módulo permitir que o conteúdo seja despublicado, o usuário não
-conseguirá acessar esse conteúdo despublicado, sendo necessário novas permissões
-fornecidas pelo módulo
+Node Options</b></text> fornece novas permissões para esse fim. Já para que
+o usuário possa alterar a URL do conteúdo, o módulo
+<link>https://drupal.org/project/url_alias_permissions</link><text><b>URL
+Alias Permissions</b></text> fornece novas permissões para isso.
+
+     Além da permissão para despublicar determinado conteúdo, será útil
+que o usuário continue conseguindo acessar esse conteúdo que foi
+despublicado, para isso é necessário as permissões fornecidas pelo módulo
 <link>https://www.drupal.org/project/view_unpublished</link>
 <text><b>view_unpublished</b></text>.
 
