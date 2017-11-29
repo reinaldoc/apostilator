@@ -169,6 +169,11 @@ instalação própria, pois o arquivo de tradução é obtido, armazenado em
 instalador, mas é útil para instâncias criadas no
 <url>http://simplytest.me</url>.
 
+    <importante/>O módulo <b>Locale</b>, que é dependência do módulo
+<b>Localization update</b>, gera um <i>overhead</i> de 50% na quantidade de
+consultas. Em grandes projetos, é recomendável manter a interface em inglês
+e não habilitar estes módulos.
+
 <subsubsecao>Masquerade</subsubsecao>
 
 <lista>

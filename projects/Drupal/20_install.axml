@@ -209,6 +209,8 @@ criado. Dessa forma, pode-se configurar a PAM para não requerer um
 consiga realizar autenticação em outros serviços eventualmente ativados no
 servidor.
 
+<br/>0.2cm
+
 <comando>
 # /etc/pam.d/vsftpd
 # l.10
@@ -263,6 +265,14 @@ $ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
 $ cp /tmp/drupal-7.56.pt-br.po profiles/standard/translations
 </comando>
 
+    <importante/>O módulo <b>Locale</b>, que é ativado ao instalar o
+arquivo de tradução em <b>profiles/standard/translations</b>, gera um
+<i>overhead</i> de 50% na quantidade de consultas a base de dados. Em
+grandes projetos, é recomendável manter a interface em inglês e não usar o
+arquivo de tradução.
+
+<br/>0.2cm
+
 <step>Defina o diretório do domínio do Drupal</step>
 <comando>
 $ mv sites/example.sites.php sites/sites.php
@@ -284,6 +294,8 @@ passo não seja realizado, o drupal utilizará o diretório
 <b>sites/default</b> para qualquer nome de domínio que possua DNS
 referenciando este servidor.
 
+<br/>0.2cm
+
 <step>Prepare o diretório do virtualhost do Drupal</step>
 <comando>
 $ cp -a sites/default sites/portal
@@ -303,8 +315,6 @@ $ exit
     Acesse o Drupal pelo navegador e proceda a configuração do idioma e da
 conexão ao banco de dados. Essas configurações serão salvas no arquivo
 <b>sites/portal/settings.php</b>.
-
-<quebraPagina/>
 
 <step>Redefina a permissão do arquivo de configuração</step>
 <comando>
