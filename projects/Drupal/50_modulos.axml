@@ -1456,6 +1456,10 @@ conter o cabeçalho <b>X-Frame-Options</b>, ou seu sucessor
 autorizado a exibí-la em um IFrame. Neste caso, alguns sites poderão
 estar configurados para não serem renderizados dentro de um IFrame.
 
+    <importante/>Caso as propriedades do campo de IFrame do tipo de
+conteúdo sejam alteradas será necessário salvar individualmente cada
+conteúdo com este campo para aplicá-las.
+
 <subsubsecao>Entity Reference (Field)</subsubsecao>
 
 <lista>
