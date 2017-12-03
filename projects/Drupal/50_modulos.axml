@@ -415,7 +415,7 @@ campo de imagem do perfil do usuário <u>no primeiro login</u>;
 
     O módulo <b>Tab Tamer</b> é particularmente útil em conjunto ao módulo
 <b>LDAP</b>, pois ao realizar a sincronização de dados do usuário pode ser
-conveniente desativar a edição do perfil do usuário, desativando a aba
+conveniente inibir a edição do perfil do usuário com a desativação da aba
 <b>Edit</b>.
 
 <subsubsecao>Backup and Migrate</subsubsecao>
