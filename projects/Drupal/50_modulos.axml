@@ -987,26 +987,43 @@ exemplo 726x166 pixels.
 <subsubsecao>Views Slideshow Configurable Controls</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/vscc
-  <item>Função</item>: permite customizar os controles do slideshow em views;
+  <item>Download</item>: <url>https://drupal.org/project/vscc</url>
+  <item>Função</item>: fornece um novo widget de controle para o usuário
+                       retroceder e avançar slideshows;
   <item>Uso</item>:
   <lista>
-    <item/>ative o controle do paginador do tipo 'configurable controls';
-    <item/>omita o controle de 'pause' do slide;
-    <item/>altere a skin do controle para ícones pretos;
+    <item/>edite uma <b>View</b> no formato <b>Slideshow</b>;
+    <item/>ative <i>widget</i> <b>Controls</b>;
+    <item/>selecione <i>Configurable controls</i> em <b>Controls Type</b>;
+    <item/>omita o controle de <i>pause</i> do slideshow;
+    <item/>selecione <i>Black icons</i> em <b>Controls skin</b>;
   </lista>
 </lista>
 
 <comando>
 /* CSS do paginador */
 .vscc-controls {
-    position: relative; z-index: 100; }
+    position: relative;
+    z-index: 100;
+}
 .vscc-controls-previous {
-    position: absolute; top: 120px; left: 0px; background: #ddd;
-    padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
+    position: absolute;
+    top: 120px;
+    left: 0px;
+    background: #ddd;
+    padding: 0 5px 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
 .vscc-controls-next {
-    position: absolute; top: 120px; right: 0px; background: #ddd;
-    padding: 0 5px 5px; border: 2px solid #333; border-radius: 5px; }
+    position: absolute;
+    top: 120px;
+    right: 0px;
+    background: #ddd;
+    padding: 0 5px 5px;
+    border: 2px solid #333;
+    border-radius: 5px;
+}
 </comando>
 
 <subsecao>Nodes</subsecao>
