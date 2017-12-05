@@ -1557,25 +1557,46 @@ de incluir <b>Views</b> de bloco com suporte a <u>links contextuais</u>.
   </lista>
 </lista>
 
-<subsubsubsecao>Criar novo caminho para um breadcrumb</subsubsubsecao>
+<subsubsubsecao>Criar regra de breadcrumb para tipo de conteúdo</subsubsubsecao>
 
 <lista>
   <item>Uso</item>: /admin/structure/path-breadcrumbs/create
   <lista>
-    <item/>identifique onde será usado este breadcrumb: 'Breadcrumb para
-nodes do tipo artigo';
+    <item/>identifique onde será usado este breadcrumb: <b>Ouvidoria
+           (Artigo)</b>;
     <item/>use o endereço como <b>node/%node</b> para criar o argumento
 <b>%node</b>;
     <item/>clique em <b>Change</b> para vincular o argumento <b>%node</b>
 ao valor <b>Node: ID</b>;
-    <item/>adicione o critério de seleção para <b>Node: type</b>: Artigo;
+    <item/>adicione o critério de seleção para <b>Node: type</b>: Artigo
+           (Ouvidoria);
     <item/>identifique a opção <i>Prepend Home link to the breadcrumb</i>
-para omitir a raíz <b>Home</b>;
+           para adicionar a raiz configurada;
     <item/>adicione os rótulos (link title) e urls (link path) para cada
-nível do breadcrumb;
+           nível do breadcrumb;
     <lista>
       <item/>link title: <b>Artigos</b>, link path <b>/artigos</b>;
       <item/>link title: <b>%node:title</b>, link path <b>< none></b>;
+    </lista>
+  </lista>
+</lista>
+
+<subsubsubsecao>Criar regra de breadcrumb para Views</subsubsubsecao>
+
+<lista>
+  <item>Uso</item>: /admin/structure/path-breadcrumbs/create
+  <lista>
+    <item/>identifique onde será usado este breadcrumb: <b>Ouvidoria
+           (Views)</b>;
+    <item/>use o endereço como <b>ouvidoria/*</b>;
+    <item/>não serão usados argumentos nem critérios;
+    <item/>identifique a opção <i>Prepend Home link to the breadcrumb</i>
+           para adicionar a raiz configurada;
+    <item/>adicione os rótulos (link title) e urls (link path) para cada
+           nível do breadcrumb;
+    <lista>
+      <item/>link title: <b>Ouvidoria</b>, link path <b>/ouvidoria</b>;
+      <item/>link title: <b>!page_title</b>, link path <b>< none></b>;
     </lista>
   </lista>
 </lista>
