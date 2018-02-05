@@ -525,6 +525,16 @@ ao valor <b>Node: ID</b>;
   </lista>
 </lista>
 
+<subsubsecao>jQuery Map Hilight</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/jq_maphilight</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/libraries</link><text>Libraries</text>,
+<link>https://github.com/kemayo/maphilight</link><text>jquery Map Hilight plugin</text>.
+  <item>Função</item>: colorizar mapa de links;
+</lista>
+
 <subsecao>Menus</subsecao>
 
 <subsubsecao>Menu block</subsubsecao>
