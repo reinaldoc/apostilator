@@ -266,17 +266,16 @@ um ecossistema colaborativo.
 
     Nesse contexto, a renderização de uma página irá demandar o
 processamento de um conjunto de módulos que realizam acesso à base de dados
-para obter os dados necessários e prover sua respectiva funcionalidade.
-Como consequência, em uma instalação padrão, há um elevado número de
-consultas à base de dados a cada requisição.
- 
-    A apresentação de uma página principal, normalmente composta por
-algumas listagens de conteúdo, um menu principal e menus secundários, pode
-realizar dezenas de consultas à base de dados. Se considerarmos que em uma
-execução serializada das consultas, sob uma base de dados remota, o tempo
-total de renderização da página está relacionado com o tempo individual de
-cada consulta, este não pode levar mais do que 3ms, caso contratário, o
-carregamento da página não será percebido como instantâneo pelo usuário.
+para prover sua respectiva funcionalidade. Como consequência, em uma
+instalação padrão, há um elevado número de consultas à base de dados a cada
+requisição.
+
+    Uma página principal costuma realizar dezenas de consultas à base de
+dados. Se considerarmos que trata-se de execução serializada das consultas,
+sob uma base de dados remota, o tempo total de renderização da página estará
+relacionada com o tempo individual de cada consulta. Caso este tempo de
+consulta leve mais do que 3ms, carregamento da página não será percebido
+como instantâneo pelo usuário.
 
     Assim, é importante a execução de procedimentos relacionados a melhoria
 do desempenho do sistema a fim de manter o tempo de carregamento de página
