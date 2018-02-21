@@ -1096,6 +1096,28 @@ exemplo 726x166 pixels.
 }
 </comando>
 
+<subsubsecao>Views Reference Filter</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/entityreference_filter</url>
+  <item>Função</item>: adicionar filtros em views para campos Entity Reference;
+  <item>Uso</item>:
+  <lista>
+    <item/>crie uma <b>View</b> para exibir um tipo de conteúdo que tenha o
+           campo Entity Reference;
+    <item/>adicione à <b>View</b> um novo display do tipo <b>Entity Reference</b>;
+    <lista>
+      <item/>ajuste o filtro desse display para o tipo de conteúdo
+             referenciado;
+      <item/>selecione nas configurações do formato o campo do conteúdo
+             referenciado que será usado como filtro;
+    </lista>
+    <item/>adicione ao display principal, seja de página ou bloco, um
+           filtro exposto para o campo identificado por <b>(reference filter)</b>;
+    <item/>indique o <b>display Entity Reference</b> nesse filtro;
+  </lista>
+</lista>
+
 <subsecao>Nodes</subsecao>
 
 <subsubsecao>Link (Field)</subsubsecao>
