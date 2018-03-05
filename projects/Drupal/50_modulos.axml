@@ -1588,17 +1588,24 @@ termo ou vocabulário de taxonomia;
   </lista>
 </lista>
 
+<subsubsecao>AddToAny</subsubsecao>
+
+<lista>
+  <item>Download</item>: https://drupal.org/project/addtoany
+  <item>Função</item>: integração para compartilhamento de nodes em redes sociais;
+  <item>Uso</item>:
+  <lista>
+    <item/>acesse as configurações em <b>Serviços Web</b>;
+    <item/>selecione os tipos de conteúdo em que os ícones serão exibidos;
+  </lista>
+</lista>
+
 <subsubsecao>ShareThis</subsubsecao>
 
 <lista>
   <item>Download</item>: https://drupal.org/project/sharethis
   <item>Função</item>: integração para compartilhar nodes em redes sociais;
-  <item>Uso</item>:
-  <lista>
-    <item/>ícones para compartilhar página abaixo do conteúdo;
-  </lista>
 </lista>
-
 
 <subsubsecao>Flag</subsubsecao>
 
