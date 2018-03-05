@@ -184,10 +184,9 @@ interface web do Drupal.
 
     Os utilitários <b>fam</b> - <i>File Alteration Monitor</i> - e
 <b>inotify-tools</b> implementam isto por meio da associação de eventos
-do kernel, uma forma eficiente de monitorar arquivos. Uma alternativa mais
-simples é a utilização do comando <b>md5sum</b>, executado periodicamente
-pelo <b>Cron</b>, associado ao envio de e-mail em caso de alteração ou
-criação de arquivos novos.
+do kernel, uma forma eficiente de monitorar arquivos. Uma alternativa menos
+eficaz é a utilização do comando <b>md5sum</b> periodicamente pelo
+<b>Cron</b>, podendo ser associado ao envio de e-mail em caso de alterações.
 
 <br/>0.2cm
 
