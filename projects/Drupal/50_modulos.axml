@@ -132,10 +132,31 @@ verificações de segurança;
 </lista>
 
     O módulo <b>Apache Log</b> não é configurável e envia para o log apenas
-o UID do usuário no Drupal. Caso deseje logar o nome do usuário, pode-se
-criar um módulo derivado, como <b>Custom Apache Log</b>, fazendo uma cópia
-do diretório <b>sites/all/modules/apachelog</b> e substituindo no código do
-módulo o trecho <b>$user->uid</b> por <b>$user->name</b>.
+o UID do usuário no Drupal. Caso deseje logar o nome do usuário ou o email,
+pode-se criar um módulo derivado a partir do módulo
+<b>sites/all/modules/apachelog</b>, fazendo os ajustes necessários:
+
+<lista>
+  <item/>nome do diretório do módulo: apachelog_custom;
+  <item/>nome dos arquivos do módulo: apachelog_custom.info e apachelog_custom.module;
+  <item/>nome da função do arquivo .module: apachelog_custom_exit();
+</lista>
+
+    Caso as alterações sejam realizadas no próprio módulo <b>Apache Log</b>,
+uma atualização deste módulo irá desfazer esta alteração, entretando é pouco
+provável que seja atualizado, pois ele contém apenas um função simples.
+
+<comandoNumerado>
+function apachelog_custom_exit() {
+    if (function_exists('apache_note')) {
+        global $user;
+        if (isset($user->mail))
+          apache_note('DrupalUID', $user->mail);
+        else
+          apache_note('DrupalUID', 'none');
+    }
+}
+</comandoNumerado>
 
 <comando>
 LogFormat "%h %l %{DrupalUID}n %t \"%r\" %>s %O \"%{Referer}i\"
