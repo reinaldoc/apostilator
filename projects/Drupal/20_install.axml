@@ -385,3 +385,12 @@ instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
 das configurações, consultar as versões dos serviços e conferir se algum
 problema foi detectado nesta instalação.
 
+<subsubsecao>Atualização</subsubsecao>
+
+<comando>
+$ cd /var/www/portal/drupal-7
+$ umask 022
+$ tar xzf /tmp/drupal-7.57.tar.gz --strip 1
+$ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
+$ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
+</comando>
