@@ -151,6 +151,9 @@ necessário alterar o parâmetro:
 # /etc/mysql/mariadb.conf.d/50-server.cnf
 # l.29
 bind-address            = 0.0.0.0
+
+# Fix PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+max_allowed_packet      = 33554432
 </comando>
 
 <step>Recarregar configurações do MySQL/MariaDB</step>
