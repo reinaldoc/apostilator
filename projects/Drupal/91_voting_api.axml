@@ -1,5 +1,22 @@
 <capitulo>Voting API</capitulo>
 
+<subsubsubsecao>Poll</subsubsubsecao>
+
+<lista>
+  <item>Download</item>: Drupal core;
+  <item>Função</item>: tipo de conteúdo para votações de múltipla escolha;
+  <item>Uso</item>: /admin/structure/poll
+  <lista>
+    <item/>cria uma votação;
+    <item/>descreva a questão em votação;
+    <item/>adicione as opções de resposta;
+    <item/>ative a votação;
+    <item/>configure a duração da votação (dias/semanas para desativação da votação);
+  </lista>
+</lista>
+
+    As votações criadas são também disponibilizadas como blocos.
+
 <subsubsubsecao>Advanced Poll</subsubsubsecao>
 
 <lista>
@@ -15,5 +32,10 @@
   <item>Download</item>: <url>https://drupal.org/project/fivestar</url>
   <item>Dependência</item>:
 <link>https://drupal.org/project/votingapi</link><text>Voting API</text>
-  <item>Função</item>: campo (field) para votação por meio de estrelas;
+  <item>Função</item>: campo para votação por meio de estrelas;
+  <item>Uso</item>: /admin/structure/poll
+  <lista>
+    <item/>adicione o campo <b>Fivestar Rating</b> a um tipo de conteúdo;
+    <item/>defina o número para o range de estrelas disponíveis para votação;
+  </lista>
 </lista>

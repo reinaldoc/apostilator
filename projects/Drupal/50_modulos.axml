@@ -1612,7 +1612,7 @@ termo ou vocabulário de taxonomia;
 <subsubsecao>AddToAny</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/addtoany
+  <item>Download</item>: <url>https://drupal.org/project/addtoany</url>
   <item>Função</item>: integração para compartilhamento de nodes em redes sociais;
   <item>Uso</item>:
   <lista>

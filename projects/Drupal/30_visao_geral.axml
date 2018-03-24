@@ -101,8 +101,8 @@ mantenha <b>Nevageção</b> em 1º;
 
    <importante/> Os <b>formatos de texto</b> restringem as <i>tags</i> HTML
 permitidas <u>para campos de texto longo</u>, como o utilizado ao criar um
-bloco. É possível criar novos formatos de texto em <b>Configurações ⇒
-Criação de conteúdo ⇒ Formatos de texto</b>.
+bloco. Podem ser configurados em <b>Configurações ⇒ Criação de conteúdo ⇒
+Formatos de texto</b>.
 
 <subsubsecao>Menus</subsubsecao>
 
@@ -175,20 +175,38 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
     <item/>defina o rótulo do campo de título;
     <item/>desative a opção <b>Promovido para a página inicial</b> em
            <b>Opções de publicação</b>;
+    <lista>
+      <item/>refere-se a exibir este conteúdo na página <b>/node</b>, que
+             por padrão é a página inicial;
+    </lista>
     <item/>verifique a exibição do autor do conteúdo em <b>Opções de
            exibição</b>;
     <item/>desative a publicação de comentários selecionando <b>Fechado</b>;
     <item/>configure os menus autorizados para inserção de item para este
            tipo de conteúdo;
-    <item/>adicione campos dentre os tipos disponíveis: text, image, list,
-           term;
-    <item/>configure o campo (tamanho máximo, número de valores);
+    <lista>
+      <item/>o usuário também precisa de permissão no menu para inserir um
+             conteúdo;
+    </lista>
+    <item/>configure o campo <b>body</b> e altere seu rótulo para
+           <b>Conteúdo da página</b>;
+    <item/>adicione campos dentre os tipos disponíveis: Integer, List(Text),
+           Image, File, etc;
+    <item/>verifique as configurações dos campos (tamanho máximo, número de
+           valores, etc);
     <item/>gerencie a exibição do campo (peso, posição do label e formato);
   </lista>
 </lista>
 
-    A opção <b>Promovido para a página inicial</b>, disponível em <b>Opções
-de publicação</b>, refere-se a exibir este conteúdo na página <b>/node</b>.
+    Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
+formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
+a ordem define a posição dos campos na apresentação do conteúdo, nesta área
+é possível configurar a exibição dos rótulos: em linha, acima ou
+ocultá-los.
+
+    O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
+cada vez que o conteúdo é editado, sendo que o acesso a revisão pode ser ou
+não concedido aos usuários que tem permissão de editar este conteúdo.
 
 <subsubsecao>Taxonomia</subsubsecao>
 

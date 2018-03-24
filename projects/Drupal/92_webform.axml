@@ -4,5 +4,6 @@
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/webform</url>
-  <item>Função</item>: tipo de conteúdo para formulários e pesquisas;
+  <item>Função</item>: tipo de conteúdo para formulários, inclusive para
+                       envio de e-mail;
 </lista>
