@@ -1,22 +1,28 @@
 <capitulo>Introdução ao Drupal</capitulo>
 
     O <link>https://drupal.org</link><text><b>Drupal</b></text> é um
-projeto de código aberto para o gerenciamento de conteúdo em Portais
-Corporativos que <b>tem sido utilizado em grandes projetos</b> por ser
-<u>seguro, altamente customizável e extensível</u>.
+projeto de código aberto para o desenvolvimento de Portais Corporativos
+sem a necessidade de codificação, apesar disso o seu <u>público-alvo são
+desenvolvedores</u>, uma vez que aproxima-se mais de um <i>framework</i> do
+que de um sistema de gerenciamento de conteúdo tradicional.
 
-    Por consequência, estas características não fazem com que o Drupal,
-em um primeiro momento, seja intuitivo de usar, uma vez que normalmente há
-uma relação inversa entre esses fatores. Apesar disso, após imerso na forma
-como o Drupal organiza o conteúdo é inegável a eficiência em entregar
-resultados.
+    A plataforma forne recursos para a criação, edição e remoção de
+conteúdos em diversos tipos de dados, bem como recursos de gerenciamento de
+menus e controle de permissões. O Drupal <b>tem sido utilizado em grandes
+projetos</b> (<link>https://www.drupal.com/showcases</link><text>veja os
+casos de sucesso</text>) por ser <u>seguro, altamente customizável e
+extensível</u>.
 
-    Outra característica relevante é o <u>fraco acoplamento entre as páginas
-HTML e o Drupal</u>. Isso permite que o desenvolvedor <i>front-end</i> crie
-a identidade visual com pouco conhecimento sobre o Drupal ou sobre a
-linguagem de programação em que ele foi desenvolvido, sendo necessário
-conhecer apenas a estrutura dos arquivos de <i>template</i> que são
-utilizados para a criação de temas.
+    Por consequência dessas características, o Drupal tem uma forma
+peculiar, porém lógica, de ser operado, que em um primeiro momento não
+será intuitiva ao desenvolvedor. Apesar disso, após compreender como o
+conteúdo é gerenciado, a entrega de resultados torne-se eficiente.
+
+    Outra característica relevante para o desenvolvedor <i>front-end</i> é
+o <u>fraco acoplamento entre os templates HTML e o Drupal</u>. Isso permite
+que sejam criados temas a partir de arquivos HTML que dependem apenas da
+indicação das áreas em que seus conteúdos serão gerenciados pelo Drupal,
+denominadas <b>Regiões</b>.
 
 <subsecao>Referências</subsecao>
 
