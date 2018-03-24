@@ -460,7 +460,7 @@ conveniente inibir a edição do perfil do usuário com a desativação da aba
 <lista>
   <item>Download</item>: https://drupal.org/project/context
   <item>Dependência</item>: https://drupal.org/project/ctools
-  <item>Função</item>: evolui as configurações de visibilidade dos blocos (if-then-reaction); 
+  <item>Função</item>: fornece condições adicionais para a visibilidade dos blocos;
   <item>Uso</item>: /admin/structure/context
   <lista>
     <item/>criar regras de contexto;
