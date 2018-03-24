@@ -2,21 +2,23 @@
 
     O <link>https://drupal.org</link><text><b>Drupal</b></text> é um
 projeto de código aberto para o desenvolvimento de Portais Corporativos
-sem a necessidade de codificação, apesar disso o seu <u>público-alvo são
+sem a necessidade de codificação, apesar disso, o seu <u>público-alvo são
 desenvolvedores</u>, uma vez que aproxima-se mais de um <i>framework</i> do
 que de um sistema de gerenciamento de conteúdo tradicional.
 
-    A plataforma forne recursos para a criação, edição e remoção de
+    A plataforma fornece recursos para a criação, edição e remoção de
 conteúdos em diversos tipos de dados, bem como recursos de gerenciamento de
-menus e controle de permissões. O Drupal <b>tem sido utilizado em grandes
-projetos</b> (<link>https://www.drupal.com/showcases</link><text>veja os
+menus e controle de permissões. O Drupal tem sido utilizado em grandes
+projetos (<link>https://www.drupal.com/showcases</link><text>veja os
 casos de sucesso</text>) por ser <u>seguro, altamente customizável e
 extensível</u>.
 
     Por consequência dessas características, o Drupal tem uma forma
-peculiar, porém lógica, de ser operado, que em um primeiro momento não
-será intuitiva ao desenvolvedor. Apesar disso, após compreender como o
-conteúdo é gerenciado, a entrega de resultados torne-se eficiente.
+peculiar, porém lógica, de ser operado, que em um primeiro momento pode
+não ser intuitiva ao desenvolvedor. Após compreender como o
+conteúdo é gerenciado, será possível tornar mais eficiente o processo de
+desenvolvimento com a utilização dados estruturados, que aprimoram a
+arquitetura da informação.
 
     Outra característica relevante para o desenvolvedor <i>front-end</i> é
 o <u>fraco acoplamento entre os templates HTML e o Drupal</u>. Isso permite
