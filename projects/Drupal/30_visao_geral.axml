@@ -192,8 +192,9 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
            <b>Conteúdo da página</b>;
     <item/>adicione campos dentre os tipos disponíveis: Integer, List(Text),
            Image, File, etc;
-    <item/>verifique as configurações dos campos (tamanho máximo, número de
-           valores, etc);
+    <lista>
+      <item/>verifique as configurações específicas por tipo de campo;
+    </lista>
     <item/>gerencie a exibição do campo (peso, posição do label e formato);
   </lista>
 </lista>
@@ -227,6 +228,18 @@ tipo gênero e espécie. A taxanomia é representada por um campo do tipo
     <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de conteúdo;
   </lista>
 </lista>
+
+    A <b>taxonomia</b> assemelha-se ao campo <b>List(Text)</b>, porém com
+recursos adicionais. É possível adicionar campos à taxonomia, assim, um
+termo pode possuir múltiplas formas de exibição, como "Anexo III -
+Estruturas remuneratórias" ou "Anexo III", o que permite, por exemplo,
+exibir sua descrição completa em uma página e utilizar a forma reduzida do
+termo como parte do nome de um arquivo presente no respectivo conteúdo.
+
+    Outro recurso da taxonomia é a vinculação de uma URL a listagem de
+todos os conteúdos que estão identificadados com determinado termo. O módulo
+<b>pathauto</b> também permite gerar essas URLs a partir de um padrão de
+tokens.
 
 <subsecao>Conteúdo (node)</subsecao>
 
