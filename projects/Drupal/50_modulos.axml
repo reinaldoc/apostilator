@@ -1282,9 +1282,11 @@ pattern</b> o token <b>[node:content-type:machine-name]/[node:title]</b>
 para prefixar a URL com o nome do tipo de conteúdo.
 
     Também é possível regerar todas as URLs alternativas a partir da opção
-<b>Bulk generate</b> nas configurações. Isso pode ser útil quando um
-<b>Pattern</b> é alterado, caso contrário, apenas quando o conteúdo for
-salvo a URL será atualizada.
+<b>Bulk generate</b> nas configurações, além disso, pode-se regerar as URLs
+para um tipo de conteúdo específico, acesse o item <b>Conteúdo</b> do menu
+administrativo, depois selecione o tipo de conteúdo e use a opção <b>Update
+URL alias</b>. Isso pode ser útil quando um <b>Pattern</b> é alterado, caso
+contrário, apenas quando o conteúdo for salvo a URL será atualizada.
 
 <subsubsecao>Submitted By</subsubsecao>
 
