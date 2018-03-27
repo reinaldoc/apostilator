@@ -1139,6 +1139,37 @@ exemplo 726x166 pixels.
   </lista>
 </lista>
 
+
+<subsubsecao>EVA: Entity Views Attachment</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/eva</url>
+  <item>Função</item>: apresenta uma View como um campo de determinado tipo
+                       de conteúdo;
+  <item>Uso</item>:
+  <lista>
+    <item/>crie uma <b>View Master</b> (nem bloco nem página) para exibir
+           um certo tipo de conteúdo;
+    <item/>adicione um <b>display Eva Field</b>;
+    <item/>indique o tipo de entidade (<b>Node</b>) em que essa View será
+           apresentada como um campo;
+    <item/>indique o tipo de conteúdo em que essa View será apresentada
+           como um campo;
+    <item/>ative a opção para exibir o título da View no conteúdo;
+    <item/>adicione um filtro contextual para obter o id do conteúdo;
+  </lista>
+</lista>
+
+    A única vantagem em utilizar este módulo é capacidade de apresentar
+uma View entre os campos do conteúdo, uma vez que uma View de bloco
+somente pode ser exibida acima ou baixo dos campos do conteúdo.
+
+    A não ser por algum requisito exótico de apresentar a mesma view como
+um campo para qualquer conteúdo de determinado tipo, a utilização deste
+módulo será em conjunto com o módulo <b>Entity Reference</b> e com a
+utilização de filtro contextual para apresentar uma lista de algum tipo de
+conteúdo que possui relacionamento com o conteúdo apresentado.
+
 <subsecao>Nodes</subsecao>
 
 <subsubsecao>Link (Field)</subsubsecao>
