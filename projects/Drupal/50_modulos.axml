@@ -173,7 +173,8 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined-drupal
   <item>Download</item>: <url>https://drupal.org/project/l10n_update</url>
   <item>Função</item>: implementa o mecanismo para <i>download</i> da
 tradução da interface web;
-  <item>Uso</item>: /admin/config/regional/language
+  <item>Uso</item>: /admin/config/regional/language [Regional and
+                    language  → Languages];
   <lista>
     <item/>habilite o módulo <b>Localization update</b>;
     <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
