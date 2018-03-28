@@ -309,6 +309,8 @@ catálogo que também simplifica essa tarefa.
   <lista>
     <item/>liste os módulos instalados e os ativados;
     <item/>desative o módulo <b>Overlay</b>;
+    <item/>ative o módulo <b>Syslog</b> para que as mensagens de log sejam
+    enviadas ao syslog;
     <item/>ative módulo <b>Update manager</b> para permitir instalação de
            novos módulos pela web;
     <item/>identifique o local de instalação dos módulos:
