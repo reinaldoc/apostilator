@@ -1173,6 +1173,20 @@ conteúdo que possui relacionamento com o conteúdo apresentado.
 
 <subsecao>Nodes</subsecao>
 
+<subsubsecao>Extend Image Module</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/eim</url>
+  <item>Função</item>: permite que o <b>Texto Alternativo (alt)</b> e o
+<b>Title</b> de imagens sejam obrigatórios;
+  <item>Uso</item>:
+  <lista>
+    <item/>edite um campo de Imagem;
+    <item/>selecione as opções <i>Habilitar campo Alt</i> e <i>Alt field
+           required</i>;
+  </lista>
+</lista>
+
 <subsubsecao>Link (Field)</subsubsecao>
 
 <lista>
