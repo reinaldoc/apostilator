@@ -39,3 +39,22 @@
     <item/>defina o número para o range de estrelas disponíveis para votação;
   </lista>
 </lista>
+
+    O módulo <b>Fivestar</b> permite que a seleção do número de estrelas de
+determinado conteúdo seja realizado pela página de apresentação do conteúdo,
+ou seja, não necessita editar o conteúdo para definir um valor. O valor é
+armazenado por usuário, podendo-se apresentar a média dos valores.
+
+<subsubsubsecao>Star Rating</subsubsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/starrating</url>
+  <item>Função</item>: campo classificação em número de estrelas: uma a dez;
+  <item>Uso</item>:
+  <lista>
+    <item/>adicione o campo <b>Star Rating</b> a um tipo de conteúdo;
+    <item/>defina o número para o range de estrelas disponíveis;
+    <item/>gerenciar exibição: configure o ícone que será usado (padrão
+           estrelas);
+  </lista>
+</lista>
