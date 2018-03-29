@@ -268,6 +268,24 @@ pode ser submetido. É um forma de mitigar abusos e bots.
 
 <subsecao>Desempenho</subsecao>
 
+    Há três dimensões relevantes quanto ao desempenho, a primeira, em uma
+visão <i>bottom-up</i>, é o número de consultas à bases de dados, que está
+diretamente ligada ao código do Drupal, ou seja, o <u>desempenho da
+aplicação</u>.
+
+    A segunda dimensão refere-se aos objetos do projeto do site, que depende
+do trabalho do desenvolvedor ao avaliar o tamanho das imagens, o número de
+requisições web, a minificação e unificação dos arquivos de estilos e dos
+arquivos de JavaScript, isto é, o <u>desempenho do site</u>.
+
+    A terceira abrange a capacidade de processamento do <i>host</i> que
+processará a aplicação, bem como as configurações do sistema operacional
+para não limitar o uso de recursos do hardware, além da condição da rede de
+acesso do usuário, seja a largura de banda ou a latência, nesse caso, o
+<u>desempenho da infraestrutura</u>.
+
+<subsubsecao>Desempenho da Aplicação</subsubsecao>
+
     É comum que o desempenho de um <i>software</i> esteja relacionado ao
 seu <i>design</i> que, por sua vez, sofre influência dos requisitos ou,
 no caso de sistemas de código aberto, das diretrizes de seu autor. O
@@ -282,11 +300,11 @@ instalação padrão, há um elevado número de consultas à base de dados a cad
 requisição.
 
     Uma página principal costuma realizar dezenas de consultas à base de
-dados. Se considerarmos que trata-se de execução serializada das consultas,
-sob uma base de dados remota, o tempo total de renderização da página estará
-relacionada com o tempo individual de cada consulta. Caso este tempo de
-consulta leve mais do que 3ms, carregamento da página não será percebido
-como instantâneo pelo usuário.
+dados. Se considerarmos que trata-se de execução serializada, sob uma base
+de dados remota, o tempo total de renderização da página estará relacionada
+com o somatório do tempo individual de cada consulta. Caso o tempo médio de
+cada consulta seja superior a 3ms, o carregamento da página não será
+percebido como instantâneo.
 
     Assim, é importante a execução de procedimentos relacionados a melhoria
 do desempenho do sistema a fim de manter o tempo de carregamento de página
@@ -295,11 +313,34 @@ disponíveis em:
 
 <url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>
 
-    A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
-de consultas à base de dados, por isso é importante ativá-la. Acesse as
-configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative as opções:
-<b>Manter cache de páginas para usuários anônimos</b> e <b>Manter cache de
-blocos</b>, dessa forma, somente quando houver modificações na base de
-dados, que o conjunto completo de consultas será executado. Entretanto,
-esse benefício é restrito às requisições em que o usuário não esteja
-logado.
+<subsubsecao>Site Caching</subsubsecao>
+
+    Os procedimentos de <b>caching</b>, no contexto da aplicação, tem por
+objetivo armazenar o conteúdo a fim de evitar um novo processamento para
+produzí-lo em uma requisição posterior, inclusive quanto ao acesso à base de
+dados, ainda que requisição seja realizada por distintos usuários.
+
+    O Drupal fornece recurso de <b>caching</b> que armazena a página
+processada no banco de dados, o que reduz drasticamente a quantidade
+de consultas, por isso é importante ativá-lo. Com isso, o conjunto completo
+de consultas será executado somente quando houver modificações na base de
+dados, armazenando-a novamente até a próxima modificação.
+
+    Acesse as configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative
+as opções: <b>Manter cache de páginas para usuários anônimos</b> e <b>Manter
+cache de blocos</b>. Esse recurso restringe-se às requisições em que o
+usuário não esteja autenticado no site.
+
+    Apesar do Drupal gerenciar a cache automaticamente, ou seja,
+atualizando-a quando a página for alterada, em caso de projeto de milhares de
+acessos simultâneos e de constante atualização do conteúdo, pode-se determinar 
+um período de tempo para a cache ser utilizada, ainda que a página tenha sido
+editada, isso é realizado pela opção <b>Tempo mínimo de vida do cache</b>.
+
+    O controle da cache do cliente é realizado pela opção <b>Vencimento das
+páginas cacheadas</b> que adiciona ao cabeçalho de resposta o atributo
+"Cache-Control: public, max-age=600", se configurado, por exemplo, para 10
+minutos. Importante ressaltar que este cabeçalho não será adicionado a
+páginas que utilizam blocos que desativam a cache, como o módulo CAPTCHA,
+por exemplo, todas as páginas que apresentam o bloco de autenticação do
+usuário.
