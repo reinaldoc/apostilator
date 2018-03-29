@@ -264,7 +264,7 @@ Forgery, Clickjacking, man-in-the-middle e eavesdropping.
 
     O módulo <link>https://drupal.org/project/honeypot</link>
 <text><b>Honeypot</b></text> define um tempo mínimo antes de um formulário
-pode ser submetido. É um forma de mitigar abusos e bots.
+poder ser submetido. É um forma de mitigar abusos e bots.
 
 <subsecao>Desempenho</subsecao>
 
