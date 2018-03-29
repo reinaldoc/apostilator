@@ -1,5 +1,13 @@
 <capitulo>Webform</capitulo>
 
+    O Drupal fornece o módulo <b>Contact</b> que provê um formulário básico
+em que o usuário do site pode enviar uma mensagem ao administrador. O
+formulário produz um e-mail a partir dos campos de nome, e-mail,
+assunto, categoria e mensagem. Há um link desabilitado no menu
+<b>Navigation</b> para esse formulário de contato.
+
+<br/>0.3cm
+
 <subsubsubsecao>Webform</subsubsubsecao>
 
 <lista>
