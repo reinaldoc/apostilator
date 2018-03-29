@@ -1744,6 +1744,10 @@ forneçam esse recurso, que são customizáveis pela configuração do tema.
   </lista>
 </lista>
 
+    O submódulo <b>View content panes</b> permite que <b>Views</b> sejam
+alocadas em <b>Panels</b>, já o submódulo <b>Mini pager</b> permite criar
+blocos a partir de <b>Panels</b>..
+
 <subsubsecao>Panel Pages</subsubsecao>
 
 <lista>
