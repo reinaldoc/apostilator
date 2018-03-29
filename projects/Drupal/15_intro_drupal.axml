@@ -335,7 +335,8 @@ usuário não esteja autenticado no site.
 atualizando-a quando a página for alterada, em caso de projeto de milhares de
 acessos simultâneos e de constante atualização do conteúdo, pode-se determinar 
 um período de tempo para a cache ser utilizada, ainda que a página tenha sido
-editada, isso é realizado pela opção <b>Tempo mínimo de vida do cache</b>.
+editada ou removida, isso é realizado pela opção <b>Tempo mínimo de vida do
+cache</b>.
 
     O controle da cache do cliente é realizado pela opção <b>Vencimento das
 páginas cacheadas</b> que adiciona ao cabeçalho de resposta o atributo
