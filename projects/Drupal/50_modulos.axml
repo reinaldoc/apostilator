@@ -686,12 +686,17 @@ determinado menu, é necessário, além de conceder permissão para
 administração desse menu, que o menu esteja vinculado ao respectivo tipo de
 conteúdo. Esse vínculo é realizado na edição do tipo de conteúdo.
 
-    Em relação as outras opções de configuração do conteúdo que estão
-disponíveis ao usuário administrador, como a indicação de publicado ou
+    <br/>0.3cm
+
+<subsubsubsecao>Configuração das opções do tipo de conteúdo por node</subsubsubsecao>
+
+    Em relação as outras opções de configuração do tipo de conteúdo que
+estão disponíveis ao usuário administrador, como a indicação de publicado ou
 despublicado, as informações de autor ou controle de revisões, o módulo
 <link>https://drupal.org/project/override_node_options</link><text><b>Override
-Node Options</b></text> fornece novas permissões para esse fim. Já para que
-o usuário possa alterar a URL do conteúdo, o módulo
+Node Options</b></text> fornece novas permissões para esse fim.
+
+    Já para que o usuário possa alterar a URL do conteúdo, o módulo
 <link>https://drupal.org/project/url_alias_permissions</link><text><b>URL
 Alias Permissions</b></text> fornece novas permissões para isso. O módulo
 <link>https://drupal.org/project/exclude_node_author</link>
@@ -700,10 +705,23 @@ informação do autor para cada conteúdo.
 
     Além da permissão para despublicar determinado conteúdo, será útil
 que o usuário continue conseguindo acessar esse conteúdo que foi
-despublicado, para isso é necessário as permissões fornecidas pelo módulo
+despublicado, para isso são necessárias as permissões fornecidas pelo módulo
 <link>https://www.drupal.org/project/view_unpublished</link>
 <text><b>view_unpublished</b></text>.
 
+    Entretanto o módulo <b>view_unpublished</b> provoca que o Drupal
+desabilite completamente o recurso de cache de blocos, uma vez que esse
+recurso verifica se algum módulo instalado implementa a função
+hook_node_grants(), que é o caso desse módulo.
+
+    Caso opte por usar esse módulo, avalie configurar a opção
+<b>$conf['block_cache_bypass_node_ grants'] = "TRUE";</b> no
+<i>settings.php</i>, 
+<link>https://docs.acquia.com/article/fixing-disabled-block-caching</link>
+<text>veja mais neste link</text>.
+Outra opção de contornar essa restrição é por meio do módulo
+<link>http://drupal.org/project/blockcache_alter</link><text><b>Block Cache
+Alter</b></text>.
 
 <subsubsecao>Superfish</subsubsecao>
 
