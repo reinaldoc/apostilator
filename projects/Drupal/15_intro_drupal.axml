@@ -276,7 +276,13 @@ aplicação</u>.
     A segunda dimensão refere-se aos objetos do projeto do site, que depende
 do trabalho do desenvolvedor ao avaliar o tamanho das imagens, o número de
 requisições web, a minificação e unificação dos arquivos de estilos e dos
-arquivos de JavaScript, isto é, o <u>desempenho do site</u>.
+arquivos de JavaScript, isto é, o <u>desempenho do site</u>. Há
+configurações em <b>Desenvolvimento ⇒ Desempenho</b> que podem ajudar.
+
+    O módulo <link>https://drupal.org/project/advagg</link><text>Advanced
+CSS/JS Aggregation</text> adiciona novas opções para unificação de arquivos
+CSS e JS, porém os recursos já disponíveis no Drupal costumam ser
+suficientes.
 
     A terceira abrange a capacidade de processamento do <i>host</i> que
 processará a aplicação, bem como as configurações do sistema operacional
@@ -297,7 +303,10 @@ um ecossistema colaborativo.
 processamento de um conjunto de módulos que realizam acesso à base de dados
 para prover sua respectiva funcionalidade. Como consequência, em uma
 instalação padrão, há um elevado número de consultas à base de dados a cada
-requisição.
+requisição. Pode-se fazer um <i>dump</i> do tráfego de rede a uma base MySQL
+para verificar o número de consultas: <b>tcpdump -i eth0 -nn -s0 -A port
+3306 | grep -i SELECT</b> ou habilitar a opção <b>general_log</b> na
+configuração para que as consultas sejam salvas em /var/log/mysql/mysql.log.
 
     Uma página principal costuma realizar dezenas de consultas à base de
 dados. Se considerarmos que trata-se de execução serializada, sob uma base
