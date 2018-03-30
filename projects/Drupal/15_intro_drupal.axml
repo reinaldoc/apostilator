@@ -89,6 +89,8 @@ os exemplos:
   <item/><url>https://simplytest.me/project/views/7.x-3.18?add[]=devel&add[]=admin_menu</url>
 </lista>
 
+<quebraPagina/>
+
 <subsecao>Segurança</subsecao>
 
     A <b>segurança da informação</b> é um processo contínuo de avaliação
@@ -155,8 +157,6 @@ Quando for possível implementá-los, consulte os módulos <b>tfa</b> e
     <item/><url>https://drupal.org/project/tfa</url>
     <item/><url>https://drupal.org/project/certificatelogin</url>
   </lista>
-
-<quebraPagina/>
 
 <step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
 <lista>
