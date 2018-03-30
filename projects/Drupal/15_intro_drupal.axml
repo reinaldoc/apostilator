@@ -327,13 +327,14 @@ disponíveis em:
     Os procedimentos de <b>caching</b>, no contexto da aplicação, tem por
 objetivo armazenar o conteúdo a fim de evitar um novo processamento para
 produzí-lo em uma requisição posterior, inclusive quanto ao acesso à base de
-dados, ainda que requisição seja realizada por distintos usuários.
+dados, ainda que a requisição seja realizada por usuários distintos.
 
     O Drupal fornece recurso de <b>caching</b> que armazena a página
 processada no banco de dados, o que reduz drasticamente a quantidade
 de consultas, por isso é importante ativá-lo. Com isso, o conjunto completo
 de consultas será executado somente quando houver modificações na base de
-dados, armazenando-a novamente até a próxima modificação.
+dados, armazenando-a novamente nas tabelas <b>cache_*</b> até a próxima
+modificação.
 
     Acesse as configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative
 as opções: <b>Manter cache de páginas para usuários anônimos</b> e <b>Manter
@@ -341,16 +342,16 @@ cache de blocos</b>. Esse recurso restringe-se às requisições em que o
 usuário não esteja autenticado no site.
 
     Apesar do Drupal gerenciar a cache automaticamente, ou seja,
-atualizando-a quando a página for alterada, em caso de projeto de milhares de
-acessos simultâneos e de constante atualização do conteúdo, pode-se determinar 
-um período de tempo para a cache ser utilizada, ainda que a página tenha sido
-editada ou removida, isso é realizado pela opção <b>Tempo mínimo de vida do
-cache</b>.
+tornando inválida a cache da página editada para que ela seja atualizada na
+próxima requisição, em projetos de milhares de acessos simultâneos e de
+constante atualização do conteúdo pode-se determinar um período de tempo
+para a cache ser utilizada, ainda que a página tenha sido editada ou
+removida, isso é realizado pela opção <b>Tempo mínimo de vida do cache</b>.
 
     O controle da cache do cliente é realizado pela opção <b>Vencimento das
 páginas cacheadas</b> que adiciona ao cabeçalho de resposta o atributo
-"Cache-Control: public, max-age=600", se configurado, por exemplo, para 10
-minutos. Importante ressaltar que este cabeçalho não será adicionado a
-páginas que utilizam blocos que desativam a cache, como o módulo CAPTCHA,
-por exemplo, todas as páginas que apresentam o bloco de autenticação do
-usuário.
+"Cache-Control: public, max-age=600", quando configurado, por exemplo, para
+10 minutos. Importante ressaltar que este cabeçalho não será adicionado a
+páginas que utilizam blocos que desativam a cache, como o bloco provido pelo
+módulo CAPTCHA, nesse exemplo, não aplica-se a todas as páginas que
+apresentarem esse bloco.
