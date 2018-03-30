@@ -70,6 +70,25 @@ consulte a seção<ref>module-l10n-update</ref>.
   </lista>
 </lista>
 
+<subsubsecao>Simplytest.me</subsubsecao>
+
+    O simplytest fornece instâncias temporárias do Drupal a partir da
+instalação automatizada de um conjunto de módulos e temas selecionados,
+com resolução automática de dependência. Use a opção <b>Advanced Options</b>
+para selecionais os módulos e temas adicionais que devem ser instalados.
+
+    A seleção dos módulos pode ser realizada diretamente pela URL, conforme
+os exemplos:
+
+<lista>
+  <item/><url>https://simplytest.me/project/drupal</url>
+  <item/><url>https://simplytest.me/project/drupal/7.58</url>
+  <item/><url>https://simplytest.me/project/navbar?add[]=devel</url>
+  <item/><url>https://simplytest.me/project/navbar?add[]=devel&add[]=views</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.18</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.18?add[]=devel&add[]=admin_menu</url>
+</lista>
+
 <subsecao>Segurança</subsecao>
 
     A <b>segurança da informação</b> é um processo contínuo de avaliação
