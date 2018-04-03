@@ -1,22 +1,30 @@
 <capitulo>Introdução ao Drupal</capitulo>
 
     O <link>https://drupal.org</link><text><b>Drupal</b></text> é um
-projeto de código aberto para o gerenciamento de conteúdo em Portais
-Corporativos que <b>tem sido utilizado em grandes projetos</b> por ser
-<u>seguro, altamente customizável e extensível</u>.
+projeto de código aberto para o desenvolvimento de Portais Corporativos
+sem a necessidade de codificação, apesar disso, o seu <u>público-alvo são
+desenvolvedores</u>, diferentemente dos sistemas de gerenciamento de
+conteúdo tradicionais em que o usuário final também é um público-alvo.
 
-    Por consequência, estas características não fazem com que o Drupal,
-em um primeiro momento, seja intuitivo de usar, uma vez que normalmente há
-uma relação inversa entre esses fatores. Apesar disso, após imerso na forma
-como o Drupal organiza o conteúdo é inegável a eficiência em entregar
-resultados.
+    A plataforma fornece recursos para a criação, edição e remoção de
+conteúdos em diversos tipos de dados, bem como recursos de gerenciamento de
+menus e controle de permissões. O Drupal tem sido utilizado em grandes
+projetos (<link>https://www.drupal.com/showcases</link><text>veja os
+casos de sucesso</text>) por ser <u>altamente customizável e extensível</u>,
+uma vez que é organizado como um <i>framework</i>.
 
-    Outra característica relevante é o <u>fraco acoplamento entre as páginas
-HTML e o Drupal</u>. Isso permite que o desenvolvedor <i>front-end</i> crie
-a identidade visual com pouco conhecimento sobre o Drupal ou sobre a
-linguagem de programação em que ele foi desenvolvido, sendo necessário
-conhecer apenas a estrutura dos arquivos de <i>template</i> que são
-utilizados para a criação de temas.
+    O Drupal utiliza estruturas de dados em forma de entidades, com campos
+específicos para texto, números, data, arquivos, imagens, bem como para
+relacionamento entre as entidades. Esses dados podem ser apresentados de
+diferentes formas, seja em lista, tabela, grid, slideshow, accordion, etc.
+Parace programação? É programação, porém por meio de lógica e configuração,
+sem codificação na maioria dos projetos.
+
+    Outra característica relevante para o desenvolvedor <i>front-end</i> é
+o <u>fraco acoplamento entre os templates HTML e o Drupal</u>. Isso permite
+que sejam criados temas a partir de arquivos HTML que dependem apenas da
+indicação das áreas que terão seus conteúdos gerenciados pelo Drupal,
+denominadas <b>Regiões</b>.
 
 <subsecao>Referências</subsecao>
 
@@ -61,6 +69,27 @@ consulte a seção<ref>module-l10n-update</ref>.
     <item/><url>https://drupal.org/project/project_theme</url> [temas]
   </lista>
 </lista>
+
+<subsubsecao>Simplytest.me</subsubsecao>
+
+    O simplytest fornece instâncias temporárias do Drupal a partir da
+instalação automatizada de um conjunto de módulos e temas selecionados,
+com resolução automática de dependência. Use a opção <b>Advanced Options</b>
+para selecionais os módulos e temas adicionais que devem ser instalados.
+
+    A seleção dos módulos pode ser realizada diretamente pela URL, conforme
+os exemplos:
+
+<lista>
+  <item/><url>https://simplytest.me/project/drupal</url>
+  <item/><url>https://simplytest.me/project/drupal/7.58</url>
+  <item/><url>https://simplytest.me/project/navbar?add[]=devel</url>
+  <item/><url>https://simplytest.me/project/navbar?add[]=devel&add[]=views</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.18</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.18?add[]=devel&add[]=admin_menu</url>
+</lista>
+
+<quebraPagina/>
 
 <subsecao>Segurança</subsecao>
 
@@ -128,8 +157,6 @@ Quando for possível implementá-los, consulte os módulos <b>tfa</b> e
     <item/><url>https://drupal.org/project/tfa</url>
     <item/><url>https://drupal.org/project/certificatelogin</url>
   </lista>
-
-<quebraPagina/>
 
 <step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
 <lista>
@@ -254,7 +281,35 @@ inseguro.</step>
 ajudam a evitar ataques de Cross-site Scripting, Cross-site Request
 Forgery, Clickjacking, man-in-the-middle e eavesdropping.
 
+    O módulo <link>https://drupal.org/project/honeypot</link>
+<text><b>Honeypot</b></text> define um tempo mínimo antes de um formulário
+poder ser submetido. É um forma de mitigar abusos e bots.
+
 <subsecao>Desempenho</subsecao>
+
+    Há três dimensões relevantes quanto ao desempenho, a primeira, em uma
+visão <i>bottom-up</i>, é o número de consultas à bases de dados, que está
+diretamente ligada ao código do Drupal, ou seja, o <u>desempenho da
+aplicação</u>.
+
+    A segunda dimensão refere-se aos objetos do projeto do site, que depende
+do trabalho do desenvolvedor ao avaliar o tamanho das imagens, o número de
+requisições web, a minificação e unificação dos arquivos de estilos e dos
+arquivos de JavaScript, isto é, o <u>desempenho do site</u>. Há
+configurações em <b>Desenvolvimento ⇒ Desempenho</b> que podem ajudar.
+
+    O módulo <link>https://drupal.org/project/advagg</link><text>Advanced
+CSS/JS Aggregation</text> adiciona novas opções para unificação de arquivos
+CSS e JS, porém os recursos já disponíveis no Drupal costumam ser
+suficientes.
+
+    A terceira abrange a capacidade de processamento do <i>host</i> que
+processará a aplicação, bem como as configurações do sistema operacional
+para não limitar o uso de recursos do hardware, além da condição da rede de
+acesso do usuário, seja a largura de banda ou a latência, nesse caso, o
+<u>desempenho da infraestrutura</u>.
+
+<subsubsecao>Desempenho da Aplicação</subsubsecao>
 
     É comum que o desempenho de um <i>software</i> esteja relacionado ao
 seu <i>design</i> que, por sua vez, sofre influência dos requisitos ou,
@@ -267,14 +322,17 @@ um ecossistema colaborativo.
 processamento de um conjunto de módulos que realizam acesso à base de dados
 para prover sua respectiva funcionalidade. Como consequência, em uma
 instalação padrão, há um elevado número de consultas à base de dados a cada
-requisição.
+requisição. Pode-se fazer um <i>dump</i> do tráfego de rede a uma base MySQL
+para verificar o número de consultas: <b>tcpdump -i eth0 -nn -s0 -A port
+3306 | grep -i SELECT</b> ou habilitar a opção <b>general_log</b> na
+configuração para que as consultas sejam salvas em /var/log/mysql/mysql.log.
 
     Uma página principal costuma realizar dezenas de consultas à base de
-dados. Se considerarmos que trata-se de execução serializada das consultas,
-sob uma base de dados remota, o tempo total de renderização da página estará
-relacionada com o tempo individual de cada consulta. Caso este tempo de
-consulta leve mais do que 3ms, carregamento da página não será percebido
-como instantâneo pelo usuário.
+dados. Se considerarmos que trata-se de execução serializada, sob uma base
+de dados remota, o tempo total de renderização da página estará relacionada
+com o somatório do tempo individual de cada consulta. Caso o tempo médio de
+cada consulta seja superior a 3ms, o carregamento da página não será
+percebido como instantâneo.
 
     Assim, é importante a execução de procedimentos relacionados a melhoria
 do desempenho do sistema a fim de manter o tempo de carregamento de página
@@ -283,11 +341,36 @@ disponíveis em:
 
 <url>https://drupal.org/docs/7/managing-site-performance-and-scalability</url>
 
-    A cache padrão do Drupal é um recurso que reduz drasticamente a quantidade
-de consultas à base de dados, por isso é importante ativá-la. Acesse as
-configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative as opções:
-<b>Manter cache de páginas para usuários anônimos</b> e <b>Manter cache de
-blocos</b>, dessa forma, somente quando houver modificações na base de
-dados, que o conjunto completo de consultas será executado. Entretanto,
-esse benefício é restrito às requisições em que o usuário não esteja
-logado.
+<subsubsecao>Site Caching</subsubsecao>
+
+    Os procedimentos de <b>caching</b>, no contexto da aplicação, tem por
+objetivo armazenar o conteúdo a fim de evitar um novo processamento para
+produzí-lo em uma requisição posterior, inclusive quanto ao acesso à base de
+dados, ainda que a requisição seja realizada por usuários distintos.
+
+    O Drupal fornece recurso de <b>caching</b> que armazena a página
+processada no banco de dados, o que reduz drasticamente a quantidade
+de consultas, por isso é importante ativá-lo. Com isso, o conjunto completo
+de consultas será executado somente quando houver modificações na base de
+dados, armazenando-a novamente nas tabelas <b>cache_*</b> até a próxima
+modificação.
+
+    Acesse as configurações em <b>Desenvolvimento ⇒ Desempenho</b> e ative
+as opções: <b>Manter cache de páginas para usuários anônimos</b> e <b>Manter
+cache de blocos</b>. Esse recurso restringe-se às requisições em que o
+usuário não esteja autenticado no site.
+
+    Apesar do Drupal gerenciar a cache automaticamente, ou seja,
+tornando inválida a cache da página editada para que ela seja atualizada na
+próxima requisição, em projetos de milhares de acessos simultâneos e de
+constante atualização do conteúdo pode-se determinar um período de tempo
+para a cache ser utilizada, ainda que a página tenha sido editada ou
+removida, isso é realizado pela opção <b>Tempo mínimo de vida do cache</b>.
+
+    O controle da cache do cliente é realizado pela opção <b>Vencimento das
+páginas cacheadas</b> que adiciona ao cabeçalho de resposta o atributo
+"Cache-Control: public, max-age=600", quando configurado, por exemplo, para
+10 minutos. Importante ressaltar que este cabeçalho não será adicionado a
+páginas que utilizam blocos que desativam a cache, como o bloco provido pelo
+módulo CAPTCHA, nesse exemplo, não aplica-se a todas as páginas que
+apresentarem esse bloco.

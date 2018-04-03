@@ -101,8 +101,8 @@ mantenha <b>Nevageção</b> em 1º;
 
    <importante/> Os <b>formatos de texto</b> restringem as <i>tags</i> HTML
 permitidas <u>para campos de texto longo</u>, como o utilizado ao criar um
-bloco. É possível criar novos formatos de texto em <b>Configurações ⇒
-Criação de conteúdo ⇒ Formatos de texto</b>.
+bloco. Podem ser configurados em <b>Configurações ⇒ Criação de conteúdo ⇒
+Formatos de texto</b>.
 
 <subsubsecao>Menus</subsubsecao>
 
@@ -175,20 +175,39 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
     <item/>defina o rótulo do campo de título;
     <item/>desative a opção <b>Promovido para a página inicial</b> em
            <b>Opções de publicação</b>;
+    <lista>
+      <item/>refere-se a exibir este conteúdo na página <b>/node</b>, que
+             por padrão é a página inicial;
+    </lista>
     <item/>verifique a exibição do autor do conteúdo em <b>Opções de
            exibição</b>;
     <item/>desative a publicação de comentários selecionando <b>Fechado</b>;
     <item/>configure os menus autorizados para inserção de item para este
            tipo de conteúdo;
-    <item/>adicione campos dentre os tipos disponíveis: text, image, list,
-           term;
-    <item/>configure o campo (tamanho máximo, número de valores);
+    <lista>
+      <item/>o usuário também precisa de permissão no menu para inserir um
+             conteúdo;
+    </lista>
+    <item/>configure o campo <b>body</b> e altere seu rótulo para
+           <b>Conteúdo da página</b>;
+    <item/>adicione campos dentre os tipos disponíveis: Integer, List(Text),
+           Image, File, etc;
+    <lista>
+      <item/>verifique as configurações específicas por tipo de campo;
+    </lista>
     <item/>gerencie a exibição do campo (peso, posição do label e formato);
   </lista>
 </lista>
 
-    A opção <b>Promovido para a página inicial</b>, disponível em <b>Opções
-de publicação</b>, refere-se a exibir este conteúdo na página <b>/node</b>.
+    Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
+formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
+a ordem define a posição dos campos na apresentação do conteúdo, nesta área
+é possível configurar a exibição dos rótulos: em linha, acima ou
+ocultá-los.
+
+    O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
+cada vez que o conteúdo é editado, sendo que o acesso a revisão pode ser ou
+não concedido aos usuários que tem permissão de editar este conteúdo.
 
 <subsubsecao>Taxonomia</subsubsecao>
 
@@ -209,6 +228,18 @@ tipo gênero e espécie. A taxanomia é representada por um campo do tipo
     <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de conteúdo;
   </lista>
 </lista>
+
+    A <b>taxonomia</b> assemelha-se ao campo <b>List(Text)</b>, porém com
+recursos adicionais. É possível adicionar campos à taxonomia, assim, um
+termo pode possuir múltiplas formas de exibição, como "Anexo III -
+Estruturas remuneratórias" ou "Anexo III", o que permite, por exemplo,
+exibir sua descrição completa em uma página e utilizar a forma reduzida do
+termo como parte do nome de um arquivo presente no respectivo conteúdo.
+
+    Outro recurso da taxonomia é a vinculação de uma URL a listagem de
+todos os conteúdos que estão identificadados com determinado termo. O módulo
+<b>pathauto</b> também permite gerar essas URLs a partir de um padrão de
+tokens.
 
 <subsecao>Conteúdo (node)</subsecao>
 
@@ -278,6 +309,8 @@ catálogo que também simplifica essa tarefa.
   <lista>
     <item/>liste os módulos instalados e os ativados;
     <item/>desative o módulo <b>Overlay</b>;
+    <item/>ative o módulo <b>Syslog</b> para que as mensagens de log sejam
+    enviadas ao syslog;
     <item/>ative módulo <b>Update manager</b> para permitir instalação de
            novos módulos pela web;
     <item/>identifique o local de instalação dos módulos:
@@ -414,6 +447,7 @@ cada projeto.
 
 <lista>
   <item/><url>http://www.zymphonies.com/drupal-premium-theme</url>
+  <item/><url>https://www.themebrain.com</url>
   <item/><url>https://www.templatemonster.com/drupal-themes.php</url>
   <item/><url>https://adaptivethemes.com/project/themes</url>
   <item/><url>https://themeforest.net/category/cms-themes/drupal</url>

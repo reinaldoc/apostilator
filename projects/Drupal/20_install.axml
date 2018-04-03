@@ -255,17 +255,17 @@ FTP.
 <comando>
 # su -s /bin/bash -l portal
 $ cd /tmp
-$ wget https://ftp.drupal.org/files/projects/drupal-7.56.tar.gz
-$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.56.pt-br.po
+$ wget https://ftp.drupal.org/files/projects/drupal-7.58.tar.gz
+$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.58.pt-br.po
 </comando>
 
 <step>Extraia o Drupal e copie o arquivo de tradução</step>
 <comando>
 $ cd /var/www/portal/drupal-7
-$ tar xzf /tmp/drupal-7.56.tar.gz --strip 1
+$ tar xzf /tmp/drupal-7.58.tar.gz --strip 1
 $ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
 $ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
-$ cp /tmp/drupal-7.56.pt-br.po profiles/standard/translations
+$ cp /tmp/drupal-7.58.pt-br.po profiles/standard/translations
 </comando>
 
     <importante/>O módulo <b>Locale</b>, que é ativado ao instalar o
