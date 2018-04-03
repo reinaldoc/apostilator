@@ -576,18 +576,17 @@ ao valor <b>Node: ID</b>;
   </lista>
 </lista>
 
-    Verifique que ao criar um menu ele é disponibilizado automaticamente como
-bloco para ser associado a uma região do tema, porém este bloco representa
-necessariamente o primeiro nível desse menu, o que nem sempre é o desejado,
-tampouco espera-se aprensentá-lo sempre de forma completa.
+    Um menu comum, ao ser criado em <b>Estrutura → Menus</b>, torna-se
+disponível como um novo bloco que deve ser associado a uma única região do
+tema. O módulo <b>Menu block</b> possibilita que seja criado um novo bloco
+para um menu existente, podendo ser associado a outra região. Esse novo
+bloco pode referenciar <u>um nó intermediário do um menu</u>, bem como
+indicar <u>quantos níveis a partir desse nó</u> deseja-se exibir.
 
-    O módulo <b>Menu Block</b> permite que novos blocos possam ser criados
-para um mesmo menu, com a função adicional de poder-se <u>selecionar qual
-nó do menu</u> e <u>quantos níveis a partir desse nó</u> deseja-se exibir.
-Este recurso é bastante útil para criar menus contextuais para a barra
-lateral, ou seja, para determinar um subconjunto do menu principal que será
-exibido a partir da URL atual. Use as <b>configurações de visibilidade</b>
-do bloco criado para implementar isto.
+    Recurso bastante útil para criar menus contextuais para a barra lateral,
+ou seja, para determinar um subconjunto do menu principal que, por meio das
+<b>configurações de visibilidade</b>, pode ser exibido em determinadas
+páginas.
 
     <importante/>Lembre-se que, ainda que um menu possua vários níveis, é
 a implementação do tema que determinará se a exibição ocorrrerá em forma
