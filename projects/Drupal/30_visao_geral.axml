@@ -79,8 +79,11 @@ exibidos.
 
     O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
 inclusive à Região de Conteúdo, e pode ser criado a partir de um trecho de
-código HTML ou fornecido por algum módulo. Configura-se no bloco em quais
-URLs ele será exibido, dentro da região que foi associado.
+código HTML, pode representar um menu, uma listagem de conteúdo (View de
+bloco), um Mini-Panel, ou ainda, ser fornecido por algum módulo, como o
+<b>Footer Sitemap</b>. Configura-se no bloco em quais URLs ele será exibido,
+dentro da região a qual foi associado, por meio das configurações de
+visibilidade.
 
 <lista>
   <item>URL</item>: /admin/structure/block
