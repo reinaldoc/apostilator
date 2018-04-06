@@ -11,14 +11,16 @@ conteúdos em diversos tipos de dados, bem como recursos de gerenciamento de
 menus e controle de permissões. O Drupal tem sido utilizado em grandes
 projetos (<link>https://www.drupal.com/showcases</link><text>veja os
 casos de sucesso</text>) por ser <u>altamente customizável e extensível</u>,
-uma vez que é organizado como um <i>framework</i>.
+uma vez que é organizado como um <i>framework</i>, em que os módulos
+adicionam recursos ao seu núcleo.
 
     O Drupal utiliza estruturas de dados em forma de entidades, com campos
 específicos para texto, números, data, arquivos, imagens, bem como para
 relacionamento entre as entidades. Esses dados podem ser apresentados de
 diferentes formas, seja em lista, tabela, grid, slideshow, accordion, etc.
-Parace programação? É programação, porém por meio de lógica e configuração,
-sem codificação na maioria dos projetos.
+Parece programação? É programação, porém por meio de lógica e configuração,
+sendo necessário entender de lógica de programação para poder utilizá-lo,
+ainda que não haja codificação na maioria dos projetos.
 
     Outra característica relevante para o desenvolvedor <i>front-end</i> é
 o <u>fraco acoplamento entre os templates HTML e o Drupal</u>. Isso permite
@@ -43,9 +45,6 @@ denominadas <b>Regiões</b>.
     <item/><url>http://simplytest.me</url>
   </lista>
 </lista>
-
-    Instale o módulo <b>l10n_update</b> e ative o idioma Português do Brasil,
-consulte a seção<ref>module-l10n-update</ref>.
 
 <lista>
   <item>Onde obter o Drupal?</item>
@@ -75,7 +74,7 @@ consulte a seção<ref>module-l10n-update</ref>.
     O simplytest fornece instâncias temporárias do Drupal a partir da
 instalação automatizada de um conjunto de módulos e temas selecionados,
 com resolução automática de dependência. Use a opção <b>Advanced Options</b>
-para selecionais os módulos e temas adicionais que devem ser instalados.
+para selecionar os módulos e temas adicionais que devem ser instalados.
 
     A seleção dos módulos pode ser realizada diretamente pela URL, conforme
 os exemplos:
@@ -88,6 +87,9 @@ os exemplos:
   <item/><url>https://simplytest.me/project/views/7.x-3.18</url>
   <item/><url>https://simplytest.me/project/views/7.x-3.18?add[]=devel&add[]=admin_menu</url>
 </lista>
+
+    Instale o módulo <b>l10n_update</b> e ative o idioma Português do Brasil,
+consulte a seção<ref>module-l10n-update</ref>.
 
 <quebraPagina/>
 
