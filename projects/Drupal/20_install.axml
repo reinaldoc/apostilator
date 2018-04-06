@@ -151,6 +151,9 @@ necessário alterar o parâmetro:
 # /etc/mysql/mariadb.conf.d/50-server.cnf
 # l.29
 bind-address            = 0.0.0.0
+
+# Fix PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
+max_allowed_packet      = 33554432
 </comando>
 
 <step>Recarregar configurações do MySQL/MariaDB</step>
@@ -391,6 +394,8 @@ problema foi detectado nesta instalação.
 $ cd /var/www/portal/drupal-7
 $ umask 022
 $ tar xzf /tmp/drupal-7.57.tar.gz --strip 1
-$ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
-$ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
+$ chmod 600 COPYRIGHT.txt INSTALL*.txt MAINTAINERS.txt UPGRADE.txt
+$ find ./ -regextype posix-egrep
+          -regex '.*(LICENSE|README|INSTALL|CHANGELOG).txt$'
+          -exec chmod 600 {} \;
 </comando>
