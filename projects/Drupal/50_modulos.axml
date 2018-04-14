@@ -1328,7 +1328,10 @@ Paths</b>.
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/pathauto</url>
-  <item>Função</item>: gerar URLs amigáveis do conteúdo baseado em seu título;
+  <item>Dependência</item>:
+<link>https://drupal.org/project/token</link><text>Token</text>.
+  <item>Função</item>: gerar URLs amigáveis do conteúdo baseado em tokens
+  como [node:title];
   <item>Uso</item>: /admin/config/search/path/patterns [Busca e metadados  →
   URLs alternativas];
   <lista>
@@ -1350,6 +1353,12 @@ para um tipo de conteúdo específico, acesse o item <b>Conteúdo</b> do menu
 administrativo, depois selecione o tipo de conteúdo e use a opção <b>Update
 URL alias</b>. Isso pode ser útil quando um <b>Pattern</b> é alterado, caso
 contrário, apenas quando o conteúdo for salvo a URL será atualizada.
+
+    <importante/>Planeje com atenção o padrão de URLs pois mudanças impactam
+nas referências dos sites de busca, além disso, a opção <b>Update URL
+alias</b> é aplicada somente aos 50 itens listados na página de pesquisa de
+conteúdo, sendo necessário repetir a ação para cada página, o que pode ser
+um complicador se houver muito conteúdo.
 
 <subsubsecao>Submitted By</subsubsecao>
 
