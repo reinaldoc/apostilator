@@ -217,9 +217,9 @@ não concedido aos usuários que tem permissão de editar este conteúdo.
     Uma <b>taxonomia</b> (vacabulário) refere-se a classificação do
 conteúdo, categorias, que são formadas por termos que podem ser organizados
 hierarquicamente. Também pode ser entendida como uma lista de elementos do
-tipo gênero e espécie. A taxanomia é representada por um campo do tipo
-<b>Term reference</b> que pode compor um ou mais tipos de conteúdo. As
-<i>tags</i> são um exemplo de taxonomia.
+tipo gênero e espécie. As taxonomias devem ser referenciadas em um ou mais
+tipos de conteúdo por meio do campo <b>Term reference</b>. As <i>tags</i>
+são um exemplo de taxonomia.
 
 <lista>
   <item>URL</item>: /admin/structure/taxonomy
@@ -227,8 +227,11 @@ tipo gênero e espécie. A taxanomia é representada por um campo do tipo
   <lista>
     <item/>adicione um vocabulário (lista de termos);
     <item/>adicione termos a um vocabulário;
-    <item/>ao reiniciar termos para ordem alfabética a hierarquia é mantida;
-    <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de conteúdo;
+    <item/>reordene os termos e defina uma hierarquia entre eles;
+    <item/>observe que ao reiniciar os termos para ordem alfabética, a
+    hierarquia será mantida;
+    <item/>adicione um campo do tipo <b>Term reference</b> a um tipo de
+    conteúdo;
   </lista>
 </lista>
 
@@ -239,7 +242,7 @@ Estruturas remuneratórias" ou "Anexo III", o que permite, por exemplo,
 exibir sua descrição completa em uma página e utilizar a forma reduzida do
 termo como parte do nome de um arquivo presente no respectivo conteúdo.
 
-    Outro recurso da taxonomia é a vinculação de uma URL a listagem de
+    Outro recurso da taxonomia é a vinculação de uma URL à listagem de
 todos os conteúdos que estão identificadados com determinado termo. O módulo
 <b>pathauto</b> também permite gerar essas URLs a partir de um padrão de
 tokens.
