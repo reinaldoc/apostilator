@@ -109,10 +109,21 @@ Formatos de texto</b>.
 
 <subsubsecao>Menus</subsubsecao>
 
-    Um <b>menu</b> é formado por um conjunto de links (itens de menu) que
-podem ser organizados em vários níveis, de forma hierárquica. Todo menu é
-um bloco que pode ser associado a uma região do tema pela interface de
-blocos.
+    Um <b>menu</b> é formado por um conjunto itens de menu, denominados
+<b>links</b>, que podem ser organizados de forma hierárquica. Todo menu é um
+bloco que pode ser associado a uma região do tema pela interface de blocos.
+
+    Por questões de organização, sugere-se que todo menu seja nomeado com
+prefixo <b>Menu:</b>, assim, ao criar um menu denominado <b>Menu:
+Institucional</b> será possível identificá-lo com clareza na lista de
+blocos. Ao editar o bloco deste menu, defina o <b>Título do bloco</b> como
+<b>Institucional</b> para que o prefixo <b>Menu:</b> não seja apresentado.
+
+    Ao criar um menu, também será gerado um nome único para identificação
+interna, denominado <b>nome no sistema</b>, sendo automaticamente prefixado
+com <b>menu-</b>. Assim, ao criar o menu <b>Menu: Institucional</b>, use
+como <b>nome no sistema</b> apenas <b>institucional</b>, que resultará em
+<b>menu-institucional</b>.
 
 <lista>
   <item>URL</item>: /admin/structure/menu
@@ -127,28 +138,33 @@ blocos.
       <item>User menu</item>: menu secundário para acesso ao perfil do
             usuário logado e <i>logout</i>;
       <lista>
-        <item/><u>Os itens desses menus não podem ser apagados, exceto o</u>
-               <b>Main menu</b>;
+        <item/><u>Alguns itens desses menus não podem ser apagados</u>;
         <item/><u>A utilização desses menus é opcional</u>;
       </lista>
     </lista>
     <item/>crie um menu;
-    <item/>adicione links (itens do menu) a este menu;
+    <item/>adicione links a este menu;
+    <item/>altere a ordem dos links no menu;
     <item/>organize os links hierarquicamente;
-    <item/>ative a opção 'Exibir expandido' para os itens de nível intermediário;
+    <item/>ative a opção 'Exibir expandido' para os itens que possuem
+    subitens;
     <item/>configuração: defina o menu principal;
-    <item/>associe um menu a uma região lateral;
-    <item/>edite um item de menu para movê-lo para outro menu pela opção
-           <b>Link superior</b>;
-    <item/>crie um link (item de menu) a partir de um conteúdo (node);
+    <item/>edite um link e <b>mova-o para outro menu</b> por meio da opção
+    <b>Link superior</b>;
+    <item/>associe um menu a uma região lateral por meio da interface de
+    blocos;
+    <item/>crie um link a partir de um conteúdo (node);
+    <lista>
+      <item/>vincule¹ este menu a um tipo de conteúdo em <b>Configurações do
+      menu</b>;
+      <item/>crie um conteúdo e adicione um link para o menu;
+    </lista>
   </lista>
 </lista>
 
-    Ao criar um menu, o <b>identificador textual</b> ou <b>nome de
-máquina</b>, que é o identificador único de cada elemento no Drupal, será
-gerado a partir do nome do menu, sendo automaticamente prefixado com
-<b>menu-</b>. Caracteres acentuados serão substituidos por hífen, edite o
-<b>nome no sistema</b> (sic) se quiser ajustar isso.
+    <b>¹</b><u>Veremos que para o usuário comum adicionar um link ao menu a
+partir de um conteúdo será necessário a concessão de uma permissão
+específica para administrar este menu.</u>
 
     É possível definir o menu principal, que normalmente é alocado pelo tema
 na parte superior do site, por meio da opção <b>Origem para os links
