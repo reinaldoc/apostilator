@@ -564,6 +564,10 @@ adiciona novas opções de configuração.
 
 <subsubsecao>Mídia → Estilos de imagens</subsubsecao>
 
+    Os estilos de imagens permitem realizar transformações, como escalar,
+cortar, rotacionar ou dessaturar os campos de imagem, seja para apresentação
+do conteúdo (<b>node</b>) quanto em <b>Views</b>.
+
 <lista>
   <item>URL</item>: /admin/config/media/image-styles
   <item>Atividades</item>:
@@ -576,6 +580,14 @@ adiciona novas opções de configuração.
     <item/>defina a altura para 166 pixels;
   </lista>
 </lista>
+
+    Qualquer transformação realizada segue a configuração de qualidade de
+compressão JPEG definida em <b>Configurações → Mídia → Toolkit de
+imagens</b>. Observe que o valor padrão, 75%, gera perdas consideráveis de
+qualidade. Defina para 100% para preservar a qualidade original. Caso
+necessite definir uma qualidade por estilo de imagem, use o módulo
+<link>https://www.drupal.org/project/image_style_quality</link><text>Image
+Style Quality</text>.
 
     Opte por padronizar o <b>Identificador textual</b> com o prefixo
 <b>i_</b>, como <i>i_user</i> e <i>i_eslaide</i>.
