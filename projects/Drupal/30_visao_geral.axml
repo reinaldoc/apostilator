@@ -571,6 +571,28 @@ adiciona novas opções de configuração.
   <item>URL</item>: /admin/config
 </lista>
 
+<subsubsecao>Criação de conteúdo → Formatos de texto</subsubsecao>
+
+    Os formatos de texto restringem a entrada de dados nos campos do tipo
+<b>texto longo</b>.
+
+<lista>
+  <item>URL</item>: /admin/config/content/formats
+  <item>Atividades</item>:
+  <lista>
+    <item/>edite o formato de texto <b>Filtered HTML</b>;
+    <item/>defina o nome para: <b>Texto com formatação</b>;
+    <item/>configure as tags HTML permitidas;
+    <lista>
+      <item/><a > <em > <strong > <cite > <blockquote > <code > <ul > <ol >
+<li > <dl > <dt > <dd > <hr > <h1 > <h2 > <h3 > <p > <sub > <sup > <s > <u >
+<img >;
+    </lista>
+    <item/>desabilite para o usuário anônimo, se possível;
+  </lista>
+</lista>
+
+
 <subsubsecao>Mídia → Estilos de imagens</subsubsecao>
 
     Os estilos de imagens permitem realizar transformações, como escalar,
