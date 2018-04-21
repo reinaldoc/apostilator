@@ -1212,7 +1212,8 @@ conteúdo que possui relacionamento com o conteúdo apresentado.
   <item>Uso</item>:
   <lista>
     <item/>adicione o campo link a um tipo de conteúdo;
-    <item/>selecione a opção <b>No title</b> nas configurações do campo;
+    <item/>a opção <b>No title</b> nas configurações do campo faz o campo
+    receber apenas a URL;
   </lista>
 </lista>
 
@@ -1221,7 +1222,7 @@ conteúdo que possui relacionamento com o conteúdo apresentado.
 
 <br/>0.3cm
 
-<subsubsubsecao>Link para Slideshow</subsubsubsecao>
+<subsubsubsecao>Link para Views Slideshow</subsubsubsecao>
 
 <lista>
   <item/>acesse as configurações da View no formato de slideshow;
@@ -1675,11 +1676,12 @@ conteúdo com este campo para aplicá-las.
 Pessoa com o Node de Livro);
   <item>Uso</item>:
   <lista>
-    <item/>adicione o campo <b>Entity Reference</b> a um tipo de conteúdo;
+    <item/>adicione o campo <b>Entity Reference</b> a um tipo de conteúdo
+    para criar um relacionamento;
     <item/>defina a forma de exibição do campo (autocomplete, select list or
-checkbox/radio);
+    checkbox/radio);
     <item/>defina o relacionamento <i>target type</i> para node, usuário,
-termo ou vocabulário de taxonomia; 
+    termo ou vocabulário de taxonomia; 
   </lista>
 </lista>
 
