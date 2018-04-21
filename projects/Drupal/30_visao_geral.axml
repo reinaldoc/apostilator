@@ -349,9 +349,12 @@ e API de integração aos módulos.
 
 <subsecao>Aparência</subsecao>
 
-    Os <b>temas</b> <u>são formados por regiões</u> em que os blocos podem ser
-associados e <u>por áreas sem regiões</u> que são customizáveis por meio da
-configuração do tema.
+    Os <b>temas</b> <u>são formados por regiões</u> que definem o leiaute da
+página em que blocos podem ser associados. A <b>Região do Conteúdo</b> é
+especial pois contém o conteúdo principal da página, seja um <b>node</b> ou
+uma <b>View</b>. Há também <u>áreas sem regiões</u> que são customizáveis
+por meio da configuração do tema. Além disso, os temas possuem identidade
+visual própria (CSS).
 
     Interessante notar que nem todo tema exibe menus multiníveis, tampouco são
 responsivos. Por isso, é importante conhecer as características implementadas
@@ -362,7 +365,10 @@ cada projeto.
   <item>URL</item>: /admin/appearance
 </lista>
 
-<subsubsecao>Configurações globais dos temas</subsubsecao>
+<subsubsecao>Configurações globais de tema</subsubsecao>
+
+    As configurações globais de tema aplicam-se a qualquer tema em
+utilização.
 
 <lista>
   <item>URL</item>: /admin/appearance/settings
@@ -375,7 +381,10 @@ cada projeto.
   </lista>
 </lista>
 
-<subsubsecao>Configurações disponíveis por tema</subsubsecao>
+<subsubsecao>Configurações específicas do tema</subsubsecao>
+
+    As configurações específicas do tema aplicam-se somente ao respectivo
+tema.
 
 <lista>
   <item>URL</item>: /admin/appearance/settings/bartik

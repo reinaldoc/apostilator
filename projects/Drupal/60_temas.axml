@@ -63,67 +63,16 @@ criação de um <b>subtema</b>, há temas desenvolvidos unicamente para serem
 utilizados como <b>tema base</b>, são um ponto de partida e fornecem
 recursos que agilizam o desenvolvimento.
 
-   Dentre esse conjunto de temas, alguns são especializados para a criação
-de subtemas <i>from scratch</i>, ou seja, a partir de criação
-<i>templates</i> HTML, arquivos CSS e JavaScript. Esses temas fornecem
-estilos e aprimoram o leiaute padrão, como o tema <b>Tao</b>, ou
-integram recursos como Gulp, SASS e COMPASS, como o tema <b>Zen</b>.
+   Esses temas base são úteis apenas para o desenvolvimento de novos temas,
+quando ativados diretamente apresentam uma interface sem qualquer identidade
+visual, ou seja, sem estilos.
 
-   Também há outra família de temas base, denominada <b>Adaptive
-Theming - AT</b>, que seu obetivo é fornecer uma interface completa de
-configuração de leiaute e estilos para usuários que não conhecem
-programação. Os temas base são úteis apenas para esse fim, apresentando uma
-interface sem estilos quando ativados diretamente.
+<subsubsecao>Zen</subsubsecao>
 
-<subsubsecao>Adaptive Theme (AT Core)</subsubsecao>
-
-    <b>Adaptive Theme (AT Core)</b> é um <i>framework</i> que provê um
-leiaute responsivo e um conjunto de ferramentas para o desenvolvimento
-de subtemas. É um tema base utilizado por subtemas como o <b>Pixture
-Reloaded</b> e <b>Sky</b>. A documentação para criação de subtemas do
-<b>Adaptive Theme</b> está disponível em
-<url>https://adaptivethemes.com/documentation</url>.
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/adaptivetheme</url>
-  <item>Função</item>: tema para customização por configuração;
-  <item>Subtemas do Adaptive Theme</item>
-  <lista>
-    <item/><url>https://drupal.org/project/pixture_reloaded</url>
-    <lista>
-      <item/>experimente os schemas de cores <b>Red Carpet</b> e
-             <b>Aquamarine</b>;
-      <item/>desative ou altere a largura máxima do site;
-      <item/>ative a extensão <b>Custom CSS</b>;
-    </lista>
-    <item/><url>https://drupal.org/project/sky</url>
-    <lista>
-      <item/>experimente o schema de cores <b>Blue Sky</b> com textura de
-             corpo da página <b>Grid</b>;
-      <item/>experimente o schema de cores <b>Purple</b> com textura de
-             corpo da página <b>Dots</b>;
-      <item/>altere o alinhamento do campo imagem para esquerda;
-    </lista>
-    <item/><url>https://drupal.org/project/omega</url>
-    <item/><url>https://drupal.org/project/corolla</url>
-    <item/><url>https://drupal.org/project/footheme</url> [skeleton para criar at sub-theme];
-  </lista>
-  <item>Uso</item>:
-  <lista>
-    <item/>instale o tema <link>http://drupal.org/project/adaptivetheme</link>
-           <text><b>AdaptiveTheme</b></text>;
-    <item/>instale e ative um dos subtemas do <b>Adaptive Theme</b>;
-  </lista>
-</lista>
-
-    Os arquivos de <i>template</i> são mais complexos porque incluem lógica
-para que a definição do leiaute da página, como número de colunas e
-percentual de largura de cada uma, ocorra pela configuração do tema.
-
-<subsubsecao>Zen Base Theme</subsubsecao>
-
-    O <b>Zen</b> é um tema base para o desenvolvimento <i>from scratch</i>
-de subtemas em HTML/SASS-COMPASS /GULP.
+    O <b>Zen</b> é um tema base especializado para o desenvolvimento de
+subtemas <i>from scratch</i>, ou seja, a partir de criação <i>templates</i>
+HTML, arquivos CSS e JavaScript. O Zen vem como recursos para utilização de
+recursos como o Gulp, SASS e COMPASS.
 
 <lista>
   <item>URL</item>: <url>https://drupal.org/project/zen</url>
@@ -147,7 +96,7 @@ sed -i 's/STARTERKIT/myzentheme/g' template.php
 sed -i 's/STARTERKIT/myzentheme/g' theme-settings.php
 </comando>
 
-<subsubsecao>Tao Base Theme</subsubsecao>
+<subsubsecao>Tao</subsubsecao>
 
     O <b>Tao</b> é um tema base para o desenvolvimento <i>from scratch</i> de
 subtemas. Fornece o CSS <i>reset.css</i> para sobrepor todos os estilos
@@ -171,6 +120,61 @@ mais informações no arquivo <b>README.md</b> que acompanha o módulo.
 
     O tema administrativo <link>https://drupal.org/project/rubik</link>
 <text><b>Rubik</b></text> é um exemplo de subtema do Tao.
+
+<subsubsecao>Adaptive Theme (AT Core)</subsubsecao>
+
+    <b>Adaptive Theme (AT Core)</b> é um <i>framework</i> que provê um
+leiaute responsivo e um conjunto de ferramentas para o desenvolvimento
+de subtemas. É um tema base utilizado por subtemas como o <b>Pixture
+Reloaded</b> e <b>Sky</b>. A documentação para criação de subtemas do
+<b>Adaptive Theme</b> está disponível em
+<url>https://adaptivethemes.com/documentation</url>.
+
+   Os temas derivados do <b>Adaptive Theme - AT</b> fornecem uma interface
+completa de configuração de leiaute e estilos para usuários que não conhecem
+programação.
+
+<lista>
+  <item>URL</item>: <url>https://drupal.org/project/adaptivetheme</url>
+  <item>Função</item>: tema para customização por configuração;
+  <item>Subtemas do Adaptive Theme</item>
+  <lista>
+    <item/><url>https://drupal.org/project/pixture_reloaded</url>
+    <lista>
+      <item/>associe o menu <b>Main Menu</b> à região <b>Menu Bar</b>;
+      <item/>experimente os schemas de cores <b>Red Carpet</b> e
+             <b>Aquamarine</b>;
+      <item/>desative ou altere a largura máxima do site;
+      <item/>ative a extensão <b>Custom CSS</b>;
+    </lista>
+    <item/><url>https://drupal.org/project/sky</url>
+    <lista>
+      <item/>associe o menu <b>Main Menu</b> à região <b>Menu Bar</b>;
+      <item/>experimente o schema de cores <b>Blue Sky</b> com textura de
+             corpo da página <b>Grid</b>;
+      <item/>experimente o schema de cores <b>Purple</b> com textura de
+             corpo da página <b>Dots</b>;
+      <item/>altere o alinhamento do campo imagem para esquerda;
+    </lista>
+    <item/><url>https://drupal.org/project/omega</url>
+    <item/><url>https://drupal.org/project/corolla</url>
+    <item/><url>https://drupal.org/project/footheme</url> [skeleton para criar at sub-theme];
+  </lista>
+  <item>Uso</item>:
+  <lista>
+    <item/>instale o tema <link>http://drupal.org/project/adaptivetheme</link>
+           <text><b>AdaptiveTheme</b></text>;
+    <item/>instale e ative um dos subtemas do <b>Adaptive Theme</b>;
+  </lista>
+</lista>
+
+    Os arquivos de <i>template</i> são mais complexos porque incluem lógica
+para que a definição do leiaute da página, como número de colunas e
+percentual de largura de cada uma, ocorra pela configuração do tema.
+
+    <importante/>Após instalar o <b>Adaptive Theme - AT</b> e algum subtema
+é necessário acessar as configurações do tema e salvá-las ao menos uma vez,
+ainda que nenhuma configuração do tema tenha sido alterada.
 
 <quebraPagina/>
 
