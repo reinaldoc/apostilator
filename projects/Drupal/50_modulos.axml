@@ -1390,13 +1390,12 @@ um complicador se houver muito conteúdo.
   <item>Função</item>: editor HTML visual (WYSIWYG);
   <item>Instalação</item>:
   <lista>
-    <item/><url>https://ckeditor.com/download</url>
     <item/>su -s /bin/bash -l portal
     <item/>cd /tmp
     <item/>wget
-    <link>http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.7.3/ckeditor_4.7.3_full.zip</link><text>http://download.cksource.com/CKEditor/ckeditor_4.X.Y_full.zip</text>
-    <item/>cd ~
-    <item/>cd drupal-7/sites/all/libraries
+      <link>https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.9.2/ckeditor_4.9.2_full.zip</link>
+      <text>http://download.cksource.com/[..]/ckeditor_4.X.Y_full.zip</text>
+    <item/>cd /var/www/portal/drupal-7/sites/all/libraries
     <item/>unzip /tmp/ckeditor_4.X.Y_full.zip
     <item/>cd ckeditor/skins/
     <item/>ln -s moono-lisa/ moono
@@ -1410,12 +1409,37 @@ um complicador se houver muito conteúdo.
   </lista>
 </lista>
 
-    O módulo <b>CKEditor</b> integra a rotina <b>ckeditor.js</b> ao Drupal,
-sendo obtido, por padrão, por meio do endereço
-<url>http://cdn.ckeditor.com/4.5.4/full-all/ckeditor.js</url>, entretanto,
-torna-se mais rápida a renderização da página ao instalá-la localmente,
-no diretório <b>sites/all/libraries</b>. Após extrair os arquivos do
-CKEditor, configure o caminho local para o <b>ckeditor.js</b>.
+    O módulo <b>CKEditor</b> integra a rotina <b>ckeditor.js</b> ao Drupal.
+Entretanto, o módulo não contém o CKEditor em si, fazendo com que o usuário
+obtenha-o por meio do endereço
+<url>http://cdn.ckeditor.com/4.9.2/full-all/ckeditor.js</url>, cada vez que
+for o editor for utilizado.
+
+    Torna-se mais rápida a renderização da página ao instalar as rotinas do
+CKEditor localmente, no diretório <b>sites/all/libraries</b>. Assim, acesse o
+site do CKEditor, <url>https://ckeditor.com/download</url>, realize o download,
+extraia os arquivos e configure o caminho local para o <b>ckeditor.js</b>
+conforme as instruções acima.
+
+    O módulo <b>CKEditor</b> vem pré-configurado com dois perfis, o perfil
+<b>Advanced</b> que está associado ao formato de texto <b>Filtered HTML</b>
+e o perfil <b>Full</b> que está associado ao formato de texto <b>Full
+HTML</b>. Os perfis do CKEditor permitem que distintas configurações sejam
+realizadas para cada formato de texto.
+
+    As configurações de segurança do CKEditor controlam o processamento do
+texto a fim de filtrá-lo, removendo conteúdo potencialmente malicioso ou em
+desconformidade com padrões. Essa configuração é ativada por perfil,
+inclusive quanto a habilitação de módulos adicionais, como o
+<link>https://www.drupal.org/project/htmlpurifier</link><text>HTML
+Purifier</text>.
+
+    As configurações de aparência do editor controlam a cor a barra de
+formatação, a exibição de opção para desativar o CKEditor, bem como permitem
+a seleção das funcionalides disponíveis na barra de formatação por meio de
+<b>drag and drop</b> dos botões para adicionar ou remover funcionalidades
+a serem apresentadas aos usuários.
+
 
 <subsubsecao>IMCE</subsubsecao>
 <nome>module-imce</nome>
