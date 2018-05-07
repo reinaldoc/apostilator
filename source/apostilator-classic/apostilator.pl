@@ -255,7 +255,7 @@ sub version() {
 }
 
 sub verify_depends() {
-    my @depends = ("pdflatex","bibtex","rm","cp","mv","sed","tar","gzip","killall","pgrep","unlink","tail");
+    my @depends = ("pdflatex","bibtex","rm","cp","mv","sed","tar","gzip","pgrep","unlink","tail");
     foreach (@depends) {
       if (system("which $_ 2>&1 > /dev/null") != 0) {
         print "Binary $_ not found in \$PATH.\n";
@@ -425,7 +425,7 @@ sub pdf() {
 
 sub stop() {
   my $i = 0;
-  while (system("killall -9 pdflatex >/dev/null 2>&1") == 0) {
+  while (system("pkill --signal 9 pdflatex >/dev/null 2>&1") == 0) {
     if ("$i" > 3) {
       print"\nPdflatex still running.\n";
       exit;
