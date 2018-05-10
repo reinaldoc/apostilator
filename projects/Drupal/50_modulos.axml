@@ -1516,10 +1516,20 @@ configurar borda e alinhamento (<i>float</i>).
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/linkit</url>
   <item>Função</item>: criação de links para páginas internas integrável
-                        ao editor HTML visual;
+                        ao CKEditor;
   <item>Uso</item>: /admin/config/content/linkit
   <lista>
     <item/>crie um novo perfil de configuração para o LinkIt;
+    <lista>
+      <item/>selecione os papéis que utilizarão esse perfil;
+      <item/>selecione ao menos o plugin <b>Node</b> para a pesquisa de
+      links;
+      <item/>configure o token para listar os links: [node:author] -
+      [node:url]
+      <item/>selecione os tipos de conteúdo disponíveis para a pesquisa de
+      links;
+      <item/>ative o agrupamento dos links;
+    </lista>
     <item/>edite um perfil do Ckeditor e identifique a seção <i>Editor
 Apperarance</i>;
     <lista>
@@ -1533,6 +1543,12 @@ Apperarance</i>;
     O módulo <link>https://drupal.org/project/ckeditor_link</link>
 <text>CKEditor Link</text> é uma alternativa mais simples ao <b>LinkIt</b>,
 com configuração similar, porém sem possibilidade de criar perfil.
+
+    O módulo <link>https://drupal.org/project/pathologic</link>
+<text>Pathologic</text> pode ser utilizado para manter os links corretos
+ainda que a URL seja alterada. Após instalá-lo, ative o filtro "Corrgir URLs
+com Pathologic" para o formato de texto utilizado pelos usuários em
+<b>Configurações → Criação de conteúdo → Formatos de texto</b>.
 
 <subsubsecao>Date (Field)</subsubsecao>
 
