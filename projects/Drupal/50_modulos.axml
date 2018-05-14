@@ -1322,10 +1322,15 @@ como na definição do nome de arquivos no <i>upload</i> pelo módulo <b>File
 
     O módulo <b>Transliteration</b> substitui os caracteres acentuados por
 seu respectivo caractere em caixa baixa sem acento, este recurso é utilizado
-pelo módulo <b>Pathauto</b> para gerar URLs e pelos módulos <b>File (Field)
-Paths</b> e <b>IMCE</b> ao renomear os arquivos em <i>upload</i>. A
-conversão do nome do arquivo em <i>upload</i> é habilitado por padrão em
-<b>Configurações → Mídia → Sistema de Arquivos</b>.
+pelo módulo <b>Pathauto</b> para gerar URLs, pelo módulo <b>Search</b> do
+Drupal e pelos módulos <b>File (Field) Paths</b> e <b>IMCE</b> ao renomear
+os arquivos em <i>upload</i>.
+
+    Após a instalação do módulo, as integrações serão habilitadas por
+padrão, como a conversão do nome do arquivo no <i>upload</i>, ativada
+em <b>Configurações → Mídia → Sistema de Arquivos</b>, e a indexação da
+busca, ativada em <b>Configurações → Busca e metadados → Configurações da
+busca</b>.
 
 <subsubsecao>Pathauto</subsubsecao>
 
