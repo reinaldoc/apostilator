@@ -1,0 +1,33 @@
+<capitulo>Licença</capitulo>
+
+<comando>
+Ambiente de Desenvolvimento Java.
+Copyright © CC-BY-NC-ND 2018 Reinaldo Gil Lima de Carvalho - reinaldoc@gmail.com
+
+ESSA OBRA É LICENCIADA PELA LICENÇA CREATIVE COMMONS:
+Attribution-NonCommercial-NoDerivatives 4.0 International.
+</comando>
+
+<figura>
+    <tamanhob>0.5</tamanhob>
+    <arquivob>imgs/license-CC-BY-NC-ND.png</arquivob>
+    <legenda>CC-BY-NC-ND</legenda>
+    <nome>fig:CC-BY-NC-ND</nome>
+</figura>
+
+    Esta licença permite que seja realizado o compartilhamento da obra desde
+que os créditos sejam mantidos para o autor, mas a obra não pode ser
+modificada nem utilizada comercialmente. Caso necessite de autorizações
+adicionais ou licenciá-la para fins não autorizados por esta licença entre
+em contato com o autor.
+
+<lista>
+  <item><url>https://creativecommons.org/licenses/by-nc-nd/4.0/</url></item>
+</lista>
+
+<subsubsubsecao>Sobre o Autor...</subsubsubsecao>
+
+<lista>
+  <item/><url>http://reinaldoc.wordpress.com</url>
+  <item/><url>https://www.linkedin.com/in/reinaldo-gil-lima-de-carvalho</url>
+</lista>
