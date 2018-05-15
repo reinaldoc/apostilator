@@ -1,0 +1,13 @@
+<capitulo>Wildfly 10</capitulo>
+
+<subsecao>Instalação</subsecao>
+
+<subsubsecao>Download</subsubsecao>
+
+    O instalador do WildFly 10 (10.1.0.Final) pode ser obtido no seguinte endereço:
+
+<lista>
+  <item/><url>http://wildfly.org/downloads/</url>
+  <item/><url>http://download.jboss.org/wildfly/10.1.0.Final/wildfly-10.1.0.Final.tar.gz</url>
+</lista>
+

@@ -1,5 +1,7 @@
-92_jboss.axml
-95_glassfish2.axml
-96_glassfish3.axml
+91_jboss.axml
+92_wildfly.axml
+94_glassfish2.axml
+95_glassfish3.axml
+97_solr.axml
 98_firewall.axml
 99_GFDL_license.axml

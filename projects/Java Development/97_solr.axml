@@ -1,0 +1,13 @@
+<capitulo>Solr 4.x</capitulo>
+
+<subsecao>Instalação</subsecao>
+
+<subsubsecao>Download</subsubsecao>
+
+    O instalador do Apache Solr pode ser obtido no seguinte endereço:
+
+<lista>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz</url>
+</lista>
+
