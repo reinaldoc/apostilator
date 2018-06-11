@@ -1,7 +1,7 @@
 <capitulo>Solr 4.x</capitulo>
 
     O Apache Solr é um servidor de pesquisa autônomo escrito em Java com uma
-API semelhante a REST. A submissão de documentos para o Solr é denominada
+API semelhante a REST. A submissão de dados para o Solr é denominada
 indexação, já a consulta, também realizada via HTTP GET, apresenta
 resultados em XML, JSON, além de outros formatos disponíveis.
 
@@ -10,7 +10,7 @@ da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
 
 <subsecao>Instalação</subsecao>
 
-<subsubsecao>Download</subsubsecao>
+<step>Download</step>
 
     O instalador do Apache Solr pode ser obtido no seguinte endereço:
 
@@ -18,4 +18,21 @@ da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
   <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
   <item/><url>https://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz</url>
 </lista>
+
+<step>Criação do usuário do sistema</step>
+
+<comando>
+adduser --home /srv/apache-solr --no-create-home --shell /bin/false solr
+</comando>
+
+<subsecao>Schema</subsecao>
+
+    O schema está associado a determinada instância do servidor Solr, ele
+determina os campos disponíveis para a indexação de dados.
+
+
+<subsecao>Cores</subsecao>
+
+    O core é um repositório de dados do Solr. Uma instância do servidor Solr
+pode ser configurada com vários repositórios (cores) de dados.
 
