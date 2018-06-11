@@ -1,5 +1,13 @@
 <capitulo>Solr 4.x</capitulo>
 
+    O Apache Solr é um servidor de pesquisa autônomo escrito em Java com uma
+API semelhante a REST. A submissão de documentos para o Solr é denominada
+indexação, já a consulta, também realizada via HTTP GET, apresenta
+resultados em XML, JSON, além de outros formatos disponíveis.
+
+    Após instalado e iniciado, o console do Solr estará disponível por meio
+da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
+
 <subsecao>Instalação</subsecao>
 
 <subsubsecao>Download</subsubsecao>
