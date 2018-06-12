@@ -10,29 +10,133 @@ da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
 
 <subsecao>Instalação</subsecao>
 
+<step>Criação do usuário do sistema</step>
+
+<comando>
+adduser --comment "User for Solr" --home /srv/apache-solr-4.0.0 --no-create-home
+        --system --shell /bin/false solr
+</comando>
+
 <step>Download</step>
 
     O instalador do Apache Solr pode ser obtido no seguinte endereço:
 
 <lista>
   <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
-  <item/><url>https://archive.apache.org/dist/lucene/solr/4.10.4/solr-4.10.4.tgz</url>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.tgz</url>
 </lista>
 
-<step>Criação do usuário do sistema</step>
+<comando>
+# cd /srv
+# tar xzf apache-solr-4.0.0.tgz
+</comando>
+
+<subsecao>Instância do Solr</subsecao>
+
+    A instância do Solr é um processo do sistema operacional que gerencia um
+conjunto de repositórios de dados. A instância é o domínio de segregação dos
+dados, dessa forma, os dados dos diferentes repositórios de uma instância
+possuem algum sentido entre si.
+
+<step>Criar diretório da instância do Solr</step>
 
 <comando>
-adduser --home /srv/apache-solr --no-create-home --shell /bin/false solr
+# cp -a apache-solr-4.0.0/example apache-solr-4.0.0/instance1
+</comando>
+
+<step>Conceder permissão para ativação da aplicação de console do Solr</step>
+
+<comando>
+# chown solr: apache-solr-4.0.0/instance1/solr-webapp/
+</comando>
+
+    Após todas as configurações serem realizadas, o serviço poderá ser
+iniciado.
+
+    <b>Não inicie-o neste momento</b>.
+
+<comando>
+# su -l solr -s /bin/bash
+$ cd /src/apache-solr-4.0.0/instance1
+$ java -jar start.jar
+</comando>
+
+
+<subsecao>Repositórios de dados</subsecao>
+
+    Os repositórios de dados do Solr são denominados <i>cores</i>. Uma instância do
+servidor Solr pode ser configurada com vários repositórios de dados.
+
+<step>Criar diretório para os repositórios de dados</step>
+
+<comando>
+# cd /srv/apache-solr-4.0.0/instance1
+# cp -a solr/collection1 solr/app1
+# chown -R solr: solr/app1
+</comando>
+
+<step>Configurar repositórios de dados</step>
+
+    Os repositórios são configurados no arquivo
+<b>./instace1/solr/solr.xml</b> conforme exemplo abaixo:
+
+<comando>
+<core instanceDir="app1" name="acordaos" dataDir="data-acordaos" />
+<core instanceDir="app1" name="sentencas" dataDir="data-sentencas" />
+<core instanceDir="app1" name="decisoes" dataDir="data-decisoes" />
+</comando>
+
+    Após iniciar o Solr, os seguintes diretórios serão criados:
+
+<comando>
+/srv/apache-solr-4.0.0/instance1/solr/app1/data-acordaos
+/srv/apache-solr-4.0.0/instance1/solr/app1/data-sentencas
+/srv/apache-solr-4.0.0/instance1/solr/app1/data-decisoes
 </comando>
 
 <subsecao>Schema</subsecao>
 
-    O schema está associado a determinada instância do servidor Solr, ele
-determina os campos disponíveis para a indexação de dados.
+    O schema detém a configuração dos campos de dados que podem ser
+utilizados pelos repositórios.
 
+    Os campos são configurados no arquivo
+<b>./instace1/solr/app1/conf/schema.xml</b> conforme exemplo abaixo:
 
-<subsecao>Cores</subsecao>
+<comando>
+<field name="ano" type="long" indexed="true" stored="true" />
+<field name="txt_relator" type="stringFacet" indexed="true" stored="true" />
+<field name="dta_julgamento" type="date" indexed="true" stored="true" />
+<field name="txt_inteiro_teor" type="text" indexed="true" stored="true" />
+</comando>
 
-    O core é um repositório de dados do Solr. Uma instância do servidor Solr
-pode ser configurada com vários repositórios (cores) de dados.
+<subsecao>Configurações adicionais</subsecao>
 
+    O uso da configuração <b>defaultSearchField</b> não é recomendado
+conforme a documentação do Solr, devendo-se indicar o campo na consulta HTTP
+GET, pelo parâmetro <b>q=campo:valor</b>.
+
+    Caso a aplicação não informe o campo para a consulta e utilize apenas 
+<b>q=valor</b>, pode-se configurar o campo padrão em
+<b>./instace1/solr/app1/conf/solrconfig.xml</b> ou omitir esta definição
+para habilitar o parâmetro <b>defaultSearchField</b> do arquivo
+<b>./instace1/solr/app1/conf/ schema.xml</b>.
+
+<lista>
+  <item/><b>./instace1/solr/app1/conf/solrconfig.xml</b>
+</lista>
+
+<comando>
+  ...
+  <requestHandler name="/select" class="solr.SearchHandler">
+    <!-- default values for query parameters can be specified, these
+         will be overridden by parameters in the request
+      -->
+     <lst name="defaults">
+    <!-- Comment to use defaultSearchField from schema.xml
+       <str name="echoParams">explicit</str>
+       <int name="rows">10</int>
+       <str name="df">text</str>
+      -->
+     </lst>
+  ...
+</comando>
