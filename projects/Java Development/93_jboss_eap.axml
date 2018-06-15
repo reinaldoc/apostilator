@@ -1,0 +1,321 @@
+<capitulo>JBoss EAP 7</capitulo>
+
+<subsecao>Instalação</subsecao>
+
+<step>Download</step>
+
+    O instalador do JBoss EAP 7 (7.1.0) pode ser obtido no seguinte endereço:
+
+<lista>
+  <item/><url>https://developers.redhat.com/products/eap/download/</url>
+  <item/><url>https://developers.redhat.com/download-manager/file/jboss-eap-7.1.0.zip</url>
+</lista>
+
+    Descompacte o servidor de aplicação:
+
+<comando>
+# cd /opt
+# unzip jboss-eap-7.1.0.zip
+</comando>
+
+<step>Diretórios e permissões</step>
+
+<comando>
+# adduser --home /opt/jboss-eap-7.1.0 --no-create-home \
+          --system --shell /bin/bash jboss7
+# cd /opt/jboss-eap-7.1.0/standalone
+# mkdir log data
+# chown jboss7: tmp data log deployments
+# cd configuration
+# chown :jboss7 application-users.properties application-roles.properties
+# chmod 640     application-users.properties application-roles.properties
+# chown :jboss7 mgmt-users.properties mgmt-groups.properties
+# chmod 640     mgmt-users.properties mgmt-groups.properties
+# mkdir standalone_xml_history
+# chown jboss7: logging.properties standalone_xml_history
+</comando>
+
+<step>Configuração da interface pública do serviço web</step>
+
+<comandoNumerado>
+<interface name="public">
+    <inet-address value="${jboss.bind.address:0.0.0.0}"/>   
+</interface>
+</comandoNumerado>
+
+<step>Configuração do usuário para o console do servidor de aplicação</step>
+
+<comando>
+./bin/add-user.sh
+</comando>
+
+<step>Configuração de limite de memória</step>
+
+<lista>
+    <item/> <b>/srv/jboss-eap-7.1/bin/standalone.conf</b>: ajustar parâmetros -Xms/-Xmx (l. 43):
+</lista>
+
+<comando>
+if [ "x$JAVA_OPTS" = "x" ]; then
+   JAVA_OPTS="-Xms2048m -Xmx2048m ..."
+fi
+</comando>
+
+<subsecao>Configuração da conexão ao banco de dados</subsecao>
+
+<step>Módulo JDBC para PostgreSQL</step>
+
+    Arquivos:
+
+<comando>
+./modules/org/postgresql/main/postgresql-9.4.1208.jdbc4.jar
+./modules/org/postgresql/main/module.xml
+</comando>
+
+   <b>./modules/org/postgresql/main/module.xml</b>
+
+<comandoNumerado>
+<?xml version="1.0" ?>
+<module xmlns="urn:jboss:module:1.1" name="org.postgresql" slot="main">
+    <resources>
+        <resource-root path="postgresql-9.4.1208.jdbc4.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+    </dependencies>
+</module>
+</comandoNumerado>
+
+<step>Módulo JDBC para Oracle</step>
+
+    Arquivos:
+
+<comando>
+./modules/com/oracle/main/module.xml
+./modules/com/oracle/main/ojdbc6.jar.index
+./modules/com/oracle/main/ojdbc6.jar
+</comando>
+
+    <b>./modules/com/oracle/main/module.xml</b>
+
+<comandoNumerado>
+<?xml version="1.0" encoding="UTF-8"?>  
+<module xmlns="urn:jboss:module:1.1" name="com.oracle">  
+    <resources>  
+        <resource-root path="ojdbc6.jar"/>  
+    </resources>  
+    <dependencies>  
+        <module name="javax.api"/>  
+        <module name="javax.transaction.api"/>  
+    </dependencies>  
+</module>
+</comandoNumerado>
+
+<step>Datasource</step>
+
+    Os datasource definem as conexões gerenciadas pelo servidor de
+aplicação.
+
+    <b>./standalone/configuration/standalone.xml</b>
+
+<step>Adicionar dentro da tag < drivers>:</step>
+
+<comandoNumerado>
+<driver name="postgresql" module="org.postgresql">
+    <xa-datasource-class>org.postgresql.xa.PGXADataSource</xa-datasource-class>
+</driver>   
+<driver name="oracle" module="com.oracle">
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+</driver>
+</comandoNumerado>
+
+<step>Adicionar dentro da tag < datasources>:</step>
+
+<comandoNumerado>
+<datasource jta="true" jndi-name="java:jboss/appName" pool-name="appName"
+    enabled="true" use-java-context="true" use-ccm="false">
+    <connection-url>jdbc:postgresql://10.1.1.1:5432/schemaName?autoReconnect=true
+    </connection-url>
+    <driver-class>org.postgresql.Driver</driver-class>
+    <driver>postgresql</driver>
+    <pool>
+        <min-pool-size>1</min-pool-size> 
+        <max-pool-size>10</max-pool-size>
+    </pool>   
+    <security>
+        <user-name>appUser</user-name>
+        <password>appPassword</password>
+    </security> 
+    <validation>
+        <validate-on-match>true</validate-on-match>
+    </validation>
+</datasource>
+
+<datasource jta="true" jndi-name="java:jboss/appName2" pool-name="appName2"
+    enabled="true" use-java-context="true" use-ccm="false">
+    <connection-url>jdbc:oracle:thin:@10.1.1.2:1521/SidName</connection-url>
+    <driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+    <driver>oracle</driver>
+    <pool>
+        <min-pool-size>1</min-pool-size> 
+        <max-pool-size>10</max-pool-size>
+    </pool>   
+    <security>
+        <user-name>appUser</user-name>
+        <password>appPassword</password>
+    </security> 
+    <validation>
+        <validate-on-match>true</validate-on-match>
+    </validation>
+</datasource>
+</comandoNumerado>
+
+<subsubsecao>Inicialização</subsubsecao>
+
+	Deve-se criar o seguinte <i>invoke script</i> para realizar a inicialização e
+parada do servidor de aplicação de forma apropriada, salve o conteúdo abaixo
+em <i>/etc/init.d/jboss7-eap</i>.
+
+<comandoNumerado>
+#!/bin/bash
+# JBoss 7.x EAP invoke script
+# Copyright (c) 2018 - Reinaldo Gil Lima de Carvalho <reinaldoc@gmail.com>
+
+### BEGIN INIT INFO
+# Provides:          jboss7
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: JBoss 7.x EAP invoke script
+### END INIT INFO
+
+### CONFIG
+MESSAGE='Java Application Server: jboss7 EAP'
+GETPID='org.jboss.as.standalone'
+SERVICEUSER='jboss'
+SERVICECMD='{ARG1}/bin/standalone.sh -b 0.0.0.0 >/dev/null 2>&1 &'
+
+### END CONFIG
+
+#
+# Return execution status if argument is empty
+#
+# @param $1 string to be checked
+# @return int
+function isEmpty {
+    [[ $1 =~ ^[[:space:]]*$ ]]
+    return $?
+}
+
+#
+# Set $PROCPID with service pid
+#
+# @param $1 service work directory
+# @return void
+#
+function setPid() {
+  PROCPID=$(ps -ef |grep "${GETPID}" |grep -v ' grep ' |tr -s ' ' |cut -f2 -d ' ')
+}
+
+#
+# Kill managed PID
+#
+# @param $1 optional kill signal
+# @return void
+function killPid() {
+	if ! isEmpty "$PROCPID" ; then
+		kill "$1" "$PROCPID" > /dev/null 2>&1
+	fi
+}
+
+#
+# Start Service
+#
+# @param  $1   service work directory
+# @return void
+function startService() {
+	if isEmpty "$1"; then
+		echo "Err: service work directory is required as argument."
+		return
+	fi
+
+	echo -n "Starting $MESSAGE"
+	setPid "$1"
+	if isEmpty "$PROCPID"; then
+		cmd=$(sed -re "s@\{ARG1\}@$1@" <<< $SERVICECMD)
+		su -l $SERVICEUSER -s /bin/bash -c "$cmd"
+		echo " ($1)."
+	else
+		echo " ($1 already started)."
+	fi
+}
+
+#
+# Stop Service
+#
+# @param  $1   service work directory
+# @return void
+function stopService() {
+	if isEmpty "$1"; then
+		echo "Err: service work directory is required as argument."
+		return
+	fi
+
+	echo -n "Stopping $MESSAGE"
+	setPid "$1"
+	if isEmpty "$PROCPID"; then
+		echo " ($1 already stopped)."
+		return
+	fi
+
+	killPid
+	i=0
+	while true; do
+		setPid "$1"
+		if ! isEmpty "$PROCPID" ; then
+			if [ $i -gt 15 ] ; then
+				killPid -9
+			elif [ $i -gt 10 ] ; then
+				killPid
+			fi
+			echo -n .
+			sleep 2
+		else
+			break
+		fi
+		let i++
+	done
+	echo .
+}
+
+case "$1" in
+	start)
+		startService /srv/jboss-eap-7.1
+	;;
+	stop)
+		stopService /srv/jboss-eap-7.1
+	;;
+	restart)
+		stopService /srv/jboss-eap-7.1
+		startService /srv/jboss-eap-7.1
+	;;
+	*)
+		echo "Usage: $0 {start | stop | restart}"
+		exit 1
+	;;
+esac
+
+exit 0
+</comandoNumerado>
+
+    Deve-se cadastar o referido <i>invoke script</i> para ser executado
+durante a inicialização e desligamento do sistema operacional, conforme
+indicado abaixo:
+
+<comando>
+# chmod 755 /etc/init.d/jboss7-eap
+# update-rc.d -f jboss7-eap defaults
+</comando>
+
