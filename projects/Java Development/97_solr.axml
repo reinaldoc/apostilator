@@ -1,9 +1,15 @@
 <capitulo>Solr 4.x</capitulo>
 
-    O Apache Solr é um servidor de pesquisa autônomo escrito em Java com uma
-API semelhante a REST. Durante a submissão de dados para o Solr ocorre a
-indexação, já a consulta, também realizada via HTTP GET, apresenta
-resultados em XML, JSON, além de outros formatos disponíveis.
+    O <link>http://lucene.apache.org/solr/</link><text>Apache Solr</text> é
+um servidor de pesquisa autônomo escrito em Java. É baseado no motor de
+pesquisa <link>https://lucene.apache.org/core/</link><text>Apache
+Lucene</text> e implementa uma API semelhante a REST. Utiliza o container
+web <link>http://www.eclipse.org/jetty/</link><text>Eclipse Jetty</text>
+para fornecer acesso a uma aplicação de console, bem como a API de pesquisa.
+
+    Durante a submissão de dados para o Solr ocorre a indexação, próxima do
+tempo real. Já a consulta, também realizada via HTTP GET, apresenta
+resultados em XML ou JSON, além de outros formatos disponíveis.
 
     Assim, o Solr mantém uma cópia dos dados da base de origem, devendo esta
 carga ser realizada por meio da alguma linguagem de programação. Após
@@ -28,13 +34,13 @@ adduser --comment "User for Solr" --home /srv/apache-solr-4.0.0 --no-create-home
         --system --shell /bin/false solr
 </comando>
 
-    É um controle de segurança válido a criação de um usuário para cada serviço
-do Solr que for iniciado. O isolamento dos dados armazenados é um critério
-válido para a inicialização de diferentes processos do Solr.
+    É um controle de segurança válido a criação de um usuário para cada
+processo do Solr que for iniciado. O isolamento dos dados armazenados é um
+critério para a inicialização de diferentes processos do Solr.
 
-    Cada processo do Solr utiliza um usuário independente, bem como uma porta
-TCP para acesso ao seu console e também um diretório de trabalho para
-armazenar os repositórios de dados gerenciados.
+    Cada processo do Solr utiliza um usuário independente, bem como uma
+porta TCP para acesso ao seu console e a interface REST, além de um
+diretório de trabalho para armazenar os repositórios de dados.
 
 <step>Download</step>
 
@@ -42,20 +48,22 @@ armazenar os repositórios de dados gerenciados.
 
 <lista>
   <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
-  <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.tgz</url>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.zip</url>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.zip.md5</url>
 </lista>
+
+    Verifique o arquivo obtido e descompacte-o:
 
 <comando>
 # cd /srv
-# tar xzf apache-solr-4.0.0.tgz
+# md5sum -c apache-solr-4.0.0.zip.md5
+# unzip apache-solr-4.0.0.zip
 </comando>
 
 <subsecao>Diretório de trabalho do Solr</subsecao>
 
-    O Solr em execução gerencia um conjunto de repositórios de dados.
-Distintos processos do Solr utilizam uma porta própria para seu acesso, o
-que determina o domínio de segregação dos dados. Dessa forma, os dados dos
-diferentes repositórios no gerenciados pela mesma instância do serviço
+    O Solr em execução gerencia um conjunto de repositórios de dados. Os
+dados de diferentes repositórios gerenciados pela mesma instância do serviço
 possuem algum sentido entre si.
 
 <step>Criar o diretório de trabalho do Solr</step>
