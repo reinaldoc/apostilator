@@ -37,6 +37,8 @@
 
 <step>Configuração da interface pública do serviço web</step>
 
+    Configure a interface no arquivo <b>./standalone/configuration/standalone.xml</b>.
+
 <comandoNumerado>
 <interface name="public">
     <inet-address value="${jboss.bind.address:0.0.0.0}"/>   
@@ -44,6 +46,9 @@
 </comandoNumerado>
 
 <step>Configuração do usuário para o console do servidor de aplicação</step>
+
+    A aplicação de console do JBoss EAP, que está disponível na portal 9990,
+requer autenticação, para isto, crie um usuário conforme indicado.
 
 <comando>
 ./bin/add-user.sh
