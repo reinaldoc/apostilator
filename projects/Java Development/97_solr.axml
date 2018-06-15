@@ -1,14 +1,25 @@
 <capitulo>Solr 4.x</capitulo>
 
     O Apache Solr é um servidor de pesquisa autônomo escrito em Java com uma
-API semelhante a REST. A submissão de dados para o Solr é denominada
+API semelhante a REST. Durante a submissão de dados para o Solr ocorre a
 indexação, já a consulta, também realizada via HTTP GET, apresenta
 resultados em XML, JSON, além de outros formatos disponíveis.
 
-    Após instalado e iniciado, o console do Solr estará disponível por meio
-da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
+    Assim, o Solr mantém uma cópia dos dados da base de origem, devendo esta
+carga ser realizada por meio da alguma linguagem de programação. Após
+instalado e iniciado, o console do Solr estará disponível por meio da porta
+8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
 
 <subsecao>Instalação</subsecao>
+
+<step>Verificar se há JVM instalada</step>
+
+<comando>
+# java -version
+openjdk version "1.8.0_171"
+OpenJDK Runtime Environment (build 1.8.0_171-b10)
+OpenJDK 64-Bit Server VM (build 25.171-b10, mixed mode)
+</comando>
 
 <step>Criação do usuário do sistema</step>
 
@@ -16,6 +27,14 @@ da porta 8983 com o contexto /solr: <url>http://127.0.0.1:8983/solr</url>.
 adduser --comment "User for Solr" --home /srv/apache-solr-4.0.0 --no-create-home
         --system --shell /bin/false solr
 </comando>
+
+    É um controle de segurança válido a criação de um usuário para cada serviço
+do Solr que for iniciado. O isolamento dos dados armazenados é um critério
+válido para a inicialização de diferentes processos do Solr.
+
+    Cada processo do Solr um usuário independente, bem como uma porta TCP
+para acesso ao seu console e também um diretório de trabalho para armazenar
+os repositórios de dados gerenciados.
 
 <step>Download</step>
 
@@ -31,23 +50,24 @@ adduser --comment "User for Solr" --home /srv/apache-solr-4.0.0 --no-create-home
 # tar xzf apache-solr-4.0.0.tgz
 </comando>
 
-<subsecao>Instância do Solr</subsecao>
+<subsecao>Diretório de trabalho do Solr</subsecao>
 
-    A instância do Solr é um processo do sistema operacional que gerencia um
-conjunto de repositórios de dados. A instância é o domínio de segregação dos
-dados, dessa forma, os dados dos diferentes repositórios de uma instância
+    O Solr em execução gerencia um conjunto de repositórios de dados.
+Distintos processos do Solr utilizam uma porta própria para seu acesso, o
+que determina o domínio de segregação dos dados. Dessa forma, os dados dos
+diferentes repositórios no gerenciados pela mesma instância do serviço
 possuem algum sentido entre si.
 
-<step>Criar diretório da instância do Solr</step>
+<step>Criar o diretório de trabalho do Solr</step>
 
 <comando>
-# cp -a apache-solr-4.0.0/example apache-solr-4.0.0/instance1
+# cp -a apache-solr-4.0.0/example apache-solr-4.0.0/server1
 </comando>
 
 <step>Conceder permissão para ativação da aplicação de console do Solr</step>
 
 <comando>
-# chown solr: apache-solr-4.0.0/instance1/solr-webapp/
+# chown solr: apache-solr-4.0.0/server1/solr-webapp/
 </comando>
 
     Após todas as configurações serem realizadas, o serviço poderá ser
@@ -57,50 +77,78 @@ iniciado.
 
 <comando>
 # su -l solr -s /bin/bash
-$ cd /src/apache-solr-4.0.0/instance1
+$ cd /src/apache-solr-4.0.0/server1
 $ java -jar start.jar
 </comando>
 
+<step>Defina a porta e a interface do serviço</step>
+
+    Caso um segundo processo do Solr necessite ser iniciado, para que um
+novo conjunto de dados seja indexado no mesmo servidor, é necessário alterar
+a porta TCP padrão (8983), uma vez que não é possível iniciar dois processos
+em modo de escuta (LISTEN) na mesma porta.
+
+    Isso pode ser realizado durante a inicialização do Solr por meio da
+opção <b>-Djetty.port=8984</b>, bem como pode-se optar um determinada interface
+de rede ou todas interfaces por meio da opção <b>-Djetty.host=0.0.0.0</b>. O
+exemplo a seguir inicia o Solr apenas para acesso local:
+
+<comando>
+# su -l solr -s /bin/bash
+$ cd /src/apache-solr-4.0.0/server2
+$ java -jar start.jar -Djetty.host=127.0.0.1 -Djetty.port=8984
+</comando>
 
 <subsecao>Repositórios de dados</subsecao>
 
-    Os repositórios de dados do Solr são denominados <i>cores</i>. Uma instância do
-servidor Solr pode ser configurada com vários repositórios de dados.
+    Os repositórios de dados do Solr são denominados <i>cores</i>. Uma
+instância do servidor Solr pode ser configurada com vários repositórios de
+dados.
 
-<step>Criar diretório para os repositórios de dados</step>
+<step>Criar diretório para um conjunto de repositórios de dados</step>
+
+    O diretório <b>solr/instance1</b> representa um conjunto de repositórios
+de dados que será gerenciado pelo Solr.
 
 <comando>
-# cd /srv/apache-solr-4.0.0/instance1
-# cp -a solr/collection1 solr/app1
-# chown -R solr: solr/app1
+# cd /srv/apache-solr-4.0.0/server1
+# cp -a solr/collection1 solr/instance1
+# chown solr: solr/instance1
 </comando>
 
 <step>Configurar repositórios de dados</step>
 
     Os repositórios são configurados no arquivo
-<b>./instace1/solr/solr.xml</b> conforme exemplo abaixo:
+<b>./server1/solr/solr.xml</b> conforme exemplo abaixo:
 
 <comando>
-<core instanceDir="app1" name="acordaos" dataDir="data-acordaos" />
-<core instanceDir="app1" name="sentencas" dataDir="data-sentencas" />
-<core instanceDir="app1" name="decisoes" dataDir="data-decisoes" />
+<core name="acordaos"  instanceDir="instance1" dataDir="data-acordaos" />
+<core name="sentencas" instanceDir="instance1" dataDir="data-sentencas" />
+<core name="decisoes"  instanceDir="instance1" dataDir="data-decisoes" />
 </comando>
 
     Após iniciar o Solr, os seguintes diretórios serão criados:
 
 <comando>
-/srv/apache-solr-4.0.0/instance1/solr/app1/data-acordaos
-/srv/apache-solr-4.0.0/instance1/solr/app1/data-sentencas
-/srv/apache-solr-4.0.0/instance1/solr/app1/data-decisoes
+/srv/apache-solr-4.0.0/server1/solr/instance1/data-acordaos
+/srv/apache-solr-4.0.0/server1/solr/instance1/data-sentencas
+/srv/apache-solr-4.0.0/server1/solr/instance1/data-decisoes
 </comando>
+
+    As seguintes URLs estarão disponíveis para consulta:
+
+<comando>
+http://127.0.0.1:8983/solr/acordaos/select?q=*%3A*
+http://127.0.0.1:8983/solr/sentencas/select?q=*%3A*
+http://127.0.0.1:8983/solr/decisoes/select?q=*%3A*
+</comando>
+
 
 <subsecao>Schema</subsecao>
 
-    O schema detém a configuração dos campos de dados que podem ser
-utilizados pelos repositórios.
-
-    Os campos são configurados no arquivo
-<b>./instace1/solr/app1/conf/schema.xml</b> conforme exemplo abaixo:
+    O schema detém a configuração dos tipos dos campos de dados que estarão
+disponíveis aos repositórios. Os campos são configurados no arquivo
+<b>./server1/solr/instance1/conf/schema.xml</b> conforme exemplo abaixo:
 
 <comando>
 <field name="ano" type="long" indexed="true" stored="true" />
@@ -111,18 +159,20 @@ utilizados pelos repositórios.
 
 <subsecao>Configurações adicionais</subsecao>
 
+<subsubsecao>Configurações do campo padrão de pesquisa</subsubsecao>
+
     O uso da configuração <b>defaultSearchField</b> não é recomendado
 conforme a documentação do Solr, devendo-se indicar o campo na consulta HTTP
 GET, pelo parâmetro <b>q=campo:valor</b>.
 
     Caso a aplicação não informe o campo para a consulta e utilize apenas 
 <b>q=valor</b>, pode-se configurar o campo padrão em
-<b>./instace1/solr/app1/conf/solrconfig.xml</b> ou omitir esta definição
+<b>./server1/solr/instance1/conf/solrconfig.xml</b> ou omitir esta definição
 para habilitar o parâmetro <b>defaultSearchField</b> do arquivo
-<b>./instace1/solr/app1/conf/ schema.xml</b>.
+<b>./server1/solr/instance1/conf/ schema.xml</b>.
 
 <lista>
-  <item/><b>./instace1/solr/app1/conf/solrconfig.xml</b>
+  <item/><b>./server1/solr/instance1/conf/solrconfig.xml</b>
 </lista>
 
 <comando>
@@ -140,3 +190,24 @@ para habilitar o parâmetro <b>defaultSearchField</b> do arquivo
      </lst>
   ...
 </comando>
+
+<lista>
+  <item/><b>./server1/solr/instance1/conf/schema.xml</b>
+</lista>
+
+<comando>
+ ...
+ <!-- field for the QueryParser to use when an explicit fieldname is absent -->
+ <defaultSearchField>field_all</defaultSearchField>
+ ...
+</comando>
+
+<subsubsecao>Configurações da indexação conjunta dos campos</subsubsecao>
+
+<comando>
+<!-- copyField commands copy one field to another at the time a document
+     is added to the index.  It's used either to index the same field differently,
+    or to add multiple fields to the same field for easier/faster searching. -->
+<copyField source="*" dest="field_all"/>
+</comando>
+
