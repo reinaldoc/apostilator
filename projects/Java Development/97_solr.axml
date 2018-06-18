@@ -1,15 +1,20 @@
 <capitulo>Solr 4.x</capitulo>
 
     O <link>http://lucene.apache.org/solr/</link><text>Apache Solr</text> é
-um servidor de pesquisa autônomo escrito em Java. É baseado no motor de
-pesquisa <link>https://lucene.apache.org/core/</link><text>Apache
-Lucene</text> e implementa uma API semelhante a REST. Utiliza o container
-web <link>http://www.eclipse.org/jetty/</link><text>Eclipse Jetty</text>
-para fornecer acesso a uma aplicação de console, bem como a API de pesquisa.
+uma plataforma pesquisa com indexação distribuida, replicação, balanceamento
+de consultas e <i>failover</i> automático, desenvolvido em Java e integrável
+a qualquer outra linguagem.
 
-    Durante a submissão de dados para o Solr ocorre a indexação, próxima do
-tempo real. Já a consulta, também realizada via HTTP GET, apresenta
-resultados em XML ou JSON, além de outros formatos disponíveis.
+    É baseado no motor de pesquisa
+<link>https://lucene.apache.org/core/</link><text>Apache Lucene</text> e
+implementa uma API semelhante a REST sob HTTP. Utiliza o container web
+<link>http://www.eclipse.org/jetty/</link><text>Eclipse Jetty</text> para
+fornecer acesso a uma aplicação de console, bem como à API de pesquisa.
+
+    A indexação dos dados ocorre durante sua submissão, com resultados
+disponíveis para consulta próximo do tempo real. Já a consulta, também
+realizada via HTTP GET, apresenta resultados em XML ou JSON, além de outros
+formatos disponíveis.
 
     Assim, o Solr mantém uma cópia dos dados da base de origem, devendo esta
 carga ser realizada por meio da alguma linguagem de programação. Após
@@ -39,7 +44,7 @@ processo do Solr que for iniciado. O isolamento dos dados armazenados é um
 critério para a inicialização de diferentes processos do Solr.
 
     Cada processo do Solr utiliza um usuário independente, bem como uma
-porta TCP para acesso ao seu console e a interface REST, além de um
+porta TCP para acesso ao seu console e a API de consulta, além de um
 diretório de trabalho para armazenar os repositórios de dados.
 
 <step>Download</step>
@@ -47,24 +52,32 @@ diretório de trabalho para armazenar os repositórios de dados.
     O instalador do Apache Solr pode ser obtido no seguinte endereço:
 
 <lista>
-  <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
   <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.zip</url>
   <item/><url>https://archive.apache.org/dist/lucene/solr/4.0.0/apache-solr-4.0.0.zip.md5</url>
+</lista>
+
+    Outras versões do Apache Solr estão disponíveis em:
+
+<lista>
+  <item/><url>https://archive.apache.org/dist/lucene/solr/</url>
 </lista>
 
     Verifique o arquivo obtido e descompacte-o:
 
 <comando>
 # cd /srv
+
 # md5sum -c apache-solr-4.0.0.zip.md5
+apache-solr-4.0.0.zip: SUCESSO
+
 # unzip apache-solr-4.0.0.zip
 </comando>
 
 <subsecao>Diretório de trabalho do Solr</subsecao>
 
     O Solr em execução gerencia um conjunto de repositórios de dados. Os
-dados de diferentes repositórios gerenciados pela mesma instância do serviço
-possuem algum sentido entre si.
+dados de diferentes repositórios, ainda que gerenciados pela mesma instância
+do serviço, possuem algum sentido entre si.
 
 <step>Criar o diretório de trabalho do Solr</step>
 
@@ -100,6 +113,8 @@ em modo de escuta (LISTEN) na mesma porta.
 opção <b>-Djetty.port=8984</b>, bem como pode-se optar um determinada interface
 de rede ou todas interfaces por meio da opção <b>-Djetty.host=0.0.0.0</b>. O
 exemplo a seguir inicia o Solr apenas para acesso local:
+
+    <b>Não inicie-o neste momento</b>.
 
 <comando>
 # su -l solr -s /bin/bash
@@ -177,7 +192,7 @@ GET, pelo parâmetro <b>q=campo:valor</b>.
 <b>q=valor</b>, pode-se configurar o campo padrão em
 <b>./server1/solr/instance1/conf/solrconfig.xml</b> ou omitir esta definição
 para habilitar o parâmetro <b>defaultSearchField</b> do arquivo
-<b>./server1/solr/instance1/conf/ schema.xml</b>.
+<b>./server1/solr/instance1/ conf/schema.xml</b>.
 
 <lista>
   <item/><b>./server1/solr/instance1/conf/solrconfig.xml</b>
@@ -240,9 +255,13 @@ em <i>/etc/init.d/solr4</i>.
 ### END INIT INFO
 
 ### CONFIG
-STARTMESSAGE='Starting Search Server: solr4'
-STOPMESSAGE='Stopping Search Server: solr4'
+MESSAGE='Search Server: solr4'
 GETPID='java -jar start.jar'
+SERVICEUSER='solr'
+SERVICECMD='cd {ARG1}; java -jar start.jar \
+                       -Djetty.host=127.0.0.1 \
+                       -Djetty.port={ARG2} \
+                       -Dinit.instance={ARG1} >/dev/null 2>&1 &'
 
 ### END CONFIG
 
@@ -263,6 +282,9 @@ function isEmpty {
 # @return void
 #
 function setPid() {
+	if ! isEmpty "$1" ; then
+		GETPID="$1"
+	fi
 PROCPID=$(ps -ef | grep "${GETPID}" | grep -v ' grep ' | tr -s ' ' | cut -f2 -d ' ')
 }
 
@@ -283,7 +305,6 @@ function killPid() {
 # @param  $1   service work directory
 # @return void
 function startService() {
-
 	if isEmpty "$1"; then
 		echo "Err: service work directory is required as argument."
 		return
@@ -294,10 +315,12 @@ function startService() {
 		return
 	fi
 
-	echo -n $STARTMESSAGE
+	echo -n "Starting $MESSAGE"
 	setPid "$1"
 	if isEmpty "$PROCPID"; then
-		su -l solr -s /bin/bash -c "cd $1; java -jar start.jar -Djetty.port=$2 >/dev/null 2>&1 &"
+		cmd=$(sed -re "s@\{ARG1\}@$1@g" <<< $SERVICECMD)
+		cmd=$(sed -re "s@\{ARG2\}@$2@g" <<< $cmd)
+		su -l $SERVICEUSER -s /bin/bash -c "$cmd"
 		echo " ($1)."
 	else
 		echo " ($1 already started)."
@@ -315,10 +338,10 @@ function stopService() {
 		return
 	fi
 
-	echo -n $STOPMESSAGE
+	echo -n "Stopping $MESSAGE ($1)"
 	setPid "$1"
 	if isEmpty "$PROCPID"; then
-		echo " ($1 already stopped)."
+		echo " (already stopped)."
 		return
 	fi
 
@@ -327,7 +350,7 @@ function stopService() {
 	while true; do
 		setPid "$1"
 		if ! isEmpty "$PROCPID" ; then
-			if [ $i -gt 15 ] ; then
+			if [ $i -gt 10 ] ; then
 				killPid -9
 			elif [ $i -gt 10 ] ; then
 				killPid
@@ -368,7 +391,10 @@ indicado abaixo:
 
 <comando>
 # chmod 755 /etc/init.d/solr4
-# update-rc.d -f jboss6 defaults
+
+> Debian
+# update-rc.d -f solr4 defaults
+
+> RedHat
+# systemctl enable solr.service
 </comando>
-
-

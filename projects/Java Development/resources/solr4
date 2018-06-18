@@ -12,9 +12,10 @@
 ### END INIT INFO
 
 ### CONFIG
-STARTMESSAGE='Starting Search Server: solr4'
-STOPMESSAGE='Stopping Search Server: solr4'
+MESSAGE='Search Server: solr4'
 GETPID='java -jar start.jar'
+SERVICEUSER='solr'
+SERVICECMD='cd {ARG1}; java -jar start.jar -Djetty.host=127.0.0.1 -Djetty.port={ARG2} -Dinit.instance={ARG1} >/dev/null 2>&1 &'
 
 ### END CONFIG
 
@@ -35,6 +36,9 @@ function isEmpty {
 # @return void
 #
 function setPid() {
+	if ! isEmpty "$1" ; then
+		GETPID="$1"
+	fi
 	PROCPID=$(ps -ef | grep "${GETPID}" | grep -v ' grep ' | tr -s ' ' | cut -f2 -d ' ')
 }
 
@@ -55,7 +59,6 @@ function killPid() {
 # @param  $1   service work directory
 # @return void
 function startService() {
-
 	if isEmpty "$1"; then
 		echo "Err: service work directory is required as argument."
 		return
@@ -66,10 +69,12 @@ function startService() {
 		return
 	fi
 
-	echo -n $STARTMESSAGE
+	echo -n "Starting $MESSAGE"
 	setPid "$1"
 	if isEmpty "$PROCPID"; then
-		su -l solr -s /bin/bash -c "cd $1; java -jar start.jar -Djetty.port=$2 >/dev/null 2>&1 &"
+		cmd=$(sed -re "s@\{ARG1\}@$1@g" <<< $SERVICECMD)
+		cmd=$(sed -re "s@\{ARG2\}@$2@g" <<< $cmd)
+		su -l $SERVICEUSER -s /bin/bash -c "$cmd"
 		echo " ($1)."
 	else
 		echo " ($1 already started)."
@@ -87,10 +92,10 @@ function stopService() {
 		return
 	fi
 
-	echo -n $STOPMESSAGE
+	echo -n "Stopping $MESSAGE ($1)"
 	setPid "$1"
 	if isEmpty "$PROCPID"; then
-		echo " ($1 already stopped)."
+		echo " (already stopped)."
 		return
 	fi
 
@@ -99,7 +104,7 @@ function stopService() {
 	while true; do
 		setPid "$1"
 		if ! isEmpty "$PROCPID" ; then
-			if [ $i -gt 15 ] ; then
+			if [ $i -gt 10 ] ; then
 				killPid -9
 			elif [ $i -gt 10 ] ; then
 				killPid
