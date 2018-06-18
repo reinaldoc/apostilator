@@ -75,9 +75,12 @@ apache-solr-4.0.0.zip: SUCESSO
 
 <subsecao>Diretório de trabalho do Solr</subsecao>
 
-    O Solr em execução gerencia um conjunto de repositórios de dados. Os
-dados de diferentes repositórios, ainda que gerenciados pela mesma instância
-do serviço, possuem algum sentido entre si.
+    O Solr em execução utiliza um diretório de trabalho para armazenar
+configurações e um conjunto de repositórios de dados. Os dados nos
+repositórios de um determinado diretório de trabalho devem possuir algum
+sentido entre si, caso contrário devem ser alocados em diretórios de
+trabalho distintos e consequentemente gerenciados por outro processo do
+Solr.
 
 <step>Criar o diretório de trabalho do Solr</step>
 
@@ -98,7 +101,7 @@ iniciado.
 
 <comando>
 # su -l solr -s /bin/bash
-$ cd /src/apache-solr-4.0.0/server1
+$ cd /srv/apache-solr-4.0.0/server1
 $ java -jar start.jar
 </comando>
 
@@ -110,15 +113,16 @@ a porta TCP padrão (8983), uma vez que não é possível iniciar dois processos
 em modo de escuta (LISTEN) na mesma porta.
 
     Isso pode ser realizado durante a inicialização do Solr por meio da
-opção <b>-Djetty.port=8984</b>, bem como pode-se optar um determinada interface
-de rede ou todas interfaces por meio da opção <b>-Djetty.host=0.0.0.0</b>. O
-exemplo a seguir inicia o Solr apenas para acesso local:
+opção <b>-Djetty.port=8984</b>, bem como pode-se optar uma determinada
+interface de rede ou todas interfaces por meio da opção
+<b>-Djetty.host=0.0.0.0</b>. O exemplo a seguir inicia o Solr apenas para
+acesso local:
 
     <b>Não inicie-o neste momento</b>.
 
 <comando>
 # su -l solr -s /bin/bash
-$ cd /src/apache-solr-4.0.0/server2
+$ cd /srv/apache-solr-4.0.0/server2
 $ java -jar start.jar -Djetty.host=127.0.0.1 -Djetty.port=8984
 </comando>
 
@@ -142,7 +146,14 @@ de dados que será gerenciado pelo Solr.
 <step>Configurar repositórios de dados</step>
 
     Os repositórios são configurados no arquivo
-<b>./server1/solr/solr.xml</b> conforme exemplo abaixo:
+<b>./server1/solr/solr.xml</b>, conforme indicado a seguir, sendo que o
+parâmetro <b>name</b> comporá a URL de acesso ao repositório, já os demais
+parâmetros refletem a estrutura interna do diretório do repositório.
+
+    O conjunto de repositórios contidos dentro de um determinado
+<b>instanceDir</b> compartilham a mesma configuração, neste caso armazenada
+em <b>./solr/instance1/conf</b>, o que inclui o <b>schema.xml</b> e
+<b>solrconfig.xml</b>.
 
 <comando>
 <core name="acordaos"  instanceDir="instance1" dataDir="data-acordaos" />
