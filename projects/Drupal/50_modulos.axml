@@ -706,7 +706,9 @@ informação do autor para cada conteúdo.
 que o usuário continue conseguindo acessar esse conteúdo que foi
 despublicado, para isso são necessárias as permissões fornecidas pelo módulo
 <link>https://www.drupal.org/project/view_unpublished</link>
-<text><b>view_unpublished</b></text>.
+<text><b>view_unpublished</b></text>. Em vez de seguir por este caminho,
+tendo que tratar as considerações abaixo, considere apenas criar um campo
+booleano para controlar a exibição desse conteúdo em alguma <b>View</b>.
 
     Entretanto o módulo <b>view_unpublished</b> provoca que o Drupal
 desabilite completamente o recurso de cache de blocos, uma vez que esse
@@ -1343,30 +1345,56 @@ busca</b>.
   <item>Uso</item>: /admin/config/search/path/patterns [Busca e metadados  →
   URLs alternativas];
   <lista>
-    <item/>configure os padrões de URL, como seu prefixo, por tipo de conteúdo;
-    <item/>ative a opção <b> Transliterate prior to creating alias</b>
-           nas configurações;
+    <item/>configure um modelo de URL como <b>prefixo/[node:title]</b>, por
+           tipo de conteúdo;
+    <lista>
+      <item/>sumula/[node:field-sumula-numero]
+      <item/>provimento/[node:field-prov-data:custom:Y]/[node:field-prov-numero]
+      <item/>concursos/[node:field-concurso-tax:name]/[node:nid]
+      <item/>relatorio/[node:field-rel-data:custom:Y]/[node:field-rel-data:custom:m]
+      <item/>noticia/[node:created:custom:Y]/[node:title]
+    </lista>
+    <item/>ative a opção <b>Transliterate prior to creating alias</b>
+           nas configurações para tratar os caracteres acentuados na URL;
   </lista>
 </lista>
 
-    O módulo <b>Pathauto</b> gera URL alternativas automaticamente quando o
-conteúdo é salvo, a partir de <b>Patterns</b> configurados por tipo de
-conteúdo com o uso de tokens. Comumente usa-se como <b>Default path
-pattern</b> o token <b>[node:content-type:machine-name]/[node:title]</b>
-para prefixar a URL com o nome do tipo de conteúdo.
+    O módulo <b>Pathauto</b> gera a URL alternativa a partir de um modelo
+(<b>Pattern</b>) quando o conteúdo é salvo, esse modelo é configurado por
+tipo de conteúdo com o uso de tokens. A opção <b>Default path pattern</b>
+contém o modelo utilizado quando determinado tipo de conteúdo não possuir
+um modelo configurado, pode-se utilizar:
+<b>[node:content-type:machine-name]/[node:title]</b>.
 
-    Também é possível regerar todas as URLs alternativas a partir da opção
-<b>Bulk generate</b> nas configurações, além disso, pode-se regerar as URLs
-para um tipo de conteúdo específico, acesse o item <b>Conteúdo</b> do menu
-administrativo, depois selecione o tipo de conteúdo e use a opção <b>Update
-URL alias</b>. Isso pode ser útil quando um <b>Pattern</b> é alterado, caso
-contrário, apenas quando o conteúdo for salvo a URL será atualizada.
+    <importante/>Planeje com atenção o modelo de URLs pois mudanças impactam
+nas referências dos sites de busca, além disso, a mudança do modelo não
+altera as URLs do conteúdo existente, aquelas criadas com o modelo anterior.
 
-    <importante/>Planeje com atenção o padrão de URLs pois mudanças impactam
-nas referências dos sites de busca, além disso, a opção <b>Update URL
-alias</b> é aplicada somente aos 50 itens listados na página de pesquisa de
-conteúdo, sendo necessário repetir a ação para cada página, o que pode ser
-um complicador se houver muito conteúdo.
+    É possível regerar as URLs alternativas de todos os conteúdos a partir da
+opção <b>Bulk generate</b> nas configurações, ou ainda, pode-se regerar as URLs
+para um tipo de conteúdo específico. Neste caso, acesse o item <b>Conteúdo</b>
+do menu administrativo, depois selecione o tipo de conteúdo e use a opção
+<b>Update URL alias</b>. Caso contrário, a URL será atualizada somente quando
+o conteúdo for salvo.
+
+    O módulo
+<link>https://drupal.org/project/redirect</link><text><b>Redirect</b></text>
+automaticamente cria o redirecionamento quando a URL de um conteúdo é
+alterada, apontando a URL anterior para a nova URL.
+
+    O módulo
+<link>https://drupal.org/project/url_alias_permissions</link><text><b>URL
+Alias Permissions</b></text> fornece uma nova permissão para que o usuário
+possa definir a URL de um conteúdo, ainda que haja um modelo configurado
+para o tipo de conteúdo.
+
+    O módulo
+<link>https://www.drupal.org/project/subpathauto</link><text><b>Subpathauto</b></text>
+fornece URLs alternativas para serviços agregados a conta do usuário, como o
+formulário de contato (módulo <b>Contact</b>). Ao desabilitar a opção <b>Skip
+administration paths from sub-path processing</b>, a URL de edição da conta do
+usuário receberá a URL alternativa <b>users/johndoe/edit</b>, em vez de
+exibir o id do usuário.
 
 <subsubsecao>Submitted By</subsubsecao>
 
