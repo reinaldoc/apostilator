@@ -1164,31 +1164,49 @@ exemplo 726x166 pixels.
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/eva</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text>,
+<link>https://drupal.org/project/token</link><text>Token</text> e
+<link>https://drupal.org/project/views</link><text>Views</text>.
   <item>Função</item>: apresenta uma View como um campo de determinado tipo
                        de conteúdo;
   <item>Uso</item>:
   <lista>
-    <item/>crie uma <b>View Master</b> (nem bloco nem página) para exibir
-           um certo tipo de conteúdo;
-    <item/>adicione um <b>display Eva Field</b>;
-    <item/>indique o tipo de entidade (<b>Node</b>) em que essa View será
-           apresentada como um campo;
-    <item/>indique o tipo de conteúdo em que essa View será apresentada
-           como um campo;
+    <item/>adicione um <b>display Eva Field</b> a uma View;
+    <lista>
+      <item/>caso não exista uma View para listar este tipo de conteúdo, crie
+             uma <b>View Master</b>, ou seja, nem bloco nem página, e
+             adicione um <b>display Eva Field</b>;
+    </lista>
+    <item/>configuração de injeção da View como um campo:
+    <lista>
+      <item/>indique o tipo de entidade em que essa View será apresentada:
+             <b>Node</b>;
+      <item/>indique o tipo de conteúdo (<b>Bundles</b>) em que essa View será
+             apresentada;
+    </lista>
     <item/>ative a opção para exibir o título da View no conteúdo;
     <item/>adicione um filtro contextual para obter o id do conteúdo;
+    <lista>
+      <item/>selecione o campo do tipo <b>Entity Reference</b> do tipo de
+             conteúdo listado;
+      <item/>ative a validação básica;
+    </lista>
   </lista>
 </lista>
 
-    A única vantagem em utilizar este módulo é capacidade de apresentar
-uma View entre os campos do conteúdo, uma vez que uma View de bloco
-somente pode ser exibida acima ou baixo dos campos do conteúdo.
+    Ao criar uma <b>View</b> com <b>display Eva Field</b> pode-se
+apresentá-la como um campo de um tipo de conteúdo, sendo possível listar o
+conteúdo referenciado por meio do módulo <b>Entity Reference</b> ao acessar
+o <b>Node</b>.
 
-    A não ser por algum requisito exótico de apresentar a mesma view como
-um campo para qualquer conteúdo de determinado tipo, a utilização deste
-módulo será em conjunto com o módulo <b>Entity Reference</b> e com a
-utilização de filtro contextual para apresentar uma lista de algum tipo de
-conteúdo que possui relacionamento com o conteúdo apresentado.
+    Após a injeção da View, pode-se acessar o gerenciamento de exibição do
+tipo de conteúdo selecionado para indicar a ordem do campo EVA, ou seja, a
+View pode ser apresentada entre os campos do <b>Node</b>.
+
+     Pode-se obter comportamento similar com uma View de bloco, sem a
+utilização deste módulo, porém somente será exibida acima ou embaixo dos
+campos do conteúdo.
 
 <subsecao>Nodes</subsecao>
 
