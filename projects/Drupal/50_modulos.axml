@@ -557,6 +557,10 @@ ao valor <b>Node: ID</b>;
   <item>Função</item>: colorizar mapa de links;
 </lista>
 
+    O módulo <link>https://www.drupal.org/project/responsive_imagemaps</link>
+<text>Responsive Image Maps</text> permite criar mapa de links sobre imagens
+de forma responsiva.
+
 <subsecao>Menus</subsecao>
 
 <subsubsecao>Menu block</subsubsecao>
