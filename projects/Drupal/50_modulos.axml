@@ -459,14 +459,24 @@ conveniente inibir a edição do perfil do usuário com a desativação da aba
 <subsubsecao>Context</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/context
-  <item>Dependência</item>: https://drupal.org/project/ctools
+  <item>Download</item>: <url>https://drupal.org/project/context</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/ctools</link><text>Chaos tools suite</text>.
   <item>Função</item>: fornece condições adicionais para a visibilidade dos blocos;
   <item>Uso</item>: /admin/structure/context
   <lista>
-    <item/>criar regras de contexto;
-    <item/>adicionar condição (ex: se página for <front >);
-    <item/>adicionar reação (ex: exibir determinado bloco);
+    <item/>crie uma regra de contexto;
+    <item/>adicione uma ou mais condições (ex: se página for <front >);
+    <lista>
+      <item/>selecione <b>Path</b>;
+      <item/>indique o caminho <b><front ></b>;
+    </lista>
+    <item/>adicione uma ou mais reações (ex: exibir determinado bloco);
+    <lista>
+      <item/>selecione <b>Blocks</b>;
+      <item/>selecione algum bloco (estão agrupados a direita);
+      <item/>clique em <b>+ Add</b>;
+    </lista>
   </lista>
 </lista>
 
