@@ -395,7 +395,5 @@ $ cd /var/www/portal/drupal-7
 $ umask 022
 $ tar xzf /tmp/drupal-7.57.tar.gz --strip 1
 $ chmod 600 COPYRIGHT.txt INSTALL*.txt MAINTAINERS.txt UPGRADE.txt
-$ find ./ -regextype posix-egrep
-          -regex '.*(LICENSE|README|INSTALL|CHANGELOG).txt$'
-          -exec chmod 600 {} \;
+$ find ./ -regextype posix-egrep -regex '.*\.txt$' -exec chmod 600 {} \;
 </comando>
