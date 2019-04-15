@@ -900,9 +900,23 @@ estático.
   <item/>tabela: definir campo de ordenação padrão (default sort);
   <item/>tabela: ativar campos com reordenação pelo usuário (sortable);
   <item/>definir critérios de filtragem (por tipo de conteúdo, se publicado);
-  <item/>adicionar relacionamento a view (Author->User, tipo de conteúdo);
   <item/>definir critérios de ordenação (por mês desc, por rótulo asc.);
-</lista> 
+  <item/>adicionar relacionamento a view (Author->User, tipo de conteúdo);
+</lista>
+
+<subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
+
+<lista>
+  <item/>adicionar critério de filtragem;
+  <item/>selecione um ou mais campos;
+  <item/>ative a opção <i>Expose this filter to visitors</i>;
+</lista>
+
+    Cada campo selecionado ira gerar um <i>input</i>. Para que um
+<i>input</i> filtre mais de um campo, use o campo <b>Global: Combine
+Filters</b>.
+
+<br/>0.3cm
 
 <subsubsubsecao>View de bloco</subsubsubsecao>
 
