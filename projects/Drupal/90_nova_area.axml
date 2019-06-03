@@ -1,0 +1,67 @@
+<capitulo>Área de Publicação</capitulo>
+
+    Durante a operação de um Portal Corporativo, novas áreas de publicação
+serão demandadas pelas unidades administrativas para publicação de
+documentos de trabalho ou a fim de cumprir determinação regulamentar, seja
+de leis, resoluções ou normas locais. Vale ressaltar a importância de
+existir uma norma interna a coorporação que detalhe a unidade responsável,
+periodicidade e completude do conteúdo que será publicado.
+
+    Assim, criar uma nova área de publicação é uma atividade cotidiana da
+sustentação de um Portal e envolve a configuração de uma série de elementos
+do Drupal, nesta ordem: taxonomia, menu, tipo de conteúdo, padrão do nome de
+arquivos, padrão da URL, papel, permissão, perfil de upload de arquivos do
+IMCE, caminhos de navegação (<i>breadcrumb</i>).
+
+
+<br/>0.3cm
+
+<step>Taxonomia</step>
+
+<lista>
+  <item></item>defina o nome do vocabulário da taxonomia;
+  <item></item>adicione os termos à taxonomia;
+</lista>
+
+<step>Menu</step>
+
+<lista>
+  <item></item>crie o menu;
+</lista>
+
+<step>Tipo de conteúdo</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Padrão do nome dos arquivos do campo de imagem ou arquivo</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Padrão da URL</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Papel e Permissão</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Perfil de upload de arquivos do IMCE</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Caminhos de navegação (<i>breadcrumb</i>)</step>
+
+<lista>
+  <item></item>;
+</lista>
+
