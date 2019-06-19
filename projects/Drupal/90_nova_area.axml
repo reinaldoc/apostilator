@@ -1,11 +1,11 @@
 <capitulo>Área de Publicação</capitulo>
 
     Durante a operação de um Portal Corporativo, novas áreas de publicação
-serão demandadas pelas unidades administrativas para publicação de
+serão demandadas pelas unidades organizacionais para publicação de
 documentos de trabalho ou a fim de cumprir determinação regulamentar, seja
 de leis, resoluções ou normas locais. Vale ressaltar a importância de
-existir uma norma interna a coorporação que detalhe a unidade responsável,
-periodicidade e completude do conteúdo que será publicado.
+existir uma norma interna a coorporação que especifique a unidade
+responsável, periodicidade e completude do conteúdo que será publicado.
 
     Assim, criar uma nova área de publicação é uma atividade cotidiana da
 sustentação de um Portal e envolve a configuração de uma série de elementos
@@ -13,31 +13,42 @@ do Drupal, nesta ordem: taxonomia, menu, tipo de conteúdo, padrão do nome de
 arquivos, padrão da URL, papel, permissão, perfil de upload de arquivos do
 IMCE, caminhos de navegação (<i>breadcrumb</i>).
 
+<subsecao>Artigo</subsecao>
+
+    As áreas do Portal utilizam um tipo conteúdo formado essencialmente pelo
+campo de texto <b>Title</b> e pelo campo de texto longo <b>Body</b>, que
+denomino de <b>Artigo (Nome da Área)</b>, em que a primeira página utiliza
+uma imagem no topo que exerce papel de <b>banner</b> e apresenta um menu a
+direita.
 
 <br/>0.3cm
-
-<step>Taxonomia</step>
-
-<lista>
-  <item></item>defina o nome do vocabulário da taxonomia;
-  <item></item>adicione os termos à taxonomia;
-</lista>
 
 <step>Menu</step>
 
 <lista>
-  <item></item>crie o menu;
+  <item/>adicione um menu em <b>Estrutura => Menus => Adicionar menu</b>;
+  <item/>defina o nome do menu como "Menu: Nome da Área";
+  <item/>edite o nome no sistema e remova o prefixo "menu-";
+  <item/>preencha a descrição menu contendo em que local ele será utilizado;
+  <lista>
+    <item/>Menu para Nome da Área;
+  </lista>
+  <item/>Em <b>Estrutura => Blocos</b>, configure o bloco "Menu: Nome da
+  Área";
+  <lista>
+    <item/>configure o Título do bloco para <b>Nome da Área</b>;
+    <item/>configure a região para <b>Second Sidebar</b>, ou seja, lateral
+direita;
+    <item/>configure a visibilidade para <b>Apenas as páginas listadas</b>:
+exemplo: pje, pje/*;
+  </lista>
 </lista>
 
 <step>Tipo de conteúdo</step>
 
 <lista>
-  <item></item>;
-</lista>
-
-<step>Padrão do nome dos arquivos do campo de imagem ou arquivo</step>
-
-<lista>
+  <item/>adicione um tipo de conteúdo em <b>Estrutura => Tipo de Conteúdo =>
+Novo tipo de conteúdo</b>;
   <item></item>;
 </lista>
 
@@ -65,3 +76,40 @@ IMCE, caminhos de navegação (<i>breadcrumb</i>).
   <item></item>;
 </lista>
 
+<subsecao>Conteúdo estruturado</subsecao>
+
+    As áres do Portal podem ser complementadas com conteúdo estruturado,
+representado por outros tipos de conteúdos formados por campos do tipo
+inteiro, data, arquivo, referência de termo (taxonomia) e apresemtados em
+forma de <b>View de página</b> disponível por meio de item do menu.
+
+<step>Taxonomia</step>
+
+<lista>
+  <item></item>defina o nome do vocabulário da taxonomia;
+  <item></item>adicione os termos à taxonomia;
+</lista>
+
+<step>Tipo de conteúdo</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Padrão do nome dos arquivos do campo de imagem ou arquivo</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>Papel e Permissão</step>
+
+<lista>
+  <item></item>;
+</lista>
+
+<step>View</step>
+
+<lista>
+  <item></item>;
+</lista>
