@@ -100,9 +100,25 @@ field_noticia_link, field_noticia_imagem.</importante>
 
 <step>Padrão da URL</step>
 
+    O caminho da URL é definido quando um conteúdo é criado ou editado, a
+partir do modelo (<i>pattern</i>) configurado. O modelo
+<b>[node:content-type:machine-name]/[node:title]</b> costuma ser útil para a
+maioria dos casos.
+
 <lista>
-  <item></item>;
+  <item/>use a opçao <b>Configurações => Busca e metadados => URLs
+  alternativas</b>;
+  <item/>selecione <b>Patterns</b>;
+  <item/>identifique o tipo de conteúdo criado e configure um modelo:
+  <b>nome-da-area/[node:title]</b>;
 </lista>
+
+    <importante>Ao criar a primeira página de um <b>Artigo (Nome da
+Área)</b>, deve-se fixar a URL como <b>nome-da-area</b>, deixando o padrão
+para as demais páginas deste tipo de conteúdo, como em
+<b>nome-da-area/relatorios</b>.</importante>
+
+<br/>0.4cm
 
 <step>Papel e Permissão</step>
 
