@@ -26,15 +26,15 @@ direita.
 <step>Menu</step>
 
 <lista>
-  <item/>adicione um menu em <b>Estrutura => Menus => Adicionar menu</b>;
-  <item/>defina o nome do menu como "Menu: Nome da Área";
-  <item/>edite o nome no sistema e remova o prefixo "menu-";
-  <item/>preencha a descrição menu contendo em que local ele será utilizado;
+  <item/>use a opção em <b>Estrutura => Menus => Adicionar menu</b>;
+  <item/>defina o nome do menu como <b>Menu: Nome da Área</b>;
+  <item/>edite o nome no sistema e remova o prefixo <b>menu-</b>;
+  <item/>preencha a descrição contendo em que local o menu será utilizado;
   <lista>
     <item/>Menu para Nome da Área;
   </lista>
-  <item/>Em <b>Estrutura => Blocos</b>, configure o bloco "Menu: Nome da
-  Área";
+  <item/>Em <b>Estrutura => Blocos</b>, configure o bloco <b>Menu: Nome da
+  Área</b>;
   <lista>
     <item/>configure o Título do bloco para <b>Nome da Área</b>;
     <item/>configure a região para <b>Second Sidebar</b>, ou seja, lateral
@@ -47,8 +47,8 @@ exemplo: pje, pje/*;
 <step>Tipo de conteúdo</step>
 
 <lista>
-  <item/>adicione um tipo de conteúdo em <b>Estrutura => Tipo de Conteúdo =>
-Novo tipo de conteúdo</b>;
+  <item/>use a opção em <b>Estrutura => Tipo de Conteúdo => Novo tipo de
+conteúdo</b>;
   <item></item>;
 </lista>
 
@@ -80,14 +80,23 @@ Novo tipo de conteúdo</b>;
 
     As áres do Portal podem ser complementadas com conteúdo estruturado,
 representado por outros tipos de conteúdos formados por campos do tipo
-inteiro, data, arquivo, referência de termo (taxonomia) e apresemtados em
+inteiro, data, arquivo, referência de termo (taxonomia) e apresentados em
 forma de <b>View de página</b> disponível por meio de item do menu.
 
 <step>Taxonomia</step>
 
+    As taxonomias permitem a criação de uma estrutura hierárquica de termos,
+porém são mais utilizadas para armazenar listas fechadas com formas
+alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
+"Pará", "do Pará" ou "SP", "São Paulo", "de São Paulo".
+
 <lista>
-  <item></item>defina o nome do vocabulário da taxonomia;
-  <item></item>adicione os termos à taxonomia;
+  <item/>use a opção em <b>Estrutura => Taxonomia => Novo vocabulário</b>;
+  <item/>defina o nome do vocabulário taxonomia;
+  <item/>preencha a descrição contendo em que local será utilizada;
+  <item/>use a opção <b>GERENCIAR CAMPOS</b> para criar formas alternativas
+  para os termos;
+  <item/>use a opção <b>Novo termo</b> para cadastrar os itens da taxonomia;
 </lista>
 
 <step>Tipo de conteúdo</step>
