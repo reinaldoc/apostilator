@@ -123,7 +123,17 @@ para as demais páginas deste tipo de conteúdo, como em
 <step>Papel e Permissão</step>
 
 <lista>
-  <item></item>;
+  <item/>use a opção <b>Pessoas => Permissões => Papéis</b>;
+  <item/>identifique o novo papel como <b>Editor do Nome da Área</b>;
+  <item/>clique em <b>Adicionar papel</b>;
+  <item/>edite as permissões do papel <b>Editor do Nome da Área</b>;
+  <item/>conceda as permissões:
+  <lista>
+    <item/>Administrar Menu: (Nome da Área);
+    <item/>Artigo (Nome da Área): Criar novo conteúdo;
+    <item/>Artigo (Nome da Área): Editar qualquer conteúdo;
+  </lista>
+  <item/>clique em <b>Salvar permissões</b>;
 </lista>
 
 <step>Perfil de upload de arquivos do IMCE</step>
