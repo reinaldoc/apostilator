@@ -129,7 +129,7 @@ para as demais páginas deste tipo de conteúdo, como em
   <item/>edite as permissões do papel <b>Editor do Nome da Área</b>;
   <item/>conceda as permissões:
   <lista>
-    <item/>Administrar Menu: (Nome da Área);
+    <item/>Administrar Menu: Nome da Área;
     <item/>Artigo (Nome da Área): Criar novo conteúdo;
     <item/>Artigo (Nome da Área): Editar qualquer conteúdo;
   </lista>
@@ -138,9 +138,44 @@ para as demais páginas deste tipo de conteúdo, como em
 
 <step>Perfil de upload de arquivos do IMCE</step>
 
+    O perfil de <i>upload</i> do IMCE permite definir um diretório
+específico para cada papel a fim de que os usuários acessem apenas seus
+próprios arquivos que serão utilizados em links dos artigos.
+
+    Ressalta-se que arquivos em artigos são aquelas não periódicos ou de
+periodicidade muito baixa, como uma vez ao ano, uma vez que arquivos
+publicados periodicamente devem utilizar conteúdo estruturado, ou seja, um
+tipo de conteúdo próprio e uma view para listá-los.
+
 <lista>
-  <item></item>;
+  <item/>use a opção <b>Configurações => Mídia => IMCE</b>;
+  <item/>clique em <b>Add new profile</b>;
+  <item/>defina o nome do perfil do IMCE similar ao nome do papel;
+  <item/>configure o perfil:
+  <lista>
+    <item/>desative a opção <b>Display file browser tab in user profile
+    pages</b>;
+    <item/>Maximum file size per upload (MB): 30
+    <item/>Directory quota (MB): 500
+    <item/>Total user quota (MB): 0
+    <item/>Permitted file extensions: png jpg jpeg pdf
+    <item/>Maximum image dimensions: 0
+    <item/>Maximum number of files per operation: 10
+    <item/>Maximum number of subdirectories: 10
+    <item/>Directory path: <b>perfil/nome-da-area</b> com permissões
+    <b>Browse</b>, <b>Upload</b>, <b>Apagar</b>;
+    <item/>Thumbnails: remover configurações;
+  </lista>
+  <item/>vincule do perfil do IMCE ao papel;
+  <item/>clique em <b>Salvar configurações</b>;
+
 </lista>
+
+    <importante>Crie um perfil do IMCE denominado <b>Usuário Autenticado</b>,
+sem permissão a acessar diretórios, e associe-o a eventuais papéis que não
+editam Artigos.</importante>
+
+<br/>0.4cm
 
 <step>Caminhos de navegação (<i>breadcrumb</i>)</step>
 
