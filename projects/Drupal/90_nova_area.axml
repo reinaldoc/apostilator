@@ -38,9 +38,9 @@ direita.
   <lista>
     <item/>configure o Título do bloco para <b>Nome da Área</b>;
     <item/>configure a região para <b>Second Sidebar</b>, ou seja, lateral
-direita;
+    direita;
     <item/>configure a visibilidade para <b>Apenas as páginas listadas</b>:
-exemplo: pje, pje/*;
+    exemplo: pje, pje/*;
   </lista>
 </lista>
 
@@ -48,9 +48,55 @@ exemplo: pje, pje/*;
 
 <lista>
   <item/>use a opção em <b>Estrutura => Tipo de Conteúdo => Novo tipo de
-conteúdo</b>;
-  <item></item>;
+  conteúdo</b>;
+  <item/>defina o <b>nome</b> do tipo de conteúdo no <u>singular</u>;
+  <item/>preencha a <b>descrição</b> com local do site que o conteúdo estará
+  disponível (aceita html);
+  <item/>em <u>configurações do formulário de envio</u>:
+  <lista>
+    <item/>defina o <b>rótulo do campo de título</b>;
+    <item/>desative a <b>pré-visualização</b> antes de enviar;
+    <item/>preencha uma explicação ao usuário exibida no topo da página ao criar
+    este conteúdo;
+  </lista>
+  <item/>em <u>opções de publicação</u>:
+  <lista>
+    <item/>desative a opção <b>Promovido para a página inicial</b>;
+    <item/>ative a opção <b>Criar nova revisão</b>;
+  </lista>
+  <item/>em <u>opções de exibição</u>:
+  <lista>
+    <item/>configure o template do autor e data (aceita html);
+    <item/>Conteúdo de responsabilidade da <strong >Seção de Sistemas (SESIC)</strong >.
+    <item/>Conteúdo de responsabilidade da <strong >[node:author:field_user_unidade]</strong >.
+    <item/>Atualizado em [node:changed:short].
+  </lista>
+  <item/>em <u>configurações de comentários</u>:
+  <lista>
+    <item/>selecione <b>Fechado</b> em configuração padrão de comentários;
+  </lista>
+  <item/>em <u>configurações de menu</u>:
+  <lista>
+    <item/>ative o menu corresponde a área;
+  </lista>
+  <item/>clique em <b>Salvar e adicionar campos</b>;
+  <item/>edite o campo <b>Body</b>:
+  <lista>
+    <item/>altere seu título para 'Conteúdo';
+    <item/>desative a entrada de sumário;
+  </lista>
+  <item/>em <u>gerenciar exibição</u>:
+  <lista>
+    <item/>oculte os rótulos de campos;
+    <item/>reordene o campo <b>Submitted by</b> para baixo;
+  </lista>
 </lista>
+
+    <importante>Ao criar um <b>novo campo</b>, edite o <b>nome no
+sistema</b> e use um prefixo que identifique o tipo de conteúdo:
+field_noticia_link, field_noticia_imagem.</importante>
+
+<br/>0.4cm
 
 <step>Padrão da URL</step>
 
