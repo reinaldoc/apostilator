@@ -14,6 +14,7 @@ arquivos, padrão da URL, papel, permissão, perfil de upload de arquivos do
 IMCE, caminhos de navegação (<i>breadcrumb</i>).
 
 <subsecao>Artigo</subsecao>
+<nome>area-artigo</nome>
 
     As áreas do Portal utilizam um tipo conteúdo formado essencialmente pelo
 campo de texto <b>Title</b> e pelo campo de texto longo <b>Body</b>, que
@@ -23,7 +24,7 @@ direita.
 
 <br/>0.3cm
 
-<step>Menu</step>
+<subsubsubsecao>Menu</subsubsubsecao>
 
 <lista>
   <item/>use a opção em <b>Estrutura => Menus => Adicionar menu</b>;
@@ -44,7 +45,7 @@ direita.
   </lista>
 </lista>
 
-<step>Tipo de conteúdo</step>
+<subsubsubsecao>Tipo de conteúdo</subsubsubsecao>
 
 <lista>
   <item/>use a opção em <b>Estrutura => Tipo de Conteúdo => Novo tipo de
@@ -54,7 +55,7 @@ direita.
   disponível (aceita html);
   <item/>em <u>configurações do formulário de envio</u>:
   <lista>
-    <item/>defina o <b>rótulo do campo de título</b>;
+    <item/>defina o <b>rótulo</b> do campo de título para <b>Título</b>;
     <item/>desative a <b>pré-visualização</b> antes de enviar;
     <item/>preencha uma explicação ao usuário exibida no topo da página ao criar
     este conteúdo;
@@ -82,7 +83,8 @@ direita.
   <item/>clique em <b>Salvar e adicionar campos</b>;
   <item/>edite o campo <b>Body</b>:
   <lista>
-    <item/>altere seu título para 'Conteúdo';
+    <item/>altere seu <b>rótulo</b> para 'Conteúdo';
+    <item/>ative a opção 'Campo obrigatório';
     <item/>desative a entrada de sumário;
   </lista>
   <item/>em <u>gerenciar exibição</u>:
@@ -92,13 +94,8 @@ direita.
   </lista>
 </lista>
 
-    <importante>Ao criar um <b>novo campo</b>, edite o <b>nome no
-sistema</b> e use um prefixo que identifique o tipo de conteúdo:
-field_noticia_link, field_noticia_imagem.</importante>
 
-<br/>0.4cm
-
-<step>Padrão da URL</step>
+<subsubsubsecao>Padrão da URL</subsubsubsecao>
 
     O caminho da URL é definido quando um conteúdo é criado ou editado, a
 partir do modelo (<i>pattern</i>) configurado. O modelo
@@ -120,7 +117,7 @@ para as demais páginas deste tipo de conteúdo, como em
 
 <br/>0.4cm
 
-<step>Papel e Permissão</step>
+<subsubsubsecao>Papel e Permissão</subsubsubsecao>
 
 <lista>
   <item/>use a opção <b>Pessoas => Permissões => Papéis</b>;
@@ -136,7 +133,7 @@ para as demais páginas deste tipo de conteúdo, como em
   <item/>clique em <b>Salvar permissões</b>;
 </lista>
 
-<step>Perfil de upload de arquivos do IMCE</step>
+<subsubsubsecao>Perfil de upload de arquivos do IMCE</subsubsubsecao>
 
     O perfil de <i>upload</i> do IMCE permite definir um diretório
 específico para cada papel a fim de que os usuários acessem apenas seus
@@ -177,20 +174,31 @@ editam Artigos.</importante>
 
 <br/>0.4cm
 
-<step>Caminhos de navegação (<i>breadcrumb</i>)</step>
+<subsubsubsecao>Caminhos de navegação (breadcrumb)</subsubsubsecao>
 
 <lista>
-  <item></item>;
+  <item/>use a opção em <b>Estrutura => Path Breadcrumbs => Create new path
+  breadcrumb</b>;
+  <item/>defina o <b>nome</b> do caminho como <b>Nome da Área (Artigo)</b>;
+  <item/>defina o <b>endereço</b> como <b>node/%node</b>;
+  <item/>clique em <b>Mudar</b> para vincular o argumento <b>%node</b>
+  ao valor <b>Conteúdo: ID</b>;
+  <item/>adicione o critério de seleção para <b>Node type: Nome da Área
+  (Artigo)</b>;
+  <item/>use a opção <i>Prepend Home link to the breadcrumb</i> para
+  adicionar a raiz configurada;
+  <item/>adicione os rótulos (link title) e urls (link path) para cada nível
+  do breadcrumb;
 </lista>
 
 <subsecao>Conteúdo estruturado</subsecao>
 
-    As áres do Portal podem ser complementadas com conteúdo estruturado,
+    As áreas do Portal podem ser complementadas com conteúdo estruturado,
 representado por outros tipos de conteúdos formados por campos do tipo
 inteiro, data, arquivo, referência de termo (taxonomia) e apresentados em
 forma de <b>View de página</b> disponível por meio de item do menu.
 
-<step>Taxonomia</step>
+<subsubsubsecao>Taxonomia</subsubsubsecao>
 
     As taxonomias permitem a criação de uma estrutura hierárquica de termos,
 porém são mais utilizadas para armazenar listas fechadas com formas
@@ -206,26 +214,36 @@ alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
   <item/>use a opção <b>Novo termo</b> para cadastrar os itens da taxonomia;
 </lista>
 
-<step>Tipo de conteúdo</step>
+<subsubsubsecao>Tipo de conteúdo</subsubsubsecao>
+
+<lista>
+  <item>Vide seção<ref>area-artigo</ref></item>;
+</lista>
+
+    Ao criar um <b>novo campo</b>, edite o <b>nome no sistema</b> e use um
+prefixo que identifique o tipo de conteúdo: field_noticia_link, field_noticia_imagem.
+
+
+<subsubsubsecao>Padrão do nome dos arquivos do campo de imagem ou arquivo</subsubsubsecao>
 
 <lista>
   <item></item>;
 </lista>
 
-<step>Padrão do nome dos arquivos do campo de imagem ou arquivo</step>
+<subsubsubsecao>Padrão da URL</subsubsubsecao>
 
 <lista>
-  <item></item>;
+  <item>Vide seção<ref>area-artigo</ref></item>;
 </lista>
 
-<step>Papel e Permissão</step>
+<subsubsubsecao>Papel e Permissão</subsubsubsecao>
 
 <lista>
-  <item></item>;
+  <item>Vide seção<ref>area-artigo</ref></item>;
 </lista>
 
-<step>View</step>
+<subsubsubsecao>View</subsubsubsecao>
 
 <lista>
-  <item></item>;
+  <item>Vide seção<ref>module-views</ref></item>;
 </lista>
