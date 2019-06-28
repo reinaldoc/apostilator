@@ -11,18 +11,62 @@ responsável, periodicidade e completude do conteúdo que deve ser publicado.
 sustentação de um Portal e envolve a configuração de uma série de elementos
 do Drupal, nesta ordem: taxonomia, menu, tipo de conteúdo, padrão do nome de
 arquivos, padrão da URL, papel, permissão, perfil de upload de arquivos do
-IMCE, caminhos de navegação (<i>breadcrumb</i>).
+IMCE e caminhos de navegação (<i>breadcrumb</i>).
 
-<subsecao>Artigo</subsecao>
-<nome>area-artigo</nome>
+<br/>0.3cm
+
+<subsecao>Metodologia de Organização da Área de Publicação</subsecao>
+
+<step>Artigo</step>
 
     As áreas do Portal utilizam um tipo conteúdo formado essencialmente pelo
 campo de texto <b>Title</b> e pelo campo de texto longo <b>Body</b>, que
-denomino de <b>Artigo (Nome da Área)</b>, em que a primeira página utiliza
-uma imagem no topo que exerce papel de <b>banner</b> e apresenta um menu a
-direita.
+denomino de <b>Artigo (Nome da Área)</b>. Os rótulos desses campos são
+definidos como <b>Título</b> e <b>Conteúdo</b>, respectivamente.
+
+    A primeira página da área utiliza uma imagem de destaque no topo,
+apresenta um menu à direita para apresentar os links das demais páginas, bem
+assim dos conteúdos estruturados e seu endereço é fixo, como em
+<b>nome-da-area</b>, existindo um padrão para todas as demais páginas da
+área, como em <b>nome-da-area/titulo-da-pagina</b>. Em todas as páginas é
+apresentando o caminho de navegação <i>breadcrumb</i> acima do título da
+página e o nome da unidade organizacional responsável pelo seu conteúdo na
+parte inferior.
 
 <br/>0.3cm
+
+<step>Conteúdo estruturado</step>
+
+    As áreas do Portal podem ser complementadas com conteúdo estruturado,
+representado por outros tipos de conteúdos formados por campos do tipo
+inteiro, data, arquivo, link para endereços URL, referência de termo para
+relacionamento com taxonomia, referência de entidade para relacionamento
+entre tipos de conteúdo, apresentados em forma de lista HTML, tabela ou
+acordeão por uma <b>View de página</b>, vide seção<ref>module-views</ref>,
+com link disponível por meio do menu da área.
+
+<br/>0.3cm
+
+<subsecao>Criação da Área de Publicação</subsecao>
+
+    As etapas utilizadas essencialmente em Conteúdo estruturado são
+identificadas com (*).
+
+<subsubsubsecao>Taxonomia (*)</subsubsubsecao>
+
+    As taxonomias permitem a criação de uma estrutura hierárquica de termos,
+porém são mais utilizadas para armazenar listas fechadas com formas
+alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
+"Pará", "do Pará" ou "SP", "São Paulo", "de São Paulo".
+
+<lista>
+  <item/>use a opção em <b>Estrutura => Taxonomia => Novo vocabulário</b>;
+  <item/>defina o nome do vocabulário taxonomia;
+  <item/>preencha a descrição contendo em que local será utilizada;
+  <item/>use a opção <b>GERENCIAR CAMPOS</b> para criar formas alternativas
+  para os termos;
+  <item/>use a opção <b>Novo termo</b> para cadastrar os itens da taxonomia;
+</lista>
 
 <subsubsubsecao>Menu</subsubsubsecao>
 
@@ -94,6 +138,16 @@ direita.
   </lista>
 </lista>
 
+    Em conteúdo estruturado, ao criar um <b>novo campo</b>, edite o <b>nome
+no sistema</b> e use um prefixo que identifique o tipo de conteúdo:
+field_noticia_link, field_noticia_imagem.
+
+<subsubsubsecao>Padrão do nome dos arquivos do campo de imagem ou arquivo
+(*)</subsubsubsecao>
+
+<lista>
+  <item></item>;
+</lista>
 
 <subsubsubsecao>Padrão da URL</subsubsubsecao>
 
@@ -111,8 +165,8 @@ maioria dos casos.
 </lista>
 
     <importante>Ao criar a primeira página de um <b>Artigo (Nome da
-Área)</b>, deve-se fixar a URL como <b>nome-da-area</b>, deixando o padrão
-para as demais páginas deste tipo de conteúdo, como em
+Área)</b>, deve-se editá-la e fixar o endereço URL como <b>nome-da-area</b>,
+deixando o padrão para as demais páginas deste tipo de conteúdo, como em
 <b>nome-da-area/relatorios</b>.</importante>
 
 <br/>0.4cm
@@ -191,59 +245,3 @@ editam Artigos.</importante>
   do breadcrumb;
 </lista>
 
-<subsecao>Conteúdo estruturado</subsecao>
-
-    As áreas do Portal podem ser complementadas com conteúdo estruturado,
-representado por outros tipos de conteúdos formados por campos do tipo
-inteiro, data, arquivo, referência de termo (taxonomia) e apresentados em
-forma de <b>View de página</b> disponível por meio de item do menu.
-
-<subsubsubsecao>Taxonomia</subsubsubsecao>
-
-    As taxonomias permitem a criação de uma estrutura hierárquica de termos,
-porém são mais utilizadas para armazenar listas fechadas com formas
-alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
-"Pará", "do Pará" ou "SP", "São Paulo", "de São Paulo".
-
-<lista>
-  <item/>use a opção em <b>Estrutura => Taxonomia => Novo vocabulário</b>;
-  <item/>defina o nome do vocabulário taxonomia;
-  <item/>preencha a descrição contendo em que local será utilizada;
-  <item/>use a opção <b>GERENCIAR CAMPOS</b> para criar formas alternativas
-  para os termos;
-  <item/>use a opção <b>Novo termo</b> para cadastrar os itens da taxonomia;
-</lista>
-
-<subsubsubsecao>Tipo de conteúdo</subsubsubsecao>
-
-<lista>
-  <item>Vide seção<ref>area-artigo</ref></item>;
-</lista>
-
-    Ao criar um <b>novo campo</b>, edite o <b>nome no sistema</b> e use um
-prefixo que identifique o tipo de conteúdo: field_noticia_link, field_noticia_imagem.
-
-
-<subsubsubsecao>Padrão do nome dos arquivos do campo de imagem ou arquivo</subsubsubsecao>
-
-<lista>
-  <item></item>;
-</lista>
-
-<subsubsubsecao>Padrão da URL</subsubsubsecao>
-
-<lista>
-  <item>Vide seção<ref>area-artigo</ref></item>;
-</lista>
-
-<subsubsubsecao>Papel e Permissão</subsubsubsecao>
-
-<lista>
-  <item>Vide seção<ref>area-artigo</ref></item>;
-</lista>
-
-<subsubsubsecao>View</subsubsubsecao>
-
-<lista>
-  <item>Vide seção<ref>module-views</ref></item>;
-</lista>
