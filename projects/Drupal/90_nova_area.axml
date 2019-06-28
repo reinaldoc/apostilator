@@ -146,7 +146,35 @@ field_noticia_link, field_noticia_imagem.
 (*)</subsubsubsecao>
 
 <lista>
-  <item></item>;
+  <item/>após adicionar um campo de imagem ou arquivo, edite-o;
+  <item/>defina as extensões de arquivo permitidas: <b>png</b>;
+  <item/>defina o modelo do prefixo do diretório em <b>File Path</b>
+  conforme exemplos:
+  <lista>
+    <item/>fields/[node:content-type:machine-name]
+    <item/>fields/[node:content-type:machine-name]/[node:field-data:custom:Y]
+    <item/>fields/[node:content-type:machine-name]/comissao_id[node:field-nome-reference:nid]
+  </lista>
+  <item/>defina o modelo do nome do arquivo em <b>File name</b> conforme
+  exemplos:
+  <lista>
+    <item/>[node:nid]_[node:title].[file:ffp-extension-original]
+    <item/>Revista_[node:field-numero].[file:ffp-extension-original]
+    <item/>Relatorio_[node:field-data:custom:Y-m]_Tipo1_id[file:fid].[file:ffp-extension-original]
+    <item/>Anexo-[node:field-taxonomia:field-taxonomia-campo]_id[file:fid].[file:ffp-extension-original]
+    <item/>[node:field-taxonomia:name]-[node:field-data:custom:Y-m-d]_[node:field-nome-reference:title] _id[file:fid].[file:ffp-extension-original]
+  </lista>
+  <item/>ative a opção <b>Remove slashes (/) from tokens</b> nas opções do
+  nome do arquivo;
+  <item/>ative a opção <b>Transliterate</b> nas opções do nome do arquivo
+  para substituir caracteres acentuados pelos respectivos não acentuados;
+  <item/>defina o tamanho máximo de <i>upload</i>: <b>500 KB</b>;
+  <item/>em <i>campos de imagem</i>:
+  <lista>
+      <item/>defina a resolução máxima da imagem, como: <b>726x1000</b>;
+      <item/>ative o campo <b>Alt</b> para campos de imagem;
+      <item/>defina o tipo de visualização para: <b>sem visualização</b>;
+  </lista>
 </lista>
 
 <subsubsubsecao>Padrão da URL</subsubsubsecao>
