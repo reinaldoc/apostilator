@@ -177,6 +177,15 @@ field_noticia_link, field_noticia_imagem.
   </lista>
 </lista>
 
+    <importante>É importante usar o <i>token</i> <b>_id[file:fid]</b> ao
+final de qualquer campo do tipo Arquivo ou de Imagem para evitar problemas
+de cache do navegador, uma vez que será gerado um novo id para compor o nome
+do arquivo, inclusive quando for substituído pela edição do <i>node</i>.
+Além disso, isto evita a adição de um incremento ao final do nome do arquivo
+devido a função de <b>Revisão</b> estar habilitada no tipo de conteúdo.</importante>
+
+<br/>0.4cm
+
 <subsubsubsecao>Padrão da URL</subsubsubsecao>
 
     O caminho da URL é definido quando um conteúdo é criado ou editado, a
