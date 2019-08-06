@@ -81,11 +81,12 @@ os exemplos:
 
 <lista>
   <item/><url>https://simplytest.me/project/drupal</url>
-  <item/><url>https://simplytest.me/project/drupal/7.58</url>
+  <item/><url>https://simplytest.me/project/drupal/7.67</url>
+  <item/><url>https://simplytest.me/project/drupal/8.73</url>
   <item/><url>https://simplytest.me/project/navbar?add[]=devel</url>
   <item/><url>https://simplytest.me/project/navbar?add[]=devel&add[]=views</url>
-  <item/><url>https://simplytest.me/project/views/7.x-3.18</url>
-  <item/><url>https://simplytest.me/project/views/7.x-3.18?add[]=devel&add[]=admin_menu</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.23</url>
+  <item/><url>https://simplytest.me/project/views/7.x-3.23?add[]=devel&add[]=admin_menu</url>
 </lista>
 
     Instale o módulo <b>l10n_update</b> e ative o idioma Português do Brasil,

@@ -36,7 +36,7 @@ respectivas correções de falhas de segurança.
 <VirtualHost *:80>
     ServerAdmin reinaldoc@gmail.com
     ServerName example.com
-    DocumentRoot /var/www/portal/drupal-7
+    DocumentRoot /var/www/portal/drupal
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
@@ -61,7 +61,7 @@ respectivas correções de falhas de segurança.
     <VirtualHost *:443>
         ServerAdmin reinaldoc@gmail.com
         ServerName example.com
-        DocumentRoot /var/www/portal/drupal-7
+        DocumentRoot /var/www/portal/drupal
         ErrorLog ${APACHE_LOG_DIR}/error.log
         CustomLog ${APACHE_LOG_DIR}/access.log combined
 
@@ -242,8 +242,8 @@ FTP.
 
 <step>Crie o diretório para instalação do Drupal</step>
 <comando>
-# mkdir /var/www/portal/drupal-7
-# chown portal: /var/www/portal/drupal-7
+# mkdir /var/www/portal/drupal
+# chown portal: /var/www/portal/drupal
 </comando>
 
 <subsecao>Drupal</subsecao>
@@ -255,17 +255,35 @@ FTP.
 <comando>
 # su -s /bin/bash -l portal
 $ cd /tmp
-$ wget https://ftp.drupal.org/files/projects/drupal-7.58.tar.gz
-$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.58.pt-br.po
+$ wget https://ftp.drupal.org/files/projects/drupal-7.67.tar.gz
+$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.67.pt-br.po
 </comando>
 
-<step>Extraia o Drupal e copie o arquivo de tradução</step>
+<step>Extraia o Drupal</step>
 <comando>
-$ cd /var/www/portal/drupal-7
-$ tar xzf /tmp/drupal-7.58.tar.gz --strip 1
-$ chmod 600 CHANGELOG.txt COPYRIGHT.txt INSTALL*.txt LICENSE.txt
-$ chmod 600 MAINTAINERS.txt README.txt UPGRADE.txt
-$ cp /tmp/drupal-7.58.pt-br.po profiles/standard/translations
+$ cd /var/www/portal/drupal
+$ tar xzf /tmp/drupal-7.67.tar.gz --strip 1
+$ find ../drupal -name '*.txt' -exec chmod 600 {} \;
+$ chmod 644 robots.txt
+</comando>
+
+<step>Tradução</step>
+
+<lista>
+  <item>Drupal 7</item>
+</lista>
+
+<comando>
+$ cp /tmp/drupal-7.67.pt-br.po profiles/standard/translations
+</comando>
+
+<lista>
+  <item>Drupal 8</item>
+</lista>
+
+<comando>
+$ mkdir -p sites/default/files/translations
+$ cp /tmp/drupal-8.73.pt-br.po profiles/standard/translations
 </comando>
 
     <importante/>O módulo <b>Locale</b>, que é ativado ao instalar o
@@ -309,7 +327,7 @@ $ exit
 
 <step>Conceda permissão ao usuário do serviço web</step>
 <comando>
-# cd /var/www/portal/drupal-7/sites/portal
+# cd /var/www/portal/drupal/sites/portal
 # chown www-data:portal settings.php files files-private
 </comando>
 
@@ -391,7 +409,7 @@ problema foi detectado nesta instalação.
 <subsubsecao>Atualização</subsubsecao>
 
 <comando>
-$ cd /var/www/portal/drupal-7
+$ cd /var/www/portal/drupal
 $ umask 022
 $ tar xzf /tmp/drupal-7.57.tar.gz --strip 1
 $ chmod 600 COPYRIGHT.txt INSTALL*.txt MAINTAINERS.txt UPGRADE.txt
