@@ -25,7 +25,7 @@ denomino de <b>Artigo (Nome da Área)</b>. Os rótulos desses campos são
 definidos como <b>Título</b> e <b>Conteúdo</b>, respectivamente.
 
     A primeira página da área utiliza uma imagem de destaque no topo,
-apresenta um menu à direita para apresentar os links das demais páginas, bem
+apresenta um menu à direita que contém os links das demais páginas, bem
 assim dos conteúdos estruturados e seu endereço é fixo, como em
 <b>nome-da-area</b>, existindo um padrão para todas as demais páginas da
 área, como em <b>nome-da-area/titulo-da-pagina</b>. Em todas as páginas é
