@@ -283,7 +283,7 @@ $ cp /tmp/drupal-7.67.pt-br.po profiles/standard/translations
 
 <comando>
 $ mkdir -p sites/default/files/translations
-$ cp /tmp/drupal-8.73.pt-br.po profiles/standard/translations
+$ cp /tmp/drupal-8.76.pt-br.po sites/default/files/translations
 </comando>
 
     <importante/>O módulo <b>Locale</b>, que é ativado ao instalar o
