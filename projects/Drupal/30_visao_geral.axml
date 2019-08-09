@@ -27,7 +27,7 @@ organizar a sua exibição.
 <comando>
 **********************************************************************************
 *             Região do Topo                                                     *
-*               Bloco 1, Bloco 2, Bloco N                                        *
+*             Bloco 1, Bloco 2, Bloco N                                          *
 **********************************************************************************
 *                                           *                                    *
 *   Aŕea sem região (Logo, nome do site)    *         Região de Pesquisa         *
@@ -35,18 +35,18 @@ organizar a sua exibição.
 **********************************************************************************
 *                   *                                        *                   *
 *                   *                                        *                   *
-*  Região Esquerda  *      Região do Conteúdo (Node)         *  Região Direita   *
+*  Região Esquerda  *   Região do Conteúdo (Node)            *  Região Direita   *
 *                   *                                        *                   *
-*    Bloco 1        *        Field 1 (imagem)                *    Bloco 1        *
-*    Bloco 2        *        Field 2 (texto)                 *    Bloco 2        *
-*    Bloco 3        *        Field 3 (arquivo)               *    Bloco 3        *
-*    Bloco N        *        Field 4 (taxonomia)             *    Bloco N        *
-*                   *                                        *                   *
-*                   *                                        *                   *
+*  Bloco 1          *   Bloco Conteúdo                       *  Bloco 1          *
+*  Bloco 2          *      Field 1                           *  Bloco 2          *
+*  Bloco 3          *      Field 2                           *  Bloco 3          *
+*  Bloco 4          *      Field N                           *  Bloco 4          *
+*  Bloco N          *   Bloco 2                              *  Bloco N          *
+*                   *   Bloco N                              *                   *
 *                   *                                        *                   *
 **********************************************************************************
 *             Região do Rodapé                                                   *
-*               Bloco 1, Bloco 2, Bloco N                                        *
+*             Bloco 1, Bloco 2, Bloco N                                          *
 **********************************************************************************
 </comando>
 
@@ -265,8 +265,6 @@ tokens.
 
 <subsecao>Conteúdo (node)</subsecao>
 
-<subsubsecao>Gerenciamento de conteúdo</subsubsecao>
-
     O <b>conteúdo</b> (node) é uma instância de um tipo de conteúdo. É
 possível fazer um paralelo em que o tipo de conteúdo seria uma tabela e o
 conteúdo (node) seria cada linha da tabela.
@@ -323,8 +321,6 @@ catálogo que também simplifica essa tarefa.
   <item>[3]</item> <url>https://drupal.org/documentation/modules/views/add-ons</url>
   <item>[4]</item> <url>https://groups.drupal.org/node/20291</url>
 </lista>
-
-<subsubsecao>Gerenciamento de módulos</subsubsecao>
 
     Os módulos são desenvolvidos especificamente para uma determinada versão
 do núcleo do Drupal, assim, um módulo cuja versão é <b>7.x-1.2</b>
