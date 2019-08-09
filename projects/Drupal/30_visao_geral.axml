@@ -395,16 +395,12 @@ tema.
 <subsubsecao>Procedimento para avaliar um tema</subsubsecao>
 
 <lista>
-  <item/>instale o tema e o módulo <b>Devel</b>;
-  <item/>defina o tema como padrão (set default);
-  <item/>configure o menu <b>Development</b> como menu principal (Menu
-         settings->Main links);
-  <item/>reorganize os itens do menu <b>Development</b> em níveis
-         (Menu->Development);
-  <item/>habilite a exibição <i>drop-down</i> dos submenus (Show as expanded);
-  <item/>associe o menu <b>Development</b> à região <b>Second/Secondary/Right
-         Sidebar</b>;
-  <item/>gere conteúdo com o módulo <b>Devel generate</b>;
+  <item/>verificar a exibição multinível dos itens menu principal;
+  <lista>
+    <item/>ativar a opção <i>Show as expanded</i> no item do menu;
+  </lista>
+  <item/>verificar a responsividade do menu principal;
+  <item/>verificar as classes CSS do <b>body</b> e dos menus;
 </lista>
 
 <subsubsecao>Temas Populares</subsubsecao>
@@ -444,6 +440,7 @@ tema.
   <item/><url>https://drupal.org/project/responsive_blog</url>
   <item/><url>https://drupal.org/u/zymphonies.com</url> - Zymphonies Themes
   <lista>
+    <item/><url>https://drupal.org/project/creative_responsive_theme</url>
     <item/><url>https://drupal.org/project/execute_responsive_theme</url>
     <item/><url>https://drupal.org/project/rubix_responsive_theme</url>
     <item/><url>https://drupal.org/project/business_responsive_theme</url>
