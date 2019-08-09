@@ -1,19 +1,20 @@
 <capitulo>Introdução ao curso</capitulo>
 
-    Seja bem-vindo ao <b>Curso de Drupal</b>. Este curso esta sendo
-fomentado pelo <i>Xxxxx</i>
-da <i>Zzzzz</i> e ministrado por <i>Reinaldo Gil Lima
-de Carvalho</i>. Realiza(ou)-se de <i>xx/yy/2017 a xx/yy/2017</i>.
+    Seja bem-vindo ao curso <b>Desenvolvimento de Portais Corporativos com
+Drupal</b>. Este curso foi ministrado no <b>Tribunal Regional do Trabalho da
+21ª Região</b>, em Natal/RN, pelo instrutor <i>Reinaldo Gil Lima de
+Carvalho</i>, no período de <b>19/08/2019 a 23/08/2019</b>.
 
-    Os procedimentos descritos neste material foram validados sob a
-distribuição GNU/Linux Debian Stretch<citar>Debian</citar>, todavia a base
-teórica ministrada é o conhecimento fundamental para a utilização sob
-qualquer sistema operacional. Busca-se que o participante esteja apto a
-utilizar o conhecimento adquirido no ambiente que lhe for mais adequado.
+    Os procedimentos descritos neste material foram validados por meio da
+distribuição GNU/Linux Debian 10 <i>buster</i><citar>Debian</citar>, apesar
+disso, o conteúdo apresentado pode ser utilizado sob qualquer sistema
+operacional. Busca-se que o participante esteja apto a utilizar o ambiente
+que lhe for mais adequado.
 
-    Neste capítulo, serão abordados os seguintes temas: licenciamento desta
-obra, origem do <i>software</i> utilizado, se executável ou código fonte,
-e configurações essenciais da distribuição <b>Debian GNU/Linux</b>.
+    Neste capítulo, serão abordados os seguintes temas: <i>i)</i> o
+licenciamento desta obra, <i>ii)</i> a origem do <i>software</i> utilizado,
+se executável ou código fonte, e <i>iii)</i> a instalação e as configurações
+essenciais do sistema operacional.
 
 <subsecao>Licença da obra</subsecao>
 
@@ -45,7 +46,6 @@ contato com o autor.
     <legenda>CC-BY-NC-ND</legenda>
     <nome>fig:CC-BY-NC-ND</nome>
 </figura>
-
 
 <subsecao>Compilação de <i>software</i> X <i>software</i> empacotado</subsecao>
 <nome>compilacao-vs-pacote</nome>
@@ -112,13 +112,13 @@ essencial para a disponibilidade dos sistemas.
 de falhas. O Debian GNU/Linux possui uma equipe eficiente, que disponibiliza
 rapidamente correções para as falhas descorbertas.
 
-<subsecao>Debian GNU/Linux</subsecao>
+<subsecao>Instalação do Sistema Operacional</subsecao>
 
     A instalação do <link>https://debian.org</link><text>Debian GNU/Linux</text>
-é bastante simplificada, sendo basicamente composta pela configuração do idioma,
-criação de contas de usuário e particionamento do disco. Acesse o site do
+é bastante simplificada, sendo basicamente composta pela configuração do
+idioma, criação de contas de usuário e particionamento do disco. Acesse
 <link>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</link>
-<text>Debian</text> e obtenha a mídia de instalação mínima, denominada
+<text>este endereço</text> e obtenha a mídia de instalação mínima, denominada
 <i>debian-X.Y.Z-amd64-<b>netinst</b>.iso</i>.
 
 <lista>
@@ -126,21 +126,21 @@ criação de contas de usuário e particionamento do disco. Acesse o site do
 </lista>
 
     Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
-installer boot menu', prossiga então com a instalação.
+installer menu', então prossiga com a instalação.
 
 <subsubsecao>Língua</subsubsecao>
 
 <lista>
-  <item>Língua</item>: Portuguese (Brazil) - Português do Brasil.
-  <item>País</item>: Brasil.
+  <item>Idioma</item>: Portuguese (Brazil) - Português do Brasil.
+  <item>Localidade</item>: Brasil.
   <item>Mapa de teclado</item>: Português Brasileiro.
 </lista>
 
 <subsubsecao>Configuração de contas e relógio</subsubsecao>
 
 <lista>
-  <item>Nome da máquina</item>: drupal7
-  <item>Nome do domínio</item>: localdomain
+  <item>Nome da máquina</item>: drupal
+  <item>Nome do domínio</item>: exemplo.com.br
   <item>Senha do root</item>: senha*complexa
   <item>Nome completo do novo usuário</item>: Reinaldo Gil Lima de Carvalho
   <item>Nome de usuário</item>: reinaldoc
@@ -202,8 +202,9 @@ APT::Install-Recommends "0";
 <b>/etc/apt/sources.list</b>:
 
 <comando>
-deb http://ftp.br.debian.org/debian stretch main contrib non-free
-deb http://security.debian.org/ stretch/updates main contrib non-free
+deb http://ftp.br.debian.org/debian/ buster main contrib non-free
+deb http://ftp.br.debian.org/debian/ buster-updates main contrib
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
 </comando>
 
     Caso a conectividade seja fornecida por um proxy via http, a seguinte
