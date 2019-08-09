@@ -3,29 +3,29 @@
     O <link>https://drupal.org</link><text><b>Drupal</b></text> é um
 projeto de código aberto para o desenvolvimento de Portais Corporativos
 sem a necessidade de codificação, apesar disso, o seu <u>público-alvo são
-desenvolvedores</u>, diferentemente dos sistemas de gerenciamento de
-conteúdo tradicionais em que o usuário final também é um público-alvo.
+desenvolvedores</u>, que difere dos demais sistemas de gerenciamento de
+conteúdo em que o usuário final também é um público-alvo.
 
     A plataforma fornece recursos para a criação, edição e remoção de
 conteúdos em diversos tipos de dados, bem como recursos de gerenciamento de
 menus e controle de permissões. O Drupal tem sido utilizado em grandes
 projetos (<link>https://www.drupal.com/showcases</link><text>veja os
 casos de sucesso</text>) por ser <u>altamente customizável e extensível</u>,
-uma vez que é organizado como um <i>framework</i>, em que os módulos
-adicionam recursos ao seu núcleo.
+uma vez que é organizado como um <i>framework</i> em que módulos adicionam
+recursos ao seu núcleo.
 
     O Drupal utiliza estruturas de dados em forma de entidades, com campos
 específicos para texto, números, data, arquivos, imagens, bem como para
 relacionamento entre as entidades. Esses dados podem ser apresentados de
 diferentes formas, seja em lista, tabela, grid, slideshow, accordion, etc.
-Parece programação? É programação, porém por meio de lógica e configuração,
-sendo necessário entender de lógica de programação para poder utilizá-lo,
-ainda que não haja codificação na maioria dos projetos.
+Parece programação? É programação por configuração, sendo necessário
+entender de lógica de programação para poder utilizá-lo.
 
     Outra característica relevante para o desenvolvedor <i>front-end</i> é
-o <u>fraco acoplamento entre os templates HTML e o Drupal</u>. Isso permite
-que sejam criados temas a partir de arquivos HTML que dependem apenas da
-indicação das áreas que terão seus conteúdos gerenciados pelo Drupal,
+o <u>fraco acoplamento entre os templates HTML/CSS e o Drupal</u>. Assim, o
+esforço da criação de um novo Portal concentra-se na criação da identidade
+visual em HTML/CSS. Os temas do Drupal contém a estrutura básica do HTML com
+a indicação das áreas em que os conteúdos serão gerenciados pelo Drupal,
 denominadas <b>Regiões</b>.
 
 <subsecao>Referências</subsecao>
@@ -64,10 +64,13 @@ denominadas <b>Regiões</b>.
 <lista>
   <item>Onde obter módulos e temas?</item>
   <lista>
-    <item/><url>https://drupal.org/project/project_module</url> [módulos]
-    <item/><url>https://drupal.org/project/project_theme</url> [temas]
+    <item/><url>https://drupal.org/project/project_module</url>
+    <item/><url>https://drupal.org/project/project_theme</url>
   </lista>
 </lista>
+
+    Verificar os módulos que possuem versão estável e aqueles que possuem
+cobertura de segurança.
 
 <subsubsecao>Simplytest.me</subsubsecao>
 
@@ -82,7 +85,7 @@ os exemplos:
 <lista>
   <item/><url>https://simplytest.me/project/drupal</url>
   <item/><url>https://simplytest.me/project/drupal/7.67</url>
-  <item/><url>https://simplytest.me/project/drupal/8.73</url>
+  <item/><url>https://simplytest.me/project/drupal/8.76</url>
   <item/><url>https://simplytest.me/project/navbar?add[]=devel</url>
   <item/><url>https://simplytest.me/project/navbar?add[]=devel&add[]=views</url>
   <item/><url>https://simplytest.me/project/views/7.x-3.23</url>
