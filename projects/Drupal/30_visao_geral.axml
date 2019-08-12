@@ -1,16 +1,50 @@
 <capitulo>Visão geral do Drupal</capitulo>
 
+    A estrutura do Drupal é formada por:
+
+<lista>
+    <item>Tema</item>: contém arquivos CSS e os <i>templates</i> utilizados
+para gerar a parte mais externa do HTML. Dentro do corpo do HTML há áreas
+denominadas <b>Regiões</b> que terão o HTML gerenciado por meio da interface
+web do Drupal, pelo subsistema de <b>Leiaute de Blocos</b>.
+    <item>Regiões</item>: áreas definidas no tema com localização específica
+na página, por exemplo: <b>Topo direito</b>, <b>Topo esquerdo</b>,
+<b>Conteúdo</b>, <b>Lateral direita</b>, <b>Rodapé</b>, em que um ou mais
+blocos podem ser associados em ordem específica.
+    <item>Blocos</item>: elemento que pode ser associado a uma região do
+tema.
+    <lista>
+      <item>Bloco HTML</item>: bloco de conteúdo HTML fixo, não gerenciado
+pelo usuário.
+      <item>Bloco Menu</item>: bloco que representa um menu cadastrado no
+Drupal. Ao publicar um conteúdo o usuário pode ter permissão para
+adicionar um item de menu.
+      <item>Bloco Conteúdo</item>: bloco que apresenta uma instância de um
+tipo de conteúdo ou uma Visão de Página, que definirá a URL da página.
+      <item>Bloco de View</item>: bloco que lista um conjunto de instâncias
+de conteúdo a partir de critérios de filtragem, ordenação e paginação.
+    </lista>
+    <item>Tipo de conteúdo</item>: define a estrutura do <b>bloco
+Conteúdo</b> por meio de campos de diversos tipos, como texto, data, imagem,
+arquivo, taxonomia, relacionamento, etc.
+    <item>Conteúdo</item>: uma instância de um tipo de conteúdo. Define a
+URL da página e será apresentado no Bloco Conteúdo.
+    <item>View de página</item>: lista um conjunto de instâncias de
+conteúdo. Define a URL da página e será apresentado no Bloco Conteúdo.
+</lista>
+
+    Assim, a primeira camada é composta pelo <u>tema</u> que contém a
+apresentação em HTML/CSS com identificação de <u>regiões que serão
+controladas pelo núcleo do Drupal</u>. Já o <u>núcleo do Drupal pode ser
+extendido por módulos</u> que adicionam recursos para apresentação dos
+dados, quanto para armazenar novos tipos de dados em banco de dados.
+
     O Drupal foi implementado para ser altamente customizável, o que levou ao
 desenvolvimento de quatro estruturas genéricas: <u>blocos, tipos de conteúdo,
 menus e taxonomias</u>, que compõe seu núcleo. A partir de uma visão mais
 abrangente é possível identificar três componentes do Drupal: <u>os temas, o
 núcleo do Drupal e os módulos</u>.
 
-    A primeira camada é composta por <u>temas</u> que contém a visão em
-HTML/CSS com identificação de <u>regiões que serão controladas pelo núcleo do
-Drupal</u>. Já o <u>núcleo do Drupal pode ser extendido por módulos</u> que
-adicionam capacidades tanto para gerar estruturas de visão quanto para
-armazenar novos tipos de dados em banco de dados.
 
 <subsecao>Estrutura</subsecao>
 
@@ -35,9 +69,9 @@ organizar a sua exibição.
 **********************************************************************************
 *                   *                                        *                   *
 *                   *                                        *                   *
-*  Região Esquerda  *   Região do Conteúdo (Node)            *  Região Direita   *
+*  Região Esquerda  *   Região do Conteúdo                   *  Região Direita   *
 *                   *                                        *                   *
-*  Bloco 1          *   Bloco Conteúdo                       *  Bloco 1          *
+*  Bloco 1          *   Bloco Conteúdo (Node)                *  Bloco 1          *
 *  Bloco 2          *      Field 1                           *  Bloco 2          *
 *  Bloco 3          *      Field 2                           *  Bloco 3          *
 *  Bloco 4          *      Field N                           *  Bloco 4          *
@@ -59,8 +93,7 @@ uma que é exibida o menu primário e outra que é exibido o menu secundário.
 
 <lista>
   <item><u>um conteúdo</u></item>, denominado <b>Node</b>, que é uma
-instância de um determinado tipo de conteúdo, sendo formado por campos de
-diversos tipos, como texto, texto longo, imagem, arquivo, taxo-nomia, etc.
+instância de um determinado tipo de conteúdo, sendo formado por 
   <item><u>por uma View de página</u></item>, denominada <b>Page View</b>, que
 contém uma listagem de um ou vários tipos de conteúdo que podem ser exibidos
 em diversos formatos, como slideshow, accordion, grid, tabela, etc. As views
@@ -332,8 +365,8 @@ e API de integração aos módulos.
   <item>URL</item>: /admin/modules
   <item>Atividades</item>:
   <lista>
-    <item/>liste os módulos instalados e os ativados;
-    <item/>desative o módulo <b>Overlay</b>;
+    <item/>identifique os módulos instalados e os ativados;
+    <item/>desative o módulo <b>Overlay</b> (Drupal 7);
     <item/>ative o módulo <b>Syslog</b> para que as mensagens de log sejam
     enviadas ao syslog;
     <item/>ative módulo <b>Update manager</b> para permitir instalação de
