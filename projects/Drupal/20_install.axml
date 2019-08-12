@@ -3,18 +3,27 @@
     Este capítulo contém os procedimentos para instalação e configuração
 dos serviços necessários para a execução do Drupal. Na
 seção<ref>compilacao-vs-pacote</ref> foram expostas as vatangens do uso de
-uma distribuição para o fornecimento de softwares estáveis e das
-respectivas correções de falhas de segurança.
+uma distribuição para o fornecimento dos pacotes e das respectivas correções
+de falhas de segurança.
+
+<step>Crie o usuário proprietário dos arquivos do site</step>
+<comando>
+# adduser --home /var/www/portal portal
+</comando>
+
+<step>Crie o diretório para instalação do Drupal</step>
+<comando>
+# mkdir /var/www/portal/drupal
+# chown portal: /var/www/portal/drupal
+</comando>
 
 <subsecao>Apache e PHP</subsecao>
 
 <step>Instalação do servidor web Apache e do processador da linguagem PHP</step>
 
 <comando>
-# apt-get install apache2 libapache2-mod-php7.0
-# apt-get install php7.0-gd php7.0-xml php-mbstring php7.0-zip php7.0-mysql
-# apt-get install php-uploadprogress ca-certificates
-# mkdir /var/www/portal
+# apt-get install apache2 libapache2-mod-php7.3 php7.3-gd php7.3-xml \ 
+  php-mbstring php7.3-zip php7.3-mysql php-uploadprogress ca-certificates
 </comando>
 
 <step>Configuração do VirtualHost no Apache</step>
@@ -26,6 +35,8 @@ respectivas correções de falhas de segurança.
     <item>Para ambientes de desenvolvimento sem criptografia HTTPS</item>:
 </lista>
 
+    Ajuste a opção <b>ServerName</b> para o endereço IP da máquina.
+
 <comandoNumerado>
 <Directory /var/www/portal/>
     Options Indexes FollowSymLinks
@@ -35,10 +46,10 @@ respectivas correções de falhas de segurança.
 
 <VirtualHost *:80>
     ServerAdmin reinaldoc@gmail.com
-    ServerName example.com
+    ServerName 10.X.Y.Z
     DocumentRoot /var/www/portal/drupal
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
+    ErrorLog ${APACHE_LOG_DIR}/error-drupal.log
+    CustomLog ${APACHE_LOG_DIR}/access-drupal.log combined
 </VirtualHost>
 </comandoNumerado>
 
@@ -62,8 +73,8 @@ respectivas correções de falhas de segurança.
         ServerAdmin reinaldoc@gmail.com
         ServerName example.com
         DocumentRoot /var/www/portal/drupal
-        ErrorLog ${APACHE_LOG_DIR}/error.log
-        CustomLog ${APACHE_LOG_DIR}/access.log combined
+        ErrorLog ${APACHE_LOG_DIR}/error-ssl-drupal.log
+        CustomLog ${APACHE_LOG_DIR}/access-ssl-drupal.log combined
 
         # SSL Engine
         SSLEngine on
@@ -77,6 +88,10 @@ respectivas correções de falhas de segurança.
 </IfModule>
 </comandoNumerado>
 
+<lista>
+    <item>Ative os módulos e a configuração recém criada</item>:
+</lista>
+
 <comando>
 # a2enmod rewrite
 # a2enmod ssl
@@ -85,33 +100,32 @@ respectivas correções de falhas de segurança.
 
 <step>Configuração do Apache</step>
 
+    Configuração do cabeçalho <b>Server</b> no arquivo
+<b>/etc/apache2/conf-available/security.conf</b>:
+
 <comando>
-# /etc/apache2/conf-available/security.conf
 # l.25
 ServerTokens Prod
 </comando>
 
+<quebraPagina/>
+
 <step>Configuração do PHP</step>
 
-<comando>
-# /etc/php/7.0/apache2/php.ini
-# l.656
-post_max_size = 20M
-# l.809
-upload_max_filesize = 16M
-# l.924
-date.timezone = America/Belem
-</comando>
+    Configuração dos arquivos <b>/etc/php/7.3/apache2/php.ini</b> e
+<b>/etc/php/7.3/cli/php.ini</b>:
 
 <comando>
-# /etc/php/7.0/cli/php.ini
-# l.389
-memory_limit = 512M
-# l.656
-post_max_size = 100M
-# l.809
-upload_max_filesize = 100M
-# l.924
+# l.406
+memory_limit = 256M
+
+# l.693
+post_max_size = 50M
+
+# l.845
+upload_max_filesize = 50M
+
+# l.960
 date.timezone = America/Belem
 </comando>
 
@@ -126,7 +140,8 @@ date.timezone = America/Belem
 <step>Instalação do banco de dados MySQL/MariaDB</step>
 
 <comando>
-# apt-get install mariadb-server-10.1
+# apt-get install mariadb-server-10.3
+# mysql_secure_installation
 </comando>
 
 <step>Criação do schema e concessão de permissões</step>
@@ -153,7 +168,8 @@ necessário alterar o parâmetro:
 bind-address            = 0.0.0.0
 
 # Fix PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
-max_allowed_packet      = 33554432
+# l.34
+max_allowed_packet      = 32M
 </comando>
 
 <step>Recarregar configurações do MySQL/MariaDB</step>
@@ -165,60 +181,70 @@ configuração foi alterado.
 # /etc/init.d/mysql restart
 </comando>
 
+<step>Teste de conexão</step>
+
+<comando>
+# mysql -u portal -p'top-secret' portal
+</comando>
+
 <subsecao>FTP Server</subsecao>
 
 <step>Instalação do servidor de VSFtpd</step>
 
+    O pacote <b>ftp</b> fornece um cliente de FTP utilizado para testar a
+conexão. A instalação deste pacote não é obrigatória.
+
 <comando>
-# apt-get install vsftpd
+# apt-get install vsftpd ftp
 </comando>
 
-<step>Configuração do VSFtpd</step>
+<step>Restrição de diretório via FTP (chroot)</step>
 
     <importante/>Um recurso esperado do serviço de FTP é a limitação de
 acesso apenas ao diretório do usuário autenticado (<i>chroot</i>). Um
 requisito para essa restrição funcionar corretamente é que o usuário <u>não
-tenha permissão de escrita</u> na raiz do seu diretório <i>home</i>. A
-documentação não recomenda usar a opção allow_writeable_chroot=YES para
-contornar isso.
+tenha permissão de escrita</u> na raiz do seu diretório <i>home</i>.
 
-    Assim, optou-se por manter o usuário root como proprietário do diretório
-/var/www/portal, home do usuário para o site, utilizando um diretório interno
-para armazenar o CMS.
+    A documentação <b>não recomenda</b> usar a opção
+allow_writeable_chroot=YES para contornar isso. Assim, o usuário
+<b>portal</b> deve possuir permissão de escrita nos subdiretórios de seu
+<i>home</i>, mas não na raiz do diretório <b>/var/www/portal</b>.
+
+<comando>
+# chown root: /var/www/portal
+</comando>
+
+    Optou-se por manter o usuário root como proprietário do diretório
+<b>/var/www/portal</b>, home do usuário para o site, utilizando um diretório
+interno para armazenar o CMS.
+
+<step>Configuração do VSFtpd</step>
 
 <comando>
 # /etc/vsftpd.conf
-# l.31
+# l.14
+listen=YES
+listen_address=127.0.0.1
+
+# l.23
+listen_ipv6=NO
+
+# l.32
 write_enable=YES
+
 # l.103
 ftpd_banner=FTP Server ready.
-# l.114
+
+# l.115
 chroot_local_user=YES
-# l.155
+
+# l.156
 utf8_filesystem=YES
 </comando>
 
-    A opção <b>listen_address=127.0.0.1</b> em conjunto a opção
-<b>listen=YES</b> restringe a conexões somente locais. Não é necessário
-manter ativado o IPv6, uma vez que trata-se apenas de conexões locais,
-então use a opção <b>listen_ipv6=NO</b>.
-
-<step>Permita que usuários com shell /bin/false realizem login no FTP</step>
-
-    Usuários utilizados para acesso FTP não necessitam de um <i>shell</i>
-válido, podendo ser definido para <b>/bin/false</b> quando o usuário for
-criado. Dessa forma, pode-se configurar a PAM para não requerer um
-<i>shell</i> válido para autenticação FTP. Isso fará com que o usuário não
-consiga realizar autenticação em outros serviços eventualmente ativados no
-servidor.
-
-<br/>0.2cm
-
-<comando>
-# /etc/pam.d/vsftpd
-# l.10
-#auth   required        pam_shells.so
-</comando>
+    A opção <b>listen_address=127.0.0.1</b> restringe para conexões somente
+locais. Além disso, não é necessário manter ativado o IPv6, uma vez que
+trata-se apenas de conexões locais.
 
 <step>Recarregue as configurações do VSFtpd</step>
 
@@ -226,83 +252,74 @@ servidor.
 # /etc/init.d/vsftpd reload
 </comando>
 
-<step>Crie o usuário para acesso FTP e publicação do portal</step>
-<comando>
-# adduser --home /var/www/portal --shell /bin/false portal
-</comando>
+<step>Teste de conexão</step>
 
-    Ao criar o usuário o seguinte alerta será apresentado: <b>o
-diretório pessoal '/var/www/portal' não pertence ao usuário que você está
-criando atualmente</b>, o que é exatamente o comportamento esperado. Este
-diretório foi criado anteriormente e não deve possuir permissão de escrita
-para o usuário, isso atende a funcionalidade de <i>chroot</i> do servidor
-FTP.
-
-<quebraPagina/>
-
-<step>Crie o diretório para instalação do Drupal</step>
-<comando>
-# mkdir /var/www/portal/drupal
-# chown portal: /var/www/portal/drupal
-</comando>
+<comandoNumerado>
+# ftp localhost
+Connected to localhost.
+220 FTP Server ready.
+Name (localhost:root): portal
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> pwd
+257 "/" is the current directory
+ftp> ls
+200 EPRT command successful. Consider using EPSV.
+150 Here comes the directory listing.
+drwxr-xr-x    2 1001     1001         4096 Aug 12 08:42 drupal
+226 Directory send OK.
+</comandoNumerado>
 
 <subsecao>Drupal</subsecao>
+
+    O Drupal está disponível no endereço: <url>https://www.drupal.org/project/drupal</url>.
 
 <step>Download do Drupal</step>
 
     Realize download do Drupal e do arquivo de tradução da interface web:
 
 <comando>
-# su -s /bin/bash -l portal
+# su -l portal
 $ cd /tmp
-$ wget https://ftp.drupal.org/files/projects/drupal-7.67.tar.gz
-$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.67.pt-br.po
+$ wget https://ftp.drupal.org/files/projects/drupal-8.7.6.tar.gz
 </comando>
 
 <step>Extraia o Drupal</step>
 <comando>
 $ cd /var/www/portal/drupal
-$ tar xzf /tmp/drupal-7.67.tar.gz --strip 1
+$ tar xzf /tmp/drupal-8.7.6.tar.gz --strip 1
 $ find ../drupal -name '*.txt' -exec chmod 600 {} \;
 $ chmod 644 robots.txt
+$ mkdir sites/default/files
 </comando>
 
 <step>Tradução</step>
 
-<lista>
-  <item>Drupal 7</item>
-</lista>
+    Procedimento apenas para <b>Drupal 7</b>.
 
 <comando>
-$ cp /tmp/drupal-7.67.pt-br.po profiles/standard/translations
+$ cd /tmp
+$ wget https://ftp.drupal.org/files/translations/7.x/drupal/drupal-7.67.pt-br.po
+$ cp /tmp/drupal-7.67.pt-br.po /var/www/portal/drupal/profiles/standard/translations
 </comando>
 
-<lista>
-  <item>Drupal 8</item>
-</lista>
+<step>Associação do hostname ao diretório de trabalho</step>
+
+    Uma instância do Drupal é capaz de servir diferentes sites. Cada site
+possui um diretório de trabalho com arquivo <b>settings.php</b> com conexão
+a banco de dados próprio e está associado a um <i>hostname</i>. Esta configuração
+é realizada no arquivo <b>sites/sites.php</b>.
 
 <comando>
-$ mkdir -p sites/default/files/translations
-$ cp /tmp/drupal-8.76.pt-br.po sites/default/files/translations
+$ cd sites
+$ mv example.sites.php sites.php
 </comando>
 
-    <importante/>O módulo <b>Locale</b>, que é ativado ao instalar o
-arquivo de tradução em <b>profiles/standard/translations</b>, gera um
-<i>overhead</i> de 50% na quantidade de consultas a base de dados. Em
-grandes projetos, é recomendável manter a interface em inglês e não usar o
-arquivo de tradução.
-
-<br/>0.2cm
-
-<step>Defina o diretório do domínio do Drupal</step>
-<comando>
-$ mv sites/example.sites.php sites/sites.php
-</comando>
-
-<lista>
-  <item/>Use um editor de texto para adicionar ao final do arquivo
-         <b>sites/sites.php</b>:
-</lista>
+    Associe a URL ao diretório de trabalho por meio da seguinte configuração
+no arquivo <b>sites/sites.php</b>.
 
 <comando>
 $sites['example.com'] = 'portal'; ?>
@@ -317,18 +334,27 @@ referenciando este servidor.
 
 <br/>0.2cm
 
-<step>Prepare o diretório do virtualhost do Drupal</step>
+<step>Prepare o diretório de trabalho</step>
+
+    O diretório <b>sites/default</b> é o modelo para o diretório de trabalho
+dos sites.
+
 <comando>
-$ cp -a sites/default sites/portal
-$ mkdir sites/portal/files sites/portal/files-private
-$ cp sites/portal/default.settings.php sites/portal/settings.php
+$ cp -a default portal
+$ cp portal/default.settings.php portal/settings.php
 $ exit
 </comando>
 
 <step>Conceda permissão ao usuário do serviço web</step>
+
+    O instalador do Drupal irá escrever as configurações básicas e de conexão
+ao banco de dados no arquivo <b>settings.php</b> do diretório de trabalho
+selecionado pelo <i>hostname</i> contido na URL, assim, nesse momento, o
+usuário do serviço web necessita de permissão para escrever neste arquivo.
+
 <comando>
 # cd /var/www/portal/drupal/sites/portal
-# chown www-data:portal settings.php files files-private
+# chown -R www-data: settings.php files
 </comando>
 
 <step>Inicie o navegador</step>
@@ -347,6 +373,7 @@ não necessita mais ter permissão para modificação do arquivo de configuraç�
 <b>sites/portal/settings.php</b>, por isso, deve-se alterar a propriedade
 deste arquivo para o usuário <b>portal</b>, que será utilizado para acesso
 FTP.
+
 
 <step>Configure o caminho do repositório privado de arquivos</step>
 
@@ -406,12 +433,29 @@ instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
 das configurações, consultar as versões dos serviços e conferir se algum
 problema foi detectado nesta instalação.
 
+<step>Configuração recomendada</step>
+
+    Procedimento apenas para <b>Drupal 8</b>. Adicione o parâmetro abaixo no
+<b>settings.php</b> (linha 731) para uma verificação adicional do
+<i>hostname</i>. Leia mais sobre
+<link>https://www.drupal.org/docs/8/install/trusted-host-settings</link><text>Trusted Host settings</text>.
+
+<comando>
+$settings['trusted_host_patterns'] = [
+  '^10\.8\.8\.8$',
+];
+</comando>
+
+    Ajuste a expressão regular para casar com os <i>hostnames</i> em que o
+site será disponibilizado.
+
 <subsubsecao>Atualização</subsubsecao>
 
 <comando>
 $ cd /var/www/portal/drupal
 $ umask 022
-$ tar xzf /tmp/drupal-7.57.tar.gz --strip 1
+$ tar xzf /tmp/drupal-8.7.6.tar.gz --strip 1
 $ chmod 600 COPYRIGHT.txt INSTALL*.txt MAINTAINERS.txt UPGRADE.txt
-$ find ./ -regextype posix-egrep -regex '.*\.txt$' -exec chmod 600 {} \;
+$ find ../drupal -name '*.txt' -exec chmod 600 {} \;
+$ chmod 644 robots.txt
 </comando>
