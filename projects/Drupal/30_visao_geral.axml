@@ -89,8 +89,7 @@ organizar a sua exibição.
 
     Os temas também possuem <b>áreas sem região</b> que, caso sejam
 customizáveis, são controladas pelas configurações do tema. O tema padrão,
-Bartik, possui três aŕeas sem região, uma com o logotipo e nome do site,
-uma que é exibida o menu primário e outra que é exibido o menu secundário.
+Bartik, possui áreas sem região, como onde localiza-se o logotipo e nome do site.
 
     O <b>Bloco do Conteúdo</b> pode representar:
 
@@ -103,9 +102,9 @@ slideshow, accordion, grid, tabela, etc. As views são abordadas na
 seção<ref>module-views</ref>.
 </lista>
 
-    Em qualquer um dos três casos, a configuração da URL da página será
-definida por esta região. <b>As demais regiões</b> conterão blocos que
-possuem em sua configuração individual de exibição.
+    Em qualquer caso, a configuração da URL da página será definida por esta
+região. <b>As demais regiões</b> conterão blocos que possuem em sua
+configuração individual de exibição.
 
 <subsubsecao>Blocos</subsubsecao>
 
