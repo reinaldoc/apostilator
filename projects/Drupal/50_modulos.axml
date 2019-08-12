@@ -689,6 +689,7 @@ grupo de itens de menu ou o separador, seja por meio do atributo
 diretamente para a classe <b>.nolink</b> e <b>.separator</b>.
 
 <subsubsecao>Menu Admin per Menu</subsubsecao>
+<nome>menu-admin-per-menu</nome>
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/menu_admin_per_menu</url>

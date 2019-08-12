@@ -3,13 +3,14 @@
     A estrutura do Drupal é formada por:
 
 <lista>
-    <item>Tema</item>: contém arquivos CSS e os <i>templates</i> utilizados
-para gerar a parte mais externa do HTML. Dentro do corpo do HTML há áreas
-denominadas <b>Regiões</b> que terão o HTML gerenciado por meio da interface
-web do Drupal, pelo subsistema de <b>Leiaute de Blocos</b>.
+    <item>Tema</item>: contém arquivos CSS e os <i>templates</i> utilizados,
+principalmente, para gerar a parte mais externa do HTML. Dentro do corpo do
+HTML há áreas denominadas <b>Regiões</b> que terão o HTML gerenciado por
+meio da interface web do Drupal, pelo subsistema de <b>Leiaute de
+Blocos</b>.
     <item>Regiões</item>: áreas definidas no tema com localização específica
-na página, por exemplo: <b>Topo direito</b>, <b>Topo esquerdo</b>,
-<b>Conteúdo</b>, <b>Lateral direita</b>, <b>Rodapé</b>, em que um ou mais
+na página, por exemplo: <i>Topo direito</i>, <i>Topo esquerdo</i>,
+<i>Conteúdo</i>, <i>Lateral direita</i>, <i>Rodapé</i>, em que um ou mais
 blocos podem ser associados em ordem específica.
     <item>Blocos</item>: elemento que pode ser associado a uma região do
 tema.
@@ -18,33 +19,35 @@ tema.
 pelo usuário.
       <item>Bloco Menu</item>: bloco que representa um menu cadastrado no
 Drupal. Ao publicar um conteúdo o usuário pode ter permissão para
-adicionar um item de menu.
+adicionar um item ao menu.
       <item>Bloco Conteúdo</item>: bloco que apresenta uma instância de um
-tipo de conteúdo ou uma Visão de Página, que definirá a URL da página.
+tipo de conteúdo ou uma <i>View de Página</i>.
+      <lista>
+        <item>Conteúdo</item>: uma instância de um tipo de conteúdo, que é
+formado por campos de dados. Define a URL da página. É gerenciado pelo
+usuário.
+        <item>View de página</item>: lista um conjunto de instâncias de
+conteúdo. Define a URL da página.
+      </lista>
       <item>Bloco de View</item>: bloco que lista um conjunto de instâncias
 de conteúdo a partir de critérios de filtragem, ordenação e paginação.
     </lista>
     <item>Tipo de conteúdo</item>: define a estrutura do <b>bloco
 Conteúdo</b> por meio de campos de diversos tipos, como texto, data, imagem,
 arquivo, taxonomia, relacionamento, etc.
-    <item>Conteúdo</item>: uma instância de um tipo de conteúdo. Define a
-URL da página e será apresentado no Bloco Conteúdo.
-    <item>View de página</item>: lista um conjunto de instâncias de
-conteúdo. Define a URL da página e será apresentado no Bloco Conteúdo.
 </lista>
 
     Assim, a primeira camada é composta pelo <u>tema</u> que contém a
 apresentação em HTML/CSS com identificação de <u>regiões que serão
 controladas pelo núcleo do Drupal</u>. Já o <u>núcleo do Drupal pode ser
 extendido por módulos</u> que adicionam recursos para apresentação dos
-dados, quanto para armazenar novos tipos de dados em banco de dados.
+dados, quanto para o armazenamento de novos tipos de dados em banco de
+dados.
 
-    O Drupal foi implementado para ser altamente customizável, o que levou ao
-desenvolvimento de quatro estruturas genéricas: <u>blocos, tipos de conteúdo,
-menus e taxonomias</u>, que compõe seu núcleo. A partir de uma visão mais
-abrangente é possível identificar três componentes do Drupal: <u>os temas, o
-núcleo do Drupal e os módulos</u>.
-
+    Este capítulo abordará os elementos estruturantes do núcleo do Drupal e
+a visão geral dos módulos, também auxiliará a obtenção e avaliação de temas,
+apresentará a gestão de usuários, bem como as principais configurações do
+Drupal.
 
 <subsecao>Estrutura</subsecao>
 
@@ -89,34 +92,29 @@ customizáveis, são controladas pelas configurações do tema. O tema padrão,
 Bartik, possui três aŕeas sem região, uma com o logotipo e nome do site,
 uma que é exibida o menu primário e outra que é exibido o menu secundário.
 
-    A <b>Região do Conteúdo</b> pode ser preenchida por:
+    O <b>Bloco do Conteúdo</b> pode representar:
 
 <lista>
   <item><u>um conteúdo</u></item>, denominado <b>Node</b>, que é uma
-instância de um determinado tipo de conteúdo, sendo formado por 
-  <item><u>por uma View de página</u></item>, denominada <b>Page View</b>, que
-contém uma listagem de um ou vários tipos de conteúdo que podem ser exibidos
-em diversos formatos, como slideshow, accordion, grid, tabela, etc. As views
-são abordadas na seção<ref>module-views</ref>.
-  <item><u>por um Painel</u></item>, denominado <b>Panel Page</b>, que contém
-subregiões em que podem ser alocados um ou mais <b>Nodes, Blocos ou Views</b>.
-Os Panels são abordados na seção<ref>module-panels</ref>.
+instância de um determinado tipo de conteúdo, sendo formado por campos de dados.
+  <item><u>por uma View de página</u></item> que contém uma listagem de um ou
+vários tipos de conteúdo que podem ser exibidos em diversos formatos, como
+slideshow, accordion, grid, tabela, etc. As views são abordadas na
+seção<ref>module-views</ref>.
 </lista>
 
     Em qualquer um dos três casos, a configuração da URL da página será
 definida por esta região. <b>As demais regiões</b> conterão blocos que
-possuem em sua configuração individual a lista de URLs em que serão
-exibidos.
+possuem em sua configuração individual de exibição.
 
 <subsubsecao>Blocos</subsubsecao>
 
     O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
-inclusive à Região de Conteúdo, e pode ser criado a partir de um trecho de
-código HTML, pode representar um menu, uma listagem de conteúdo (View de
+inclusive à Região de Conteúdo, também pode ser criado a partir de um trecho
+de código HTML, pode representar um menu, uma listagem de conteúdo (View de
 bloco), um Mini-Panel, ou ainda, ser fornecido por algum módulo, como o
-<b>Footer Sitemap</b>. Configura-se no bloco em quais URLs ele será exibido,
-dentro da região a qual foi associado, por meio das configurações de
-visibilidade.
+<b>Footer Sitemap</b>. Configura-se no bloco as condições de visibilidade,
+que definem quando ele será exibido dentro da região a qual foi associado.
 
 <lista>
   <item>URL</item>: /admin/structure/block
@@ -146,17 +144,13 @@ Formatos de texto</b>.
 <b>links</b>, que podem ser organizados de forma hierárquica. Todo menu é um
 bloco que pode ser associado a uma região do tema pela interface de blocos.
 
-    Por questões de organização, sugere-se que todo menu seja nomeado com
-prefixo <b>Menu:</b>, assim, ao criar um menu denominado <b>Menu:
-Institucional</b> será possível identificá-lo com clareza na lista de
-blocos. Ao editar o bloco deste menu, defina o <b>Título do bloco</b> como
-<b>Institucional</b> para que o prefixo <b>Menu:</b> não seja apresentado.
-
-    Ao criar um menu, também será gerado um nome único para identificação
-interna, denominado <b>nome no sistema</b>, sendo automaticamente prefixado
-com <b>menu-</b>. Assim, ao criar o menu <b>Menu: Institucional</b>, use
-como <b>nome no sistema</b> apenas <b>institucional</b>, que resultará em
-<b>menu-institucional</b>.
+    No Drupal 7, por questões de organização, sugere-se que todo menu seja
+nomeado com prefixo <b>'Menu:'</b>, assim, ao criar um menu denominado
+<b>Menu: Institucional</b> será possível identificá-lo com clareza na lista
+de blocos. Nesse ponto, também será gerado um nome único para identificação
+do menu, edite-o e use apenas <b>institucional</b>.  Ao editar o bloco deste
+menu, defina o <b>Título do bloco</b> como <b>Institucional</b> para que o
+prefixo <b>Menu:</b> não seja apresentado.
 
 <lista>
   <item>URL</item>: /admin/structure/menu
@@ -195,14 +189,16 @@ como <b>nome no sistema</b> apenas <b>institucional</b>, que resultará em
   </lista>
 </lista>
 
-    <b>¹</b><u>Veremos que para o usuário comum adicionar um link ao menu a
-partir de um conteúdo será necessário a concessão de uma permissão
-específica para administrar este menu.</u>
+    <b>¹</b><u>Para o usuário comum adicionar um link ao menu será
+necessária a concessão de uma permissão específica para administrar este
+menu.</u> Isso será visto na Seção<ref>menu-admin-per-menu</ref>.
 
-    É possível definir o menu principal, que normalmente é alocado pelo tema
-na parte superior do site, por meio da opção <b>Origem para os links
-Principais</b>, bem como o menu secundário, que pode vir a ser exibido no
-topo do site, por meio da opção <b>Origem para os links Secundários</b>.
+    No Drupal 7 é possível definir o menu principal, que normalmente é
+alocado pelo tema na parte superior do site, por meio da opção <b>Origem
+para os links Principais</b>, bem como o menu secundário, que pode vir a ser
+exibido no topo do site, por meio da opção <b>Origem para os links
+Secundários</b>. Já no Drupal 8, há uma região, como <i>Primary Menu</i> em
+que qualquer menu pode ser associado.
 
     <importante/>Apesar desta atividade ter criado itens de menu pela
 interface de gerenciamento de menus, essa opção é comumente utilizada
