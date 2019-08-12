@@ -644,6 +644,12 @@ permite acesso ao item em conjunto com as teclas <b>Alt</b> ou
 <b>Shift+Alt</b>. O atributo <b>target</b> com valor <i>_blank</i> é útil
 para que o <i>link</i> seja aberto em uma nova janela.
 
+    Módulos similares para Drupal 8:
+<link>https://www.drupal.org/project/link_attributes</link><text>Link
+Attributes</text> e
+<link>https://www.drupal.org/project/menu_link_attributes</link><text>Menu
+Link Attributes</text>.
+
 <subsubsecao>Special menu items</subsubsecao>
 
 <lista>
