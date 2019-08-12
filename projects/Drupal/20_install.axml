@@ -374,7 +374,6 @@ não necessita mais ter permissão para modificação do arquivo de configuraç�
 deste arquivo para o usuário <b>portal</b>, que será utilizado para acesso
 FTP.
 
-
 <step>Configure o caminho do repositório privado de arquivos</step>
 
     Acesse a configuração em <b>Mídia ⇒ Sistema de arquivos</b> e defina
@@ -433,9 +432,7 @@ instalação e consulte o <b>Relatório de Status</b> para ter uma visão geral
 das configurações, consultar as versões dos serviços e conferir se algum
 problema foi detectado nesta instalação.
 
-<step>Configuração recomendada</step>
-
-    Procedimento apenas para <b>Drupal 8</b>. Adicione o parâmetro abaixo no
+    Procedimento apenas para <b>Drupal 8</b>: adicione o parâmetro abaixo no
 <b>settings.php</b> (linha 731) para uma verificação adicional do
 <i>hostname</i>. Leia mais sobre
 <link>https://www.drupal.org/docs/8/install/trusted-host-settings</link><text>Trusted Host settings</text>.
@@ -455,7 +452,13 @@ site será disponibilizado.
 $ cd /var/www/portal/drupal
 $ umask 022
 $ tar xzf /tmp/drupal-8.7.6.tar.gz --strip 1
-$ chmod 600 COPYRIGHT.txt INSTALL*.txt MAINTAINERS.txt UPGRADE.txt
 $ find ../drupal -name '*.txt' -exec chmod 600 {} \;
 $ chmod 644 robots.txt
 </comando>
+
+    Acesse a página <b>update.php</b> em seu Drupal para concluir a
+atualização.
+
+    O comando <b>umask</b> é necessário somente em sistemas em que o seu
+valor padrão foi modificado.
+
