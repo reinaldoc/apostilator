@@ -185,18 +185,10 @@ tradução da interface web;
   </lista>
 </lista>
 
-    O módulo <b>Localization update</b> não é necessário em uma
-instalação própria, pois o arquivo de tradução é obtido, armazenado em
-<b>profiles/standard/translations</b> e carregado para o banco de dados pelo
-instalador, mas é útil para instâncias criadas no
-<url>http://simplytest.me</url>.
-
-    <importante/>O módulo <b>Locale</b>, que é dependência do módulo
-<b>Localization update</b>, gera um <i>overhead</i> de 50% na quantidade de
-consultas. Em grandes projetos, é recomendável manter a interface em inglês
-e não habilitar estes módulos. Consulte a opção
-"$conf['locale_custom_strings_en']" no <b>settings.php</b> para traduzir
-itens específicos.
+    O módulo <b>Localization update</b> foi incluído no <i>core</i> do Drupal
+8. Para traduzir itens específicos, eventualmente não disponíveis por meio
+da interface web, consulte a opção <i>$conf['locale_cus tom_strings_en']</i>
+no <b>settings.php</b>.
 
 <subsubsecao>Masquerade</subsubsecao>
 
