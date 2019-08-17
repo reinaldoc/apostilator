@@ -128,7 +128,7 @@ idioma, criação de contas de usuário e particionamento do disco. Acesse
     Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
 installer menu', então prossiga com a instalação.
 
-<subsubsecao>Língua</subsubsecao>
+<step>Configuração de idioma</step>
 
 <lista>
   <item>Idioma</item>: Portuguese (Brazil) - Português do Brasil.
@@ -136,7 +136,7 @@ installer menu', então prossiga com a instalação.
   <item>Mapa de teclado</item>: Português Brasileiro.
 </lista>
 
-<subsubsecao>Configuração de contas e relógio</subsubsecao>
+<step>Configuração de contas e relógio</step>
 
 <lista>
   <item>Nome da máquina</item>: drupal
@@ -148,28 +148,30 @@ installer menu', então prossiga com a instalação.
   <item>Configurar o relógio</item>: Nome do Estado
 </lista>
 
-<subsubsecao>Particionamento</subsubsecao>
+<step>Particionamento</step>
 
-    Abaixo é indicado um esquema simples de particionamento.
+    É indicado abaixo um esquema simples de particionamento.
 
 <enumerar>
   <item>Método de particionamento</item>: Manual.
   <item>Selecione o disco local <i>HARDDISK</i> para criar nova tabela de partições</item>.
   <item>Selecione a opção <i>ESPAÇO LIVRE</i> para criar novas partições</item>:
   <lista>
-    <item>#1:</item> 256 MB - primária, início, área de troca (swap);
-    <item>#2:</item>  10 GB - primária, início, ext4, /, Rótulo: RootFS, Flag inicializável: ligado;
+    <item>#1:</item> 256 MB - primária, início, <b>Usar como</b>: Área de troca (swap);
+    <item>#2:</item> max    - primária, início, <b>Usar como</b>: ext4, <b>Flag inicializável</b>: ligado;
+    <item>Finalizar a configuração da partição</item>.
   </lista>
   <item>Finalizar o particionamento e escrever as mudanças no disco</item>.
   <item>Escrever as mudanças nos discos</item>: Sim.
 </enumerar>
 
-<subsubsecao>Configuração de repositório e boot</subsubsecao>
+<step>Configuração de repositório de pacotes e de inicialização</step>
 
 <lista>
   <item>Ler outro CD ou DVD?</item>: não
-  <item>País do espelho do repositório Debian</item>: tecle ESC para cancelar
-  <item>Continuar sem um espelho de rede?</item>: sim
+  <item>País do espelho do repositório Debian</item>: Brasil
+  <item>Espelho do repositório Debian</item>: ftp.br.debian.org
+  <item>Informação sobre proxy http</item>: em branco ou http://usuario:senha@servidor:porta/
   <item>Participar do concurso de utilização de pacotes?</item>: não
   <item>Escolha o software a ser instalado</item>: nenhum (desmarque todos)
   <item>Instalar o carregador de inicialização GRUB na MBR</item>: sim
