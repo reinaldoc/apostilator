@@ -279,7 +279,7 @@ drwxr-xr-x    2 1001     1001         4096 Aug 12 08:42 drupal
 
 <step>Download do Drupal</step>
 
-    Realize download do Drupal e do arquivo de tradução da interface web:
+    Realize download do Drupal:
 
 <comando>
 # su -l portal
@@ -298,7 +298,8 @@ $ mkdir sites/default/files
 
 <step>Tradução</step>
 
-    Procedimento apenas para <b>Drupal 7</b>.
+    Procedimento apenas para <b>Drupal 7</b>. Realize download da tradução
+da interface web:
 
 <comando>
 $ cd /tmp
@@ -318,8 +319,9 @@ $ cd sites
 $ mv example.sites.php sites.php
 </comando>
 
-    Associe a URL ao diretório de trabalho por meio da seguinte configuração
-no arquivo <b>sites/sites.php</b>.
+    No arquivo <b>sites/sites.php</b>, associe um <i>hostname</i> ou um
+endereço IP a um diretório de trabalho. Será usado o diretório de trabalho
+denominado <b>portal</b>, que será criado a seguir.
 
 <comando>
 $sites['example.com'] = 'portal'; ?>
@@ -329,8 +331,8 @@ $sites['example.com'] = 'portal'; ?>
 configurações multi-site estão disponíveis em
 <url>http://drupal.org/documentation/install/multi-site</url>. Caso este
 passo não seja realizado, o drupal utilizará o diretório
-<b>sites/default</b> para qualquer nome de domínio que possua DNS
-referenciando este servidor.
+<b>sites/default</b> para qualquer endereço IP ou nome de domínio que possua
+DNS referenciando este servidor.
 
 <br/>0.2cm
 
@@ -354,7 +356,7 @@ usuário do serviço web necessita de permissão para escrever neste arquivo.
 
 <comando>
 # cd /var/www/portal/drupal/sites/portal
-# chown -R www-data: settings.php files
+# chown www-data: settings.php files
 </comando>
 
 <step>Inicie o navegador</step>
@@ -364,15 +366,16 @@ conexão ao banco de dados. Essas configurações serão salvas no arquivo
 <b>sites/portal/settings.php</b>.
 
 <step>Redefina a permissão do arquivo de configuração</step>
-<comando>
-# chown portal: settings.php
-</comando>
 
     Após o procedimento de instalação do Drupal, o usuário do serviço web
 não necessita mais ter permissão para modificação do arquivo de configuração
 <b>sites/portal/settings.php</b>, por isso, deve-se alterar a propriedade
 deste arquivo para o usuário <b>portal</b>, que será utilizado para acesso
 FTP.
+
+<comando>
+# chown portal: settings.php
+</comando>
 
 <step>Configure o caminho do repositório privado de arquivos</step>
 
@@ -408,8 +411,8 @@ lenta uma requisição do usuário a cada período de tempo.
 tarefas e delegar a chamada para o <b>Cron</b> do sistema operacional.
 Assim, acesse a configuração do agendador de tarefas, selecione
 <b>Nunca</b> na opção <b>Rodar agendador de tarefas a cada</b> e obtenha a
-URL para cadastro no <b>Cron</b>. Substitua a URL no exemplo a seguir, bem
-como substitua o usuário <b>portal</b> por um usuário comum existente.
+URL para cadastro no <b>Cron</b>. Substitua a URL no exemplo a seguir, além
+disso, pode-se executar a requisição por meio do usuário <b>portal</b>.
 
 <comando>
 # /etc/crontab
