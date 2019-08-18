@@ -98,8 +98,8 @@ Bartik, possui áreas sem região, como onde localiza-se o logotipo e nome do si
 instância de um determinado tipo de conteúdo, sendo formado por campos de dados.
   <item><u>por uma View de página</u></item> que contém uma listagem de um ou
 vários tipos de conteúdo que podem ser exibidos em diversos formatos, como
-slideshow, accordion, grid, tabela, etc. As views são abordadas na
-seção<ref>module-views</ref>.
+slideshow, accordion, grid, tabela, etc. As views são abordadas no
+Capítulo<ref>module-views</ref>.
 </lista>
 
     Em qualquer caso, a configuração da URL da página será definida por esta
@@ -109,11 +109,15 @@ configuração individual de exibição.
 <subsubsecao>Blocos</subsubsecao>
 
     O <b>bloco</b> é a unidade que pode ser associada a uma região do tema,
-inclusive à Região de Conteúdo, também pode ser criado a partir de um trecho
-de código HTML, pode representar um menu, uma listagem de conteúdo (View de
-bloco), um Mini-Panel, ou ainda, ser fornecido por algum módulo, como o
-<b>Footer Sitemap</b>. Configura-se no bloco as condições de visibilidade,
-que definem quando ele será exibido dentro da região a qual foi associado.
+inclusive à Região de Conteúdo, em cima ou embaixo do Bloco Conteúdo. <u>Os
+blocos são criados e posicionados na região pelo desenvolvedor do site</u>.
+
+    Um bloco pode conter um trecho de código HTML, bem como pode representar
+um menu, uma listagem de conteúdo (View de bloco) ou, ainda, ser fornecido
+por algum módulo, como o <b>Footer Sitemap</b>.
+
+    Configura-se no bloco as condições de visibilidade, que definem quando
+ele será exibido dentro da região a qual foi associado.
 
 <lista>
   <item>URL</item>: /admin/structure/block
@@ -142,6 +146,8 @@ Formatos de texto</b>.
     Um <b>menu</b> é formado por um conjunto itens de menu, denominados
 <b>links</b>, que podem ser organizados de forma hierárquica. Todo menu é um
 bloco que pode ser associado a uma região do tema pela interface de blocos.
+<u>A criação de um menu é realizada pelo desenvolvedor do site, já a
+inserção de itens de menu pode ser delegada para o usuário publicador</u>.
 
     No Drupal 7, por questões de organização, sugere-se que todo menu seja
 nomeado com prefixo <b>'Menu:'</b>, assim, ao criar um menu denominado
@@ -211,8 +217,9 @@ de View de página ou de Painel</u>, como será visto posteriormente.
     Um <b>tipo de conteúdo</b> é formado por campos de texto, numéricos
 (inteiro ou float), boleanos, de imagem, de arquivo, de lista (checkbox,
 radio, autocomplete) de texto ou de números e lista de termos de determinada
-taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos,
-como campos para data, link e relacionamento com outro tipo de conteúdo.
+taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos.
+<u>A criação de tipos de conteúdo é realizada pelo desenvolvedor do
+site</u>.
 
 <lista>
   <item>URL</item>: /admin/structure/types
@@ -249,7 +256,7 @@ como campos para data, link e relacionamento com outro tipo de conteúdo.
     Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
 formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
 a ordem define a posição dos campos na apresentação do conteúdo, nesta área
-é possível configurar a exibição dos rótulos: em linha, acima ou
+é possível configurar a exibição dos rótulos dos campos: em linha, acima ou
 ocultá-los.
 
     O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
@@ -264,6 +271,10 @@ hierarquicamente. Também pode ser entendida como uma lista de elementos do
 tipo gênero e espécie. As taxonomias devem ser referenciadas em um ou mais
 tipos de conteúdo por meio do campo <b>Term reference</b>. As <i>tags</i>
 são um exemplo de taxonomia.
+
+    <importante/>Termos da taxonomia podem ser adicionados pelos usuários
+publicadores quando o formato de exibição <b>autocompletar</b> for
+utilizado. <u>Colaboração enviada pelo Manoel do TRT16</u>.
 
 <lista>
   <item>URL</item>: /admin/structure/taxonomy
@@ -289,13 +300,14 @@ termo como parte do nome de um arquivo presente no respectivo conteúdo.
     Outro recurso da taxonomia é a vinculação de uma URL à listagem de
 todos os conteúdos que estão identificadados com determinado termo. O módulo
 <b>pathauto</b> também permite gerar essas URLs a partir de um padrão de
-tokens.
+tokens, como veremos na Seção<ref>module-pathauto</ref>.
 
 <subsecao>Conteúdo (node)</subsecao>
 
-    O <b>conteúdo</b> (node) é uma instância de um tipo de conteúdo. É
-possível fazer um paralelo em que o tipo de conteúdo seria uma tabela e o
-conteúdo (node) seria cada linha da tabela.
+    <u>O <b>conteúdo</b> (node) é criado pelos usuários publicadores</u> a
+partir de um determinado tipo de conteúdo. Ao criá-lo, será definida a URL
+da página. Fazendo uma associação pedagógica, o tipo de conteúdo seria uma
+tabela e o conteúdo (node) seria cada linha da tabela.
 
 <lista>
   <item>URL</item>: /admin/content
@@ -309,6 +321,85 @@ conteúdo (node) seria cada linha da tabela.
   </lista>
 </lista>
 
+    Os tipos de conteúdo os quais o usuário detiver permissão para cadastrar
+conteúdo estarão listados na página <b>/node/add</b>. Por sua vez, a edição
+do conteúdo ocorre por meio do botão <b>Editar</b> na página do respectivo
+conteúdo.
+
+    <importante/>A tela de cadastro de conteúdo utiliza o tema
+administrativo quando está-se autenticado com usuário administrador, além
+disso, contém opções avançadas de configuração, como a alteração da URL ou
+do autor do conteúdo. Todavia, quando a tela de cadastro de conteúdo é
+apresentada a um usuário comum, qu detém apenas permissão de cadastro de
+conteúdo, ela possui apenas os campos do respectivo tipo de conteúdo e,
+quando o recurso de revisão está habilitado, um campo para identificação
+textual da revisão.
+
+<subsecao>Pessoas</subsecao>
+
+    Opção que permite a criação da usuários e papéis (roles), bem como
+associação de usuários e permissões aos papéis.
+
+<subsubsecao>Permissões</subsubsecao>
+
+    As <b>permissões</b> são fornecidas por cada módulo, devendo ser
+concedidas a papéis, que por sua vez são vinculados aos usuários.
+
+<lista>
+  <item>URL</item>: /admin/people/permissions
+  <item>Atividades</item>:
+  <lista>
+    <item/>listar permissões fornecidas por cada módulo;
+    <item/>listar permissões associadas a cada papel;
+    <item/>listar permissões por tipo de conteúdo (consultar módulo Node);
+    <item/>concerder permissão 'Use search' para usuários autenticados e
+usuários não autenticados.
+  </lista>
+</lista>
+
+    O bloco <b>Search form</b> é fornecido pelo módulo <b>Search</b>, que
+faz parte do núcleo do Drupal. Verifique que apesar deste bloco estar
+associado a uma região, ele só é exibido quando o usuário com permissão de
+administrador está autenticado.
+
+    Consulte o conjunto de permissões que são implementadas por cada módulo
+em <i>Pessoas -> Permissões</i> e identifique a lista de permissões
+fornecidas pelo módulo <b>Search</b>. Ative a permissão <b>Use search</b>
+para que usuários autenticados e não autenticados, denominados anônimos,
+possam utilizar o bloco <b>Search form</b>.
+
+<subsubsecao>Papéis</subsubsecao>
+
+    Os <b>papéis</b> são o elo que ligam as permissões fornecidas pelos
+módulos aos usuários. Há três papéis pré-existentes: usuários não autenticados
+(usuário anônimo), usuários autenticados e administradores.
+
+<lista>
+  <item>URL</item>: /admin/people/permissions/roles
+  <item>Atividades</item>:
+  <lista>
+    <item/>criar papéis;
+    <item/>listar permissões associadas a determinado papel;
+    <item/>associar permissões a um papel;
+    <item/>associar permissão a papel por tipo de conteúdo (criar, editar, etc);
+  </lista>
+</lista>
+
+<subsubsecao>Usuários</subsubsecao>
+
+    Os <b>usuários</b> podem ser criados localmente ou integrados por meio
+do protocolo LDAP.
+
+<lista>
+  <item>URL</item>: /admin/people
+  <item>Atividades</item>:
+  <lista>
+    <item/>listar usuários com status, papéis atribuídos e data do último acesso;
+    <item/>criar novo e editar usuário (nome, senha, status, imagem, etc);
+    <item/>associar usuários a papéis;
+  </lista>
+</lista>
+
 <subsecao>Módulos</subsecao>
 
     De forma similar a um framework de programação, as estruturas do Drupal
@@ -316,7 +407,8 @@ foram desenvolvidas com inúmeros pontos de integração, denominados
 <b>hooks</b>, que são utilizados para extendê-las por meio de módulos. Os
 módulos podem ser instalados pela interface web do Drupal, que realiza uma
 conexão FTP local para armazenar seus arquivos no diretório
-<b>sites/all/modules</b>.
+<b>sites/all/modules</b>, uma vez que o usuário do serviço web não deve
+possuir permissão para isto.
 
     Os módulos podem fornecer blocos especializados, novos tipos de campos
 (<i>fields</i>) para serem utilizados em tipos de conteúdo e também
@@ -325,30 +417,42 @@ compartilhamento da página em redes sociais ou a informação sobre a
 responsabilidade do conteúdo. Além disso há módulos importantes que
 estendem as funcionalidades dos menus.
 
-    Encontrar o módulo que implementa uma determinada funcionalidade é uma
-das atividades que mais demandam tempo quando se está iniciando a trabalhar
-com o Drupal. A página de pesquisa de
-módulos<link>https://drupal.org/project/project_module</link><text>[1]</text>
-não ajuda muito, pois em muitos casos não é tão claro o que o módulo se
-propõe a fazer, tampouco o índice de
-módulos<link>https://drupal.org/project/project_module/index</link><text>[2]</text>
-facilita isso, mas podem ser úteis eventualmente.
+    Encontrar o módulo que implementa uma determinada funcionalidade ou,
+ainda, encontrar qual o melhor módulo dentre aqueles que implementam a mesma
+funcionalidade são atividades que demandam tempo quando se está iniciando a
+utilizar o Drupal. No segundo caso, é importante privilegir os módulos que
+fornecem versão identificada como <b>estável</b>, bem como os módulos que
+seguem a <b>política de segurança</b> do Drupal. Essa informação consta na
+página do módulo.
 
-    A pesquisa por meio do Google costuma ser mais eficiente e também há
-páginas que consolidam uma relação de módulos por um determinado tema, como
-os módulos para
-Views<link>https://drupal.org/documentation/modules/views/add-ons</link><text>[3]</text>
-e para Upload de
-arquivos<link>https://groups.drupal.org/node/20291</link><text>[4]</text>. O
-capítulo<ref>drupal-modules</ref>, que trata de módulos, funciona como um
-catálogo que também simplifica essa tarefa.
+    A pesquisa por meio do Google costuma ser eficiente e também há páginas
+que consolidam uma relação de módulos por assunto, como os módulos para
+Views<link>https://drupal.org/documentation/modules/views/add-ons</link>
+<text>[1]</text> ou para Upload de arquivos
+<link>https://groups.drupal.org/node/20291</link><text>[2]</text>.
 
 <lista>
-  <item>[1]</item> <url>https://drupal.org/project/project_module</url>
-  <item>[2]</item> <url>https://drupal.org/project/project_module/index</url>
-  <item>[3]</item> <url>https://drupal.org/documentation/modules/views/add-ons</url>
-  <item>[4]</item> <url>https://groups.drupal.org/node/20291</url>
+  <item>[1]</item> <url>https://drupal.org/documentation/modules/views/add-ons</url>
+  <item>[2]</item> <url>https://groups.drupal.org/node/20291</url>
 </lista>
+
+    A página de pesquisa de módulos<link>https://drupal.org/project/project_module</link>
+<text>[3]</text> tem uso limitado, uma vez que em muitos casos não é tão claro o
+que o módulo se propõe a fazer ou como utilizá-lo. O índice de módulos
+<link>https://drupal.org/project/project_module/index</link><text>[4]</text>
+pode ser útil, eventualmente.
+
+<lista>
+  <item>[3]</item> <url>https://drupal.org/project/project_module</url>
+  <item>[4]</item> <url>https://drupal.org/project/project_module/index</url>
+</lista>
+
+
+    Tenho um ditado que diz: <i>"um módulo adiciona algo em algum
+lugar"</i>, que traduz uma dificiência de muitos módulos em especificar
+exatamente em que local será adicionado a opção fornecida por ele. Por isso,
+o Capítulo<ref>drupal-modules</ref> faz o papel de catálogo de módulos a fim
+de prover a informação necessária para utilização de cada módulo.
 
     Os módulos são desenvolvidos especificamente para uma determinada versão
 do núcleo do Drupal, assim, um módulo cuja versão é <b>7.x-1.2</b>
@@ -514,71 +618,6 @@ tema.
   <lista>
     <item/><url>http://demo.morethanthemes.com/enterpriseplus8/default/</url>
     <item/><url>http://demo.morethanthemes.com/chique/blue/</url>
-  </lista>
-</lista>
-
-<subsecao>Pessoas</subsecao>
-
-    Opção que permite a criação da usuários e papéis (roles), bem como
-associação de usuários e permissões aos papéis.
-
-<subsubsecao>Permissões</subsubsecao>
-
-    As <b>permissões</b> são fornecidas por cada módulo, devendo ser
-concedidas a papéis, que por sua vez são vinculados aos usuários.
-
-<lista>
-  <item>URL</item>: /admin/people/permissions
-  <item>Atividades</item>:
-  <lista>
-    <item/>listar permissões fornecidas por cada módulo;
-    <item/>listar permissões associadas a cada papel;
-    <item/>listar permissões por tipo de conteúdo (consultar módulo Node);
-    <item/>concerder permissão 'Use search' para usuários autenticados e
-usuários não autenticados.
-  </lista>
-</lista>
-
-    O bloco <b>Search form</b> é fornecido pelo módulo <b>Search</b>, que
-faz parte do núcleo do Drupal. Verifique que apesar deste bloco estar
-associado a uma região, ele só é exibido quando o usuário com permissão de
-administrador está autenticado.
-
-    Consulte o conjunto de permissões que são implementadas por cada módulo
-em <i>Pessoas -> Permissões</i> e identifique a lista de permissões
-fornecidas pelo módulo <b>Search</b>. Ative a permissão <b>Use search</b>
-para que usuários autenticados e não autenticados, denominados anônimos,
-possam utilizar o bloco <b>Search form</b>.
-
-<subsubsecao>Papéis</subsubsecao>
-
-    Os <b>papéis</b> são o elo que ligam as permissões fornecidas pelos
-módulos aos usuários. Há três papéis pré-existentes: usuários não autenticados
-(usuário anônimo), usuários autenticados e administradores.
-
-<lista>
-  <item>URL</item>: /admin/people/permissions/roles
-  <item>Atividades</item>:
-  <lista>
-    <item/>criar papéis;
-    <item/>listar permissões associadas a determinado papel;
-    <item/>associar permissões a um papel;
-    <item/>associar permissão a papel por tipo de conteúdo (criar, editar, etc);
-  </lista>
-</lista>
-
-<subsubsecao>Usuários</subsubsecao>
-
-    Os <b>usuários</b> podem ser criados localmente ou integrados por meio
-do protocolo LDAP.
-
-<lista>
-  <item>URL</item>: /admin/people
-  <item>Atividades</item>:
-  <lista>
-    <item/>listar usuários com status, papéis atribuídos e data do último acesso;
-    <item/>criar novo e editar usuário (nome, senha, status, imagem, etc);
-    <item/>associar usuários a papéis;
   </lista>
 </lista>
 

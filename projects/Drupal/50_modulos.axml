@@ -987,6 +987,7 @@ busca, ativada em <b>Configurações → Busca e metadados → Configurações d
 busca</b>.
 
 <subsubsecao>Pathauto</subsubsecao>
+<nome>module-pathauto</nome>
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/pathauto</url>
