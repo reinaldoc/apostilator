@@ -447,18 +447,17 @@ pode ser útil, eventualmente.
   <item>[4]</item> <url>https://drupal.org/project/project_module/index</url>
 </lista>
 
-
     Tenho um ditado que diz: <i>"um módulo adiciona algo em algum
-lugar"</i>, que traduz uma dificiência de muitos módulos em especificar
-exatamente em que local será adicionado a opção fornecida por ele. Por isso,
-o Capítulo<ref>drupal-modules</ref> faz o papel de catálogo de módulos a fim
-de prover a informação necessária para utilização de cada módulo.
+lugar"</i>, o que traduz uma dificiência de muitos módulos em especificar
+exatamente em que local será adicionado o recurso fornecido por ele. Por
+isso, o Capítulo<ref>drupal-modules</ref> faz o papel de catálogo de módulos
+a fim de prover a informação necessária para utilização de cada módulo.
 
     Os módulos são desenvolvidos especificamente para uma determinada versão
-do núcleo do Drupal, assim, um módulo cuja versão é <b>7.x-1.2</b>
-funcionará apenas na versão 7 do Drupal. Isso ocorre pois a mudança de
-versão do núcleo implica em mudanças significativas em sua estrutura interna
-e API de integração aos módulos.
+do núcleo do Drupal, assim, um módulo cuja versão é <b>8.x-1.2</b>
+funcionará apenas no <b>Drupal 8</b>. Isso ocorre pois a mudança de versão
+do núcleo implica em mudanças significativas em sua estrutura interna e API
+de integração aos módulos.
 
 <lista>
   <item>URL</item>: /admin/modules
@@ -583,7 +582,9 @@ tema.
   </lista>
 </lista>
 
-<subsubsecao>Temas para a interface de administração</subsubsecao>
+<subsubsecao>Temas para a área de administração</subsubsecao>
+
+    O Drupal 8 já utiliza o tema NavBar para a área de administração.
 
 <lista>
   <item/><url>https://drupal.org/project/ember</url>
