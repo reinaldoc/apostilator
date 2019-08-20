@@ -282,6 +282,7 @@ drwxr-xr-x    2 1001     1001         4096 Aug 12 08:42 drupal
     Realize download do Drupal:
 
 <comando>
+# apt-get install wget
 # su -l portal
 $ cd /tmp
 $ wget https://ftp.drupal.org/files/projects/drupal-8.7.6.tar.gz
