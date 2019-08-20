@@ -11,7 +11,7 @@ Blocos</b>.
     <item>Regiões</item>: áreas definidas no tema com localização específica
 na página, por exemplo: <i>Topo direito</i>, <i>Topo esquerdo</i>,
 <i>Conteúdo</i>, <i>Lateral direita</i>, <i>Rodapé</i>, em que um ou mais
-blocos podem ser associados em ordem específica.
+blocos podem ser associados e ordenados.
     <item>Blocos</item>: elemento que pode ser associado a uma região do
 tema.
     <lista>
@@ -40,7 +40,7 @@ arquivo, taxonomia, relacionamento, etc.
     Assim, a primeira camada é composta pelo <u>tema</u> que contém a
 apresentação em HTML/CSS com identificação de <u>regiões que serão
 controladas pelo núcleo do Drupal</u>. Já o <u>núcleo do Drupal pode ser
-extendido por módulos</u> que adicionam recursos para apresentação dos
+extendido por módulos</u> que adicionam recursos tanto para apresentação dos
 dados, quanto para o armazenamento de novos tipos de dados em banco de
 dados.
 
