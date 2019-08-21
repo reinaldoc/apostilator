@@ -182,19 +182,15 @@ prefixo <b>Menu:</b> não seja apresentado.
     subitens;
     <item/>edite um link e <b>mova-o para outro menu</b> por meio da opção
     <b>Link superior</b>;
-    <item/>associe um menu a uma região lateral por meio da interface de
-    blocos;
-    <lista>
-      <item/>vincule¹ este menu a um tipo de conteúdo em <b>Configurações do
-      menu</b>;
-      <item/>crie um conteúdo e adicione um link para o menu;
-    </lista>
+    <item/>acesse a opção <b>Estrutura → Leiaute de blocos</b> e associe o
+    menu <b>Corregedoria</b> a região lateral direita (<i>Second sidebar</i>);
   </lista>
 </lista>
 
     <b>¹</b><u>Para o usuário comum adicionar um link ao menu será
 necessária a concessão de uma permissão específica para administrar este
-menu.</u> Isso será visto na Seção<ref>menu-admin-per-menu</ref>.
+menu.</u> Isso será visto durante as configarações de permissão do usuário
+na Seção<ref>pessoas-permissoes</ref>.
 
     No Drupal 7 é possível definir o menu principal, que normalmente é
 alocado pelo tema na parte superior do site, por meio da opção <b>Origem
@@ -275,22 +271,38 @@ site</u>.
       <item/>o usuário também precisa de permissão <b>Administrar menus e
              itens de menu</b> ou de permissão específica no menu provida
              pelo módulo <b>Menu Admin per Menu</b>, conforme
-             Seção<ref>menu-admin-per-menu</ref>;
+             Seção<ref>menu-admin-per-menu</ref>. Isto será abordado durante
+             a configuração das permissões do usuário; 
     </lista>
-    <item/>configure o campo <b>body</b> e altere seu rótulo para
-           <b>Conteúdo da página</b> e desabilite a opção <b>Entrada de
-           sumário</b>;
+    <item/>configure o campo <b>body</b>:
+    <lista>
+      <item/>altere seu rótulo para <b>Conteúdo da página</b>;
+      <item/>habilite a opção <b>Campo obrigatório</b>;
+      <item/>desabilite a opção <b>Entrada de sumário</b>;
+    </lista>
     <item/>oculte os rótulos dos campos em <b>Gerenciar exibição</b>;
     <item/>cadastre o conteúdo <b>Artigo (Corregedoria)</b> e crie um link de
            menu pela opção <b>Disponibilizar um link no menu</b>;
   </lista>
 </lista>
 
-    Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
-formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
-a ordem define a posição dos campos na apresentação do conteúdo, nesta área
-é possível configurar a exibição dos rótulos dos campos: em linha, acima ou
-ocultá-los.
+    Ao <b>Gerenciar campos</b> em <i>manage display form</i> pode-se definir
+a ordem dos campos no formulário de criação e edição do conteúdo, já em
+<b>Gerenciar exibição</b> definie-se a ordem dos campos da apresentação do
+conteúdo, nesta área é possível também configurar o formato de exibição dos
+rótulos dos campos: em linha, acima ou ocultá-los.
+
+    O módulo <b>pathauto</b> permite gerar a URL amigável do conteúdo a
+partir de um padrão de <i>tokens</i>. Instale este módulo e configure o
+<b>pathauto</b> para que o conteúdo do tipo <b>Artigo (Corregedoria)</b> use
+o padrão <b>/corregedoria/[node:title]</b>. Consulte a
+Seção<ref>module-pathauto</ref> para mais informações.
+
+<lista>
+    <item/>Acesse a opção <b>Estrutura → Leiaute de blocos</b> e
+configure a visibilidade do bloco do menu <b>Corregedoria</b> para páginas
+<b>corregedoria</b> e <b>corregedoria/*</b>. Configure um item por linha.
+</lista>
 
     O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
 cada vez que o conteúdo é editado, sendo que o acesso a revisão pode ser ou
@@ -367,6 +379,7 @@ configurações para integração LDAP estão na seção<ref>module-ldap</ref>.
 </lista>
 
 <subsubsecao>Permissões</subsubsecao>
+<nome>pessoas-permissoes</nome>
 
     As <b>permissões</b> são fornecidas por cada módulo, devendo ser
 concedidas a papéis, que por sua vez são vinculados aos usuários.
@@ -394,6 +407,9 @@ form</b>.
     <item/>conceda permissão para administrar o menu <b>Corregedoria</b>,
 provida pelo módulo <b>Menu Admin per Menu</b>, conforme
 Seção<ref>menu-admin-per-menu</ref>;
+    <item/>faça login com este usuário e cadastre um conteúdo;
+    <item/>no formulário de cadastro, habile a opção <b>Disponibilizar um
+link no menu</b>;
   </lista>
 </lista>
 
@@ -662,6 +678,8 @@ sincronizados a partir de uma base LDAP.
       <item/><a > <em > <strong > <cite > <blockquote > <code > <ul > <ol >
 <li > <dl > <dt > <dd > <hr > <h1 > <h2 > <h3 > <p > <sub > <sup > <s > <u >
 <img >;
+      <item/>no Drupal 8 ao configurar a barra de formatação, as tags são
+automaticamente incluídas nesta opção;
     </lista>
   </lista>
 </lista>
@@ -735,32 +753,64 @@ Style Quality</text>.
 <lista>
   <item>URL</item>: /admin/reports
   <lista>
-    <item/>Relatório de informações da plataforma;
+    <item>Atualizações disponíveis</item>
     <lista>
-      <item/>identificar versão do Drupal;
-      <item/>identificar versão do apache, php e database;
+      <item/>Permite comparar as versões do Drupal e dos módulos em uso com
+as versões disponíveis no site do Drupal;
     </lista>
-    <item/>Relatório de atualizações disponíveis (core e módulos);
-    <item/>Relatório de mensagens de log;
-    <item/>Relatório de requisições de acesso negado (erro 403);
-    <item/>Relatório de requisições de página não encontrada (erro 404);
-    <item/>Relatório com bibliotecas JavaScript instaladas (fornecido pelo
-    módulo <b>Libraries</b>);
-    <item/>Relatório com lista de campos (<i>field list</i>);
+    <br/>0.2cm
+
+    <item>Mensagens recentes do registro</item>
     <lista>
-      <item/>apresenta os campos indexados pelos tipos de conteúdo em que
-             são utilizados;
+      <item/>Permite consultar os registros de log e filtrá-los por
+<b>Tipo</b> ou <b>Severidade</b>.
     </lista>
-    <item/>Relatório de termos utilizados na pesquisa;
+    <br/>0.2cm
+
+    <item>Atualizações de tradução disponíveis</item>
     <lista>
-      <item/>apresenta os termos utilizados em pesquisas;
+      <item/>Permite obter novas traduções de conteúdo do Drupal e dos
+módulos;
     </lista>
-    <item/>Relatório de verificações de segurança (fornecido pelo módulo
-           <b>Security Review</b>);
-    <item/>Relatório de com catálogo das Views (fornecido pelo módulo
-           <b>Views</b>);
+    <br/>0.2cm
+
+    <item>Erros de acesso negado (erro 403)</item>
     <lista>
-      <item/>apresenta as Views indexadas por recurso que cada uma utiliza;
+      <item/>Permite consultar a relação de páginas que o usuário tentou
+acessar sem permissão;
+    </lista>
+    <br/>0.2cm
+
+    <item>Erro de página não encontrada (erro 404)</item>
+    <lista>
+      <item/>Permite consultar a relação de páginas que o usuário tentou
+acessar e não existem;
+    </lista>
+    <br/>0.2cm
+
+    <item>Lista de campos (<i>field list</i>)</item>
+    <lista>
+      <item/>Apresenta os campos criados com a informação do tipo de
+conteúdo em que estão sendo utilizado;
+    </lista>
+    <br/>0.2cm
+
+    <item>Palavras-chave mais buscadas</item>
+    <lista>
+      <item/>Apresenta os termos utilizados em pesquisas pelos usuários;
+    </lista>
+    <br/>0.2cm
+
+    <item>Plugins do Views</item>
+    <lista>
+      <item/>Apresenta um relatório interno de componentes de Views;
+    </lista>
+    <br/>0.2cm
+
+    <item>Relatório de status (informações da plataforma)</item>
+    <lista>
+      <item/>Consulte a versão do Drupal;
+      <item/>Consulte a versão do apache, php e database;
     </lista>
   </lista>
 </lista>
