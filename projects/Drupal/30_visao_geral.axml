@@ -174,18 +174,16 @@ prefixo <b>Menu:</b> não seja apresentado.
         <item/><u>A utilização desses menus é opcional</u>;
       </lista>
     </lista>
-    <item/>crie um menu;
+    <item/>crie o menu <b>Corregedoria</b>;
     <item/>adicione links a este menu;
     <item/>altere a ordem dos links no menu;
     <item/>organize os links hierarquicamente;
     <item/>ative a opção 'Exibir expandido' para os itens que possuem
     subitens;
-    <item/>configuração: defina o menu principal;
     <item/>edite um link e <b>mova-o para outro menu</b> por meio da opção
     <b>Link superior</b>;
     <item/>associe um menu a uma região lateral por meio da interface de
     blocos;
-    <item/>crie um link a partir de um conteúdo (node);
     <lista>
       <item/>vincule¹ este menu a um tipo de conteúdo em <b>Configurações do
       menu</b>;
@@ -210,58 +208,6 @@ interface de gerenciamento de menus, essa opção é comumente utilizada
 somente para links externos. A criação de itens de menu para páginas
 internas deve ser realizada <u>pela interface de criação de conteúdo (node),
 de View de página ou de Painel</u>, como será visto posteriormente.
-
-
-<subsubsecao>Tipos de conteúdo</subsubsecao>
-
-    Um <b>tipo de conteúdo</b> é formado por campos de texto, numéricos
-(inteiro ou float), boleanos, de imagem, de arquivo, de lista (checkbox,
-radio, autocomplete) de texto ou de números e lista de termos de determinada
-taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos.
-<u>A criação de tipos de conteúdo é realizada pelo desenvolvedor do
-site</u>.
-
-<lista>
-  <item>URL</item>: /admin/structure/types
-  <item>Atividades</item>:
-  <lista>
-    <item/>adicione um tipo de conteúdo;
-    <item/>defina o rótulo do campo de título;
-    <item/>desative a opção <b>Promovido para a página inicial</b> em
-           <b>Opções de publicação</b>;
-    <lista>
-      <item/>refere-se a exibir este conteúdo na página <b>/node</b>, que
-             por padrão é a página inicial;
-    </lista>
-    <item/>verifique a exibição do autor do conteúdo em <b>Opções de
-           exibição</b>;
-    <item/>desative a publicação de comentários selecionando <b>Fechado</b>;
-    <item/>configure os menus autorizados para inserção de item para este
-           tipo de conteúdo;
-    <lista>
-      <item/>o usuário também precisa de permissão no menu para inserir um
-             conteúdo;
-    </lista>
-    <item/>configure o campo <b>body</b> e altere seu rótulo para
-           <b>Conteúdo da página</b>;
-    <item/>adicione campos dentre os tipos disponíveis: Integer, List(Text),
-           Image, File, etc;
-    <lista>
-      <item/>verifique as configurações específicas por tipo de campo;
-    </lista>
-    <item/>gerencie a exibição do campo (peso, posição do label e formato);
-  </lista>
-</lista>
-
-    Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
-formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
-a ordem define a posição dos campos na apresentação do conteúdo, nesta área
-é possível configurar a exibição dos rótulos dos campos: em linha, acima ou
-ocultá-los.
-
-    O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
-cada vez que o conteúdo é editado, sendo que o acesso a revisão pode ser ou
-não concedido aos usuários que tem permissão de editar este conteúdo.
 
 <subsubsecao>Taxonomia</subsubsecao>
 
@@ -302,7 +248,57 @@ todos os conteúdos que estão identificadados com determinado termo. O módulo
 <b>pathauto</b> também permite gerar essas URLs a partir de um padrão de
 tokens, como veremos na Seção<ref>module-pathauto</ref>.
 
-<subsecao>Conteúdo (node)</subsecao>
+<subsubsecao>Tipos de conteúdo</subsubsecao>
+
+    Um <b>tipo de conteúdo</b> é formado por campos de texto, numéricos
+(inteiro ou float), boleanos, de imagem, de arquivo, de lista (checkbox,
+radio, autocomplete) de texto ou de números e lista de termos de determinada
+taxonomia. Novos tipos de campos podem ser adicionados por meio de módulos.
+<u>A criação de tipos de conteúdo é realizada pelo desenvolvedor do
+site</u>.
+
+<lista>
+  <item>URL</item>: /admin/structure/types
+  <item>Atividades</item>:
+  <lista>
+    <item/>adicione o tipo de conteúdo <b>Artigo (Corregedoria)</b>;
+    <item/>defina o rótulo do campo de <b>Título</b>;
+    <item/>defina a pré-visualização como <b>Desativado</b>;
+    <item/>desative a opção <b>Promovido para a página inicial</b> em
+           <b>Opções de publicação</b>;
+    <lista>
+      <item/>refere-se a exibir este conteúdo na página <b>/node</b>, que
+             por padrão é a página inicial;
+    </lista>
+    <item/>habilite o menu <b>Corregedoria</b> em <b>Menus disponíveis</b>;
+    <lista>
+      <item/>o usuário também precisa de permissão <b>Administrar menus e
+             itens de menu</b> ou de permissão específica no menu provida
+             pelo módulo <b>Menu Admin per Menu</b>, conforme
+             Seção<ref>menu-admin-per-menu</ref>;
+    </lista>
+    <item/>configure o campo <b>body</b> e altere seu rótulo para
+           <b>Conteúdo da página</b> e desabilite a opção <b>Entrada de
+           sumário</b>;
+    <item/>oculte os rótulos dos campos em <b>Gerenciar exibição</b>;
+    <item/>cadastre o conteúdo <b>Artigo (Corregedoria)</b> e crie um link de
+           menu pela opção <b>Disponibilizar um link no menu</b>;
+  </lista>
+</lista>
+
+    Ao <b>gerenciar campos</b>, a ordem define a posição dos campos no
+formulário de criação e edição do conteúdo, já em <b>gerenciar exibição</b>,
+a ordem define a posição dos campos na apresentação do conteúdo, nesta área
+é possível configurar a exibição dos rótulos dos campos: em linha, acima ou
+ocultá-los.
+
+    O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
+cada vez que o conteúdo é editado, sendo que o acesso a revisão pode ser ou
+não concedido aos usuários que tem permissão de editar este conteúdo. Ao
+criar um tipo de conteúdo mantenha selecionada a opção <b>Criar nova
+revisão</b> em <b>Opções de publicação</b>.
+
+<subsecao>Conteúdo</subsecao>
 
     <u>O <b>conteúdo</b> (node) é criado pelos usuários publicadores</u> a
 partir de um determinado tipo de conteúdo. Ao criá-lo, será definida a URL
@@ -329,33 +325,51 @@ conteúdo.
     <importante/>A tela de cadastro de conteúdo utiliza o tema
 administrativo quando está-se autenticado com usuário administrador, além
 disso, contém opções avançadas de configuração, como a alteração da URL ou
-do autor do conteúdo. Todavia, quando a tela de cadastro de conteúdo é
-apresentada a um usuário comum, qu detém apenas permissão de cadastro de
-conteúdo, ela possui apenas os campos do respectivo tipo de conteúdo e,
-quando o recurso de revisão está habilitado, um campo para identificação
-textual da revisão.
+do autor do conteúdo que não estão disponíveis ao usuário editor de
+conteúdo. Para exibir o tema padrão nesta tela, acesse <b>Aparência</b> e
+desmarque a opção: <b>Usar o tema de administração ao criar ou editar
+conteúdo</b>.
 
 <subsecao>Pessoas</subsecao>
 
-    Opção que permite a criação da usuários e papéis (roles), bem como
-associação de usuários e permissões aos papéis.
+    Opção que permite a criação da usuários e papéis (roles). Cada usuário
+pode estar associado a um ou mais papéis, assim como cada papel possui um
+conjunto de permissões.
+
+<subsubsecao>Papéis</subsubsecao>
+
+    Um <b>papel</b> é o elo que liga as permissões fornecidas pelos módulos
+aos usuários. Há três papéis pré-existentes: <b>Usuário anônimo</b> (não
+autenticado), <b>Usuário autenticado</b> e <b>Administrador</b>.
+
+<lista>
+  <item>URL</item>: /admin/people/roles
+  <item>Atividades</item>:
+  <lista>
+    <item/>crie o papel <b>Editor da Corregedoria</b>;
+  </lista>
+</lista>
+
+<subsubsecao>Usuários</subsubsecao>
+
+    Os <b>usuários</b> são criados pela interface ou automaticamente no
+primeiro login quando houver integração com um diretório LDAP. As
+configurações para integração LDAP estão na seção<ref>module-ldap</ref>.
+
+<lista>
+  <item>URL</item>: /admin/people
+  <item>Atividades</item>:
+  <lista>
+    <item/>identifique os usuários, status, papéis atribuídos e data do último acesso;
+    <item/>crie um novo usuário;
+    <item/>associe este usuário ao papel <b>Editor da Corregedoria</b>;
+  </lista>
+</lista>
 
 <subsubsecao>Permissões</subsubsecao>
 
     As <b>permissões</b> são fornecidas por cada módulo, devendo ser
 concedidas a papéis, que por sua vez são vinculados aos usuários.
-
-<lista>
-  <item>URL</item>: /admin/people/permissions
-  <item>Atividades</item>:
-  <lista>
-    <item/>listar permissões fornecidas por cada módulo;
-    <item/>listar permissões associadas a cada papel;
-    <item/>listar permissões por tipo de conteúdo (consultar módulo Node);
-    <item/>concerder permissão 'Use search' para usuários autenticados e
-usuários não autenticados.
-  </lista>
-</lista>
 
     O bloco <b>Search form</b> é fornecido pelo módulo <b>Search</b>, que
 faz parte do núcleo do Drupal. Verifique que apesar deste bloco estar
@@ -365,38 +379,21 @@ administrador está autenticado.
     Consulte o conjunto de permissões que são implementadas por cada módulo
 em <i>Pessoas -> Permissões</i> e identifique a lista de permissões
 fornecidas pelo módulo <b>Search</b>. Ative a permissão <b>Use search</b>
-para que usuários autenticados e não autenticados, denominados anônimos,
-possam utilizar o bloco <b>Search form</b>.
-
-<subsubsecao>Papéis</subsubsecao>
-
-    Os <b>papéis</b> são o elo que ligam as permissões fornecidas pelos
-módulos aos usuários. Há três papéis pré-existentes: usuários não autenticados
-(usuário anônimo), usuários autenticados e administradores.
+para que usuários autenticados e anônimos possam utilizar o bloco <b>Search
+form</b>.
 
 <lista>
-  <item>URL</item>: /admin/people/permissions/roles
+  <item>URL</item>: /admin/people/permissions
   <item>Atividades</item>:
   <lista>
-    <item/>criar papéis;
-    <item/>listar permissões associadas a determinado papel;
-    <item/>associar permissões a um papel;
-    <item/>associar permissão a papel por tipo de conteúdo (criar, editar, etc);
-  </lista>
-</lista>
-
-<subsubsecao>Usuários</subsubsecao>
-
-    Os <b>usuários</b> podem ser criados localmente ou integrados por meio
-do protocolo LDAP.
-
-<lista>
-  <item>URL</item>: /admin/people
-  <item>Atividades</item>:
-  <lista>
-    <item/>listar usuários com status, papéis atribuídos e data do último acesso;
-    <item/>criar novo e editar usuário (nome, senha, status, imagem, etc);
-    <item/>associar usuários a papéis;
+    <item/>identifique as permissões do papel <b>Editor da Corregedoria</b>;
+    <item/>identifique as permissões disponibilizadas pelo módulo
+<b>Node</b>;
+    <item/>conceda permissão para adição do conteúdo <b>Artigo
+(Corregedoria)</b>;
+    <item/>conceda permissão para administrar o menu <b>Corregedoria</b>,
+provida pelo módulo <b>Menu Admin per Menu</b>, conforme
+Seção<ref>menu-admin-per-menu</ref>;
   </lista>
 </lista>
 
@@ -412,7 +409,7 @@ possuir permissão para isto.
 
     Os módulos podem fornecer blocos especializados, novos tipos de campos
 (<i>fields</i>) para serem utilizados em tipos de conteúdo e também
-adicionar recursos à <b>Região de Conteúdo</b>, como os botões de
+adicionar recursos ao <b>Bloco de Conteúdo</b>, como os botões de
 compartilhamento da página em redes sociais ou a informação sobre a
 responsabilidade do conteúdo. Além disso há módulos importantes que
 estendem as funcionalidades dos menus.
@@ -463,21 +460,20 @@ de integração aos módulos.
   <item>URL</item>: /admin/modules
   <item>Atividades</item>:
   <lista>
-    <item/>identifique os módulos instalados e os ativados;
-    <item/>desative o módulo <b>Overlay</b> (Drupal 7);
+    <item/>identifique os módulos disponíveis;
     <item/>ative o módulo <b>Syslog</b> para que as mensagens de log sejam
     enviadas ao syslog;
     <item/>ative módulo <b>Update manager</b> para permitir instalação de
-           novos módulos pela web;
+           novos módulos pela interface web;
     <item/>identifique o local de instalação dos módulos:
-           <b>sites/all/modules</b>;
+           <b>modules/*</b>;
   </lista>
 </lista>
 
 <subsecao>Aparência</subsecao>
 
     Os <b>temas</b> <u>são formados por regiões</u> que definem o leiaute da
-página em que blocos podem ser associados. A <b>Região do Conteúdo</b> é
+página em que blocos podem ser associados. O <b>Bloco do Conteúdo</b> é
 especial pois contém o conteúdo principal da página, seja um <b>node</b> ou
 uma <b>View</b>. Há também <u>áreas sem regiões</u> que são customizáveis
 por meio da configuração do tema. Além disso, os temas possuem identidade
@@ -528,50 +524,36 @@ tema.
 <lista>
   <item/>verificar a exibição multinível dos itens menu principal;
   <lista>
-    <item/>ativar a opção <i>Show as expanded</i> no item do menu;
+    <item/>ativar a opção <i>Exibir expandido</i> no item do menu;
   </lista>
   <item/>verificar a responsividade do menu principal;
-  <item/>verificar as classes CSS do <b>body</b> e dos menus;
-</lista>
-
-<subsubsecao>Temas Populares</subsubsecao>
-
-<lista>
-  <item/><url>https://drupal.org/project/bluez</url>
-  <lista>
-    <item/>página inicial sem regiões que é customizável pelas
-           configurações do tema;
-    <item/>n-level menu, não responsivo;
-  </lista>
-  <item/><url>https://drupal.org/project/busy</url>
-  <lista>
-    <item/>1-level main menu, 1-level right menu, não responsivo;
-  </lista>
-  <item/><url>https://drupal.org/project/danland</url>
-  <lista>
-    <item/>1-level main menu, n-level right menu, não responsivo;
-  </lista>
-  <item/><url>https://drupal.org/project/garland</url>
-  <lista>
-    <item/>1-level main menu no topo, n-level right menu, não responsivo;
-  </lista>
-  <item/><url>https://drupal.org/project/corporateclean</url>
-  <lista>
-    <item/>n-level main menu, n-level right menu, adaptativo; effects: fade;
-  </lista>
+  <item/>verificar as classes CSS do <b>body</b> e dos <b>menus</b>;
 </lista>
 
 <subsubsecao>Temas Responsivos</subsubsecao>
 
 <lista>
   <item/><url>https://drupal.org/project/bootstrap</url>
-  <lista>
-    <item/>2-level menus, sub-menu ao clicar;
-  </lista>
   <item/><url>https://drupal.org/project/responsive_blog</url>
-  <item/><url>https://drupal.org/u/zymphonies.com</url> - Zymphonies Themes
+</lista>
+
+<lista>
+  <item/><url>https://drupal.org/u/zymphonies.com</url> - Zymphonies Themes Drupal 8
+  <item>Portal Corporativo</item>
   <lista>
     <item/><url>https://drupal.org/project/creative_responsive_theme</url>
+    <item/><url>https://drupal.org/project/industrial_zymphonies_theme</url>
+  </lista>
+  <item>Pessoal ou Empresarial</item>
+  <lista>
+    <item/><url>https://drupal.org/project/base_zymphonies_theme</url>
+    <item/><url>https://drupal.org/project/ebook_zymphonies_theme</url>
+  </lista>
+</lista>
+
+<lista>
+  <item/><url>https://drupal.org/u/zymphonies.com</url> - Zymphonies Themes Drupal 7
+  <lista>
     <item/><url>https://drupal.org/project/execute_responsive_theme</url>
     <item/><url>https://drupal.org/project/rubix_responsive_theme</url>
     <item/><url>https://drupal.org/project/business_responsive_theme</url>
@@ -600,11 +582,6 @@ tema.
            <b>Ember</b> exibir corretamente telas fornecidas pelos módulos Panels
            e Views.
   </lista>
-  <item/><url>https://drupal.org/project/rubik</url> (depende do tema
-         <link>https://drupal.org/project/tao</link><text>Tao</text>);
-  <item/><url>https://drupal.org/project/cube</url> (depende do tema
-         <link>https://drupal.org/project/rubik</link><text>Rubik</text>);
-  <item/><url>https://drupal.org/project/adminimal_theme</url>
 </lista>
 
 <subsubsecao>Comprar temas</subsubsecao>
@@ -632,7 +609,43 @@ adiciona novas opções de configuração.
   <item>URL</item>: /admin/config
 </lista>
 
-<subsubsecao>Criação de conteúdo → Formatos de texto</subsubsecao>
+<subsubsecao>Pessoas :: Opções da conta</subsubsecao>
+
+<lista>
+  <item>URL</item>: /admin/config/people/accounts
+  <item>Atividades</item>:
+  <lista>
+    <item/>desative a opção <b>Enable the personal contact form by default
+           for new users</b>;
+    <item/>configure o registro de novas contas somente por administradores;
+    <item/>defina o diretório para armazenamento da foto de perfil para
+           <b>images/user</b>;
+    <item/>defina imagem padrão do perfil do usuário;
+    <item/>selecione o estilo de imagem <b>User (w120)</b> em <b>Gerenciar
+           exibição</b>;
+  </lista>
+</lista>
+
+    Os novos campos adicionados à conta do usuário poderão ser
+sincronizados a partir de uma base LDAP.
+
+<subsubsecao>Sistema :: Configuração básica do site</subsubsecao>
+
+<lista>
+  <item>URL</item>: /admin/config/system/site-information
+  <item>Atividades</item>:
+  <lista>
+    <item/>defina o nome do site que é apresentado no título da janela do
+           navegador;
+    <item/>defina o remetente dos e-mails enviados pelo sistema;
+    <item/>defina a URL interna utilizada como página inicial (<i>front
+           page</i>);
+    <item/>defina a URL interna para página de acesso negado (403);
+    <item/>defina a URL interna para página não encontrada (404);
+  </lista>
+</lista>
+
+<subsubsecao>Criação de conteúdo :: Formatos de texto</subsubsecao>
 
     Os formatos de texto restringem a entrada de dados nos campos do tipo
 <b>texto longo</b>.
@@ -641,20 +654,42 @@ adiciona novas opções de configuração.
   <item>URL</item>: /admin/config/content/formats
   <item>Atividades</item>:
   <lista>
-    <item/>edite o formato de texto <b>Filtered HTML</b>;
+    <item/>edite o formato de texto <b>HTML básico</b>;
     <item/>defina o nome para: <b>Texto com formatação</b>;
-    <item/>configure as tags HTML permitidas;
+    <item/>adicione à barra de formatação os botões para sublinhado e recuo;
+    <item/>identifique as tags HTML permitidas;
     <lista>
       <item/><a > <em > <strong > <cite > <blockquote > <code > <ul > <ol >
 <li > <dl > <dt > <dd > <hr > <h1 > <h2 > <h3 > <p > <sub > <sup > <s > <u >
 <img >;
     </lista>
-    <item/>desabilite para o usuário anônimo, se possível;
   </lista>
 </lista>
 
+    O módulo IMCE fornece dois novos botões para a barra de formação, um
+para upload de imagens e inserção da imagem no corpo do texto, outro para o
+upload de arquivos e inserção de links. Após a instalação deste módulo
+substitua os botões da barra de formatação. Veja mais na
+Seção<ref>module-imce</ref>.
 
-<subsubsecao>Mídia → Estilos de imagens</subsubsecao>
+<subsubsecao>Desenvolvimento :: Desempenho</subsubsecao>
+
+<lista>
+  <item>URL</item>: /admin/config/development/performance
+  <item>Atividades</item>:
+  <lista>
+    <item/>ative a cache de páginas para usuários anônimos;
+    <item/>ative a cache de bloco;
+    <item/>defina o tempo mínimo de vida do cache: <b>1 minuto</b>;
+    <item/>agrupe arquivos CSS;
+    <item/>agrupe arquivos JavaScript;
+  </lista>
+</lista>
+
+    Ainda que seja definido o tempo mínimo de vida do cache, este só será
+recriado se houver alguma alteração de conteúdo no site.
+
+<subsubsecao>Mídia :: Estilos de imagens</subsubsecao>
 
     Os estilos de imagens permitem realizar transformações, como escalar,
 cortar, rotacionar ou dessaturar os campos de imagem, seja para apresentação
@@ -681,75 +716,19 @@ necessite definir uma qualidade por estilo de imagem, use o módulo
 <link>https://www.drupal.org/project/image_style_quality</link><text>Image
 Style Quality</text>.
 
-    Opte por padronizar o <b>Identificador textual</b> com o prefixo
-<b>i_</b>, como <i>i_user</i> e <i>i_eslaide</i>.
-
-<subsubsecao>Pessoas → Opções da conta</subsubsecao>
-
-<lista>
-  <item>URL</item>: /admin/config/people/accounts
-  <item>Atividades</item>:
-  <lista>
-    <item/>configure o registro de novas contas somente por administradores;
-    <item/>configure a ação sob conteúdo de um usuário removido;
-    <item/>defina o diretório para armazenamento da foto de perfil para
-           <b>images/user</b>;
-    <item/>defina imagem padrão do perfil do usuário;
-    <item/>selecione o estilo de imagem <b>User (w120)</b>;
-    <item/>defina os modelos de e-mails de alteração da conta;
-    <item/>adicione novos campos ao usuário, como telefone, seção de
-           trabalho, etc;
-  </lista>
-</lista>
-
-    Os novos campos adicionados à conta do usuário poderão ser
-sincronizados a partir de uma base LDAP.
-
 <subsubsecao>Regional e Idioma</subsubsecao>
 
 <lista>
   <item>URL</item>: /admin/config/regional
   <item>Atividades</item>:
   <lista>
-    <item/>configurações regionais: defina o fuso horário;
-    <item/>configurações regionais: desative configuração pelo usuário do
+    <item/>Configurações regionais: defina o fuso horário;
+    <item/>Configurações regionais: desative configuração pelo usuário do
            fuso horário (opcional);
-    <item/>data e hora: defina o formato de data para dia/mês/ano;
+    <item/>Formatos de data e hora: crie o formato com valor <b>d/m/Y</b>
+           para dia/mês/ano;
   </lista>
 </lista>
-
-<subsubsecao>Sistema → Informação do site</subsubsecao>
-
-<lista>
-  <item>URL</item>: /admin/config/system/site-information
-  <item>Atividades</item>:
-  <lista>
-    <item/>defina o nome do site que é apresentado no título da janela do
-           navegador;
-    <item/>defina o remetente dos e-mails enviados pelo sistema;
-    <item/>defina a URL interna utilizada como página inicial (<i>front
-           page</i>);
-    <item/>defina a URL interna para página de acesso negado (403);
-    <item/>defina a URL interna para página não encontrada (404);
-  </lista>
-</lista>
-
-<subsubsecao>Desenvolvimento → Desempenho</subsubsecao>
-
-<lista>
-  <item>URL</item>: /admin/config/development/performance
-  <item>Atividades</item>:
-  <lista>
-    <item/>ative a cache de páginas para usuários anônimos;
-    <item/>ative a cache de bloco;
-    <item/>defina o tempo mínimo de vida do cache: <b>1 minuto</b>;
-    <item/>agrupe arquivos CSS;
-    <item/>agrupe arquivos JavaScript;
-  </lista>
-</lista>
-
-    Ainda que seja definido o tempo mínimo de vida do cache, este só será
-recriado se houver alguma alteração de conteúdo no site.
 
 <subsecao>Relatórios</subsecao>
 
