@@ -3,13 +3,8 @@
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/views</url>
-  <item>Dependência</item>: <link>https://drupal.org/project/ctools</link>
-                            <text>Chaos tool suite</text>;
   <item>Função</item>: listagem de conteúdo (node) em diversos formatos: tabela, grid, slideshow;
   <item>Uso</item>: /admin/structure/views
-  <lista>
-    <item/>ativar o módulo <b>View UI</b>;
-  </lista>
 </lista>
 
     O módulo <b>Views</b> foi incluído no <i>core</i> do Drupal 8.
