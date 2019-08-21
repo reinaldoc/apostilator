@@ -9,131 +9,139 @@
 
     O módulo <b>Views</b> foi incluído no <i>core</i> do Drupal 8.
 
-<subsubsubsecao>Listar e Pesquisar views por nome e descrição administrativos</subsubsubsecao>
+<br/>0.3cm
+
+<subsubsubsecao>Listar e Pesquisar views por nome</subsubsubsecao>
 
 <lista>
-  <item/>listar views (nome, descrição administrativa, tags, path e operações);
-  <item/>identificar operações: ativar, editar, clonar, exportar ou desabilitar;
-  <item/>ativar uma view (Glossary);
-  <item/>editar o nome administrativo da view;
-  <item/>editar a descrição administrativa de view (descrever onde será usada);
-  <item/>configuração: exibir filtro de pesquisa de views;
-  <item/>configuração: omitir aviso de ajuda avançada;
+  <item/>listar views (nome, descrição, caminho e operações);
+  <item/>identificar operações: editar, duplicar, desativar e clonar;
+  <item/>configuração: habilitar <b>Sempre mostrar configurações de exibição
+  avançadas</b>;
 </lista>
 
 <subsubsubsecao>Área de pré-visualização da view</subsubsubsecao>
 
 <lista>
-  <item/>editar rótulo de uma view (title);
+  <item/>editar uma view;
   <item/>identificar área de pré-visualização das alterações na view;
-  <item/>configuração: exibir informações abaixo da pré-visualização;
-  <item/>configuração: exibir SQL da pré-visualização;
-  <item/>configuração: exibir estatísticas de performance do SQL;
-  <item/>configuração avançada: adicionar o nome da view no SELECT (debug only);
+  <item/>configuração: Exibir a consulta SQL;
+  <item/>configuração: Exibir estatísticas de desempenho;
+  <item/>configuração avançada: Adicionar uma assinatura a todas as
+  consultas SQL
 </lista>
 
 <subsubsubsecao>View de página e formato de tabela</subsubsubsecao>
 
 <lista>
-  <item/>criar uma view de página para listar conteúdo (node);
-  <item/>definir o nome administrativo da view;
-  <item/>definir a descrição administrativa de view (descrever onde será usada);
-  <item/>definir formato da lista (tabela, grid, slideshow, não formatada, etc);
-  <item/>!tabela: formato de exibição (conteúdo ou campos, resumo ou completo);
-  <item/>definir caminho relativo (path);
-  <item/>configurar item de menu vinculado;
-  <item/>definir campos que serão exibidos (colunas p/ tabela);
-  <item/>tabela: adicionar campo global contador de resultados (linhas);
-  <item/>tabela: definir o rótulo do campo (cabeçalho das colunas);
-  <item/>tabela: ordenar os campos (ordem das colunas);
-  <item/>tabela: combinar campos em uma coluna (configuração do formato tabela);
-  <item/>tabela: definir campo de ordenação padrão (default sort);
-  <item/>tabela: ativar campos com reordenação pelo usuário (sortable);
-  <item/>definir critérios de filtragem (por tipo de conteúdo, se publicado);
-  <item/>definir critérios de ordenação (por mês desc, por rótulo asc.);
-  <item/>adicionar relacionamento a view (Author->User, tipo de conteúdo);
+  <item/>adicionar uma view;
+  <item/>definir o nome da view;
+  <item/>definir a descrição de view (formato e local que será usada);
+  <item/>indique o tipo de conteúdo que será listado;
+  <item/>habilite <b>Criar página</b>;
+  <item/>selecione o formato de exibição: tabela;
+  <item/>clique em <b>Salvar e editar</b>;
+  <item/>inclua a view em um menu clicando em <b>Sem menu</b>;
+  <item/>inclua os CAMPOS, que serão apresentados como colunas;
+  <item/>adicione o campo <b>Ver contador de resultados</b>;
+  <item/>reordene os campos com <b>Ver contador de resultados</b> em primeiro;
+  <item/>combine dois campos em uma coluna (configuração do formato tabela);
 </lista>
 
 <subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
 
 <lista>
-  <item/>adicionar critério de filtragem;
-  <item/>selecione um ou mais campos;
-  <item/>ative a opção <i>Expose this filter to visitors</i>;
+  <item/>adicione um critério de filtragem;
+  <item/>ative a opção <i>Expor este filtro para visitantes, para permitir
+  que eles o alterem</i>;
 </lista>
 
-    Cada campo selecionado ira gerar um <i>input</i>. Para que um
-<i>input</i> filtre mais de um campo, use o campo <b>Global: Combine
-Filters</b>.
+    Cada campo exposto aos usuários irá gerar um <i>input</i>. Para que um
+<i>input</i> filtre <u>mais de um campo de texto</u>, adicione o campo
+<b>Global: Combine Filters</b> como <b>CRITÉRIO DE FILTRAGEM</b>.
 
 <br/>0.3cm
 
-<subsubsubsecao>View de bloco</subsubsubsecao>
+<subsubsubsecao>View de bloco com paginação</subsubsubsecao>
 
 <lista>
-  <item/>configurar nome do bloco (padrão: “View: nome administrativo”);
-  <item/>definir outro formato da lista e salvar para o bloco;
-  <item/>remover rótulo de um campo e salvar para o bloco;
-  <item/>alterar o paginador para mini e salvar para o bloco;
-  <item/>alterar a paginação para 5 itens e salvar para o bloco;
-  <item/>desvincular o paginador da view de página (Pager ID);
-  <item/>ativar paginação por ajax (recomendado somente para view de bloco);
-  <item/>ativar a view padrão 'Tracker';
-  <item/>associar o bloco 'View: Tracker' a região 'Content';
-  <item/>configurar o bloco para se exibido somente nas páginas 'user/*';
+  <item/>adicionar uma view;
+  <item/>definir o nome da view;
+  <item/>definir a descrição de view (formato e local que será usada);
+  <item/>indique o tipo de conteúdo que será listado;
+  <item/>habilite <b>Criar bloco</b>;
+  <item/>selecione o formato de exibição: Lista HTML;
+  <item/>clique em <b>Salvar e editar</b>;
+  <item/>alterar o paginador para <b>Saída com paginação, paginador
+  completo</b>;
+  <item/>alterar a paginação para 5 itens;
+  <item/>ativar ajax (requerido para filtros expostos em blocos);
 </lista>
 
     É necessário habilitar o modo <b>ajax</b> para apresentar filtros ao
 usuário em uma View de bloco.
 
-<subsubsubsecao>Permissão, cabeçalho, rodapé e filtro contextual</subsubsubsecao>
+    O módulo <link>https://www.drupal.org/project/views_infinite_scroll</link>
+<text><b>Views Infinite Scroll</b></text> realiza a paginação por meio de um botão ou
+automaticamente quando o usuário rolar ao final da lista.
+
+<subsubsubsecao>Permissão, cabeçalho, rodapé</subsubsubsecao>
 
 <lista>
-  <item/>configurar acesso por permissão ou por papel;
-  <item/>configurar um cabeçalho a view (header);
-  <item/>configurar um rodapé para a view (footer);
-  <item/>configurar a paginação da view (itens por página, rótulos do pager);
-  <item/>configurar um filtro contextual (por URL, valor padrão, sumário);
-  <item/>redefinir o rótulo da view quando o filtro contextual for aplicado;
-  <item/>redefinir o breadcrumb quando o filtro contextual for ativado;
+  <item/>identificar opções de acesso por permissão ou por papel;
+  <item/>configurar um cabeçalho a view como <b>Área de texto</b>;
+  <item/>configurar um rodapé a view como <b>Área de texto</b>;
 </lista>
 
-<subsubsubsecao>View de bloco com filtro contextual a partir do node</subsubsubsecao>
+    O tipo <b>Área de visualização</b> pode ser usado como cabeçalho ou
+rodapé para incluir outra view.
+
+<br/>0.3cm
+
+<subsecao>Better Exposed Filters</subsecao>
 
 <lista>
-  <item/>adicionar campo de imagem com limite de 5 imagens ao tipo de conteúdo;
-  <item/>adicionar view de bloco;
-  <item/>configurar a view para campo de imagens;
-  <item/>configurar o campo com separador de valores múltiplos em linha;
-  <item/>configurar o paginador para exibir um número específico de itens: 1;
-  <item/>configurar filtro contextual (node Id) com valor padrão da node da URL;
-  <item/>associar bloco da view ao leiaute do tipo de conteúdo (add custom field);
+  <item>Download</item>: <url>https://drupal.org/project/better_exposed_filters</url>
+  <item>Função</item>: apresentar Views em formato de acordeões;
+  <item>Uso</item>:
+  <lista>
+    <item/>edite uma <b>View</b> que possua filtros expostos ao usuário;
+    <item/>na opção <b>Estilo do formulário exibido</b>, selecione <b>Better
+Exposed Filters</b>;
+    <item/>configure:
+    <lista>
+      <item/>habilite <b>Autosubmeter</b>;
+      <item/>habilite <b>Esconder botão submeter</b>;
+    </lista>
+  </lista>
 </lista>
 
-    O módulo <b>Display Suite</b> adiciona a capacidade ao gerenciamento
-de exibição para associar views de bloco à páginas de conteúdo (node) ou à
-página do perfil do usuário.
+    Os filtros expostos não funcionaram mais na tela de pré-visualização.
+Este módulo também permite que os filtros expostos sejam exibidos como
+<b>Checkboxes/Radio Buttons</b> pelas configurações do <b>Estilo do
+formulário exibido</b>.
 
 <subsecao>Views Accordion</subsecao>
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/views_accordion</url>
-  <item>Função</item>: construir lista de conteúdo (node) em formato de acordeões;
+  <item>Função</item>: apresentar Views em formato de acordeões;
   <item>Uso</item>:
   <lista>
     <item/>crie uma <b>View</b> para exibir um determinado tipo de conteúdo;
     <item/>informe o nome da view, use o nome do tipo de conteúdo no plural;
-    <item/>informe a descrição administrativa da view: "View de Accordion
-           utilizada na área Institucional.";
-    <item/>defina o formato de exibição como <b>Views Accordion</b> de <i>fields</i>;
-    <item/>continue e edite a view;
+    <item/>informe a descrição da view: "View de Accordion utilizada na área Institucional.";
+    <item/>defina o formato de exibição como <b>jQuery UI accordion</b> de <i>campos</i>;
+    <item/>clique em <b>Salvar e editar</b>;
     <item/>adicione os campos do tipo de conteúdo selecionado;
-    <item/>definir o campo para ordenação;
     <item/>configuração do formato: <b>Row to display opened on start</b>: <b>Nenhum</b>;
-    <item/>configuração do formato: habilite a opção <b>Dobrável</b> para as linhas virem fechadas;
-    <item/>configuração do formato: não usar altura automática da linha (retira o <i>scroll</i>);
+    <item/>configuração do formato: habilite a opção <b>Dobrável</b> para
+    poder fechar todos as linhas;
+    <item/>configuração do formato: <b>Animation effect</b>: <b>Linear</b>;
   </lista>
 </lista>
+
+    O primeiro campo será utilizado como título do acordeão.
 
 <subsubsubsecao>Filtro contextual em modo glossário</subsubsubsecao>
 
@@ -173,8 +181,8 @@ avançe ou retroceda a transição.
 
     Para criar um <b>Slideshow de imagem</b>, primeiro <u>crie um tipo de
 conteúdo com um campo do tipo imagem</u>, que denominaremos de
-<b>Eslaide</b>, e poste algumas imagens, normalmente de mesmo tamanho, por
-exemplo 726x166 pixels.
+<b>Eslaide</b>, e cadastre alguns conteúdo, normalmente de mesmo tamanho,
+por exemplo 726x166 pixels.
 
 <comando>
 # su -l portal
@@ -210,8 +218,9 @@ $ wget https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.j
 <subsubsubsecao>Usar paginador como um contador</subsubsubsecao>
 
 <lista>
-  <item/>adicione o campo <b>Global: View result counter</b>;
-  <item/>configure o campo <b>Global: View result counter</b>:
+  <item/>adicione o campo <b>Ver contador de resultados</b> (<i>Global: View result
+counter</i>;
+  <item/>configure o campo:
   <lista>
     <item/><b>Exclude from display</b>;
     <item/>na seção <b>Rewrite results</b> marque <b>Output this field as a
@@ -330,11 +339,6 @@ $ wget https://raw.githubusercontent.com/douglascrockford/JSON-js/master/json2.j
   <item>Uso</item>:
   <lista>
     <item/>adicione um <b>display Eva Field</b> a uma View;
-    <lista>
-      <item/>caso não exista uma View para listar este tipo de conteúdo, crie
-             uma <b>View Master</b>, ou seja, nem bloco nem página, e
-             adicione um <b>display Eva Field</b>;
-    </lista>
     <item/>configuração de injeção da View como um campo:
     <lista>
       <item/>indique o tipo de entidade em que essa View será apresentada:
@@ -367,6 +371,8 @@ campos do conteúdo.
 
 <subsecao>Views Reference Filter</subsecao>
 
+    Módulo disponível apenas para <b>Drupal 7</b>.
+
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/entityreference_filter</url>
   <item>Função</item>: adicionar filtros em views para campos Entity Reference;
@@ -386,4 +392,3 @@ campos do conteúdo.
     <item/>indique o <b>display Entity Reference</b> nesse filtro;
   </lista>
 </lista>
-
