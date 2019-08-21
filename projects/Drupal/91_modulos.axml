@@ -338,6 +338,7 @@ módulo que a requisite.
 <b>Administration Menu</b>.
 
 <subsubsecao>LDAP</subsubsecao>
+<nome>module-ldap</nome>
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/ldap</url>
