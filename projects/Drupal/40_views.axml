@@ -54,18 +54,6 @@ campo (B). No campo (B) consulte os tokens disponíveis na opção <b>PADRÕES
 DE SUBSTITUIÇÃO</b>, após selecionar <i>Override the output of this field
 with custom text</i> ou <i>Output this field as a custom link</i>.
 
-<subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
-
-<lista>
-  <item/>adicione um critério de filtragem;
-  <item/>ative a opção <i>Expor este filtro para visitantes, para permitir
-  que eles o alterem</i>;
-</lista>
-
-    Cada campo exposto aos usuários irá gerar um <i>input</i>. Para que um
-<i>input</i> filtre <u>mais de um campo de texto</u>, adicione o campo
-<b>Global: Combine Filters</b> como <b>CRITÉRIO DE FILTRAGEM</b>.
-
 <br/>0.3cm
 
 <subsubsubsecao>View de bloco com paginação</subsubsubsecao>
@@ -149,6 +137,18 @@ exibidos como <b>Checkboxes/Radio Buttons</b> pelas configurações do
 </lista>
 
     O primeiro campo será utilizado como título do acordeão.
+
+<subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
+
+<lista>
+  <item/>adicione um critério de filtragem;
+  <item/>ative a opção <i>Expor este filtro para visitantes, para permitir
+  que eles o alterem</i>;
+</lista>
+
+    Cada campo exposto aos usuários irá gerar um <i>input</i>. Para que um
+<i>input</i> filtre <u>mais de um campo de texto</u>, adicione o campo
+<b>Global: Combine Filters</b> como <b>CRITÉRIO DE FILTRAGEM</b>.
 
 <subsubsubsecao>Filtro contextual em modo glossário</subsubsubsecao>
 
