@@ -804,10 +804,12 @@ realizados por meio de subtema.
 <subsubsecao>Nodeblock</subsubsecao>
 
 <lista>
-  <item>Download (Drupal 7)</item>: https://drupal.org/project/nodeblock
-  <item>Download (Drupal 8)</item>: https://drupal.org/project/entityblock
+  <item>Download</item>: <url>https://drupal.org/project/nodeblock</url>
   <item>Função</item>: adiciona capacidade ao tipo de conteúdo ser listado como bloco;
 </lista>
+
+    O módulo <link>https://drupal.org/project/entityblock</link><text>Entity
+Block</text> está disponível para <b>Drupal 8</b>.
 
 <subsubsecao>QuickTabs</subsubsecao>
 
