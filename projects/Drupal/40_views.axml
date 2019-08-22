@@ -88,8 +88,9 @@ automaticamente quando o usuário rolar ao final da lista.
   <item/>configurar um rodapé a view como <b>Área de texto</b>;
 </lista>
 
-    O tipo <b>Área de visualização</b> pode ser usado como cabeçalho ou
-rodapé para incluir outra view.
+    A opção <b>Área de visualização</b> pode ser usado como cabeçalho ou
+rodapé para incluir outra view, já a opção <b>Área de texto</b> permite o
+uso de texto formatado.
 
 <br/>0.3cm
 
