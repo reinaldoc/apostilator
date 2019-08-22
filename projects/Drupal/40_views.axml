@@ -48,6 +48,12 @@
   <item/>combine dois campos em uma coluna (configuração do formato tabela);
 </lista>
 
+    O valor de um campo (A) pode ser utilizado em outro campo (B) por meio
+da opção <b>REESCREVER RESULTADOS</b>, desde que o campo (A) esteja acima do
+campo (B). No campo (B) consulte os tokens disponíveis na opção <b>PADRÕES
+DE SUBSTITUIÇÃO</b>, após selecionar <i>Override the output of this field
+with custom text</i> ou <i>Output this field as a custom link</i>.
+
 <subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
 
 <lista>
@@ -76,6 +82,7 @@
   completo</b>;
   <item/>alterar a paginação para 5 itens;
   <item/>ativar ajax (requerido para filtros expostos em blocos);
+  <item/>vincule o bloco da View a uma região;
 </lista>
 
     É necessário habilitar o modo <b>ajax</b> para apresentar filtros ao
