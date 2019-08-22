@@ -109,10 +109,10 @@ rodapé para incluir outra view.
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/better_exposed_filters</url>
-  <item>Função</item>: apresentar Views em formato de acordeões;
+  <item>Função</item>: fornece recursos adicionais para os filtros expostos;;
   <item>Uso</item>:
   <lista>
-    <item/>edite uma <b>View</b> que possua filtros expostos ao usuário;
+    <item/>edite uma <b>View</b> que possua filtros expostos de uma taxonomia;
     <item/>na opção <b>Estilo do formulário exibido</b>, selecione <b>Better
 Exposed Filters</b>;
     <item/>configure:
@@ -124,9 +124,9 @@ Exposed Filters</b>;
 </lista>
 
     Os filtros expostos não funcionaram mais na tela de pré-visualização.
-Este módulo também permite que os filtros expostos sejam exibidos como
-<b>Checkboxes/Radio Buttons</b> pelas configurações do <b>Estilo do
-formulário exibido</b>.
+Este módulo também permite que os filtros expostos de taxonomias sejam
+exibidos como <b>Checkboxes/Radio Buttons</b> pelas configurações do
+<b>Estilo do formulário exibido</b>.
 
 <subsecao>Views Accordion</subsecao>
 
