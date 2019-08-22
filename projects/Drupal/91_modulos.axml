@@ -812,28 +812,14 @@ realizados por meio de subtema.
 <subsubsecao>QuickTabs</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/quicktabs
-  <item>Dependência</item>: https://drupal.org/project/ctools
-  <item>Função</item>: bloco com abas compostas por outros blocos, nodes, views ou qtabs;
+  <item>Download</item>: <url>https://drupal.org/project/quicktabs</url>
+  <item>Função</item>: bloco com abas compostas por outros blocos, nodes ou views;
   <item>Uso</item>: /admin/structure/quicktabs
   <lista>
     <item/>adicionar uma quicktab;
+    <item/>selecionar formato <b>jquery ui</b> em Renderizador;
+    <item/>informe o título da aba e o tipo: bloco, node ou view;
   </lista>
-</lista>
-
-    O submódulo <b>Quicktabs Styles</b> fornece estilos, que estão disponíveis
-somente para o formato quicktabs (<i>renderer</i>). Os formatos ui_tabs e
-accordion podem ser customizados por meio de CSS em subtema.
-
-<subsubsubsecao>QuickTabs em formato de Accordion</subsubsubsecao>
-
-<lista>
-    <item/>adicionar uma quicktab;
-    <item/>selecionar formato de accordion (<i>renderer</i>);
-    <item/>opcional: memorizar aba ativa quando usar a opção voltar do navegador (<i>history</i>);
-    <item/>opcional: ativar altura automática;
-    <item/>opcional: permitir que todas as tabs sejam fechadas (<i>collapsible</i>);
-    <item/>vincular cada aba a uma bloco, node, view ou qtab;
 </lista>
 
     O módulo <link>https://drupal.org/project/field_jquery_tabs</link>
