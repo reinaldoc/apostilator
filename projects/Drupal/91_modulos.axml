@@ -1406,13 +1406,32 @@ Pessoa com o Node de Livro);
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/addtoany</url>
-  <item>Função</item>: integração para compartilhamento de nodes em redes sociais;
-  <item>Uso</item>:
+  <item>Função</item>: fornece botões para compartilhamento de conteúdo em redes sociais;
+  <item>Uso</item>: /admin/config/services/addtoany
   <lista>
-    <item/>acesse as configurações em <b>Serviços Web</b>;
-    <item/>selecione os tipos de conteúdo em que os ícones serão exibidos;
+    <item/>acesse as configurações em <b>Serviços Web → AddToAny</b>;
+    <item/>configure os ícones de compartilhamento pela opção <b>SERVICE BUTTONS</b>;
+    <item/>configure para não exibir outros ícones em <b>UNIVERSAL BUTTON</b> (opcional);
+    <item/>clique em <b>Salvar configurações</b>;
   </lista>
 </lista>
+
+    Segue a configuração para a opção <b>Service Buttons HTML code</b>, após
+alterá-la é necessário limpar a cache em <b>Desenvolvimento →
+Desempenho</b>. Consulte no endereço
+<url>https://www.addtoany.com/services/</url> todos os ícones de serviço de
+compartilhamento disponíveis.
+
+<comando>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_gmail"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_linkedin"></a>
+</comando>
+
+    Habilite o campo <b>AddToAny</b> por meio da opção <b>Gerenciar exibição</b>
+para cada <b>Tipo de Conteúdo</b>,
 
 <subsubsecao>ShareThis</subsubsecao>
 
