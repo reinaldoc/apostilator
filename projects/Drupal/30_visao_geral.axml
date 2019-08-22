@@ -301,7 +301,7 @@ Seção<ref>module-pathauto</ref> para mais informações.
 <lista>
     <item/>Acesse a opção <b>Estrutura → Leiaute de blocos</b> e
 configure a visibilidade do bloco do menu <b>Corregedoria</b> para páginas
-<b>corregedoria</b> e <b>corregedoria/*</b>. Configure um item por linha.
+<b>/corregedoria</b> e <b>/corregedoria/*</b>. Configure um item por linha.
 </lista>
 
     O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
