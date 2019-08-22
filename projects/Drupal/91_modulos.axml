@@ -1611,9 +1611,22 @@ blocos a partir de <b>Panels</b>..
 <subsubsecao>High contrast</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/high_contrast
+  <item>Download</item>: <url>https://drupal.org/project/high_contrast</url>
   <item>Função</item>: altera o visual para alto contraste;
 </lista>
+
+<subsubsubsecao>Drupal 8</subsubsubsecao>
+
+<lista>
+  <item/>posicione o bloco <b>High contrast</b> em uma região;
+  <item/>desabilite a opção <b>Exibir título</b>; 
+  <item/>habilite a opção <b>Use AJAX to submit automatically</b>.;
+  <item/>habilite a opção <b>Toggle switch</b>;
+  <item/>clique em <b>Salvar bloco</b>;
+  <item/>use o link <b>Ativar</b> que aparecerá na região selecionada;
+</lista>
+
+<subsubsubsecao>Drupal 7</subsubsubsecao>
 
     Utilize o módulo <b>Menu attributes</b> para adicionar a um item de menu
 um ID ou uma classe CSS para identificá-lo como ativador do alto contraste,
