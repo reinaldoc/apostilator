@@ -12,6 +12,14 @@ de falhas de segurança.
 # adduser --home /var/www/portal portal
 </comando>
 
+    O usuário é criado com a finalidade de ser o proprietário dos arquivos
+do Drupal, uma vez que o usuário do serviço web (www-data) deve ser
+proprietário apenas do diretório de upload de arquivos. Veja mais no artigo
+<link>https://www.drupal.org/node/244924</link><text>Securing file
+permissions and ownership</text>.
+
+<br/>0.2cm
+
 <step>Crie o diretório para instalação do Drupal</step>
 <comando>
 # mkdir /var/www/portal/drupal

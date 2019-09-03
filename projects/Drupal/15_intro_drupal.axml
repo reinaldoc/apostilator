@@ -224,8 +224,10 @@ ini_set('session.cookie_lifetime', 43200);
   <lista>
     <item/><url>https://drupal.org/project/security_review</url>
     <item/>O usuário do sistema que executa o serviço web (www-data) deve
-           possuir permissão de escrita somente no diretório
-           <b>files</b> do diretório de trabalho do site.
+           ser proprietário apenas do diretório <b>files</b> do diretório de
+           trabalho do site. Veja mais no artigo
+           <link>https://www.drupal.org/node/244924</link><text>Securing
+           file permissions and ownership</text>.
   </lista>
   <item/><b>Deve-se</b> estabelecer rotina automatizada para <u>identificar
          alterações nos arquivos do Drupal</u>.
