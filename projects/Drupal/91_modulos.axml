@@ -272,38 +272,24 @@ para ler, editar e apagar conteúdo).
     Verifique que este módulo adiciona o item <b>Node_access summary</b> ao
 menu <u>Desenvolvimento</u>.
 
-<subsubsecao>Administration Menu</subsubsecao>
+<subsubsecao>Admin Toolbar</subsubsecao>
 
 <lista>
-  <item>Download</item>: <url>https://drupal.org/project/admin_menu</url>
-  <item>Função</item>: fornece uma barra administrativa com capacidade de
+  <item>Download</item>: <url>https://drupal.org/project/admin_toolbar</url>
+  <item>Função</item>: aprimora a barra administrativa com a capacidade de
         <i>drop-down</i>;
   <item>Uso</item>:
   <lista>
-    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
-           administrativa padrão;
-    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
-           (opcional);
-    <item/>habilite os módulos <b>Administration menu</b> e
-           <b>Administration menu Toolbar style</b>;
+    <item/>habilite os módulos <b>Admin Toolbar</b> e <b>Admin Toolbar Extra
+           Tools</b>;
   </lista>
 </lista>
 
-    O módulo <b>Admin Menu</b> melhora a eficiência do desenvolvimento com o
-Drupal porque fornece acesso às funções administrativas por meio de
+    O módulo <b>Admin Toolbar</b> melhora a eficiência do desenvolvimento
+com o Drupal porque fornece acesso às funções administrativas por meio de
 um menu multinível, reduzindo em muitos cliques cada operação quando
-comparado ao menu padrão provido pelo módulo <b>Toolbar</b>.
+comparado ao menu de administração padrão.
 
-    Entretanto, após o projeto entrar em produção, tem-se duas limitações:
-o módulo <b>Admin Menu</b> não é responsivo, sendo difícil de usá-lo por
-meio de dispositivos de menor resolução, e não é coberto pela política de
-segurança do Drupal.
-
-    Por isso, parece ser prudente não utilizá-lo em produção ou, em vez de
-retornar ao módulo padrão <b>Toolbar</b>, substituí-lo pelo módulo
-<link>https://drupal.org/project/navbar</link><text>Navbar</text>, uma
-alternativa que apesar de possuir um menu com menor profundidade tem a
-vantagem de ser responsivo e compatível com <i>smartphones</i>.
 
 <subsubsecao>Navbar</subsubsecao>
 
@@ -334,8 +320,11 @@ bibliotecas JavaScript, que são armazenadas no diretório
 conterá informações sobre determinada biblioteca após a instalação de um
 módulo que a requisite.
 
-    O módulo <b>Navbar</b> é uma alternativa responsiva ao módulo
-<b>Administration Menu</b>.
+    O módulo <link>https://drupal.org/project/navbar</link>
+<text><b>Navbar</b></text> é uma alternativa <u>responsiva</u> ao módulo
+<link>https://drupal.org/project/admin_menu</link>
+<text><b>Administration Menu</b></text> para Drupal 7. Este módulo é o menu
+de administração padrão do Drupal 8.
 
 <subsubsecao>LDAP</subsubsecao>
 <nome>module-ldap</nome>
