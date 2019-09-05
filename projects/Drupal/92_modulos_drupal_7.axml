@@ -62,6 +62,24 @@ tradução da interface web;
 da interface web, consulte a opção <i>$conf['locale_cus tom_strings_en']</i>
 no <b>settings.php</b>.
 
+<subsubsecao>Masquerade</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/masquerade</url>
+  <item>Função</item>: permite simular o <i>login</i> como outro usuário;
+  <item>Uso</item>:
+  <lista>
+    <item/>habilite o bloco <b>Masquerade</b> em uma região;
+    <item/>utilize o bloco <b>Masquerade</b> para indicar o usuário;
+    <item/>use a opção <b>Switch back</b> para retornar ao usuário administrador;
+  </lista>
+</lista>
+
+    Um comum controle de segurança é usar o menor número de módulos
+possível, assim opte por testar o perfil em outro usuário em vez de precisar
+simular o login por meio deste módulo.
+
+
 <subsubsecao>Tab Tamer</subsubsecao>
 
 <lista>
