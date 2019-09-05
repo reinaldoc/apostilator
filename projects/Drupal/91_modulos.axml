@@ -166,6 +166,59 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined-drupal
 
 <subsecao>Administração</subsecao>
 
+<subsubsecao>Admin Toolbar</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/admin_toolbar</url>
+  <item>Função</item>: aprimora a barra administrativa com a capacidade de
+        <i>drop-down</i>;
+  <item>Uso</item>:
+  <lista>
+    <item/>habilite os módulos <b>Admin Toolbar</b> e <b>Admin Toolbar Extra
+           Tools</b>;
+  </lista>
+</lista>
+
+    O módulo <b>Admin Toolbar</b> melhora a eficiência do desenvolvimento
+com o Drupal porque fornece acesso às funções administrativas por meio de
+um menu multinível, reduzindo em muitos cliques cada operação quando
+comparado ao menu de administração padrão.
+
+<subsubsecao>Navbar</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/navbar</url>
+  <item>Dependência</item>:
+<link>https://drupal.org/project/libraries</link><text>Libraries</text>,
+<link>http://backbonejs.org/</link><text>Backbone library</text>,
+<link>http://underscorejs.org/</link><text>Underscore library</text>,
+<link>http://modernizr.com/download/#-inputtypes-svg-touch-cssclasses-addtest-teststyles-prefixes-elem_details</link><text>Modernizr library</text>.
+  <item>Função</item>: fornece uma barra administrativa responsiva;
+  <item>Uso</item>:
+  <lista>
+    <item/>extraia as bibliotecas <b>Backbone</b>, <b>Underscore</b> e
+           <b>Modernizr</b> em <b>sites/all/libraries</b>;
+    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
+           administrativa padrão;
+    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
+           (opcional);
+    <item/>habilite os módulos <b>Libraries</b> e <b>Navbar</b>;
+  </lista>
+</lista>
+
+    O módulo <b>Libraries</b> fornece uma API para integração com
+bibliotecas JavaScript, que são armazenadas no diretório
+<b>sites/all/libraries</b> do Drupal, e disponibiliza o relatório
+<i>libraries</i> que contém as versões dessas bibliotecas. O relatório só
+conterá informações sobre determinada biblioteca após a instalação de um
+módulo que a requisite.
+
+    O módulo <link>https://drupal.org/project/navbar</link>
+<text><b>Navbar</b></text> é uma alternativa <u>responsiva</u> ao módulo
+<link>https://drupal.org/project/admin_menu</link>
+<text><b>Administration Menu</b></text> para Drupal 7. Este módulo é o menu
+de administração padrão do Drupal 8.
+
 <subsubsecao>Localization update</subsubsecao>
 <nome>module-l10n-update</nome>
 
@@ -271,60 +324,6 @@ para ler, editar e apagar conteúdo).
 
     Verifique que este módulo adiciona o item <b>Node_access summary</b> ao
 menu <u>Desenvolvimento</u>.
-
-<subsubsecao>Admin Toolbar</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/admin_toolbar</url>
-  <item>Função</item>: aprimora a barra administrativa com a capacidade de
-        <i>drop-down</i>;
-  <item>Uso</item>:
-  <lista>
-    <item/>habilite os módulos <b>Admin Toolbar</b> e <b>Admin Toolbar Extra
-           Tools</b>;
-  </lista>
-</lista>
-
-    O módulo <b>Admin Toolbar</b> melhora a eficiência do desenvolvimento
-com o Drupal porque fornece acesso às funções administrativas por meio de
-um menu multinível, reduzindo em muitos cliques cada operação quando
-comparado ao menu de administração padrão.
-
-
-<subsubsecao>Navbar</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/navbar</url>
-  <item>Dependência</item>:
-<link>https://drupal.org/project/libraries</link><text>Libraries</text>,
-<link>http://backbonejs.org/</link><text>Backbone library</text>,
-<link>http://underscorejs.org/</link><text>Underscore library</text>,
-<link>http://modernizr.com/download/#-inputtypes-svg-touch-cssclasses-addtest-teststyles-prefixes-elem_details</link><text>Modernizr library</text>.
-  <item>Função</item>: fornece uma barra administrativa responsiva;
-  <item>Uso</item>:
-  <lista>
-    <item/>extraia as bibliotecas <b>Backbone</b>, <b>Underscore</b> e
-           <b>Modernizr</b> em <b>sites/all/libraries</b>;
-    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
-           administrativa padrão;
-    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
-           (opcional);
-    <item/>habilite os módulos <b>Libraries</b> e <b>Navbar</b>;
-  </lista>
-</lista>
-
-    O módulo <b>Libraries</b> fornece uma API para integração com
-bibliotecas JavaScript, que são armazenadas no diretório
-<b>sites/all/libraries</b> do Drupal, e disponibiliza o relatório
-<i>libraries</i> que contém as versões dessas bibliotecas. O relatório só
-conterá informações sobre determinada biblioteca após a instalação de um
-módulo que a requisite.
-
-    O módulo <link>https://drupal.org/project/navbar</link>
-<text><b>Navbar</b></text> é uma alternativa <u>responsiva</u> ao módulo
-<link>https://drupal.org/project/admin_menu</link>
-<text><b>Administration Menu</b></text> para Drupal 7. Este módulo é o menu
-de administração padrão do Drupal 8.
 
 <subsubsecao>LDAP</subsubsecao>
 <nome>module-ldap</nome>
