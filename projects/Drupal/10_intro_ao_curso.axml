@@ -1,15 +1,14 @@
 <capitulo>Introdução ao curso</capitulo>
 
     Seja bem-vindo ao curso <b>Desenvolvimento de Portais Corporativos com
-Drupal</b>. Este curso foi ministrado no <b>Tribunal Regional do Trabalho da
-21ª Região</b>, em Natal/RN, pelo instrutor <i>Reinaldo Gil Lima de
-Carvalho</i>, no período de <b>19/08/2019 a 23/08/2019</b>.
+Drupal</b>. Este material foi produzido pelo instrutor <i>Reinaldo Gil Lima
+de Carvalho</i> e utilizado nos seguintes cursos presenciais:
 
-    Os procedimentos descritos neste material foram validados por meio da
-distribuição GNU/Linux Debian 10 <i>buster</i><citar>Debian</citar>, apesar
-disso, o conteúdo apresentado pode ser utilizado sob qualquer sistema
-operacional. Busca-se que o participante esteja apto a utilizar o ambiente
-que lhe for mais adequado.
+<lista>
+    <item>TRT da 16ª Região</item>, em São Luís/MA, no período de <b>1º/07/2019 a 05/07/2019</b>.
+    <item>TRT da 21ª Região</item>, em Natal/RN, no período de <b>19/08/2019 a 23/08/2019</b>.
+    <item>TRT da 15ª Região</item>, em Campinas/SP, no período de <b>07/10/2019 a 11/10/2019</b>.
+</lista>
 
     Neste capítulo, serão abordados os seguintes temas: <i>i)</i> o
 licenciamento desta obra, <i>ii)</i> a origem do <i>software</i> utilizado,
@@ -21,10 +20,9 @@ essenciais do sistema operacional.
     Todas as marcas registradas são de propriedade de seus respectivos
 detentores, sendo apenas citadas nesta obra educacional.
 
-    O ministrante nem a fomentadora responsabilizam-se por danos causados
-devido a utilização das informações contidas neste material. Não há
-garantias de que este material está livre de erros, assim como, todos os
-sistemas em produção devem possuir bacape antes de sua manipulação.
+    O instrutor não se responsabiliza por qualquer consequência decorrente
+da utilização das informações contidas neste material. Não há garantias de que
+este material ou o <i>software</i> utilizado estejam livres de erros.
 
 <comando>
 Desenvolvimento de Portais Corporativos com Drupal.
@@ -47,7 +45,17 @@ contato com o autor.
     <nome>fig:CC-BY-NC-ND</nome>
 </figura>
 
-<subsecao>Compilação de <i>software</i> X <i>software</i> empacotado</subsecao>
+<subsecao>Portais na Justiça do Trabalho</subsecao>
+
+   ...
+
+<subsecao>Projeto de um Portal Corporativo</subsecao>
+
+   ...
+
+<subsecao>Software básico</subsecao>
+
+<subsubsecao>Compilação de <i>software</i> X <i>software</i> empacotado</subsubsecao>
 <nome>compilacao-vs-pacote</nome>
 
     O acesso ao código fonte do <i>software</i> e sua compilação, é uma das
@@ -112,7 +120,13 @@ essencial para a disponibilidade dos sistemas.
 de falhas. O Debian GNU/Linux possui uma equipe eficiente, que disponibiliza
 rapidamente correções para as falhas descorbertas.
 
-<subsecao>Instalação do Sistema Operacional</subsecao>
+<subsubsecao>Instalação do Sistema Operacional</subsubsecao>
+
+    Os procedimentos descritos neste material foram validados por meio da
+distribuição GNU/Linux Debian 10 <i>buster</i><citar>Debian</citar>, apesar
+disso, o conteúdo apresentado pode ser utilizado sob qualquer sistema
+operacional. Busca-se que o participante esteja apto a utilizar o ambiente
+que lhe for mais adequado.
 
     A instalação do <link>https://debian.org</link><text>Debian GNU/Linux</text>
 é bastante simplificada, sendo basicamente composta pela configuração do
@@ -179,7 +193,7 @@ installer menu', então prossiga com a instalação.
   <item>Instalação finalizada</item>: continuar
 </lista>
 
-<subsecao>Atualização do Sistema Operacional</subsecao>
+<subsubsecao>Atualização do Sistema Operacional</subsubsecao>
 
     Os sistemas operacionais Linux fornecem ferramentas para a instalação
 automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
