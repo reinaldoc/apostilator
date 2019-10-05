@@ -10,9 +10,10 @@ de Carvalho</i> e utilizado nos seguintes cursos presenciais:
     <item>TRT da 15ª Região</item>, em Campinas/SP, no período de <b>07/10/2019 a 11/10/2019</b>.
 </lista>
 
-    Neste capítulo, serão abordados os seguintes temas: <i>i)</i> o
-licenciamento desta obra, <i>ii)</i> a origem do <i>software</i> utilizado,
-se executável ou código fonte, e <i>iii)</i> a instalação e as configurações
+    Neste capítulo serão abordados os seguintes temas: <i>i)</i> o
+licenciamento desta obra, <i>ii)</i> visão geral das tecnologias de portais
+da Justiça do Trabalho, <i>iii)</i> visão geral de um projeto de construção
+de portal corporativo e <i>iv)</i> a instalação e as configurações
 essenciais do sistema operacional.
 
 <subsecao>Licença da obra</subsecao>
@@ -47,7 +48,59 @@ contato com o autor.
 
 <subsecao>Portais na Justiça do Trabalho</subsecao>
 
-   ...
+    A tecnologia utilizada por cada Portal Corporativo dos Tribunais do
+Trabalho é bastante diverfisificada, como pode ser constatado pelo
+lavantamento apresentado na
+figura<ref>fig:portais-tribunais-do-trabalho-outubro-2019</ref>. Até 2016
+somente os Tribunais com sede em <link>www.trt6.jus.br</link><text>Pernambuco
+(TRT6)</text> e em <link>www.trt23.jus.br</link><text>Mato Grosso
+(TRT23)</text> utilizavam Drupal, seguidos por <link>www.trt5.jus.br</link>
+<text>Bahia (TRT5)</text> em 2017 e
+<link>www.trt8.jus.br</link><text>Pará/Amapá (TRT8)</text> em 2018.
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/portais-tribunais-do-trabalho-outubro-2019.jpg</arquivob>
+    <legenda>Levantamento de 10/2019 das tecnologias dos Portais nos Tribunais do Trabalho</legenda>
+    <nome>fig:portais-tribunais-do-trabalho-outubro-2019</nome>
+</figura>
+
+<lista>
+  <item/>A versão atualizada do levantamento está disponível em:
+  <lista>
+    <item/><url>https://infogram.com/cms-justica-do-trabalho-1hd12ywpj1rx4km</url>.
+  </lista>
+</lista>
+
+    Entretando, após a publicação da
+<link>http://www.csjt.jus.br/documents/955023/998680/Resolu%C3%A7%C3%A3o+n.+243+CSJT/f52ccda4-80a0-375e-b591-d04c4e8a7468</link>
+<text>Resolução CSJT nº 243</text> em 28 de junho de 2019, que determinou a
+adoção, em até 6 meses, de um modelo único de identidade visual para os
+portais dos Tribunais do Trabalho, iniciou-se uma realivação das tecnologias
+em utilização, em que observa-se tendência na adoção do Drupal a partir do
+apoio fornecido pelo TRT da 8ª Região.
+
+<lista>
+  <item/>O guia de padronização das páginas iniciais da Justiça do Trabalho
+  está disponível em:
+  <lista>
+    <item/><url>http://www.csjt.jus.br/web/csjt/identidadevisualjt</url>.
+  </lista>
+</lista>
+
+<lista>
+  <item/>O repositório das imagens da identidade visual está disponível em:
+  <lista>
+    <item/><url>https://drive.google.com/drive/u/2/folders/1kf3SxMH4uHQY0lOJXcI-kRO1J5kP_Ggm</url> 
+  </lista>
+</lista>
+
+<lista>
+  <item/>O repositório de protótipos HTML/CSS e temas para o Drupal está disponível em:
+  <lista>
+    <item/><url>https://github.com/reinaldoc/drupal-contrib</url> 
+  </lista>
+</lista>
 
 <subsecao>Projeto de um Portal Corporativo</subsecao>
 
