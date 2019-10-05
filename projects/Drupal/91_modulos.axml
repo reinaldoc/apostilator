@@ -166,42 +166,23 @@ CustomLog ${APACHE_LOG_DIR}/access.log combined-drupal
 
 <subsecao>Administração</subsecao>
 
-<subsubsecao>Localization update</subsubsecao>
-<nome>module-l10n-update</nome>
+<subsubsecao>Admin Toolbar</subsubsecao>
 
 <lista>
-  <item>Download</item>: <url>https://drupal.org/project/l10n_update</url>
-  <item>Função</item>: implementa o mecanismo para <i>download</i> da
-tradução da interface web;
-  <item>Uso</item>: /admin/config/regional/language [Regional and
-                    language  → Languages];
-  <lista>
-    <item/>habilite o módulo <b>Localization update</b>;
-    <item/>adicione a língua <b>Portuguese, Brazil (Português)</b>;
-    <item/>reordene a língua <b>Portuguese, Brazil (Português)</b> para cima;
-    <item/>salve a configuração;
-    <item/>defina a língua <b>Portuguese, Brazil (Português)</b> como padrão;
-    <item/>salve a configuração;
-  </lista>
-</lista>
-
-    O módulo <b>Localization update</b> foi incluído no <i>core</i> do Drupal
-8. Para traduzir itens específicos, eventualmente não disponíveis por meio
-da interface web, consulte a opção <i>$conf['locale_cus tom_strings_en']</i>
-no <b>settings.php</b>.
-
-<subsubsecao>Masquerade</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/masquerade</url>
-  <item>Função</item>: permite simular o <i>login</i> como outro usuário;
+  <item>Download</item>: <url>https://drupal.org/project/admin_toolbar</url>
+  <item>Função</item>: aprimora a barra administrativa com a capacidade de
+        <i>drop-down</i>;
   <item>Uso</item>:
   <lista>
-    <item/>habilite o bloco <b>Masquerade</b> em uma região;
-    <item/>utilize o bloco <b>Masquerade</b> para indicar o usuário;
-    <item/>use a opção <b>Switch back</b> para retornar ao usuário administrador;
+    <item/>habilite os módulos <b>Admin Toolbar</b> e <b>Admin Toolbar Extra
+           Tools</b>;
   </lista>
 </lista>
+
+    O módulo <b>Admin Toolbar</b> melhora a eficiência do desenvolvimento
+com o Drupal porque fornece acesso às funções administrativas por meio de
+um menu multinível, reduzindo em muitos cliques cada operação quando
+comparado ao menu de administração padrão.
 
 <subsubsecao>Login destination</subsubsecao>
 
@@ -271,71 +252,6 @@ para ler, editar e apagar conteúdo).
 
     Verifique que este módulo adiciona o item <b>Node_access summary</b> ao
 menu <u>Desenvolvimento</u>.
-
-<subsubsecao>Administration Menu</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/admin_menu</url>
-  <item>Função</item>: fornece uma barra administrativa com capacidade de
-        <i>drop-down</i>;
-  <item>Uso</item>:
-  <lista>
-    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
-           administrativa padrão;
-    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
-           (opcional);
-    <item/>habilite os módulos <b>Administration menu</b> e
-           <b>Administration menu Toolbar style</b>;
-  </lista>
-</lista>
-
-    O módulo <b>Admin Menu</b> melhora a eficiência do desenvolvimento com o
-Drupal porque fornece acesso às funções administrativas por meio de
-um menu multinível, reduzindo em muitos cliques cada operação quando
-comparado ao menu padrão provido pelo módulo <b>Toolbar</b>.
-
-    Entretanto, após o projeto entrar em produção, tem-se duas limitações:
-o módulo <b>Admin Menu</b> não é responsivo, sendo difícil de usá-lo por
-meio de dispositivos de menor resolução, e não é coberto pela política de
-segurança do Drupal.
-
-    Por isso, parece ser prudente não utilizá-lo em produção ou, em vez de
-retornar ao módulo padrão <b>Toolbar</b>, substituí-lo pelo módulo
-<link>https://drupal.org/project/navbar</link><text>Navbar</text>, uma
-alternativa que apesar de possuir um menu com menor profundidade tem a
-vantagem de ser responsivo e compatível com <i>smartphones</i>.
-
-<subsubsecao>Navbar</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/navbar</url>
-  <item>Dependência</item>:
-<link>https://drupal.org/project/libraries</link><text>Libraries</text>,
-<link>http://backbonejs.org/</link><text>Backbone library</text>,
-<link>http://underscorejs.org/</link><text>Underscore library</text>,
-<link>http://modernizr.com/download/#-inputtypes-svg-touch-cssclasses-addtest-teststyles-prefixes-elem_details</link><text>Modernizr library</text>.
-  <item>Função</item>: fornece uma barra administrativa responsiva;
-  <item>Uso</item>:
-  <lista>
-    <item/>extraia as bibliotecas <b>Backbone</b>, <b>Underscore</b> e
-           <b>Modernizr</b> em <b>sites/all/libraries</b>;
-    <item/>desabilite o módulo <b>Toolbar</b> que provê a barra
-           administrativa padrão;
-    <item/>desabilite o módulo <b>Overlay</b> para desativar o uso de modal
-           (opcional);
-    <item/>habilite os módulos <b>Libraries</b> e <b>Navbar</b>;
-  </lista>
-</lista>
-
-    O módulo <b>Libraries</b> fornece uma API para integração com
-bibliotecas JavaScript, que são armazenadas no diretório
-<b>sites/all/libraries</b> do Drupal, e disponibiliza o relatório
-<i>libraries</i> que contém as versões dessas bibliotecas. O relatório só
-conterá informações sobre determinada biblioteca após a instalação de um
-módulo que a requisite.
-
-    O módulo <b>Navbar</b> é uma alternativa responsiva ao módulo
-<b>Administration Menu</b>.
 
 <subsubsecao>LDAP</subsubsecao>
 <nome>module-ldap</nome>
@@ -414,24 +330,6 @@ módulo que a requisite.
     A instalação do módulo <b>Reg with Pic</b> permite que o módulo <b>LDAP
 User</b> sincronize a imagem, comumente do atributo thumbailPhoto, para o
 campo de imagem do perfil do usuário <u>no primeiro login</u>;
-
-<subsubsecao>Tab Tamer</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/tabtamer</url>
-  <item>Função</item>: controla as <b>tabs</b> da página do usuário e dos nodes;
-  <item>Uso</item>: /admin/config/system/tabtamer
-  <lista>
-    <item/>identifique as tabs do usuário na seção <b>USER/%</b>;
-    <item/>desative a tab <b>Edit</b> do usuário;
-    <item/>limpe a cache do drupal em <b>Desenvolvimento ⇒ Desempenho</b>;
-  </lista>
-</lista>
-
-    O módulo <b>Tab Tamer</b> é particularmente útil em conjunto ao módulo
-<b>LDAP</b>, pois ao realizar a sincronização de dados do usuário pode ser
-conveniente inibir a edição do perfil do usuário com a desativação da aba
-<b>Edit</b>.
 
 <subsubsecao>Backup and Migrate</subsubsecao>
 
@@ -764,23 +662,6 @@ em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
 <br/>0.2cm
 
 <subsecao>Blocos</subsecao>
-
-<subsubsecao>Image Block</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/imageblock</url>
-  <item>Função</item>: permite criar blocos contendo uma imagem acima do texto;
-  <item>Uso</item>: /admin/structure/block/imageblock_add
-  <lista>
-    <item/>crie um novo bloco com imagem;
-  </lista>
-</lista>
-
-    O módulo <b>Image Block</b> é desnecessário em projetos que utilizam um
-editor Wysiwyg, como o módulo <b>CKEditor</b> descrito na
-seção<ref>module-ckeditor</ref>, integrado a funcionalidade <i>upload</i>
-de arquivos, como o módulo <b>IMCE</b> descrito na
-seção<ref>module-imce</ref>.
 
 <subsubsecao>Footer Sitemap</subsubsecao>
 
