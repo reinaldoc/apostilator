@@ -33,7 +33,7 @@ base</b>.
 <comando>
 # su -l portal
 $ cd /var/www/portal/drupal/themes
-$ mkdir portal_brasil
+$ mkdir -p portal_brasil/templates
 $ touch portal_brasil/portal_brasil.info.yml
 $ touch portal_brasil/portal_brasil.libraries.yml
 $ touch portal_brasil/portal_brasil.theme
@@ -134,8 +134,75 @@ fornece a função <b>kpr()</b> que pode ser utilizada no lugar de
 <b>print_r()</b> para exibir na tela todo conteúdo de uma array de forma
 amigável.
 
+<subsecao>Templates</subsecao>
+
+    A composição de uma página, ou seja, a produção do HTML apresentado e
+enviado ao usuário, é realizada com a junção de um conjunto de templates,
+essencialmente dos tipos: <b>html</b>, <b>page</b>, <b>region</b>,
+<b>block</b> e <b>node</b>. Apenas um template de cada tipo irá ser
+selecionado para a junção e produção do HTML, como será visto na
+subseção<ref>theme-template-process</ref>.
+
 <lista>
-  <item>templates/*.html.twig</item>: o processamento do template ocorre a partir do mais específico;
+  <item>html</item>: core/modules/system/html.html.twig
+  <lista>
+    <item>page</item>: core/modules/system/page.html.twig
+    <item>page</item>: themes/portal_brasil/page.html.twig
+    <item>page</item>: themes/portal_brasil/page--front.html.twig
+    <lista>
+      <item>region</item>: core/modules/system/region.html.twig
+      <item>region</item>: core/modules/system/region--[region-name].html.twig
+      <lista>
+        <item>block</item>: core/modules/block/block.html.twig
+        <item>block</item>: themes/portal_brasil/block.html.twig
+        <item>block</item>: themes/portal_brasil/block--[region-name].html.twig
+        <item>node</item>: core/modules/node/node.html.twig
+        <item>node</item>: themes/bartik/templates/node.html.twig
+        <item>node</item>: themes/portal_brasil/node.html.twig
+        <item>node</item>: themes/portal_brasil/node--[contenttype].html.twig
+        <item>node</item>: themes/portal_brasil/node--[nid].html.twig
+        <item>comment</item>: core/modules/comment/comment.html.twig
+        <item>comment</item>: themes/bartik/templates/comment.html.twig
+        <item>comment-wrapper</item>: core/modules/comment/comment-wrapper.html.twig
+        <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.html.twig
+        <item>user-profile</item>: core/modules/user/user-profile.html.twig
+        <item>user-profile</item>: themes/portal_brasil/user-profile.html.twig
+      </lista>
+    </lista>
+    <item>maintenance-page</item>: core/modules/system/maintenance-page.html.twig
+    <item>maintenance-page</item>: themes/portal_brasil/maintenance-page.html.twig
+  </lista>
+</lista>
+
+<lista>
+  <item>Sobreposição de templates</item>
+  <lista>
+    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/
+    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/node--2.html.twig
+    <item/>cp core/modules/system/maintenance-page.html.twig themes/portal_brasil/templates/
+  </lista>
+</lista>
+
+<subsubsecao>Processamento dos templates</subsubsecao>
+<nome>theme-template-process</nome>
+
+<lista>
+  <item>Seleção do template</item>: somente o template mais específico de cada tipo será
+  utilizado;
+  <lista>
+    <item>**mais específico**</item>
+    <item>↓ node--1.html.twig</item> ⇒ para determinado node Id;
+    <item>↓ node--article.html.twig</item> ⇒ para determinado tipo de conteúdo;
+    <item>↓ node.html.twig</item> ⇒ do subtema: themes/portal_brasil/node.html.twig;
+    <item>↓ node.html.twig</item> ⇒ do tema: themes/bartik/templates/node.html.twig;
+    <item>↓ node.html.twig</item> ⇒ do core: core/modules/node/node.html.twig;
+    <item>**menos específico**</item>
+  </lista>
+</lista>
+
+<lista>
+  <item>templates/*.html.twig</item>: o processamento ocorre a partir do
+tipo de template mais interno até o mais externo (<b>html</b>);
   <lista>
     <item>↓ node.html.twig;</item>
     <lista>
@@ -179,61 +246,8 @@ amigável.
   </lista>
 </lista>
 
-<lista>
-  <item>Seleção do template</item>: somente o template mais específico de cada tipo será
-  utilizado;
-  <lista>
-    <item>↓ node--1.html.twig</item> ⇒ para determinado node Id;
-    <item>↓ node--article.html.twig</item> ⇒ para determinado tipo de conteúdo;
-    <item>↓ node.html.twig</item> ⇒ do subtema: themes/portal_brasil/node.html.twig;
-    <item>↓ node.html.twig</item> ⇒ do tema: themes/bartik/templates/node.html.twig;
-    <item>↓ node.html.twig</item> ⇒ do core: core/modules/node/node.html.twig;
-  </lista>
-</lista>
-
-<lista>
-  <item>Sobreposição de templates</item>
-  <lista>
-    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/
-    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/node--2.html.twig
-    <item/>cp core/modules/system/maintenance-page.html.twig themes/portal_brasil/templates/
-  </lista>
-</lista>
 
 <br/>0.6cm
-
-<lista>
-  <item>Hierarquia de Templates</item>
-  <item>html</item>: core/modules/system/html.html.twig
-  <lista>
-    <item>page</item>: core/modules/system/page.html.twig
-    <item>page</item>: themes/portal_brasil/page.html.twig
-    <item>page</item>: themes/portal_brasil/page--front.html.twig
-    <lista>
-      <item>region</item>: core/modules/system/region.html.twig
-      <item>region</item>: core/modules/system/region--[region-name].html.twig
-      <lista>
-        <item>block</item>: core/modules/block/block.html.twig
-        <item>block</item>: themes/portal_brasil/block.html.twig
-        <item>block</item>: themes/portal_brasil/block--[region-name].html.twig
-        <item>node</item>: core/modules/node/node.html.twig
-        <item>node</item>: themes/bartik/templates/node.html.twig
-        <item>node</item>: themes/portal_brasil/node.html.twig
-        <item>node</item>: themes/portal_brasil/node--[contenttype].html.twig
-        <item>node</item>: themes/portal_brasil/node--[nid].html.twig
-        <item>comment</item>: core/modules/comment/comment.html.twig
-        <item>comment</item>: themes/bartik/templates/comment.html.twig
-        <item>comment-wrapper</item>: core/modules/comment/comment-wrapper.html.twig
-        <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.html.twig
-        <item>user-profile</item>: core/modules/user/user-profile.html.twig
-        <item>user-profile</item>: themes/portal_brasil/user-profile.html.twig
-      </lista>
-    </lista>
-    <item>maintenance-page</item>: core/modules/system/maintenance-page.html.twig
-    <item>maintenance-page</item>: themes/portal_brasil/maintenance-page.html.twig
-  </lista>
-</lista>
-
 <subsecao>Módulos relacionados</subsecao>
 
 <subsubsecao>Styleguide</subsubsecao>
