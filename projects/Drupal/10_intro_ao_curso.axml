@@ -104,6 +104,53 @@ apoio fornecido pelo TRT da 8ª Região.
 
 <subsecao>Projeto de um Portal Corporativo</subsecao>
 
+   Dentre os diversos artefatos que podem compor a metodologia de
+gerenciamento de projetos da instituição, é importante destacar:  <i>i)</i>
+o objetivo do projeto,  <i>ii)</i> os requisitos do projeto, <i>iii)</i> um
+<i>mockup/protótipo</i> do produto, <i>iv)</i> um cronograma das entregas do
+projeto e <i>v)</i> um cronograma das atividades do projeto.  
+
+<subsubsubsecao>Objetivo</subsubsubsecao>
+
+   ...
+
+<subsubsubsecao>Requisitos</subsubsubsecao>
+
+<lista>
+    <item/>A plataforma deve ser web, livre, responsiva e modular;
+    <item/>A plataforma seguir recomendações de acessibilidade;
+    <item/>A plataforma deve aceitar autenticação e autorização pelo serviço
+    LDAP;
+    <item/>A plataforma deve permitir o controle de acesso por meio de perfis
+    e permissões;
+    <item/>A plataforma deve permitir a publicação e despublicação de
+    conteúdo;
+    <item/>A plataforma deve ser compatível com base de dados suportada;
+</lista>
+
+<subsubsubsecao>Protótipo de Mockup</subsubsubsecao>
+
+   ...
+
+<subsubsubsecao>Cronograma de entregas</subsubsubsecao>
+
+<lista>
+    <item/>Selecionar a plataforma para construção do Portal Corporativo;
+    <item/>Capacitação na plataforma;
+    <item/>Identificar a nova arquitetura da informação;
+    <item/>Definir a identidade visual;
+    <item/>Construir um protótipo funcional;
+    <item/>Implantar o portal em ambiente de produção;
+    <item/>Criar as áreas de publicação;
+    <item/>Configurar a autenticação e autorização;
+    <item/>Cadastrar ou migrar o conteúdo da plataforma anterior;
+    <item/>Capacitação dos usuários publicadores;
+    <item/>Definir e executar um plano de comunicação do lançamento;
+    <item/>Colocar no ar o novo Portal Corporativo;
+</lista>
+
+<subsubsubsecao>Cronograma de atividades</subsubsubsecao>
+
    ...
 
 <subsecao>Software básico</subsecao>
