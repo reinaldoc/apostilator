@@ -1,8 +1,29 @@
 <capitulo>Introdução ao curso</capitulo>
 
     Seja bem-vindo ao curso <b>Desenvolvimento de Portais Corporativos com
-Drupal</b>. Este material foi produzido pelo instrutor <i>Reinaldo Gil Lima
-de Carvalho</i> e utilizado nos seguintes cursos presenciais:
+Drupal</b>. O Portal Corporativo é o ponto inicial de acesso a todas as
+informações, serviços e sistemas da instituição, sendo <u>um grande desafio
+manter organizado o grande volume de conteúdo que o compõe</u>.
+
+    A arquitetura da informação é núcleo dessa organização que permitirá o
+acesso intuitivo ao conteúdo por meio de sua <u>categorização
+hierarquica</u>, bem como de sua classificação para priorização e destaque
+do que é importante, apresentando um <u>volume razoável de opções ao
+usuário</u>, inclusive com seções orientadas a cada público-alvo, como
+advogados, público interno, aposentados, trabalhador, etc. Impor limites
+quantitativos é um bom método para manter o foco no conteúdo mais
+importante. Lembre-se, <u>se tudo é importante, isso significa que nada é
+importante</u>.
+
+    Neste curso iniciaremos com a visão geral do gerenciamento de projeto de
+construção de um Portal Corporativo, em seguida veremos todas as fases de
+sua construção, do levantamento, categorização, classificação e priorização
+do conteúdo, criação do esboço do produto, implementação da página inicial,
+das áreas de publicação, dos controles de segurança, bem como os tópicos
+para capacitação dos usuários publicadores, até o seu lançamento.
+
+    Este material foi produzido pelo instrutor <i>Reinaldo Gil Lima de
+Carvalho</i> e utilizado nos seguintes cursos presenciais:
 
 <lista>
     <item>TRT da 16ª Região</item>, em São Luís/MA, no período de <b>1º/07/2019 a 05/07/2019</b>.
@@ -16,14 +37,15 @@ da Justiça do Trabalho, <i>iii)</i> visão geral de um projeto de construção
 de portal corporativo e <i>iv)</i> a instalação e as configurações
 essenciais do sistema operacional.
 
+<quebraPagina/>
+
 <subsecao>Licença da obra</subsecao>
 
     Todas as marcas registradas são de propriedade de seus respectivos
-detentores, sendo apenas citadas nesta obra educacional.
-
-    O instrutor não se responsabiliza por qualquer consequência decorrente
-da utilização das informações contidas neste material. Não há garantias de que
-este material ou o <i>software</i> utilizado estejam livres de erros.
+detentores, sendo apenas citadas nesta obra educacional. O instrutor não se
+responsabiliza por qualquer consequência decorrente da utilização das
+informações contidas neste material. Não há garantias de que este material
+ou o <i>software</i> utilizado estejam livres de erros.
 
 <comando>
 Desenvolvimento de Portais Corporativos com Drupal.
@@ -45,6 +67,8 @@ contato com o autor.
     <legenda>CC-BY-NC-ND</legenda>
     <nome>fig:CC-BY-NC-ND</nome>
 </figura>
+
+<quebraPagina/>
 
 <subsecao>Portais na Justiça do Trabalho</subsecao>
 
@@ -141,7 +165,7 @@ o conteúdo existente no portal atual.
     <item/>A tecnologia deve ser compatível com base de dados suportada;
 </lista>
 
-    <b>Tarefa:</b> acessar o Documento de Requisitos do projeto.
+    <b>Tarefa:</b> consultar o Documento de Requisitos do projeto.
 
 <subsubsubsecao>Cronograma de entregas</subsubsubsecao>
 
@@ -150,9 +174,9 @@ o conteúdo existente no portal atual.
     <item/>Capacitação na tecnologia - <i>10/2019</i>;
     <item/>Definição da identidade visual - <i>10/2019</i>;
     <item/>Identificação da nova arquitetura da informação - <i>pendente</i>;
-    <item/>Construção de um protótipo funcional na tecnologia - <i>pendente</i>;
-    <item/>Implantação do portal em ambiente de produção - <i>pendente</i>;
-    <item/>Criação das áreas de publicação - <i>pendente</i>;
+    <item/>Construção de um <u>protótipo funcional</u> na tecnologia - <i>pendente</i>;
+    <item/>Implantação do portal <u>em ambiente de produção</u> - <i>pendente</i>;
+    <item/>Criação das áreas de publicação com conteúdo <u>categorizado/classificado</u> - <i>pendente</i>;
     <item/>Recadastro ou migração o conteúdo da tecnologia anterior - <i>pendente</i>;
     <item/>Configuração da autenticação e autorização - <i>pendente</i>;
     <item/>Capacitação dos usuários publicadores - <i>pendente</i>;
@@ -161,7 +185,6 @@ o conteúdo existente no portal atual.
 </enumerar>
 
     <b>Tarefa:</b> acessar o vídeo do protótipo.
-
 
 <subsubsubsecao>Esboço ou mockup do produto</subsubsubsecao>
 
@@ -174,12 +197,23 @@ o conteúdo existente no portal atual.
     <nome>fig:projeto-esboco</nome>
 </figura>
 
+<lista>
+  <item>1:</item> Marca da institução;
+  <item>2:</item> Ícones com links para as redes sociais da instituição;
+  <item>3:</item> Campo para pesquisa do conteúdo armazenado no Portal;
+  <item>4:</item> Menu principal;
+  <item>5:</item> Notícias em destaque com demais notícias embaixo;
+  <item>6:</item> Serviços em destaque;
+</lista>
+
+<quebraPagina/>
+
    <b>Mockup do Produto</b>
 
 <figura>
     <tamanhob>0.6</tamanhob>
     <arquivob>imgs/projeto-mockup.png</arquivob>
-    <legenda>Esboço do produto baseado no Portal do CSJT</legenda>
+    <legenda>Mockup do produto produzido por editor de gráfico</legenda>
     <nome>fig:projeto-mockup</nome>
 </figura>
 
@@ -330,7 +364,50 @@ installer menu', então prossiga com a instalação.
   <item>Instalação finalizada</item>: continuar
 </lista>
 
-<subsubsecao>Atualização do Sistema Operacional</subsubsecao>
+<step>Configuração da interface de Rede no VirtualBox</step>
+
+    Após o sistema reiniciar, realize login com o usuário <b>root</b> e a
+senha definida durante a instalação. Use o comando <b>halt</b> para realizar
+o procedimento de desligamento do Linux. Feche a máquina virtual e selecione
+a opção <b>Desligar máquina</b>. Esta opção só deve ser utilizada após o
+comando <b>halt</b> e quando for necessário realizar alguma configuração na
+máquina virtual. Em regra, pode-se fechar diretamente a máquina virtual e
+selecionar a opção <b>Salvar estado da máquina</b>.
+
+    A configuração padrão da interface de rede da máquina virtual é
+<b>NAT</b>, o que impede o acesso remoto a ela. Assim, há duas formas
+possíveis para resolver isto, a mais simples é alterar a configuração da
+interface de rede para <b>Place em modo bridge</b>, isto fará com que a
+máquina virtual tenha acesso a rede por meio de seu próprio endereço MAC,
+obtendo um novo IP da mesma rede da máquina real.
+
+    Entretando, em algumas redes há restrições de acesso somente para uma
+lista definida de endereços MAC. Neste caso, há uma alternativa. Mantenha a
+configuração da primeira placa de rede da máquina virtual como <b>NAT</b> e
+adicione uma outra interface de rede na máquina virtual do tipo
+<b>Host-only</b>, essa interface permitirá o acesso remoto a máquina
+virtual.
+
+    Agora, ligue a máquina virtual. Use o comando <b>dhclient enp0s8</b>
+para obter um IP nesta nova interface e use o comando <b>ip addr enp0s8</b>
+para identificar o IP obtido. Por meio deste IP será possível realizar o
+acesso remoto à máquina virtual.
+
+<step>Execução de comandos e edição de arquivos no terminal</step>
+
+    <importante/>Não serão necessários conhecimentos sobre o sistema Linux,
+mas neste momento <u>precisaremos realizar alguns passos</u>, o que inclui a
+execução de comandos e edição de texto pelo terminal. Esses passos
+permitirão o acesso remoto e posterior edição de arquivos por meio dos
+editores de texto externos a máquina virtual.
+
+     Assim, para editar arquivos pelo terminal do Linux, usaremos o editor
+<b>nano</b>, para abrir um arquivo use: <b>nano /diretório/arquivo.conf</b>,
+para salvar e sair da edição use: <b>control x</b> seguido de <b>y</b>. Por
+fim, lembre-se que, em regra, as linhas que iniciam por <b>#</b> são
+comentários, sem função de configuração.
+
+<subsubsecao>APT :: A ferramenta avançada de pacotes do Debian Linux</subsubsecao>
 
     Os sistemas operacionais Linux fornecem ferramentas para a instalação
 automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
@@ -345,14 +422,18 @@ ocasiona a instalação de pacotes não requeridos e demanda a utilização de
 espaço em disco adicional.
 
     A instalação de pacotes "recomendados" pode ser desabilitada por meio
-da adição da configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>:
+da adição da configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>,
+<u>veja que este arquivo está vazio, então, após abrí-lo, apenas digite o
+conteúdo abaixo e salve-o</u>:
 
 <comando>
 APT::Install-Recommends "0";
 </comando>
 
     A configuração da fonte dos pacotes é realizada no arquivo
-<b>/etc/apt/sources.list</b>:
+<b>/etc/apt/sources.list</b>, <u>neste arquivo devem ficar descomentadas
+somente estas três linhas</u>, use o <b>#</b> para comentar as outras
+linhas:
 
 <comando>
 deb http://ftp.br.debian.org/debian/ buster main contrib non-free
@@ -374,24 +455,29 @@ versão e descrição. Esse <i>download</i>, bem como a atualização do sistema
 podem ser realizados pelos comandos:
 
 <comando>
-    # apt-get update
-    # apt-get upgrade
+apt-get update
+apt-get upgrade
 </comando>
 
-    A lista de <i>software</i> disponíveis pode ser consultada, como indicado
-no exemplo abaixo:
+<subsubsecao>SSH :: O acesso remoto</subsubsecao>
 
-<lista>
-<item/>Pesquisar pelo nome do <i>software</i>:
-</lista>
+    Instale o serviço de acesso remoto por meio do comando:
 
 <comando>
-    # apt-cache search ^apache2
+apt-get install openssh-server
 </comando>
 
-    Maiores informações sobre um determinado <i>software</i> podem ser obtidas
-como indicado a seguir:
+    Edite o arquivo <b>/etc/ssh/sshd_config</b>, altere a configuração
+<b>PermitRootLogin yes</b> e salve-o. Isso permitirá o login como
+<b>root</b> no serviço de acesso remoto.
+
+    Reinicie o serviço de acesso remoto por meio do comando:
 
 <comando>
-    # apt-cache show apache2
+/etc/init.d/ssh restart
 </comando>
+
+    <atividade/>Agora utilize o <b>Putty</b> para realizar acesso remoto e o
+<b>WinSCP</b> para editar arquivos por meio dos editores <b>Notepad++</b> ou
+<b>Visual Studio Code (VSC)</b>.
+
