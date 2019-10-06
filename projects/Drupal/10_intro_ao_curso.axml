@@ -107,51 +107,88 @@ apoio fornecido pelo TRT da 8ª Região.
    Dentre os diversos artefatos que podem compor a metodologia de
 gerenciamento de projetos da instituição, é importante destacar:  <i>i)</i>
 o objetivo do projeto,  <i>ii)</i> os requisitos do projeto, <i>iii)</i> um
-<i>mockup/protótipo</i> do produto, <i>iv)</i> um cronograma das entregas do
+esboço ou <i>mockup</i> do produto, <i>iv)</i> um cronograma das entregas do
 projeto e <i>v)</i> um cronograma das atividades do projeto.  
 
 <subsubsubsecao>Objetivo</subsubsubsecao>
 
-   ...
+    Lançar até dezembro de 2019 um novo portal corporativo aderente a
+identidade visual prevista na
+<link>http://www.csjt.jus.br/documents/955023/998680/Resolu%C3%A7%C3%A3o+n.+243+CSJT/f52ccda4-80a0-375e-b591-d04c4e8a7468</link>
+<text>Resolução CSJT nº 243/2019</text> e no
+<link>http://www.csjt.jus.br/web/csjt/identidadevisualjt</link><text>Guia de
+Padronização das páginas iniciais dos Portais da JT</text>. O portal deve
+definir uma nova organização da informação que promova o acesso intuitivo e
+universal (em qualquer dispositivo por qualquer pessoa) à informação,
+observando os padrões de acessibilidade existentes, assim como deve utilizar
+autenticação a partir de credenciais existentes na institução, deve possuir
+controle de acesso para edição do conteúdo por área de publicação e receber
+o conteúdo existente no portal atual.
 
 <subsubsubsecao>Requisitos</subsubsubsecao>
 
+    Os requisitos detalham os temas extraídos do objetivo do projeto.
+
 <lista>
-    <item/>A plataforma deve ser web, livre, responsiva e modular;
-    <item/>A plataforma seguir recomendações de acessibilidade;
-    <item/>A plataforma deve aceitar autenticação e autorização pelo serviço
+    <item/>A tecnologia deve ser web, livre, responsiva e modular;
+    <item/>A tecnologia deve permitir a conformidade de acessibilidade;
+    <item/>A tecnologia deve aceitar autenticação e autorização pelo serviço
     LDAP;
-    <item/>A plataforma deve permitir o controle de acesso por meio de perfis
+    <item/>A tecnologia deve permitir o controle de acesso por meio de perfis
     e permissões;
-    <item/>A plataforma deve permitir a publicação e despublicação de
+    <item/>A tecnologia deve permitir a publicação e despublicação de
     conteúdo;
-    <item/>A plataforma deve ser compatível com base de dados suportada;
+    <item/>A tecnologia deve ser compatível com base de dados suportada;
 </lista>
 
-<subsubsubsecao>Protótipo de Mockup</subsubsubsecao>
-
-   ...
+    <b>Tarefa:</b> acessar o Documento de Requisitos do projeto.
 
 <subsubsubsecao>Cronograma de entregas</subsubsubsecao>
 
-<lista>
-    <item/>Selecionar a plataforma para construção do Portal Corporativo;
-    <item/>Capacitação na plataforma;
-    <item/>Identificar a nova arquitetura da informação;
-    <item/>Definir a identidade visual;
-    <item/>Construir um protótipo funcional;
-    <item/>Implantar o portal em ambiente de produção;
-    <item/>Criar as áreas de publicação;
-    <item/>Configurar a autenticação e autorização;
-    <item/>Cadastrar ou migrar o conteúdo da plataforma anterior;
-    <item/>Capacitação dos usuários publicadores;
-    <item/>Definir e executar um plano de comunicação do lançamento;
-    <item/>Colocar no ar o novo Portal Corporativo;
-</lista>
+<enumerar>
+    <item/>Seleção da tecnologia para construção do Portal Corporativo - <i>10/2019</i>;
+    <item/>Capacitação na tecnologia - <i>10/2019</i>;
+    <item/>Definição da identidade visual - <i>10/2019</i>;
+    <item/>Identificação da nova arquitetura da informação - <i>pendente</i>;
+    <item/>Construção de um protótipo funcional na tecnologia - <i>pendente</i>;
+    <item/>Implantação do portal em ambiente de produção - <i>pendente</i>;
+    <item/>Criação das áreas de publicação - <i>pendente</i>;
+    <item/>Recadastro ou migração o conteúdo da tecnologia anterior - <i>pendente</i>;
+    <item/>Configuração da autenticação e autorização - <i>pendente</i>;
+    <item/>Capacitação dos usuários publicadores - <i>pendente</i>;
+    <item/>Definir e executar um plano de comunicação do lançamento - <i>pendente</i>;
+    <item/>Colocar no ar o novo Portal Corporativo - <i>pendente</i>;
+</enumerar>
+
+    <b>Tarefa:</b> acessar o vídeo do protótipo.
+
+
+<subsubsubsecao>Esboço ou mockup do produto</subsubsubsecao>
+
+    <b>Esboço do Produto</b>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/projeto-esboco.png</arquivob>
+    <legenda>Esboço do produto baseado no Portal do CSJT</legenda>
+    <nome>fig:projeto-esboco</nome>
+</figura>
+
+   <b>Mockup do Produto</b>
+
+<figura>
+    <tamanhob>0.6</tamanhob>
+    <arquivob>imgs/projeto-mockup.png</arquivob>
+    <legenda>Esboço do produto baseado no Portal do CSJT</legenda>
+    <nome>fig:projeto-mockup</nome>
+</figura>
 
 <subsubsubsecao>Cronograma de atividades</subsubsubsecao>
 
-   ...
+   O cronograma de atividades é o detalhamento das entregas, com relação das
+ações, responsáveis, prazos,
+
+    <b>Tarefa:</b> acessar o cronograma anexo do Plano de Projeto.
 
 <subsecao>Software básico</subsecao>
 
