@@ -134,6 +134,9 @@ o objetivo do projeto,  <i>ii)</i> os requisitos do projeto, <i>iii)</i> um
 esboço ou <i>mockup</i> do produto, <i>iv)</i> um cronograma das entregas do
 projeto e <i>v)</i> um cronograma das atividades do projeto.  
 
+   Arquivos de apoio a este capítulo estão disponíveis em:
+<url>https://bit.ly/portal-reinaldoc</url>.
+
 <subsubsubsecao>Objetivo</subsubsubsecao>
 
     Lançar até dezembro de 2019 um novo portal corporativo aderente a
@@ -177,7 +180,7 @@ o conteúdo existente no portal atual.
     <item/>Construção de um <u>protótipo funcional</u> na tecnologia - <i>pendente</i>;
     <item/>Implantação do portal <u>em ambiente de produção</u> - <i>pendente</i>;
     <item/>Criação das áreas de publicação com conteúdo <u>categorizado/classificado</u> - <i>pendente</i>;
-    <item/>Recadastro ou migração o conteúdo da tecnologia anterior - <i>pendente</i>;
+    <item/>Recadastro ou migração do conteúdo da tecnologia anterior - <i>pendente</i>;
     <item/>Configuração da autenticação e autorização - <i>pendente</i>;
     <item/>Capacitação dos usuários publicadores - <i>pendente</i>;
     <item/>Definir e executar um plano de comunicação do lançamento - <i>pendente</i>;
@@ -219,10 +222,27 @@ o conteúdo existente no portal atual.
 
 <subsubsubsecao>Cronograma de atividades</subsubsubsecao>
 
-   O cronograma de atividades é o detalhamento das entregas, com relação das
-ações, responsáveis, prazos,
+   O cronograma de atividades é o detalhamento das entregas em ações,
+responsáveis e estimativa de prazos.
 
-    <b>Tarefa:</b> acessar o cronograma anexo do Plano de Projeto.
+    <b>Tarefa:</b> acesse o cronograma anexo do Plano de Projeto.
+
+    As entregas <b>Criação das áreas de publicação com conteúdo
+categorizado/classificado</b> e <b>Recadastro ou migração do conteúdo da
+tecnologia anterior</b> são aquelas com maior complexidade de estimar. Vamos
+utilizar um método de estimativa por pontos de esforço, para isso:
+
+<enumerar>
+  <item/>crie em forma de árvore um índice para todo o conteúdo;
+  <item/>atribua nota de 1 a 9 para cada folha da árvore, sendo 1 para pouco
+conteúdo e 9 para muito conteúdo;
+  <item/>some o total de pontos;
+  <item/>implemente alguns itens para determinar quantos minutos equivale a
+1 ponto;
+  <item/>multipique pelo total de pontos para obter uma estimativa;
+</enumerar>
+
+    <b>Tarefa:</b> acesse o artefato Arquitetura da Informação.
 
 <subsecao>Software básico</subsecao>
 
@@ -275,11 +295,11 @@ installer menu', então prossiga com a instalação.
 
 <lista>
   <item>Nome da máquina</item>: drupal
-  <item>Nome do domínio</item>: exemplo.com.br
-  <item>Senha do root</item>: senha*complexa
+  <item>Nome do domínio</item>: trt15.jus.br
+  <item>Senha do root</item>: *senha*
   <item>Nome completo do novo usuário</item>: Reinaldo Gil Lima de Carvalho
   <item>Nome de usuário</item>: reinaldoc
-  <item>Senha do novo usuário</item>: outra*complexa
+  <item>Senha do novo usuário</item>: *outra*senha*
   <item>Configurar o relógio</item>: Nome do Estado
 </lista>
 
@@ -288,14 +308,9 @@ installer menu', então prossiga com a instalação.
     É indicado abaixo um esquema simples de particionamento.
 
 <enumerar>
-  <item>Método de particionamento</item>: Manual.
-  <item>Selecione o disco local <i>HARDDISK</i> para criar nova tabela de partições</item>.
-  <item>Selecione a opção <i>ESPAÇO LIVRE</i> para criar novas partições</item>:
-  <lista>
-    <item>#1:</item> 256 MB - primária, início, <b>Usar como</b>: Área de troca (swap);
-    <item>#2:</item> max    - primária, início, <b>Usar como</b>: ext4, <b>Flag inicializável</b>: ligado;
-    <item>Finalizar a configuração da partição</item>.
-  </lista>
+  <item>Método de particionamento</item>: Assistido - usar o disco inteiro;
+  <item>Selecione o disco a ser particionado</item>: SCSI2 [...] ATA VBOX HARDDISK;
+  <item>Esquema de particionamento</item>: Todos os arquivos em uma   partição;
   <item>Finalizar o particionamento e escrever as mudanças no disco</item>.
   <item>Escrever as mudanças nos discos</item>: Sim.
 </enumerar>
@@ -327,7 +342,7 @@ selecionar a opção <b>Salvar estado da máquina</b>.
     A configuração padrão da interface de rede da máquina virtual é
 <b>NAT</b>, o que impede o acesso remoto a ela. Assim, há duas formas
 possíveis para resolver isto, a mais simples é alterar a configuração da
-interface de rede para <b>Place em modo bridge</b>, isto fará com que a
+interface de rede para <b>Place em modo Bridge</b>, isto fará com que a
 máquina virtual tenha acesso a rede por meio de seu próprio endereço MAC,
 obtendo um novo IP da mesma rede da máquina real.
 
@@ -337,6 +352,15 @@ configuração da primeira placa de rede da máquina virtual como <b>NAT</b> e
 adicione uma outra interface de rede na máquina virtual do tipo
 <b>Host-only</b>, essa interface permitirá o acesso remoto a máquina
 virtual.
+
+<lista>
+  <item/>selecione a máquina virtual e use a opção <b>Configurações</b>;
+  <item/>selecione o item <b>Rede</b> no menu;
+  <item/>selecione a aba <b>Adaptador 2</b>;
+  <item/>marque a opção <b>Habilitar Place de Rede</b>;
+  <item/>selecione a opção <b>Place de rede exclusiva do hospedeiro
+  (host-only)</b> em <i>conectado a</i>;
+</lista>
 
     Agora, ligue a máquina virtual. Use o comando <b>dhclient enp0s8</b>
 para obter um IP nesta nova interface e use o comando <b>ip addr enp0s8</b>
@@ -417,9 +441,13 @@ apt-get upgrade
 apt-get install openssh-server
 </comando>
 
-    Edite o arquivo <b>/etc/ssh/sshd_config</b>, altere a configuração
-<b>PermitRootLogin yes</b> e salve-o. Isso permitirá o login como
-<b>root</b> no serviço de acesso remoto.
+    Configure o serviço de acesso remoto para permitir login com usuário
+<b>root</b>. Edite o arquivo <b>/etc/ssh/sshd_config</b> e realize a
+seguinte configuração:
+
+<comando>
+PermitRootLogin yes
+</comando>
 
     Reinicie o serviço de acesso remoto por meio do comando:
 
