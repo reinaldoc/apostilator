@@ -226,70 +226,20 @@ ações, responsáveis, prazos,
 
 <subsecao>Software básico</subsecao>
 
-<subsubsecao>Compilação de <i>software</i> X <i>software</i> empacotado</subsubsecao>
-<nome>compilacao-vs-pacote</nome>
+    Em ambientes corporativos a utilização de <b>software básico</b>
+fornecido por um distribuidor é essencial, significa utilizar um método
+padronizado de instalação, com versões padronizadas para o conjunto de
+servidores, além de um processo de atualização eficiente, sendo rapidamente
+disponibilizadas as correções de segurança.
 
-    O acesso ao código fonte do <i>software</i> e sua compilação, é uma das
-liberdades propiciadas pelo <i>software livre</i>. Entretanto, o <i>software</i>
-também pode ser obtido em forma executável (compilada), e de forma integrada
-ao sistema operacional (empacotado), já estando pronto para utilização.
-Cada uma destas opções possui vantagens e desvantagens que serão enumeradas
-a seguir:
+    Assim, utilizar uma distribuição Linux diminui o esforço empregado para
+a manutenção do sistema operacional e serviços essenciais. O Debian
+GNU/Linux é uma referência no fornecimento de versões estáveis e um processo
+rápido de correções de falhas descobertas.
 
-    Características do <i>software</i> obtido na forma de executável (previamente compilado):
+    Há 15 anos, este instrutor é mencionado como consultor do Debian:
 
-<lista>
-<item/> <b>V:</b> Instalação rápida que requer menos espaço em disco; evita a
-compilação do <i>software</i>, assim como, a instalação de <i>software</i> de compilação
-(make, gcc, etc) e cabeçalhos de bibliotecas (libc6-dev, etc)
-
-<item/> <b>V:</b> Instalação automatizada de <i>software</i> e de bibliotecas
-necessárias (dependências) para o funcionamento do <i>software</i> principal.
-
-<item/> <b>V:</b> Versão testada pelo distribuidor do <i>software</i> (em geral
-o distribuidor do sistema operacional), e possivelmente livre de erros.
-
-<item/> <b>V:</b> Possibilita atualizações e correções de falhas de segurança
-de forma automática, e fornecida pelo distribuidor do sistema operacional.
-
-<item/> <b>V:</b> Facilita suporte externo devido ao método de instalação
-padronizado e utilização de versões invariantes do <i>software</i>.
-
-<item/> <b>V/D:</b> Pode não ser a versão mais nova do <i>software</i>, e não
-possuir funcionalidades mais recentes. Todavia, a utilização de versões 
-maduras, tende a fornecer maior estabilidade.
-
-</lista>
-
-    Características do <i>software</i> obtido a partir do código fonte:
-
-<lista>
-<item/> <b>D:</b> Instalação mais complexa e demorada, demanda instalação
-manual de bibliotecas externas.
-
-<item/> <b>D:</b> Atualizações e correções são manuais, exigindo atenção
-diária às atualizações necessárias para correções de falhas de segurança.
-
-<item/> <b>D:</b> Dificulta suporte externo pois não é um método de
-instalação padronizado.
-
-<item/> <b>V/D:</b> Permite utilizar a última versão do <i>software</i>,
-com os novos recursos, mas trata-se de código menos testado podendo possuir
-falhas não detectadas.
-
-<item/> <b>V:</b> Pode permitir um ganho de performace com a compilação com
-otimizações do processador, e também com o desligamento de recursos não
-utilizados do <i>software</i>.
-
-</lista>
-
-    Após o levantamento destas características, é notável que em ambientes
-corporativos a utilização de <i>software</i> fornecido por um distribuidor é
-essencial para a disponibilidade dos sistemas.
-
-    Diminui-se o esforço empregado para manter o sistema atualizado e livre
-de falhas. O Debian GNU/Linux possui uma equipe eficiente, que disponibiliza
-rapidamente correções para as falhas descorbertas.
+    <link>https://www.debian.org/consultants/#BR</link><text>www.debian.org/consultants</text>
 
 <subsubsecao>Instalação do Sistema Operacional</subsubsecao>
 
