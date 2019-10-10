@@ -684,6 +684,10 @@ automaticamente incluídas nesta opção;
   </lista>
 </lista>
 
+    <importante/>Verifique que além de ativar os botões da alinhamento na
+barra de formatação é necessário ainda adicionar <b><p class ></b> as tags
+permitidas.
+
     O módulo IMCE fornece dois novos botões para a barra de formação, um
 para upload de imagens e inserção da imagem no corpo do texto, outro para o
 upload de arquivos e inserção de links. Após a instalação deste módulo
