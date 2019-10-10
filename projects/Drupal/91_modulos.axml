@@ -1326,7 +1326,7 @@ compartilhamento disponíveis.
 
 <comando>
 <a class="a2a_button_whatsapp"></a>
-<a class="a2a_button_gmail"></a>
+<a class="a2a_button_google_gmail"></a>
 <a class="a2a_button_twitter"></a>
 <a class="a2a_button_facebook"></a>
 <a class="a2a_button_linkedin"></a>
@@ -1334,6 +1334,22 @@ compartilhamento disponíveis.
 
     Habilite o campo <b>AddToAny</b> por meio da opção <b>Gerenciar exibição</b>
 para cada <b>Tipo de Conteúdo</b>,
+
+<subsubsubsecao>Twitter</subsubsubsecao>
+
+    Um bloco HTML pode ser utilizado para exibir o <i>feed</i> de um Twitter
+a partir do endereço da conta. Substitua 'xxxxxxx' pelo endereço correto.
+
+<comando>
+<a class="twitter-timeline" data-lang="pt"
+data-width="300" data-height="900" data-chrome="nofooter transparent"
+href="https://twitter.com/xxxxxxx?ref_src=twsrc%5Etfw">
+Tweets by trt8_oficial
+</a >
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+</script >
+</comando>
 
 <subsubsecao>ShareThis</subsubsecao>
 
