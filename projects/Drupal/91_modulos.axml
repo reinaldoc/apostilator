@@ -597,6 +597,21 @@ determinado menu, é necessário, além de conceder permissão para
 administração desse menu, que o menu esteja vinculado ao respectivo tipo de
 conteúdo. Esse vínculo é realizado na edição do tipo de conteúdo.
 
+    A versão <b>8.x-1.0</b> não habilita a opção <b>Disponibilizar um link
+no menu</b> ao criar ou editar um conteúdo. Esse recurso necessita dos
+patchs abaixo.
+
+<comando>
+cd /var/www/portal/drupal/modules/menu_admin_per_menu
+wget https://drupal.org/files/issues/2900957--fix-add-items-edit-create-node.patch
+wget https://drupal.org/files/issues/2018-11-30/2900957-default-menu-items.patch
+patch -p1 < 2900957--fix-add-items-edit-create-node.patch
+patch -p1 < 2900957-default-menu-items.patch
+</comando>
+
+    Após aplicar os patchs, use a opção <b>Configurações => Desenvolvimento
+=> Desempenho => Limpar todos os caches</b>.
+
     <br/>0.3cm
 
 <subsubsubsecao>Configuração das opções do tipo de conteúdo por node</subsubsubsecao>
