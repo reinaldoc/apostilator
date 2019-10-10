@@ -72,8 +72,7 @@ alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
 
 <lista>
   <item/>use a opção em <b>Estrutura => Menus => Adicionar menu</b>;
-  <item/>defina o nome do menu como <b>Menu: Nome da Área</b>;
-  <item/>edite o nome no sistema e remova o prefixo <b>menu-</b>;
+  <item/>defina o nome do menu <b>Nome da Área</b>;
   <item/>preencha a descrição contendo em que local o menu será utilizado;
   <lista>
     <item/>Menu para Nome da Área;
@@ -109,7 +108,7 @@ alternativas de exibição do mesmo termo, como uma relação de Estados: "PA",
     <item/>desative a opção <b>Promovido para a página inicial</b>;
     <item/>ative a opção <b>Criar nova revisão</b>;
   </lista>
-  <item/>em <u>opções de exibição</u>:
+  <item/>em <u>opções de exibição (módulo Submitted By, somente Drupal 7)</u>:
   <lista>
     <item/>configure o template do autor e data (aceita html);
     <item/>Conteúdo de responsabilidade da <strong >Seção de Sistemas (SESIC)</strong >.
@@ -152,17 +151,17 @@ field_noticia_link, field_noticia_imagem.
   conforme exemplos:
   <lista>
     <item/>fields/[node:content-type:machine-name]
-    <item/>fields/[node:content-type:machine-name]/[node:field-data:custom:Y]
+    <item/>fields/[node:content-type:machine-name]/[node:field_data:date:custom:Y]
     <item/>fields/[node:content-type:machine-name]/comissao_id[node:field-nome-reference:nid]
   </lista>
   <item/>defina o modelo do nome do arquivo em <b>File name</b> conforme
   exemplos:
   <lista>
     <item/>[node:nid]_[node:title].[file:ffp-extension-original]
-    <item/>Revista_[node:field-numero].[file:ffp-extension-original]
-    <item/>Relatorio_[node:field-data:custom:Y-m]_Tipo1_id[file:fid].[file:ffp-extension-original]
-    <item/>Anexo-[node:field-taxonomia:field-taxonomia-campo]_id[file:fid].[file:ffp-extension-original]
-    <item/>[node:field-taxonomia:name]-[node:field-data:custom:Y-m-d]_[node:field-nome-reference:title] _id[file:fid].[file:ffp-extension-original]
+    <item/>Revista_[node:field_numero].[file:ffp-extension-original]
+    <item/>Relatorio_[node:field_data:date:custom:Y-m]_id[file:fid].[file:ffp-extension-original]
+    <item/>Anexo-[node:field_taxonomia:entity:name]_id[file:fid].[file:ffp-extension-original]
+    <item/>Obra_[node:field_reference:title]_id[file:fid].[file:ffp-extension-original]
   </lista>
   <item/>ative a opção <b>Remove slashes (/) from tokens</b> nas opções do
   nome do arquivo;
@@ -259,13 +258,7 @@ tipo de conteúdo próprio e uma view para listá-los.
 
 </lista>
 
-    <importante>Crie um perfil do IMCE denominado <b>Usuário Autenticado</b>,
-sem permissão a acessar diretórios, e associe-o a eventuais papéis que não
-editam Artigos.</importante>
-
-<br/>0.4cm
-
-<subsubsubsecao>Caminhos de navegação (breadcrumb)</subsubsubsecao>
+<subsubsubsecao>Caminhos de navegação (módulo Path Breadcrumbs, somente Drupal 7)</subsubsubsecao>
 
 <lista>
   <item/>use a opção em <b>Estrutura => Path Breadcrumbs => Create new path
