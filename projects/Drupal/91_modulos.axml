@@ -798,16 +798,17 @@ results</b>.
     <item/>use tokens para definir o diretório (<i>File path</i>);
     <item/>use tokens para definir o nome do arquivo (<i>File name</i>);
   </lista>
-  <item>Diretório (<i>File path</i>)</item>:
+  <item>Diretório/Caminho do arquivo (<i>File path</i>)</item>:
   <lista>
-    <item/>images/[node:content-type:machine-name]
-    <item/>images/[current-date:custom:Y]/[node:content-type:machine-name]
+    <item/>fields/[node:content-type:machine-name]
+    <item/>fields/[node:content-type:machine-name]/[node:field_data:date:custom:Y]
   </lista>
   <item>Nome do arquivo (<i>File name</i>)</item>:
   <lista>
     <item/>[file:ffp-name-only-original].[file:ffp-extension-original]
-    <item/>[node:nid]_[node:title].[file:ffp-extension-original]
-    <item/>[node:field-data-relatorio:custom:Y-m]-[node:field-categoria-despesa:name].[file:ffp-extension-original]
+    <item/>[node:nid]_[node:title]_[file:fid].[file:ffp-extension-original]
+    <item/>Provimento_[node:field_data:date:custom:Y].[file:ffp-extension-original]
+    <item/>Concurso_[node:field_conc_doc_tipo:entity:name]_[file:fid].[file:ffp-extension-original]
   </lista>
 </lista>
 
@@ -815,8 +816,13 @@ results</b>.
 disponíveis após a instalação do módulo <b>File (Field) Paths</b>, a lista
 com os tokens que podem ser utilizados é fornecida pelo módulo
 <b>Token</b>. O módulo <b>Token</b> também fornece dezenas de novos tokens,
-como o <b>[current-date:custom:Y]</b> que retorna o ano atual. Ative o
-módulo <b>Entity Tokens</b> para usar tokens para taxonomias e outros.
+como o <b>[current-date:custom:Y]</b> que retorna o ano atual.
+
+    Pode-se utilizar <b>_id[file:fid]</b> ao final do nome do arquivo a fim
+de obter um nome único para o arquivo.
+
+    No Drupal 7, ative o módulo <b>Entity Tokens</b> para usar tokens para
+taxonomias e outros.
 
 <subsubsecao>Token</subsubsecao>
 
