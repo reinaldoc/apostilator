@@ -363,9 +363,9 @@ virtual.
 </lista>
 
     Agora, ligue a máquina virtual. Use o comando <b>dhclient enp0s8</b>
-para obter um IP nesta nova interface e use o comando <b>ip addr enp0s8</b>
-para identificar o IP obtido. Por meio deste IP será possível realizar o
-acesso remoto à máquina virtual.
+para obter um IP nesta nova interface e use o comando <b>ip addr</b> para
+identificar o IP obtido pela interface <b>enp0s8</b>. Por meio deste IP será
+possível realizar o acesso remoto à máquina virtual.
 
 <step>Execução de comandos e edição de arquivos no terminal</step>
 
