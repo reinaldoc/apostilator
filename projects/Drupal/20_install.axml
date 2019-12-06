@@ -2,10 +2,7 @@
 <nome>drupal-install</nome>
 
     Este capítulo contém os procedimentos para instalação e configuração
-dos serviços necessários para a execução do Drupal. Na
-seção<ref>compilacao-vs-pacote</ref> foram expostas as vatangens do uso de
-uma distribuição para o fornecimento dos pacotes e das respectivas correções
-de falhas de segurança.
+dos serviços necessários para a execução do Drupal.
 
 <step>Crie o usuário proprietário dos arquivos do site</step>
 <comando>
@@ -46,7 +43,7 @@ permissions and ownership</text>.
 
     Ajuste a opção <b>ServerName</b> para o endereço IP da máquina.
 
-<comandoNumerado>
+<comando>
 <Directory /var/www/portal/>
     Options Indexes FollowSymLinks
     AllowOverride All
@@ -60,13 +57,13 @@ permissions and ownership</text>.
     ErrorLog ${APACHE_LOG_DIR}/error-drupal.log
     CustomLog ${APACHE_LOG_DIR}/access-drupal.log combined
 </VirtualHost>
-</comandoNumerado>
+</comando>
 
 <lista>
     <item>Para ambientes de produção com criptografia HTTPS</item>:
 </lista>
 
-<comandoNumerado>
+<comando>
 <Directory /var/www/portal/>
     Options Indexes FollowSymLinks
     AllowOverride All
@@ -95,7 +92,7 @@ permissions and ownership</text>.
 
     </VirtualHost>
 </IfModule>
-</comandoNumerado>
+</comando>
 
 <lista>
     <item>Ative os módulos e a configuração recém criada</item>:
@@ -116,8 +113,6 @@ permissions and ownership</text>.
 # l.25
 ServerTokens Prod
 </comando>
-
-<quebraPagina/>
 
 <step>Configuração do PHP</step>
 
@@ -156,20 +151,22 @@ date.timezone = America/Belem
 <step>Criação do schema e concessão de permissões</step>
 
     Durante a criação do usuário é possível restringir o IP de origem da
-conexão, caso deseje permitir a conexão a partir de qualquer IP, substitua o
-termo <b>localhost</b> por <b>%</b>.
+conexão ao banco de dados, assim caso esteja preparando um ambiente de
+produção, substitua <b>%</b> pelo IP do servidor em que o Drupal será
+utilizado.
 
 <comando>
 # mysql -p
 > CREATE DATABASE portal CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-> CREATE USER 'portal'@'localhost' IDENTIFIED BY 'top-secret';
+> CREATE USER 'portal'@'%' IDENTIFIED BY 'top-secret';
 > GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, \
-        REFERENCES ON portal.* TO 'portal'@'localhost';
+        REFERENCES ON portal.* TO 'portal'@'%';
 > QUIT;
 </comando>
 
-    Além disso, para permitir a conexão a partir de outro <i>host</i> é
-necessário alterar o parâmetro:
+    A configuração padrão restringe a conexão apenas para <b>localhost</b>,
+para alterar isto, é necessário ajustar o parâmetro <b>bind-address</b>
+conforme indicado a seguir.
 
 <comando>
 # /etc/mysql/mariadb.conf.d/50-server.cnf
@@ -200,12 +197,12 @@ configuração foi alterado.
 
 <step>Instalação do servidor de VSFtpd</step>
 
-    O pacote <b>ftp</b> fornece um cliente de FTP utilizado para testar a
-conexão. A instalação deste pacote não é obrigatória.
-
 <comando>
 # apt-get install vsftpd ftp
 </comando>
+
+    O pacote <b>ftp</b> fornece um cliente utilizado para testar a
+conexão com o servidor <b>VSFTPd</b>. 
 
 <step>Restrição de diretório via FTP (chroot)</step>
 

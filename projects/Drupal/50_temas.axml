@@ -9,225 +9,107 @@
   </lista>
 </lista>
 
-<subsecao>Referências</subsecao>
-
 <lista>
-  <item/><url>https://drupal.org/node/2792973</url> ⇒ guia do sistema de temas do Drupal;
-  <item/><url>https://drupal.org/node/171194</url> ⇒ overview;
-  <item/><url>https://drupal.org/node/225125</url> ⇒ sub-theme;
-  <item/><url>https://drupal.org/node/388372</url> ⇒ default CSS classes;
-  <item/><url>https://drupal.org/node/778884</url> ⇒ blocks CSS IDs;
-  <item/><url>https://drupal.org/node/2802991</url> ⇒ code standards;
-  <item/><url>https://drupal.org/node/1886770</url> ⇒ CSS code standards;
-  <item/><url>https://drupal.org/node/1354</url> ⇒ API documentation and comment standards;
-  <item/><url>https://drupal.org/node/1089656</url> ⇒ themes hook;
-  <item/><url>https://drupal.org/node/190815</url> ⇒ core .tpl.php;
-  <item/><url>https://drupal.org/node/313510</url> ⇒ convertendo o leiaute para template;
-  <item/><url>https://drupal.org/node/394094</url> ⇒ boas práticas de acessibilidade;
-  <item/><url>https://www.youtube.com/watch?v=cOqVXvepAlw</url> ⇒ Evaluating Base Themes;
+  <item>Referência</item>
+  <lista>
+  <item/><url>https://drupal.org/docs/8/theming</url> ⇒ guia do sistema de temas do Drupal;
+  </lista>
 </lista>
 
-    Neste
-artigo<link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link>
-<text>[1]</text>, Emma Jane Hogbin, classifica os temas base em três grupos
-[pág. 3-4], com objetivos [pág. 5] e aplicabilidades [pág. 6] distintas,
-bem como apresenta suas principais características [pág. 9-12], pelas
-palavras de seus próprios autores.
-
-    [1] <link>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</link>
-<text>https://munich2012.drupal.org/sites/default/files/slides/basethemes-handout-munich_2.pdf</text>
-
-
-<subsecao>Diretórios Locais</subsecao>
-
-<lista>
-  <item>/themes/</item> ⇒ temas do núcleo do Drupal;
-  <item>/sites/all/themes/</item> ⇒ temas disponíveis para todos os sites;
-  <item>/sites/[instância]/themes/</item> ⇒ temas disponíveis para um determinado site;
-</lista>
-
-    Não coloque temas no diretório de temas do núcleo do Drupal, isto pode
-causar problemas de atualização do Drupal.
-
-<subsecao>Temas base</subsecao>
+<subsecao>Tema base</subsecao>
 
    O processamento de temas do Drupal utiliza um modelo de herança em que
 qualquer tema pode ser utilizado como <b>tema base</b> para ser
 completamente customizado, seja com alterações de CSS, de JavaScript, de
-<i>templates</i> ou das opções de configuração do tema disponíveis aos
-usuários. Criar um <b>subtema</b> é a forma para sobrepor qualquer
-comportamento do <b>tema base</b>.
-
-   Apesar de qualquer tema poder ser utilizado como <b>tema base</b> para a
-criação de um <b>subtema</b>, há temas desenvolvidos unicamente para serem
-utilizados como <b>tema base</b>, são um ponto de partida e fornecem
-recursos que agilizam o desenvolvimento.
-
-   Esses temas base são úteis apenas para o desenvolvimento de novos temas,
-quando ativados diretamente apresentam uma interface sem qualquer identidade
-visual, ou seja, sem estilos.
-
-<subsubsecao>Zen</subsubsecao>
-
-    O <b>Zen</b> é um tema base especializado para o desenvolvimento de
-subtemas <i>from scratch</i>, ou seja, a partir de criação <i>templates</i>
-HTML, arquivos CSS e JavaScript. O Zen vem como recursos para utilização de
-recursos como o Gulp, SASS e COMPASS.
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/zen</url>
-  <item>Função</item>: tema base para o desenvolvimento <i>from scratch</i>;
-  <item>Uso</item>:
-  <lista>
-    <item/>consulte as instruções em <b>zen/STARTERKIT/README.txt</b> e crie
-um subtema;
-  </lista>
-</lista>
-
-<comando>
-cp -a sites/all/themes/zen/STARTERKIT sites/all/themes/myzentheme
-cd sites/all/themes/myzentheme
-cp ../zen/templates/html.tpl.php templates/
-cp ../zen/templates/page.tpl.php templates/  # e outros templates;
-mv STARTERKIT.info.txt myzentheme.info
-editar myzentheme.info
-touch myzentheme.css
-sed -i 's/STARTERKIT/myzentheme/g' template.php
-sed -i 's/STARTERKIT/myzentheme/g' theme-settings.php
-</comando>
-
-<subsubsecao>Tao</subsubsecao>
-
-    O <b>Tao</b> é um tema base para o desenvolvimento <i>from scratch</i> de
-subtemas. Fornece o CSS <i>reset.css</i> para sobrepor todos os estilos
-padrões do navegadores, bem como <i>drupal.css</i> para reimplementar
-estilos CSS do núcleo do Drupal que são funcionalmente importantes e
-o <i>base.css</i> para ajustes estruturais dos elementos.
-
-    Além disso, possui arquivos de <i>template</i> para fieldset.tpl.php,
-node.tpl.php, object.tpl.php, page.tpl.php e views-view-grid.tpl.php. Veja
-mais informações no arquivo <b>README.md</b> que acompanha o módulo.
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/tao</url>
-  <item>Função</item>: tema base para o desenvolvimento <i>from scratch</i>;
-  <item>Uso</item>:
-  <lista>
-    <item/>crie um novo subtema e defina o parâmetro <b>base theme =
-           tao</b> no arquivo .info;
-  </lista>
-</lista>
-
-    O tema administrativo <link>https://drupal.org/project/rubik</link>
-<text><b>Rubik</b></text> é um exemplo de subtema do Tao.
-
-<subsubsecao>Adaptive Theme (AT Core)</subsubsecao>
-
-    <b>Adaptive Theme (AT Core)</b> é um <i>framework</i> que provê um
-leiaute responsivo e um conjunto de ferramentas para o desenvolvimento
-de subtemas. É um tema base utilizado por subtemas como o <b>Pixture
-Reloaded</b> e <b>Sky</b>. A documentação para criação de subtemas do
-<b>Adaptive Theme</b> está disponível em
-<url>https://adaptivethemes.com/documentation</url>.
-
-   Os temas derivados do <b>Adaptive Theme - AT</b> fornecem uma interface
-completa de configuração de leiaute e estilos para usuários que não conhecem
-programação.
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/adaptivetheme</url>
-  <item>Função</item>: tema para customização por configuração;
-  <item>Subtemas do Adaptive Theme</item>
-  <lista>
-    <item/><url>https://drupal.org/project/pixture_reloaded</url>
-    <lista>
-      <item/>associe o menu <b>Main Menu</b> à região <b>Menu Bar</b>;
-      <item/>experimente os schemas de cores <b>Red Carpet</b> e
-             <b>Aquamarine</b>;
-      <item/>desative ou altere a largura máxima do site;
-      <item/>ative a extensão <b>Custom CSS</b>;
-    </lista>
-    <item/><url>https://drupal.org/project/sky</url>
-    <lista>
-      <item/>associe o menu <b>Main Menu</b> à região <b>Menu Bar</b>;
-      <item/>experimente o schema de cores <b>Blue Sky</b> com textura de
-             corpo da página <b>Grid</b>;
-      <item/>experimente o schema de cores <b>Purple</b> com textura de
-             corpo da página <b>Dots</b>;
-      <item/>altere o alinhamento do campo imagem para esquerda;
-    </lista>
-    <item/><url>https://drupal.org/project/omega</url>
-    <item/><url>https://drupal.org/project/corolla</url>
-    <item/><url>https://drupal.org/project/footheme</url> [skeleton para criar at sub-theme];
-  </lista>
-  <item>Uso</item>:
-  <lista>
-    <item/>instale o tema <link>http://drupal.org/project/adaptivetheme</link>
-           <text><b>AdaptiveTheme</b></text>;
-    <item/>instale e ative um dos subtemas do <b>Adaptive Theme</b>;
-  </lista>
-</lista>
-
-    Os arquivos de <i>template</i> são mais complexos porque incluem lógica
-para que a definição do leiaute da página, como número de colunas e
-percentual de largura de cada uma, ocorra pela configuração do tema.
-
-    <importante/>Após instalar o <b>Adaptive Theme - AT</b> e algum subtema
-é necessário acessar as configurações do tema e salvá-las ao menos uma vez,
-ainda que nenhuma configuração do tema tenha sido alterada.
-
-<quebraPagina/>
+<i>templates</i> ou das opções de configuração do tema. Criar um
+<b>subtema</b> é a forma para sobrepor qualquer comportamento do <b>tema
+base</b>.
 
 <subsecao>Estrutura do Tema</subsecao>
 
-    Um novo tema depende unicamente da criação de um diretório em
-<b>sites/all/themes</b> e um arquivo de extensão <b>.info</b> com mesmo nome
-do diretório, neste exemplo, denominado <b>portal_brasil</b>.
+    Um tema para o Drupal 8 requer a criação de um diretório em
+<b>/var/www/portal/drupal/themes</b>.
 
 <comando>
-$ mkdir sites/all/themes/portal_brasil
-$ touch sites/all/themes/portal_brasil/portal_brasil.info
+# su -l portal
+$ cd /var/www/portal/drupal/themes
+$ mkdir -p portal_brasil/templates
+$ touch portal_brasil/portal_brasil.info.yml
+$ touch portal_brasil/portal_brasil.libraries.yml
+$ touch portal_brasil/portal_brasil.theme
 </comando>
 
 <lista>
-  <item>portal_brasil.info</item> ⇒ parametrização de regiões e arquivos CSS;
+  <item>portal_brasil.info.yml</item> ⇒ parametrização de regiões;
 </lista>
 
 <comando>
-; theme info
-name = Portal Brasil
-description = Alguma descrição administrativa (suporta tags html)
-engine = phptemplate    ; para tema standalone;
-base theme = bartik     ; para subtema;
+name: Tema padrão do Portal Brasil
+type: theme
+description: 'Tema padrão para o Portal Brasil'
+package: core
+base theme: professional_responsive_theme
+# core: 8.x
 
-; os arquivos CSS, JS e a screenshot são herdados do tema base;
-; se declarar com mesmo nome, os arquivos do tema base serão ignorados;
-screenshot = screenshot.png
-stylesheets[all][] = styles2.css
-stylesheets[screen and (max-width: 480px)][] = mobile2.css
-stylesheets[print][] = print2.css
-scripts[] = script2.js
+#Libraries
+libraries:
+  - professional_responsive_theme/bootstrap
+  - professional_responsive_theme/fontawesome
+  - professional_responsive_theme/global-components
+  - portal_brasil/global-components
 
-; as regiões não são herdadas do tema base, devem ser repetidas aqui;
-regions[sidebar_first] = Left sidebar
-regions[content] = Main Content for Node Rendering
-regions[nome_xyz] = Localização da região
+#Regions
+regions:
+  header: 'Header'
+  identidade: 'Identidade'
+  search: 'Busca'
+  primary_menu: 'Primary Menu'
+  slideshow: 'Slideshow'  
+  topwidget_first: 'Top First Widget'
+  topwidget_second: 'Top Second Widget'
+  topwidget_third: 'Top Third Widget' 
+  highlighted: 'Highlighted' 
+  page_title: 'Page Title'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  content_bottom: 'Content Bottom'
+  sidebar_first: 'Left Sidebar'
+  sidebar_second: 'Right Sidebar'
+  bottom_wrapper: 'Bottom of wrapper content'
+  footer_first: 'Footer First Widget'
+  footer_second: 'Footer Second Widget'
+  footer_third: 'Footer Third Widget'
+  footer_menu: 'Footer Menu'
+  auto_hidden_block: 'Auto hidden blocks'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
 
-; as opções de configuração não são herdadas do tema base, devem ser repetidas aqui;
-features[] = logo
-features[] = name
-features[] = main_menu
-features[] = secondary_menu
-
-; configurações adicionadas ao publicar o tema em drupal.org;
-version = "7.x-1.0"
-core = "7.x"
-project = "portal_brasil"
-datestamp = "1498069849"
+# Information added by Drupal.org packaging script on 2017-11-29
+version: '8.x-1.0'
+core: '8.x'
+project: 'portal_brasil'
+datestamp: 1511981017
 </comando>
 
 <lista>
-  <item>template.php</item>
+  <item>portal_brasil.libraries.yml</item> ⇒ parametrização de CSS e JS;
+</lista>
+
+<comando>
+global-components:
+  Version: 1.x
+  css:
+    theme:
+      css/header.css: {}
+      css/menu.css: {}
+      css/view.css: {}
+      css/footer.css: {}
+</comando>
+
+<quebraPagina/>
+
+<lista>
+  <item>portal_brasil.theme</item>
   <lista>
     <item/>arquivo opcional com lógica de programação do tema;
     <item/>as funções devem iniciar com o nome do tema;
@@ -240,128 +122,133 @@ datestamp = "1498069849"
 </lista>
 
 <comando>
-function portal_brasil_xyz() {}
-function portal_brasil_preprocess_page(&$variables) { kpr($variables); }
-function portal_brasil_preprocess_node(&$variables) { kpr($user); }
+function portal_brasil_preprocess_html(&$variables) { print_r($variables); }
+function portal_brasil_preprocess_page(&$variables) { print_r($variables); }
+function portal_brasil_preprocess_node(&$variables) { print_r($user); }
+function portal_brasil_nomefuncao() {}
 </comando>
 
-<lista>
-  <item>templates/*.tpl.php</item>
-  <lista>
-    <item/>arquivos de <i>template</i> com a estrutura do HTML;
-    <item/>html.tpl.php ⇒ page.tpl.php ⇒ region.tpl.php ⇒ block.tpl.php |
-           node.tpl.php;
-  </lista>
-</lista>
+    O módulo
+<link>https://drupal.org/project/devel</link><text><b>Devel</b></text>
+fornece a função <b>kpr()</b> que pode ser utilizada no lugar de
+<b>print_r()</b> para exibir na tela todo conteúdo de uma array de forma
+amigável.
+
+<subsecao>Templates</subsecao>
+
+    A composição de uma página, ou seja, a produção do HTML apresentado e
+enviado ao usuário, é realizada com a junção de um conjunto de templates,
+essencialmente dos tipos: <b>html</b>, <b>page</b>, <b>region</b>,
+<b>block</b> e <b>node</b>. Apenas um template de cada tipo irá ser
+selecionado para a junção e produção do HTML, como será visto na
+subseção<ref>theme-template-process</ref>.
 
 <lista>
-  <item>Processamento do template</item>: a renderização ocorre a partir do mais específico;
+  <item>html</item>: core/modules/system/html.html.twig
   <lista>
-    <item>↓ node.tpl.php;</item>
+    <item>page</item>: core/modules/system/page.html.twig
+    <item>page</item>: themes/portal_brasil/page.html.twig
+    <item>page</item>: themes/portal_brasil/page--front.html.twig
     <lista>
-      <item/><?php print $title; ?>
-      <item/><?php hide($content['comments']); ?>
-      <item/><?php render($content) ?>
-      <item/><?php render($content['comments']); ?>
-    </lista>
-    <item>↓ region.tpl.php ⇒ block.tpl.php | node.tpl.php;</item>
-    <lista>
-      <item/><?php print $content; ?>
-    </lista>
-    <item>↓ page.tpl.php;</item>
-    <lista>
-      <item/><?php print render($page['content']); ?>
-      <item/><?php print render($page['sidebar_second']); ?>
-      <item/><?php print render($page['footer']) ?>
-    </lista>
-    <item>↓ html.tpl.php;</item>
-    <lista>
-      <item/><<i>head</i>>;
+      <item>region</item>: core/modules/system/region.html.twig
+      <item>region</item>: core/modules/system/region--[region-name].html.twig
       <lista>
-        <item/><?php print $head; ?>
-        <item/><<i>title</i>><?php print $head_title; ?></<i>title</i>>
-        <item/><?php print $styles; ?>
-        <item/><?php print $scripts; ?>
+        <item>block</item>: core/modules/block/block.html.twig
+        <item>block</item>: themes/portal_brasil/block.html.twig
+        <item>block</item>: themes/portal_brasil/block--[region-name].html.twig
+        <item>node</item>: core/modules/node/node.html.twig
+        <item>node</item>: themes/bartik/templates/node.html.twig
+        <item>node</item>: themes/portal_brasil/node.html.twig
+        <item>node</item>: themes/portal_brasil/node--[contenttype].html.twig
+        <item>node</item>: themes/portal_brasil/node--[nid].html.twig
+        <item>comment</item>: core/modules/comment/comment.html.twig
+        <item>comment</item>: themes/bartik/templates/comment.html.twig
+        <item>comment-wrapper</item>: core/modules/comment/comment-wrapper.html.twig
+        <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.html.twig
+        <item>user-profile</item>: core/modules/user/user-profile.html.twig
+        <item>user-profile</item>: themes/portal_brasil/user-profile.html.twig
       </lista>
-      <item/></<i>head</i>>
-      <item/><<i>body</i>>
-      <lista>
-        <item/><?php print $page; ?>
-      </lista>
-      <item/></<i>body</i>>
     </lista>
-  </lista>
-</lista>
-
-<lista>
-  <item>Seleção do template</item>: somente o template mais específico de cada tipo será
-  utilizado;
-  <lista>
-    <item>↓ node--1.tpl.php</item> ⇒ para determinado node Id;
-    <item>↓ node--article.tpl.php</item> ⇒ para determinado tipo de conteúdo;
-    <item>↓ node.tpl.php</item> ⇒ do subtema: sites/all/themes/portal_brasil/node.tpl.php;
-    <item>↓ node.tpl.php</item> ⇒ do tema: themes/bartik/templates/node.tpl.php;
-    <item>↓ node.tpl.php</item> ⇒ do core: modules/node/node.tpl.php;
+    <item>maintenance-page</item>: core/modules/system/maintenance-page.html.twig
+    <item>maintenance-page</item>: themes/portal_brasil/maintenance-page.html.twig
   </lista>
 </lista>
 
 <lista>
   <item>Sobreposição de templates</item>
   <lista>
-    <item/>cp modules/node/node.tpl.php sites/all/themes/portal_brasil/templates/
-    <item/>cp modules/node/node.tpl.php sites/all/themes/portal_brasil/templates/node--2.tpl.php
-    <item/>cp modules/system/maintenance-page.tpl.php sites/all/themes/portal_brasil/templates/
+    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/
+    <item/>cp core/modules/node/node.html.twig themes/portal_brasil/templates/node--2.html.twig
+    <item/>cp core/modules/system/maintenance-page.html.twig themes/portal_brasil/templates/
   </lista>
 </lista>
+
+<subsubsecao>Processamento dos templates</subsubsecao>
+<nome>theme-template-process</nome>
+
+<lista>
+  <item>Seleção do template</item>: somente o template mais específico de cada tipo será
+  utilizado;
+  <lista>
+    <item>**mais específico**</item>
+    <item>↓ node--1.html.twig</item> ⇒ para determinado node Id;
+    <item>↓ node--article.html.twig</item> ⇒ para determinado tipo de conteúdo;
+    <item>↓ node.html.twig</item> ⇒ do subtema: themes/portal_brasil/node.html.twig;
+    <item>↓ node.html.twig</item> ⇒ do tema: themes/bartik/templates/node.html.twig;
+    <item>↓ node.html.twig</item> ⇒ do core: core/modules/node/node.html.twig;
+    <item>**menos específico**</item>
+  </lista>
+</lista>
+
+<lista>
+  <item>templates/*.html.twig</item>: o processamento ocorre a partir do
+tipo de template mais interno até o mais externo (<b>html</b>);
+  <lista>
+    <item>↓ node.html.twig;</item>
+    <lista>
+      <item/><article{{ attributes.addClass(classes) }}>
+      <item/><h2{{ title_attributes }}>{{ label }}</h2 >
+      <item/><div{{ content_attributes.addClass('node__content') }}>
+      <item/>{{ content }}
+      <item/></div >
+      <item/></article >
+    </lista>
+    <item>↓ region.html.twig ⇒ block.html.twig | node.html.twig;</item>
+    <lista>
+      <item/><div{{ attributes.addClass(classes) }}>
+      <item/>{{ content }}
+      <item/></div >
+    </lista>
+    <item>↓ page.html.twig;</item>
+    <lista>
+      <item/>{{ page.header }}
+      <item/>{{ page.content }}
+      <item/>{{ page.sidebar_second }}
+      <item/>{{ page.footer }}
+    </lista>
+    <item>↓ html.html.twig;</item>
+    <lista>
+      <item/><<i>head</i>>;
+      <lista>
+        <item/><head-placeholder token="{{ placeholder_token|raw }}">
+        <item/><title >{{ head_title|safe_join(' | ') }}</title >
+        <item/><css-placeholder token="{{ placeholder_token|raw }}">
+        <item/><js-placeholder token="{{ placeholder_token|raw }}">
+      </lista>
+      <item/><<i>head</i>>
+      <item/><<i>body</i>>
+      <lista>
+        <item/>{{ page }}
+        <item/><js-bottom-placeholder token="{{ placeholder_token|raw }}">
+      </lista>
+      <item/><<i>body</i>>
+    </lista>
+  </lista>
+</lista>
+
 
 <br/>0.6cm
-
-<lista>
-  <item>Hierarquia de Templates</item>
-  <item>html</item>: modules/system/html.tpl.php
-  <lista>
-    <item>page</item>: modules/system/page.tpl.php
-    <item>page</item>: sites/all/themes/portal_brasil/page.tpl.php
-    <item>page</item>: sites/all/themes/portal_brasil/page--front.tpl.php
-    <lista>
-      <item>region</item>: modules/system/region.tpl.php
-      <item>region</item>: modules/system/region--[region-name].tpl.php
-      <lista>
-        <item>block</item>: modules/block/block.tpl.php
-        <item>block</item>: sites/all/themes/portal_brasil/block.tpl.php
-        <item>block</item>: sites/all/themes/portal_brasil/block--[region-name].tpl.php
-        <item>node</item>: modules/node/node.tpl.php
-        <item>node</item>: themes/bartik/templates/node.tpl.php
-        <item>node</item>: sites/all/themes/portal_brasil/node.tpl.php
-        <item>node</item>: sites/all/themes/portal_brasil/node--[contenttype].tpl.php
-        <item>node</item>: sites/all/themes/portal_brasil/node--[nid].tpl.php
-        <item>comment</item>: modules/comment/comment.tpl.php
-        <item>comment</item>: themes/bartik/templates/comment.tpl.php
-        <item>comment-wrapper</item>: modules/comment/comment-wrapper.tpl.php
-        <item>comment-wrapper</item>: themes/bartik/templates/comment-wrapper.tpl.php
-        <item>user-profile</item>: modules/user/user-profile.tpl.php
-        <item>user-profile</item>: sites/all/themes/portal_brasil/user-profile.tpl.php
-      </lista>
-    </lista>
-    <item>maintenance-page</item>: modules/system/maintenance-page.tpl.php
-    <item>maintenance-page</item>: sites/all/themes/portal_brasil/maintenance-page.tpl.php
-  </lista>
-</lista>
-
 <subsecao>Módulos relacionados</subsecao>
-
-<subsubsecao>Theme developer</subsubsecao>
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/devel_themer</url>
-  <item>Função</item>: informações sobre a hierarquia de renderização do template;
-  <item>Dependências</item>: Devel e simplehtmldom 7.x-1.12
-  <item>Uso</item>:
-  <lista>
-    <item/>ative o checkbox (Themer info) no canto inferior esquerdo da tela;
-    <item/>selecione o elemento para obter os templates e funções processadas;
-  </lista>
-</lista>
 
 <subsubsecao>Styleguide</subsubsecao>
 
@@ -378,46 +265,10 @@ function portal_brasil_preprocess_node(&$variables) { kpr($user); }
   <item>Função</item>: definir classe CSS para cada bloco;
   <item>Uso</item>:
   <lista>
-    <item/>instalar módulo;
-    <item/>criar sub-thema;
-    <item/>copiar template 'block.tpl.php' do core ou, se houver, do tema;
-    <item/>adicionar '<?php print $block->css_class; ?>' ao fim das classes do bloco;
+    <item/>configure qualquer bloco;
+    <item/>identifique a opção <b>CSS class(es)</b>;
   </lista>
 </lista>
-
-<subsubsecao>Responsive Blog Theme</subsubsecao>
-
-<lista>
-  <item>URL</item>: <url>https://drupal.org/project/responsive_blog</url>
-  <item>Uso</item>:
-  <lista>
-    <item/>instalar tema;
-    <item/>criar sub-tema;
-    <item/>copiar template 'page.tpl.php' do tema para diretório do sub-tema;
-    <item/>identificar o <div > com id="preface-area" em page.tpl.php;
-    <item/>adicionar '<?php if($page['header'] || $page['preface_first'] || $page['preface_middle'] || $page['preface_last']) : ?>' antes;
-    <item/>adicionar '<?php endif; ?>' após o </div > correspondente;
-  </lista>
-</lista>
-
-<subsubsecao>Responsive menu</subsubsecao>
-
-<lista>
-  <item>Download</item>: <url>https://drupal.org/project/responsive_menus</url>
-  <item>Função</item>: substituir menu por menu responsivo a partir do tamanho da tela;
-  <item>Uso</item>:
-  <lista>
-    <item/>instalar e ativar módulo;
-    <item/>identificar a classe ou id da tag 'ul' do menu que será responsivo;
-    <item/>configurar o menu responsivo em configuração - interface do usuário;
-    <item/>adicionar seletor CSS para identificar a tag 'ul' o menu;
-    <item/>definir tamanho da tela que ativará a substituição do menu (screen width);
-  </lista>
-</lista>
-
-    O módulo <b>Responsive menu</b> pode ser útil para criar temas
-standalone, sub-temas do Zen ou para temas adaptativos que não possuem menu
-responsivo; em regra, opte por um tema responsivo em vez de usar este módulo;
 
 <subsubsecao>Fitvids</subsubsecao>
 

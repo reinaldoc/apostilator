@@ -597,6 +597,21 @@ determinado menu, é necessário, além de conceder permissão para
 administração desse menu, que o menu esteja vinculado ao respectivo tipo de
 conteúdo. Esse vínculo é realizado na edição do tipo de conteúdo.
 
+    A versão <b>8.x-1.0</b> não habilita a opção <b>Disponibilizar um link
+no menu</b> ao criar ou editar um conteúdo. Esse recurso necessita dos
+patchs abaixo.
+
+<comando>
+cd /var/www/portal/drupal/modules/menu_admin_per_menu
+wget https://drupal.org/files/issues/2900957--fix-add-items-edit-create-node.patch
+wget https://drupal.org/files/issues/2018-11-30/2900957-default-menu-items.patch
+patch -p1 < 2900957--fix-add-items-edit-create-node.patch
+patch -p1 < 2900957-default-menu-items.patch
+</comando>
+
+    Após aplicar os patchs, use a opção <b>Configurações => Desenvolvimento
+=> Desempenho => Limpar todos os caches</b>.
+
     <br/>0.3cm
 
 <subsubsubsecao>Configuração das opções do tipo de conteúdo por node</subsubsubsecao>
@@ -783,16 +798,17 @@ results</b>.
     <item/>use tokens para definir o diretório (<i>File path</i>);
     <item/>use tokens para definir o nome do arquivo (<i>File name</i>);
   </lista>
-  <item>Diretório (<i>File path</i>)</item>:
+  <item>Diretório/Caminho do arquivo (<i>File path</i>)</item>:
   <lista>
-    <item/>images/[node:content-type:machine-name]
-    <item/>images/[current-date:custom:Y]/[node:content-type:machine-name]
+    <item/>fields/[node:content-type:machine-name]
+    <item/>fields/[node:content-type:machine-name]/[node:field_data:date:custom:Y]
   </lista>
   <item>Nome do arquivo (<i>File name</i>)</item>:
   <lista>
     <item/>[file:ffp-name-only-original].[file:ffp-extension-original]
-    <item/>[node:nid]_[node:title].[file:ffp-extension-original]
-    <item/>[node:field-data-relatorio:custom:Y-m]-[node:field-categoria-despesa:name].[file:ffp-extension-original]
+    <item/>[node:nid]_[node:title]_[file:fid].[file:ffp-extension-original]
+    <item/>Provimento_[node:field_data:date:custom:Y].[file:ffp-extension-original]
+    <item/>Concurso_[node:field_conc_doc_tipo:entity:name]_[file:fid].[file:ffp-extension-original]
   </lista>
 </lista>
 
@@ -800,8 +816,13 @@ results</b>.
 disponíveis após a instalação do módulo <b>File (Field) Paths</b>, a lista
 com os tokens que podem ser utilizados é fornecida pelo módulo
 <b>Token</b>. O módulo <b>Token</b> também fornece dezenas de novos tokens,
-como o <b>[current-date:custom:Y]</b> que retorna o ano atual. Ative o
-módulo <b>Entity Tokens</b> para usar tokens para taxonomias e outros.
+como o <b>[current-date:custom:Y]</b> que retorna o ano atual.
+
+    Pode-se utilizar <b>_id[file:fid]</b> ao final do nome do arquivo a fim
+de obter um nome único para o arquivo.
+
+    No Drupal 7, ative o módulo <b>Entity Tokens</b> para usar tokens para
+taxonomias e outros.
 
 <subsubsecao>Token</subsubsecao>
 
@@ -1287,13 +1308,48 @@ Pessoa com o Node de Livro);
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/addtoany</url>
-  <item>Função</item>: integração para compartilhamento de nodes em redes sociais;
-  <item>Uso</item>:
+  <item>Função</item>: fornece botões para compartilhamento de conteúdo em redes sociais;
+  <item>Uso</item>: /admin/config/services/addtoany
   <lista>
-    <item/>acesse as configurações em <b>Serviços Web</b>;
-    <item/>selecione os tipos de conteúdo em que os ícones serão exibidos;
+    <item/>acesse as configurações em <b>Serviços Web → AddToAny</b>;
+    <item/>configure os ícones de compartilhamento pela opção <b>SERVICE BUTTONS</b>;
+    <item/>configure para não exibir outros ícones em <b>UNIVERSAL BUTTON</b> (opcional);
+    <item/>clique em <b>Salvar configurações</b>;
   </lista>
 </lista>
+
+    Segue a configuração para a opção <b>Service Buttons HTML code</b>, após
+alterá-la é necessário limpar a cache em <b>Desenvolvimento →
+Desempenho</b>. Consulte no endereço
+<url>https://www.addtoany.com/services/</url> todos os ícones de serviço de
+compartilhamento disponíveis.
+
+<comando>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_google_gmail"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_linkedin"></a>
+</comando>
+
+    Habilite o campo <b>AddToAny</b> por meio da opção <b>Gerenciar exibição</b>
+para cada <b>Tipo de Conteúdo</b>,
+
+<subsubsubsecao>Twitter</subsubsubsecao>
+
+    Um bloco HTML pode ser utilizado para exibir o <i>feed</i> de um Twitter
+a partir do endereço da conta. Substitua 'xxxxxxx' pelo endereço correto.
+
+<comando>
+<a class="twitter-timeline" data-lang="pt"
+data-width="300" data-height="900" data-chrome="nofooter transparent"
+href="https://twitter.com/xxxxxxx?ref_src=twsrc%5Etfw">
+Tweets by trt8_oficial
+</a >
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8">
+</script >
+</comando>
 
 <subsubsecao>ShareThis</subsubsecao>
 
@@ -1473,9 +1529,22 @@ blocos a partir de <b>Panels</b>..
 <subsubsecao>High contrast</subsubsecao>
 
 <lista>
-  <item>Download</item>: https://drupal.org/project/high_contrast
+  <item>Download</item>: <url>https://drupal.org/project/high_contrast</url>
   <item>Função</item>: altera o visual para alto contraste;
 </lista>
+
+<subsubsubsecao>Drupal 8</subsubsubsecao>
+
+<lista>
+  <item/>posicione o bloco <b>High contrast</b> em uma região;
+  <item/>desabilite a opção <b>Exibir título</b>; 
+  <item/>habilite a opção <b>Use AJAX to submit automatically</b>.;
+  <item/>habilite a opção <b>Toggle switch</b>;
+  <item/>clique em <b>Salvar bloco</b>;
+  <item/>use o link <b>Ativar</b> que aparecerá na região selecionada;
+</lista>
+
+<subsubsubsecao>Drupal 7</subsubsubsecao>
 
     Utilize o módulo <b>Menu attributes</b> para adicionar a um item de menu
 um ID ou uma classe CSS para identificá-lo como ativador do alto contraste,

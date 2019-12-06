@@ -54,18 +54,6 @@ campo (B). No campo (B) consulte os tokens disponíveis na opção <b>PADRÕES
 DE SUBSTITUIÇÃO</b>, após selecionar <i>Override the output of this field
 with custom text</i> ou <i>Output this field as a custom link</i>.
 
-<subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
-
-<lista>
-  <item/>adicione um critério de filtragem;
-  <item/>ative a opção <i>Expor este filtro para visitantes, para permitir
-  que eles o alterem</i>;
-</lista>
-
-    Cada campo exposto aos usuários irá gerar um <i>input</i>. Para que um
-<i>input</i> filtre <u>mais de um campo de texto</u>, adicione o campo
-<b>Global: Combine Filters</b> como <b>CRITÉRIO DE FILTRAGEM</b>.
-
 <br/>0.3cm
 
 <subsubsubsecao>View de bloco com paginação</subsubsubsecao>
@@ -100,8 +88,9 @@ automaticamente quando o usuário rolar ao final da lista.
   <item/>configurar um rodapé a view como <b>Área de texto</b>;
 </lista>
 
-    O tipo <b>Área de visualização</b> pode ser usado como cabeçalho ou
-rodapé para incluir outra view.
+    A opção <b>Área de visualização</b> pode ser usado como cabeçalho ou
+rodapé para incluir outra view, já a opção <b>Área de texto</b> permite o
+uso de texto formatado.
 
 <br/>0.3cm
 
@@ -109,10 +98,10 @@ rodapé para incluir outra view.
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/better_exposed_filters</url>
-  <item>Função</item>: apresentar Views em formato de acordeões;
+  <item>Função</item>: fornece recursos adicionais para os filtros expostos;;
   <item>Uso</item>:
   <lista>
-    <item/>edite uma <b>View</b> que possua filtros expostos ao usuário;
+    <item/>edite uma <b>View</b> que possua filtros expostos de uma taxonomia;
     <item/>na opção <b>Estilo do formulário exibido</b>, selecione <b>Better
 Exposed Filters</b>;
     <item/>configure:
@@ -124,9 +113,9 @@ Exposed Filters</b>;
 </lista>
 
     Os filtros expostos não funcionaram mais na tela de pré-visualização.
-Este módulo também permite que os filtros expostos sejam exibidos como
-<b>Checkboxes/Radio Buttons</b> pelas configurações do <b>Estilo do
-formulário exibido</b>.
+Este módulo também permite que os filtros expostos de taxonomias sejam
+exibidos como <b>Checkboxes/Radio Buttons</b> pelas configurações do
+<b>Estilo do formulário exibido</b>.
 
 <subsecao>Views Accordion</subsecao>
 
@@ -149,6 +138,18 @@ formulário exibido</b>.
 </lista>
 
     O primeiro campo será utilizado como título do acordeão.
+
+<subsubsubsecao>Critérios de filtragem expostos ao usuário</subsubsubsecao>
+
+<lista>
+  <item/>adicione um critério de filtragem;
+  <item/>ative a opção <i>Expor este filtro para visitantes, para permitir
+  que eles o alterem</i>;
+</lista>
+
+    Cada campo exposto aos usuários irá gerar um <i>input</i>. Para que um
+<i>input</i> filtre <u>mais de um campo de texto</u>, adicione o campo
+<b>Global: Combine Filters</b> como <b>CRITÉRIO DE FILTRAGEM</b>.
 
 <subsubsubsecao>Filtro contextual em modo glossário</subsubsubsecao>
 

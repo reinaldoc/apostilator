@@ -1,0 +1,461 @@
+<capitulo>Introdução ao curso</capitulo>
+
+    Seja bem-vindo ao curso <b>Desenvolvimento de Portais Corporativos com
+Drupal</b>. O Portal Corporativo é o ponto inicial de acesso a todas as
+informações, serviços e sistemas da instituição, sendo <u>um grande desafio
+manter organizado o grande volume de conteúdo que o compõe</u>.
+
+    A arquitetura da informação é núcleo dessa organização que permitirá o
+acesso intuitivo ao conteúdo por meio de sua <u>categorização
+hierarquica</u>, bem como de sua classificação para priorização e destaque
+do que é importante, apresentando um <u>volume razoável de opções ao
+usuário</u>, inclusive com seções orientadas a cada público-alvo, como
+advogados, público interno, aposentados, trabalhador, etc. Impor limites
+quantitativos é um bom método para manter o foco no conteúdo mais
+importante. Lembre-se, <u>se tudo é importante, isso significa que nada é
+importante</u>.
+
+    Neste curso iniciaremos com a visão geral do gerenciamento de projeto de
+construção de um Portal Corporativo, em seguida veremos todas as fases de
+sua construção, do levantamento, categorização, classificação e priorização
+do conteúdo, criação do esboço do produto, implementação da página inicial,
+das áreas de publicação, dos controles de segurança, bem como os tópicos
+para capacitação dos usuários publicadores, até o seu lançamento.
+
+    Este material foi produzido pelo instrutor <i>Reinaldo Gil Lima de
+Carvalho</i> e utilizado nos seguintes cursos presenciais:
+
+<lista>
+    <item>TRT da 16ª Região</item>, em São Luís/MA, no período de <b>1º/07/2019 a 05/07/2019</b>.
+    <item>TRT da 21ª Região</item>, em Natal/RN, no período de <b>19/08/2019 a 23/08/2019</b>.
+    <item>TRT da 15ª Região</item>, em Campinas/SP, no período de <b>07/10/2019 a 11/10/2019</b>.
+</lista>
+
+    Neste capítulo serão abordados os seguintes temas: <i>i)</i> o
+licenciamento desta obra, <i>ii)</i> visão geral das tecnologias de portais
+da Justiça do Trabalho, <i>iii)</i> visão geral de um projeto de construção
+de portal corporativo e <i>iv)</i> a instalação e as configurações
+essenciais do sistema operacional.
+
+<quebraPagina/>
+
+<subsecao>Licença da obra</subsecao>
+
+    Todas as marcas registradas são de propriedade de seus respectivos
+detentores, sendo apenas citadas nesta obra educacional. O instrutor não se
+responsabiliza por qualquer consequência decorrente da utilização das
+informações contidas neste material. Não há garantias de que este material
+ou o <i>software</i> utilizado estejam livres de erros.
+
+<comando>
+Desenvolvimento de Portais Corporativos com Drupal.
+Copyright © CC-BY-NC-ND 2017 Reinaldo Gil Lima de Carvalho - reinaldoc@gmail.com
+
+ESSA OBRA É LICENCIADA PELA LICENÇA CREATIVE COMMONS:
+Attribution-NonCommercial-NoDerivatives 4.0 International.
+</comando>
+
+    A licença concede o direito de cópia e compartilhamento desta obra
+no formato original, desde que os créditos sejam mantidos para o autor, mas
+a obra não pode ser modificada nem utilizada comercialmente. Caso necessite
+licenciar a obra para fins não autorizados por esta licença, entre em
+contato com o autor.
+
+<figura>
+    <tamanhob>0.5</tamanhob>
+    <arquivob>imgs/license-CC-BY-NC-ND.png</arquivob>
+    <legenda>CC-BY-NC-ND</legenda>
+    <nome>fig:CC-BY-NC-ND</nome>
+</figura>
+
+<quebraPagina/>
+
+<subsecao>Portais na Justiça do Trabalho</subsecao>
+
+    A tecnologia utilizada por cada Portal Corporativo dos Tribunais do
+Trabalho é bastante diverfisificada, como pode ser constatado pelo
+lavantamento apresentado na
+figura<ref>fig:portais-tribunais-do-trabalho-outubro-2019</ref>. Até 2016
+somente os Tribunais com sede em <link>www.trt6.jus.br</link><text>Pernambuco
+(TRT6)</text> e em <link>www.trt23.jus.br</link><text>Mato Grosso
+(TRT23)</text> utilizavam Drupal, seguidos por <link>www.trt5.jus.br</link>
+<text>Bahia (TRT5)</text> em 2017 e
+<link>www.trt8.jus.br</link><text>Pará/Amapá (TRT8)</text> em 2018.
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/portais-tribunais-do-trabalho-outubro-2019.jpg</arquivob>
+    <legenda>Levantamento de 10/2019 das tecnologias dos Portais nos Tribunais do Trabalho</legenda>
+    <nome>fig:portais-tribunais-do-trabalho-outubro-2019</nome>
+</figura>
+
+<lista>
+  <item/>A versão atualizada do levantamento está disponível em:
+  <lista>
+    <item/><url>https://infogram.com/cms-justica-do-trabalho-1hd12ywpj1rx4km</url>.
+  </lista>
+</lista>
+
+    Entretando, após a publicação da
+<link>http://www.csjt.jus.br/documents/955023/998680/Resolu%C3%A7%C3%A3o+n.+243+CSJT/f52ccda4-80a0-375e-b591-d04c4e8a7468</link>
+<text>Resolução CSJT nº 243</text> em 28 de junho de 2019, que determinou a
+adoção, em até 6 meses, de um modelo único de identidade visual para os
+portais dos Tribunais do Trabalho, iniciou-se uma realivação das tecnologias
+em utilização, em que observa-se tendência na adoção do Drupal a partir do
+apoio fornecido pelo TRT da 8ª Região.
+
+<lista>
+  <item/>O guia de padronização das páginas iniciais da Justiça do Trabalho
+  está disponível em:
+  <lista>
+    <item/><url>http://www.csjt.jus.br/web/csjt/identidadevisualjt</url>.
+  </lista>
+</lista>
+
+<lista>
+  <item/>O repositório das imagens da identidade visual está disponível em:
+  <lista>
+    <item/><url>https://drive.google.com/drive/u/2/folders/1kf3SxMH4uHQY0lOJXcI-kRO1J5kP_Ggm</url> 
+  </lista>
+</lista>
+
+<lista>
+  <item/>O repositório de protótipos HTML/CSS e temas para o Drupal está disponível em:
+  <lista>
+    <item/><url>https://github.com/reinaldoc/drupal-contrib</url> 
+  </lista>
+</lista>
+
+<subsecao>Projeto de um Portal Corporativo</subsecao>
+
+   Dentre os diversos artefatos que podem compor a metodologia de
+gerenciamento de projetos da instituição, é importante destacar:  <i>i)</i>
+o objetivo do projeto,  <i>ii)</i> os requisitos do projeto, <i>iii)</i> um
+esboço ou <i>mockup</i> do produto, <i>iv)</i> um cronograma das entregas do
+projeto e <i>v)</i> um cronograma das atividades do projeto.  
+
+   Arquivos de apoio a este capítulo estão disponíveis em:
+<url>https://bit.ly/portal-reinaldoc</url>.
+
+<subsubsubsecao>Objetivo</subsubsubsecao>
+
+    Lançar até dezembro de 2019 um novo portal corporativo aderente a
+identidade visual prevista na
+<link>http://www.csjt.jus.br/documents/955023/998680/Resolu%C3%A7%C3%A3o+n.+243+CSJT/f52ccda4-80a0-375e-b591-d04c4e8a7468</link>
+<text>Resolução CSJT nº 243/2019</text> e no
+<link>http://www.csjt.jus.br/web/csjt/identidadevisualjt</link><text>Guia de
+Padronização das páginas iniciais dos Portais da JT</text>. O portal deve
+definir uma nova organização da informação que promova o acesso intuitivo e
+universal (em qualquer dispositivo por qualquer pessoa) à informação,
+observando os padrões de acessibilidade existentes, assim como deve utilizar
+autenticação a partir de credenciais existentes na institução, deve possuir
+controle de acesso para edição do conteúdo por área de publicação e receber
+o conteúdo existente no portal atual.
+
+<subsubsubsecao>Requisitos</subsubsubsecao>
+
+    Os requisitos detalham os temas extraídos do objetivo do projeto.
+
+<lista>
+    <item/>A tecnologia deve ser web, livre, responsiva e modular;
+    <item/>A tecnologia deve permitir a conformidade de acessibilidade;
+    <item/>A tecnologia deve aceitar autenticação e autorização pelo serviço
+    LDAP;
+    <item/>A tecnologia deve permitir o controle de acesso por meio de perfis
+    e permissões;
+    <item/>A tecnologia deve permitir a publicação e despublicação de
+    conteúdo;
+    <item/>A tecnologia deve ser compatível com base de dados suportada;
+</lista>
+
+    <b>Tarefa:</b> consultar o Documento de Requisitos do projeto.
+
+<subsubsubsecao>Cronograma de entregas</subsubsubsecao>
+
+<enumerar>
+    <item/>Seleção da tecnologia para construção do Portal Corporativo - <i>10/2019</i>;
+    <item/>Capacitação na tecnologia - <i>10/2019</i>;
+    <item/>Definição da identidade visual - <i>10/2019</i>;
+    <item/>Identificação da nova arquitetura da informação - <i>pendente</i>;
+    <item/>Construção de um <u>protótipo funcional</u> na tecnologia - <i>pendente</i>;
+    <item/>Implantação do portal <u>em ambiente de produção</u> - <i>pendente</i>;
+    <item/>Criação das áreas de publicação com conteúdo <u>categorizado/classificado</u> - <i>pendente</i>;
+    <item/>Recadastro ou migração do conteúdo da tecnologia anterior - <i>pendente</i>;
+    <item/>Configuração da autenticação e autorização - <i>pendente</i>;
+    <item/>Capacitação dos usuários publicadores - <i>pendente</i>;
+    <item/>Definir e executar um plano de comunicação do lançamento - <i>pendente</i>;
+    <item/>Colocar no ar o novo Portal Corporativo - <i>pendente</i>;
+</enumerar>
+
+    <b>Tarefa:</b> acessar o vídeo do protótipo.
+
+<subsubsubsecao>Esboço ou mockup do produto</subsubsubsecao>
+
+    <b>Esboço do Produto</b>
+
+<figura>
+    <tamanhob>0.9</tamanhob>
+    <arquivob>imgs/projeto-esboco.png</arquivob>
+    <legenda>Esboço do produto baseado no Portal do CSJT</legenda>
+    <nome>fig:projeto-esboco</nome>
+</figura>
+
+<lista>
+  <item>1:</item> Marca da institução;
+  <item>2:</item> Ícones com links para as redes sociais da instituição;
+  <item>3:</item> Campo para pesquisa do conteúdo armazenado no Portal;
+  <item>4:</item> Menu principal;
+  <item>5:</item> Notícias em destaque com demais notícias embaixo;
+  <item>6:</item> Serviços em destaque;
+</lista>
+
+<quebraPagina/>
+
+   <b>Mockup do Produto</b>
+
+<figura>
+    <tamanhob>0.6</tamanhob>
+    <arquivob>imgs/projeto-mockup.png</arquivob>
+    <legenda>Mockup do produto produzido por editor de gráfico</legenda>
+    <nome>fig:projeto-mockup</nome>
+</figura>
+
+<subsubsubsecao>Cronograma de atividades</subsubsubsecao>
+
+   O cronograma de atividades é o detalhamento das entregas em ações,
+responsáveis e estimativa de prazos.
+
+    <b>Tarefa:</b> acesse o cronograma anexo do Plano de Projeto.
+
+    As entregas <b>Criação das áreas de publicação com conteúdo
+categorizado/classificado</b> e <b>Recadastro ou migração do conteúdo da
+tecnologia anterior</b> são aquelas com maior complexidade de estimar. Vamos
+utilizar um método de estimativa por pontos de esforço, para isso:
+
+<enumerar>
+  <item/>crie em forma de árvore um índice para todo o conteúdo;
+  <item/>atribua nota de 1 a 9 para cada folha da árvore, sendo 1 para pouco
+conteúdo e 9 para muito conteúdo;
+  <item/>some o total de pontos;
+  <item/>implemente alguns itens para determinar quantos minutos equivale a
+1 ponto;
+  <item/>multipique pelo total de pontos para obter uma estimativa;
+</enumerar>
+
+    <b>Tarefa:</b> acesse o artefato Arquitetura da Informação.
+
+<subsecao>Software básico</subsecao>
+
+    Em ambientes corporativos a utilização de <b>software básico</b>
+fornecido por um distribuidor é essencial, significa utilizar um método
+padronizado de instalação, com versões padronizadas para o conjunto de
+servidores, além de um processo de atualização eficiente, sendo rapidamente
+disponibilizadas as correções de segurança.
+
+    Assim, utilizar uma distribuição Linux diminui o esforço empregado para
+a manutenção do sistema operacional e serviços essenciais. O Debian
+GNU/Linux é uma referência no fornecimento de versões estáveis e um processo
+rápido de correções de falhas descobertas.
+
+    Há 15 anos, este instrutor é mencionado como consultor do Debian:
+
+    <link>https://www.debian.org/consultants/#BR</link><text>www.debian.org/consultants</text>
+
+<subsubsecao>Instalação do Sistema Operacional</subsubsecao>
+
+    Os procedimentos descritos neste material foram validados por meio da
+distribuição GNU/Linux Debian 10 <i>buster</i><citar>Debian</citar>, apesar
+disso, o conteúdo apresentado pode ser utilizado sob qualquer sistema
+operacional. Busca-se que o participante esteja apto a utilizar o ambiente
+que lhe for mais adequado.
+
+    A instalação do <link>https://debian.org</link><text>Debian GNU/Linux</text>
+é bastante simplificada, sendo basicamente composta pela configuração do
+idioma, criação de contas de usuário e particionamento do disco. Acesse
+<link>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</link>
+<text>este endereço</text> e obtenha a mídia de instalação mínima, denominada
+<i>debian-X.Y.Z-amd64-<b>netinst</b>.iso</i>.
+
+<lista>
+  <item/><url>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</url>
+</lista>
+
+    Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
+installer menu', então prossiga com a instalação.
+
+<step>Configuração de idioma</step>
+
+<lista>
+  <item>Idioma</item>: Portuguese (Brazil) - Português do Brasil.
+  <item>Localidade</item>: Brasil.
+  <item>Mapa de teclado</item>: Português Brasileiro.
+</lista>
+
+<step>Configuração de contas e relógio</step>
+
+<lista>
+  <item>Nome da máquina</item>: drupal
+  <item>Nome do domínio</item>: trt15.jus.br
+  <item>Senha do root</item>: *senha*
+  <item>Nome completo do novo usuário</item>: Reinaldo Gil Lima de Carvalho
+  <item>Nome de usuário</item>: reinaldoc
+  <item>Senha do novo usuário</item>: *outra*senha*
+  <item>Configurar o relógio</item>: Nome do Estado
+</lista>
+
+<step>Particionamento</step>
+
+    É indicado abaixo um esquema simples de particionamento.
+
+<enumerar>
+  <item>Método de particionamento</item>: Assistido - usar o disco inteiro;
+  <item>Selecione o disco a ser particionado</item>: SCSI2 [...] ATA VBOX HARDDISK;
+  <item>Esquema de particionamento</item>: Todos os arquivos em uma   partição;
+  <item>Finalizar o particionamento e escrever as mudanças no disco</item>.
+  <item>Escrever as mudanças nos discos</item>: Sim.
+</enumerar>
+
+<step>Configuração de repositório de pacotes e de inicialização</step>
+
+<lista>
+  <item>Ler outro CD ou DVD?</item>: não
+  <item>País do espelho do repositório Debian</item>: Brasil
+  <item>Espelho do repositório Debian</item>: ftp.br.debian.org
+  <item>Informação sobre proxy http</item>: em branco ou http://usuario:senha@servidor:porta/
+  <item>Participar do concurso de utilização de pacotes?</item>: não
+  <item>Escolha o software a ser instalado</item>: nenhum (desmarque todos)
+  <item>Instalar o carregador de inicialização GRUB na MBR</item>: sim
+  <item>Dispositivo no qual instalar o carregador de inicialização</item>: /dev/sda (disco principal)
+  <item>Instalação finalizada</item>: continuar
+</lista>
+
+<step>Configuração da interface de Rede no VirtualBox</step>
+
+    Após o sistema reiniciar, realize login com o usuário <b>root</b> e a
+senha definida durante a instalação. Use o comando <b>halt</b> para realizar
+o procedimento de desligamento do Linux. Feche a máquina virtual e selecione
+a opção <b>Desligar máquina</b>. Esta opção só deve ser utilizada após o
+comando <b>halt</b> e quando for necessário realizar alguma configuração na
+máquina virtual. Em regra, pode-se fechar diretamente a máquina virtual e
+selecionar a opção <b>Salvar estado da máquina</b>.
+
+    A configuração padrão da interface de rede da máquina virtual é
+<b>NAT</b>, o que impede o acesso remoto a ela. Assim, há duas formas
+possíveis para resolver isto, a mais simples é alterar a configuração da
+interface de rede para <b>Place em modo Bridge</b>, isto fará com que a
+máquina virtual tenha acesso a rede por meio de seu próprio endereço MAC,
+obtendo um novo IP da mesma rede da máquina real.
+
+    Entretando, em algumas redes há restrições de acesso somente para uma
+lista definida de endereços MAC. Neste caso, há uma alternativa. Mantenha a
+configuração da primeira placa de rede da máquina virtual como <b>NAT</b> e
+adicione uma outra interface de rede na máquina virtual do tipo
+<b>Host-only</b>, essa interface permitirá o acesso remoto a máquina
+virtual.
+
+<lista>
+  <item/>selecione a máquina virtual e use a opção <b>Configurações</b>;
+  <item/>selecione o item <b>Rede</b> no menu;
+  <item/>selecione a aba <b>Adaptador 2</b>;
+  <item/>marque a opção <b>Habilitar Place de Rede</b>;
+  <item/>selecione a opção <b>Place de rede exclusiva do hospedeiro
+  (host-only)</b> em <i>conectado a</i>;
+</lista>
+
+    Agora, ligue a máquina virtual. Use o comando <b>dhclient enp0s8</b>
+para obter um IP nesta nova interface e use o comando <b>ip addr</b> para
+identificar o IP obtido pela interface <b>enp0s8</b>. Por meio deste IP será
+possível realizar o acesso remoto à máquina virtual.
+
+<step>Execução de comandos e edição de arquivos no terminal</step>
+
+    <importante/>Não serão necessários conhecimentos sobre o sistema Linux,
+mas neste momento <u>precisaremos realizar alguns passos</u>, o que inclui a
+execução de comandos e edição de texto pelo terminal. Esses passos
+permitirão o acesso remoto e posterior edição de arquivos por meio dos
+editores de texto externos a máquina virtual.
+
+     Assim, para editar arquivos pelo terminal do Linux, usaremos o editor
+<b>nano</b>, para abrir um arquivo use: <b>nano /diretório/arquivo.conf</b>,
+para salvar e sair da edição use: <b>control x</b> seguido de <b>y</b>. Por
+fim, lembre-se que, em regra, as linhas que iniciam por <b>#</b> são
+comentários, sem função de configuração.
+
+<subsubsecao>APT :: A ferramenta avançada de pacotes do Debian Linux</subsubsecao>
+
+    Os sistemas operacionais Linux fornecem ferramentas para a instalação
+automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
+<b>apt-get</b> que obtém os pacotes de repositórios web. Os pacotes contém
+arquivos compactados com rotinas de pré/pós instalação e remoção, além de
+informações sobre dependências.
+
+    O comportamento padrão do utilitário <i>apt-get</i>, ao instalar um
+<i>software</i>, é realizar a instalação das <b>dependências</b> e também
+daqueles pacotes especificados como <b>recomendados</b>. Entretanto, isto
+ocasiona a instalação de pacotes não requeridos e demanda a utilização de
+espaço em disco adicional.
+
+    A instalação de pacotes "recomendados" pode ser desabilitada por meio
+da adição da configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>,
+<u>veja que este arquivo está vazio, então, após abrí-lo, apenas digite o
+conteúdo abaixo e salve-o</u>:
+
+<comando>
+APT::Install-Recommends "0";
+</comando>
+
+    A configuração da fonte dos pacotes é realizada no arquivo
+<b>/etc/apt/sources.list</b>, <u>neste arquivo devem ficar descomentadas
+somente estas três linhas</u>, use o <b>#</b> para comentar as outras
+linhas:
+
+<comando>
+deb http://ftp.br.debian.org/debian/ buster main contrib non-free
+deb http://ftp.br.debian.org/debian/ buster-updates main contrib
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+</comando>
+
+    Caso a conectividade seja fornecida por um proxy via http, a seguinte
+configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
+devida adequação ao endereço IP do servidor proxy:
+
+<comando>
+Acquire::http::Proxy "http://172.16.0.1:3128/";
+</comando>
+
+    Após a definição das fontes, é necessário o <i>download</i> da lista de
+pacotes de <i>software</i> disponíveis, que é formada por informações de
+versão e descrição. Esse <i>download</i>, bem como a atualização do sistema,
+podem ser realizados pelos comandos:
+
+<comando>
+apt-get update
+apt-get upgrade
+</comando>
+
+<subsubsecao>SSH :: O acesso remoto</subsubsecao>
+
+    Instale o serviço de acesso remoto por meio do comando:
+
+<comando>
+apt-get install openssh-server
+</comando>
+
+    Configure o serviço de acesso remoto para permitir login com usuário
+<b>root</b>. Edite o arquivo <b>/etc/ssh/sshd_config</b> e realize a
+seguinte configuração:
+
+<comando>
+PermitRootLogin yes
+</comando>
+
+    Reinicie o serviço de acesso remoto por meio do comando:
+
+<comando>
+/etc/init.d/ssh restart
+</comando>
+
+    <atividade/>Agora utilize o <b>Putty</b> para realizar acesso remoto e o
+<b>WinSCP</b> para editar arquivos por meio dos editores <b>Notepad++</b> ou
+<b>Visual Studio Code (VSC)</b>.
+

@@ -301,7 +301,7 @@ Seção<ref>module-pathauto</ref> para mais informações.
 <lista>
     <item/>Acesse a opção <b>Estrutura → Leiaute de blocos</b> e
 configure a visibilidade do bloco do menu <b>Corregedoria</b> para páginas
-<b>corregedoria</b> e <b>corregedoria/*</b>. Configure um item por linha.
+<b>/corregedoria</b> e <b>/corregedoria/*</b>. Configure um item por linha.
 </lista>
 
     O Drupal é capaz de manter versões do conteúdo, ou seja, mantém um cópia
@@ -683,6 +683,10 @@ automaticamente incluídas nesta opção;
     </lista>
   </lista>
 </lista>
+
+    <importante/>Verifique que além de ativar os botões da alinhamento na
+barra de formatação é necessário ainda adicionar <b><p class ></b> as tags
+permitidas.
 
     O módulo IMCE fornece dois novos botões para a barra de formação, um
 para upload de imagens e inserção da imagem no corpo do texto, outro para o
