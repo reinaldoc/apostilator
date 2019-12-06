@@ -361,7 +361,8 @@ $ exit
 
     O instalador do Drupal irá escrever as configurações básicas e de conexão
 ao banco de dados no arquivo <b>settings.php</b> do diretório de trabalho
-selecionado pelo <i>hostname</i> contido na URL, assim, nesse momento, o
+selecionado pelo <i>hostname</i> contido na URL de acordo com as
+configurações realizadas no arquivo <b>sites.php</b>. Assim, nesse momento, o
 usuário do serviço web necessita de permissão para escrever neste arquivo.
 
 <comando>
