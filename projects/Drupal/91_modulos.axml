@@ -674,6 +674,11 @@ razoável optar pelo módulo <b>Menu block</b> em vez do <b>Superfish</b> para
 atender a esta funcionalidade. Considerações sobre menus drop down estão disponíveis
 em <url>https://drupal.org/docs/7/working-with-menus/drop-down-menus</url>.
 
+    O módulo <link>https://drupal.org/project/ultimenu</link>
+<text><b>Ultimenu</b></text> é uma alternativa, permite o uso de subtítulos
+e imagens, segue a ideia de um <b>megamenu</b>. É recomendado para quem
+utiliza subtemas, para que possa definir seu estilo CSS.
+
 <br/>0.2cm
 
 <subsecao>Blocos</subsecao>
