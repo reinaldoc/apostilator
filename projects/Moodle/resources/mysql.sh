@@ -1,0 +1,5 @@
+# mysql -p
+> CREATE DATABASE moodle CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+> CREATE USER 'moodle'@'%' IDENTIFIED BY 'top-secret';
+> GRANT SELECT, INSERT, UPDATE, DELETE, ALTER, CREATE, DROP, INDEX, LOCK TABLES, REFERENCES ON moodle.* TO 'moodle'@'%';
+> QUIT;

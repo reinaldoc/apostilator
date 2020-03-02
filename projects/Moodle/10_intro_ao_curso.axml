@@ -1,0 +1,268 @@
+<capitulo>Introdução ao curso</capitulo>
+
+    Seja bem-vindo ao curso <b>Ambiente de Aprendizagem com o Moodle</b>.
+O Moodle é um sistema de gestão de aprendizagem, ou <i>Learning Management
+System</i> - LMS, em inglês, que permite a publicação do conteúdo de cursos,
+realização de avaliações, geração de certificados de participação, bem como
+oferece recursos didáticos.
+
+    Neste curso iniciaremos com a instalação, seguindo pela visão geral das
+funcionalidades, concluindo com a adição de recursos desenvolvidos por
+colaboradores do projeto por meio de <b>plugins</b>.
+
+    Este material foi produzido pelo instrutor <i>Reinaldo Gil Lima de
+Carvalho</i> e utilizado nos seguintes cursos presenciais:
+
+<lista>
+    <item>TRT da 8ª Região</item>, em Belém/PA, no período de <b>x/x/2020 a x/x/2020</b>.
+</lista>
+
+    Neste capítulo serão abordados os seguintes temas: <i>i)</i> o
+licenciamento desta obra, <i>ii)</i> a instalação e as configurações
+essenciais do sistema operacional.
+
+<quebraPagina/>
+
+<subsecao>Licença da obra</subsecao>
+
+    Todas as marcas registradas são de propriedade de seus respectivos
+detentores, sendo apenas citadas nesta obra educacional. O instrutor não se
+responsabiliza por qualquer consequência decorrente da utilização das
+informações contidas neste material. Não há garantias de que este material
+ou o <i>software</i> utilizado estejam livres de erros.
+
+<comando>
+Ambiente de Aprendizagem com Moodle.
+Copyright © CC-BY-NC-ND 2020 Reinaldo Gil Lima de Carvalho - reinaldoc@gmail.com
+
+ESSA OBRA É LICENCIADA PELA LICENÇA CREATIVE COMMONS:
+Attribution-NonCommercial-NoDerivatives 4.0 International.
+</comando>
+
+    A licença concede o direito de cópia e compartilhamento desta obra
+no formato original, desde que os créditos sejam mantidos para o autor, mas
+a obra não pode ser modificada nem utilizada comercialmente. Caso necessite
+licenciar a obra para fins não autorizados por esta licença, entre em
+contato com o autor.
+
+<figura>
+    <tamanhob>0.5</tamanhob>
+    <arquivob>imgs/license-CC-BY-NC-ND.png</arquivob>
+    <legenda>CC-BY-NC-ND</legenda>
+    <nome>fig:CC-BY-NC-ND</nome>
+</figura>
+
+<quebraPagina/>
+
+<subsecao>Software básico</subsecao>
+
+    Em ambientes corporativos a utilização de <b>software básico</b>
+fornecido por um distribuidor é essencial, significa utilizar um método
+padronizado de instalação, com versões padronizadas para o conjunto de
+servidores, além de um processo de atualização eficiente que permite a
+implantação rápida das correções de segurança.
+
+    Assim, utilizar uma distribuição Linux diminui o esforço empregado para
+a manutenção do sistema operacional e de serviços computacionais essenciais.
+O Debian GNU/Linux é uma referência no fornecimento de software básico. Há
+15 anos, este instrutor é mencionado como consultor do Debian:
+
+    <link>https://www.debian.org/consultants/#BR</link><text>www.debian.org/consultants</text>
+
+<subsubsecao>Instalação do Sistema Operacional</subsubsecao>
+
+    Os procedimentos descritos neste material foram validados por meio da
+distribuição GNU/Linux <b>Debian 10</b> <i>buster</i><citar>Debian</citar>,
+apesar disso, o conteúdo apresentado pode ser utilizado sob qualquer sistema
+operacional. Busca-se que o participante esteja apto a utilizar o ambiente
+que lhe for mais adequado.
+
+    A instalação do <link>https://debian.org</link><text>Debian GNU/Linux</text>
+é bastante simplificada, sendo basicamente composta pela configuração do
+idioma, criação de contas de usuário e particionamento do disco. Acesse
+<link>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</link>
+<text>este endereço</text> e obtenha a mídia de instalação mínima, denominada
+<i>debian-X.Y.Z-amd64-<b>netinst</b>.iso</i>.
+
+<lista>
+  <item/><url>https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/</url>
+</lista>
+
+    Ao realizar o boot por esta mídia, será apresentado 'Debian GNU/Linux
+installer menu', então prossiga com a instalação.
+
+<step>Configuração de idioma</step>
+
+<lista>
+  <item>Idioma</item>: Portuguese (Brazil) - Português do Brasil.
+  <item>Localidade</item>: Brasil.
+  <item>Mapa de teclado</item>: Português Brasileiro.
+</lista>
+
+<step>Configuração de contas e relógio</step>
+
+<lista>
+  <item>Nome da máquina</item>: moodle
+  <item>Nome do domínio</item>: example.com
+  <item>Senha do root</item>: *senha*
+  <item>Nome completo do novo usuário</item>: Reinaldo Gil Lima de Carvalho
+  <item>Nome de usuário</item>: reinaldoc
+  <item>Senha do novo usuário</item>: *outra*senha*
+  <item>Configurar o relógio</item>: Nome do Estado
+</lista>
+
+<step>Particionamento</step>
+
+    É indicado abaixo um esquema simples de particionamento.
+
+<enumerar>
+  <item>Método de particionamento</item>: Assistido - usar o disco inteiro;
+  <item>Selecione o disco a ser particionado</item>: SCSI2 [...] ATA VBOX HARDDISK;
+  <item>Esquema de particionamento</item>: Todos os arquivos em uma   partição;
+  <item>Finalizar o particionamento e escrever as mudanças no disco</item>.
+  <item>Escrever as mudanças nos discos</item>: Sim.
+</enumerar>
+
+<step>Configuração de repositório de pacotes e de inicialização</step>
+
+<lista>
+  <item>Ler outro CD ou DVD?</item>: não
+  <item>País do espelho do repositório Debian</item>: Brasil
+  <item>Espelho do repositório Debian</item>: ftp.br.debian.org
+  <item>Informação sobre proxy http</item>: em branco ou http://usuario:senha@servidor:porta/
+  <item>Participar do concurso de utilização de pacotes?</item>: não
+  <item>Escolha o software a ser instalado</item>: nenhum (desmarque todos)
+  <item>Instalar o carregador de inicialização GRUB na MBR</item>: sim
+  <item>Dispositivo no qual instalar o carregador de inicialização</item>: /dev/sda (disco principal)
+  <item>Instalação finalizada</item>: continuar
+</lista>
+
+<step>Configuração da interface de Rede no VirtualBox</step>
+
+    Após o sistema reiniciar, realize login com o usuário <b>root</b> e a
+senha definida durante a instalação. Use o comando <b>halt</b> para realizar
+o procedimento de desligamento do Linux. Feche a máquina virtual e selecione
+a opção <b>Desligar máquina</b>. Esta opção só deve ser utilizada após o
+comando <b>halt</b> e quando for necessário realizar alguma configuração na
+máquina virtual. Em regra, pode-se fechar diretamente a máquina virtual e
+selecionar a opção <b>Salvar estado da máquina</b>.
+
+    A configuração padrão da interface de rede da máquina virtual é
+<b>NAT</b>, o que impede o acesso remoto a ela. Assim, há duas formas
+possíveis para resolver isto, a mais simples é alterar a configuração da
+interface de rede para <b>Placa em modo Bridge</b>, isto fará com que a
+máquina virtual tenha acesso a rede por meio de seu próprio endereço MAC,
+obtendo um novo IP da mesma rede da máquina real.
+
+    Entretando, em algumas redes há restrições de acesso somente para uma
+lista definida de endereços MAC. Neste caso, há uma alternativa. Mantenha a
+configuração da primeira placa de rede da máquina virtual como <b>NAT</b> e
+adicione uma outra interface de rede na máquina virtual do tipo
+<b>Host-only</b>, essa interface permitirá o acesso remoto a máquina
+virtual.
+
+<lista>
+  <item/>selecione a máquina virtual e use a opção <b>Configurações</b>;
+  <item/>selecione o item <b>Rede</b> no menu;
+  <item/>selecione a aba <b>Adaptador 2</b>;
+  <item/>marque a opção <b>Habilitar Place de Rede</b>;
+  <item/>selecione a opção <b>Place de rede exclusiva do hospedeiro
+  (host-only)</b> em <i>conectado a</i>;
+</lista>
+
+    Agora, ligue a máquina virtual. Use o comando <b>dhclient enp0s8</b>
+para obter um IP nesta nova interface e use o comando <b>ip addr</b> para
+identificar o IP obtido pela interface <b>enp0s8</b>. Por meio deste IP será
+possível realizar o acesso remoto à máquina virtual.
+
+<step>Execução de comandos e edição de arquivos no terminal</step>
+
+    <importante/>Não serão necessários conhecimentos sobre o sistema Linux,
+mas neste momento <u>precisaremos realizar alguns passos</u>, o que inclui a
+execução de comandos e edição de texto pelo terminal. Esses passos
+permitirão o acesso remoto e posterior edição de arquivos por meio dos
+editores de texto externos a máquina virtual.
+
+     Assim, para editar arquivos pelo terminal do Linux, usaremos o editor
+<b>nano</b>, para abrir um arquivo use: <b>nano /diretório/arquivo.conf</b>,
+para salvar e sair da edição use: <b>control x</b> seguido de <b>y</b>. Por
+fim, lembre-se que, em regra, as linhas que iniciam por <b>#</b> são
+comentários, sem função de configuração.
+
+<subsubsecao>APT :: A ferramenta avançada de pacotes do Debian Linux</subsubsecao>
+
+    Os sistemas operacionais Linux fornecem ferramentas para a instalação
+automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
+<b>apt-get</b> que obtém os pacotes de repositórios web. Os pacotes contém
+arquivos compactados com rotinas de pré/pós instalação e remoção, além de
+informações sobre dependências.
+
+    O comportamento padrão do utilitário <i>apt-get</i>, ao instalar um
+<i>software</i>, é realizar a instalação das <b>dependências</b> e também
+daqueles pacotes especificados como <b>recomendados</b>. Entretanto, isto
+ocasiona a instalação de pacotes não requeridos e demanda a utilização de
+espaço em disco adicional.
+
+    A instalação de pacotes "recomendados" pode ser desabilitada por meio
+da adição da configuração abaixo ao arquivo <b>/etc/apt/apt.conf</b>,
+<u>veja que este arquivo está vazio, então, após abrí-lo, apenas digite o
+conteúdo abaixo e salve-o</u>:
+
+<comando>
+APT::Install-Recommends "0";
+</comando>
+
+    A configuração da fonte dos pacotes é realizada no arquivo
+<b>/etc/apt/sources.list</b>, <u>neste arquivo devem ficar descomentadas
+somente estas três linhas</u>, use o <b>#</b> para comentar as outras
+linhas:
+
+<comando>
+deb http://ftp.br.debian.org/debian/ buster main contrib non-free
+deb http://ftp.br.debian.org/debian/ buster-updates main contrib
+deb http://security.debian.org/debian-security buster/updates main contrib non-free
+</comando>
+
+    Caso a conectividade seja fornecida por um proxy via http, a seguinte
+configuração deve ser adicionada ao arquivo <b>/etc/apt/apt.conf</b>, com a
+devida adequação ao endereço IP do servidor proxy:
+
+<comando>
+Acquire::http::Proxy "http://172.16.0.1:3128/";
+</comando>
+
+    Após a definição das fontes, é necessário o <i>download</i> da lista de
+pacotes de <i>software</i> disponíveis, que é formada por informações de
+versão e descrição. Esse <i>download</i>, bem como a atualização do sistema,
+podem ser realizados pelos comandos:
+
+<comando>
+apt-get update
+apt-get upgrade
+</comando>
+
+<subsubsecao>SSH :: O acesso remoto</subsubsecao>
+
+    Instale o serviço de acesso remoto por meio do comando:
+
+<comando>
+apt-get install openssh-server
+</comando>
+
+    Configure o serviço de acesso remoto para permitir login com usuário
+<b>root</b>. Edite o arquivo <b>/etc/ssh/sshd_config</b> e realize a
+seguinte configuração:
+
+<comando>
+PermitRootLogin yes
+</comando>
+
+    Reinicie o serviço de acesso remoto por meio do comando:
+
+<comando>
+/etc/init.d/ssh restart
+</comando>
+
+    <atividade/>Agora utilize o <b>Putty</b> para realizar acesso remoto e o
+<b>WinSCP</b> para editar arquivos por meio dos editores <b>Notepad++</b> ou
+<b>Visual Studio Code (VSC)</b>.

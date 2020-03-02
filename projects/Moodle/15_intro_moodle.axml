@@ -1,0 +1,127 @@
+<capitulo>Introdução ao Moodle</capitulo>
+
+    O <link>https://moodle.org</link><text><b>Moodle</b></text> é um
+projeto de código aberto para a criação de ambientes de aprendizagem.
+A plataforma fornece recursos para os educadores, os administradores e para
+os alunos.
+
+<lista>
+  <item>Onde posso testar o Moodle antes de instalá-lo?</item>
+  <lista>
+    <item/><url>https://sandbox.moodledemo.net/</url>
+    <item/><url>https://school.moodledemo.net/</url>
+  </lista>
+</lista>
+
+<lista>
+  <item>Onde obter o Moodle?</item>
+  <lista>
+    <item/><url>https://download.moodle.org/</url>
+  </lista>
+</lista>
+
+<lista>
+  <item>Quais os plugins e temas mais usados do Moodle?</item>
+  <lista>
+    <item/><url>https://moodle.org/plugins/stats.php</url>
+  </lista>
+</lista>
+
+<lista>
+  <item>Onde obter plugins e temas?</item>
+  <lista>
+    <item/><url>https://moodle.org/plugins/</url>
+  </lista>
+</lista>
+
+<quebraPagina/>
+
+<subsecao>Segurança</subsecao>
+
+    A <b>segurança da informação</b> é um processo contínuo de avaliação
+dos controles a fim de assegurar que eles estejam atingindo seus objetivos.
+Como parte desse processo deve-se estabelecer controles específicos para
+cada sistema, essencialmente para garantir a disponibilidade e integridade
+das informações.
+
+    Manter o Moodle atualizado e livre de vulnerabilidades conhecidas é um
+dos controles essenciais. Para assegurar isso, <u>é importante monitorar os
+avisos de segurança do Moodle e de seus plugins</u>, neles são informados o
+impacto das vulnerabilidades e as correções de segurança que são
+disponibilizadas.
+
+    Os avisos de segurança do Moodle são publicados na página
+<url>https://moodle.org/security/</url> e pelo fórum
+<url>https://moodle.org/mod/forum/view.php?id=7128</url>, que pode ser
+assinado pelo opção <b>Assinar este fórum</b> no menu direito, assim será
+possível recebê-los por e-mail.
+
+<lista>
+  <item>Onde obter informações sobre controles de segurança para o Moodle?</item>
+  <lista>
+    <item/><url>https://docs.moodle.org/38/en/Security</url>
+  </lista>
+</lista>
+
+<subsubsecao>Objetivos de Controle</subsubsecao>
+
+    Um conjunto de objetivos de controle são previstos pela norma ISO 27001,
+porém de forma não exaustiva, sendo necessário que a organização considere a
+implementação de objetivos de controle e controles específicos.
+
+<step>Assegurar que não ocorra acesso indevido a conta administrativa.</step>
+<lista>
+  <item/>O site <b>deve</b> ser acessível somente por meio de protocolo
+         seguro (HTTPS).
+  <item/>O nome de usuário da conta administrativa <b>deve</b> ser alterado.
+  <item/>A senha da conta administrativa <b>deve</b> ser composta por
+         letras, números e caracteres especiais.
+  <item/>A autenticação da conta administrativa <b>deve</b> ser limitada a
+         determinados IPs.
+</lista>
+
+<step>Assegurar que não ocorra acesso indevido a conta de usuário.</step>
+<lista>
+  <item/><b>Deve-se</b> habilitar o desafio-resposta (<i>captcha</i>) de
+         autenticação.
+  <item/><b>Deve-se</b> bloquear temporariamente a conta e/ou o IP a partir
+         de falhas de autenticação.
+  <item/><b>Deve-se</b> aplicar políticas de senhas seguras.
+  <item/><b>Deve-se</b> deslogar o usuário por inatividade.
+</lista>
+
+<step>Assegurar a integridade do código.</step>
+<lista>
+  <item/><b>Deve-se</b> estabelecer procedimento para <u>verificação
+         periódica de configurações inseguras</u>.
+  <lista>
+    <item/>O usuário do sistema que executa o serviço web (www-data) deve
+           ser proprietário apenas do diretório <b>moodledata</b> do diretório de
+           trabalho do site.
+  </lista>
+  <item/><b>Deve-se</b> estabelecer rotina automatizada para <u>identificar
+         alterações nos arquivos da aplicação</u>.
+  <lista>
+    <item/>As alterações dos arquivos do Moodle devem ser imediatamente
+           notificadas a equipe competente.
+  </lista>
+</lista>
+
+    <importante/>Os utilitários <b>fam</b> - <i>File Alteration Monitor</i>
+- e <b>inotify-tools</b> implementam isto por meio da associação de eventos
+do kernel, uma forma eficiente de monitorar arquivos. Uma alternativa menos
+eficaz é a utilização do comando <b>md5sum</b> periodicamente pelo
+<b>Cron</b>, podendo ser associado ao envio de e-mail em caso de alterações.
+
+<br/>0.2cm
+
+<step>Assegurar que o ambiente esteja livre de vulnerabilidades
+conhecidas.</step>
+<lista>
+  <item/>Estabelecer procedimento de <u>atualização periódica do Moodle</u>.
+  <item/>Estabelecer procedimento de <u>atualização periódica dos pacotes
+         do sistema operacional</u>.
+  <item/>Utilizar o conjunto mínimo de plugins para atender aos requisitos
+         do projeto.
+</lista>
+

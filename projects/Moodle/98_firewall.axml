@@ -1,0 +1,88 @@
+<capitulo>Firewall</capitulo>
+
+<subsubsubsecao>Logs no console</subsubsubsecao>
+
+<lista>
+<item/> <b>/etc/sysctl.conf</b>: descomentar configuração a seguir (l. 10).
+</lista>
+
+<comando>
+kernel.printk = 4 4 1 7
+</comando>
+
+	Aplicar configuração:
+
+<comandoNumerado>
+sysctl -p
+</comandoNumerado>
+
+<subsubsubsecao>Configuração</subsubsubsecao>
+
+<lista>
+<item/> <b>/etc/init.d/firewall.sh</b>: criar arquivo com conteúdo abaixo
+e realizar adequações necessárias.
+</lista>
+
+<comando>
+#!/bin/bash
+# Firewall invoke script
+# Copyright (c) 2012 - Reinaldo de Carvalho <reinaldoc@gmail.com>
+
+### BEGIN INIT INFO
+# Provides:          iptables
+# Required-Start:    $all
+# Required-Stop:     $all
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: Firewall invoke script
+### END INIT INFO
+
+case "$1" in
+    start)
+        iptables -F
+        iptables -P INPUT DROP
+        iptables -A INPUT -i lo -j ACCEPT
+        iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+        iptables -A INPUT -p tcp --syn --dport   22 -j ACCEPT -s 10.15.10.0/24
+        iptables -A INPUT -p tcp --syn --dport   80 -j ACCEPT
+        iptables -A INPUT -p tcp --syn --dport 5666 -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT -s 10.15.1.5
+        iptables -A INPUT -m limit --limit 20/s -j LOG --log-prefix 'Firewall: '
+    ;;
+    stop)
+        iptables -P INPUT ACCEPT
+        iptables -F
+    ;;
+    status|list)
+        iptables -nvL
+    ;;
+    *)
+        echo "Sintaxe: $0 [ start | stop | list ]"
+    ;;
+esac
+</comando>
+
+    Definir permissão de execução e inicialização automática:
+
+<comandoNumerado>
+chmod 755 /etc/init.d/firewall.sh
+update-rc.d firewall.sh defaults
+/etc/init.d/firewall.sh start
+</comandoNumerado>
+
+<subsubsubsecao>FTP Conntrack</subsubsubsecao>
+
+<lista>
+<item/> <b>/etc/modules</b>: adicionar módulo para inicialização automática;
+</lista>
+
+<comando>
+nf_conntrack_ftp
+</comando>
+
+    Esta configuração é necessária para carregar o referido módulo durante o boot,
+para carréga-lo no boot atual, execute:
+
+<comando>
+# modprobe nf_conntrack_ftp
+</comando>
