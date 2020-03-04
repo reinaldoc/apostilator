@@ -257,6 +257,9 @@ seguinte configuração:
 PermitRootLogin yes
 </comando>
 
+    Após a conclusão da preparação do ambiente, essa configuração pode ser
+desativada.
+
     Reinicie o serviço de acesso remoto por meio do comando:
 
 <comando>
