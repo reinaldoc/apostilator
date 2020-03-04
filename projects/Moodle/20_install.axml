@@ -102,16 +102,19 @@ ServerTokens Prod
 <b>/etc/php/7.3/cli/php.ini</b>:
 
 <comando>
-# l.406
+# l:380
+max_execution_time = 160
+
+# l:401
 memory_limit = 384M
 
-# l.693
+# l:689
 post_max_size = 50M
 
-# l.845
+# l:841
 upload_max_filesize = 50M
 
-# l.960
+# l:956
 date.timezone = America/Belem
 </comando>
 
