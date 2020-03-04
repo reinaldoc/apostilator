@@ -288,9 +288,14 @@ usuário do serviço http.
 <comando>
 # mkdir /var/www/moodle/moodle-app
 # mkdir -p /var/www/moodle/moodle-data/lang
-# chown moodle:   /var/www/moodle/moodle-app
+# chown www-data:   /var/www/moodle/moodle-app
 # chown www-data: /var/www/moodle/moodle-data
 </comando>
+
+    <importante/>O instalador irá criar o arquivo <b>config.php</b> no
+diretório <b>moodle-app</b>, por isso é necessário que o usuário do serviço
+web (www-data) consiga escrever neste diretório neste momento. Após, esta
+permissão será alterada.
 
     O Moodle está disponível no endereço: <url>https://download.moodle.org/</url>.
 
@@ -312,16 +317,6 @@ $ cd /var/www/moodle/moodle-app
 $ tar xzf /tmp/moodle-3.8.1.tgz --strip 1
 $ find ../moodle-app -name '*.txt' -exec chmod 600 {} \;
 $ chmod 644 robots.txt
-</comando>
-
-<step>Conceda permissão ao usuário do serviço web</step>
-
-    O instalador do <b>Moodle</b> irá escrever as configurações no arquivo
-<b>moodle-app/config.php</b>. Assim, nesse momento, o usuário do serviço web
-necessita de permissão para escrever neste arquivo.
-
-<comando>
-# chown www-data: /var/www/moodle/moodle-app
 </comando>
 
 <step>Inicie o navegador</step>
