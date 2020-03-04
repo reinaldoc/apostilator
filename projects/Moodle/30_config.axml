@@ -1,0 +1,21 @@
+<capitulo>Configurações</capitulo>
+
+    As configurações do Moodle são realizadas pela opção <b>Administração do
+site</b>, disponível aos usuários com papel <b>Administrador</b>.
+
+<subsecao>Configuração de e-mail</subsecao>
+
+<lista>
+    <item>Caminho:</item> Servidor => Servidor => Contato para suporte técnico
+    <lista>
+      <item>Nome de suporte</item>: Suporte Campus Virtual
+      <item>Email de suporte</item>: suporte@exemplo.com.br
+      <item>Página de suporte</item>: ticket.exemplo.com.br
+    </lista>
+    <item>Caminho:</item> Servidor => E-mail => Configuração de saída de e-mail
+    <lista>
+      <item>Servidores SMTP</item>: 10.8.14.182
+      <item>Endereço de No-reply</item>: suporte+noreply@exemplo.com.br
+      <item>Prefixo do texto do assunto do email</item>: [Campus Virtual]
+    </lista>
+</lista>
