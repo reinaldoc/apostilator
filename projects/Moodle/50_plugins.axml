@@ -1,0 +1,19 @@
+<capitulo>Plugins</capitulo>
+
+    Os plugins adicionam novos recursos ao <b>Moodle</b>. Consulte a relação
+de plugins disponíveis no endereço <url>https://moodle.org/plugins</url>.
+
+<subsecao>Formatos de Curso</subsecao>
+
+<subsubsecao>Onetopic format</subsubsecao>
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/format_onetopic</url>
+</lista>
+
+<subsubsecao>Collapsed Topics</subsubsecao>
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/format_topcoll</url>
+</lista>
+
