@@ -3,7 +3,7 @@
     As configurações do Moodle são realizadas pela opção <b>Administração do
 site</b>, disponível aos usuários com papel <b>Administrador</b>.
 
-<subsecao>Configuração de e-mail</subsecao>
+<subsecao>E-mail</subsecao>
 
 <lista>
     <item>Caminho:</item> Servidor => Servidor => Contato para suporte técnico
@@ -17,5 +17,14 @@ site</b>, disponível aos usuários com papel <b>Administrador</b>.
       <item>Servidores SMTP</item>: 10.8.14.182
       <item>Endereço de No-reply</item>: suporte+noreply@exemplo.com.br
       <item>Prefixo do texto do assunto do email</item>: [Campus Virtual]
+    </lista>
+</lista>
+
+<subsecao>Seleção de Idioma</subsecao>
+
+<lista>
+    <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
+    <lista>
+      <item>Mostrar lista de idiomas</item>: desabilitado;
     </lista>
 </lista>
