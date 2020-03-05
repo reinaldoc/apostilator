@@ -1,5 +1,10 @@
 <capitulo>Plugins</capitulo>
 
+<lista>
+  <item>Referência:</item><url>https://docs.moodle.org/38/en/Installing_plugins</url>
+</lista>
+
+
     Os plugins adicionam novos recursos ao <b>Moodle</b>. Consulte a relação
 de plugins disponíveis no endereço <url>https://moodle.org/plugins</url>.
 
