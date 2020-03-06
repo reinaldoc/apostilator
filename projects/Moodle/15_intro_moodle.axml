@@ -114,6 +114,8 @@ plugins.
     <item/>O usuário do sistema que executa o serviço web (www-data) deve
            ser proprietário apenas do diretório de trabalho
            <b>moodle-data</b>.
+    <item/>O diretório de trabalho <b>moodle-data</b> deve estar localizado
+           fora do DocumentRoot, ou seja, inacessível via http.
   </lista>
   <item/><b>Deve-se</b> estabelecer rotina automatizada para <u>identificar
          alterações nos arquivos da aplicação</u>.
