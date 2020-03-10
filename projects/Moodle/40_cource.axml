@@ -36,22 +36,32 @@ Destaque</b>.
 <subsecao>Seções do curso</subsecao>
 
     Um curso pode ser divido em <b>seções</b> para fins didáticos, também
-pode ser chamado de <b>tópicos</b> ou <b>módulos</b>. As seções, além de
-abrigar o conteúdo ao qual se destina, podem ter restrições de exibição que
-controlam seu acesso a partir de determinada condição.
+chamado de <b>tópicos</b> ou <b>módulos</b>. As seções, além de abrigar o
+conteúdo ao qual se destina, podem ter restrições de exibição que controlam
+seu acesso a partir de determinada condição.
 
-    A opção <b>Ativar edição</b> habilita a edição das seções.
+    A opção <b>Ativar edição</b> habilita a edição das seções e deve ser
+executada para realizadas as atividades a seguir.
 
 <br/>0.2cm
 
-<subsubsubsecao>Edição da seção (tópico)</subsubsubsecao>
+<subsubsubsecao>Edição do nome seção</subsubsubsecao>
 
 <lista>
   <item>Atividade</item>
   <lista>
-    <item/>use a opção <b>Ativar edição</b>;
     <item/>use a opção <b>Editar seção</b> para configurar uma seção;
     <item/>altere o nome da seção;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<subsubsubsecao>Restrição de exibição da seção</subsubsubsecao>
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>use a opção <b>Editar seção</b> para configurar uma seção;
     <item/>identifique as opções de restrição por meio da opção <b>Adicionar restrução...</b>;
     <lista>
       <item>Conclusão da atividade</item>;
@@ -60,8 +70,20 @@ controlam seu acesso a partir de determinada condição.
       <item>Perfil do usuário</item>;
       <item>Grupo de restrição</item>;
     </lista>
+    <item/>selecione <b>Data</b>;
+    <item/>informe a data a partir da qual esta seção será exibida para o
+    estudante;
+    <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
+
+<subsubsubsecao>Tarefas</subsubsubsecao>
+
+<step>Adicione uma seção ao curso, após remova-a.</step>
+
+<step>Altere a ordem das seções existentes.</step>
+
+<br/>0.6cm
 
 <subsecao>Configuração do Curso</subsecao>
 
