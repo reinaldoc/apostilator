@@ -2,12 +2,60 @@
 
     Os cursos são a essência do <b>Moodle</b>, são compostos por
 <b>tópicos</b> que permitem sua divisão em seções de conteúdo. Diversos
-recursos didáticos podem ser utilizados, como atividades, fórum, quiz e
-questionários de avaliação de aprendizagem.
+recursos didáticos podem ser utilizados em cada tópico, como atividades,
+fórum, quiz e questionários de avaliação de aprendizagem.
 
     As <b>categorias</b> permitem a construções do catálogo de cursos,
 organizando-os hierarquicamente conforme a taxonomia desejada. A
-configuração de catergorias está disponível em: <b>Administração do site →
-Cursos → Gerenciar cursos e categorias</b>.
+configuração de catergorias está disponível em:
 
+<lista>
+    <item>Administração do site → Cursos → Gerenciar cursos e categorias</item>.
+</lista>
+
+    <b>Tarefa:</b> Altere a categoria <b>Miscelância</b> para <b>Cursos em
+Destaque</b>.
+
+<br/>0.2cm
+
+
+<subsecao>Novo Curso</subsecao>
+
+
+<lista>
+  <item>Atividades</item>
+  <lista>
+    <item/>crie um novo curso;
+    <item/>preencha o <b>Sumário do curso</b> com a descrição do curso;
+    <item/>envie a <b>Imagem do curso</b>;
+    <item/>observe que o formato de curso padrao é <b>Formato de Tópicos</b>;
+    <item/>clique em <b>Salvar e mostrar</b>;
+    <item/>use a opção <b>Inscrever usuário</b> para definir o <b>Professor</b> e inscrever <b>Estudantes</b>;
+    <item/>na tela de inscrição de usuários, clique em <b>Ir para o conteúdo do curso</b>;
+    <item/>use a opção <b>Editar Configurações</b> para selecionar o formato de curso <b>Formato tópico único</b>;
+  </lista>
+</lista>
+
+<subsecao>Tópicos do curso</subsecao>
+
+    Um curso pode ser divido em tópicos para fins didáticos. Os tópicos,
+além de abrigar o conteúdo ao qual se destina, podem ter restrições de
+exibição para terem seu acesso liberado a partir de determinada condição.
+
+<lista>
+  <item>Atividades</item>
+  <lista>
+    <item/>acesse um curso;
+    <item/>use a opção <b>Ativar edição</b>;
+    <item/>escolha um tópico e use a opção <b>Editar seção</b>;
+    <item/>identifique as opções de restrição por meio da opção <b>Adicionar restrução...</b>;
+    <lista>
+      <item>Conclusão da atividade</item>;
+      <item>Data</item>;
+      <item>Nota</item>;
+      <item>Perfil do usuário</item>;
+      <item>Grupo de restrição</item>;
+    </lista>
+  </lista>
+</lista>
 
