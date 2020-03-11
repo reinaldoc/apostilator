@@ -22,3 +22,24 @@
     <item>Download:</item> <url>https://moodle.org/plugins/format_topcoll</url>
 </lista>
 
+<subsecao>Blocos</subsecao>
+
+<subsubsecao>Completion Progress</subsubsecao>
+
+    O plugin <b>Completion Progress</b> fornece um novo bloco para os cursos
+com uma visão geral do estado das atvidades, ou seja, permite visualizar
+as atividadas concluídas e não concluídas em formato de barra de progresso.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/block_completion_progress</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Progresso de Conclusão</b>;
+    </lista>
+</lista>
+
+    Os usuários com papel de Professores tem acesso ao botão <b>Visão geral
+de estudantes</b> com a relação de progresso de todos os estudantes do curso.
