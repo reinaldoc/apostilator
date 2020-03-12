@@ -47,6 +47,7 @@ de estudantes</b> com a relação de progresso de todos os estudantes do curso.
 <subsecao>Temas</subsecao>
 
 <subsubsecao>Boost navigation fumbling</subsubsecao>
+<nome>plugin-boost-navigation-fumbling</nome>
 
     O plugin <b>Boost navigation fumbling</b> permite a configuração do menu
 principal do tema <b>Boost</b>,o <i>navigation drawer</i>. Assim, é possível

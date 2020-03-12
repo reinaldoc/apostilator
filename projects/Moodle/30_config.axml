@@ -20,23 +20,3 @@ site</b>, disponível aos usuários com papel <b>Administrador</b>.
     </lista>
 </lista>
 
-<subsecao>Seleção de Idioma</subsecao>
-
-<lista>
-    <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
-    <lista>
-      <item>Mostrar lista de idiomas</item>: desabilitado;
-    </lista>
-</lista>
-
-<subsecao>Desativar página inicial</subsecao>
-
-    Esta configuração faz com que a página de autenticação seja utilizada
-como página incial.
-
-<lista>
-    <item>Caminho:</item> Administração do site => Segurança => Configurações de segurança do site
-    <lista>
-      <item>Forçar usuários a autenticar</item>: habilitado;
-    </lista>
-</lista>

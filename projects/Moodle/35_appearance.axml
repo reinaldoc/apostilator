@@ -1,0 +1,65 @@
+<capitulo>Aparência</capitulo>
+
+    Neste capítulo será abordada a customização da aparência do ambiente do
+<b>Moodle</b>, isto inclui a <b>página inicial</b>, a <b>página de login</b>
+e o <b>painel do usuário</b>.
+
+<subsecao>Fluxo de navegação</subsecao>
+
+    Após o <b>Moodle</b> ser instalado, a primeira página acessível é a
+<b>página inicial</b> que contém o link <b>Acessar</b> para acesso a página
+de login. Após o login, o usuário de redirecionado de volta para a página
+inicial.
+
+    Há duas configurações que modificam este comportamento, que podem ser
+utilizadas em determinados casos: i) usar a página de login como página
+inicial e ii) usar o painel do usuário como página após o login.
+
+    Essas opções definem o fluxo de navegação dos usuários e é um escolha
+que deve ser realizada caso a caso, ou seja, avalie qual o melhor cenário
+para o seu projeto de uso do <b>Moodle</b>.
+
+<subsubsubsecao>Usar a página de login como página inicial</subsubsubsecao>
+
+    Esta configuração faz com que a página de autenticação seja utilizada
+como página incial do <b>Moodle</b>. O usuário também será direcionado a
+página de login ao sair do <b>Moodle</b>.
+
+<lista>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse <b>Administração do site => Segurança => Configurações de segurança do
+site</b>;
+      <item/>ative a opção <b>Forçar usuários a autenticar</b>;
+    </lista>
+</lista>
+
+<subsubsubsecao>Definir a página pós-login</subsubsubsecao>
+
+    Esta configuração define qual página o usuário será direcionado após
+realizar login. 
+
+<lista>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse <b>Administração do site => Aparência => Navegação</b>;
+        <item/>selecione <b>Painel</b> em <b>Página inicial padrão para os usuários</b>;
+    </lista>
+</lista>
+
+    <importante/>O tema <b>Boost</b> utiliza o menu <i>navigation
+drawler</i> como menu principal de navegação. Este menu pode ser customizado
+por meio do plugin <b>Boost navigation fumbling</b>, veja na
+seção<ref>plugin-boost-navigation-fumbling</ref>.
+
+<br/>0.6cm
+
+<subsecao>Seleção de Idioma</subsecao>
+
+<lista>
+    <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
+    <lista>
+      <item>Mostrar lista de idiomas</item>: desabilitado;
+    </lista>
+</lista>
+
