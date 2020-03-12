@@ -290,7 +290,7 @@ usuário do serviço http.
 
 <comando>
 # mkdir /var/www/moodle/moodle-app
-# mkdir -p /var/www/moodle/moodle-data/lang
+# mkdir /var/www/moodle/moodle-data
 # chown www-data: /var/www/moodle/moodle-app
 # chown www-data: /var/www/moodle/moodle-data
 </comando>
@@ -306,7 +306,7 @@ permissão para alterar o diretório <b>moodle-app</b>.
 
 <br/>0.7cm
 
-<step>Download do Moodle</step>
+<step>Download do Moodle e tradução</step>
 
     A versão mais recente do Moodle está disponível em: <url>https://download.moodle.org/</url>.
 
@@ -315,6 +315,7 @@ permissão para alterar o diretório <b>moodle-app</b>.
 # su -l www-data -s /bin/bash
 $ cd /tmp
 $ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.1.tgz
+$ wget https://download.moodle.org/download.php/direct/langpack/3.8/pt_br.zip
 </comando>
 
 <step>Extraia o Moodle</step>
@@ -325,24 +326,34 @@ $ tar xzf /tmp/moodle-3.8.1.tgz --strip 1
 $ find ../moodle-app -name '*.txt' -exec chmod 600 {} \;
 </comando>
 
+<step>Extraia os arquivos de tradução</step>
+
+<comando>
+$ mkdir /var/www/moodle/moodle-data/lang
+$ cd /var/www/moodle/moodle-data/lang
+$ unzip /tmp/pt_br.zip
+$ find ../lang -type f -exec chmod 0644 {} \;
+</comando>
+
+    <b>Explicação para Nerds:</b> ao executar comandos que executam ações em
+lote, como o comando <b>find</b> acima, opte por indicar o diretório
+explicitamente, como <b>../lang</b>. A utilização de coringas de caminho
+relativo, como ponto (.), pode levar a erros se o comando for executado em
+um diretório indevido. Assim, a sintaxe utilizada no comando <b>find</b> se
+torna segura, pois não será válida caso executado em outro diretório.
+
+<br/>0.3cm
+
 <step>Inicie o navegador</step>
 
-    Acesse o <b>Moodle</b> pelo navegador e realize a configuração do idioma
-e da conexão ao banco de dados. Essas configurações serão salvas no arquivo
+    Acesse o <b>Moodle</b> pelo navegador. Utilize o IP da máquina virtual
+para o acesso, caso aplicável. Realize a configuração do idioma e da conexão
+ao banco de dados. Essas configurações serão salvas no arquivo
 <b>/var/www/moodle/moodle-app/config.php</b>.
 
 <lista>
   <item>Escolha um idioma:</item> Português - Brasil (pt_br);
 </lista>
-
-    Realize download da tradução da interface web:
-
-<comando>
-# cd /tmp
-# wget https://download.moodle.org/download.php/direct/langpack/3.8/pt_br.zip
-# cd /var/www/moodle/moodle-data/lang
-# unzip /tmp/pt_br.zip
-</comando>
 
 <step>Redefina a permissão do arquivo de configuração</step>
 
