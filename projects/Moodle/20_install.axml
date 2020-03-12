@@ -291,24 +291,28 @@ usuário do serviço http.
 <comando>
 # mkdir /var/www/moodle/moodle-app
 # mkdir -p /var/www/moodle/moodle-data/lang
-# chown www-data:   /var/www/moodle/moodle-app
+# chown www-data: /var/www/moodle/moodle-app
 # chown www-data: /var/www/moodle/moodle-data
 </comando>
 
-    <importante/>O instalador irá criar o arquivo <b>config.php</b> no
-diretório <b>moodle-app</b>, por isso é necessário que o usuário do serviço
-web (www-data) consiga escrever neste diretório neste momento. Após, esta
-permissão será alterada.
+    O instalador irá criar o arquivo <b>config.php</b> no diretório
+<b>moodle-app</b>, por isso é necessário que o usuário do serviço web
+(www-data) consiga escrever neste diretório neste momento. Essa permissão é
+necessária também para a instalação de <b>plugins</b>,
 
-    O Moodle está disponível no endereço: <url>https://download.moodle.org/</url>.
+    <importante/>Quando o ambiente do <b>Moodle</b> estiver pronto para
+produção, isto deve ser alterado para que o usuário do serviço web não tenha
+permissão para alterar o diretório <b>moodle-app</b>.
+
+<br/>0.7cm
 
 <step>Download do Moodle</step>
 
-    Realize download do Moodle:
+    A versão mais recente do Moodle está disponível em: <url>https://download.moodle.org/</url>.
 
 <comando>
 # apt-get install wget ca-certificates
-# su -l moodle
+# su -l www-data -s /bin/bash
 $ cd /tmp
 $ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.1.tgz
 </comando>
@@ -319,7 +323,6 @@ $ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.1.tgz
 $ cd /var/www/moodle/moodle-app
 $ tar xzf /tmp/moodle-3.8.1.tgz --strip 1
 $ find ../moodle-app -name '*.txt' -exec chmod 600 {} \;
-$ chmod 644 robots.txt
 </comando>
 
 <step>Inicie o navegador</step>
@@ -343,14 +346,20 @@ e da conexão ao banco de dados. Essas configurações serão salvas no arquivo
 
 <step>Redefina a permissão do arquivo de configuração</step>
 
-    Após o procedimento de instalação do <b>Moodle</b>, o usuário do serviço
-web não necessita mais ter permissão de escrita no diretório
-<b>moodle-app</b>, por isso, deve-se alterar a propriedade deste arquivo
-para o usuário <b>moodle</b>.
+    Após o procedimento de instalação do <b>Moodle</b> e conclusão de
+customização por meio da instalação de plugins, o usuário do serviço
+web não deverá ter permissão de escrita no diretório <b>moodle-app</b>. por
+isso, altere o proprietário deste diretório para o usuário <b>moodle</b>.
 
 <comando>
-# chown moodle: /var/www/moodle/moodle-app
+# chown -R moodle: /var/www/moodle/moodle-app
 </comando>
+
+    <importante/>Se você está seguindo este material sequencialmente, este
+não é o momento de realizar este procedimento. Realize-o somente quando o
+ambiente for liberado em produção para o público.
+
+<br/>0.4cm
 
 <step>Configure o agendador de tarefas</step>
 
