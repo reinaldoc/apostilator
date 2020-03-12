@@ -65,3 +65,40 @@ seção<ref>plugin-boost-navigation-fumbling</ref>.
     </lista>
 </lista>
 
+<subsecao>Painel do Usuário</subsecao>
+
+    O painel do usuário é uma página que deve ser utilizada para apresentar
+todas as informações que podem ser úteis ao usuário.
+
+<subsubsubsecao>Configurando o painel do usuário</subsubsubsecao>
+
+<lista>
+    <item>Atividade</item>
+    <lista>
+      <item/>acesse <b>Administração do site => Aparência => Página Painel
+padrão</b>;
+      <item/>clique em <b>Habilitar edição de blocos</b>;
+    </lista>
+</lista>
+
+    Novos blocos podem ser exibidos por meio da opção <b>Adicionar um
+bloco</b>, bem como os blocos podem ser reposicinados ou removidos.
+
+    A opção <b>Redefinir Painel para todos os usuário</b> para aplicar este
+painel a todos os usuários, descartando eventuais customizações que os
+próprios usuários tenham realizado.
+
+<br/>0.4cm
+
+<subsubsubsecao>Desativando a customização do painel pelo usuário</subsubsubsecao>
+
+<lista>
+    <item>Atividade</item>
+    <lista>
+      <item/>acesse <b>Administração do site => Usuários => Permissões</b>;
+      <item/>selecione <b>Definir papéis</b>;
+      <item/>edite o papel <b>Usuário autenticado</b>;
+      <item/>desabilite a opção <b>Gerenciar blocos do Painel</b>;
+    </lista>
+</lista>
+
