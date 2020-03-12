@@ -8,7 +8,7 @@ e o <b>painel do usuário</b>.
 
     Após o <b>Moodle</b> ser instalado, a primeira página acessível é a
 <b>página inicial</b> que contém o link <b>Acessar</b> para acesso a página
-de login. Após o login, o usuário de redirecionado de volta para a página
+de login. Após o login, o usuário é redirecionado de volta para a página
 inicial.
 
     Há duas configurações que modificam este comportamento, que podem ser
@@ -18,6 +18,8 @@ inicial e ii) usar o painel do usuário como página após o login.
     Essas opções definem o fluxo de navegação dos usuários e é um escolha
 que deve ser realizada caso a caso, ou seja, avalie qual o melhor cenário
 para o seu projeto de uso do <b>Moodle</b>.
+
+<br/>0.4cm
 
 <subsubsubsecao>Usar a página de login como página inicial</subsubsubsecao>
 
