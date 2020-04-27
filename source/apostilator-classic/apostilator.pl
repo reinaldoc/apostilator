@@ -482,8 +482,8 @@ sub create_bibliography() {
     while( <BIBLIOGRAFY> ) {
       $i++;
       next if /^\n/ ;
-      next if /^\@Article{\w+,\n/ ;
-      next if /^\@Misc{\w+,\n/ ;
+      next if /^\@Article\{\w+,\n/ ;
+      next if /^\@Misc\{\w+,\n/ ;
       next if /^\s*title\s+=\s+\".*\"\s*,\n/ ;
       next if /^\s*author\s+=\s+\".*\"\s*,\n/ ;
       next if /^\s*journal\s+=\s+\".*\"\s*,\n/ ;
