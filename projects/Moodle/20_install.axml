@@ -378,6 +378,6 @@ ambiente for liberado em produção para o público.
 
 <comando>
 # /etc/crontab
-0 * * * * moodle /usr/bin/php /var/www/moodle-app/admin/cli/cron.php >/dev/null
+0 * * * * moodle php /var/www/moodle/moodle-app/admin/cli/cron.php >/dev/null
 </comando>
 
