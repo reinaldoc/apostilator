@@ -159,7 +159,7 @@ conforme indicado a seguir.
 bind-address            = 0.0.0.0
 
 # Fix PDOException: SQLSTATE[HY000]: General error: 2006 MySQL server has gone away
-# l.34
+# l:34
 max_allowed_packet      = 32M
 </comando>
 
@@ -280,13 +280,11 @@ proprietário apenas do diretório de upload de arquivos (moodledata).
 <step>Crie os diretórios de trabalho do Moodle</step>
 
     O diretório <b>moodle-app</b> conterá os arquivos do sistema, será
-alterado quando ocorrer a atualização de versão do Moodle ou quando for
-adicionado plugins e temas. Modificações neste diretório são realizadas
-somente por uma pessoa operando o console do sistema operacional.
+alterado quando a versão do Moodle for atualizada ou quando algum plugins
+for adicionado.
 
     O diretório <b>moodle-data</b> conterá os arquivos criados pelo Moodle
-durante sua utilização. Modificações neste diretório são realizadas pelo
-usuário do serviço http.
+durante sua utilização.
 
 <comando>
 # mkdir /var/www/moodle/moodle-app
@@ -301,8 +299,8 @@ usuário do serviço http.
 necessária também para a instalação de <b>plugins</b>,
 
     <importante/>Quando o ambiente do <b>Moodle</b> estiver pronto para
-produção, isto deve ser alterado para que o usuário do serviço web não tenha
-permissão para alterar o diretório <b>moodle-app</b>.
+produção, a permissão deve ser alterada para que o usuário do serviço web
+não tenha permissão para alterar o diretório <b>moodle-app</b>.
 
 <br/>0.7cm
 
@@ -311,10 +309,10 @@ permissão para alterar o diretório <b>moodle-app</b>.
     A versão mais recente do Moodle está disponível em: <url>https://download.moodle.org/</url>.
 
 <comando>
-# apt-get install wget ca-certificates
+# apt-get install wget ca-certificates unzip
 # su -l www-data -s /bin/bash
 $ cd /tmp
-$ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.1.tgz
+$ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.2.tgz
 $ wget https://download.moodle.org/download.php/direct/langpack/3.8/pt_br.zip
 </comando>
 
@@ -322,7 +320,7 @@ $ wget https://download.moodle.org/download.php/direct/langpack/3.8/pt_br.zip
 
 <comando>
 $ cd /var/www/moodle/moodle-app
-$ tar xzf /tmp/moodle-3.8.1.tgz --strip 1
+$ tar xzf /tmp/moodle-3.8.2.tgz --strip 1
 $ find ../moodle-app -name '*.txt' -exec chmod 600 {} \;
 </comando>
 
@@ -346,14 +344,16 @@ torna segura, pois não será válida caso executado em outro diretório.
 
 <step>Inicie o navegador</step>
 
-    Acesse o <b>Moodle</b> pelo navegador. Utilize o IP da máquina virtual
-para o acesso, caso aplicável. Realize a configuração do idioma e da conexão
-ao banco de dados. Essas configurações serão salvas no arquivo
-<b>/var/www/moodle/moodle-app/config.php</b>.
-
 <lista>
-  <item>Escolha um idioma:</item> Português - Brasil (pt_br);
+    <item/>Acesse o <b>Moodle</b> pelo navegador. Utilize o IP da máquina virtual
+para o acesso.
+    <item/>Selecione o idioma: <b>Português - Brasil (pt_br)</b>.
+    <item/>Ajuste o diretório de dados: <b>/var/www/moodle/moodle-data</b>.
+    <item/>Forneça os dados de conexão ao banco de dados.
 </lista>
+
+    Essas configurações serão salvas no arquivo
+<b>/var/www/moodle/moodle-app/config.php</b>.
 
 <step>Redefina a permissão do arquivo de configuração</step>
 
