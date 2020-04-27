@@ -137,15 +137,20 @@ installer menu', então prossiga com a instalação.
   <item>Instalação finalizada</item>: continuar
 </lista>
 
-<step>Configuração da interface de Rede no VirtualBox</step>
+<subsubsecao>Configuração da interface de Rede no VirtualBox</subsubsecao>
 
     Após o sistema reiniciar, realize login com o usuário <b>root</b> e a
 senha definida durante a instalação. Use o comando <b>halt</b> para realizar
 o procedimento de desligamento do Linux. Feche a máquina virtual e selecione
-a opção <b>Desligar máquina</b>. Esta opção só deve ser utilizada após o
-comando <b>halt</b> e quando for necessário realizar alguma configuração na
-máquina virtual. Em regra, pode-se fechar diretamente a máquina virtual e
-selecionar a opção <b>Salvar estado da máquina</b>.
+a opção <b>Desligar máquina</b>.
+
+    <importante/>A opção <b>Desligar máquina</b> só deve ser utilizada após
+o comando <b>halt</b> e quando for necessário realizar alguma configuração
+na máquina virtual. Em regra, não é necessário usar o comando <b>halt</b>,
+basta fechar a máquina virtual e selecionar a opção <b>Salvar estado da
+máquina</b>.
+
+    <b>Opção 1:</b> Interface em modo Bridge
 
     A configuração padrão da interface de rede da máquina virtual é
 <b>NAT</b>, o que impede o acesso remoto a ela. Assim, há duas formas
@@ -153,6 +158,8 @@ possíveis para resolver isto, a mais simples é alterar a configuração da
 interface de rede para <b>Placa em modo Bridge</b>, isto fará com que a
 máquina virtual tenha acesso a rede por meio de seu próprio endereço MAC,
 obtendo um novo IP da mesma rede da máquina real.
+
+    <b>Opção 2:</b> Interface de rede adicional
 
     Entretando, em algumas redes há restrições de acesso somente para uma
 lista definida de endereços MAC. Neste caso, há uma alternativa. Mantenha a
@@ -175,7 +182,7 @@ para obter um IP nesta nova interface e use o comando <b>ip addr</b> para
 identificar o IP obtido pela interface <b>enp0s8</b>. Por meio deste IP será
 possível realizar o acesso remoto à máquina virtual.
 
-<step>Execução de comandos e edição de arquivos no terminal</step>
+<subsubsecao>Execução de comandos e edição de arquivos no terminal</subsubsecao>
 
     <importante/>Não serão necessários conhecimentos sobre o sistema Linux,
 mas neste momento <u>precisaremos realizar alguns passos</u>, o que inclui a
@@ -189,7 +196,7 @@ para salvar e sair da edição use: <b>control x</b> seguido de <b>y</b>. Por
 fim, lembre-se que, em regra, as linhas que iniciam por <b>#</b> são
 comentários, sem função de configuração.
 
-<subsubsecao>APT :: A ferramenta avançada de pacotes do Debian Linux</subsubsecao>
+<subsubsecao>Instalação de pacotes do Debian Linux</subsubsecao>
 
     Os sistemas operacionais Linux fornecem ferramentas para a instalação
 automatizada de <b>pacotes <i>software</i></b>. O Debian utiliza o
@@ -241,7 +248,7 @@ apt-get update
 apt-get upgrade
 </comando>
 
-<subsubsecao>SSH :: O acesso remoto</subsubsecao>
+<subsubsecao>Acesso ao terminal</subsubsecao>
 
     Instale o serviço de acesso remoto por meio do comando:
 
