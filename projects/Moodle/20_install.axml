@@ -346,10 +346,12 @@ torna segura, pois não será válida caso executado em outro diretório.
 
 <lista>
     <item/>Acesse o <b>Moodle</b> pelo navegador. Utilize o IP da máquina virtual
-para o acesso.
-    <item/>Selecione o idioma: <b>Português - Brasil (pt_br)</b>.
-    <item/>Ajuste o diretório de dados: <b>/var/www/moodle/moodle-data</b>.
-    <item/>Forneça os dados de conexão ao banco de dados.
+para o acesso;
+    <item/>Selecione o idioma: <b>Português - Brasil (pt_br)</b>;
+    <item/>Ajuste o diretório de dados: <b>/var/www/moodle/moodle-data</b>;
+    <item/>Forneça os dados de conexão ao banco de dados;
+    <item/>Preencha informações do administrador;
+    <item/>Faça a configuração básica do site.
 </lista>
 
     Essas configurações serão salvas no arquivo
