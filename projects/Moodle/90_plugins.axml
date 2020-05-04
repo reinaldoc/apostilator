@@ -8,6 +8,28 @@
   <item>Instalação:</item> <url>https://docs.moodle.org/38/en/Installing_plugins</url>
 </lista>
 
+<subsecao>Atividades</subsecao>
+
+<subsubsecao>H5P</subsubsecao>
+
+    O plugin <b>Interactive Content – H5P</b> fornece uma nova atividade
+para os cursos com mais de 40 tipos de conteúdo, tais como questões de
+múltipla escolha, questões de verdadeiro ou falso, cartões estilo Anki,
+preenchimento de lacunas, jogo da memória, caça palavras, gráficos de barra
+ou de pizza.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/mod_hvp</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>
+        <item/>use a opção <b>Conteúdo interativo</b>;
+        <item/>escolha um tipo de conteúdo, clique em <b>Detalhes</b> e em <b>Usar</b>;
+    </lista>
+</lista>
+
 <subsecao>Formatos de Curso</subsecao>
 
 <subsubsecao>Onetopic format</subsubsecao>
