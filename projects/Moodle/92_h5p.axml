@@ -3,14 +3,14 @@
     O <link>https://h5p.org</link><text><b>H5P</b></text> é um projeto de
 código aberto que fornece tipos de conteúdo interativos, normalmente
 utilizados para fins educacionais, porém também úteis para marketing e
-comunicação social.
+comunicação social, que podem ser utilizados em qualquer dos CMS suportados,
+como Moodle, Drupal e WordPress.
 
     Atualmente há mais de 40 tipos de conteúdo, tais como questões de
 múltipla escolha, questões de verdadeiro ou falso, cartões estilo Anki,
-seleção de palavras corretas (mark the words), jogo da memória, caça
-palavras, gráficos de barra ou de pizza. Também é possível agrupar vários
-tipos de conteúdo em forma de página por meio do tipo de conteúdo
-<b>Column</b>.
+preenchimento de lacunas, jogo da memória, caça palavras, gráficos de barra
+ou de pizza. Também é possível agrupar vários tipos de conteúdo em forma de
+página por meio do tipo de conteúdo <b>Coluna</b>.
 
 <lista>
   <item>Onde consultar a lista de tipos de conteúdo e uma demonstração de
@@ -23,7 +23,7 @@ cada um?</item>
     Destaca-se o tipo de conteúdo <b>Vídeo interativo</b> que fornece
 recursos para a visualização de vídeos, como a criação de marcadores para
 identificar seções importantes do vídeo, bem como permite a inserção de
-questões no meio do vídeo. O vídeo pode configurado para ser pausado para
+questões no meio do vídeo. Ele pode ser configurado para que o vídeo aguarde
 que o estudante responda a questão, continuando em seguida. O arquivo de
 vídeo não é modificado, apenas um camada de controle é adicionado sobre ele,
 assim como também é possível utilizar um conteúdo existente no YouTube.
@@ -39,14 +39,18 @@ H5P</b></text>. Escolha um dos tipos de conteúdo e preencha as informações
 solicitadas.
 
     Após preparar seu conteúdo, use a opção <b>Reuse</b> para baixar o
-arquivo <b>.h5p</b> do site. No Moodle, adicione uma atividade do tipo
-<b>Rótulo</b> ou <b>Página</b> e envie o arquivo por meio do botão
-<b>H5P</b> da barra de ferramentas do campo de texto. Assim, é possível
-apresentar um conteúdo H5P de forma nativa no Moodle, porém caso se queira
-contabilizar notas (de alguns recursos que tem esta possibilidade), é
-necessária a instalação do plugin
-<link>https://moodle.org/plugins/mod_hvp</link><text>Interactive Content –
-H5P</text>.
+arquivo .h5p do site e carregá-lo em qualquer plataforma compatível. No
+Moodle, adicione uma atividade do tipo <b>Rótulo</b> ou <b>Página</b> e
+envie o arquivo por meio do botão H5P da barra de ferramentas do campo de
+texto.
+
+    Assim é possível utilizar um conteúdo H5P de forma nativa no Moodle,
+porém caso se queira contabilizar notas, de alguns recursos que tem esta
+possibilidade, é necessária a instalação do plugin
+<link>https://moodle.org/plugins/mod_hvp</link><text><b>Interactive Content
+- H5P</b></text>. Use essas notas em turmas leigas de programação, pois
+é possível extrair as respostas corretas do código da página ou do arquivo
+.h5p.
 
     Verifique a compatibilidade dos tipos de conteúdo com leitores de tela
 <link>https://h5p.org/documentation/installation/content-type-accessibility</link>
