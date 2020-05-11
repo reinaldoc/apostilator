@@ -25,15 +25,14 @@ recursos para a visualização de vídeos, como a criação de marcadores para
 identificar seções importantes do vídeo, bem como permite a inserção de
 questões no meio do vídeo. Ele pode ser configurado para que o vídeo aguarde
 que o estudante responda a questão, continuando em seguida. O arquivo de
-vídeo não é modificado, apenas um camada de controle é adicionado sobre ele,
-assim como também é possível utilizar um conteúdo existente no YouTube.
+vídeo não é modificado, apenas uma camada de controle é adicionada sobre
+ele, assim como também é possível utilizar um conteúdo existente no YouTube.
 
-    Para começar a usar os tipos de conteúdo é necessário criar uma conta
-no site <link>https://h5p.org</link><text><b>H5P</b></text> por meio do
-link <link>https://h5p.org/user/register</link><text><b>Create free
+    Para experimentar os tipos de conteúdo H5P, crie uma conta no site
+<link>https://h5p.org</link><text><b>H5P</b></text> por meio do link
+<link>https://h5p.org/user/register</link><text><b>Create free
 account</b></text>. Após, acesse pelo link
-<link>https://h5p.org/user/</link><text><b>My
-account</b></text> e depois em
+<link>https://h5p.org/user/</link><text><b>My account</b></text> e depois em
 <link>https://h5p.org/node/add/h5p-content</link><text><b>Try out
 H5P</b></text>. Escolha um dos tipos de conteúdo e preencha as informações
 solicitadas.
