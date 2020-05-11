@@ -32,13 +32,21 @@ ou de pizza.
 
 <subsecao>Formatos de Curso</subsecao>
 
+    O formato do curso define o leiaute das suas seções.
+
 <subsubsecao>Onetopic format</subsubsecao>
+
+    O formato de curso <b>Onetopic format</b> utiliza um leiaute em abas
+para as seções do curso.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/format_onetopic</url>
 </lista>
 
 <subsubsecao>Collapsed Topics</subsubsecao>
+
+    O formato de curso <b>Collapsed Topics</b> utiliza um leiaute em
+acordeão para as seções do curso.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/format_topcoll</url>
