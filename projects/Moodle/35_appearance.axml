@@ -75,10 +75,16 @@ superior.
 
 <subsecao>Painel do Usuário</subsecao>
 
-    O painel do usuário é uma página que deve ser utilizada para apresentar
-todas as informações que podem ser úteis ao usuário.
+    O painel do usuário é uma página utilizada para apresentar todas as
+informações que podem ser úteis ao usuário, como a relação de cursos
+inscritos, calendário, próximos eventos, etc.
 
 <subsubsubsecao>Configurando o painel do usuário</subsubsubsecao>
+
+    As informações quem compõe o painel de usuário são organizadas por meio
+de blocos que podem ser posicionados na região central do site ou na região
+lateral direita. A disposição inicial dos blocos pode ser configurada, bem
+como pode-se não permitir que o usuário reposicione os blocos.
 
 <lista>
   <item>Atividade</item>
@@ -86,11 +92,17 @@ todas as informações que podem ser úteis ao usuário.
     <item/>acesse <b>Administração do site => Aparência => Página Painel
            padrão</b>;
     <item/>clique em <b>Habilitar edição de blocos</b>;
+    <item/>clique em <b>Adicionar um bloco</b> e selecione <b>Cursos</b>;
+    <item/>posicione esse bloco na região central (<b>content</b>);
+    <item/>clique em <b>Redefinir Painel para todos os usuário</b>;
   </lista>
 </lista>
 
     Novos blocos podem ser exibidos por meio da opção <b>Adicionar um
-bloco</b>, bem como os blocos podem ser reposicinados ou removidos.
+bloco</b>, bem como os blocos podem ser reposicinados ou removidos. Os
+blocos podem ser movidos entre as regiões central e direita pelo arrastar do
+mouse no ícone de setas ou pela opção <b>Região padrão</b> em <b>Configurar
+bloco</b> pelo ícone de engrenagem. 
 
     A opção <b>Redefinir Painel para todos os usuário</b> para aplicar este
 painel a todos os usuários, descartando eventuais customizações que os
@@ -100,6 +112,11 @@ próprios usuários tenham realizado.
 
 <subsubsubsecao>Desativando a customização do painel pelo usuário</subsubsubsecao>
 
+     Os blocos do painel do usuário podem ser configurado de forma estática,
+impedindo que os usuários possam adicionar, remover ou reposicionar blocos.
+Esta configuração omite a opção <b>Personalizar esta página</b> do painel do
+usuário.
+
 <lista>
   <item>Atividade</item>
   <lista>
@@ -107,6 +124,6 @@ próprios usuários tenham realizado.
     <item/>selecione <b>Definir papéis</b>;
     <item/>edite o papel <b>Usuário autenticado</b>;
     <item/>desabilite a opção <b>Gerenciar blocos do Painel</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
-
