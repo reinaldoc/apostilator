@@ -58,10 +58,18 @@ seção<ref>plugin-boost-navigation-fumbling</ref>.
 
 <subsecao>Seleção de Idioma</subsecao>
 
+    A interface do <b>Moodle</b> possui opção para a seleção do idioma, caso
+ela não seja útil, pode-se omití-la por meio de configuração. No tema padrão
+<b>Boost</b>, a seleção de idioma está localizada à esquerda da barra
+superior.
+
 <lista>
-  <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
+  <item>Atividade</item>
   <lista>
-    <item>Mostrar lista de idiomas</item>: desabilitado;
+    <item/>acesse <b>Administração do site => Idioma => Configurações de
+           idiomas</b>;
+    <item/><b>desabilite</b> a opção <b>Mostrar lista de idiomas</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
 
