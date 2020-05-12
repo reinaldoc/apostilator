@@ -28,12 +28,12 @@ como página incial do <b>Moodle</b>. O usuário também será direcionado a
 página de login ao sair do <b>Moodle</b>.
 
 <lista>
-    <item>Atividade</item>
-    <lista>
-        <item/>acesse <b>Administração do site => Segurança => Configurações de segurança do
-site</b>;
-      <item/>ative a opção <b>Forçar usuários a autenticar</b>;
-    </lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Segurança => Configurações
+           de segurança do site</b>;
+    <item/>ative a opção <b>Forçar usuários a autenticar</b>;
+  </lista>
 </lista>
 
 <subsubsubsecao>Definir a página pós-login</subsubsubsecao>
@@ -42,11 +42,11 @@ site</b>;
 realizar login. 
 
 <lista>
-    <item>Atividade</item>
-    <lista>
-        <item/>acesse <b>Administração do site => Aparência => Navegação</b>;
-        <item/>selecione <b>Painel</b> em <b>Página inicial padrão para os usuários</b>;
-    </lista>
+  <item>Atividade</item>
+  <lista>
+      <item/>acesse <b>Administração do site => Aparência => Navegação</b>;
+      <item/>selecione <b>Painel</b> em <b>Página inicial padrão para os usuários</b>;
+  </lista>
 </lista>
 
     <importante/>O tema <b>Boost</b> utiliza o menu <i>navigation
@@ -59,10 +59,10 @@ seção<ref>plugin-boost-navigation-fumbling</ref>.
 <subsecao>Seleção de Idioma</subsecao>
 
 <lista>
-    <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
-    <lista>
-      <item>Mostrar lista de idiomas</item>: desabilitado;
-    </lista>
+  <item>Caminho:</item> Administração do site => Idioma => Configurações de idiomas
+  <lista>
+    <item>Mostrar lista de idiomas</item>: desabilitado;
+  </lista>
 </lista>
 
 <subsecao>Painel do Usuário</subsecao>
@@ -73,12 +73,12 @@ todas as informações que podem ser úteis ao usuário.
 <subsubsubsecao>Configurando o painel do usuário</subsubsubsecao>
 
 <lista>
-    <item>Atividade</item>
-    <lista>
-      <item/>acesse <b>Administração do site => Aparência => Página Painel
-padrão</b>;
-      <item/>clique em <b>Habilitar edição de blocos</b>;
-    </lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Aparência => Página Painel
+           padrão</b>;
+    <item/>clique em <b>Habilitar edição de blocos</b>;
+  </lista>
 </lista>
 
     Novos blocos podem ser exibidos por meio da opção <b>Adicionar um
@@ -93,12 +93,12 @@ próprios usuários tenham realizado.
 <subsubsubsecao>Desativando a customização do painel pelo usuário</subsubsubsecao>
 
 <lista>
-    <item>Atividade</item>
-    <lista>
-      <item/>acesse <b>Administração do site => Usuários => Permissões</b>;
-      <item/>selecione <b>Definir papéis</b>;
-      <item/>edite o papel <b>Usuário autenticado</b>;
-      <item/>desabilite a opção <b>Gerenciar blocos do Painel</b>;
-    </lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Usuários => Permissões</b>;
+    <item/>selecione <b>Definir papéis</b>;
+    <item/>edite o papel <b>Usuário autenticado</b>;
+    <item/>desabilite a opção <b>Gerenciar blocos do Painel</b>;
+  </lista>
 </lista>
 
