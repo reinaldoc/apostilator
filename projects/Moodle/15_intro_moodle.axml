@@ -1,7 +1,11 @@
 <capitulo>Introdução ao Moodle</capitulo>
 
     O <link>https://moodle.org</link><text><b>Moodle</b></text> é um
-projeto de código aberto para a criação de ambientes de aprendizagem.
+projeto de código aberto para a criação de ambientes de aprendizagem.  A
+plataforma fornece recursos para educadores, estudantes e administradores,
+bem como recursos adicionais estão disponíveis por meio de <b>plugins</b>.
+Novos tipos de atividades para os cursos e novos formatos para as seções do
+curso estão disponíveis por meio de <b>plugins</b>.
 
     Os <b>cursos</b> criados no Moodle são organizados em categorias, que
 facilitam sua organização e apresentação aos estudantes. Ao criar um curso,
@@ -13,12 +17,6 @@ para comunicação entre estudantes e tutores.
 data, por obtenção de determinada nota em alguma atividade anterior, dentre
 outras possibilidades, assim o estudante terá acesso ao conteúdo conforme o
 tempo ou conforme seu rendimento, por exemplo.
-
-    A plataforma fornece recursos para educadores, estudantes e
-administradores, bem como recursos adicionais estão disponíveis por meio de
-<b>plugins</b>. Novos tipos de atividades para os cursos e novos
-formatos para as seções do curso estão disponíveis por meio de
-<b>plugins</b>.
 
 <lista>
   <item>Onde posso testar o Moodle antes de instalá-lo?</item>
