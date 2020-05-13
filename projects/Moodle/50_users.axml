@@ -1,7 +1,87 @@
 <capitulo>Usuários</capitulo>
+<nome>users</nome>
 
-<subsecao>Perfil do Usuário</subsecao>
+    Foi visto no capítulo<ref>appearence</ref> como permitir o autoregistro
+de usuários e como desabilitar o usuário visitante, nesse capítilo veremos o
+<b>Menu do usuário</b> e as demais opções de cadastro de usuário.
+
+<subsecao>Menu do usuário</subsecao>
+
+    O menu do usuário está localizado no canto superior direito, no tema
+padrão <b>Boost</b>, e contém as seguintes opções:
+
+<lista>
+  <item>Painel</item>: acesso ao Painel do Usuário;
+  <item>Perfil</item>: edição do cadastro do usuário;
+  <item>Notas</item>: consulta a grade de notas;
+  <item>Mensagens</item>: consulta as mensagens enviadas e recebidas entre
+  os usuários;
+  <item>Preferências</item>: edição das configurações do usuário;
+  <item>Sair</item>: realiza o <i>logout</i>;
+</lista>
+
+<subsubsecao>Perfil do Usuário</subsubsecao>
+
+    <b>Menu do usuário → Perfil</b>
 
     O perfil do usuário permite a edição do cadastro do usuário, inclusive
-envio da foto do perfil.
+envio da foto do perfil. O perfil dos usuários inscritos em um curso podem
+ser consultados pelos outros estudantes do mesmo curso.
+
+    <b>Tarefa</b>: acesser o perfil do usuário administrador e envie uma
+foto de perfil. Obtenha um avatar
+<link>http://www.iconarchive.com/category/avatar-icons.html</link>
+<text><b>clicando aqui</b></text>.
+
+<subsubsecao>Preferências do Usuário</subsubsecao>
+
+    <b>Menu do usuário → Preferências</b>
+
+    As preferências do usuário permitem a configuração de todos os recursos
+disponíveis ao usuários, inclusive a troca de sua senha.
+
+<subsubsecao>Preferências padrão do Usuário</subsubsecao>
+
+    <b>Papel:</b> Administrador.
+
+    Configure as preferências padrão do usuário de acordo com seus
+critérios.
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site → Usuários → Preferências padrão
+    do usuário</b>;
+    <item/>na opção <b>Tipo de compilação de email</b>, selecione <b>Completo
+    (um email diário com as mensagens completas dos fóruns)</b>;
+    <item/>na opção <b>Monitoramento do fórum</b>, selecione <b>Sim: ponha
+    em evidência as novas mensagens</b>;
+  </lista>
+</lista>
+
+    <b>Tarefa</b>: configure o primeiro dia da semana em <b>Administração do
+site → Aparência → Calendário</b>.
+
+<subsecao>Cadastro de Usuários</subsecao>
+
+<subsubsecao>Cadastro manual</subsubsecao>
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site → Usuários → Adicionar novo
+    usuário</b>;
+    <item/>preencha as informações solicitadas;
+    <item/>clique em <b>Criar usuário</b>;
+  </lista>
+</lista>
+
+<subsubsecao>Listar usuários cadastrados</subsubsecao>
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site → Usuários → Lista de usuários</b>;
+  </lista>
+</lista>
 
