@@ -142,13 +142,13 @@ installer menu', então prossiga com a instalação.
     Após o sistema reiniciar, realize login com o usuário <b>root</b> e a
 senha definida durante a instalação. Use o comando <b>halt</b> para realizar
 o procedimento de desligamento do Linux. Feche a máquina virtual e selecione
-a opção <b>Desligar máquina</b>.
+a opção <b>Desligar máquina</b> no VirtualBox.
 
     <importante/>A opção <b>Desligar máquina</b> só deve ser utilizada após
 o comando <b>halt</b> e quando for necessário realizar alguma configuração
-na máquina virtual. Em regra, não é necessário usar o comando <b>halt</b>,
-basta fechar a máquina virtual e selecionar a opção <b>Salvar estado da
-máquina</b>.
+na máquina virtual. Nos demais casos, basta fechar a máquina virtual e
+selecionar a opção <b>Salvar estado da máquina</b> no VirtualBox, não sendo
+necessário usar o comando <b>halt</b>.
 
     <b>Opção 1:</b> Interface em modo Bridge
 
@@ -165,8 +165,8 @@ obtendo um novo IP da mesma rede da máquina real.
 lista definida de endereços MAC. Neste caso, há uma alternativa. Mantenha a
 configuração da primeira placa de rede da máquina virtual como <b>NAT</b> e
 adicione uma outra interface de rede na máquina virtual do tipo
-<b>Host-only</b>, essa interface permitirá o acesso remoto a máquina
-virtual.
+<b>Host-only</b>, essa interface permitirá o acesso à máquina virtual a
+partir da máquina real.
 
 <lista>
   <item/>selecione a máquina virtual e use a opção <b>Configurações</b>;
