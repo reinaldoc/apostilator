@@ -134,3 +134,16 @@ site → Aparência → Calendário</b>.
   </lista>
 </lista>
 
+<subsubsecao>Papéis</subsubsecao>
+
+    Os papéis agrupam as permissões necessárias para cada tipo de usuário do
+<b>Moodle</b>. Os seguintes papéis estão disponíveis: Usuário autenticado,
+Visitante, Estudante, Moderador, Professor, Criador de cursos, Gerente e
+Administrador.
+
+    Criar um novo papel ou ajustar as permissões dos papéis existentes pode
+ser realizado pela opção <b>Administração do site → Usuários → Definir
+papéis</b>. Os papéis são concedidos aos usuários em cada curso, porém é
+possível atribuir os papéis <b>Criador de cursos</b> e <b>Gerente</b> para
+todos os cursos por meio da opção <b>Administração do site → Usuários →
+Atribuir papéis globais</b>.
