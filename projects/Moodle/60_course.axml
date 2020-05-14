@@ -20,16 +20,29 @@ Destaque</b>.
 
 <subsecao>Novo Curso</subsecao>
 
+    Certifique-se que os usuários que irão diagramar o curso já existam para
+que seja possível conceder as permissões por meio do papel <b>Professor</b>,
+<b>Criador de curso</b> ou <b>Gerente</b>.
+
+    Os estudantes podem ser inscritos posteriomente, quando o curso estiver
+pronto. Porém é possível inscrevê-los antes do curso estar pronto,
+por meio na opção de inscrição <b>Iniciando em: Início do curso</b>. Assim,
+a inscrição só será válida após a data de início do curso, que é configurada
+no curso.
+
 <lista>
   <item>Atividade</item>
   <lista>
-    <item/>crie um novo curso;
-    <item/>preencha o <b>Sumário do curso</b> com a descrição do curso;
+    <item/>acesse <b>Administração do site → Cursos → Criar novo curso</b>;
+    <item/>preencha as informações solicitadas;
+    <item/>o <b>Sumário do curso</b> será apresentado na listagem dos
+    cursos;
     <item/>envie a <b>Imagem do curso</b>;
     <item/>observe que o formato de curso padrao é <b>Formato de Tópicos</b>;
     <item/>clique em <b>Salvar e mostrar</b>;
-    <item/>use a opção <b>Inscrever usuário</b> para definir o <b>Professor</b> e inscrever <b>Estudantes</b>;
-    <item/>na tela de inscrição de usuários, clique em <b>Ir para o conteúdo do curso</b>;
+    <item/>clique em <b>Inscrever usuário</b>;
+    <item/>defina o usuário que irá elaborar o curso com o papel <b>Criador
+    de curso</b> ou <b>Gerente</b>;
   </lista>
 </lista>
 
