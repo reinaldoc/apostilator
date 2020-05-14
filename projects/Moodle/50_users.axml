@@ -33,6 +33,51 @@ foto de perfil. Obtenha um avatar
 <link>http://www.iconarchive.com/category/avatar-icons.html</link>
 <text><b>clicando aqui</b></text>.
 
+<br/>0.5cm
+
+<subsubsubsecao>Adicionar campos</subsubsubsecao>
+
+    É possível adicionar novos campos de cadastro do usuário por meio da
+opção <b>Administração do site → Usuários → Campos de perfil do usuário</b>.
+
+    <b>Tarefa</b>: adicone o campo <b>Melhor horário para contato</b> do
+tipo <b>DropDown</b> com as opções: pela manhã, pela tarde, pela noite.
+
+<br/>0.5cm
+
+<subsubsubsecao>Bloquear campos</subsubsubsecao>
+
+    Também é possível impedir a alteração dos campos por meio da opção
+<b>Bloquear campos de usuário</b> disponível em <b>Administração do site →
+Plugins → Autenticação → Contas manuais</b>.
+
+    <importante/>O bloqueio de campos é particularmente útil quando os dados
+dos usuários são sincronizados a partir de outra fonte, como o LDAP.
+
+<subsubsubsecao>Ocultar campos</subsubsubsecao>
+
+    Não há opção para ocultar os campos pré-definidos do perfil do usuário,
+porém uma solução de contorno é ocultá-los por meio de CSS na opção <b>SCSS
+puro</b> disponível em <b>Administração do site → Aparência → Temas → Boost →
+Opções avançadas</b>.
+
+<lista>
+  <item>Ocultar seções</item>
+  <lista>
+    <item/>#page-user-edit fieldset#id_moodle_additional_names {display:none;}
+    <item/>#page-user-edit fieldset#id_moodle_interests {display:none;}
+  </lista>
+  <item>Ocultar campos</item>
+  <lista>
+    <item/>#page-user-edit div#fitem_id_icq {display:none;}
+    <item/>#page-user-edit div#fitem_id_skype {display:none;}
+    <item/>#page-user-edit div#fitem_id_aim {display:none;}
+    <item/>#page-user-edit div#fitem_id_yahoo {display:none;}
+    <item/>#page-user-edit div#fitem_id_msn {display:none;}
+    <item/>#page-user-edit div#fitem_id_idnumber {display:none;}
+  </lista>
+</lista>
+
 <subsubsecao>Preferências do Usuário</subsubsecao>
 
     <b>Menu do usuário → Preferências</b>
@@ -40,7 +85,9 @@ foto de perfil. Obtenha um avatar
     As preferências do usuário permitem a configuração de todos os recursos
 disponíveis ao usuários, inclusive a troca de sua senha.
 
-<subsubsecao>Preferências padrão do Usuário</subsubsecao>
+<br/>0.5cm
+
+<subsubsubsecao>Preferências padrão do Usuário</subsubsubsecao>
 
     <b>Papel:</b> Administrador.
 
@@ -61,6 +108,8 @@ critérios.
 
     <b>Tarefa</b>: configure o primeiro dia da semana em <b>Administração do
 site → Aparência → Calendário</b>.
+
+<br/>0.5cm
 
 <subsecao>Cadastro de Usuários</subsecao>
 
