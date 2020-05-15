@@ -35,6 +35,8 @@ no curso.
   <lista>
     <item/>acesse <b>Administração do site → Cursos → Criar novo curso</b>;
     <item/>preencha as informações solicitadas;
+    <item/>enquanto o curso estiver em elaboração, na opção <b>Visibilidade
+    do curso</b>, use <b>Ocultar</b>;
     <item/>o <b>Sumário do curso</b> será apresentado na listagem dos
     cursos;
     <item/>envie a <b>Imagem do curso</b>;
@@ -140,3 +142,11 @@ caixa de seleção. Este recurso pode ser habilitado ou desabilitado em:
     No painel do usuário, os cursos com esta opção habilitada possuirão uma
 barra de progresso com o percentual de atividades marcadas como concluídas.
 
+<subsecao>Atividades e recursos</subsecao>
+
+    Atividades e recursos são os componente das seções do curso que tem
+função pedagógica de apresentação do conteúdo, de vericação de aprendizagem
+e para comunicação entre estudantes e tutores.
+
+    Ao criar um curso, a primeira seção, denominada de <b>Geral</b>, terá
+uma atividade do tipo <b>Fórum</b> identificada como <b>Avisos</b>.
