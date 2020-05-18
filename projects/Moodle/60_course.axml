@@ -2,12 +2,20 @@
 
     Os cursos são a essência do <b>Moodle</b>, são compostos por
 <b>tópicos</b> que permitem sua divisão em seções de conteúdo. Diversos
-recursos didáticos podem ser utilizados em cada tópico, como atividades,
-fórum, quiz e questionários de avaliação de aprendizagem.
+recursos didáticos podem ser utilizados em cada tópico, como páginas de
+apresentação do conteúdo, fórum para interação entre participantes, quizes
+para fixação do aprendizado, além de questionários para a avaliação de
+aprendizagem.
 
-    As <b>categorias</b> permitem a construções do catálogo de cursos,
-organizando-os hierarquicamente conforme a taxonomia desejada. A
-configuração de catergorias está disponível em:
+<br/>0.3cm
+
+<subsubsubsecao>Categorias</subsubsubsecao>
+
+    Os cursos podem ser organizados hierarquicamente em <b>categorias</b>,
+formando assim um catálogo de cursos conforme a taxonomia desejada. As
+categorias criadas são aprensentadas aos visitantes do site para que
+naveguem nos cursos disponibilizados. A configuração de categorias está
+disponível em:
 
 <lista>
     <item>Administração do site → Cursos → Gerenciar cursos e categorias</item>.
@@ -34,12 +42,12 @@ no curso.
   <item>Atividade</item>
   <lista>
     <item/>acesse <b>Administração do site → Cursos → Criar novo curso</b>;
-    <item/>preencha as informações solicitadas;
     <item/>enquanto o curso estiver em elaboração, na opção <b>Visibilidade
     do curso</b>, use <b>Ocultar</b>;
     <item/>o <b>Sumário do curso</b> será apresentado na listagem dos
     cursos;
     <item/>envie a <b>Imagem do curso</b>;
+    <item/>preencha as demais informações solicitadas;
     <item/>observe que o formato de curso padrao é <b>Formato de Tópicos</b>;
     <item/>clique em <b>Salvar e mostrar</b>;
     <item/>clique em <b>Inscrever usuário</b>;
@@ -47,6 +55,8 @@ no curso.
     de curso</b> ou <b>Gerente</b>;
   </lista>
 </lista>
+
+<quebraPagina/>
 
 <subsecao>Seções do curso</subsecao>
 
@@ -92,11 +102,25 @@ executada para realizadas as atividades a seguir.
   </lista>
 </lista>
 
-<subsubsubsecao>Tarefas</subsubsubsecao>
+<br/>0.3cm
 
-<step>Adicione uma seção ao curso, após remova-a.</step>
+    <b>Tarefa:</b> altere o nome da seção <b>Geral</b> para <b>Apresentação
+do curso</b>. Use esta seção para apresentar informações gerais sobre o
+curso.
 
-<step>Altere a ordem das seções existentes.</step>
+<br/>0.3cm
+
+    <b>Tarefa:</b> adicione uma seção ao curso.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> altere a ordem das seções existentes.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> elabore um texto introdutório para cada seção do curso,
+use o campo <b>Sumário</b> ao editar uma seção. Use imagens alinhadas à
+esquerda ou à direita.
 
 <br/>0.6cm
 
@@ -154,7 +178,7 @@ um fórum especial, em que o estudante não pode interagir.
 
     Para iniciar a diagramação do curso, entre no curso, clique na
 engrenagem e na opção <b>Ativar edição</b>. Essa ação permite a edição das
-seções, bem como a adição ou remoção atividades e recursos das seções.
+seções, bem como a adição e remoção de atividades e recursos das seções.
 
     Será apresentado um novo link para cada atividade ou recurso criado,
 exceto para o recurso do tipo <b>Rótulo</b> em que o conteúdo será exibido
@@ -162,14 +186,16 @@ diretamente.
 
 <br/>0.3cm
 
-    <b>Tarefa</b>: altere o nome da seção <b>Geral</b> para <b>Apresentação
-do curso</b>.
+    <b>Tarefa:</b> adicione um recurso <b>Página</b> a uma seção.
 
 <br/>0.3cm
 
-    <b>Tarefa</b>: elabore um texto introdutório para cada seção do curso,
-use o campo <b>Sumário</b> ao editar uma seção. Use imagens alinhadas à
-esquerda ou à direita.
+    <b>Tarefa:</b> edite a página criada e insira um vídeo do YouTube
+embutido.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> adicione uma atividade <b>Fórum</b> a uma seção.
 
 <br/>0.5cm
 
