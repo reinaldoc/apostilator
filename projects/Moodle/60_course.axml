@@ -169,20 +169,51 @@ barra de progresso com o percentual de atividades marcadas como concluídas.
 <subsecao>Atividades e recursos</subsecao>
 
     Atividades e recursos são os componente das seções do curso que tem
-função pedagógica de apresentação do conteúdo, de vericação de aprendizagem
-e para comunicação entre estudantes e tutores.
+função pedagógica de apresentação do conteúdo, de verificação de
+aprendizagem e para comunicação entre estudantes e tutores.
 
     Ao criar um curso, a primeira seção, denominada de <b>Geral</b>, terá
 uma atividade do tipo <b>Fórum</b> identificada como <b>Avisos</b>. Este é
-um fórum especial, em que o estudante não pode interagir. 
+um fórum especial, em que seu conteúdo é exibido no bloco <b>Últimas
+Notícias</b> e o estudante não pode interagir. Os blocos serão abordados em
+outro capítulo, assim esse fórum pode ser desabilitado e um fórum normal,
+que permita postagens dos participantes, pode ser adicionado.
 
     Para iniciar a diagramação do curso, entre no curso, clique na
 engrenagem e na opção <b>Ativar edição</b>. Essa ação permite a edição das
-seções, bem como a adição e remoção de atividades e recursos das seções.
+seções, bem como exibirá a opção <b>Adicionar uma atividade ou recurso</b>
+em cada seção.
 
-    Será apresentado um novo link para cada atividade ou recurso criado,
-exceto para o recurso do tipo <b>Rótulo</b> em que o conteúdo será exibido
-diretamente.
+    Para cada atividade ou recurso criado, um novo link será incluído na
+respectiva seção, exceto para o recurso do tipo <b>Rótulo</b> em que o
+conteúdo será exibido diretamente na seção do curso. Rótulos devem ser
+utilizados com prudência para não descaracterizar a organização da seção. Se
+possível, evite-os.
+
+<subsubsubsecao>Recursos</subsubsubsecao>
+
+    Os recursos tem função de apresentação do conteúdo, sendo que vários
+recursos de mesmo tipo ou de tipos diferentes podem ser adicionados a cada
+seção do curso. Conteúdos podem ser formados por parágrafos, imagens,
+áudios, vídeos, inclusive vídeos embutidos de outros sites como o YouTube.
+
+<lista>
+  <item>Tipos dos recursos</item>
+  <lista>
+    <item>URL</item>: um link para um site qualquer;
+    <item>Rótulo</item>: conteúdo exibido diretamente na seção;
+    <item>Página</item>: conteúdo exibido em outra página;
+    <item>Livro</item>: páginas organizadas hierarquicamente com um sumário;
+    <item>Arquivo</item>: permite o envio de um arquivo;
+    <item>Pasta</item>: permite o envio de vários arquivos;
+  </lista>
+</lista>
+
+    Perceba que apesar da atividade do tipo <b>Arquivo</b> incluir apenas um
+arquivo, outras atividades deste tipo podem ser adicionadas, permitindo a
+apresentação de vários arquivos na seção. Faz sentido utilizar a atividade
+<b>Pasta</b> quando se precisar disponibilizar mais de três arquivos na
+mesma seção.
 
 <br/>0.3cm
 
@@ -192,6 +223,32 @@ diretamente.
 
     <b>Tarefa:</b> edite a página criada e insira um vídeo do YouTube
 embutido.
+
+<br/>0.3cm
+
+<subsubsubsecao>Atividades</subsubsubsecao>
+
+    As atividades complementam a apresentação de conteúdo dos recursos,
+permitem a comunicação entre estudantes e tutores, bem como, alguns tipos de
+atividades, permitem que o tutor cadastre uma nota a cada participante.
+
+<lista>
+  <item>Tipos das atividades</item>
+  <lista>
+    <item>Fórum</item>: permite a interação entre participantes e tutores,
+    de forma assíncrona, utilizado para a manifestação de textos médios, com
+    possibilidade de atribuição de nota para a manifestação do participante;
+    <item>Chat</item>: permite a comunicação em tempo real entre
+    participantes e tutores, em data combinada, por meio de uma sala de chat,
+    utilizado para textos curtos; as sessões realizadas podem ser
+    consultadas, se habilitado;
+    <item>Glossário</item>: permite construções colaborativa da definição
+    de termos que envolvem o curso; arquivos podem ser vinculados a cada
+    termo; a aprovação da edição pelo tutor pode ser habilitada;
+    <item>Escolha</item>: apresenta uma questão aos participantes, também
+    utilizada para consultas e votações;
+  </lista>
+</lista>
 
 <br/>0.3cm
 
