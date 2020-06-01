@@ -1,0 +1,86 @@
+<capitulo>FTP Server</capitulo>
+
+<step>Instalação do servidor de VSFtpd</step>
+
+<comando>
+# apt-get install vsftpd ftp
+</comando>
+
+    O pacote <b>ftp</b> fornece um cliente utilizado para testar a
+conexão com o servidor <b>VSFTPd</b>. 
+
+<step>Restrição de diretório via FTP (chroot)</step>
+
+    <importante/>Um recurso esperado do serviço de FTP é a limitação de
+acesso apenas ao diretório do usuário autenticado (<i>chroot</i>). Um
+requisito para essa restrição funcionar corretamente é que o usuário <u>não
+tenha permissão de escrita</u> na raiz do seu diretório <i>home</i>.
+
+    A documentação <b>não recomenda</b> usar a opção
+allow_writeable_chroot=YES para contornar isso. Assim, o usuário
+<b>moodle</b> deve possuir permissão de escrita nos subdiretórios de seu
+<i>home</i>, mas não na raiz do diretório <b>/var/www/moodle</b>.
+
+<comando>
+# chown root: /var/www/moodle
+</comando>
+
+    Optou-se por manter o usuário root como proprietário do diretório
+<b>/var/www/moodle</b>, home do usuário, utilizando um diretório interno
+para armazenar o CMS.
+
+<step>Configuração do VSFtpd</step>
+
+<comando>
+# /etc/vsftpd.conf
+# l.14
+listen=YES
+listen_address=127.0.0.1
+
+# l.23
+listen_ipv6=NO
+
+# l.32
+write_enable=YES
+
+# l.103
+ftpd_banner=FTP Server ready.
+
+# l.115
+chroot_local_user=YES
+
+# l.156
+utf8_filesystem=YES
+</comando>
+
+    A opção <b>listen_address=127.0.0.1</b> restringe para conexões somente
+locais. Além disso, não é necessário manter ativado o IPv6, uma vez que
+trata-se apenas de conexões locais.
+
+<step>Recarregue as configurações do VSFtpd</step>
+
+<comando>
+# /etc/init.d/vsftpd reload
+</comando>
+
+<step>Teste de conexão</step>
+
+<comandoNumerado>
+# ftp localhost
+Connected to localhost.
+220 FTP Server ready.
+Name (localhost:root): moodle
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> pwd
+257 "/" is the current directory
+ftp> ls
+200 EPRT command successful. Consider using EPSV.
+150 Here comes the directory listing.
+drwxr-xr-x    2 1001     1001         4096 Feb 27 08:42 moodle
+226 Directory send OK.
+</comandoNumerado>
+
