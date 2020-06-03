@@ -19,16 +19,28 @@ periodicamente testadas para que nenhum dado seja perdido.
 
 <subsubsubsecao>Instalação</subsubsubsecao>
 
+    Antes de instalar o novo plugin, o usuário do serviço web deverá ter
+permissão de escrita no diretório <b>moodle-app</b>. por isso, altere o
+proprietário deste diretório para o usuário <b>www-data</b>.
+
+<comando>
+# chown -R www-data: /var/www/moodle/moodle-app
+</comando>
+
     A instalação de plugins de terceiros está disponível em <b>Administração
 do site → Plugins → Instalar plugins</b>, após obter o plugin e selecionar o
 arquivo, prossiga com a instalação. Consulte a documentação sobre a
 instalação de plugins:
-<url>https://docs.moodle.org/38/en/Installing_plugins</url>.
+<url>https://docs.moodle.org/38/en/Installing_plugins</url>. Após a
+instalação, altere a permissão do diretório <b>moodle-app</b>.
 
-    Após a instalação, um novo recurso estará
-disponível no Moodle. Os tipos de plugins ajudam a entender onde o novo
-recurso estará localizado, veja aqui:
-<url>https://docs.moodle.org/dev/Plugin_types</url>.
+<comando>
+# chown -R moodle: /var/www/moodle/moodle-app
+</comando>
+
+    Com a instalação, um novo recurso estará disponível no Moodle, consulte a
+relação de tipos de plugins para ajudar a entender onde este novo recurso
+estará localizado: <url>https://docs.moodle.org/dev/Plugin_types</url>.
 
 <subsecao>Formatos de Curso</subsecao>
 
