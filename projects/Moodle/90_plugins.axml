@@ -1,12 +1,34 @@
 <capitulo>Plugins</capitulo>
 
-    Os plugins adicionam novos recursos ao <b>Moodle</b>.
+    Os plugins são recursos que podem ser habilitados e desabilitados no
+<b>Moodle</b>. Aqueles plugins que são instalados junto ao Moodle são
+desenvolvidos pelo próprio time do Moodle, porém outros plugins podem ser
+obtidos e instalados.
 
-<lista>
-  <item>Relação de plugins:</item> <url>https://moodle.org/plugins</url>
-  <item>Tipos de plugins:</item> <url>https://docs.moodle.org/dev/Plugin_types</url>
-  <item>Instalação:</item> <url>https://docs.moodle.org/38/en/Installing_plugins</url>
-</lista>
+    A relação de plugins instalados está disponível em <b>Administração do
+site → Plugins → Visão geral dos Plugins</b>. A opção <b>Plugins
+adicionais</b> apresenta os plugins que não fazem parte do Moodle, ou seja,
+que foram instalados após a instalação do Moodle. Consulte o catálogo de
+plugins adicionais: <url>https://moodle.org/plugins</url>.
+
+    Há riscos na utilização de plugins desenvolvidos por terceiros, pois
+podem causar falha geral do sistema, por isso utilize somente plugins
+populares e sempre faça testes em ambiente de desenvolvimento. Ressalta-se
+que todo ambiente de produção deve possuir rotinas de becape e restauração
+periodicamente testadas para que nenhum dado seja perdido.
+
+<subsubsubsecao>Instalação</subsubsubsecao>
+
+    A instalação de plugins de terceiros está disponível em <b>Administração
+do site → Plugins → Instalar plugins</b>, após obter o plugin e selecionar o
+arquivo, prossiga com a instalação. Consulte a documentação sobre a
+instalação de plugins:
+<url>https://docs.moodle.org/38/en/Installing_plugins</url>.
+
+    Após a instalação, um novo recurso estará
+disponível no Moodle. Os tipos de plugins ajudam a entender onde o novo
+recurso estará localizado, veja aqui:
+<url>https://docs.moodle.org/dev/Plugin_types</url>.
 
 <subsecao>Atividades</subsecao>
 
