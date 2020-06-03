@@ -44,7 +44,10 @@ estará localizado: <url>https://docs.moodle.org/dev/Plugin_types</url>.
 
 <subsecao>Formatos de Curso</subsecao>
 
-    O formato do curso define o leiaute das suas seções.
+    O formato do curso define o leiaute das suas seções. O formato de curso
+padrão é <b>Formato de Tópicos</b> em que as seções são organizadas
+sequencialmente na página do curso com a apresentação das atividades de cada
+uma.
 
 <subsubsecao>Onetopic format</subsubsecao>
 
