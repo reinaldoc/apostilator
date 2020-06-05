@@ -139,7 +139,7 @@ do curso de forma plana, ou seja, seção abaixo de seção.
     <item/>identifique que um curso recém criado contém 4 seções (tópicos);
     <item/>use a opção <b>Editar configurações</b> para configurar o curso;
     <lista>
-      <item/>selecionae o formato de curso <b>Formato tópico único</b>;
+      <item/>selecione o formato de curso <b>Formato tópico único</b>;
       <item/>clique em <b>Salvar e mostrar</b>
     </lista>
     <item/>identifique que as seções são exibidas em formato de abas;
@@ -165,6 +165,25 @@ caixa de seleção. Este recurso pode ser habilitado ou desabilitado em:
 
     No painel do usuário, os cursos com esta opção habilitada possuirão uma
 barra de progresso com o percentual de atividades marcadas como concluídas.
+
+<br/>0.2cm
+
+<subsubsubsecao>Autoinscrição</subsubsubsecao>
+
+    A configuração de autoincrição permite que o próprio estudante se
+matricule no curso, tornando assim o curso disponível para qualquer usuário.
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse um curso;
+    <item/>use a opção <b>Mais...</b> para configurar o curso;
+    <item/>selecione a aba <b>Usuários</b>;
+    <item/>clique em <b>Métodos de inscrição</b>
+    <item/>clique no ícone para habilitar o método <b>Autoinscrição
+    (Estudante)</b>;
+  </lista>
+</lista>
 
 <subsecao>Atividades e recursos</subsecao>
 
