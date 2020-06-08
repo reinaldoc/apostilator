@@ -17,6 +17,8 @@ populares e sempre faça testes em ambiente de desenvolvimento. Ressalta-se
 que todo ambiente de produção deve possuir rotinas de becape e restauração
 periodicamente testadas para que nenhum dado seja perdido.
 
+<br/>0.3cm
+
 <subsubsubsecao>Instalação</subsubsubsecao>
 
     Antes de instalar o novo plugin, o usuário do serviço web deverá ter
@@ -49,14 +51,104 @@ padrão é <b>Formato de Tópicos</b> em que as seções são organizadas
 sequencialmente na página do curso com a apresentação das atividades de cada
 uma.
 
-<subsubsecao>Onetopic format</subsubsecao>
+    O formato padrão, que é utilizado na criação de novos cursos, pode ser
+definido em <b>Administração do site → Cursos → Configurações padrão dos
+cursos → Formato</b>.
 
-    O formato de curso <b>Onetopic format</b> utiliza um leiaute em abas
-para as seções do curso.
+    Após instalar um plugin de formato de curso, basta selecioná-lo na
+configuração do curso. Consulte o procedimento detalhado na
+seção<ref>course-config</ref>.
+
+<subsubsecao>Onetopic</subsubsecao>
+
+    O formato de curso <b>Onetopic</b> utiliza um leiaute em abas para as
+seções do curso.  As atividades e recursos da seção são exibidos após o
+clique na respectiva aba.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/format_onetopic</url>
 </lista>
+
+    Após instalar o plugin, o formato de curso <b>Formato tópico único</b>
+estará disponível na configuração do curso.
+
+<subsubsecao>Grid</subsubsecao>
+
+    O formato de curso <b>Grid</b> utiliza um leiaute em grade com uma
+imagem para cada seção do curso. Trata-se de um formato mais atraente para o
+estudante, mas depende da criação de uma arte digital para cada seção. As
+atividades e recursos da seção são exibidos após o clique na imagem da
+respectiva seção.
+
+    A seção geral, também chamada de seção zero, pode ser apresentada acima
+da grade ou como primeiro elemento dela, para definir isto, use a opção
+<b>Mover a seção para a grade</b> ou <b>Mover para fora da grade</b>, após
+<b>Ativar a edição</b>.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/format_grid</url>
+</lista>
+
+    Após instalar o plugin, o formato de curso <b>Formato em grade</b>
+estará disponível na configuração do curso.
+
+    A opção de configuração <b>Layout do curso</b> controla se as seções
+serão exibidas com a utilização de <i>dialog popup</i> ou não. Em virtude
+desse recurso ter menor acessibilidade, recomenda-se selecionar <b>Mostrar
+um tópico por página</b> nesta opção para não utilizar <i>dialog popup</i>.
+
+    A opção <b>Section title box position option</b> controla a apresentação
+do título da seção acima da imagem ou sobre a imagem, já a opção <b>Section
+title box position when 'Inside' option</b> controla o alinhamneto vertical
+do título quando está sobre a imagem.
+
+<br/>0.2cm
+
+    <b>Tarefa:</b> defina a seção zero como primeiro elemento da grade e
+altere o nome destação para <b>Apresentação do curso</b>.
+
+<subsubsecao>Board</subsubsecao>
+
+    O formato de curso <b>Board</b> utiliza um leiaute em blocos que
+apresenta atividades e recursos diretamente na página do curso. Use a opção
+<b>Mostrar o nome padrão das seções</b> como <b>Sim</b> para que o título da
+seção seja exibido.
+
+    Há duas opções na configuração que controlam o posicionamento das seções
+nos blocos (traduzido como <u>agrupamento</u>): a largura do agrupamento e a
+quantidade de seções. Na maioria dos casos, há boa organização ao utilizar
+<b>33%</b> como largura do agrupamento e uma seção por bloco, ou seja, o
+valor <b>1</b> na quantiade de seções.
+
+    A seção geral, também chamada de seção zero, será apresentada acima
+das demais seções.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/format_board</url>
+</lista>
+
+    Após instalar o plugin, o formato de curso <b>Formato em blocos</b>
+estará disponível na configuração do curso.
+
+<subsubsecao>Buttons</subsubsecao>
+
+    O formato de curso <b>Buttons</b> utiliza botões, numerados
+sequencialmente, para identificar as seções do curso. As seções podem ser
+agrupadas fazendo com que passem a desempenhar o papel de subseções e o nome
+do grupo passa a representar uma seção. A numeração sequencial pode ser ou
+não reiniciada para cada agrupamento conforme definição da opção
+<b>Sequencial</b>.
+
+    Neste formato, a seção zero é apresentada junto a demais seção, além
+disso, pode ser posicionada acima das demais seções, como nos demais
+formatos de curso, ou abaixo das demais seções.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/format_buttons</url>
+</lista>
+
+    Após instalar o plugin, o formato de cursoo <b>Formato de curso com
+botões</b> estará disponível na configuração do curso.
 
 <subsubsecao>Collapsed Topics</subsubsecao>
 
@@ -66,6 +158,9 @@ acordeão para as seções do curso.
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/format_topcoll</url>
 </lista>
+
+    Após instalar o plugin, o formato de curso <b>Tópicos Contraídos</b>
+estará disponível na configuração do curso.
 
 <subsecao>Atividades</subsecao>
 
