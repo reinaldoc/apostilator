@@ -184,6 +184,31 @@ ou de pizza.
     </lista>
 </lista>
 
+<subsecao>Editor de texto</subsecao>
+
+    O editor de texto Atto fornece uma barra de ferramentas para seleção de
+funções para textos formatados. É o editor de texto utilizado pelas
+atividades e recursos, como Rótulo e Página.
+
+<subsubsecao>Justify</subsubsecao>
+
+    O plugin <b>Atto: Justify align</b> adiciona a função de justificar o
+texto a barra de ferramentas do Atto.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/atto_justify</url>
+</lista>
+
+    Após instalar o plugin, acesse: <b>Administração do site → Plugins →
+Configuração da barra de ferramentas atto</b>. Na configuração
+<b>Configuração da barra de ferramentas</b>, procure a linha <b>align =
+align</b> e altere-a para <b>align = align, justify</b>.
+
+    Um ícone para justifiar o parágrafo estará disponível na barra de
+ferramentas de formatação de texto das atividades e recursos.
+
+<br/>0.3cm
+
 <subsecao>Blocos</subsecao>
 
 <subsubsecao>Completion Progress</subsubsecao>
