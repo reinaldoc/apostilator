@@ -167,10 +167,9 @@ estará disponível na configuração do curso.
 <subsubsecao>H5P</subsubsecao>
 
     O plugin <b>Interactive Content – H5P</b> fornece uma nova atividade
-para os cursos com mais de 40 tipos de conteúdo, tais como questões de
-múltipla escolha, questões de verdadeiro ou falso, cartões estilo Anki,
-preenchimento de lacunas, jogo da memória, caça palavras, gráficos de barra
-ou de pizza.
+com mais de 40 tipos de conteúdo, tais como questões de múltipla escolha,
+questões de verdadeiro ou falso, cartões estilo Anki, preenchimento de
+lacunas, jogo da memória, caça palavras, gráficos de barra ou de pizza.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/mod_hvp</url>
@@ -183,6 +182,43 @@ ou de pizza.
         <item/>escolha um tipo de conteúdo, clique em <b>Detalhes</b> e em <b>Usar</b>;
     </lista>
 </lista>
+
+<subsubsecao>Questionnaire (Enquete)</subsubsecao>
+
+    O plugin <b>Questionnaire</b> fornece uma nova atividade para a
+realização de consulta e coleta de dados dos estudantes com uma variedade de
+tipos de questões.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/mod_questionnaire</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>
+        <item/>use a opção <b>Enquete</b>;
+        <item/>avalie as configurações e clique em <b>Salvar e mostrar</b>;
+        <item/>clique em <b>Adicionar questões</b>;
+        <item/>selecione um tipo de questão e adicione-a à enquete;
+    </lista>
+</lista>
+
+    O tipo de questão <b>Rótulo</b> pode ser usado para identificar um
+conjunto de questões relacionadas.
+
+    Atenção, o módulo Questionário (mod_quiz) é utilizado para questões para
+o sistemas de notas, já o módulo Enquere (mod_questionnaire) é utilizado
+para enquetes.
+
+<br/>0.3cm
+
+    <b>Tarefa</b>: altere a ordem de uma questão.
+
+<br/>0.3cm
+
+    <b>Tarefa</b>: defina a resposta de uma questão como obrigatória.
+
+<br/>0.3cm
 
 <subsubsecao>Attendance (Presença)</subsubsecao>
 
