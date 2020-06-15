@@ -263,9 +263,9 @@ ferramentas de formatação de texto das atividades e recursos.
 
 <subsubsecao>Completion Progress</subsubsecao>
 
-    O plugin <b>Completion Progress</b> fornece um novo bloco para os cursos
-com uma visão geral do estado das atividades, ou seja, permite visualizar
-as atividadas concluídas e não concluídas em formato de barra de progresso.
+    O plugin <b>Completion Progress</b> fornece um novo bloco que contém uma
+barra de progresso com o percentual de atividades concluídas para os cursos
+que utilizam a função de <b>acompanhamento da conclusão</b>.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/block_completion_progress</url>
@@ -279,7 +279,8 @@ as atividadas concluídas e não concluídas em formato de barra de progresso.
 </lista>
 
     Os usuários com papel de Professores tem acesso ao botão <b>Visão geral
-de estudantes</b> com a relação de progresso de todos os estudantes do curso.
+de estudantes</b> com a relação tabular do progresso de todos os estudantes
+do curso.
 
 <subsubsecao>Course Module navigation</subsubsecao>
 
