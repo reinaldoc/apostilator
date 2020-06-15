@@ -190,6 +190,23 @@ ou de pizza.
 funções para textos formatados. É o editor de texto utilizado pelas
 atividades e recursos, como Rótulo e Página.
 
+    Os recursos de formatação de texto disponíveis aos usuários devem ser
+avaliados com cautela a fim de que o conteúdo mantenha uma identidade
+visual, especialmente quanto ao tamanho, família e cores das fontes do
+texto, por isso, esses recursos de formatação estão disponíveis somente por
+meio dos plugins <link>https://moodle.org/plugins/atto_fontsize</link><text>
+Atto: Font size</text>,
+<link>https://moodle.org/plugins/atto_fontfamily</link><text>
+Atto: Font family</text> e
+<link>https://moodle.org/plugins/atto_morefontcolors</link><text>
+Atto: More font colours</text>.
+
+    O suporte a fórmulas matemáticas pode ser adicionado por meio dos
+plugins <link>https://moodle.org/plugins/filter_wiris</link><text>
+Filters: MathType filter by WIRIS</text> e
+<link>https://moodle.org/plugins/atto_wiris</link><text>
+Atto: MathType for Atto by WIRIS</text>.
+
 <subsubsecao>Justify</subsubsecao>
 
     O plugin <b>Atto: Justify align</b> adiciona a função de justificar o
