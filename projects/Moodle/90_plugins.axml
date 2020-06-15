@@ -281,6 +281,35 @@ as atividadas concluídas e não concluídas em formato de barra de progresso.
     Os usuários com papel de Professores tem acesso ao botão <b>Visão geral
 de estudantes</b> com a relação de progresso de todos os estudantes do curso.
 
+<subsubsecao>Course Module navigation</subsubsecao>
+
+    O plugin <b>Course Module navigation</b> fornece um novo bloco para a
+exibição das seções e atividades do curso. Pode ser útil quando utilizado em
+conjunto com o formato de curso Grid, pois este formato não apresenta a
+relação de atividades na página inicial do curso, ainda sim, seu uso é
+limitado, uma vez que a relação de atividades é de fácil acesso em
+qualquer formato de curso.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/block_course_modulenavigation</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Course Module Navigation</b>;
+    </lista>
+</lista>
+
+    Por padrão, são exibidas apenas as atividades da seção selecionada, para
+apresentar as atividades de todas as seções configure em <b>Administração do
+site → Plugins → Blocos → Course Module Navigation</b> a opção <b>Collapse
+tabs</b> com valor <b>Sim</b>.
+
+    Caso o acompanhamento de conclusão esteja habilitado para o curso, as
+atividades concluídas serão identificadas com uma marcação de círculo verde
+ao lado.
+
 <subsecao>Temas</subsecao>
 
 <subsubsecao>Boost navigation fumbling</subsubsecao>
