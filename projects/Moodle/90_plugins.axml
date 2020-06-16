@@ -400,6 +400,23 @@ tabs</b> com valor <b>Sim</b>.
 atividades concluídas serão identificadas com uma marcação de círculo verde
 ao lado.
 
+<subsecao>Relatórios</subsecao>
+
+<subsubsecao>Overview statistics (Estatísticas gerais)</subsubsecao>
+
+    O plugin <b>Overview statistics</b> fornece os seguintes relatórios: i)
+número de usuários conectados por dia; ii) número de cursos por categoria e
+iii) número de atividades por curso. Após instalar o plugin, acesse:
+<b>Administração do site → Relatórios → Estatíticas gerais</b>.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/report_overviewstats</url>
+</lista>
+
+    Também estará disponível o relatório com número de inscritos no curso
+por dia e por mês, disponíveis nas configurações do curso, opção <b>Mais... →
+Relatórios →  Estatísticas gerais</b>.
+
 <subsecao>Temas</subsecao>
 
 <subsubsecao>Boost navigation fumbling</subsubsecao>
