@@ -177,7 +177,7 @@ lacunas, jogo da memória, caça palavras, gráficos de barra ou de pizza.
     <lista>
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
-        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
         <item/>use a opção <b>Conteúdo interativo</b>;
         <item/>escolha um tipo de conteúdo, clique em <b>Detalhes</b> e em <b>Usar</b>;
     </lista>
@@ -195,7 +195,7 @@ tipos de questões.
     <lista>
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
-        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
         <item/>use a opção <b>Enquete</b>;
         <item/>avalie as configurações e clique em <b>Salvar e mostrar</b>;
         <item/>clique em <b>Adicionar questões</b>;
@@ -236,7 +236,7 @@ do curso para registro das diversas sessões de aula que venham a ocorrer.
     <lista>
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
-        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
         <item/>use a opção <b>Presença</b>;
         <item/>clique em <b>Salvar e voltar ao curso</b>;
         <item/>acesse a atividade de <b>Presença</b>;
@@ -252,6 +252,37 @@ pelo tutor ou pode ser delegada aos estudantes, neste caso, marque a opção
 <b>Permitir que os próprios estudantes registrem suas presenças</b> ao criar
 uma sessão de aula, no entanto quando o registro for mantido pelo tutor,
 experimente a opção <b>Marcação automática</b>.
+
+<subsubsecao>Newsletter</subsubsecao>
+
+    O plugin <link>https://moodle.org/plugins/mod_newsletter</link>
+<text><b>Newsletter</b></text> permite o envio de e-mails programados. Os
+e-mails enviados podem ser consultados pelos estudantes ao acessar a
+atividade.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/mod_newsletter</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b> na
+        seção zero;
+        <item/>use a opção <b>Newsletter</b>;
+        <item/>preencha as informações:
+            <lista>
+                <item/>Name: <b>E-mails</b>;
+                <item/>Subscription mode: <b>Forced</b>;
+                <item/>Acompanhamento da conclusão: <b>Não indicar a
+                conclusão de atividade</b>;
+            </lista>
+        <item/>clique em <b>Salvar e voltar ao curso</b>;
+        <item/>acesse a atividade de <b>E-mails</b>;
+        <item/>clique em <b>Create new issue</b>;
+        <item/>preencha o título, conteúdo e data da publicação do e-mail;
+        <item/>clique em <b>Salvar mudanças</b>;
+    </lista>
+</lista>
 
 <subsecao>Editor de texto</subsecao>
 
