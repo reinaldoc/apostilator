@@ -292,6 +292,5 @@ ambiente for liberado em produção para o público.
 
 <comando>
 # /etc/crontab
-0 * * * * moodle php /var/www/moodle/moodle-app/admin/cli/cron.php >/dev/null
+3/* * * * * moodle php /var/www/moodle/moodle-app/admin/cli/cron.php >/dev/null
 </comando>
-
