@@ -349,6 +349,28 @@ que utilizam a função de <b>acompanhamento da conclusão</b>.
 de estudantes</b> com a relação tabular do progresso de todos os estudantes
 do curso.
 
+<subsubsecao>Level up! - Gamification</subsubsecao>
+
+    O plugin <b>Level up! - Gamification</b> fornece um ranking de
+pontuações obtidas de acordo com regras configuradas, por exemplo com a
+conclusão de cada atividade do curso. É uma forma de compartilhar entre os
+estudantes o progresso no curso de cada um, o que pode ser exercer um papel
+de estímulo.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/block_xp</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Level Up!</b>;
+    </lista>
+</lista>
+
+    Por meio do bloco <b>Level Up!</b> é possível acessar a o ranking que
+contém a pontuação de todos os estudantes do curso.
+
 <subsubsecao>Course Module navigation</subsubsecao>
 
     O plugin <b>Course Module navigation</b> fornece um novo bloco para a
