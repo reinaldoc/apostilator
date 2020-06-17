@@ -259,9 +259,6 @@ pelo tutor ou pode ser delegada aos estudantes, neste caso, marque a opção
 uma sessão de aula, no entanto quando o registro for mantido pelo tutor,
 experimente a opção <b>Marcação automática</b>.
 
-    Após a criação dos períodos de atendimento, os estudantes poderão
-escolher dentro os horários disponibilizados.
-
 <subsubsecao>Scheduler (Organizador)</subsubsecao>
 
     O plugin <link>https://moodle.org/plugins/mod_scheduler</link>
@@ -295,6 +292,9 @@ configurações da atividade e defina o acompanhamento da conclusão para
 <b>Mostrar atividade como concluída quando as condições forem
 satisfeitas</b> e marque <b>Estudante deve receber uma nota, para concluir
 essa atividade</b>.
+
+    Após a criação dos períodos de atendimento, os estudantes poderão
+escolher dentre os horários disponibilizados.
 
 <subsubsecao>Newsletter</subsubsecao>
 
