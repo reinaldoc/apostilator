@@ -166,10 +166,12 @@ estará disponível na configuração do curso.
 
 <subsubsecao>H5P</subsubsecao>
 
-    O plugin <b>Interactive Content – H5P</b> fornece uma nova atividade
-com mais de 40 tipos de conteúdo, tais como questões de múltipla escolha,
-questões de verdadeiro ou falso, cartões estilo Anki, preenchimento de
-lacunas, jogo da memória, caça palavras, gráficos de barra ou de pizza.
+    O plugin <link>https://moodle.org/plugins/mod_hvp</link>
+<text><b>Interactive Content – H5P</b></text> adiciona a atividade
+<b>Conteúdo interativo</b> que fornece mais de 40 tipos de conteúdo, tais
+como questões de múltipla escolha, questões de verdadeiro ou falso, cartões
+estilo Anki, preenchimento de lacunas, jogo da memória, caça palavras,
+gráficos de barra ou de pizza.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/mod_hvp</url>
@@ -178,16 +180,20 @@ lacunas, jogo da memória, caça palavras, gráficos de barra ou de pizza.
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
         <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
-        <item/>use a opção <b>Conteúdo interativo</b>;
+        <item/>use a opção <b>Conteúdo interativo</b> e clique em <b>Adicionar</b>;
         <item/>escolha um tipo de conteúdo, clique em <b>Detalhes</b> e em <b>Usar</b>;
     </lista>
 </lista>
 
+    Consulte o <b>Apêndice<ref>h5p</ref></b> para mais informações sobre o
+projeto <b>H5P</b>.
+
 <subsubsecao>Questionnaire (Enquete)</subsubsecao>
 
-    O plugin <b>Questionnaire</b> fornece uma nova atividade para a
-realização de consulta e coleta de dados dos estudantes com uma variedade de
-tipos de questões.
+    O plugin <link>https://moodle.org/plugins/mod_questionnaire</link>
+<text><b>Questionnaire</b></text> fornece a atividade <b>Enquete</b> que
+permite a realização de consulta e coleta de dados dos estudantes com uma
+variedade de tipos de questões.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/mod_questionnaire</url>
@@ -196,7 +202,7 @@ tipos de questões.
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
         <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
-        <item/>use a opção <b>Enquete</b>;
+        <item/>use a opção <b>Enquete</b> e clique em <b>Adicionar</b>;
         <item/>avalie as configurações e clique em <b>Salvar e mostrar</b>;
         <item/>clique em <b>Adicionar questões</b>;
         <item/>selecione um tipo de questão e adicione-a à enquete;
@@ -223,9 +229,9 @@ para enquetes.
 <subsubsecao>Attendance (Presença)</subsubsecao>
 
     O plugin <link>https://moodle.org/plugins/mod_attendance</link>
-<text><b>Attendance</b></text> implementa a função da controle de frequência
-dos estudantes. É possível que a presença receba uma nota para compor o nota
-final do curso.
+<text><b>Attendance</b></text> fornece a atividade de <b>Presença</b> que
+tem a função da controle de frequência dos estudantes. É possível que a
+presença receba uma nota para compor o nota final do curso.
 
     Uma única atividade de <b>Presença</b> pode ser adicionada a seção zero
 do curso para registro das diversas sessões de aula que venham a ocorrer.
@@ -237,7 +243,7 @@ do curso para registro das diversas sessões de aula que venham a ocorrer.
         <item/>acesse um curso;
         <item/>use a opção <b>Ativar edição</b>;
         <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
-        <item/>use a opção <b>Presença</b>;
+        <item/>use a opção <b>Presença</b> e clique em <b>Adicionar</b>;
         <item/>clique em <b>Salvar e voltar ao curso</b>;
         <item/>acesse a atividade de <b>Presença</b>;
         <item/>clique em <b>Definir status</b> para gerenciar o tipos de
@@ -253,12 +259,49 @@ pelo tutor ou pode ser delegada aos estudantes, neste caso, marque a opção
 uma sessão de aula, no entanto quando o registro for mantido pelo tutor,
 experimente a opção <b>Marcação automática</b>.
 
+    Após a criação dos períodos de atendimento, os estudantes poderão
+escolher dentro os horários disponibilizados.
+
+<subsubsecao>Scheduler (Organizador)</subsubsecao>
+
+    O plugin <link>https://moodle.org/plugins/mod_scheduler</link>
+<text><b>Scheduler</b></text> fornece a atividade <b>Organizador</b> que
+permite que o tutor disponibilize horários de atendimento aos estudantes.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/mod_scheduler</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
+        <item/>use a opção <b>Organizador</b> e clique em <b>Adicionar</b>;
+        <item/>preencha as informações:
+            <lista>
+                <item/>Name: <b>Agendamento de vídeoconferência</b>;
+                <item/>Acompanhamento da conclusão: <b>Não indicar a
+                conclusão de atividade</b>;
+            </lista>
+        <item/>clique em <b>Salvar e voltar ao curso</b>;
+        <item/>acesse a atividade de <b>Agendamento de vídeoconferência</b>;
+        <item/>clique em <b>Adicionar períodos repetidos</b>;
+        <item/>preencha o intervalo e a duração de cada atendimento;
+        <item/>clique em <b>Salvar mudanças</b>;
+    </lista>
+</lista>
+
+    Caso o agendamento seja para uma avaliação, configure o tipo da nota nas
+configurações da atividade e defina o acompanhamento da conclusão para
+<b>Mostrar atividade como concluída quando as condições forem
+satisfeitas</b> e marque <b>Estudante deve receber uma nota, para concluir
+essa atividade</b>.
+
 <subsubsecao>Newsletter</subsubsecao>
 
     O plugin <link>https://moodle.org/plugins/mod_newsletter</link>
-<text><b>Newsletter</b></text> permite o envio de e-mails programados. Os
-e-mails enviados podem ser consultados pelos estudantes ao acessar a
-atividade.
+<text><b>Newsletter</b></text> fornece a atividade <b>Newsletter</b> que
+permite o envio de e-mails programados. Os e-mails enviados podem ser
+consultados pelos estudantes ao acessar a atividade.
 
 <lista>
     <item>Download:</item> <url>https://moodle.org/plugins/mod_newsletter</url>
@@ -268,7 +311,7 @@ atividade.
         <item/>use a opção <b>Ativar edição</b>;
         <item/>use a opção <b>Adicionar uma atividade ou recurso</b> na
         seção zero;
-        <item/>use a opção <b>Newsletter</b>;
+        <item/>use a opção <b>Newsletter</b> e clique em <b>Adicionar</b>;
         <item/>preencha as informações:
             <lista>
                 <item/>Name: <b>E-mails</b>;
