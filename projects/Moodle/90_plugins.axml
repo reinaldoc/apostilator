@@ -400,6 +400,31 @@ tabs</b> com valor <b>Sim</b>.
 atividades concluídas serão identificadas com uma marcação de círculo verde
 ao lado.
 
+<subsubsecao>Sharing Cart</subsubsecao>
+
+    O plugin <b>Sharing Cart</b> permite que atividades possam ser copiadas
+entre diferentes cursos.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/block_sharing_cart</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Sharing Cart</b>;
+        <item/>neste bloco, selecione uma seção e clique em <b>Copy
+        section</b>;
+        <item/>acesse o outro curso;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Sharing Cart</b>;
+        <item/>neste bloco, clique em <b>copy to course</b> na seção ou em
+        uma atividade;
+        <item/>selecione a seção de destino (seta para baixo ao final da
+        seção);
+    </lista>
+</lista>
+
 <subsubsecao>Analytics graphs</subsubsecao>
 
     O plugin <b>Analytics graphs</b> fornece os seguintes gráficos: i) notas
