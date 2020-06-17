@@ -188,6 +188,26 @@ gráficos de barra ou de pizza.
     Consulte o <b>Apêndice<ref>h5p</ref></b> para mais informações sobre o
 projeto <b>H5P</b>.
 
+<subsubsecao>Lightbox Gallery</subsubsecao>
+
+    O plugin <link>https://moodle.org/plugins/mod_lightboxgallery</link>
+<text><b>Lightbox Gallery</b></text> adiciona um recurso para a apresentação
+de um conjunto de imagens.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/mod_lightboxgallery</url>
+    <item>Atividade</item>
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar uma atividade ou recurso</b>;
+        <item/>use a opção <b>Lightbox Gallery</b> e clique em <b>Adicionar</b>;
+        <item/>avalie as configurações disponíveis e clique em <b>Salvar e
+        mostrar</b>;
+        <item/>clique em <b>Adicionar imagens</b>;
+    </lista>
+</lista>
+
 <subsubsecao>Questionnaire (Enquete)</subsubsecao>
 
     O plugin <link>https://moodle.org/plugins/mod_questionnaire</link>
