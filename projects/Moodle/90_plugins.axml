@@ -391,6 +391,26 @@ ferramentas de formatação de texto das atividades e recursos.
 
 <subsecao>Blocos</subsecao>
 
+    Os blocos fornecem informaçãoes complementares, seja um texto
+informativo ou informações calculadas com o percentual de progresso do
+estudante no curso ou gráficos de acesso ao curso. Também agregam funções
+como calendário, lista de eventos ou de atividades com data limite.
+
+    Os blocos podem ser vinculados ao Painel do Usuário ou aos Cursos e são
+posicionados nas regiões disponíveis no tema. No tema padrão <b>Boost</b> os
+blocos no Painal do Usuário podem ser posicionados na região <b>content</b> ou
+<b>Direita</b>, já nos cursos, apenas na região <b>Direita</b>.
+
+    No tema padrão <b>Boost</b> não há região à esquerda, mas pode-se
+deslocar a região <b>Direita</b> para ser exibida à esquerda por meio de CSS
+na opção <b>SCSS puro</b> disponível em <b>Administração do site → Aparência →
+Temas → Boost → Opções avançadas</b>.
+
+<lista>
+  <item/>#region-main.has-blocks {float: right}
+  <item/>section[data-region="blocks-column"] {float: left}
+</lista>
+
 <subsubsecao>Completion Progress</subsubsecao>
 
     O plugin <b>Completion Progress</b> fornece um novo bloco que contém uma
