@@ -2,60 +2,111 @@
 <nome>appearence</nome>
 
     Neste capítulo será abordada a customização da aparência do ambiente do
-<b>Moodle</b>, isto inclui a <b>página inicial</b>, a <b>página de login</b>
-e o <b>painel do usuário</b>.
+<b>Moodle</b>, isto inclui a estrutura (recursos disponíveis) e a identidade
+visual (CSS) da <b>página inicial</b>, da <b>página de login</b> e do
+<b>painel do usuário</b>.
 
-<subsecao>Fluxo de navegação</subsecao>
+<subsecao>Barra de Navegação</subsecao>
 
-    Após o <b>Moodle</b> ser instalado, a primeira página acessível é a
-<b>página inicial</b> que contém o link <b>Acessar</b> para acesso a página
-de login. Após o login, o usuário é redirecionado de volta para a página
-inicial.
-
-    Há duas configurações que modificam este comportamento, que podem ser
-utilizadas em determinados casos: i) usar a página de login como página
-inicial e ii) usar o painel do usuário como página após o login.
-
-    Essas opções definem o fluxo de navegação dos usuários e é um escolha
-que deve ser realizada caso a caso, ou seja, avalie qual o melhor cenário
-para o seu projeto de uso do <b>Moodle</b>.
-
-<br/>0.4cm
-
-<subsubsubsecao>Usar a página de login como página inicial</subsubsubsecao>
-
-    Esta configuração faz com que a página de autenticação seja utilizada
-como página incial do <b>Moodle</b>. O usuário também será direcionado a
-página de login ao sair do <b>Moodle</b>.
+    A barra de navegação é utilizada em todas as páginas do Moodle, exceto
+na página de login, está localizada na topo do site e contém:
 
 <lista>
-  <item>Atividade</item>
-  <lista>
-    <item/>acesse <b>Administração do site => Segurança => Configurações
-           de segurança do site</b>;
-    <item/>ative a opção <b>Forçar usuários a autenticar</b>;
-  </lista>
+  <item/>o ícone de acesso ao menu principal de navegação;
+  <item/>o logo, em sua versão reduzida;
+  <item/>o nome do site;
+  <item/>links;
+  <item/>link para login ou o menu do usuário;
+  <item/>o Menu do Usuário;
 </lista>
 
-<subsubsubsecao>Definir a página pós-login</subsubsubsecao>
+<subsubsecao>Menu principal de navegação</subsubsecao>
 
-    Esta configuração define qual página o usuário será direcionado após
-realizar login. 
+    O ícone de acesso ao menu principal de navegação é o primeiro elemento
+da barra de navegação. O tema <b>Boost</b> utiliza o menu <i>navigation
+drawler</i> como menu principal de navegação. Este menu contém, após o
+login, os seguintes links:
 
 <lista>
-  <item>Atividade</item>
-  <lista>
-      <item/>acesse <b>Administração do site => Aparência => Navegação</b>;
-      <item/>selecione <b>Painel</b> em <b>Página inicial padrão para os usuários</b>;
-  </lista>
+  <item/>Página inicial do site;
+  <item/>Painel do usuário;
+  <item/>Calendário;
+  <item/>Arquivos privados do usuário, e;
+  <item/>Ccursos em que o usuário está inscrito.
 </lista>
 
-    <importante/>O tema <b>Boost</b> utiliza o menu <i>navigation
-drawler</i> como menu principal de navegação. Este menu pode ser customizado
-por meio do plugin <b>Boost navigation fumbling</b>, veja na
+    O menu principal de navegação pode ser customizado por meio do plugin
+<b>Boost navigation fumbling</b>, veja na
 seção<ref>plugin-boost-navigation-fumbling</ref>.
 
-<br/>0.6cm
+<subsubsecao>Logo</subsubsecao>
+
+    O Logo menor é utilizado ao lado esquerdo do nome do site, já o logo
+maior é utilizado na página de login e na página inicial. Configure os logos
+em  <b>Administração do site → Aparência → Logos</b>.
+
+<subsubsecao>Nome do site</subsubsecao>
+
+    O nome do site é exibido no topo esquerdo da página, ao lado do ícone de
+acesso ao menu <i>navigation drawler</i>. Configure-o em <b>Administração do
+site → Página principal → Configurações da página principal</b>.
+
+
+<subsubsecao>Seleção de Idioma</subsubsecao>
+
+    A interface do <b>Moodle</b> possui opção para a seleção do idioma, caso
+ela não seja útil, pode-se omití-la por meio de configuração. No tema padrão
+<b>Boost</b>, a seleção de idioma está localizada à esquerda da barra
+superior.
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Configurações de
+           idiomas</b>;
+    <item/><b>desabilite</b> a opção <b>Mostrar lista de idiomas</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<subsubsecao>Links personalizados</subsubsecao>
+
+    Links podem ser posicionados ao lado do nome do site, configure-os em
+<b>Administração do site → Aparência →  Configurações de tema  → Ítens do
+menu personalizado</b>.
+
+<comando>
+Links
+-Site1|http://site1.exemplo.com.br
+-Site2|http://site2.exemplo.com.br
+</comando>
+
+<subsubsecao>Rótulo do link de login</subsubsecao>
+
+    Por padrão o rótulo do link para realizar login no Moodle é
+<b>Acessar</b>, que pode ser alterado por meio da personalização de idioma.
+
+<lista>
+  <item>Atividade</item>: alterar uma tradução de termo;
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Personalização de
+           idioma</b>;
+    <item/>selecione o idioma <b>Português - Brasil (pt_br)</b>;
+    <item/>clique em <b>Abrir pacote de idioma para edição</b>, após em
+    <b>Continuar</b>;
+    <item/>clique em <b>moodle.php</b> e digite <b>Log in</b> na opção
+    <b>Somente strings cotendo</b>;
+    <item/>clique em <b>Exibir texto</b>;
+    <item/>identifique o termo <b>login</b> ou <b>Acessar</b> e digite
+    <b>Entrar</b>;]
+    <item/>clique em <b>Salvar alterações no pacote de idioma</b>, após em
+    <b>Continuar</b>;
+  </lista>
+</lista>
+
+<subsubsecao>Menu do usuário</subsubsecao>
+
+    O menu do usuário será abordado no capítulo<ref>users</ref>.
 
 <subsecao>Página de login</subsecao>
 <nome>user-autoregister</nome>
@@ -109,47 +160,6 @@ cursos sem autenticação, quando permitido por configuração do curso.
 visitante</b> será omitida da página inicial. Ainda que o visitante
 permaneça ativado, será necessário configurar em cada curso a possibilidade
 de acesso por este usuário, que não requer autenticação.
-
-<subsecao>Barra de Navegação no site</subsecao>
-
-<subsubsecao>Nome do site e Logo</subsubsecao>
-
-    O nome do site é exibido no topo esquerdo da página, ao lado do ícone de
-acesso ao menu <i>navigation drawler</i>. Configure-o em <b>Administração do
-site → Página principal → Configurações da página principal</b>.
-
-    O Logo menor é utilizado ao lado esquerdo do nome do site, já o logo
-maior é utilizado na página de login e na página inicial. Configure os logos
-em  <b>Administração do site → Aparência → Logos</b>.
-
-<subsubsecao>Seleção de Idioma</subsubsecao>
-
-    A interface do <b>Moodle</b> possui opção para a seleção do idioma, caso
-ela não seja útil, pode-se omití-la por meio de configuração. No tema padrão
-<b>Boost</b>, a seleção de idioma está localizada à esquerda da barra
-superior.
-
-<lista>
-  <item>Atividade</item>
-  <lista>
-    <item/>acesse <b>Administração do site => Idioma => Configurações de
-           idiomas</b>;
-    <item/><b>desabilite</b> a opção <b>Mostrar lista de idiomas</b>;
-    <item/>clique em <b>Salvar mudanças</b>;
-  </lista>
-</lista>
-
-<subsubsecao>Links adicionais</subsubsecao>
-
-    Links podem ser posicionados ao lado do nome do site, configure-os em
-<b>Administração do site → Aparência →  Configurações de tema  → Ítens do
-menu personalizadoM</b>.
-
-<comando>
-Links
--Site1|http://site1.exemplo.com.br
--Site2|http://site2.exemplo.com.br
-</comando>
 
 <subsecao>Painel do Usuário</subsecao>
 
@@ -205,3 +215,49 @@ usuário.
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
+
+<subsecao>Fluxo de navegação</subsecao>
+
+    Após o <b>Moodle</b> ser instalado, a primeira página acessível é a
+<b>página inicial</b> que contém o link <b>Acessar</b> para acesso a página
+de login. Após o login, o usuário é redirecionado de volta para a página
+inicial.
+
+    Há duas configurações que modificam este comportamento, que podem ser
+utilizadas em determinados casos: i) usar a página de login como página
+inicial e ii) usar o painel do usuário como página após o login.
+
+    Essas opções definem o fluxo de navegação dos usuários e é um escolha
+que deve ser realizada caso a caso, ou seja, avalie qual o melhor cenário
+para o seu projeto de uso do <b>Moodle</b>.
+
+<br/>0.4cm
+
+<subsubsubsecao>Usar a página de login como página inicial</subsubsubsecao>
+
+    Esta configuração faz com que a página de autenticação seja utilizada
+como página incial do <b>Moodle</b>. O usuário também será direcionado a
+página de login ao sair do <b>Moodle</b>.
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Segurança => Configurações
+           de segurança do site</b>;
+    <item/>ative a opção <b>Forçar usuários a autenticar</b>;
+  </lista>
+</lista>
+
+<subsubsubsecao>Definir a página pós-login</subsubsubsecao>
+
+    Esta configuração define qual página o usuário será direcionado após
+realizar login. 
+
+<lista>
+  <item>Atividade</item>
+  <lista>
+      <item/>acesse <b>Administração do site => Aparência => Navegação</b>;
+      <item/>selecione <b>Painel</b> em <b>Página inicial padrão para os usuários</b>;
+  </lista>
+</lista>
+
