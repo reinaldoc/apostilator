@@ -113,7 +113,14 @@ site → Aparência → Calendário</b>.
 
 <subsecao>Cadastro de Usuários</subsecao>
 
+    Há três formas de cadastro do usuário do Moodle: i) autoinscrição,
+conforme já visto na seção<ref>user-autoregister</ref>; ii) cadastro manual;
+ou iii) via login por LDAP;
+
 <subsubsecao>Cadastro manual</subsubsecao>
+
+    O cadastro manual implica que um usuário com permissão apropriada crie a
+conta do novo usuário.
 
 <lista>
   <item>Atividade</item>
@@ -127,12 +134,28 @@ site → Aparência → Calendário</b>.
 
 <subsubsecao>Listar usuários cadastrados</subsubsecao>
 
+    Consulte os usuários cadastrados no Moodle.
+
 <lista>
   <item>Atividade</item>
   <lista>
     <item/>acesse <b>Administração do site → Usuários → Lista de usuários</b>;
   </lista>
 </lista>
+
+    Na tela de listagem dos usuários cadastrados é possível pesquisar
+usuários por meio dos filtros. O filtro <b>Identificação do usuário</b>
+realiza a perquisa pelo nome da conta do usuário. Clique na opção <b>Mostrar
+mais...</b> para consultar todos os filtros disponíveis.
+
+    Os filtros que são exibidos por padrão podem ser selecionados em
+<b>Administração do site → Usuários → Gerenciamento de usuário</b>. Mantenha
+pressionada a tecla <b>Control</b> para selecionar vários itens.
+
+    <b>Tarefa</b>: selecione o filtro <b>Nome completo</b> para ser exibido
+na tela de listar usuários.
+
+<br/>0.3cm
 
 <subsubsecao>Papéis</subsubsecao>
 

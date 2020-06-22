@@ -58,6 +58,7 @@ seção<ref>plugin-boost-navigation-fumbling</ref>.
 <br/>0.6cm
 
 <subsecao>Página de login</subsecao>
+<nome>user-autoregister</nome>
 
     Inicialmente a página de login permite a autenticação de usuários
 cadastrados manualmente no <b>Moodle</b> e o acesso como visitante. O
