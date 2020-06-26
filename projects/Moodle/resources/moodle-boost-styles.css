@@ -1,0 +1,133 @@
+body {
+    background-image: url('/pluginfile.php/105/mod_label/intro/moodle-body-background.jpg');
+    background-size: cover;
+}
+
+#page { max-width: 1280px; }
+
+#page-login-index #page { max-width: unset; }
+
+#page-login-index #page .card-body > div > div:nth-child(1) {
+    padding: 24px 121px 0;
+    flex: unset;
+    max-width: 100%;
+    padding: 31px 27% 0;
+    width: 100%;
+}
+
+#page-login-index #page .card-body > div > div:nth-child(2) {
+    flex: unset;
+    max-width: 100%;
+    width: 50%;
+    padding: 20px 20px 60px;
+}
+
+#page-login-index #page #page-content .card-body .loginerrors > div {
+    margin: 0 auto;
+    padding: 20px;
+}
+
+nav.navbar { background-color: #343e4e !important; }
+
+nav.navbar .dropdown-menu, nav.navbar .dropdown-menu .dropdown-item {
+    background-color: #343e4e;
+}
+
+nav.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: rgb(17, 119, 209);
+}
+
+nav.navbar button, nav.navbar button:focus, nav.navbar button:hover {
+    background-color: #252b37 !important;
+}
+
+nav.navbar button:focus { box-shadow: none; }
+
+nav.navbar ul.navbar-nav a.nav-link, nav.navbar ul.navbar-nav a.nav-link:hover, nav.navbar ul.navbar-nav a.nav-link:focus, nav.navbar ul.navbar-nav li.show > a.nav-link, nav.navbar ul.navbar-nav a.dropdown-item { color: #ffffff; }
+
+nav.navbar i { color: #ffffff; }
+
+nav.navbar .site-name { color: #ffffff; }
+
+nav.navbar .usermenu .userbutton .usertext { color: #ffffff; }
+
+nav.navbar .usermenu a, .usermenu span { color: #ffffff; }
+
+nav.navbar .usermenu a:hover { color: #ccc; }
+
+nav.navbar .usermenu .login a { color: #ccc; }
+
+nav.navbar .usermenu .login a:hover { color: rgb(17, 119, 209); }
+
+.list-group-item[data-parent-key="mycourses"] {
+    padding: .75rem 5px .75rem 36px;
+}
+
+.courses .coursebox {
+    padding: 0;
+    position: relative;
+}
+
+.courses .coursebox.odd {
+    background-color: rgba(100,100,200,.05);
+    border: 1px dotted #99f;
+    margin: 0 0 18px 0;
+}
+
+.courses .coursebox.even {
+    border: 1px dotted #99f;
+    margin: 0 0 18px 0;
+}
+
+.courses .coursebox > .info > .coursename a {
+    background-image: unset;
+    padding-left: 5px;
+}
+
+.courses .coursebox .enrolmenticons {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+}
+
+.courses .coursebox .content .summary {
+    float: left;
+    width: 98%;
+    margin: 0;
+}
+
+.courses .coursebox .content .summary img {
+    border: 1px solid #ddd;
+    margin: 4px 14px 12px 9px;
+}
+
+.courses .coursebox.odd .content .summary img {
+    box-shadow: 3px 3px 5px 0px #ccc;
+}
+
+.courses .coursebox.even .content .summary img {
+    box-shadow: 3px 3px 5px 0px #99a;
+}
+
+.courses .coursebox .content .teachers {
+    margin: 0 0 6px 10px;
+}
+
+#coursesearch {
+    margin: 1em;
+}
+
+#page-site-index .site-name::before {
+    background-image: url('/pluginfile.php/1/core_admin/logocompact/100x100/1592857961/campus_virtual_logo_v2.png');
+    display: block;
+    width: 34px;
+    height: 35px;
+    content: '';
+    background-size: 34px 35px;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+#page-site-index .site-name {
+    line-height: 30px;
+}
