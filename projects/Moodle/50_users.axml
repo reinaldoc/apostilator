@@ -12,7 +12,7 @@ padrão <b>Boost</b>, e contém as seguintes opções:
 
 <lista>
   <item>Painel</item>: acesso ao Painel do Usuário;
-  <item>Perfil</item>: edição do cadastro do usuário;
+  <item>Perfil</item>: visualizar e editar o cadastro do usuário;
   <item>Notas</item>: consulta a grade de notas;
   <item>Mensagens</item>: consulta as mensagens enviadas e recebidas entre
   os usuários;
@@ -32,6 +32,25 @@ ser consultados pelos outros estudantes do mesmo curso.
 foto de perfil. Obtenha um avatar
 <link>http://www.iconarchive.com/category/avatar-icons.html</link>
 <text><b>clicando aqui</b></text>.
+
+<br/>0.5cm
+
+<subsubsubsecao>Definir o país padrão</subsubsubsecao>
+
+    É possível configurar o valor padrão para o país do usuário. Este valor
+será utilizado quando a conta for criada.
+
+<lista>
+  <item>Definir o país padrão</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Local => Parametrização local</b>;
+    <item/>selecione a opção <b>Brasil</b> em <b>País predefinido</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    Esta configuração não bloqueia o cadastro do país, podendo o usuário
+alterá-lo.
 
 <br/>0.5cm
 
