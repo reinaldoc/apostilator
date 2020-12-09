@@ -53,6 +53,7 @@ site → Página principal → Configurações da página principal</b>.
 
 
 <subsubsecao>Seleção de Idioma</subsubsecao>
+<nome>appearence-navbar-idioma</nome>
 
     A interface do <b>Moodle</b> possui opção para a seleção do idioma, caso
 ela não seja útil, pode-se omití-la por meio de configuração. No tema padrão

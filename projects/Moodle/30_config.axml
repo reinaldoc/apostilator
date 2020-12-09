@@ -3,6 +3,38 @@
     As configurações do Moodle são realizadas pela opção <b>Administração do
 site</b>, disponível aos usuários com papel <b>Administrador</b>.
 
+<subsecao>Idioma</subsecao>
+
+    O procedimento de instalação do Moodle visto no
+Capítulo<ref>moodle-install</ref> já inclui a implantação do pacote de
+idiomas <b>Português - Brasil (pt_br)</b> e realiza a seleção do idioma
+padrão. Esta seção é apenas para referência.
+
+<lista>
+  <item>Implantar novo pacote de idiomas</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Pacotes de idiomas</b>;
+    <item/>selecione um pacote de idioma disponível;
+    <item/>clique em <b>Instalar pacote(s) de idioma(s) selecionado(s)</b>;
+  </lista>
+</lista>
+
+<lista>
+  <item>Definir o idioma padrão</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Configurações de
+           idiomas</b>;
+    <item/>selecione um idioma na opção <b>Idioma predefinido</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+   <atividade/>No capítulo que trata da aparência e da apresentação dos
+elementos na tela,  a seção<ref>appearence-navbar-idioma</ref> abordará a
+opção que permite omitir a caixa de seleção de idioma.
+
+<br/>0.5cm
+
 <subsecao>E-mail</subsecao>
 
 <lista>
