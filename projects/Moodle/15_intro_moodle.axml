@@ -54,6 +54,13 @@ tempo ou conforme seu rendimento, por exemplo.
   </lista>
 </lista>
 
+<lista>
+  <item>Quais as versões atuais do Moodle? Há suporte extendido (LTS)?</item>
+  <lista>
+    <item/><url>https://docs.moodle.org/dev/Releases</url>
+  </lista>
+</lista>
+
 <quebraPagina/>
 
 <subsecao>Segurança</subsecao>
