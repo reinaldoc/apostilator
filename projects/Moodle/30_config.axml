@@ -5,8 +5,8 @@ site</b>, disponível aos usuários com papel <b>Administrador</b>.
 
 <subsecao>Idioma</subsecao>
 
-    O procedimento de instalação do Moodle visto no
-Capítulo<ref>moodle-install</ref> já inclui a implantação do pacote de
+    A instalação do Moodle, conforme visto no
+Capítulo<ref>moodle-install</ref>, já inclui a implantação do pacote de
 idiomas <b>Português - Brasil (pt_br)</b> e realiza a seleção do idioma
 padrão. Esta seção é apenas para referência.
 
@@ -32,6 +32,56 @@ padrão. Esta seção é apenas para referência.
    <atividade/>No capítulo que trata da aparência e da apresentação dos
 elementos na tela,  a seção<ref>appearence-navbar-idioma</ref> abordará a
 opção que permite omitir a caixa de seleção de idioma.
+
+<br/>0.5cm
+
+<subsecao>Fuso-horário</subsecao>
+
+<subsubsubsecao>Fuso-horário padrão</subsubsubsecao>
+
+    Ao final da instalação do Moodle foi possível configurar o fuso-horário
+padrão, assim esta seção é apenas de referência. Este fuso-horário é utilizado pelo
+sistema.
+
+<lista>
+  <item>Definir o fuso-horário padrão</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Local => Parametrização local</b>;
+    <item/>selecione a opção <b>America/Belem</b> em <b>Fuso-horário padrão</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<subsubsubsecao>Fuso-horário do usuário</subsubsubsecao>
+
+    No perfil do usuário é possível que seja definido o fuso-horário do
+usuário, porém a listagem extensa de fusos pode dificultar a correta seleção
+pelo usuário. Assim, pode-se orientar aos usuários quanto ao preenchimento
+adequeado dessa informação, como segue:
+
+<lista>
+    <item>América/São_Paulo</item>: GMT-3 <b>com</b> horário de verão (Sul, Sudeste e GO/DF);
+    <item>América/Belem</item>: GMT-3 <b>sem</b> horário de verão (Nordeste e PA/AP/TO);
+    <item>América/Campo_Grande</item>: GMT-4 <b>com</b> horário de verão (MS/MT);
+    <item>América/Manaus</item>: GMT-4 <b>sem</b> horário de verão (AM/RR/RO);
+    <item>América/Rio_Branco</item>: GMT-5 (AC);
+</lista>
+
+    Ou talvez sejam mais simples forçar um fuso horário e informar aos
+usuários que todos os horários seguem a hora oficial de Brasília, nesta
+opção:
+
+<lista>
+  <item>Forçar fuso-horário</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Local => Parametrização local</b>;
+    <item/>selecione a opção <b>America/São_Paulo</b> em <b>Forçar fuso-horário</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    Ao configurar esta opção, o usuário não terá mais a possibilidade de
+configurar o fuso-horário em seu perfil.
 
 <br/>0.5cm
 
