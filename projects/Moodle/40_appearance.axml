@@ -266,3 +266,35 @@ realizar login.
   </lista>
 </lista>
 
+<subsecao>Temas</subsecao>
+
+    Os temas fornecem novas identidades visuais para o Moodle, além disso
+alguns temas também agregam novos recursos para a página inicial, como
+slideshows. Com a criação do tema padrão atual, o <b>Boost</b>, que
+implementou o <b>Navigation Drawler</b> como menu principal de navegação,
+foram lançados novos temas que o utilizam como tema base (<i>parent theme</i>)
+e também utilizam este novo menu.
+
+<lista>
+  <item>Conheça os seguintes temas:</item>
+  <lista>
+    <item/><link>https://moodle.org/plugins/theme_moove</link><text>Moove</text>
+    <item/><link>https://moodle.org/plugins/theme_klass</link><text>Klass</text>
+    <item/><link>https://moodle.org/plugins/theme_academi</link><text>Academi</text>
+  </lista>
+</lista>
+
+<lista>
+  <item>Atividade: instalar um novo tema</item>
+  <lista>
+    <item/>acesse <b>Administração do site => Plugins => Instalar plugins</b>;
+    <item/>em <b>Instalar plugin de arquivo ZIP</b>, clique em <b>Escolha um
+    arquivo...</b>;
+    <item/>clique em <b>Enviar um arquivo</b>, depois em <b>Browse...</b>;
+    <item/>selecione o arquivo zip do tema e clique em <b>Enviar este
+    arquivo</b>;
+    <item/>clique em <b>Instalar plugin do arquivo ZIP</b>;
+    <item/>clique em <b>Continuar</b>, novamente em <b>Continuar</b>;
+    <item/>clique em <b>Atualizar base de dados do Moodle agora</b>;
+  </lista>
+</lista>
