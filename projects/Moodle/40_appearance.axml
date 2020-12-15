@@ -16,16 +16,20 @@ na página de login, está localizada na topo do site e contém:
   <item/>o logo, em sua versão reduzida;
   <item/>o nome do site;
   <item/>links;
-  <item/>link para login ou o menu do usuário;
-  <item/>o Menu do Usuário;
+  <item/>link para a página de login ou;
+  <item/>o Menu do Usuário, quando o usuário estiver autenticado;
 </lista>
 
 <subsubsecao>Menu principal de navegação</subsubsecao>
 
     O ícone de acesso ao menu principal de navegação é o primeiro elemento
-da barra de navegação. O tema <b>Boost</b> utiliza o menu <i>navigation
-drawler</i> como menu principal de navegação. Este menu contém, após o
-login, os seguintes links:
+da barra de navegação. O tema <b>Boost</b> utiliza o menu <b>Navigation
+Drawler</b> como menu principal de navegação.
+
+    Este menu é um característico das versões recentes do Moodle e estará
+presente também em todos os temas que utilizam o tema <b>Boost</b> como tema
+base (<i>parent theme</i>). Os seguintes links estarão presentes neste menu,
+após o login:
 
 <lista>
   <item/>Página inicial do site;
