@@ -113,6 +113,41 @@ Links
 
     O menu do usuário será abordado no capítulo<ref>users</ref>.
 
+<subsecao>Página inicial</subsecao>
+
+    A página inicial é composta essencialmente pela barra de navegação e
+pela relação de cursos, função disponível pelo tema padrão <b>Boost</b>.
+Outros temas podem adicionar novos recursos como slideshows e configurações
+do rodapé.
+
+<lista>
+  <item>Opções de exibição dos cursos na página inicial</item>
+  <lista>
+    <item>Lista de cursos:</item> formato em grid com imagem e título do curso.
+    <item>Menu Drop-down:</item> formato em linha (sem imagem) de categorias e cursos.
+    <item>Lista de categorias:</item> formato em linha das categorias.
+  </lista>
+  <item>Outras opções para compor a página inicial</item>
+  <lista>
+    <item>Cursos inscritos:</item> relação dos cursos inscritos com imagem,
+    título e descrição do curso.
+    <item>Avisos:</item> fórum integrado a página inicial para publicação de
+    informações;
+    <item>Caixa de pesquisa do curso:</item>recurso de pesquisa de cursos;
+  </lista>
+</lista>
+
+<lista>
+  <item>Atividade</item>: configurar a composição da página inicial
+  <lista>
+    <item/>acesse <b>Administração do site => Configurações da página
+    principal;</b>;
+    <item/>na opção <b>Página inicial</b>;
+    <item/>selecione uma opção para exibição dos cursos na página inicial;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
 <subsecao>Página de login</subsecao>
 <nome>user-autoregister</nome>
 
