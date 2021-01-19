@@ -162,17 +162,32 @@ conta do novo usuário.
   </lista>
 </lista>
 
+<subsubsubsecao>Pesquisar usuários</subsubsubsecao>
+
     Na tela de listagem dos usuários cadastrados é possível pesquisar
 usuários por meio dos filtros. O filtro <b>Identificação do usuário</b>
-realiza a perquisa pelo nome da conta do usuário. Clique na opção <b>Mostrar
-mais...</b> para consultar todos os filtros disponíveis.
+(<i>username</i>) realiza a perquisa pelo nome da conta do usuário. Clique
+na opção <b>Mostrar mais...</b> para consultar todos os filtros disponíveis.
 
     Os filtros que são exibidos por padrão podem ser selecionados em
-<b>Administração do site → Usuários → Gerenciamento de usuário</b>. Mantenha
-pressionada a tecla <b>Control</b> para selecionar vários itens.
+<b>Administração do site → Usuários → Gerenciamento de usuário → Filtros de
+usuário padrão</b>. Mantenha pressionada a tecla <b>Control</b> para
+selecionar vários itens.
 
     <b>Tarefa</b>: selecione o filtro <b>Nome completo</b> para ser exibido
-na tela de listar usuários.
+na tela de listagem de usuários.
+
+<br/>0.3cm
+
+<subsubsubsecao>Colunas do resultado da pesquisa</subsubsubsecao>
+
+    As colunas que são apresentadas na listagem podem ser configuradas em
+<b>Administração do site → Usuários → Políticas para usuários → Mostra a
+identidade do usuário</b>.
+
+    <b>Tarefa</b>: habilite a coluna <b>Identificação do usuário</b>
+(<i>username</i>) para exibir o nome do usuário na tela de listagem de
+usuários.
 
 <br/>0.3cm
 
