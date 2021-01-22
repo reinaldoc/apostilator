@@ -130,11 +130,62 @@ site → Aparência → Calendário</b>.
 
 <br/>0.5cm
 
+<subsecao>Visitante</subsecao>
+<nome>user-guest</nome>
+
+    Por meio do usuário <b>Visitante</b> é possível que usuários acessem
+cursos sem autenticação, quando permitido por configuração do curso.
+
+<lista>
+  <item>Atividade</item>: desativar visitante no Moodle;
+  <lista>
+    <item/>acesse <b>Administração do site → Plugins → Autenticação →
+    Gerenciar autenticação</b>;
+    <item/>na opção <b>Botão de entrada como visitante</b>, selecione
+    <b>Ocultar</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    Ao desativar o usuário <b>Visitante</b>, a opção <b>Acessar como
+visitante</b> será omitida da página inicial. Ainda que o visitante
+permaneça ativado, será necessário configurar em cada curso a possibilidade
+de acesso por este usuário, que não requer autenticação.
+
+<br/>0.5cm
+
 <subsecao>Cadastro de Usuários</subsecao>
 
-    Há três formas de cadastro do usuário do Moodle: i) autoinscrição,
-conforme já visto na seção<ref>user-autoregister</ref>; ii) cadastro manual;
-ou iii) via login por LDAP;
+    Há três formas de cadastro do usuário do Moodle: i) auto-cadastro,
+também denominado como autoinscrição por e-mail; ii) cadastro manual;
+ou iii) via login por LDAP.
+
+<subsubsecao>Auto-cadastro</subsubsecao>
+<nome>user-autoregister</nome>
+
+    Por meio do recurso de <b>autoinscrição no Moodle</b> qualquer pessoa
+poderá criar seu próprio cadastro. Entretanto não há relação com o recurso
+de <b>autoinscrição no curso</b>, assim, tanto usuários criados por
+autoinscrição no Moodle quanto usuário criados de forma manual estarão
+aptos a se autoinscriver nos cursos que permitem essa opção.
+
+<lista>
+  <item>Atividade</item>: ativar autoinscrição no Moodle;
+  <lista>
+    <item/>acesse <b>Administração do site → Plugins → Autenticação →
+    Gerenciar autenticação</b>;
+    <item/>na opção <b>Auto-cadastro</b>, selecione <b>Auto-cadstro por
+    email</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+    <item/>acesse <b>Administração do site → Plugins → Autenticação →
+    Autoinscrição por email</b>;
+    <item/>na opção <b>Ativar elemento reCAPTCHA</b>, selecione <b>Sim</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    A opção <b>Criar uma conta</b> será exibida na página inicial.
+
 
 <subsubsecao>Cadastro manual</subsubsecao>
 

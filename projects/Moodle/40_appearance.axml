@@ -149,57 +149,18 @@ do rodapé.
 </lista>
 
 <subsecao>Página de login</subsecao>
-<nome>user-autoregister</nome>
 
     Inicialmente a página de login permite a autenticação de usuários
-cadastrados manualmente no <b>Moodle</b> e o acesso como visitante. O
-capítulo<ref>users</ref> abordará a listagem e criação manual de usuários.
+cadastrados manualmente no <b>Moodle</b> e o acesso como visitante.
 
-<subsubsubsecao>Autoinscrição</subsubsubsecao>
+    Há duas configurações que afetam a página de login: ao habilitar a
+função de login como visitante será apresentado o botão <b>Acessar como
+visitante</b> e ao habilitar a função de auto-cadastro será apresentado o
+botão <b>Criar uma conta</b>.
 
-    Por meio do recurso de <b>autoinscrição no Moodle</b> qualquer pessoa
-poderá criar seu próprio cadastro. Entretanto não há relação com o recurso
-de <b>autoinscrição no curso</b>, assim, tanto usuários criados por
-autoinscrição no Moodle quanto usuário criados de forma manual estarão
-aptos a se autoinscriver nos cursos que permitem essa opção.
-
-<lista>
-  <item>Atividade</item>: ativar autoinscrição no Moodle;
-  <lista>
-    <item/>acesse <b>Administração do site → Plugins → Autenticação →
-    Gerenciar autenticação</b>;
-    <item/>na opção <b>Autoinscrição</b>, selecione <b>Autoinscrição por
-    email</b>;
-    <item/>clique em <b>Salvar mudanças</b>;
-    <item/>acesse <b>Administração do site → Plugins → Autenticação →
-    Autoinscrição por email</b>;
-    <item/>na opção <b>Ativar elemento reCAPTCHA</b>, selecione <b>Sim</b>;
-    <item/>clique em <b>Salvar mudanças</b>;
-  </lista>
-</lista>
-
-    A opção <b>Criar uma conta</b> será exibida na página inicial.
-
-<subsubsubsecao>Visitante</subsubsubsecao>
-
-    Por meio do usuário <b>Visitante</b> é possível que usuários acessem
-cursos sem autenticação, quando permitido por configuração do curso.
-
-<lista>
-  <item>Atividade</item>: desativar visitante no Moodle;
-  <lista>
-    <item/>acesse <b>Administração do site → Plugins → Autenticação →
-    Gerenciar autenticação</b>;
-    <item/>na opção <b>Botão de entrada como visitante</b>, selecione
-    <b>Ocultar</b>;
-    <item/>clique em <b>Salvar mudanças</b>;
-  </lista>
-</lista>
-
-    Ao desativar o usuário <b>Visitante</b>, a opção <b>Acessar como
-visitante</b> será omitida da página inicial. Ainda que o visitante
-permaneça ativado, será necessário configurar em cada curso a possibilidade
-de acesso por este usuário, que não requer autenticação.
+    Veja na seção <ref>user-guest</ref> como configurar a função de
+visitante e na seção <ref>user-autoregister</ref> como configurar a função
+de auto-cadastro.
 
 <subsecao>Painel do Usuário</subsecao>
 
