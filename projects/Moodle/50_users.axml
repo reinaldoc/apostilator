@@ -68,7 +68,7 @@ tipo <b>DropDown</b> com as opções: pela manhã, pela tarde, pela noite.
 
     Também é possível impedir a alteração dos campos por meio da opção
 <b>Bloquear campos de usuário</b> disponível em <b>Administração do site →
-Plugins → Autenticação → Contas manuais</b>.
+Plugins → Autenticação → Contas manuais → Configurações</b>.
 
     <importante/>O bloqueio de campos é particularmente útil quando os dados
 dos usuários são sincronizados a partir de outra fonte, como o LDAP.
