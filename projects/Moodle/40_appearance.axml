@@ -114,6 +114,7 @@ Links
     O menu do usuário será abordado no capítulo<ref>users</ref>.
 
 <subsecao>Página inicial</subsecao>
+<nome>frontpage</nome>
 
     A página inicial é composta essencialmente pela barra de navegação e
 pela relação de cursos, função disponível pelo tema padrão <b>Boost</b>.
@@ -161,6 +162,17 @@ botão <b>Criar uma conta</b>.
     Veja na seção <ref>user-guest</ref> como configurar a função de
 visitante e na seção <ref>user-autoregister</ref> como configurar a função
 de auto-cadastro.
+
+<lista>
+  <item>Atividade</item>: ativar foco no campo do usuário da página de login
+  <lista>
+    <item/>acesse <b>Administração do site → Plugins → Gerenciar
+    autenticação</b>;
+    <item/>marque a opção <b>Focar automaticamente o formulário da página de
+    login</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
 
 <subsecao>Painel do Usuário</subsecao>
 
