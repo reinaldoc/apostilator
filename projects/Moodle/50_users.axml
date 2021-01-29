@@ -1,9 +1,10 @@
 <capitulo>Usuários</capitulo>
 <nome>users</nome>
 
-    Foi visto no capítulo<ref>appearence</ref> como permitir o autoregistro
-de usuários e como desabilitar o usuário visitante, nesse capítilo veremos o
-<b>Menu do usuário</b> e as demais opções de cadastro de usuário.
+    Nesse capítilo veremos as informações contidas no <b>Menu do
+usuário</b>, como desabilitar o usuário visitante, além de como permitir o
+autoregistro de usuários, como realizar o cadastro manual e outras opções de
+autenticação.
 
 <subsecao>Menu do usuário</subsecao>
 
@@ -32,6 +33,9 @@ ser consultados pelos outros estudantes do mesmo curso.
 foto de perfil. Obtenha um avatar
 <link>http://www.iconarchive.com/category/avatar-icons.html</link>
 <text><b>clicando aqui</b></text>.
+
+    <b>Tarefa</b>: acesse a URL <b>/userpix</b> para obter um grid com as
+imagens de todos os usuários, disponível ao usuário administrador.
 
 <br/>0.5cm
 
@@ -66,9 +70,10 @@ tipo <b>DropDown</b> com as opções: pela manhã, pela tarde, pela noite.
 
 <subsubsubsecao>Bloquear campos</subsubsubsecao>
 
-    Também é possível impedir a alteração dos campos por meio da opção
-<b>Bloquear campos de usuário</b> disponível em <b>Administração do site →
-Plugins → Autenticação → Contas manuais → Configurações</b>.
+    Também é possível impedir a alteração dos campos do cadastro do usuário
+por meio da opção <b>Bloquear campos de usuário</b> disponível em
+<b>Administração do site → Plugins → Autenticação → Contas manuais →
+Configurações</b>.
 
     <importante/>O bloqueio de campos é particularmente útil quando os dados
 dos usuários são sincronizados a partir de outra fonte, como o LDAP.
@@ -164,10 +169,10 @@ ou iii) via login por LDAP.
 <subsubsecao>Auto-cadastro</subsubsecao>
 <nome>user-autoregister</nome>
 
-    Por meio do recurso de <b>autoinscrição no Moodle</b> qualquer pessoa
+    Por meio do recurso de <b>auto-cadastro no Moodle</b> qualquer pessoa
 poderá criar seu próprio cadastro. Entretanto não há relação com o recurso
 de <b>autoinscrição no curso</b>, assim, tanto usuários criados por
-autoinscrição no Moodle quanto usuário criados de forma manual estarão
+auto-cadastro no Moodle quanto usuário criados de forma manual estarão
 aptos a se autoinscriver nos cursos que permitem essa opção.
 
 <lista>
@@ -257,6 +262,11 @@ selecionar vários itens.
     <b>Tarefa</b>: selecione o filtro <b>Nome completo</b> para ser exibido
 na tela de listagem de usuários.
 
+    <b>Tarefa</b>: selecione o filtro <b>Papel no curso</b> para ser exibido
+na tela de listagem de usuários. Este filtro permite listar os usuário
+inscritos em determinado curso, utilizando o nome curto do curso como
+filtro.
+
 <br/>0.3cm
 
 <subsubsubsecao>Colunas do resultado da pesquisa</subsubsubsecao>
@@ -270,6 +280,32 @@ identidade do usuário</b>.
 usuários.
 
 <br/>0.3cm
+
+<subsubsubsecao>Ações em lote sobre usuários</subsubsubsecao>
+
+    O filtro <b>Papel no curso</b> também será exibido por padrão na tela de
+<b>Ações em lote sobre usuários</b>, o que permite facilmente o envio de
+mensagens para todos os usuários de determinado curso.
+
+    <b>Tarefa</b>: envie uma mensagem para todos os usuários de um
+determinado curso por meio da opção <b>Administração do site → Usuários →
+Ações em lote sobre usuários</b>.
+
+<br/>0.3cm
+
+<lista>
+  <item>As ações em lote disponíveis são:</item>
+  <lista>
+    <item/>Confirmar contas criadas por auto-cadastro, quando não
+confirmadas por e-mail.
+    <item/>Enviar mensagem aos usuários.
+    <item/>Excluir usuários.
+    <item/>Mostrar na página com e-mail e nome do usuário. 
+    <item/>Download dos dados cadastrados.
+    <item/>Forçar mudança de senha no próximo login.
+    <item/>Adicionar ao coorte para inscrivê-los em cursos.
+  </lista>
+</lista>
 
 <subsubsecao>Papéis</subsubsecao>
 
