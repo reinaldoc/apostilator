@@ -388,7 +388,6 @@ usuário.
 
 <br/>0.3cm
 
-
 <lista>
   <item>Atividade</item>: alterar tradução de termos;
   <lista>
@@ -411,3 +410,47 @@ usuário.
   </lista>
 </lista>
 
+<subsubsecao>Inscrição por PayPal</subsubsecao>
+
+    A inscrição por PayPal permite a liberação automática da inscrição após
+o pagamento. 
+
+<lista>
+  <item>Atividade</item>: habilitar o plugin de inscrição por PayPal.
+  <lista>
+    <item/>acesse <b>Administração do site → Plugins → Inscrições →
+    Gerenciar plugins de inscrição</b>;
+    <item/>identifique o plugin <b>PayPal</b> na tebela;
+    <item/>use o ícone <eye/> para habilitar o método de inscrição
+    <b>PayPal</b>;
+    <item/>clique em <b>Configurações</b> do plugin <b>PayPal</b>;
+    <item/>na opção <b>Moeda</b>, selecione <b>Brasil, Real</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<lista>
+  <item>Atividade</item>: habilitar inscrição por PayPal em um curso.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>use o ícone <eye/> para habilitar o método de inscrição
+    <b>Autoinscrição (Estudante)</b>;
+  </lista>
+</lista>
+
+    No site do PayPal, clique no ícone <gear/>, em seguinda em
+<b>Ferramentas do vendedor</b>, na seção <b>Notificações instantâneas de
+pagamento</b> clique em <b>Atualizar</b>. Clique em <b>Escolher
+configurações de NIP</b>, configure a URL de notificação para
+https://seusite.exemplo.com.br/enrol/pay pal/ipn.php e marque a opção
+<b>Receber mensagens de NIP (ativado)</b>.
+
+<br/>0.3cm
+
+    <importante/>A configuração de <b>Notificações instantâneas de
+pagamento</b> é valida para todos os pagamentos recebidos pela sua conta no
+PayPal. Você pode criar uma conta no PayPal exclusiva para receber valores
+das inscrições.
