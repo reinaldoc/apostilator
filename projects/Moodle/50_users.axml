@@ -139,7 +139,7 @@ site → Aparência → Calendário</b>.
 <nome>user-guest</nome>
 
     Por meio do usuário <b>Visitante</b> é possível que usuários acessem
-cursos sem autenticação, quando permitido por configuração do curso.
+cursos sem autenticação, quando permitido na configuração do curso.
 
 <lista>
   <item>Atividade</item>: desativar opção de login como visitante na página
@@ -152,11 +152,6 @@ de login;
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
-
-    Ao desativar o usuário <b>Visitante</b>, a opção <b>Acessar como
-visitante</b> será omitida da página inicial. Ainda que o visitante
-permaneça ativado, será necessário configurar em cada curso a possibilidade
-de acesso por este usuário, que não requer autenticação.
 
 <br/>0.5cm
 

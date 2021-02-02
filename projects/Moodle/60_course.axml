@@ -325,6 +325,51 @@ plugins de inscrição</b>. Quando determinado plugin é desabilitado, não
 serão possíveis por este método de inscrição, mas os usuários já inscritos
 continuam com acesso aos cursos.
 
+<subsubsecao>Acesso como visitante</subsubsecao>
+
+    Um curso aberto é aquele que não é necessária uma inscrição, sendo
+utilizado o acesso como <b>Visitante</b>, neste caso o usuário terá apenas
+permissão para consultar o conteúdo do curso.
+
+    Embora não seja propriamente uma inscrição, uma vez que o usuário não
+poderá interagir, responder questionários ou qualquer outra atividade ou
+recurso que salve informações, esta configuração é tratada como um método de
+inscrição configurada no curso.
+
+<lista>
+  <item>Atividade</item>: habilitar acesso como visitante.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>use o ícone <eye/> para habilitar o método de inscrição
+    <b>Acesso como visitante</b>;
+  </lista>
+</lista>
+
+    Caso este método de inscrição não conste na tabela, selecione-o na opção
+<b>Adicionar método</b>.
+
+<subsubsubsecao>Acesso como visitante com senha</subsubsubsecao>
+
+    A função de acesso como visitante permite a configuração de uma
+senha/chave/código que o usuário deve fornecer para acessar ao curso.
+
+<lista>
+  <item>Atividade</item>: habilitar acesso como visitante com senha.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>identifique o método <b>Acesso como visitante</b> e clique no
+    ícone <gear/> para configurá-lo;
+    <item/>preencha o campo <b>Senha</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
 <subsubsecao>Inscrição manual</subsubsecao>
 
     A inscrição manual de usuários é realizada com a seleção individual dos
@@ -454,3 +499,37 @@ https://seusite.exemplo.com.br/enrol/pay pal/ipn.php e marque a opção
 pagamento</b> é valida para todos os pagamentos recebidos pela sua conta no
 PayPal. Você pode criar uma conta no PayPal exclusiva para receber valores
 das inscrições.
+
+<subsubsecao>Inscrição de Coorte</subsubsecao>
+
+    A inscrição de Coorte permite a inscrição e desinscrição do conjunto de
+pessoas cadastradas em um Coorte. A utilização de Coortes é útil quando o
+mesmo conjunto de alunos necessita ser inscrito em diversos cursos.
+
+<lista>
+  <item>Atividade</item>: criar um coorte e adicionar pessoas.
+  <lista>
+    <item/>acesse <b>Administração do site → Usuários → Coortes</b>;
+    <item/>identifique o plugin <b>PayPal</b> na tebela;
+    <item/>clique em <b>Acrescentar um coorte</b>;
+    <item/>caso esse coorte seja usado apenas em determinada categoria,
+    indique-a na opção <b>Contexto</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+    <item/>clique no ícone de grupo de pessoas para adicionar pessoas ao
+    coorte;
+  </lista>
+</lista>
+
+<lista>
+  <item>Atividade</item>: habilitar inscrição do coorte em um curso.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>na opção <b>Adicionar método</b>, selecione <b>Sincronização de
+    coorte</b>;
+    <item/>indique o Coorte;
+    <item/>clique em <b>Adicionar método</b>;
+  </lista>
+</lista>
