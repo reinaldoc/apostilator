@@ -162,9 +162,15 @@ de acesso por este usuário, que não requer autenticação.
 
 <subsecao>Cadastro de Usuários</subsecao>
 
-    Há três formas de cadastro do usuário do Moodle: i) auto-cadastro,
-também denominado como autoinscrição por e-mail; ii) cadastro manual;
-ou iii) via login por LDAP.
+    Nesta seção veremos as principais formas de cadastro de usuários no
+Moodle: i) auto-cadastro, também traduzido como autoinscrição por e-mail;
+ii) cadastro manual; e iii) via login por LDAP.
+
+    Os plugins de autenticação podem ser habilitados ou desabilidados em
+<b>Administração do site → Plugins → Autenticação → Gerenciar
+autenticação</b>. Quando determinado plugin é desabilitado, todos os
+usuários criados por este plugin não serão capazes de realizar login, até
+que este plugin seja habilitado novamente.
 
 <subsubsecao>Auto-cadastro</subsubsecao>
 <nome>user-autoregister</nome>
