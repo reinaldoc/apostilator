@@ -313,3 +313,101 @@ atividades, permitem que o tutor cadastre uma nota a cada participante.
 
 <br/>0.5cm
 
+<subsecao>Inscrição de Usuários</subsecao>
+
+    Nesta seção veremos as principais formas de inscrição de usuários em um
+curso: i) autoinscrição (livre ou por meio de chave de inscrição); ii)
+inscrição manual; e iii) inscrição via link.
+
+    Os plugins de inscrição podem ser habilitados ou desabilidados em
+<b>Administração do site → Plugins → Inscrições → Gerenciar
+plugins de inscrição</b>. Quando determinado plugin é desabilitado, não
+serão possíveis por este método de inscrição, mas os usuários já inscritos
+continuam com acesso aos cursos.
+
+<subsubsecao>Inscrição manual</subsubsecao>
+
+    A inscrição manual de usuários é realizada com a seleção individual dos
+usuários por meio da opção <b>Participantes</b> disponível ao entrar na
+página de um curso.
+
+<lista>
+  <item>Atividade</item>: inscrever usuários manualmente.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique em <b>Inscrever usuários</b>;
+    <item/>selecione um ou vários usuários na opção <b>Selecione os usuários</b>;
+    <item/>selecione o papel <b>Estudante</b>;
+    <item/>clique em <b>Inscrever usuários selecionados e coortes</b>;
+  </lista>
+</lista>
+
+<subsubsecao>Autoinscrição</subsubsecao>
+
+    A autoinscrição é realizada pelo próprio usuário que deseja realizar um
+curso, desde que o usuário possua um cadastro ativo, por meio do botão
+<b>Inscreva-me</b>, apresentado após selecionar um curso.
+
+<lista>
+  <item>Atividade</item>: habilitar autoinscrição em um curso.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>use o ícone <eye/> para habilitar o método de inscrição
+    <b>Autoinscrição (Estudante)</b>;
+  </lista>
+</lista>
+
+<subsubsubsecao>Autoinscrição com chave</subsubsubsecao>
+
+    A função de autoinscrição permite a configuração de uma chave/código que
+o usuário deve fornecer para que a autoinscrição seja permitida.
+
+<lista>
+  <item>Atividade</item>: habilitar autoinscrição com chave em um curso.
+  <lista>
+    <item/>acesse um curso;
+    <item/>clique em <b>Participantes</b>;
+    <item/>clique ícone <gear/> de <b>engrenagem de configuração</b>;
+    <item/>clique em <b>Métodos de inscrição</b>;
+    <item/>identifique o método <b>Autoinscrição (Estudante)</b> e clique no
+    ícone <gear/> para configurá-lo;
+    <item/>preencha o campo <b>Chave de inscrição</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    <b>Tarefa:</b> defina a opção <b>Nome personalizado da instância</b>
+como <b>Faça sua inscrição</b> ou <b>Use um código de inscrição</b> nas
+configurações de autoinscrição de um curso. Realize login com um usuário não
+inscrito neste curso para verificar onde esta informação será exibida ao
+usuário.
+
+<br/>0.3cm
+
+
+<lista>
+  <item>Atividade</item>: alterar tradução de termos;
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Personalização de
+           idioma</b>;
+    <item/>selecione o idioma <b>Português - Brasil (pt_br)</b>;
+    <item/>clique em <b>Abrir pacote de idioma para edição</b>;
+    <item/>aguarde e clique em <b>Continuar</b>;
+    <item/>clique em <b>enrol_self.php</b> e digite <b>password</b> na opção
+    <b>Identificador de string</b>;
+    <item/>clique em <b>Exibir texto</b>;
+    <item/>defina a tradução para <b>Código de inscrição</b>;
+    <item/>clique em <b>Aplicar mudanças e continuar editando</b>;
+    <item/>clique em <b>enrol_self.php</b> e digite <b>nopassword</b> na opção
+    <b>Identificador de string</b>;
+    <item/>clique em <b>Exibir texto</b>;
+    <item/>defina a tradução para <b>Use o botão abaixo para acessar o curso</b>;
+    <item/>clique em <b>Salvar alterações no pacote de idioma</b>;
+    <item/>clique em <b>Continuar</b>;
+  </lista>
+</lista>
+
