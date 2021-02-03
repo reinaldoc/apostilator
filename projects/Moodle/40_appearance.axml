@@ -36,8 +36,13 @@ após o login:
   <item/>Painel do usuário;
   <item/>Calendário;
   <item/>Arquivos privados do usuário, e;
-  <item/>Ccursos em que o usuário está inscrito.
+  <item/>Cursos em que o usuário está inscrito.
 </lista>
+
+    Os cursos inscritos são identificados no menu por meio de seu nome
+curto. Para utilizar o nome completo do curso, habilite a opção <b>Mostrar
+os nomes completos do curso</b> em <b>Administração do site → Aparência →
+Navegação</b>.
 
     O menu principal de navegação pode ser customizado por meio do plugin
 <b>Boost navigation fumbling</b>, veja na
