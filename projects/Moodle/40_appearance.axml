@@ -97,10 +97,10 @@ Links
     <item/>acesse <b>Administração do site => Idioma => Personalização de
            idioma</b>;
     <item/>selecione o idioma <b>Português - Brasil (pt_br)</b>;
-    <item/>clique em <b>Abrir pacote de idioma para edição</b>, após em
-    <b>Continuar</b>;
-    <item/>clique em <b>moodle.php</b> e digite <b>Log in</b> na opção
-    <b>Somente strings cotendo</b>;
+    <item/>clique em <b>Abrir pacote de idioma para edição</b>;
+    <item/>aguarde e clique em <b>Continuar</b>;
+    <item/>clique em <b>moodle.php</b> e digite <b>login</b> na opção
+    <b>Identificador de string</b>;
     <item/>clique em <b>Exibir texto</b>;
     <item/>identifique o termo <b>login</b> ou <b>Acessar</b> e digite
     <b>Entrar</b>;]
