@@ -62,6 +62,12 @@ alterá-lo.
 
     É possível adicionar novos campos de cadastro do usuário por meio da
 opção <b>Administração do site → Usuários → Campos de perfil do usuário</b>.
+Esses novos campos podem ser agrupados em <b>Categorias de perfil</b>, por
+padrão há uma categoria de perfil denominada <b>Outros campos</b>.
+
+    <b>Tarefa</b>: o nome da categoria de perfil é usado como título da
+seção do cadastro do usuário. Use o ícone <gear/> para alterar o nome
+<b>Outros campos</b> para <b>Informação adicional</b>.
 
     <b>Tarefa</b>: adicone o campo <b>Melhor horário para contato</b> do
 tipo <b>DropDown</b> com as opções: pela manhã, pela tarde, pela noite.
@@ -70,10 +76,14 @@ tipo <b>DropDown</b> com as opções: pela manhã, pela tarde, pela noite.
 
 <subsubsubsecao>Bloquear campos</subsubsubsecao>
 
-    Também é possível impedir a alteração dos campos do cadastro do usuário
+    É possível impedir a alteração dos campos padrão do cadastro do usuário
 por meio da opção <b>Bloquear campos de usuário</b> disponível em
 <b>Administração do site → Plugins → Autenticação → Contas manuais →
 Configurações</b>.
+
+    O bloqueio dos campos adicionados é realizado pela opção <b>Este campo
+está trancado?</b> na configuração do campo em <b>Administração do site →
+Usuários → Campos de perfil do usuário</b>.
 
     <importante/>O bloqueio de campos é particularmente útil quando os dados
 dos usuários são sincronizados a partir de outra fonte, como o LDAP.
