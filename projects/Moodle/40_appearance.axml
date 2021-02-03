@@ -203,7 +203,7 @@ como pode-se não permitir que o usuário reposicione os blocos.
 bloco</b>, bem como os blocos podem ser reposicinados ou removidos. Os
 blocos podem ser movidos entre as regiões central e direita pelo arrastar do
 mouse no ícone de setas ou pela opção <b>Região padrão</b> em <b>Configurar
-bloco</b> pelo ícone de engrenagem. 
+bloco</b> pelo ícone <gear/>.
 
     Use a opção <b>Redefinir Painel para todos os usuário</b> para aplicar
 este painel a todos os usuários, descartando eventuais customizações que os
@@ -228,6 +228,93 @@ usuário.
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
+
+<subsubsecao>Bloco Últimos Avisos</subsubsecao>
+
+    O bloco Últimos avisos contém posts realizados no fórum da página
+inicial.
+
+    <b>Tarefa:</b> adicione o bloco <b>Últimos avisos</b> à região central
+do painel. Posicione-o como primeiro bloco desta região. Aplique esta
+configuração para todos os usuários do Moodle.
+
+<lista>
+  <item>Atividade</item>: alterar uma tradução de termo;
+  <lista>
+    <item/>acesse <b>Administração do site => Idioma => Personalização de
+           idioma</b>;
+    <item/>selecione o idioma <b>Português - Brasil (pt_br)</b>;
+    <item/>clique em <b>Abrir pacote de idioma para edição</b>;
+    <item/>aguarde e clique em <b>Continuar</b>;
+    <item/>selecione <b>block_news_items.php</b> e digite <b>pluginname</b>
+    na opção <b>Identificador de string</b>;
+    <item/>clique em <b>Exibir texto</b>;
+    <item/>defina a tradução para <b>Avisos</b>;
+    <item/>isto irá alterar o título do bloco <b>Últimos avisos</b>
+    para <b>Avisos</b>;
+    <item/>clique em <b>Salvar alterações no pacote de idioma</b>, após em
+    <b>Continuar</b>;
+  </lista>
+</lista>
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> altere a tradução do termo <b>Tópicos antigos</b>
+utilizado no bloco <b>Últimos avisos</b> para <b>Ver todos</b>. Utilize o
+Identificador de string <b>oldertopics</b> e selecione <b>mod_forum.php</b>.
+
+<br/>0.3cm
+
+<subsubsecao>Bloco Resumo dos Cursos</subsubsecao>
+
+    O bloco Resumo dos Cursos contém os cursos em que o usuários está
+inscrito, bem como apresenta o percentual de completude desses cursos.
+
+    <b>Tarefa:</b> adicione o bloco <b>Resumo dos cursos</b> à região
+central do painel. Posicione-o abaixo do bloco <b>Últimos avisos</b>.
+Aplique esta configuração para todos os usuários do Moodle.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> altere a tradução do termo <b>Resumo dos cursos</b> do
+título do bloco <b>Resumo dos cursos</b> para <b>Meus cursos</b>. Utilize o
+Identificador de string <b>pluginname</b> e selecione
+<b>block_myoverview .php</b>.
+
+<subsubsecao>Bloco Arquivos Privados</subsubsecao>
+
+    O bloco arquivos privados contém arquivos enviados para o repositório
+pessoal de arquivos denominado <b>Arquivos Privados</b>.
+
+    <b>Tarefa:</b> adicione o bloco <b>Arquivos Privados</b> à região
+central abaixo do bloco <b>Resumo dos cursos</b>. Aplique esta configuração
+para todos os usuários do Moodle.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> altere a tradução do termo <b>Arquivos privados</b> no
+menu de navegação para <b>Meus arquivos</b>. Utilize o Identificador de
+string <b>privatefiles</b> e selecione <b>moodle.php</b>.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> altere a tradução do termo <b>Arquivos privados</b> do
+título do bloco <b>Arquivos Privados</b> para <b>Meus arquivos</b>. Utilize
+o Identificador de string <b>pluginname</b> e selecione
+<b>block_private_ files.php</b>;
+
+<br/>0.3cm
+
+<subsubsecao>Bloco Próximos Eventos</subsubsecao>
+
+    O bloco próximos eventos contém os próximos eventos registrados no
+calendário.
+
+    <b>Tarefa:</b> adicione o bloco <b>Últimos eventos</b> à região lateral
+direita do painel. Posicione-o acima do bloco <b>Calendário</b>. Aplique
+esta configuração para todos os usuários do Moodle.
+
+<br/>0.3cm
 
 <subsecao>Fluxo de navegação</subsecao>
 
