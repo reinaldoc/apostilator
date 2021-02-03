@@ -308,16 +308,90 @@ confirmadas por e-mail.
   </lista>
 </lista>
 
-<subsubsecao>Papéis</subsubsecao>
+<subsecao>Papéis</subsecao>
 
     Os papéis agrupam as permissões necessárias para cada tipo de usuário do
 <b>Moodle</b>. Os seguintes papéis estão disponíveis: Usuário autenticado,
 Visitante, Estudante, Moderador, Professor, Criador de cursos, Gerente e
 Administrador.
 
+    Os papéis preexistentes no Moodle são organizados a fim de ampliar
+gradativamente as permissões dos usuários, assim o Professor possui mais
+permissões que o Moderador, já o Criador de cursos possui mais permissões que
+o Professor, e assim sucessivamente.
+
+<lista>
+  <item>Gerente:</item> podem acessar cursos e modificá-los, geralmente não
+  participam dos cursos.
+  <item>Criador de cursos:</item> podem criar novos cursos e agir como
+  professores.
+  <item>Professor:</item> podem fazer tudo em um curso, alterar atividades e
+  avaliar.
+  <item>Moderador:</item> podem interagir e avaliar mas não podem modificar
+  as atividades.
+  <item>Estudantes:</item> podem interagir com as atividades.
+  <item>Visitante:</item> permissões mínimas e não podem publicar textos.
+  <item>Usuários autenticados:</item> todos os usuários logados.
+</lista>
+
     Criar um novo papel ou ajustar as permissões dos papéis existentes pode
 ser realizado pela opção <b>Administração do site → Usuários → Definir
-papéis</b>. Os papéis são concedidos aos usuários em cada curso, porém é
-possível atribuir os papéis <b>Criador de cursos</b> e <b>Gerente</b> para
-todos os cursos por meio da opção <b>Administração do site → Usuários →
+papéis</b>. Ao clicar no nome do papel você poderá visualizar a configuração
+desse papel e terá acesso ao botão <b>Reconfigurar</b> para desfazer
+qualquer mudança já realizada.
+
+<subsubsecao>Papéis globais</subsubsecao>
+
+    Os papéis são concedidos aos usuários em cada curso no momento da
+inscrição do usuário. Porém é possível atribuir os papéis <b>Criador de
+cursos</b> ou <b>Gerente</b> a determinados usuários para todos os cursos
+da plataforma por meio da opção <b>Administração do site → Usuários →
 Atribuir papéis globais</b>.
+
+<subsubsecao>Definição de Papéis</subsubsecao>
+
+<subsubsubsecao>Atribuição de Papéis</subsubsubsecao>
+
+    Alguns papéis tem permissão para conceder papéis a outros usuários. Por
+padrão, um usuário com papel de <b>Professor</b> pode conceder papéis de
+<b>Moderador</b> ou <b>Estudante</b> a outros usuários, já um usuário que
+possui o papel de <b>Gerente</b> pode concerder a outros usuários diversos
+papéis.
+
+    A configuração da permissão de atribuição de papel pode ser acessada em
+<b>Administração do site → Usuários → Definir → Permitir atribuição de
+papel</b>.
+
+<subsubsubsecao>Sobreposição de Papéis</subsubsubsecao>
+
+    A sobreposição de papel determina qual papel o usuário terá caso tenha
+mais de um. Por padrão o papel <b>Professor</b> possui sobreposição aos
+papéis de <b>Moderador</b>, <b>Estudante</b> e <b>Visitante</b>.
+
+    A configuração da permissão de sobreposição de papel pode ser acessada
+em <b>Administração do site → Usuários → Definir → Permitir sobreposição de
+papel</b>.
+
+<subsubsubsecao>Troca de Papéis</subsubsubsecao>
+
+    A troca de papel permite simular a visualização de um curso por um
+outro papel. Essa opção está disponível em <b>Menu do Usuário → Mudar papel
+para...</b>. Use a opção <b>Menu do Usuário → Retornar ao meu papel
+normal</b> para defazer a simulação.
+
+    Por padrão o papel <b>Professor</b> poder simular a visualização de
+cursos como <b>Moderador</b>, <b>Estudante</b> e <b>Visitante</b>. Já o
+papel <b>Moderador</b> poder simular a visualização como <b>Estudante</b> e
+<b>Visitante</b>.
+
+    A configuração da permissão para troca de papel pode ser acessada
+em <b>Administração do site → Usuários → Definir → Permitir troca de
+papel</b>.
+
+<subsecao>Relatório de capabilility</subsecao>
+
+    O relatório de capability permite comparar determinadas permissões entre
+papéis. Acesse o relatório em <b>Administração do site → Usuários →
+Relatório de capabilility</b>, pesquise e selecione algumas permissões,
+selecione os papéis que deseja comparar e clique em <b>Obter relatório</b>.
+
