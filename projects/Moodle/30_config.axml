@@ -11,7 +11,7 @@ idiomas <b>Português - Brasil (pt_br)</b> e realiza a seleção do idioma
 padrão. Esta seção é apenas para referência.
 
 <lista>
-  <item>Implantar novo pacote de idiomas</item>
+  <item>Atividade:</item> implantar novo pacote de idiomas.
   <lista>
     <item/>acesse <b>Administração do site => Idioma => Pacotes de idiomas</b>;
     <item/>selecione um pacote de idioma disponível;
@@ -20,7 +20,7 @@ padrão. Esta seção é apenas para referência.
 </lista>
 
 <lista>
-  <item>Definir o idioma padrão</item>
+  <item>Atividade:</item> definir o idioma padrão.
   <lista>
     <item/>acesse <b>Administração do site => Idioma => Configurações de
            idiomas</b>;
@@ -44,7 +44,7 @@ padrão, assim esta seção é apenas de referência. Este fuso-horário é util
 sistema.
 
 <lista>
-  <item>Definir o fuso-horário padrão</item>
+  <item>Atividade:</item> definir o fuso-horário padrão.
   <lista>
     <item/>acesse <b>Administração do site => Local => Parametrização local</b>;
     <item/>selecione a opção <b>America/Belem</b> em <b>Fuso-horário padrão</b>;
@@ -72,7 +72,7 @@ usuários que todos os horários seguem a hora oficial de Brasília, nesta
 opção:
 
 <lista>
-  <item>Forçar fuso-horário</item>
+  <item>Atividade:</item> forçar fuso-horário.
   <lista>
     <item/>acesse <b>Administração do site => Local => Parametrização local</b>;
     <item/>selecione a opção <b>America/São_Paulo</b> em <b>Forçar fuso-horário</b>;
@@ -90,10 +90,10 @@ configurar o fuso-horário em seu perfil.
    Configurações de e-mail.
 
 <lista>
-    <item>Contato para suporte técnico</item>
+    <item>Atividade:</item> definir contato para suporte técnico.
     <lista>
-      <item/>configure em <b>Administração do site => Servidor => Servidor => Contato para suporte
-técnico</b>:
+      <item/>configure em <b>Administração do site => Servidor => Contato
+      para suporte técnico</b>:
       <item>Nome de suporte</item>: Suporte EAD
       <item>Email de suporte</item>: suporte@exemplo.com.br
       <item>Página de suporte</item>: ticket.exemplo.com.br
@@ -101,13 +101,27 @@ técnico</b>:
 </lista>
 
 <lista>
-    <item>Configuração do serviço de e-mail</item>
+    <item>Atividade:</item> configuração do serviço de e-mail.
     <lista>
-      <item/>configure em <b>Administração do site => Servidor => E-mail => Configuração de saída de
-e-mail</b>:
+      <item/>configure em <b>Administração do site => Servidor => E-mail =>
+      Configuração de saída de e-mail</b>:
       <item>Servidores SMTP</item>: 10.8.14.182
       <item>Endereço de No-reply</item>: suporte+noreply@exemplo.com.br
       <item>Prefixo do texto do assunto do email</item>: [EAD]
     </lista>
 </lista>
 
+<subsecao>Tempo de sessão</subsecao>
+
+    Tempo que a sessão de autenticará será válida. Após este tempo terminar
+será necessário um novo login.
+
+<lista>
+    <item>Atividade:</item> configuração do tempo de sessão.
+    <lista>
+      <item/>acesse <b>Administração do site => Servidor => Manipulação de
+      sessão</b>;
+      <item/>defina <b>6 horas</b> em <b>Tempo limite</b>;
+      <item/>clique em <b>Salvar mudanças</b>;
+    </lista>
+</lista>
