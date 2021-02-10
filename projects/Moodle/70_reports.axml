@@ -1,0 +1,47 @@
+<capitulo>Relatórios</capitulo>
+
+    Os relatórios do Moodle contém informações sobre todo o ambiente.
+
+<br/>0.4cm
+
+<subsubsubsecao>Logs</subsubsubsecao>
+
+<b>Administração do site → Relatórios → Logs</b>.
+
+    Os logs registram todas as operações realizadas no Moodle por qualquer
+usuário. Este relatório possui um conjunto de filtros que ajudam pesquisar
+nos registros.
+
+<br/>0.4cm
+
+<subsubsubsecao>Logs ativos</subsubsubsecao>
+
+<b>Administração do site → Relatórios → Logs ativos</b>.
+
+    O relatório de logs ativos contém os registros da última hora. A página
+é atualizada a cada 60 segundos.
+
+<br/>0.4cm
+
+<subsubsubsecao>Verificações de segurança</subsubsubsecao>
+
+<b>Administração do site → Relatórios → Verificações de segurança</b>.
+
+    O relatório de verificações de segurança identifica potenciais errros
+de configuração.
+
+<br/>0.4cm
+
+<subsubsubsecao>Alterações de configurações</subsubsubsecao>
+
+<b>Administração do site → Relatórios → Alterações de configurações</b>.
+
+    O relatório de Alterações de configurações contém registros de qualquer
+alteração de configuração do Moodle. Este relatório contém filtros que
+ajudam a pesquisar nos registros.
+
+<br/>0.4cm
+
+
+
+
