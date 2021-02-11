@@ -533,3 +533,50 @@ mesmo conjunto de alunos necessita ser inscrito em diversos cursos.
     <item/>clique em <b>Adicionar método</b>;
   </lista>
 </lista>
+
+<subsecao>Notas</subsecao>
+
+    As atividades de avaliação são determinados tipos de atividades em que
+uma nota pode ser atribuída, tal como <b>Questionário</b>, <b>Fórum</b> ou
+<b>Presença</b>. Essas atividades estão disponíveis ao Professor no
+<b>Relatório de Notas</b>, que contém as notas de todos os alunos, e estão
+disponíveis aos Estudantes por meio do <b>Relatório do Usuário</b>,
+que contém as notas apenas do próprio estudante. Esses relatórios podem ser
+consultados pela opção <b>Notas</b>, após acessar um curso.
+
+<lista>
+  <item>Atividade</item>: valor padrão da pontuação disponível (nota máxima)
+  ao adicionar uma atividade.
+  <lista>
+    <item/>acesse <b>Administração do site → Notas → Configurações gerais</b>;
+    <item/>informe <b>10</b> na opção <b>Selecionar ponto padrão</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<lista>
+  <item>Atividade</item>: pontos decimais das notas.
+  <lista>
+    <item/>acesse <b>Administração do site → Notas → Configurações do item
+    de nota</b>;
+    <item/>informe <b>1</b> na opção <b>Pontos decimais geral</b>;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+<subsubsubsecao>Categorias de Notas</subsubsubsecao>
+
+    Assim, é necessário configurar o cálculo da nota final, que considera o
+<b>método de agregação</b> das diversas atividades de avaliação do curso,
+seja pela soma, média ou outro método disponível. É possível inclusive
+descartar menores notas ou considerar apenas as maiores notas.
+
+    <importante/>A opção de considerar apenas as maiores notas é
+desabilitada por padrão. Para habilitar a possibilidade dessa configuração
+no curso, desmarque a opção <b>Forçar</b> em <b>Administração do site →
+Notas → Configurações de categoria de notas → Manter as maiores</b>.
+
+    Para usar mais de um método de agregação é necessário utilizar as
+categorias de notas, que agrupam as atividades que serão calculadas por
+determinado método de agregação.
+
