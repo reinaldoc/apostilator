@@ -278,10 +278,10 @@ possível, evite-os.
 
 <subsubsubsecao>Recursos</subsubsubsecao>
 
-    Os recursos tem função de apresentação do conteúdo, sendo que vários
-recursos de mesmo tipo ou de tipos diferentes podem ser adicionados a cada
-seção do curso. Conteúdos podem ser formados por parágrafos, imagens,
-áudios, vídeos, inclusive vídeos embutidos de outros sites como o YouTube.
+    Os recursos são adicionados a cada seção do curso e tem função de
+apresentação do conteúdo. Os <u>conteúdos</u> podem compostos de texto
+formatados, parágrafos, imagens, áudios, vídeos, inclusive vídeos embutidos
+de outros sites como o YouTube.
 
 <lista>
   <item>Tipos dos recursos</item>
