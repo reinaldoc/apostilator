@@ -225,21 +225,50 @@ matricule no curso, tornando assim o curso disponível para qualquer usuário.
 
 <subsecao>Atividades e recursos</subsecao>
 
-    Atividades e recursos são os componente das seções do curso que tem
-função pedagógica de apresentação do conteúdo, de verificação de
-aprendizagem e para comunicação entre estudantes e tutores.
+    Atividades e recursos são os componentes das seções do curso que tem
+função pedagógica de interação do aluno com o conteúdo, de verificação de
+aprendizagem e para comunicação entre participantes.
 
     Ao criar um curso, a primeira seção, denominada de <b>Geral</b>, terá
 uma atividade do tipo <b>Fórum</b> identificada como <b>Avisos</b>. Este é
-um fórum especial, em que seu conteúdo é exibido no bloco <b>Últimas
-Notícias</b> e o estudante não pode interagir. Os blocos serão abordados em
-outro capítulo, assim esse fórum pode ser desabilitado e um fórum normal,
-que permita postagens dos participantes, pode ser adicionado.
+um fórum especial em que o estudante não pode interagir. O conteúdo deste
+fórum pode ser apresentado ao ativar o bloco <b>Últimas Notícias</b>, ou
+ainda, pode-se optar por desabilitar o fórum <b>Avisos</b> ou substituí-lo
+por um fórum normal, que permita postagens dos participantes.
+
+    <importante/>Os blocos são essenciais para a customização do Painel do
+Usuário, mas também podem ser adicionados aos cursos, veja na
+seção<ref>painel-do-usuario</ref> como adicionar e posicionar blocos.
 
     Para iniciar a diagramação do curso, entre no curso, clique na
 engrenagem e na opção <b>Ativar edição</b>. Essa ação permite a edição das
 seções, bem como exibirá a opção <b>Adicionar uma atividade ou recurso</b>
 em cada seção.
+
+<lista>
+  <item>Atividade</item>: configurar o seletor de atividades e recursos;
+  <lista>
+    <item/>acesse <b>Administração do site → Cursos → Configurações do
+seletor de atividades</b>;
+    <item/>na opção <b>Abas do seletor de atividades</b> você pode optar por
+apresentar as atividades e recursos juntos na aba <b>Todos</b> ou separados;
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
+
+    A aba <b>Recomendados</b> faz a função de acesso rápido, assim as
+atividades e recursos mais utilizados podem ser selecionados e facilmente
+encontrados. Já a aba <b>Favoritos</b> tem o mesmo objetivo, mas é
+controlada pelo próprio usuário, por meio do ícone da estrela.
+
+<lista>
+  <item>Atividade</item>: selecionar as atividades e recursos recomendadas;
+  <lista>
+    <item/>acesse <b>Administração do site → Cursos → Atividades
+recomendadas</b>;
+    <item/>selecione as atividades e recursos recomendados;
+  </lista>
+</lista>
 
     Para cada atividade ou recurso criado, um novo link será incluído na
 respectiva seção, exceto para o recurso do tipo <b>Rótulo</b> em que o

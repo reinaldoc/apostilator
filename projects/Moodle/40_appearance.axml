@@ -180,6 +180,7 @@ de auto-cadastro.
 </lista>
 
 <subsecao>Painel do Usuário</subsecao>
+<nome>painel-do-usuario</nome>
 
     O painel do usuário é uma página utilizada para apresentar todas as
 informações que podem ser úteis ao usuário, como a relação de cursos
@@ -189,8 +190,8 @@ inscritos, calendário, próximos eventos, etc.
 
     As informações quem compõe o painel de usuário são organizadas por meio
 de blocos que podem ser posicionados na região central do site ou na região
-lateral direita. A disposição inicial dos blocos pode ser configurada, bem
-como pode-se não permitir que o usuário reposicione os blocos.
+lateral direita. A disposição dos blocos pode ser configurada e pode-se não
+permitir que o usuário reposicione os blocos.
 
 <lista>
   <item>Atividade</item>
