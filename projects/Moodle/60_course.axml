@@ -231,10 +231,11 @@ aprendizagem e para comunicação entre participantes.
 
     Ao criar um curso, a primeira seção, denominada de <b>Geral</b>, terá
 uma atividade do tipo <b>Fórum</b> identificada como <b>Avisos</b>. Este é
-um fórum especial em que o estudante não pode interagir. O conteúdo deste
-fórum pode ser apresentado ao ativar o bloco <b>Últimas Notícias</b>, ou
-ainda, pode-se optar por desabilitar o fórum <b>Avisos</b> ou substituí-lo
-por um fórum normal, que permita postagens dos participantes.
+um fórum de notícias em que os estudantes não pode interagir. O conteúdo
+deste fórum pode ser apresentado ao ativar o bloco <b>Últimas Notícias</b>,
+ou ainda, pode-se optar por desabilitar o fórum <b>Avisos</b> ou
+substituí-lo por um <b>Fórum geral</b>, que permita postagens dos
+participantes.
 
     <importante/>Os blocos são essenciais para a customização do Painel do
 Usuário, mas também podem ser adicionados aos cursos, veja na
@@ -330,25 +331,31 @@ clique novamente no ícone HTML.
 <subsubsubsecao>Atividades</subsubsubsecao>
 
     As atividades complementam a apresentação de conteúdo dos recursos,
-possibilitam a comunicação assíncrona entre estudantes e tutores e permitem
-que o tutor atribua uma nota a cada participante, em alguns tipos de
+possibilitam a comunicação síncrona e assíncrona entre estudantes e tutores
+e permitem a atribuição de nota a cada participante, em alguns tipos de
 atividades.
 
 <lista>
   <item>Tipos das atividades</item>
   <lista>
-    <item>Fórum</item>: permite a interação entre participantes e tutores,
-    de forma assíncrona, utilizado para a manifestação de textos médios, com
-    possibilidade de atribuição de nota para a manifestação do participante;
-    <item>Chat</item>: permite a comunicação em tempo real entre
+    <item>Fórum</item>: permite a comunicação assíncrona entre participantes
+    e tutores, utilizado para a manifestação de textos médios, com
+    possibilidade de atribuição de nota para os participantes;
+    <item>Chat</item>: permite a comunicação síncrona, em tempo real, entre
     participantes e tutores, em data combinada, por meio de uma sala de chat,
     utilizado para textos curtos; as sessões realizadas podem ser
     consultadas, se habilitado;
-    <item>Glossário</item>: permite construções colaborativa da definição
+    <item>Glossário</item>: permite a construção colaborativa da definição
     de termos que envolvem o curso; arquivos podem ser vinculados a cada
-    termo; a aprovação da edição pelo tutor pode ser habilitada;
-    <item>Escolha</item>: apresenta uma questão aos participantes, também
-    utilizada para consultas e votações;
+    termo; a aprovação da edição pelo tutor pode ser habilitada; os termos
+    criados serão linkados quando utilizados no <b>recurso de Página</b>;
+    <item>Escolha</item>: apresenta uma questão aos participantes, utilizada
+    para consultas e votações; é possível estabelecer um prazo
+    para resposta; pode ser permitido selecionar mais de uma opção para a
+    resposta; o resultado pode ser omitido ou apresentado de forma completa
+    (identifica cada resposta por estudante) ou somente a somatória, ou
+    ainda, o resultado pode ser omitido até que uma resposta seja fornecida
+    pelo estudante;
   </lista>
 </lista>
 
