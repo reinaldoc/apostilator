@@ -243,7 +243,10 @@ seção<ref>painel-do-usuario</ref> como adicionar e posicionar blocos.
     Para iniciar a diagramação do curso, entre no curso, clique na
 engrenagem e na opção <b>Ativar edição</b>. Essa ação permite a edição das
 seções, bem como exibirá a opção <b>Adicionar uma atividade ou recurso</b>
-em cada seção.
+em cada seção. Essa opção apresentará o <b>seletor de atividades</b>, que
+contém todas as atividades e recursos disponíveis no Moodle, organizados
+nas seguintes categorias: Favoritos, Todos (Atividades + Recursos),
+Atividades, Recursos, Recomendados.
 
 <lista>
   <item>Atividade</item>: configurar o seletor de atividades e recursos;
@@ -266,15 +269,16 @@ controlada pelo próprio usuário, por meio do ícone da estrela.
   <lista>
     <item/>acesse <b>Administração do site → Cursos → Atividades
 recomendadas</b>;
-    <item/>selecione as atividades e recursos recomendados;
+    <item/>selecione as atividades e recursos recomendados (em geral, os
+mais utilizados);
   </lista>
 </lista>
 
-    Para cada atividade ou recurso criado, um novo link será incluído na
+    Para cada atividade ou recurso adicionado, um novo link será incluído na
 respectiva seção, exceto para o recurso do tipo <b>Rótulo</b> em que o
 conteúdo será exibido diretamente na seção do curso. Rótulos devem ser
-utilizados com prudência para não descaracterizar a organização da seção. Se
-possível, evite-os.
+utilizados com prudência para não descaracterizar a organização da seção, em
+geral são úteis para agrupar atividades e recursos existentes nas seções.
 
 <subsubsubsecao>Recursos</subsubsubsecao>
 
@@ -289,34 +293,46 @@ de outros sites como o YouTube.
     <item>URL</item>: um link para um site qualquer;
     <item>Rótulo</item>: conteúdo exibido diretamente na seção;
     <item>Página</item>: conteúdo exibido em outra página;
-    <item>Livro</item>: páginas organizadas hierarquicamente com um sumário;
+    <item>Livro</item>: conjunto de páginas organizadas hierarquicamente com
+    um sumário à direita;
     <item>Arquivo</item>: permite o envio de um arquivo;
     <item>Pasta</item>: permite o envio de vários arquivos;
   </lista>
 </lista>
 
-    Perceba que apesar da atividade do tipo <b>Arquivo</b> incluir apenas um
-arquivo, outras atividades deste tipo podem ser adicionadas, permitindo a
-apresentação de vários arquivos na seção. Faz sentido utilizar a atividade
-<b>Pasta</b> quando se precisar disponibilizar mais de três arquivos na
-mesma seção.
+    Perceba que apesar de cada recurso do tipo <b>Arquivo</b> incluir apenas
+um arquivo, outras atividades deste tipo podem ser adicionadas, permitindo a
+apresentação de vários arquivos na seção. Os arquivos são identificados por
+um nome indicado durante seu envio.
+
+    Faz sentido utilizar o recurso <b>Pasta</b> para arquivos de apoio ou
+para uma quantidade significativa de arquivos. Os arquivos enviados neste
+recurso são identificados pelo nome real do arquivo.
 
 <br/>0.3cm
 
-    <b>Tarefa:</b> adicione um recurso <b>Página</b> a uma seção.
+    <b>Tarefa:</b> adicione um recurso de <b>URL</b> para um vídeo do
+Youtube, obtenha o link do vídeo para incorporação (ex:
+https://www.youtube.com/embed/xyzxyzxyz), configure a opção <b>Exibir</b>
+com <b>Incorporar</b>.
 
 <br/>0.3cm
 
-    <b>Tarefa:</b> edite a página criada e insira um vídeo do YouTube
-embutido.
+    <b>Tarefa:</b> adicione um recurso <b>Página</b>, obtenha o código de
+incorporação de um vídeo no Youtube (compartilhar → incorporar → copiar).
+Na página, clique no ícone para mostrar botões avançados (seta pra baixo),
+clique no ícone HTML (é o último ícone). Cole o código de incorporação,
+ajuste os valores de largura (width) e altura (height) no código e
+clique novamente no ícone HTML.
 
 <br/>0.3cm
 
 <subsubsubsecao>Atividades</subsubsubsecao>
 
     As atividades complementam a apresentação de conteúdo dos recursos,
-permitem a comunicação entre estudantes e tutores, bem como, alguns tipos de
-atividades, permitem que o tutor cadastre uma nota a cada participante.
+possibilitam a comunicação assíncrona entre estudantes e tutores e permitem
+que o tutor atribua uma nota a cada participante, em alguns tipos de
+atividades.
 
 <lista>
   <item>Tipos das atividades</item>
