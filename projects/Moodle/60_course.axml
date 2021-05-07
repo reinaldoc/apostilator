@@ -336,19 +336,43 @@ e permitem a atribuição de nota a cada participante, em alguns tipos de
 atividades.
 
 <lista>
-  <item>Tipos das atividades</item>
+  <item>Tipos de atividades de comunicação entre participantes</item>
   <lista>
     <item>Fórum</item>: permite a comunicação assíncrona entre participantes
     e tutores, utilizado para a manifestação de textos médios, com
     possibilidade de atribuição de nota para os participantes;
+
     <item>Chat</item>: permite a comunicação síncrona, em tempo real, entre
     participantes e tutores, em data combinada, por meio de uma sala de chat,
     utilizado para textos curtos; as sessões realizadas podem ser
     consultadas, se habilitado;
+
+  </lista>
+</lista>
+
+<lista>
+  <item>Tipos de atividades de apresentação de conteúdo</item>
+  <lista>
     <item>Glossário</item>: permite a construção colaborativa da definição
     de termos que envolvem o curso; arquivos podem ser vinculados a cada
     termo; a aprovação da edição pelo tutor pode ser habilitada; os termos
     criados serão linkados quando utilizados no <b>recurso de Página</b>;
+
+    <item>Wiki</item>: permite a construção colaborativa de páginas pelos
+    participantes do curso. Há uma área de comentários para troca de
+    sugestões e debates entre os participantes. Essa atividade mantém um
+    histórico de alterações com autor e data, sendo possível comparar as
+    alterações realizadas, bem como desfazer alterações ao retornar a página
+    para uma versão anterior. O professor pode habilitar ou desabilitar a
+    edição do conteúdo durante o decorrer do curso.
+
+  </lista>
+</lista>
+
+<lista>
+  <item>Tipos das atividades de coleta de respostas</item>
+  <lista>
+
     <item>Escolha (Choice)</item>: apresenta uma questão aos participantes,
     utilizada para consultas e votações; é possível estabelecer um prazo
     para resposta; pode ser permitido selecionar mais de uma opção para a
@@ -356,6 +380,7 @@ atividades.
     (identifica cada resposta por estudante) ou somente a somatória, ou
     ainda, o resultado pode ser omitido até que uma resposta seja fornecida
     pelo estudante;
+
     <item>Pesquisa (Feedback)</item>: apresenta um formulário com um
     conjunto de questões. Ao adicionar essa atividade use o campo
     <b>Descrição</b> para designar o texto que será exibido ao usuário antes
@@ -369,13 +394,23 @@ atividades.
     nomes de usuários</b> estiver habilitada). Os resultados são exibidos
     por meio do valor absoluto, percentagem e gráficos em barra. Essa
     atividade é comumente utilizada para avaliação de diagnóstico;
-    <item>Wiki</item>: permite a construção colaborativa de páginas pelos
-    participantes do curso. Há uma área de comentários para troca de
-    sugestões e debates entre os participantes. Essa atividade mantém um
-    histórico de alterações com autor e data, sendo possível comparar as
-    alterações realizadas, bem como desfazer alterações ao retornar a página
-    para uma versão anterior. O professor pode habilitar ou desabilitar a
-    edição do conteúdo durante o decorrer do curso.
+
+    <item>Questionário (Quiz)</item>: permite a criação de testes/provas
+    compostos por questões com atribuição de nota. As questões objetivas
+    podem ser corrigidas pelo sistema, enquanto as questões de texto livre
+    dependem de atribuição individual da nota pelo professor. As questões
+    podem ser escolhidas pelo sistema a partir de bancos de questões
+    categorizados, assim é possível que o sistema monte um questionário com
+    questões fáceis, médias e difíceis, conforme configuração realizada,
+    inclusive quanto a divisão das questões por página, quanto a proteção do
+    questionário por senha ou quanto a randomização da ordem das questões e
+    respostas. É possível estabelecer a duração máxima para preenchimento do
+    questionário, o número de tentativas, bem como, para este último caso,
+    escolher o método de avaliação, que define um critério para cálculo da
+    nota (por exemplo a média das tentativas). Após a tentativa de responder
+    o questionário é possível apresentar a nota e o gabarito, bem como
+    definir um prazo para acesso a essa informação.
+
   </lista>
 </lista>
 
