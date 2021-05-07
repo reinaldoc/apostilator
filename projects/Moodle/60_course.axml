@@ -366,6 +366,14 @@ atividades.
     para uma versão anterior. O professor pode habilitar ou desabilitar a
     edição do conteúdo durante o decorrer do curso.
 
+    <item>Lição (Lesson)</item>: conjunto de páginas que são apresentadas
+    conforme as condições estabelecidas. Pode-se criar uma sequência de
+    páginas de conteúdo para navegação linear e utilizar páginas com
+    questões para realizar desvios na navegação a partir da resposta
+    selecionada. Esse mecanismo pode ser utilizado para impedir o avanço das
+    páginas até que o estudante acerte a questão apresentada, ou, pode-se
+    desviar o aluno para outra questão.
+
   </lista>
 </lista>
 
