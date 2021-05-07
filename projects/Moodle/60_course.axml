@@ -408,11 +408,12 @@ atividades.
     uma base de informações. Os dados cadastrados podem estar disponíveis
     aos demais estudantes, seja pela listagem completa ou pela busca. As
     questões podem ser elaboradas com diferentes tipos de dados, como texto,
-    data, url, inclusive para envio de arquivos, o que permite que essa
-    atividade possa ser utilizada como repositório de arquivos (quando os
-    dados estiverem compartilhados entre os estudantes) ou para recepção de
-    trabalhos (quando os dados não estiverem compartilhados entre os
-    estudantes). É possível atribuir nota nesta atividade;
+    data, url, imagens, o que permite a criação de uma galeria, bem como
+    para envio de arquivos, o que permite a utilização como repositório de
+    arquivos (quando os dados estiverem compartilhados entre os estudantes)
+    ou para recepção de trabalhos (quando os dados não estiverem
+    compartilhados entre os estudantes). É possível atribuir nota nesta
+    atividade;
 
     <item>Questionário (Quiz)</item>: permite a criação de testes/provas
     compostos por questões com atribuição de nota. As questões objetivas
