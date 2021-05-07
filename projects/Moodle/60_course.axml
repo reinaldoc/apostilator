@@ -349,13 +349,33 @@ atividades.
     de termos que envolvem o curso; arquivos podem ser vinculados a cada
     termo; a aprovação da edição pelo tutor pode ser habilitada; os termos
     criados serão linkados quando utilizados no <b>recurso de Página</b>;
-    <item>Escolha</item>: apresenta uma questão aos participantes, utilizada
-    para consultas e votações; é possível estabelecer um prazo
+    <item>Escolha (Choice)</item>: apresenta uma questão aos participantes,
+    utilizada para consultas e votações; é possível estabelecer um prazo
     para resposta; pode ser permitido selecionar mais de uma opção para a
     resposta; o resultado pode ser omitido ou apresentado de forma completa
     (identifica cada resposta por estudante) ou somente a somatória, ou
     ainda, o resultado pode ser omitido até que uma resposta seja fornecida
     pelo estudante;
+    <item>Pesquisa (Feedback)</item>: apresenta um formulário com um
+    conjunto de questões. Ao adicionar essa atividade use o campo
+    <b>Descrição</b> para designar o texto que será exibido ao usuário antes
+    de acessar ao formulário. As questões podem ser de múltipla escolha, de
+    texto curto, texto longo, numérico. Há questões especiais para
+    formatação do formulário: <b>Adicionar uma quebra de página</b> permite
+    agrupar questões por página, <b>Rótulo</b> permite adicionar um texto no
+    topo, no rodapé ou entre as questões, <b>Informação</b> permite incluir
+    nos resultados o nome do curso, da categoria do curso ou o data da
+    resposta, esta última opção está disponível somente se a opção <b>Gravar
+    nomes de usuários</b> estiver habilitada). Os resultados são exibidos
+    por meio do valor absoluto, percentagem e gráficos em barra. Essa
+    atividade é comumente utilizada para avaliação de diagnóstico;
+    <item>Wiki</item>: permite a construção colaborativa de páginas pelos
+    participantes do curso. Há uma área de comentários para troca de
+    sugestões e debates entre os participantes. Essa atividade mantém um
+    histórico de alterações com autor e data, sendo possível comparar as
+    alterações realizadas, bem como desfazer alterações ao retornar a página
+    para uma versão anterior. O professor pode habilitar ou desabilitar a
+    edição do conteúdo.
   </lista>
 </lista>
 
