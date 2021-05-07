@@ -411,6 +411,40 @@ Temas → Boost → Opções avançadas</b>.
   <item/>section[data-region="blocks-column"] {float: left}
 </lista>
 
+<subsubsecao>Enrolment Timer</subsubsecao>
+
+    O plugin <b>Enrolment Timer</b> fornece um novo bloco que contém um
+temporizador para o término da inscrição do usuário no curso, ou seja, um
+contador regressivo que exibe o prazo que estudante possui até ter sua
+inscrição desativada.
+
+<lista>
+    <item>Download:</item> <url>https://moodle.org/plugins/block_enrolmenttimer</url>
+    <item>Atividade</item>: habilitar o bloco <b>Temporizador da
+    inscrição</b>.
+    <lista>
+        <item/>acesse um curso;
+        <item/>use a opção <b>Ativar edição</b>;
+        <item/>use a opção <b>Adicionar um bloco</b>;
+        <item/>selecione o bloco <b>Temporizador da inscrição</b>;
+    </lista>
+</lista>
+
+    Este bloco é omitido caso a inscrição do usuário não possua data de
+término definida e para os usuários de perfil diferente de estudante.
+
+<lista>
+    <item>Atividade</item>: configurações do bloco.
+    <lista>
+        <item/>acesse <b>Administração do site → Plugins → Blocos →
+        Temporizador da inscrição</b>;
+        <item/>habilite a opção <b>Mostrar etiqueta da unidade de tempo</b>;
+        <item/>na opção <b>Incrementos mostrados</b>, desmarque a opção
+        <b>segundos</b>, para isso, segure a tecla control ao clicar;
+        <item/>clique em <b>Salvar mudançãs</b>;
+    </lista>
+</lista>
+
 <subsubsecao>Completion Progress</subsubsecao>
 
     O plugin <b>Completion Progress</b> fornece um novo bloco que contém uma
