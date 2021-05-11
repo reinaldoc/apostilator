@@ -356,7 +356,9 @@ atividades.
     <item>Glossário</item>: permite a construção colaborativa da definição
     de termos que envolvem o curso; arquivos podem ser vinculados a cada
     termo; a aprovação da edição pelo tutor pode ser habilitada; os termos
-    criados serão linkados quando utilizados no <b>recurso de Página</b>;
+    criados serão linkados quando utilizados no <b>recurso de Página</b>, se
+    o filtro <b>Links automáticos para o glossário</b> estiver habilitado
+    nas configurações;
 
     <item>Wiki</item>: permite a construção colaborativa de páginas pelos
     participantes do curso. Há uma área de comentários para troca de
@@ -565,6 +567,17 @@ curso, desde que o usuário possua um cadastro ativo, por meio do botão
     <b>Autoinscrição (Estudante)</b>;
   </lista>
 </lista>
+
+    <b>Tarefa:</b> configure o método de inscrição de autoinscrição para que
+a duração da inscrição seja de 30 dias.
+
+<br/>0.3cm
+
+    <b>Tarefa:</b> configure o método de inscrição de autoinscrição para que
+a autoinscrição esteja disponível entre um período de dias. Use as opções
+<b>Data início</b> e <b>Data final</b>.
+
+<br/>0.3cm
 
 <subsubsubsecao>Autoinscrição com chave</subsubsubsecao>
 
