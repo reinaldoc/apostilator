@@ -480,8 +480,10 @@ inscrição manual; e iii) inscrição via link.
     Os plugins de inscrição podem ser habilitados ou desabilidados em
 <b>Administração do site → Plugins → Inscrições → Gerenciar
 plugins de inscrição</b>. Quando determinado plugin é desabilitado, não
-serão possíveis por este método de inscrição, mas os usuários já inscritos
-continuam com acesso aos cursos.
+serão possíveis novas inscrições por este método de inscrição em todos os
+cursos, mas os usuários já inscritos continuam com acesso aos cursos. Para
+desabilitar um método de inscrição apenas em determinado curso, utilize as
+configurações do curso.
 
 <subsubsecao>Acesso como visitante</subsubsecao>
 
