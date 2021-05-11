@@ -166,6 +166,7 @@ de login;
 <br/>0.5cm
 
 <subsecao>Cadastro de Usuários</subsecao>
+<nome>user-register</nome>
 
     Nesta seção veremos as principais formas de cadastro de usuários no
 Moodle: i) auto-cadastro, também traduzido como autoinscrição por e-mail;
@@ -191,7 +192,7 @@ aptos a se autoinscriver nos cursos que permitem essa opção.
   <lista>
     <item/>acesse <b>Administração do site → Plugins → Autenticação →
     Gerenciar autenticação</b>;
-    <item/>na opção <b>Auto-cadastro</b>, selecione <b>Auto-cadstro por
+    <item/>na opção <b>Auto-cadastro</b>, selecione <b>Auto-cadastro por
     email</b>;
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>

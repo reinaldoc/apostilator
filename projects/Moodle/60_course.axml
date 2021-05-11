@@ -477,7 +477,9 @@ atividades.
 
     Nesta seção veremos as principais formas de inscrição de usuários em um
 curso: i) autoinscrição (livre ou por meio de chave de inscrição); ii)
-inscrição manual; e iii) inscrição via link.
+inscrição manual; e iii) inscrição via link. É requisito para a inscrição
+que o usuário já possua cadastro no Moodle, conforme visto na
+seção<ref>user-register</ref>.
 
     Os plugins de inscrição podem ser habilitados ou desabilidados em
 <b>Administração do site → Plugins → Inscrições → Gerenciar
@@ -494,9 +496,9 @@ utilizado o acesso como <b>Visitante</b>, neste caso o usuário terá apenas
 permissão para consultar o conteúdo do curso.
 
     Embora não seja propriamente uma inscrição, uma vez que o usuário não
-poderá interagir, responder questionários ou qualquer outra atividade ou
-recurso que salve informações, esta configuração é tratada como um método de
-inscrição configurada no curso.
+poderá interagir, tampouco responder qualquer a atividade que salve
+informações, esta configuração é tratada como um método de inscrição
+configurada no curso.
 
 <lista>
   <item>Atividade</item>: habilitar acesso como visitante.
