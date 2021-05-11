@@ -403,6 +403,17 @@ atividades.
     por meio do valor absoluto, percentagem e gráficos em barra. Essa
     atividade é comumente utilizada para avaliação de diagnóstico;
 
+    <item>Pesquisa de avaliação (Survey)</item>: apresenta um formulário com
+    um conjunto de questões pré-definidas, não sendo possível alterá-las. Há
+    três tipos de pesquisa: COLLES, ATTLS e Incidentes Críticos. A
+    <b>pesquisa COLLES</b> utiliza 24 perguntas objetivas que buscam
+    identificar a efetividade do aprendizando, podendo ser focado na
+    expectativa, na experiência efetiva ou em ambos. A <b>pesquisa ATTLS</b>
+    utiliza 20 perguntas objetivas que buscam identificar o estilo
+    individual de aprendizado em cursos socio-interacionais. A <b>pesquisa
+    Incidentes Críticos</b> utiliza 5 questões subjetivas que buscam
+    entender o envolvimento do estudante com uma atividade de Fórum.
+
     <item>Base de dados (Database)</item>: permite o cadastramento de dados
     pelos estudantes, ao responder as questões apresentadas, a fim de criar
     uma base de informações. Os dados cadastrados podem estar disponíveis
