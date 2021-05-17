@@ -381,9 +381,9 @@ atividades.
     <item>Glossário</item>: permite a construção colaborativa da definição
     de termos que envolvem o curso; arquivos podem ser vinculados a cada
     termo; a aprovação da edição pelo tutor pode ser habilitada; os termos
-    criados serão linkados quando utilizados no <b>recurso de Página</b>, se
-    o filtro <b>Links automáticos para o glossário</b> estiver habilitado
-    nas configurações;
+    criados serão automaticamente linkados quando mencionados nos demais
+    recursos e atividades, se o filtro <b>Links automáticos para o
+    glossário</b> estiver habilitado nas configurações;
 
     <item>Wiki</item>: permite a construção colaborativa de páginas pelos
     participantes do curso. Há uma área de comentários para troca de
