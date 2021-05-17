@@ -342,12 +342,13 @@ atividades.
     e tutores, utilizado para a manifestação de textos médios abertos aos
     demais estudantes.
     <lista>
-      <item/>Um fórum pode conter vários tópicos (<b>fórum geral</b>), apenas um
-      tópico (<b>uma única discussão simples</b>), pode-se permitir que cada
-      estudante crie um único tópico (<b>cada usuário inicia apenas um novo
-      tópico</b>) ou pode-se apresentar as postagens somente após o
-      estudante enviar sua resposta (<b>fórum de perguntas e respostas</b>).
-      Já o <b>fórum de notícias</b> não permite manifestação dos estudantes.
+      <item/>Um fórum pode conter vários tópicos (<b>fórum geral</b>),
+      apenas um tópico (<b>uma única discussão simples</b>), pode-se
+      permitir que cada estudante crie um único tópico (<b>cada usuário
+      inicia apenas um novo tópico</b>) ou pode-se apresentar as postagens
+      somente após o estudante enviar sua resposta (<b>fórum de perguntas e
+      respostas</b>). Já o <b>fórum de notícias</b> não permite manifestação
+      dos estudantes.
 
       <item/>A assinatura do tópico é um serviço que envia novas postagens por
       e-mail, que pode ser um e-mail a cada nova postagem ou um e-mail com
@@ -357,10 +358,12 @@ atividades.
       automática (todos os estudantes estarão com a assinatura ativa, mas
       podem cancelar).
 
-      <item/> É possível atribuir nota aos estudantes nesta atividade, se habilitado.
+      <item/> É possível atribuir nota aos estudantes nesta atividade.
+      É possível conceder permissão para que avaliações sejam realizadas
+      pelos demais estudantes, o que é denominado avaliação por pares.
       Cada postagem pode receber uma nota invidual podendo ser agregada para
       definação da nota da atividade. A agregação pode ser por meio pela
-      média das avaliações, pode ser pela nota máxima obtida, dentre outros.
+      média das avaliações, pela nota máxima obtida, dentre outros.
     </lista>
 
     <item>Chat</item>: permite a comunicação síncrona, em tempo real, entre
