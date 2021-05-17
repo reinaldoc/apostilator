@@ -419,7 +419,7 @@ atividades.
     para resposta;
 
     <item>Pesquisa (Feedback)</item>: apresenta um formulário com um
-    conjunto de questões.
+    conjunto de questões objetivas, de reposta númerica ou de texto.
     <lista>
       <item/>Ao adicionar essa atividade use o campo <b>Descrição</b> para
       designar o texto que será exibido ao usuário antes de acessar ao
