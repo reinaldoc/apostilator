@@ -412,33 +412,42 @@ atividades.
     pelo estudante;
 
     <item>Pesquisa (Feedback)</item>: apresenta um formulário com um
-    conjunto de questões. Ao adicionar essa atividade use o campo
-    <b>Descrição</b> para designar o texto que será exibido ao usuário antes
-    de acessar ao formulário. As questões podem ser de múltipla escolha, de
-    texto curto, texto longo, numérico. Há questões especiais para
-    formatação do formulário: <b>Adicionar uma quebra de página</b> permite
-    agrupar questões por página, <b>Rótulo</b> permite adicionar um texto no
-    topo, no rodapé ou entre as questões, <b>Informação</b> permite incluir
-    nos resultados o nome do curso, da categoria do curso ou o data da
-    resposta, esta última opção está disponível somente se a opção <b>Gravar
-    nomes de usuários</b> estiver habilitada). Os resultados são exibidos
-    por meio do valor absoluto, percentagem e gráficos em barra. Essa
-    atividade é comumente utilizada para avaliação de diagnóstico;
+    conjunto de questões.
+    <lista>
+      <item/>Ao adicionar essa atividade use o campo <b>Descrição</b> para
+      designar o texto que será exibido ao usuário antes de acessar ao
+      formulário;
+      <item/>As questões podem ser de múltipla escolha, de texto curto, texto
+      longo, numérico. Há questões especiais para formatação do formulário:
+      <b>Adicionar uma quebra de página</b> permite agrupar questões por
+      página, <b>Rótulo</b> permite adicionar um texto no topo, no rodapé ou
+      entre as questões, <b>Informação</b> permite incluir  nos resultados o
+      nome do curso, da categoria do curso ou o data da resposta, esta
+      última opção está disponível somente se a opção <b>Gravar nomes de
+      usuários</b> estiver habilitada).
+      <item/>Os resultados são exibidos por meio do valor absoluto,
+      percentagem e gráficos em barra. Essa atividade é comumente utilizada
+      para avaliação de diagnóstico.
+    </lista>
 
     <item>Pesquisa de avaliação (Survey)</item>: apresenta um formulário com
     um conjunto de questões pré-definidas, não sendo possível alterá-las. Há
-    três tipos de pesquisa: COLLES, ATTLS e Incidentes Críticos. A
-    <b>pesquisa COLLES</b> utiliza 24 perguntas objetivas que buscam
-    identificar a efetividade do aprendizando, podendo ser focado na
-    expectativa, na experiência efetiva ou em ambos. A <b>pesquisa ATTLS</b>
-    utiliza 20 perguntas objetivas que buscam identificar o estilo
-    individual de aprendizado em cursos socio-interacionais. A <b>pesquisa
-    Incidentes Críticos</b> utiliza 5 questões subjetivas que buscam
-    entender o envolvimento do estudante com uma atividade de Fórum.
+    três tipos de pesquisa: COLLES, ATTLS e Incidentes Críticos.
+    <lista>
+      <item>A pesquisa COLLES</item> utiliza 24 perguntas objetivas que
+      buscam identificar a efetividade do aprendizando, podendo ser focado
+      na expectativa, na experiência efetiva ou em ambos.
+      <item>A pesquisa ATTLS</item> utiliza 20 perguntas objetivas que
+      buscam identificar o estilo individual de aprendizado em cursos
+      socio-interacionais.
+      <item>A pesquisa Incidentes Críticos</item> utiliza 5 questões
+      subjetivas que buscam entender o envolvimento do estudante com uma
+      atividade de Fórum.
+    </lista>
 
     <item>Base de dados (Database)</item>: permite o cadastramento de dados
     pelos estudantes, ao responder as questões apresentadas, a fim de criar
-    uma base de informações. Os dados cadastrados podem estar disponíveis
+    uma base de informações.Os dados cadastrados podem estar disponíveis
     aos demais estudantes, seja pela listagem completa ou pela busca. As
     questões podem ser elaboradas com diferentes tipos de dados, como texto,
     data, url, imagens, o que permite a criação de uma galeria, bem como
@@ -449,40 +458,49 @@ atividades.
     atividade;
 
     <item>Tarefa (Assignment)</item>: apresenta aos participantes uma
-    questão subjetiva para obtenção de nota. A atividade pode ser
-    configurada para que a resposta seja fornecida por meio de um editor de
-    texto e/ou por meio do envio de arquivo PDF, ou ainda por entrega
-    offline. Neste último caso, não será possível qualquer envio online, mas
-    apenas atribuição de nota pelo professor. É possível estabelecer um
-    prazo para a realização da atividade. Para que a entrega seja efetivada,
-    não basta que o estudante preencha a resposta ou anexe um arquivo, é
-    necessário clicar no botão <b>Enviar tarefa</b> antes que o prazo de
-    entrega termine. A <b>entrega provisória</b> ocorre até que o prazo seja
-    alcançado, sendo então considerada como <b>entrega definitiva</b>. Já a
-    <b>entrega recorrente</b> permite que o estudante submeta novamente a
-    resposta caso não tenha alcança a nota mínima, ainda que o prazo já
-    tenha expirado. A <b>entrega em grupo</b> é realizada por apenas um
-    membro do grupo. O professor pode consultar o status de realização da
-    atividade, bem como tomar ações individuais, como estender o prazo,
-    bloquear envio de respostas e alterar a nota. É possível predefinir os
-    critérios de avaliação por meio da <b>Avaliação guiada</b> ou predefinir
-    os critérios com subcritérios por meio da <b>Rubrica</b>.
+    questão subjetiva para obtenção de nota.
+    <lista>
+      <item/>A atividade pode ser configurada para que a resposta seja
+      fornecida por meio de um editor de texto e/ou por meio do envio de
+      arquivo PDF, ou ainda por entrega offline. Neste último caso, não será
+      possível qualquer envio online, mas apenas atribuição de nota pelo
+      professor.
+      <item/>É possível estabelecer um prazo para a realização da atividade.
+      Para que a entrega seja efetivada, não basta que o estudante preencha
+      a resposta ou anexe um arquivo, é necessário clicar no botão <b>Enviar
+      tarefa</b> antes que o prazo de entrega termine.
+      <item/>A <b>entrega provisória</b> ocorre até que o prazo seja
+      alcançado, sendo então considerada como <b>entrega definitiva</b>. Já
+      a <b>entrega recorrente</b> permite que o estudante submeta novamente
+      a resposta caso não tenha alcança a nota mínima, ainda que o prazo já
+      tenha expirado. A <b>entrega em grupo</b> é realizada por apenas um
+      membro do grupo.
+      <item/>O professor pode consultar o status de realização da atividade,
+      bem como tomar ações individuais, como estender o prazo, bloquear
+      envio de respostas e alterar a nota. É possível predefinir os
+      critérios de avaliação por meio da <b>Avaliação guiada</b> ou
+      predefinir os critérios com subcritérios por meio da <b>Rubrica</b>.
+    </lista>
 
     <item>Questionário (Quiz)</item>: permite a criação de testes/provas
-    compostos por questões com atribuição de nota. As questões objetivas
-    podem ser corrigidas pelo sistema, enquanto as questões de texto livre
-    dependem de atribuição individual da nota pelo professor. As questões
-    podem ser escolhidas pelo sistema a partir de bancos de questões
-    categorizados, assim é possível que o sistema monte um questionário com
-    questões fáceis, médias e difíceis, conforme configuração realizada,
-    inclusive quanto a divisão das questões por página, quanto a proteção do
-    questionário por senha ou quanto a randomização da ordem das questões e
-    respostas. É possível estabelecer a duração máxima para preenchimento do
-    questionário, o número de tentativas, bem como, para este último caso,
-    escolher o método de avaliação, que define um critério para cálculo da
-    nota (por exemplo a média das tentativas). Após a tentativa de responder
-    o questionário é possível apresentar a nota e o gabarito, bem como
-    definir um prazo para acesso a essa informação.
+    compostos por questões com atribuição de nota.
+    <lista>
+      <item/>As questões objetivas podem ser corrigidas pelo sistema,
+      enquanto as questões de texto livre dependem de atribuição individual
+      da nota pelo professor.
+      <item/>As questões podem ser escolhidas pelo sistema a partir de
+      bancos de questões categorizados, assim é possível que o sistema monte
+      um questionário com questões fáceis, médias e difíceis, conforme
+      configuração realizada, inclusive quanto a divisão das questões por
+      página, quanto a proteção do questionário por senha ou quanto a
+      randomização da ordem das questões e respostas.
+      <item/>É possível estabelecer a duração máxima para preenchimento do
+      questionário, o número de tentativas, bem como, para este último caso,
+      escolher o método de avaliação, que define um critério para cálculo da
+      nota (por exemplo a média das tentativas). Após a tentativa de
+      responder o questionário é possível apresentar a nota e o gabarito,
+      bem como definir um prazo para acesso a essa informação.
+    </lista>
 
   </lista>
 </lista>
