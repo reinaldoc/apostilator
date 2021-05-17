@@ -411,10 +411,11 @@ atividades.
     <item>Escolha (Choice)</item>: apresenta uma questão aos participantes,
     utilizada para consultas e votações; é possível estabelecer um prazo
     para resposta; pode ser permitido selecionar mais de uma opção para a
-    resposta; o resultado pode ser omitido ou apresentado de forma completa
+    resposta; o resultado pode ser omitido, apresentado de forma completa
     (identifica cada resposta por estudante) ou somente a somatória, ou
-    ainda, o resultado pode ser omitido até que uma resposta seja fornecida
-    pelo estudante;
+    ainda, o resultado pode ser omitido até que uma determinada condição
+    seja satisfeita, como por exemplo, até que o estudante forneça uma
+    resposta ou até findar o prazo para resposta;
 
     <item>Pesquisa (Feedback)</item>: apresenta um formulário com um
     conjunto de questões.
