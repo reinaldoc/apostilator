@@ -367,9 +367,11 @@ atividades.
     </lista>
 
     <item>Chat</item>: permite a comunicação síncrona, em tempo real, entre
-    participantes e tutores, em data combinada, por meio de uma sala de chat,
-    utilizado para textos curtos; as sessões realizadas podem ser
-    consultadas, se habilitado;
+    participantes e tutores por meio de uma sala de bate-papo; é utilizado
+    para textos curtos; as sessões realizadas podem ser consultadas, se
+    habilitado; a sessão de chat depende da indicação da data e horário de
+    sua realização, podendo ser indicado sua periodicidade, de forma
+    integrada ao calendário do sistema.
   </lista>
 </lista>
 
