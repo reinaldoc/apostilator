@@ -9,9 +9,9 @@ dos serviços necessários para a execução do <b>Moodle</b>.
 <step>Instalação do servidor web Apache e do processador da linguagem PHP</step>
 
 <comando>
-# apt-get install apache2 libapache2-mod-php7.3 php7.3-mysql php7.3-intl
-                  php7.3-zip php7.3-curl php7.3-xml php7.3-gd
-                  php7.3-mbstring
+# apt-get install apache2 libapache2-mod-php7.3
+                  php7.3-mysql   php7.3-zip   php7.3-xml   php7.3-json
+                  php7.3-curl    php7.3-intl  php7.3-gd    php7.3-mbstring
 </comando>
 
 <step>Configuração do VirtualHost no Apache</step>
@@ -226,8 +226,8 @@ não tenha permissão para alterar o diretório <b>moodle-app</b>.
 # apt-get install wget ca-certificates unzip
 # su -l www-data -s /bin/bash
 $ cd /tmp
-$ wget https://download.moodle.org/download.php/direct/stable38/moodle-3.8.2.tgz
-$ wget https://download.moodle.org/download.php/direct/langpack/3.8/pt_br.zip
+$ wget https://download.moodle.org/download.php/direct/stable39/moodle-3.9.7.tgz
+$ wget https://download.moodle.org/download.php/direct/langpack/3.9/pt_br.zip
 </comando>
 
 <step>Extraia o Moodle</step>
