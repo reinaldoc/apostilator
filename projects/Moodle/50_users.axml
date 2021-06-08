@@ -248,6 +248,70 @@ conta do novo usuário.
   </lista>
 </lista>
 
+<subsubsecao>Login por LDAP</subsubsecao>
+
+    O cadastro por meio de LDAP permite o auto-cadastro dos usuários durante
+o primeiro login no Moodle de uma conta existente em uma base LDAP, seja
+pelo serviço OpenLDAP ou Active Directory. Nenhuma tela adicional é
+apresentada ao usuário durante o login.
+
+<lista>
+  <item>Atividade</item>: habilitar autenticação por LDAP;
+  <lista>
+    <item/>acesse <b>Administração do site → Plugins → Autenticação →
+    Gerenciar autenticação</b>;
+    <item/>habilite a opção <b>LDAP</b> ao clicar no ícone <eye/>;
+  </lista>
+</lista>
+
+    Realize a configuração para utilização da autenticação LDAP.
+
+<lista>
+  <item>Configurações do servidor LDAP</item>
+  <lista>
+    <item>URL do host</item>: indica o IP ou hostname do serviço LDAP;
+  </lista>
+</lista>
+
+<lista>
+  <item>Configurações bind</item>
+  <lista>
+    <item>Impedir o armazenamento em cache de senha</item>: Sim;
+    <item>Nome distinto</item>: usuário para conexão a base LDAP em formato
+    DN ou usuario@dominio;
+    <item>Senha</item>: senha do usuário para conexão a base LDAP;
+  </lista>
+</lista>
+
+<lista>
+  <item>Configurações de busca de usuário</item>
+  <lista>
+    <item>Tipo de usuário</item>: MS ActiveDirectory;
+    <item>Contextos</item>: DC=dominio,DC=net (base DN para a busca LDAP);
+    <item>Procurar por subcontextos</item>: Sim (realizar a busca recursiva
+    em filhos da base);
+    <item>Atributo de usuário</item>: sAMAccountName (atributo que contém o
+    login do usuário);
+    <item>Atributo suspenso</item>: userAccountControl (para Active Directory);
+    <item>Atributo de membro</item>: memberOf
+    <item>O atributo do membro usa dn</item>: Sim (para Active Directory);
+    <item>Classe do objeto</item>: user (para Active Directory);
+  </lista>
+</lista>
+
+<lista>
+  <item>Mapeamento dos dados</item>
+  <lista>
+    <item>Mapeamento de dados (Nome)</item>: givenName;
+    <item>Mapeamento de dados (Sobrenome)</item>: sn;
+    <item>Mapeamento de dados (Endereço de email)</item>: mail;
+    <item>Mapeamento de dados (Número de identificação)</item>: employeeNumber;
+    <item>Mapeamento de dados (Instituição)</item>: company;
+    <item>Mapeamento de dados (Departamento)</item>: department;
+    <item>Mapeamento de dados (Fone)</item>: telephoneNumber;
+  </lista>
+</lista>
+
 <subsubsecao>Listar usuários cadastrados</subsubsecao>
 
     Consulte os usuários cadastrados no Moodle.
