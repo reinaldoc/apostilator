@@ -1,4 +1,4 @@
-<capitulo>Configurações</capitulo>
+<capitulo>Configurações pós-instalação</capitulo>
 
     As configurações do Moodle são realizadas pela opção <b>Administração do
 site</b>, disponível aos usuários com papel <b>Administrador</b>.
@@ -8,7 +8,7 @@ site</b>, disponível aos usuários com papel <b>Administrador</b>.
     A instalação do Moodle, conforme visto no
 Capítulo<ref>moodle-install</ref>, já inclui a implantação do pacote de
 idiomas <b>Português - Brasil (pt_br)</b> e realiza a seleção do idioma
-padrão. Esta seção é apenas para referência.
+padrão. Assim, essas opções já foram configuradas.
 
 <lista>
   <item>Atividade:</item> implantar novo pacote de idiomas.
@@ -31,7 +31,8 @@ padrão. Esta seção é apenas para referência.
 
    <atividade/>No capítulo que trata da aparência e da apresentação dos
 elementos na tela,  a seção<ref>appearence-navbar-idioma</ref> abordará a
-opção que permite omitir a caixa de seleção de idioma.
+opção que permite omitir a caixa de seleção de idioma apresentada na parte
+superior da tela.
 
 <br/>0.5cm
 
@@ -68,8 +69,8 @@ adequeado dessa informação, como segue:
 </lista>
 
     Ou talvez sejam mais simples forçar um fuso horário e informar aos
-usuários que todos os horários seguem a hora oficial de Brasília, nesta
-opção:
+usuários que todos os horários seguem determinada hora oficial. Use a
+seguinte opção para forçar o fuso-horário.
 
 <lista>
   <item>Atividade:</item> forçar fuso-horário.
@@ -113,7 +114,7 @@ configurar o fuso-horário em seu perfil.
 
 <subsecao>Tempo de sessão</subsecao>
 
-    Tempo que a sessão de autenticará será válida. Após este tempo terminar
+    Tempo que a sessão da autenticação será válida. Após este tempo terminar
 será necessário um novo login.
 
 <lista>
