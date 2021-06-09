@@ -234,7 +234,7 @@ $ wget https://download.moodle.org/download.php/direct/langpack/3.9/pt_br.zip
 
 <comando>
 $ cd /var/www/moodle/moodle-app
-$ tar xzf /tmp/moodle-3.8.2.tgz --strip 1
+$ tar xzf /tmp/moodle-3.9.7.tgz --strip 1
 $ find ../moodle-app -name '*.txt' -exec chmod 600 {} \;
 </comando>
 
@@ -292,5 +292,5 @@ ambiente for liberado em produção para o público.
 
 <comando>
 # /etc/crontab
-3/* * * * * moodle php /var/www/moodle/moodle-app/admin/cli/cron.php >/dev/null
+*/3 * * * * moodle php /var/www/moodle/moodle-app/admin/cli/cron.php >/dev/null
 </comando>
