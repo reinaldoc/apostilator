@@ -21,10 +21,17 @@ padrão <b>Boost</b>, e contém as seguintes opções:
   <item>Sair</item>: realiza o <i>logout</i>;
 </lista>
 
-    As duas primeias opções, Painel e Perfil, são sempre exibidas, já as
+    As duas primeiras opções, Painel e Perfil, são sempre exibidas, já as
 opções Notas, Mensagens e Preferências, podem ser removidas ou terem sua
 ordem alterada em <b>Administração do site → Aparência → Configurações de
 tema → Itens do menu do usuário</b>.
+
+<br/>0.3cm
+
+    <b>Tarefa</b>: altere a ordem dos itens do Menu do Usuário, posicione a
+opção <b>Preferências</b> imediatamente após a opção <b>Perfil</b>.
+
+<br/>0.5cm
 
 <subsubsecao>Perfil do Usuário</subsubsecao>
 
