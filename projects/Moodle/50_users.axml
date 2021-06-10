@@ -21,6 +21,11 @@ padrão <b>Boost</b>, e contém as seguintes opções:
   <item>Sair</item>: realiza o <i>logout</i>;
 </lista>
 
+    As duas primeias opções, Painel e Perfil, são sempre exibidas, já as
+opções Notas, Mensagens e Preferências, podem ser removidas ou terem sua
+ordem alterada em <b>Administração do site → Aparência → Configurações de
+tema → Itens do menu do usuário</b>.
+
 <subsubsecao>Perfil do Usuário</subsubsecao>
 
     <b>Menu do usuário → Perfil</b>
@@ -129,7 +134,7 @@ disponíveis ao usuários, inclusive a troca de sua senha.
 critérios.
 
 <lista>
-  <item>Atividade</item>
+  <item>Atividade</item>: preferências de fóruns;
   <lista>
     <item/>acesse <b>Administração do site → Usuários → Preferências padrão
     do usuário</b>;
