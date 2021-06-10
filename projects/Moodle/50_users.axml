@@ -122,10 +122,35 @@ necessário bloquear os campos na seção <b>Mapeamento dos dados</b> em
 
 <br/>0.5cm
 
+<subsubsubsecao>Alterar rótulo do agrupador de campos</subsubsubsecao>
+
+    No perfil do usuário há um agrupador de campos identificado como
+<b>Opcional</b>, para alterá-lo, siga a atividade abaixo.
+
+<lista>
+  <item>Atividade</item>: alterar uma tradução de termo;
+  <lista>
+    <item/>acesse <b>Administração do site → Idioma → Personalização de
+           idioma</b>;
+    <item/>selecione o idioma <b>Português - Brasil (pt_br)</b>;
+    <item/>clique em <b>Abrir pacote de idioma para edição</b>;
+    <item/>aguarde e clique em <b>Continuar</b>;
+    <item/>selecione <b>form.php</b> e digite <b>optional</b>
+    na opção <b>Identificador de string</b>;
+    <item/>clique em <b>Exibir texto</b>;
+    <item/>defina a tradução para <b>Informações de contatos e profissionais</b>;
+    <item/>isto irá alterar o título do agrupador <b>Opcional</b>;
+    <item/>clique em <b>Salvar alterações no pacote de idioma</b>, após em
+    <b>Continuar</b>;
+  </lista>
+</lista>
+
+<br/>0.3cm
+
 <subsubsubsecao>Ocultar campos</subsubsubsecao>
 
     Não há opção para ocultar os campos pré-definidos do perfil do usuário,
-porém uma solução de contorno é ocultá-los por meio de CSS na opção <b>SCSS
+porém uma solução de contorno é fazer isto por meio de CSS na opção <b>SCSS
 puro</b> disponível em <b>Administração do site → Aparência → Temas → Boost →
 Opções avançadas</b>.
 
