@@ -41,13 +41,30 @@ opção <b>Preferências</b> imediatamente após a opção <b>Perfil</b>.
 envio da foto do perfil. O perfil dos usuários inscritos em um curso podem
 ser consultados pelos outros estudantes do mesmo curso.
 
-    <b>Tarefa</b>: acesser o perfil do usuário administrador e envie uma
+    <b>Tarefa</b>: acesse o perfil do usuário administrador e envie uma
 foto de perfil. Obtenha um avatar
 <link>http://www.iconarchive.com/category/avatar-icons.html</link>
 <text><b>clicando aqui</b></text>.
 
     <b>Tarefa</b>: acesse a URL <b>/userpix</b> para obter um grid com as
 imagens de todos os usuários, disponível ao usuário administrador.
+
+    Quando um usuário autenticado acessa seu próprio Perfil, ele verá as
+opções <b>Redefinir a página para o padrão</b> e <b>Personalizar esta
+página</b>. Estas opções referem-se ao recurso de gerenciamento de blocos da
+página de perfil, que vem habilitado para todos os usuários.
+
+<lista>
+  <item>Atividade</item>: desativar opções de gerenciamento de blocos no
+perfil do usuário;
+  <lista>
+    <item/>acesse <b>Administração do site → Usuários → Definir papéis</b>;
+    <item/>clique no ícone <gear/> do papel <b>Usuário autenticado</b>;
+    <item/>desabilite a permissão <b>Gerenciar blocos no próprio perfil de
+    usuário (moodle/ user:manageownblocks)</b>
+    <item/>clique em <b>Salvar mudanças</b>;
+  </lista>
+</lista>
 
 <br/>0.5cm
 
@@ -98,7 +115,12 @@ está trancado?</b> na configuração do campo em <b>Administração do site →
 Usuários → Campos de perfil do usuário</b>.
 
     <importante/>O bloqueio de campos é particularmente útil quando os dados
-dos usuários são sincronizados a partir de outra fonte, como o LDAP.
+dos usuários são sincronizados a partir de outra fonte, como o LDAP. Mas
+nesse caso, as configurações de contas manuais acima não funcionam, sendo
+necessário bloquear os campos na seção <b>Mapeamento dos dados</b> em
+<b>Administração do site → Plugins → Autenticação → LDAP</b>.
+
+<br/>0.5cm
 
 <subsubsubsecao>Ocultar campos</subsubsubsecao>
 
