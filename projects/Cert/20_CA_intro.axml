@@ -54,8 +54,8 @@ seguintes funções podem ser destacadas:
 Signing Request</i> - CSR) e verificação de documentos de identificação do
 requerente por meio da Autoridade de Registro.
 
-<item/>Envio para a Autoridade Certificado das solicitações de certificado
-digital;
+<item/>Envio para a Autoridade Certificadora dos CRS provenientes da
+Autoridade de Registro;
 
 <item/>Emissão do certificado digital do requerente assinado pela Autoridade
 Certificadora;
