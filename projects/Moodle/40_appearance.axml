@@ -7,6 +7,7 @@ visual (CSS) da <b>página inicial</b>, da <b>página de login</b> e do
 <b>painel do usuário</b>.
 
 <subsecao>Barra de Navegação</subsecao>
+<nome>navigation-bar</nome>
 
     A barra de navegação é utilizada em todas as páginas do Moodle, exceto
 na página de login, está localizada na topo do site e contém:
@@ -122,10 +123,31 @@ Links
 <subsecao>Página inicial</subsecao>
 <nome>frontpage</nome>
 
-    A página inicial é composta essencialmente pela barra de navegação e
-pela relação de cursos, função disponível pelo tema padrão <b>Boost</b>.
-Outros temas podem adicionar novos recursos como slideshows e configurações
-do rodapé.
+    A página inicial é composta, no tema padrão <b>Boost</b>, pela barra de
+navegação (visto na seção<ref>navigation-bar</ref>), uma seção para
+atividades e recursos de acesso público, pela relação de cursos disponíveis
+e uma área de informações no rodapé, que faz parte de todas as páginas do
+site. Outros temas podem adicionar novos recursos como slideshows ou a
+possibilidade de customizar as informações do rodapé.
+
+<br/>0.3cm
+
+<subsubsubsecao>Seção de atividades e recursos na página inicial</subsubsubsecao>
+
+    Esta seção é habilitada pela opção <b>Incluir uma seção para tópicos</b>
+em <b>Administração do site → Página Principal → Configurações da página
+principal</b>, em que o botão para <b>Ativar a edição</b> e <b>Adicionar uma
+atividade ou recursos</b> estará disponível na página inicial.
+
+<importante/>Alguns temas não exibem esta opção na página inicial, mas você
+pode alternar para o tema padrão <b>Boost</b>, criar atividades e recursos
+vinculados e página inicial, anotar os links dessas atividades e recursos.
+Com esses links você pode retornar ao tema que deseja utilizar e usar os
+links nos campos disponíveis no tema ou no menu principal.
+
+<br/>0.3cm
+
+<subsubsubsecao>Relação de cursos na página inicial</subsubsubsecao>
 
 <lista>
   <item>Opções de exibição dos cursos na página inicial</item>
@@ -148,12 +170,19 @@ do rodapé.
   <item>Atividade</item>: configurar a composição da página inicial
   <lista>
     <item/>acesse <b>Administração do site => Configurações da página
-    principal;</b>;
+    principal</b>;
     <item/>na opção <b>Página inicial</b>;
     <item/>selecione uma opção para exibição dos cursos na página inicial;
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
+
+<subsubsubsecao>Área do Rodapé</subsubsubsecao>
+
+    Para ocultar a opção <b>Resumo de retenção de dados</b> do rodapé,
+desabilite a opção <b>Mostrar resumo de retenção de dados</b> em
+<b>Administração do site → Usuários → Configurações de Privacidade</b>.
+
 
 <subsecao>Página de login</subsecao>
 
