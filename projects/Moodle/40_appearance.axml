@@ -50,9 +50,10 @@ seção<ref>plugin-boost-navigation-fumbling</ref>.
 
 <subsubsecao>Logo</subsubsecao>
 
-    O Logo menor é utilizado ao lado esquerdo do nome do site, já o logo
-maior é utilizado na página de login e na página inicial. Configure os logos
-em  <b>Administração do site → Aparência → Logos</b>.
+    O logo menor é utilizado, no tema padrão <b>Boost</b> ao lado esquerdo
+do nome do site, já o logo maior é utilizado na página de login e na página
+inicial. Configure os logos em <b>Administração do site → Aparência →
+Logos</b>.
 
 <subsubsecao>Nome do site</subsubsecao>
 
@@ -156,8 +157,8 @@ do rodapé.
 
 <subsecao>Página de login</subsecao>
 
-    Inicialmente a página de login permite a autenticação de usuários
-cadastrados manualmente no <b>Moodle</b> e o acesso como visitante.
+    Por padrão será possível realizar a autenticação de usuários
+cadastrados manualmente no <b>Moodle</b>, bem como entrar como visitante.
 
     Há duas configurações que afetam a página de login: ao habilitar a
 função de login como visitante será apresentado o botão <b>Acessar como
@@ -178,6 +179,12 @@ de auto-cadastro.
     <item/>clique em <b>Salvar mudanças</b>;
   </lista>
 </lista>
+
+    Caso o logo seja enviado em <b>Administração do site → Aparência →
+Logos</b> ele será utilizado como título da caixa de login, caso contrário
+será utilizado o nome completo do site, que está definido em
+<b>Administração do site → Página principal → Configurações da página
+principal</b>.
 
 <subsecao>Painel do Usuário</subsecao>
 <nome>painel-do-usuario</nome>
