@@ -275,11 +275,11 @@ mais utilizados);
   </lista>
 </lista>
 
-    Para cada atividade ou recurso adicionado, um novo link será incluído na
-respectiva seção, exceto para o recurso do tipo <b>Rótulo</b> em que o
-conteúdo será exibido diretamente na seção do curso. Rótulos devem ser
-utilizados com prudência para não descaracterizar a organização da seção, em
-geral são úteis para agrupar atividades e recursos existentes nas seções.
+    Para cada atividade ou recurso adicionado ao curso um novo link será
+incluído na respectiva seção, exceto para o recurso do tipo <b>Rótulo</b> em
+que seu conteúdo será exibido diretamente na seção do curso. Rótulos devem
+ser utilizados com prudência para não descaracterizar a organização da seção,
+em geral são úteis para agrupar atividades e recursos existentes nas seções.
 
 <subsubsubsecao>Recursos</subsubsubsecao>
 
