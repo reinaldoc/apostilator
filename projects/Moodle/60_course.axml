@@ -38,10 +38,17 @@ Destaque</b>.
 
 <subsubsubsecao>Cursos</subsubsubsecao>
 
-    Os cursos que não estiverem ocultos podem ser apresentadas na página
-inicial, aos visitantes do site, conforme visto na seção
-<ref>frontpage</ref>. A ordem que em os cursos serão listados na página
-inicial é aquela definida nesta seção.
+    Os cursos que não estiverem ocultos podem ser apresentados na página
+inicial, aos visitantes do site, se esta função estiver habilitada na página
+inicial, conforme visto na seção<ref>frontpage</ref>.
+
+    Os cursos são listados por meio do link <b>/course/index.php</b>, que
+também exibe o sumário do curso. O sumário do curso é uma informação que
+pode ser grande, podendo não ser ideal apresentá-la imediatamente na listagem
+de cursos. Após criarmos um curso, veremos como ajustar isso.
+
+    A ordem que em os cursos serão listados é aquela definida em
+<b>Gerenciar cursos e categorias</b>.
 
 <br/>0.2cm
 
@@ -92,6 +99,22 @@ selecionado.
     <b>Tarefa:</b> Altere o valor padrão da opção <b>Tamanho máximo de
 upload</b> para <b>10Mb</b> para que ao criar um novo curso este valor já
 esteja selecionado.
+
+<br/>0.2cm
+
+<subsubsubsecao>Sumário do curso</subsubsubsecao>
+
+    Os cursos que não estão definidos como ocultos, na opção de
+visibilidade, serão listados na página <b>/course/index.php</b>, inclusive
+com a apresentação integral do sumário.
+
+    Há duas opções para agregar usabilidade a apresentação do sumário, ou
+convenciona-se o preenchimento do sumário com determinado tamanho, como dois
+parágrafos, ou pode-se não exibí-lo imediatamente na listagem de cursos.
+
+     Para que sumário seja exibido somente após clicar no ícone de
+informação, configure a opção <b>Cursos com limite de resumos</b> com valor
+<b>0</b> em <b>Administração do site → Aparência → Cursos</b>.
 
 <br/>0.2cm
 
