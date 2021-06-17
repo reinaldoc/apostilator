@@ -1,0 +1,154 @@
+/*
+
+CSS for Klass Theme
+
+Writed by reinaldoc
+
+*/
+
+/* SITE HEADER */
+#page-wrapper > nav#header, nav#header { background-color: #01426a; }
+div.header-main div.header-main-content { background-color: #ffffff; }
+div.header-main div.header-main-content .navbar-brand .logo { max-width: 360px; }
+
+/* SITE MENU */
+.header-main .navbar .navbar-inner .nav-item .dropdown-menu { border-color: #dddddd; border-color: #dddddd; border-style: solid; border-width: 1px 1px 1px 4px; box-shadow: 0 12px 14px rgba(0,0,0,0.176); }
+
+.header-main .navbar .navbar-inner .navbar-toggleable-md .nav-item { min-width: 200px; }
+
+.header-main .header-main-content .navbar-toggleable-md .infoarea a.nav-link:hover,
+.header-main .header-main-content .navbar-toggleable-md .infoarea a.nav-link:focus { color: unset; }
+
+.header-main .header-main-content .navbar-toggleable-md .infoarea a.nav-link { color: #666; font-weight: bold; font-family: Arial; width: 100%;}
+
+.header-main .navbar .navbar-inner .navbar-toggleable-md a.nav-link:focus { background: #eaeae8; }
+
+.header-main .navbar .navbar-inner .navbar-toggleable-md a.nav-link:hover { background: #eaeae8; }
+
+/* SITE SUBMENU */
+body .header-main .navbar .navbar-inner .nav-item .dropdown-menu a { color: #333; }
+body .header-main .navbar .navbar-inner .nav-item .dropdown-menu a:hover { background: #e0e0e0; color: #303c49; }
+
+/* SITE USER MENU */
+#header .usermenu .login a { background-color: unset; box-shadow: unset; }
+#header .usermenu .login a:hover { text-decoration: underline; }
+#header .usermenu .menubar .dropdown-menu { border-color: #dddddd; border-style: solid; border-width: 1px 1px 1px 4px; box-shadow: 0 12px 14px rgba(0,0,0,0.176); }
+#header .usermenu i.icon,
+#header .usermenu .menubar .dropdown-menu a:hover i,
+#header .usermenu .menubar .dropdown-menu a:focus i { color: #555; }
+#header .usermenu .menubar .dropdown .dropdown-menu a:hover { color: #495057; background-color: #f3f4f5; }
+#header .usermenu .menubar .dropdown-menu a:focus{ color: #495057; background-color: #e0e0e0; }
+
+/* SITE NAVIGATION DRAWLER */
+#nav-drawer i.icon { color: #555; }
+#nav-drawer .list-group-item.active { border-color: #ccc; background-color: #e0e0e0; color: #555; }
+#nav-drawer .list-group-item-action:hover, #nav-drawer .list-group-item-action:focus { background-color: #f3f4f5; }
+
+/* SITE BODY */
+#page-wrapper #page { max-width: 1300px; }
+#page-wrapper #page .breadcrumb > li a { color: #555; }
+#page-wrapper #page .block-region .block .card-body .card-title { font-family: "Segoe UI", Arial; }
+#page-wrapper #page fieldset.collapsible { margin-bottom: 1.5rem; }
+#page-wrapper #page fieldset.collapsible legend a.fheader { color: #555; font-family: "Segoe UI", Arial; border: 1px dashed #bbbaf5; border-radius: 4px; padding: 6px 12px 8px 33px; letter-spacing: 2.2px; background-color: #f9f9f9; }
+#page-wrapper #page fieldset.collapsible legend a.fheader:hover, #page-wrapper #page fieldset.collapsible legend a.fheader:focus { background-color: #dbdbdb ; }
+
+/* SITE FRONT PAGE */
+#page-site-index .whoweare_block { width: 40%; display: inline-block; margin: 0 20px; vertical-align: top; }
+#page-site-index .whoweare_block h2 { margin: 10px 0 20px; }
+#page-site-index .carousel-overlay-content .content-wrap .read-more { background: #555; }
+#page-site-index .fp-site-customdesc p a:hover { text-decoration: underline; }
+
+#page-site-index .fp-coursebox .fp-courseinfo h5 a { color: #555; text-decoration: unset; }
+#page-site-index .fp-coursebox .fp-courseinfo h5 a:hover, #page-site-index .fp-coursebox .fp-courseinfo h5 a:focus { text-decoration: underline; }
+
+#page-site-index .fp-coursebox .readmore a { color: #777; font-family: Arial; border: 1px solid #dbdbdb; text-decoration: unset; background-color: #fafafa; }
+#page-site-index .fp-coursebox .readmore a:hover, #page-site-index .fp-coursebox .readmore a:focus { background-color: #dbdbdb; box-shadow: inset 0 0 30px 0 #fff; }
+
+/* SITE FRONT PAGE ACTIVITIES */
+#page-mod-page-view.course-1 #page #page-header { display: none; }
+#page-mod-forum-discuss.course-1 h3 + div > div  { display: none !important; }
+
+/* SITE LOGIN PAGE */
+#page-login-index #region-main { margin: 20px 0 40px; }
+#page-login-index #region-main div.my-1.my-sm-5 { display: none; }
+#page-login-index .card .card-body > div > div { min-width: 320px; }
+#page-login-index .card .card-body input { margin: 0 auto; }
+#page-login-index .card .card-body button { margin: 0 auto; }
+#page-login-index .card .card-body .rememberpass { text-align: center; }
+#page-login-index .card .card-body .forgetpass { text-align: center; margin: 30px 0; }
+#page-login-index .card .card-body .forgetpass + div { text-align: center; background-color: #F0F0F0; border-radius: 5px; border: 1px dashed #999; padding: 3px 13px; }
+#page-login-forgot_password #region-main > div > div.generalbox { background-color: #f0f0f0; border-radius: 5px; border: 1px dashed #999; padding: 3px 13px; margin: 40px 25px 60px; }
+
+/* SITE FOOTER */
+#footer .infoarea .footer-logo { display:none; }
+#footer .infoarea .footer-logo + p + p { margin-top: 5px; }
+#footer .contact-info { margin-top: 30px; }
+#footer .contact-info a { text-decoration: none; }
+#footer .contact-info .fa-phone-square::before { content: ""; }
+
+/* COURSE AND CATEGORY INDEX */
+#page-course-index-category #page #page-header { display: none; }
+
+#page-course-index-category #page .categorypicker { display: none; }
+
+#page-course-index-category .course_category_tree .category > .info { background-color: #f0f0f0; border-radius: 5px; border: 1px dashed #999; padding: 3px 13px; color: #212529; }
+
+#page-course-index-category .course_category_tree .coursebox { border: 1px solid #aaa; }
+
+#page-course-index-category .course_category_tree .coursebox.odd { background-color: #f8f8f8; }
+
+#page-course-index-category .course_category_tree .coursebox .content .summary .no-overflow { max-height: unset; display: block; }
+
+#page-course-index-category .course_category_tree .categoryname > a { text-decoration: none; color: #212529; }
+
+#page-course-index-category .course_category_tree .coursename > a { text-decoration: none; color: #555; }
+
+#page-course-index-category .course_category_tree a { text-decoration: none; }
+
+#page-course-index-category .course_category_tree a:hover, #page-course-index-category .course_category_tree a:focus { text-decoration: underline; }
+
+#page-course-index-category .coursebox .enrolmenticons { float: none; }
+
+/* ENROL COURSE */
+#page-enrol-index  .coursebox { border: 1px solid #aaa; }
+#page-enrol-index  .coursebox .content .summary .no-overflow { max-height: unset; display: block; }
+#page-enrol-index .coursebox .coursename > a { text-decoration: none; color: #555; }
+
+/* COUSE PAGE */
+body.path-course-view .course-content .topics .section .summary .no-overflow p { line-height: unset; }
+
+/* USER PROFILE */
+#page-user-profile .context-header-settings-menu { display:none; }
+#page-user-edit div#fitem_id_maildisplay { display:none; }
+#page-user-edit div#fitem_id_moodlenetprofile { display:none; }
+#page-user-edit fieldset#id_moodle_additional_names { display:none; }
+#page-user-edit fieldset#id_moodle_interests { display:none; }
+#page-user-edit div#fitem_id_icq { display:none; }
+#page-user-edit div#fitem_id_skype { display:none; }
+#page-user-edit div#fitem_id_aim { display:none; }
+#page-user-edit div#fitem_id_yahoo { display:none; }
+#page-user-edit div#fitem_id_msn { display:none; }
+
+/* USER DASHBOARD */
+#page-my-index #page #page-header .card { display:none; }
+#page-my-index.context-1 #page #page-header .card { display:block; }
+#page-my-index #page .block-myoverview .dropdown { display: none; }
+#page-my-index #page .block_news_items .post .head { display: none; }
+
+/* BUTTONS */
+.collapsible-actions a { border: 1px dashed #bbbaf5; border-radius: 4px; padding: 8px 12px 9px 33px; }
+#page-wrapper #page .btn-secondary { color: #777; font-family: Arial; font-weight: bold; border: 1px solid #dbdbdb; text-transform: unset; background-color: #fafafa; }
+#page-wrapper #page .btn-secondary:hover, body .btn-secondary:focus { color: #777; background-color: #DBDBDB; box-shadow: inset 0px 0px 30px 0 #fff; }
+
+#page-wrapper #page .btn-primary { color: #777; font-family: Arial; font-weight: bold; border: 1px solid #dbdbdb; text-transform: unset; background-color: #fafafa; }
+#page-wrapper #page .btn-primary:hover, body .btn-primary:focus { color: #777; background-color: #DBDBDB; box-shadow: inset 0px 0px 30px 0 #fff; }
+
+
+/* LABELS */
+h1, h2, h3, h4, h5, h6 { color: #555; }
+
+/* HTMLS TAGS */
+body:not(.admin) a:not([class]) { text-decoration: underline; color: #15c; }
+body:not(.admin) a:not([class]):hover, body:not(.admin) a:not([class]):focus { text-decoration: underline; background-color: unset; box-shadow: unset; color: #555; }
+legend { color: #555; font-family: "Segoe UI", Arial; }
+
