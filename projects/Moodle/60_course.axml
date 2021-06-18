@@ -54,15 +54,19 @@ de cursos. Após criarmos um curso, veremos como ajustar isso.
 
 <subsecao>Novo Curso</subsecao>
 
-    Certifique-se que os usuários que irão diagramar o curso já existam para
-que seja possível conceder as permissões por meio do papel <b>Professor</b>,
-<b>Criador de curso</b> ou <b>Gerente</b>.
+    Caso os usuários que irão diagramar o curso já existam, será possível
+conceder o papel <b>Professor</b>, <b>Criador de curso</b> ou
+<b>Gerente</b> ao final da criação do curso.
 
-    Os estudantes podem ser inscritos posteriomente, quando o curso estiver
-pronto. Porém é possível inscrevê-los antes do curso estar pronto, neste
-caso configure corretamente a opção de inscrição <b>Iniciando em: Início do
-curso</b> e a configuração <b>Data de início do curso</b>. Assim, a inscrição
-só será válida após a data de início do curso.
+    Ao criar o curso, é possível informar a data de início do curso e a data
+de término do curso, essas opções definem o status do curso, como <b>Não
+iniciado</b>, <b>Em andamento</b> ou <b>Encerrado</b>. Há um filtro no bloco
+do Painel do Usuário que permite filtrar os cursos inscritos por esses
+status.
+
+    <importante/>Quando o usuário está inscrito no curso, ele conseguirá
+acessar o curso ainda que a data presente seja anterior a data do início do
+curso.
 
 <lista>
   <item>Atividade</item>
