@@ -969,6 +969,9 @@ exibir o id do usuário.
 <subsubsecao>CKEditor</subsubsecao>
 <nome>module-ckeditor</nome>
 
+<importante/><b>Não utilize versões anteriores a 4.16.1, pois contém falhas
+de segurança.</b>
+
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/ckeditor</url>
   <item>Função</item>: editor HTML visual (WYSIWYG);
@@ -977,13 +980,11 @@ exibir o id do usuário.
     <item/>su -s /bin/bash -l portal
     <item/>cd /tmp
     <item/>wget
-      <link>https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.9.2/ckeditor_4.9.2_full.zip</link>
+      <link>https://download.cksource.com/CKEditor/CKEditor/CKEditor%204.16.1/ckeditor_4.16.1_full.zip</link>
       <text>http://download.cksource.com/[..]/ckeditor_4.X.Y_full.zip</text>
     <item/>cd /var/www/portal/drupal-7/sites/all/libraries
     <item/>unzip /tmp/ckeditor_4.X.Y_full.zip
-    <item/>cd ckeditor/skins/
-    <item/>ln -s moono-lisa/ moono
-    <item/>touch moono/skin.js
+    <item/>find ./ckeditor -type d -exec chmod 0755 {} <bslash/>;
   </lista>
   <item>Uso</item>: /admin/config/content/ckeditor
   <lista>
@@ -996,7 +997,7 @@ exibir o id do usuário.
     O módulo <b>CKEditor</b> integra a rotina <b>ckeditor.js</b> ao Drupal.
 Entretanto, o módulo não contém o CKEditor em si, fazendo com que o usuário
 obtenha-o por meio do endereço
-<url>http://cdn.ckeditor.com/4.9.2/full-all/ckeditor.js</url>, cada vez que
+<url>http://cdn.ckeditor.com/4.16.1/full-all/ckeditor.js</url>, cada vez que
 for o editor for utilizado.
 
     Torna-se mais rápida a renderização da página ao instalar as rotinas do
