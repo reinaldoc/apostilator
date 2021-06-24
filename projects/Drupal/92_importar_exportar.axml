@@ -2,7 +2,8 @@
 
     O Drupal controla o armazenamento e o acesso aos dados persistidos em
 suas diversas entidades, neste capítulo veremos os módulos que permitem
-realizar operações de extração ou persistencia de dados em lote.
+realizar operações de extração (exportação) ou persistência (importação) de
+dados em lote.
 
 <br/>0.3cm
 
