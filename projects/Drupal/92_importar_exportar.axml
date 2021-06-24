@@ -1,0 +1,20 @@
+<capitulo>Exportar e Importar</capitulo>
+
+    O Drupal controla o armazenamento e o acesso aos dados persistidos em
+suas diversas entidades, neste capítulo veremos os módulos que permitem
+realizar operações de extração ou persistencia de dados em lote.
+
+<br/>0.3cm
+
+<subsubsecao>Taxonomy Import</subsubsecao>
+
+<lista>
+  <item>Download</item>: <url>https://drupal.org/project/taxonomy_import</url>
+  <item>Função</item>: cria um novo vocabulário a partir de arquivos CSV ou
+  XML;
+  <item>Uso</item>: /admin/config/content/import_taxonomy
+  <lista>
+    <item/>habilite o módulo <b>Taxonomy Import</b>;
+    <item/>carregue um arquivo CSV com a liste de itens do novo vocabulário;
+  </lista>
+</lista>
