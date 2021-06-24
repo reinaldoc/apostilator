@@ -969,8 +969,10 @@ exibir o id do usuário.
 <subsubsecao>CKEditor</subsubsecao>
 <nome>module-ckeditor</nome>
 
-<importante/><b>Não utilize versões anteriores a 4.16.1, pois contém falhas
-de segurança.</b>
+    <b>Não utilize versões anteriores a 4.16.1, pois contém falhas de
+segurança.</b>
+
+<br/>0.3cm
 
 <lista>
   <item>Download</item>: <url>https://drupal.org/project/ckeditor</url>
